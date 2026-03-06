@@ -4,46 +4,7 @@
 
 document.addEventListener('DOMContentLoaded', () => {
 
-  // ========== NAVBAR SCROLL ==========
-  const navbar = document.getElementById('navbar');
-  window.addEventListener('scroll', () => {
-    navbar.classList.toggle('scrolled', window.scrollY > 20);
-  });
-
-  // ========== HAMBURGER MENU ==========
-  const hamburger = document.getElementById('hamburger');
-  const navLinks  = document.getElementById('navLinks');
-  hamburger.addEventListener('click', () => {
-    navLinks.classList.toggle('open');
-    const spans = hamburger.querySelectorAll('span');
-    hamburger.classList.toggle('active');
-    if (hamburger.classList.contains('active')) {
-      spans[0].style.transform = 'translateY(7px) rotate(45deg)';
-      spans[1].style.opacity   = '0';
-      spans[2].style.transform = 'translateY(-7px) rotate(-45deg)';
-    } else {
-      spans.forEach(s => { s.style.transform = ''; s.style.opacity = ''; });
-    }
-  });
-
-  // Mobile dropdown toggles
-  document.querySelectorAll('.nav-dropdown .nav-item').forEach(item => {
-    item.addEventListener('click', (e) => {
-      if (window.innerWidth <= 768) {
-        e.preventDefault();
-        item.closest('.nav-dropdown').classList.toggle('open');
-      }
-    });
-  });
-
-  // Close nav when link clicked
-  document.querySelectorAll('.dropdown-item, .nav-links > .nav-item').forEach(link => {
-    link.addEventListener('click', () => {
-      navLinks.classList.remove('open');
-      hamburger.classList.remove('active');
-      hamburger.querySelectorAll('span').forEach(s => { s.style.transform = ''; s.style.opacity = ''; });
-    });
-  });
+  // Nav is handled by nav.js
 
   // ========== AOS — SCROLL ANIMATIONS ==========
   const aosEls = document.querySelectorAll('[data-aos]');
@@ -201,21 +162,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // ========== NAVBAR ACTIVE LINK ==========
-  const sections = document.querySelectorAll('section[id]');
-  const navItems = document.querySelectorAll('.nav-item');
-  window.addEventListener('scroll', () => {
-    let current = '';
-    sections.forEach(sec => {
-      if (window.scrollY >= sec.offsetTop - 120) current = sec.getAttribute('id');
-    });
-    navItems.forEach(item => {
-      item.classList.remove('active');
-      if (item.getAttribute('href') === `#${current}`) item.classList.add('active');
-    });
-  }, { passive: true });
-
-  // ========== SMOOTH SCROLL ==========
+  // ========== SMOOTH SCROLL (index.html in-page anchors) ==========
   document.querySelectorAll('a[href^="#"]').forEach(a => {
     a.addEventListener('click', e => {
       const target = document.querySelector(a.getAttribute('href'));

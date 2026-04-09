@@ -1122,11 +1122,12 @@ ul { list-style: none; }
 
 @media (max-width: 768px) {
   .section { padding: 70px 0; }
-  .nav-links { display: none; position: fixed; top: 72px; left: 0; right: 0; background: rgba(10,10,15,0.98); backdrop-filter: blur(20px); flex-direction: column; padding: 24px; gap: 4px; border-bottom: 1px solid var(--border); }
+  .nav-links { display: none; position: fixed; top: 72px; left: 0; right: 0; z-index: 999; background: rgba(10,10,15,0.98); backdrop-filter: blur(20px); flex-direction: column; padding: 16px 24px; gap: 4px; border-bottom: 1px solid var(--border); max-height: calc(100vh - 72px); overflow-y: auto; }
   .nav-links.open { display: flex; }
   .nav-dropdown { width: 100%; }
   .dropdown-menu { position: static; transform: none !important; opacity: 0; visibility: visible; pointer-events: none; background: var(--dark-4); box-shadow: none; margin-top: 4px; border: 1px solid var(--border); max-height: 0; overflow: hidden; transition: max-height 0.35s ease, opacity 0.3s ease; }
   .dropdown-menu.show { opacity: 1; max-height: 320px; pointer-events: all; }
+  .nav-actions .btn { display: none; }
   .hamburger { display: flex; }
   .services-grid { grid-template-columns: 1fr; }
   .works-grid { grid-template-columns: 1fr; }

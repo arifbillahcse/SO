@@ -55,32 +55,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // ========== STICKY NAV SCROLL HIGHLIGHT ==========
-  const navbar = document.getElementById('navbar');
-  if (navbar) {
-    window.addEventListener('scroll', () => {
-      navbar.classList.toggle('scrolled', window.scrollY > 20);
-    }, { passive: true });
-  }
-
-  // ========== HAMBURGER ==========
-  const hamburger = document.getElementById('hamburger');
-  const navLinks  = document.getElementById('navLinks');
-  if (hamburger && navLinks) {
-    hamburger.addEventListener('click', () => {
-      navLinks.classList.toggle('open');
-      hamburger.classList.toggle('active');
-      const spans = hamburger.querySelectorAll('span');
-      if (hamburger.classList.contains('active')) {
-        spans[0].style.transform = 'translateY(7px) rotate(45deg)';
-        spans[1].style.opacity   = '0';
-        spans[2].style.transform = 'translateY(-7px) rotate(-45deg)';
-      } else {
-        spans.forEach(s => { s.style.transform = ''; s.style.opacity = ''; });
-      }
-    });
-  }
-
   // ========== SCROLL ANIMATIONS (AOS) ==========
   const aosEls = document.querySelectorAll('[data-aos]');
   const obs = new IntersectionObserver(entries => {

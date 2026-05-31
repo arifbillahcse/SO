@@ -32,6 +32,28 @@
     }
     .fh-name { font-size: 0.95rem; font-weight: 700; margin-top: 14px; position: relative; z-index: 1; }
     .fh-role { font-size: 0.72rem; color: var(--primary); position: relative; z-index: 1; margin-top: 2px; }
+    .fh-cse { font-size: 0.68rem; color: var(--text-muted); position: relative; z-index: 1; margin-top: 4px; letter-spacing: 0.04em; }
+
+    /* CSE shared callout banner */
+    .cse-banner {
+      display: flex; align-items: center; gap: 20px; flex-wrap: wrap;
+      background: linear-gradient(135deg, rgba(255,121,0,0.08), rgba(255,121,0,0.03));
+      border: 1px solid rgba(255,121,0,0.2); border-radius: var(--radius-lg);
+      padding: 28px 32px; margin-bottom: 56px;
+    }
+    .cse-banner-icon {
+      width: 52px; height: 52px; border-radius: var(--radius-md); flex-shrink: 0;
+      background: var(--primary-glow); display: flex; align-items: center; justify-content: center;
+      color: var(--primary);
+    }
+    .cse-banner-text { flex: 1; min-width: 200px; }
+    .cse-banner-text strong { display: block; font-size: 1rem; font-weight: 700; color: var(--text-primary); margin-bottom: 4px; }
+    .cse-banner-text span { font-size: 0.88rem; color: var(--text-secondary); }
+    .cse-banner-badge {
+      display: inline-flex; align-items: center; gap: 8px; padding: 8px 18px;
+      border-radius: 100px; border: 1px solid rgba(255,121,0,0.3);
+      font-size: 0.82rem; font-weight: 700; color: var(--primary); white-space: nowrap;
+    }
 
     /* Founder profile block */
     .founder {
@@ -138,9 +160,9 @@
     <div class="container page-hero-inner">
       <div class="page-hero-content" data-aos="fade-up">
         <div class="breadcrumb"><a href="index.html">Home</a><span>/</span><a href="about-us.html">About</a><span>/</span><span class="bc-current">Co-Founders</span></div>
-        <div class="hero-badge"><span class="badge-dot"></span>The Leadership Behind Softorio</div>
+        <div class="hero-badge"><span class="badge-dot"></span>B.Sc. Computer Science &amp; Engineering — Both Founders</div>
         <h1 class="page-hero-title">Arif &amp; <span class="text-gradient">Asma</span></h1>
-        <p class="page-hero-sub">We started Softorio with one belief — that world-class technology should work for people, not the other way around. Two engineers, one vision, and a shared commitment to doing things right.</p>
+        <p class="page-hero-sub">Two Computer Science &amp; Engineering graduates who built Softorio from the ground up. Every project is led by engineers who understand the technology — not just manage it.</p>
         <div class="page-hero-cta">
           <a href="index.html#contact" class="btn btn-primary btn-lg">Work With Us</a>
           <a href="our-works.html" class="btn btn-outline btn-lg">See Our Work</a>
@@ -152,11 +174,13 @@
             <div class="fh-monogram">AB</div>
             <div class="fh-name">Md. Arif Billah</div>
             <div class="fh-role">Founder &amp; CEO</div>
+            <div class="fh-cse">B.Sc. CSE</div>
           </div>
           <div class="fh-avatar">
             <div class="fh-monogram">AA</div>
             <div class="fh-name">Asma Akter</div>
             <div class="fh-role">Co-Founder</div>
+            <div class="fh-cse">B.Sc. CSE</div>
           </div>
         </div>
       </div>
@@ -174,8 +198,23 @@
     <div class="container">
       <div class="section-header" data-aos="fade-up">
         <span class="section-tag">Meet the Founders</span>
-        <h2 class="section-title">The People Who <span class="text-gradient">Lead the Work</span></h2>
-        <p class="section-sub">Behind every project at Softorio are two people who care deeply about the craft — partners in life, and partners in building this company.</p>
+        <h2 class="section-title">Two <span class="text-gradient">CSE Engineers</span> Leading Every Project</h2>
+        <p class="section-sub">Both founders hold a Bachelor of Science in Computer Science &amp; Engineering — which means when you work with Softorio, you're working directly with people who understand the technology at every level.</p>
+      </div>
+
+      <!-- CSE CALLOUT -->
+      <div class="cse-banner" data-aos="fade-up">
+        <div class="cse-banner-icon">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+        </div>
+        <div class="cse-banner-text">
+          <strong>Both founders are Computer Science &amp; Engineering graduates</strong>
+          <span>B.Sc. in Computer Science &amp; Engineering — Green University of Bangladesh &nbsp;·&nbsp; IEEE Members &nbsp;·&nbsp; Active researchers and practitioners</span>
+        </div>
+        <div class="cse-banner-badge">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+          Verified CSE Engineers
+        </div>
       </div>
 
       <!-- ARIF -->
@@ -192,7 +231,7 @@
           </div>
         </div>
         <div class="founder-info">
-          <span class="founder-tag"><span class="badge-dot"></span>Technical Leadership</span>
+          <span class="founder-tag"><span class="badge-dot"></span>B.Sc. CSE &nbsp;·&nbsp; Founder &amp; CEO</span>
           <h3 class="founder-name">Md. Arif Billah</h3>
           <div class="founder-title">Founder &amp; Chief Executive Officer</div>
           <div class="founder-bio">
@@ -201,8 +240,8 @@
           </div>
 
           <div class="founder-highlights">
+            <div class="fh-stat" style="border-color:rgba(255,121,0,0.25)"><div class="fh-stat-num">B.Sc. CSE</div><div class="fh-stat-label">Computer Science &amp; Engineering</div></div>
             <div class="fh-stat"><div class="fh-stat-num">300+</div><div class="fh-stat-label">Websites Delivered</div></div>
-            <div class="fh-stat"><div class="fh-stat-num">200+</div><div class="fh-stat-label">Server Configurations</div></div>
             <div class="fh-stat"><div class="fh-stat-num">Top Rated</div><div class="fh-stat-label">Upwork Freelancer</div></div>
             <div class="fh-stat"><div class="fh-stat-num">Level 2</div><div class="fh-stat-label">Fiverr Seller</div></div>
           </div>
@@ -234,7 +273,7 @@
           </div>
         </div>
         <div class="founder-info">
-          <span class="founder-tag"><span class="badge-dot"></span>Research &amp; Innovation</span>
+          <span class="founder-tag"><span class="badge-dot"></span>B.Sc. CSE &nbsp;·&nbsp; Co-Founder</span>
           <h3 class="founder-name">Asma Akter</h3>
           <div class="founder-title">Co-Founder &amp; Head of Research</div>
           <div class="founder-bio">
@@ -243,10 +282,10 @@
           </div>
 
           <div class="founder-highlights">
-            <div class="fh-stat"><div class="fh-stat-num">CSE</div><div class="fh-stat-label">Computer Science Engineer</div></div>
+            <div class="fh-stat" style="border-color:rgba(255,121,0,0.25)"><div class="fh-stat-num">B.Sc. CSE</div><div class="fh-stat-label">Computer Science &amp; Engineering</div></div>
             <div class="fh-stat"><div class="fh-stat-num">5.00</div><div class="fh-stat-label">SSC — Perfect GPA</div></div>
             <div class="fh-stat"><div class="fh-stat-num">AI / ML</div><div class="fh-stat-label">Research Focus</div></div>
-            <div class="fh-stat"><div class="fh-stat-num">Security</div><div class="fh-stat-label">Threat Detection</div></div>
+            <div class="fh-stat"><div class="fh-stat-num">Security</div><div class="fh-stat-label">Cyber Threat Detection</div></div>
           </div>
 
           <div class="founder-sub-h">Focus &amp; Strengths</div>
@@ -274,7 +313,7 @@
         <span class="section-tag">Our Story</span>
         <h2 class="section-title">How <span class="text-gradient">Softorio</span> Began</h2>
         <p class="section-sub" style="text-align:left">It started the way most good things do — with curiosity, late nights, and a refusal to settle for "good enough."</p>
-        <p style="font-size:0.95rem;color:var(--text-secondary);line-height:1.8;margin-top:16px">In 2021, two Computer Science students decided to turn freelance work into something bigger. Arif had already earned Top Rated and Level 2 Seller status delivering hundreds of websites and managing servers for clients across the globe. Asma brought the research rigour — a deep interest in security, AI, and building things that don't just work, but work <em>reliably</em>.</p>
+        <p style="font-size:0.95rem;color:var(--text-secondary);line-height:1.8;margin-top:16px">In 2021, two Computer Science &amp; Engineering students at Green University of Bangladesh decided to turn freelance expertise into something bigger. Arif — already a Top Rated Upwork freelancer and Fiverr Level 2 Seller — had delivered hundreds of websites and managed servers for clients worldwide. Asma brought the research rigour: a deep focus on security, AI, and engineering systems that don't just work, but work <em>reliably</em>.</p>
         <p style="font-size:0.95rem;color:var(--text-secondary);line-height:1.8;margin-top:12px">Together they built Softorio into a full-service digital agency — web development, cloud, hosting, SEO, and automation — serving clients worldwide from Dhaka, Bangladesh. Two companies, hundreds of projects, and one shared standard: do it right, every time.</p>
       </div>
       <div class="sp-why-right" data-aos="fade-left">

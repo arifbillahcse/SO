@@ -24,12 +24,12 @@
       background: radial-gradient(circle at 50% 0%, var(--primary-glow), transparent 70%);
     }
     .fh-monogram {
-      width: 64px; height: 64px; border-radius: 50%;
-      background: linear-gradient(135deg, var(--primary), var(--primary-light));
-      display: flex; align-items: center; justify-content: center;
-      font-size: 1.5rem; font-weight: 800; color: #fff; position: relative; z-index: 1;
-      box-shadow: 0 6px 24px rgba(255,121,0,0.4);
+      width: 80px; height: 80px; border-radius: 50%;
+      overflow: hidden; position: relative; z-index: 1;
+      border: 3px solid var(--primary);
+      box-shadow: 0 0 0 4px rgba(255,121,0,0.15), 0 6px 24px rgba(255,121,0,0.3);
     }
+    .fh-monogram img { width: 100%; height: 100%; object-fit: cover; object-position: top center; }
     .fh-name { font-size: 0.95rem; font-weight: 700; margin-top: 14px; position: relative; z-index: 1; }
     .fh-role { font-size: 0.72rem; color: var(--primary); position: relative; z-index: 1; margin-top: 2px; }
     .fh-cse { font-size: 0.68rem; color: var(--text-muted); position: relative; z-index: 1; margin-top: 4px; letter-spacing: 0.04em; }
@@ -171,13 +171,13 @@
       <div class="page-hero-visual" data-aos="fade-left">
         <div class="founders-hero-visual">
           <div class="fh-avatar">
-            <div class="fh-monogram">AB</div>
+            <div class="fh-monogram"><img src="images/arif.png" alt="Md. Arif Billah" /></div>
             <div class="fh-name">Md. Arif Billah</div>
             <div class="fh-role">Founder &amp; CEO</div>
             <div class="fh-cse">B.Sc. CSE</div>
           </div>
           <div class="fh-avatar">
-            <div class="fh-monogram">AA</div>
+            <div class="fh-monogram"><img src="images/asma-formal.png" alt="Asma Akter" /></div>
             <div class="fh-name">Asma Akter</div>
             <div class="fh-role">Co-Founder</div>
             <div class="fh-cse">B.Sc. CSE</div>

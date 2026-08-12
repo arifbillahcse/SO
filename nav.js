@@ -25,13 +25,13 @@
       <a href="index.html" class="nav-item${ac('index.html')}">Home</a>
 
       <div class="nav-dropdown">
-        <a href="#" class="nav-item has-dropdown${pac(['web-development.html','seo.html','web-hosting.html','automation.html'])}">
+        <a href="#" class="nav-item has-dropdown${pac(['web-development.html','seo.html','manage-cloud.html','automation.html'])}">
           Services ${ch}
         </a>
         <div class="dropdown-menu">
           <a href="web-development.html" class="dropdown-item${ac('web-development.html')}"><span class="d-icon">&#9001;</span> Website Development</a>
           <a href="seo.html"             class="dropdown-item${ac('seo.html')}"><span class="d-icon">&#128269;</span> SEO Optimization</a>
-          <a href="web-hosting.html"     class="dropdown-item${ac('web-hosting.html')}"><span class="d-icon">&#9729;</span> Manage Cloud</a>
+          <a href="manage-cloud.html"     class="dropdown-item${ac('manage-cloud.html')}"><span class="d-icon">&#9729;</span> Manage Cloud</a>
           <a href="automation.html"      class="dropdown-item${ac('automation.html')}"><span class="d-icon">&#9881;</span> Automation</a>
         </div>
       </div>
@@ -91,7 +91,7 @@
       <ul class="footer-links">
         <li><a href="web-development.html">Website Development</a></li>
         <li><a href="seo.html">SEO Optimization</a></li>
-        <li><a href="web-hosting.html">Manage Cloud</a></li>
+        <li><a href="manage-cloud.html">Manage Cloud</a></li>
         <li><a href="automation.html">Automation</a></li>
       </ul>
     </div>

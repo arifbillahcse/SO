@@ -534,7 +534,6 @@ ul { list-style: none; }
 .marquee-wrapper::after  { right: 0; background: linear-gradient(to left,  var(--dark-2), transparent); }
 .marquee-track {
   display: flex;
-  gap: 48px;
   width: max-content;
   animation: marquee 30s linear infinite;
 }
@@ -552,6 +551,7 @@ ul { list-style: none; }
   transition: var(--transition);
   cursor: default;
   padding: 8px 0;
+  margin-right: 48px;
 }
 .client-logo:hover { color: var(--primary); }
 

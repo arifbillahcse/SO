@@ -73,60 +73,103 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // ========== TESTIMONIAL SLIDER ==========
+  // ========== TESTIMONIAL CAROUSEL (scroll-snap based) ==========
+  const viewport  = document.getElementById('testiViewport');
   const track     = document.getElementById('testiTrack');
   const prevBtn   = document.getElementById('testiPrev');
   const nextBtn   = document.getElementById('testiNext');
   const dotsWrap  = document.getElementById('testiDots');
-  const cards     = track ? track.querySelectorAll('.testi-card') : [];
-  let current     = 0;
-  let perView     = getPerView();
-  let total       = Math.ceil(cards.length / perView);
-  let autoTimer;
+  const cards     = track ? Array.from(track.querySelectorAll('.testi-card')) : [];
 
-  function getPerView() {
-    if (window.innerWidth <= 768) return 1;
-    if (window.innerWidth <= 1024) return 2;
-    return 3;
-  }
+  if (viewport && track && cards.length) {
+    let perView   = getPerView();
+    let pageCount = Math.ceil(cards.length / perView);
+    let current   = 0;
+    let autoTimer;
+    let isSyncing = false;
 
-  function buildDots() {
-    if (!dotsWrap) return;
-    dotsWrap.innerHTML = '';
-    for (let i = 0; i < total; i++) {
-      const dot = document.createElement('button');
-      dot.classList.add('testi-dot');
-      if (i === current) dot.classList.add('active');
-      dot.addEventListener('click', () => goTo(i));
-      dotsWrap.appendChild(dot);
+    function getPerView() {
+      if (window.innerWidth <= 768)  return 1;
+      if (window.innerWidth <= 1024) return 2;
+      return 3;
     }
-  }
 
-  function goTo(index) {
-    current = Math.max(0, Math.min(index, total - 1));
-    const offset = current * (100 / perView) * perView;
-    // calculate card width including gap
-    const cardW  = cards[0] ? cards[0].offsetWidth + 24 : 0;
-    track.style.transform = `translateX(-${current * perView * cardW}px)`;
-    document.querySelectorAll('.testi-dot').forEach((d, i) => d.classList.toggle('active', i === current));
+    function buildDots() {
+      if (!dotsWrap) return;
+      dotsWrap.innerHTML = '';
+      for (let i = 0; i < pageCount; i++) {
+        const dot = document.createElement('button');
+        dot.className = 'testi-dot' + (i === current ? ' active' : '');
+        dot.setAttribute('aria-label', `Go to review page ${i + 1}`);
+        dot.addEventListener('click', () => goTo(i));
+        dotsWrap.appendChild(dot);
+      }
+    }
+
+    function updateDots() {
+      if (!dotsWrap) return;
+      dotsWrap.querySelectorAll('.testi-dot').forEach((d, i) => d.classList.toggle('active', i === current));
+    }
+
+    function updateButtons() {
+      if (prevBtn) prevBtn.disabled = current === 0;
+      if (nextBtn) nextBtn.disabled = current === pageCount - 1;
+    }
+
+    function cardOffset(card) {
+      return card.getBoundingClientRect().left - track.getBoundingClientRect().left + viewport.scrollLeft;
+    }
+
+    function goTo(index) {
+      current = Math.max(0, Math.min(index, pageCount - 1));
+      isSyncing = true;
+      const targetCard = cards[current * perView];
+      if (targetCard) {
+        viewport.scrollTo({ left: cardOffset(targetCard), behavior: 'smooth' });
+      }
+      updateDots();
+      updateButtons();
+      resetAuto();
+      setTimeout(() => { isSyncing = false; }, 500);
+    }
+
+    function resetAuto() {
+      clearInterval(autoTimer);
+      autoTimer = setInterval(() => goTo((current + 1) % pageCount), 5000);
+    }
+
+    // Detect manual scroll/swipe and sync dots/buttons to nearest page
+    let scrollTimer;
+    viewport.addEventListener('scroll', () => {
+      if (isSyncing) return;
+      clearTimeout(scrollTimer);
+      scrollTimer = setTimeout(() => {
+        const cardW = cards[1] ? cardOffset(cards[1]) - cardOffset(cards[0]) : viewport.clientWidth;
+        const scrolledIndex = Math.round(viewport.scrollLeft / cardW);
+        current = Math.max(0, Math.min(Math.round(scrolledIndex / perView), pageCount - 1));
+        updateDots();
+        updateButtons();
+      }, 120);
+    }, { passive: true });
+
+    if (prevBtn) prevBtn.addEventListener('click', () => goTo(current - 1));
+    if (nextBtn) nextBtn.addEventListener('click', () => goTo(current + 1));
+
+    viewport.addEventListener('mouseenter', () => clearInterval(autoTimer));
+    viewport.addEventListener('mouseleave', resetAuto);
+
+    window.addEventListener('resize', () => {
+      perView   = getPerView();
+      pageCount = Math.ceil(cards.length / perView);
+      current   = Math.min(current, pageCount - 1);
+      buildDots();
+      updateButtons();
+    });
+
+    buildDots();
+    updateButtons();
     resetAuto();
   }
-
-  function resetAuto() {
-    clearInterval(autoTimer);
-    autoTimer = setInterval(() => goTo((current + 1) % total), 5000);
-  }
-
-  if (prevBtn) prevBtn.addEventListener('click', () => goTo(current - 1));
-  if (nextBtn) nextBtn.addEventListener('click', () => goTo((current + 1) % total));
-
-  window.addEventListener('resize', () => {
-    perView = getPerView();
-    total   = Math.ceil(cards.length / perView);
-    current = 0;
-    buildDots();
-    goTo(0);
-  });
 
   buildDots();
   resetAuto();

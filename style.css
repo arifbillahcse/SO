@@ -399,6 +399,8 @@ ul { list-style: none; }
 }
 .hero-card-stack { position: relative; width: 100%; max-width: 420px; }
 .hero-browser {
+  position: relative;
+  z-index: 1;
   background: var(--dark-3);
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
@@ -456,6 +458,7 @@ ul { list-style: none; }
 
 .float-card {
   position: absolute;
+  z-index: 2;
   background: var(--dark-3);
   border: 1px solid var(--border);
   border-radius: var(--radius-md);

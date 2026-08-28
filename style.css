@@ -1013,7 +1013,7 @@ ul { list-style: none; }
 }
 .cta-inner {
   display: grid;
-  grid-template-columns: 1.4fr 1fr;
+  grid-template-columns: 1fr 1.3fr;
   gap: 80px;
   align-items: start;
   position: relative;
@@ -1053,7 +1053,7 @@ ul { list-style: none; }
 .cta-submit { width: 100%; justify-content: center; font-size: 1rem; }
 
 .cta-info {
-  padding-top: 8px;
+  margin-top: 8px;
   display: flex;
   flex-direction: column;
   gap: 28px;

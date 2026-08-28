@@ -50,13 +50,14 @@
       <a href="our-works.html" class="nav-item${ac('our-works.html')}">Our Works</a>
 
       <div class="nav-dropdown">
-        <a href="#" class="nav-item has-dropdown${pac(['about-us.html','case-study.html','our-resources.html'])}">
+        <a href="#" class="nav-item has-dropdown${pac(['about-us.html','case-study.html','our-resources.html','affiliate-program.html'])}">
           Resources ${ch}
         </a>
         <div class="dropdown-menu">
           <a href="about-us.html"      class="dropdown-item${ac('about-us.html')}"><span class="d-icon">&#128101;</span> About Us</a>
           <a href="case-study.html"    class="dropdown-item${ac('case-study.html')}"><span class="d-icon">&#128196;</span> Case Study</a>
           <a href="our-resources.html" class="dropdown-item${ac('our-resources.html')}"><span class="d-icon">&#128218;</span> Our Resources</a>
+          <a href="affiliate-program.html" class="dropdown-item${ac('affiliate-program.html')}"><span class="d-icon">&#129309;</span> Affiliate Program</a>
         </div>
       </div>
 
@@ -109,6 +110,7 @@
         <li><a href="about-us.html">About Us</a></li>
         <li><a href="case-study.html">Case Studies</a></li>
         <li><a href="our-resources.html">Our Resources</a></li>
+        <li><a href="affiliate-program.html">Affiliate Program</a></li>
         <li><a href="our-works.html">Our Works</a></li>
         <li><a href="index.html#contact">Contact Us</a></li>
       </ul>

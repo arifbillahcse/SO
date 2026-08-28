@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Affiliate Program — Earn 20% for Life | Softorio</title>
+  <meta name="description" content="Refer a friend or business to Softorio and earn 20% of the profit from that client — for as long as they stay with us. No caps, no complicated tiers." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="service-page.css" />
+  <style>
+    /* ===== AFFILIATE PAGE — scoped styles ===== */
+    .aff-steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .aff-step {
+      background: var(--dark-2);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-xl);
+      padding: 32px 28px;
+      position: relative;
+      transition: var(--transition);
+    }
+    .aff-step:hover { border-color: rgba(255,121,0,0.3); transform: translateY(-4px); }
+    .aff-step-num {
+      font-size: 2.4rem; font-weight: 800;
+      color: rgba(255,121,0,0.18);
+      line-height: 1; margin-bottom: 8px;
+    }
+    .aff-step-icon {
+      width: 48px; height: 48px; border-radius: var(--radius-md);
+      background: var(--primary-glow); color: var(--primary);
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: 18px;
+    }
+    .aff-step h3 { font-size: 1.05rem; font-weight: 700; margin-bottom: 10px; }
+    .aff-step p { font-size: 0.9rem; color: var(--text-secondary); line-height: 1.7; }
+    .aff-step-arrow {
+      position: absolute; top: 50%; right: -36px; transform: translateY(-50%);
+      color: var(--text-muted); display: none;
+    }
+    .aff-step:not(:last-child) .aff-step-arrow { display: block; }
+
+    /* Commission highlight banner */
+    .aff-commission {
+      position: relative;
+      background: linear-gradient(135deg, rgba(255,121,0,0.1), rgba(255,121,0,0.02));
+      border: 1px solid rgba(255,121,0,0.25);
+      border-radius: var(--radius-xl);
+      padding: 60px 40px;
+      text-align: center;
+      overflow: hidden;
+    }
+    .aff-commission::before {
+      content: ''; position: absolute; inset: 0;
+      background: radial-gradient(circle at 50% 0%, rgba(255,121,0,0.15), transparent 60%);
+      pointer-events: none;
+    }
+    .aff-commission-num {
+      font-size: clamp(3.5rem, 8vw, 5.5rem);
+      font-weight: 800; line-height: 1;
+      color: var(--primary);
+      position: relative; z-index: 1;
+      text-shadow: 0 0 60px rgba(255,121,0,0.35);
+    }
+    .aff-commission-sub {
+      font-size: 1.2rem; font-weight: 700; color: var(--text-primary);
+      margin-top: 10px; position: relative; z-index: 1;
+    }
+    .aff-commission-text {
+      font-size: 0.95rem; color: var(--text-secondary); line-height: 1.75;
+      max-width: 560px; margin: 20px auto 0; position: relative; z-index: 1;
+    }
+
+    /* Who can join pills */
+    .aff-who { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; margin-top: 32px; }
+    .aff-who span {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 12px 22px; border-radius: 100px;
+      background: var(--dark-3); border: 1px solid var(--border);
+      font-size: 0.9rem; font-weight: 600; color: var(--text-primary);
+    }
+    .aff-who span svg { color: var(--primary); flex-shrink: 0; }
+
+    @media (max-width: 1024px) {
+      .aff-steps { grid-template-columns: 1fr; }
+      .aff-step-arrow { display: none !important; }
+    }
+  </style>
+</head>
+<body>
+
+  <div id="nav-placeholder"></div>
+
+  <!-- ========== PAGE HERO ========== -->
+  <section class="page-hero">
+    <div class="page-hero-bg">
+      <div class="ph-orb ph-orb-1"></div>
+      <div class="ph-orb ph-orb-2"></div>
+      <div class="ph-grid"></div>
+    </div>
+    <div class="container page-hero-inner">
+      <div class="page-hero-content" data-aos="fade-up">
+        <div class="breadcrumb">
+          <a href="index.html">Home</a>
+          <span>/</span>
+          <span class="bc-current">Affiliate Program</span>
+        </div>
+        <div class="hero-badge">
+          <span class="badge-dot"></span>
+          Refer &amp; Earn Program
+        </div>
+        <h1 class="page-hero-title">
+          Turn Your Network Into <span class="text-gradient">Recurring Income</span>
+        </h1>
+        <p class="page-hero-sub">Know a business that needs a website, hosting, or cloud infrastructure? Refer them to Softorio and earn <strong style="color:var(--primary)">20% of the profit</strong> from that client — for life. Not just the first project. Forever, as long as they stay with us.</p>
+        <div class="page-hero-cta">
+          <a href="#contact-form" class="btn btn-primary btn-lg">Join the Program</a>
+          <a href="#how-it-works" class="btn btn-outline btn-lg">See How It Works</a>
+        </div>
+      </div>
+      <div class="page-hero-visual" data-aos="fade-left">
+        <div class="why-metrics">
+          <div class="metric-card accent"><div class="metric-num">20%</div><div class="metric-label">Lifetime Commission</div></div>
+          <div class="metric-card"><div class="metric-num">$0</div><div class="metric-label">Cost to Join</div></div>
+          <div class="metric-card"><div class="metric-num">&#8734;</div><div class="metric-label">Unlimited Referrals</div></div>
+          <div class="metric-card accent"><div class="metric-num">Life</div><div class="metric-label">Earn On Every Renewal</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== HOW IT WORKS ========== -->
+  <section class="section" id="how-it-works">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <span class="section-tag">How It Works</span>
+        <h2 class="section-title">Three Steps to <span class="text-gradient">Start Earning</span></h2>
+        <p class="section-sub">No applications, no gatekeeping. If you know someone who needs what we do, you qualify.</p>
+      </div>
+      <div class="aff-steps" data-aos="fade-up">
+        <div class="aff-step">
+          <div class="aff-step-num">01</div>
+          <div class="aff-step-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M18 8a3 3 0 1 0-2.83-4H8.83A3 3 0 1 0 6 8c.35 0 .69-.06 1-.17v8.34c-.31-.11-.65-.17-1-.17a3 3 0 1 0 2.83 4h6.34A3 3 0 1 0 18 16c-.35 0-.69.06-1 .17V7.83c.31.11.65.17 1 .17z"/></svg>
+          </div>
+          <h3>Share the Referral</h3>
+          <p>Tell a friend, business contact, or past client about Softorio. Send them our way, or introduce us directly — whatever's easiest for you.</p>
+          <span class="aff-step-arrow"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+        </div>
+        <div class="aff-step">
+          <div class="aff-step-num">02</div>
+          <div class="aff-step-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg>
+          </div>
+          <h3>We Onboard Them</h3>
+          <p>We handle the entire relationship from there — discovery calls, proposals, the project itself, hosting, or whatever service they need. You don't lift a finger.</p>
+          <span class="aff-step-arrow"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+        </div>
+        <div class="aff-step">
+          <div class="aff-step-num">03</div>
+          <div class="aff-step-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+          </div>
+          <h3>You Earn For Life</h3>
+          <p>You receive 20% of the profit from that client — on every payment they ever make to us, for as long as they remain a Softorio client. Not a one-time bonus. A lifetime cut.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== COMMISSION HIGHLIGHT ========== -->
+  <section class="section" style="background:var(--dark-2)">
+    <div class="container">
+      <div class="aff-commission" data-aos="fade-up">
+        <div class="aff-commission-num">20%</div>
+        <div class="aff-commission-sub">of the Profit. For Life.</div>
+        <p class="aff-commission-text">Most referral programs pay a one-time bonus and move on. Ours doesn't. Every time your referral pays for a website, hosting renewal, SEO retainer, or any other service — you get 20% of what Softorio profits from that payment, for as long as they're a client. Refer one business today, and it can keep paying you for years.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== WHY PARTNER WITH US ========== -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <span class="section-tag">Why Partner With Us</span>
+        <h2 class="section-title">Built to Be <span class="text-gradient">Worth Your Time</span></h2>
+        <p class="section-sub">We designed this program to be simple, fair, and genuinely rewarding — not a gimmick.</p>
+      </div>
+      <div class="sp-why-cards" data-aos="fade-up" style="display:grid;grid-template-columns:repeat(4,1fr);gap:24px">
+        <div class="sp-why-card"><div class="sp-wc-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div><h4>Lifetime, Not One-Time</h4><p>You keep earning for as long as your referral stays a client — hosting renewals, new projects, everything.</p></div>
+        <div class="sp-why-card"><div class="sp-wc-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10z"/></svg></div><h4>No Cap, No Limit</h4><p>Refer one person or fifty. There's no ceiling on how much you can earn through the program.</p></div>
+        <div class="sp-why-card"><div class="sp-wc-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></div><h4>Zero Risk to Refer</h4><p>Softorio has delivered 300+ projects with real client results — your name is attached to a service you can trust.</p></div>
+        <div class="sp-why-card"><div class="sp-wc-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></div><h4>Simple &amp; Transparent</h4><p>No tiers, no confusing point systems. One flat rate: 20% of profit, explained clearly, every time.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== WHO CAN JOIN ========== -->
+  <section class="section" style="background:var(--dark-2)">
+    <div class="container" style="text-align:center">
+      <div class="section-header" data-aos="fade-up">
+        <span class="section-tag">Open to Everyone</span>
+        <h2 class="section-title">Who Can <span class="text-gradient">Join?</span></h2>
+        <p class="section-sub">If you know a person or business who could use our services, you're already qualified.</p>
+      </div>
+      <div class="aff-who" data-aos="fade-up">
+        <span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Friends &amp; Family</span>
+        <span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Current &amp; Past Clients</span>
+        <span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Freelancers &amp; Agencies</span>
+        <span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Business Owners</span>
+        <span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Content Creators</span>
+        <span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Anyone With a Network</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FAQ ========== -->
+  <section class="section sp-faq" id="faq">
+    <div class="container sp-faq-inner">
+      <div class="sp-faq-left" data-aos="fade-right">
+        <span class="section-tag">FAQ</span>
+        <h2 class="section-title">Common <span class="text-gradient">Questions</span></h2>
+        <p class="section-sub" style="text-align:left;">Still curious about how the program works? Reach out and we'll walk you through it.</p>
+        <a href="#contact-form" class="btn btn-primary" style="margin-top:24px;">Ask Us Anything</a>
+      </div>
+      <div class="sp-faq-right" data-aos="fade-left">
+        <div class="faq-list">
+
+          <div class="faq-item">
+            <button class="faq-q">
+              Who can join the affiliate program?
+              <svg class="faq-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="faq-a">
+              <p>Anyone. You don't need to be an existing client or have any special credentials — friends, business contacts, past clients, or anyone who trusts your recommendation can qualify you for a commission.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-q">
+              How is the 20% commission calculated?
+              <svg class="faq-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="faq-a">
+              <p>You earn 20% of the profit Softorio makes from your referral's account. This applies to every payment they make to us — the first project, hosting renewals, and any future services — for as long as they remain a client.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-q">
+              How long do I keep earning from one referral?
+              <svg class="faq-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="faq-a">
+              <p>For life. This isn't a one-time referral bonus. As long as the client you referred stays with Softorio — whether that's a single project or years of ongoing hosting and support — you continue earning your share.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-q">
+              Is there a limit to how many people I can refer?
+              <svg class="faq-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="faq-a">
+              <p>No cap. Refer as many people or businesses as you want — there's no ceiling on how much you can earn through the program.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-q">
+              How and when do I get paid?
+              <svg class="faq-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="faq-a">
+              <p>Once your referral becomes a confirmed, paying client, we'll reach out to set up simple tracking and agree on a payout method that works for you. We keep this process straightforward and transparent.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-q">
+              What counts as a successful referral?
+              <svg class="faq-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="faq-a">
+              <p>Any person or business you introduce to us who goes on to become a paying Softorio client — for web development, hosting, SEO, automation, eCommerce, or any other service we offer.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== CTA / SIGNUP ========== -->
+  <section class="section sp-contact" id="contact-form">
+    <div class="sp-contact-bg"><div class="sp-contact-orb"></div></div>
+    <div class="container sp-contact-inner" data-aos="fade-up">
+      <div class="sp-contact-left">
+        <span class="section-tag">Start Earning Today</span>
+        <h2 class="section-title">Ready to Turn Referrals Into <span class="text-gradient">Recurring Income?</span></h2>
+        <p class="section-sub" style="text-align:left;max-width:400px;">Tell us a bit about yourself and who you'd like to refer. We'll respond within 24 hours with everything you need to get started.</p>
+        <div class="sp-contact-info">
+          <div class="sp-ci-item"><div class="sp-ci-icon">&#128222;</div><div><div class="sp-ci-label">Phone</div><div class="sp-ci-val">+880 1776060247</div></div></div>
+          <div class="sp-ci-item"><div class="sp-ci-icon">&#9993;</div><div><div class="sp-ci-label">Email</div><div class="sp-ci-val">support@softorio.com</div></div></div>
+        </div>
+      </div>
+      <div class="sp-contact-right">
+        <div class="sp-form-card">
+          <div class="sp-form-grid">
+            <input type="text" class="cta-input" placeholder="Your Name" />
+            <input type="email" class="cta-input" placeholder="Email Address" />
+          </div>
+          <textarea class="cta-input cta-textarea" placeholder="Tell us about yourself and who you'd like to refer..." style="margin-bottom:14px"></textarea>
+          <button class="btn btn-primary btn-lg sp-submit" style="width:100%;justify-content:center;margin-top:4px;">Join the Affiliate Program</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div id="footer-placeholder"></div>
+  <script src="nav.js"></script>
+  <script src="service-page.js"></script>
+</body>
+</html>

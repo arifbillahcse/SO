@@ -128,67 +128,34 @@
         <p class="section-sub">From concept to launch and beyond — we handle every layer of your digital presence.</p>
       </div>
       <div class="services-grid">
-
-        <div class="service-card featured" data-aos="fade-up" data-aos-delay="0">
-          <div class="service-icon-wrap orange">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg>
+        @foreach($services as $i => $service)
+        <div class="service-card{{ $service->featured ? ' featured' : '' }}" data-aos="fade-up" data-aos-delay="{{ $i * 100 }}">
+          <div class="service-icon-wrap{{ $service->featured ? ' orange' : '' }}">
+            @switch($service->icon)
+              @case('code')
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg>
+                @break
+              @case('search')
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/><path d="M11 8v6M8 11h6"/></svg>
+                @break
+              @case('cloud')
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 9a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V9z"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/><line x1="12" y1="12" x2="12" y2="16"/><line x1="10" y1="14" x2="14" y2="14"/></svg>
+                @break
+              @case('gear')
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2a10 10 0 1 0 10 10"/><path d="M12 8v4l3 3"/><circle cx="19" cy="5" r="3"/></svg>
+                @break
+            @endswitch
           </div>
-          <h3 class="service-name">Website Development</h3>
-          <p class="service-desc">Custom WordPress and business websites built for performance, scalability, and conversions.</p>
+          <h3 class="service-name">{{ $service->title }}</h3>
+          <p class="service-desc">{{ $service->short_description }}</p>
           <ul class="service-list">
-            <li>WordPress Development</li>
-            <li>Custom Business Sites</li>
-            <li>WooCommerce / eCommerce</li>
-            <li>Landing Pages</li>
+            @foreach($service->features ?? [] as $feature)
+            <li>{{ $feature }}</li>
+            @endforeach
           </ul>
           <a href="#contact" class="service-link">Learn More &rarr;</a>
         </div>
-
-        <div class="service-card" data-aos="fade-up" data-aos-delay="100">
-          <div class="service-icon-wrap">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/><path d="M11 8v6M8 11h6"/></svg>
-          </div>
-          <h3 class="service-name">SEO Optimization</h3>
-          <p class="service-desc">Technical SEO, on-page optimization, and content strategies that drive organic traffic and rankings.</p>
-          <ul class="service-list">
-            <li>Technical SEO Audit</li>
-            <li>On-page Optimization</li>
-            <li>Speed & Core Web Vitals</li>
-            <li>Keyword Strategy</li>
-          </ul>
-          <a href="#contact" class="service-link">Learn More &rarr;</a>
-        </div>
-
-        <div class="service-card" data-aos="fade-up" data-aos-delay="200">
-          <div class="service-icon-wrap">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 9a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V9z"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/><line x1="12" y1="12" x2="12" y2="16"/><line x1="10" y1="14" x2="14" y2="14"/></svg>
-          </div>
-          <h3 class="service-name">Web Hosting</h3>
-          <p class="service-desc">VPS and cloud hosting solutions configured for speed, security, and 99.9% uptime.</p>
-          <ul class="service-list">
-            <li>VPS / Cloud Servers</li>
-            <li>Domain & DNS Setup</li>
-            <li>SSL & Security</li>
-            <li>Backup & Monitoring</li>
-          </ul>
-          <a href="#contact" class="service-link">Learn More &rarr;</a>
-        </div>
-
-        <div class="service-card" data-aos="fade-up" data-aos-delay="300">
-          <div class="service-icon-wrap">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2a10 10 0 1 0 10 10"/><path d="M12 8v4l3 3"/><circle cx="19" cy="5" r="3"/></svg>
-          </div>
-          <h3 class="service-name">Automation</h3>
-          <p class="service-desc">Streamline repetitive tasks and workflows with smart automation tools and integrations.</p>
-          <ul class="service-list">
-            <li>Workflow Automation</li>
-            <li>API Integrations</li>
-            <li>Email Automation</li>
-            <li>CRM Automation</li>
-          </ul>
-          <a href="#contact" class="service-link">Learn More &rarr;</a>
-        </div>
-
+        @endforeach
       </div>
     </div>
   </section>
@@ -448,78 +415,20 @@
       <div class="testi-carousel" data-aos="fade-up">
         <div class="testi-viewport" id="testiViewport">
           <div class="testi-track" id="testiTrack">
+            @foreach($testimonials as $testimonial)
             <div class="testi-card">
               <svg class="testi-quote" width="34" height="26" viewBox="0 0 34 26" fill="none"><path d="M0 26V15.6C0 10.6 1.1 6.9 3.4 4.5C5.7 2.1 8.9 0.6 13 0V5.4C10.9 5.9 9.3 6.8 8.2 8.1C7.1 9.4 6.5 11.1 6.4 13.2H13V26H0ZM21 26V15.6C21 10.6 22.1 6.9 24.4 4.5C26.7 2.1 29.9 0.6 34 0V5.4C31.9 5.9 30.3 6.8 29.2 8.1C28.1 9.4 27.5 11.1 27.4 13.2H34V26H21Z" fill="currentColor"/></svg>
-              <div class="testi-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-              <p class="testi-text">When it comes to WordPress design, the expertise lies in cutting-edge visually stunning websites. Softorio is committed to ensuring quality improvements, promptly addressing any queries or concerns that may arise.</p>
+              <div class="testi-stars">{!! str_repeat('&#9733;', $testimonial->stars) !!}</div>
+              <p class="testi-text">{{ $testimonial->text }}</p>
               <div class="testi-author">
-                <div class="testi-avatar">O</div>
+                <div class="testi-avatar">{{ $testimonial->avatar_initial }}</div>
                 <div>
-                  <div class="testi-name">Ode</div>
-                  <div class="testi-role">Business Owner</div>
+                  <div class="testi-name">{{ $testimonial->name }}</div>
+                  <div class="testi-role">{{ $testimonial->role }}</div>
                 </div>
               </div>
             </div>
-            <div class="testi-card">
-              <svg class="testi-quote" width="34" height="26" viewBox="0 0 34 26" fill="none"><path d="M0 26V15.6C0 10.6 1.1 6.9 3.4 4.5C5.7 2.1 8.9 0.6 13 0V5.4C10.9 5.9 9.3 6.8 8.2 8.1C7.1 9.4 6.5 11.1 6.4 13.2H13V26H0ZM21 26V15.6C21 10.6 22.1 6.9 24.4 4.5C26.7 2.1 29.9 0.6 34 0V5.4C31.9 5.9 30.3 6.8 29.2 8.1C28.1 9.4 27.5 11.1 27.4 13.2H34V26H21Z" fill="currentColor"/></svg>
-              <div class="testi-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-              <p class="testi-text">Softorio transformed our online presence completely. Their team delivered beyond expectations — fast, professional, and highly responsive. Our website's performance improved drastically after their optimization work.</p>
-              <div class="testi-author">
-                <div class="testi-avatar">S</div>
-                <div>
-                  <div class="testi-name">Sarah M.</div>
-                  <div class="testi-role">eCommerce Director</div>
-                </div>
-              </div>
-            </div>
-            <div class="testi-card">
-              <svg class="testi-quote" width="34" height="26" viewBox="0 0 34 26" fill="none"><path d="M0 26V15.6C0 10.6 1.1 6.9 3.4 4.5C5.7 2.1 8.9 0.6 13 0V5.4C10.9 5.9 9.3 6.8 8.2 8.1C7.1 9.4 6.5 11.1 6.4 13.2H13V26H0ZM21 26V15.6C21 10.6 22.1 6.9 24.4 4.5C26.7 2.1 29.9 0.6 34 0V5.4C31.9 5.9 30.3 6.8 29.2 8.1C28.1 9.4 27.5 11.1 27.4 13.2H34V26H21Z" fill="currentColor"/></svg>
-              <div class="testi-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-              <p class="testi-text">The cloud infrastructure setup was seamless. Softorio handled everything from server configuration to security hardening. We haven't experienced a single moment of downtime in 2 years.</p>
-              <div class="testi-author">
-                <div class="testi-avatar">J</div>
-                <div>
-                  <div class="testi-name">James K.</div>
-                  <div class="testi-role">CTO, Tech Startup</div>
-                </div>
-              </div>
-            </div>
-            <div class="testi-card">
-              <svg class="testi-quote" width="34" height="26" viewBox="0 0 34 26" fill="none"><path d="M0 26V15.6C0 10.6 1.1 6.9 3.4 4.5C5.7 2.1 8.9 0.6 13 0V5.4C10.9 5.9 9.3 6.8 8.2 8.1C7.1 9.4 6.5 11.1 6.4 13.2H13V26H0ZM21 26V15.6C21 10.6 22.1 6.9 24.4 4.5C26.7 2.1 29.9 0.6 34 0V5.4C31.9 5.9 30.3 6.8 29.2 8.1C28.1 9.4 27.5 11.1 27.4 13.2H34V26H21Z" fill="currentColor"/></svg>
-              <div class="testi-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-              <p class="testi-text">Their SEO work brought us from page 5 to page 1 on Google within 4 months. The team is knowledgeable, transparent, and delivers real, measurable results.</p>
-              <div class="testi-author">
-                <div class="testi-avatar">R</div>
-                <div>
-                  <div class="testi-name">Rachel T.</div>
-                  <div class="testi-role">Marketing Manager</div>
-                </div>
-              </div>
-            </div>
-            <div class="testi-card">
-              <svg class="testi-quote" width="34" height="26" viewBox="0 0 34 26" fill="none"><path d="M0 26V15.6C0 10.6 1.1 6.9 3.4 4.5C5.7 2.1 8.9 0.6 13 0V5.4C10.9 5.9 9.3 6.8 8.2 8.1C7.1 9.4 6.5 11.1 6.4 13.2H13V26H0ZM21 26V15.6C21 10.6 22.1 6.9 24.4 4.5C26.7 2.1 29.9 0.6 34 0V5.4C31.9 5.9 30.3 6.8 29.2 8.1C28.1 9.4 27.5 11.1 27.4 13.2H34V26H21Z" fill="currentColor"/></svg>
-              <div class="testi-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-              <p class="testi-text">Working with Softorio on our automation project was a game-changer. They streamlined our entire workflow, saving us 20+ hours per week. Their technical expertise is unmatched.</p>
-              <div class="testi-author">
-                <div class="testi-avatar">M</div>
-                <div>
-                  <div class="testi-name">Michael P.</div>
-                  <div class="testi-role">Operations Lead</div>
-                </div>
-              </div>
-            </div>
-            <div class="testi-card">
-              <svg class="testi-quote" width="34" height="26" viewBox="0 0 34 26" fill="none"><path d="M0 26V15.6C0 10.6 1.1 6.9 3.4 4.5C5.7 2.1 8.9 0.6 13 0V5.4C10.9 5.9 9.3 6.8 8.2 8.1C7.1 9.4 6.5 11.1 6.4 13.2H13V26H0ZM21 26V15.6C21 10.6 22.1 6.9 24.4 4.5C26.7 2.1 29.9 0.6 34 0V5.4C31.9 5.9 30.3 6.8 29.2 8.1C28.1 9.4 27.5 11.1 27.4 13.2H34V26H21Z" fill="currentColor"/></svg>
-              <div class="testi-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-              <p class="testi-text">We migrated to a new eCommerce platform with Softorio's help. The process was smooth with zero downtime, and they even improved our loading speeds. Sales increased 35% in the first month.</p>
-              <div class="testi-author">
-                <div class="testi-avatar">L</div>
-                <div>
-                  <div class="testi-name">Lisa Chen</div>
-                  <div class="testi-role">Founder, Online Retail</div>
-                </div>
-              </div>
-            </div>
+            @endforeach
           </div>
         </div>
         <button class="testi-btn testi-btn-prev" id="testiPrev" aria-label="Previous reviews">&#8592;</button>

@@ -44,16 +44,17 @@
   <section class="section">
     <div class="container">
 
+      @if($featuredArticle)
       <!-- Featured Article -->
       <div class="res-featured" data-aos="fade-up">
         <div>
           <span class="section-tag">Featured Guide</span>
-          <h2 class="section-title" style="text-align:left;margin-top:12px;font-size:clamp(1.5rem,3vw,2rem)">The Complete <span class="text-gradient">WordPress Speed Optimisation</span> Guide 2025</h2>
-          <p style="font-size:0.95rem;color:var(--text-secondary);line-height:1.7;margin:14px 0 24px">Everything you need to score 90+ on Google PageSpeed — from server-level caching to image optimisation, database cleanup, and Core Web Vitals fixes. A comprehensive step-by-step guide by the Softorio team.</p>
+          <h2 class="section-title" style="text-align:left;margin-top:12px;font-size:clamp(1.5rem,3vw,2rem)">{{ $featuredArticle->title }}</h2>
+          <p style="font-size:0.95rem;color:var(--text-secondary);line-height:1.7;margin:14px 0 24px">{{ $featuredArticle->excerpt }}</p>
           <div style="display:flex;gap:12px;flex-wrap:wrap;margin-bottom:24px">
-            <span style="font-size:0.78rem;color:var(--text-muted);font-weight:500">&#128336; 15 min read</span>
-            <span style="font-size:0.78rem;color:var(--text-muted);font-weight:500">&#128197; January 2025</span>
-            <span style="font-size:0.78rem;color:var(--primary);font-weight:600;background:var(--primary-glow);padding:2px 10px;border-radius:100px">WordPress</span>
+            <span style="font-size:0.78rem;color:var(--text-muted);font-weight:500">&#128336; {{ $featuredArticle->read_minutes }} min read</span>
+            <span style="font-size:0.78rem;color:var(--text-muted);font-weight:500">&#128197; {{ $featuredArticle->published_at?->format('F Y') }}</span>
+            <span style="font-size:0.78rem;color:var(--primary);font-weight:600;background:var(--primary-glow);padding:2px 10px;border-radius:100px">{{ $featuredArticle->category }}</span>
           </div>
           <a href="#" class="btn btn-primary">Read Full Guide</a>
         </div>
@@ -67,6 +68,7 @@
           </div>
         </div>
       </div>
+      @endif
 
       <!-- Category Filter -->
       <div class="cat-filter" data-aos="fade-up">
@@ -78,39 +80,32 @@
         <button class="cat-btn">eCommerce</button>
       </div>
 
+      @php
+        $resGradients = [
+          'linear-gradient(135deg,#0a1a0a,#1a2e1a)',
+          'linear-gradient(135deg,#1a0a0a,#2e1a0a)',
+          'linear-gradient(135deg,#0a0a1a,#1a1a3e)',
+          'linear-gradient(135deg,#0f0c29,#302b63)',
+          'linear-gradient(135deg,#0f2027,#203a43)',
+          'linear-gradient(135deg,#1a1a0a,#2e2e0a)',
+        ];
+      @endphp
       <!-- Articles Grid -->
       <div class="res-grid">
-
-        <div class="res-card" data-aos="fade-up" data-aos-delay="0">
-          <div class="res-thumb" style="background:linear-gradient(135deg,#0a1a0a,#1a2e1a)"><span class="res-cat">WordPress</span><div style="width:70%;display:flex;flex-direction:column;gap:8px"><div style="height:8px;background:rgba(255,255,255,0.1);border-radius:4px"></div><div style="height:6px;background:rgba(255,255,255,0.06);border-radius:3px;width:80%"></div><div style="height:6px;background:rgba(255,255,255,0.05);border-radius:3px;width:65%"></div></div></div>
-          <div class="res-body"><div class="res-meta">&#128336; 8 min read &nbsp;|&nbsp; WordPress</div><p class="res-title">How to Harden Your WordPress Site Against Hackers</p><p class="res-desc">A practical checklist covering login protection, file permissions, plugin security, and firewall setup for WordPress.</p><a href="#" class="res-read">Read Article &rarr;</a></div>
+        @foreach($articles as $article)
+        <div class="res-card" data-aos="fade-up" data-aos-delay="{{ ($loop->index % 3) * 80 }}">
+          <div class="res-thumb" style="background:{{ $resGradients[$loop->index % count($resGradients)] }}">
+            <span class="res-cat">{{ $article->category }}</span>
+            <div style="width:70%;display:flex;flex-direction:column;gap:8px"><div style="height:8px;background:rgba(255,255,255,0.1);border-radius:4px"></div><div style="height:6px;background:rgba(255,255,255,0.06);border-radius:3px;width:80%"></div><div style="height:6px;background:rgba(255,255,255,0.05);border-radius:3px;width:65%"></div></div>
+          </div>
+          <div class="res-body">
+            <div class="res-meta">&#128336; {{ $article->read_minutes }} min read &nbsp;|&nbsp; {{ $article->category }}</div>
+            <p class="res-title">{{ $article->title }}</p>
+            <p class="res-desc">{{ $article->excerpt }}</p>
+            <a href="#" class="res-read">Read Article &rarr;</a>
+          </div>
         </div>
-
-        <div class="res-card" data-aos="fade-up" data-aos-delay="80">
-          <div class="res-thumb" style="background:linear-gradient(135deg,#1a0a0a,#2e1a0a)"><span class="res-cat">SEO</span><div style="width:70%;display:flex;flex-direction:column;gap:8px"><div style="height:8px;background:rgba(255,121,0,0.2);border-radius:4px;width:90%"></div><div style="height:6px;background:rgba(255,255,255,0.06);border-radius:3px"></div><div style="height:6px;background:rgba(255,255,255,0.05);border-radius:3px;width:70%"></div></div></div>
-          <div class="res-body"><div class="res-meta">&#128336; 12 min read &nbsp;|&nbsp; SEO</div><p class="res-title">Core Web Vitals: The Complete 2025 Optimisation Guide</p><p class="res-desc">LCP, FID, CLS — what they are, why they matter for rankings, and exactly how to fix them on a WordPress site.</p><a href="#" class="res-read">Read Article &rarr;</a></div>
-        </div>
-
-        <div class="res-card" data-aos="fade-up" data-aos-delay="160">
-          <div class="res-thumb" style="background:linear-gradient(135deg,#0a0a1a,#1a1a3e)"><span class="res-cat">Hosting</span><div style="width:70%;display:grid;grid-template-columns:1fr 1fr;gap:6px"><div style="height:24px;background:rgba(255,121,0,0.15);border-radius:4px"></div><div style="height:24px;background:rgba(255,255,255,0.06);border-radius:4px"></div><div style="height:24px;background:rgba(255,255,255,0.05);border-radius:4px"></div><div style="height:24px;background:rgba(34,197,94,0.1);border-radius:4px"></div></div></div>
-          <div class="res-body"><div class="res-meta">&#128336; 10 min read &nbsp;|&nbsp; Cloud</div><p class="res-title">How to Set Up a WordPress VPS on DigitalOcean (2025)</p><p class="res-desc">Step-by-step guide to provisioning, securing, and optimising a Ubuntu VPS for WordPress — from zero to production.</p><a href="#" class="res-read">Read Article &rarr;</a></div>
-        </div>
-
-        <div class="res-card" data-aos="fade-up" data-aos-delay="0">
-          <div class="res-thumb" style="background:linear-gradient(135deg,#0f0c29,#302b63)"><span class="res-cat">Automation</span><div style="width:70%;display:flex;flex-direction:column;gap:7px"><div style="display:flex;align-items:center;gap:5px"><div style="width:6px;height:6px;background:#22c55e;border-radius:50%"></div><div style="flex:1;height:5px;background:rgba(255,255,255,0.08);border-radius:2px"></div></div><div style="display:flex;align-items:center;gap:5px"><div style="width:6px;height:6px;background:var(--primary);border-radius:50%"></div><div style="flex:1;height:5px;background:rgba(255,121,0,0.2);border-radius:2px"></div></div><div style="display:flex;align-items:center;gap:5px"><div style="width:6px;height:6px;background:#22c55e;border-radius:50%"></div><div style="flex:1;height:5px;background:rgba(255,255,255,0.08);border-radius:2px"></div></div></div></div>
-          <div class="res-body"><div class="res-meta">&#128336; 7 min read &nbsp;|&nbsp; Automation</div><p class="res-title">5 Business Workflows You Should Automate Today</p><p class="res-desc">The most impactful automations for small businesses — lead routing, email follow-up, invoice sending, and reporting.</p><a href="#" class="res-read">Read Article &rarr;</a></div>
-        </div>
-
-        <div class="res-card" data-aos="fade-up" data-aos-delay="80">
-          <div class="res-thumb" style="background:linear-gradient(135deg,#0f2027,#203a43)"><span class="res-cat">eCommerce</span><div style="width:70%;display:grid;grid-template-columns:1fr 1fr 1fr;gap:5px"><div style="height:30px;background:rgba(255,255,255,0.08);border-radius:4px"></div><div style="height:30px;background:rgba(255,255,255,0.08);border-radius:4px"></div><div style="height:30px;background:rgba(255,255,255,0.08);border-radius:4px"></div></div></div>
-          <div class="res-body"><div class="res-meta">&#128336; 9 min read &nbsp;|&nbsp; eCommerce</div><p class="res-title">WooCommerce Checkout Optimisation: Reduce Cart Abandonment</p><p class="res-desc">Proven strategies to streamline your checkout, reduce friction, and recover lost sales using WooCommerce tools.</p><a href="#" class="res-read">Read Article &rarr;</a></div>
-        </div>
-
-        <div class="res-card" data-aos="fade-up" data-aos-delay="160">
-          <div class="res-thumb" style="background:linear-gradient(135deg,#1a1a0a,#2e2e0a)"><span class="res-cat">SEO</span><div style="width:70%;display:flex;flex-direction:column;gap:8px"><div style="height:8px;background:rgba(255,200,0,0.15);border-radius:4px"></div><div style="height:6px;background:rgba(255,255,255,0.07);border-radius:3px;width:80%"></div><div style="height:6px;background:rgba(255,255,255,0.05);border-radius:3px;width:60%"></div></div></div>
-          <div class="res-body"><div class="res-meta">&#128336; 11 min read &nbsp;|&nbsp; SEO</div><p class="res-title">Local SEO for Small Businesses: A Practical Playbook</p><p class="res-desc">Get your business found locally — Google Business Profile, local citations, review strategy, and location page optimisation.</p><a href="#" class="res-read">Read Article &rarr;</a></div>
-        </div>
-
+        @endforeach
       </div>
 
       <div style="text-align:center;margin-top:48px" data-aos="fade-up">

@@ -12,6 +12,13 @@ class Service extends Model
         'route_name',
         'icon',
         'short_description',
+        'features',
+        'featured',
         'sort_order',
+    ];
+
+    protected $casts = [
+        'features' => 'array',
+        'featured' => 'boolean',
     ];
 }

@@ -13,10 +13,12 @@ class Article extends Model
         'excerpt',
         'body',
         'read_minutes',
+        'featured',
         'published_at',
     ];
 
     protected $casts = [
+        'featured' => 'boolean',
         'published_at' => 'datetime',
     ];
 }

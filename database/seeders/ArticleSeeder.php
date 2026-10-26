@@ -12,6 +12,13 @@ class ArticleSeeder extends Seeder
     {
         $articles = [
             [
+                'title' => 'The Complete WordPress Speed Optimisation Guide 2025',
+                'category' => 'WordPress',
+                'excerpt' => 'Everything you need to score 90+ on Google PageSpeed — from server-level caching to image optimisation, database cleanup, and Core Web Vitals fixes. A comprehensive step-by-step guide by the Softorio team.',
+                'read_minutes' => 15,
+                'featured' => true,
+            ],
+            [
                 'title' => 'How to Harden Your WordPress Site Against Hackers',
                 'category' => 'WordPress',
                 'excerpt' => 'A practical checklist covering login protection, file permissions, plugin security, and firewall setup for WordPress.',

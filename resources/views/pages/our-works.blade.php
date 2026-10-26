@@ -56,53 +56,40 @@
         <button class="filter-btn" data-filter="automation">Automation</button>
         <button class="filter-btn" data-filter="seo">SEO</button>
       </div>
+      @php
+        $wpGradients = [
+          'linear-gradient(135deg,#0a0a1a,#1a1a3e)',
+          'linear-gradient(135deg,#0f2027,#203a43)',
+          'linear-gradient(135deg,#0d0d0d,#1a1a2e)',
+          'linear-gradient(135deg,#200122,#6f0000)',
+          'linear-gradient(135deg,#0d1a0d,#1a3a1a)',
+          'linear-gradient(135deg,#0f0c29,#302b63)',
+          'linear-gradient(135deg,#1a0a0a,#2e1a1a)',
+          'linear-gradient(135deg,#0a1a0a,#0f3a0f)',
+          'linear-gradient(135deg,#1a1a0a,#3a3a0f)',
+        ];
+      @endphp
       <div class="works-page-grid" id="portfolioGrid">
-
-        <div class="wp-card" data-category="wordpress" data-aos="fade-up" data-aos-delay="0">
-          <div class="wp-img" style="background:linear-gradient(135deg,#0a0a1a,#1a1a3e)"><div class="wp-mock"><div class="wm-bar"></div><div class="wm-hero" style="height:55px;background:rgba(255,121,0,0.15)"></div><div class="wm-cols"><div style="height:30px;background:rgba(255,255,255,0.06)"></div><div style="height:30px;background:rgba(255,255,255,0.06)"></div></div></div><div class="wp-overlay"><span class="wp-view">View Details</span></div></div>
-          <div class="wp-info"><div class="wp-tags"><span class="wp-tag">WordPress</span><span class="wp-tag">Enterprise</span></div><p class="wp-title">Enterprise Media Platform</p><p class="wp-client">Ask Media Group — North America</p></div>
+        @foreach($portfolioItems as $item)
+        <div class="wp-card" data-category="{{ $item->category }}" data-aos="fade-up" data-aos-delay="{{ ($loop->index % 3) * 60 }}">
+          <div class="wp-img" style="background:{{ $wpGradients[$loop->index % count($wpGradients)] }}">
+            <div class="wp-mock">
+              <div class="wm-bar"></div>
+              <div class="wm-hero" style="height:50px;background:rgba(255,121,0,0.12)"></div>
+            </div>
+            <div class="wp-overlay"><span class="wp-view">View Details</span></div>
+          </div>
+          <div class="wp-info">
+            <div class="wp-tags">
+              @foreach($item->tags as $tag)
+              <span class="wp-tag">{{ $tag }}</span>
+              @endforeach
+            </div>
+            <p class="wp-title">{{ $item->title }}</p>
+            <p class="wp-client">{{ $item->client }}</p>
+          </div>
         </div>
-
-        <div class="wp-card" data-category="ecommerce" data-aos="fade-up" data-aos-delay="60">
-          <div class="wp-img" style="background:linear-gradient(135deg,#0f2027,#203a43)"><div class="wp-mock"><div class="wm-bar"></div><div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px"><div style="height:40px;background:rgba(255,255,255,0.08);border-radius:4px"></div><div style="height:40px;background:rgba(255,255,255,0.08);border-radius:4px"></div><div style="height:40px;background:rgba(255,255,255,0.08);border-radius:4px"></div></div></div><div class="wp-overlay"><span class="wp-view">View Details</span></div></div>
-          <div class="wp-info"><div class="wp-tags"><span class="wp-tag">WooCommerce</span><span class="wp-tag">eCommerce</span></div><p class="wp-title">Online Store — WooCommerce</p><p class="wp-client">Tropicana (PepsiCo) — USA</p></div>
-        </div>
-
-        <div class="wp-card" data-category="cloud" data-aos="fade-up" data-aos-delay="120">
-          <div class="wp-img" style="background:linear-gradient(135deg,#0d0d0d,#1a1a2e)"><div class="wp-mock"><div class="wm-bar"></div><div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-bottom:8px"><div style="height:28px;background:rgba(255,121,0,0.2);border-radius:6px"></div><div style="height:28px;background:rgba(255,255,255,0.06);border-radius:6px"></div><div style="height:28px;background:rgba(255,255,255,0.06);border-radius:6px"></div><div style="height:28px;background:rgba(255,121,0,0.1);border-radius:6px"></div></div></div><div class="wp-overlay"><span class="wp-view">View Details</span></div></div>
-          <div class="wp-info"><div class="wp-tags"><span class="wp-tag">Cloud</span><span class="wp-tag">Infrastructure</span></div><p class="wp-title">Cloud Infrastructure Setup</p><p class="wp-client">Storyful (NewsCorp) — Ireland</p></div>
-        </div>
-
-        <div class="wp-card" data-category="wordpress" data-aos="fade-up" data-aos-delay="0">
-          <div class="wp-img" style="background:linear-gradient(135deg,#200122,#6f0000)"><div class="wp-mock"><div class="wm-bar"></div><div class="wm-hero" style="height:50px;background:rgba(255,255,255,0.06)"></div><div class="wm-cols"><div style="height:28px;background:rgba(255,255,255,0.05)"></div><div style="height:28px;background:rgba(255,255,255,0.05)"></div></div></div><div class="wp-overlay"><span class="wp-view">View Details</span></div></div>
-          <div class="wp-info"><div class="wp-tags"><span class="wp-tag">WordPress</span><span class="wp-tag">Publishing</span></div><p class="wp-title">Publisher Platform</p><p class="wp-client">Association of American Publishers — USA</p></div>
-        </div>
-
-        <div class="wp-card" data-category="ecommerce" data-aos="fade-up" data-aos-delay="60">
-          <div class="wp-img" style="background:linear-gradient(135deg,#0d1a0d,#1a3a1a)"><div class="wp-mock"><div class="wm-bar"></div><div style="display:grid;grid-template-columns:1fr 1fr;gap:6px"><div style="height:45px;background:rgba(255,255,255,0.07);border-radius:5px"></div><div style="height:45px;background:rgba(255,255,255,0.07);border-radius:5px"></div><div style="height:45px;background:rgba(255,255,255,0.07);border-radius:5px"></div><div style="height:45px;background:rgba(255,121,0,0.15);border-radius:5px"></div></div></div><div class="wp-overlay"><span class="wp-view">View Details</span></div></div>
-          <div class="wp-info"><div class="wp-tags"><span class="wp-tag">WooCommerce</span><span class="wp-tag">B2B</span></div><p class="wp-title">Multi-Vendor Marketplace</p><p class="wp-client">DC Innovation — UK</p></div>
-        </div>
-
-        <div class="wp-card" data-category="automation" data-aos="fade-up" data-aos-delay="120">
-          <div class="wp-img" style="background:linear-gradient(135deg,#0f0c29,#302b63)"><div class="wp-mock"><div class="wm-bar"></div><div style="display:flex;flex-direction:column;gap:6px"><div style="display:flex;align-items:center;gap:6px"><div style="width:8px;height:8px;background:#22c55e;border-radius:50%;flex-shrink:0"></div><div style="flex:1;height:6px;background:rgba(255,255,255,0.08);border-radius:3px"></div></div><div style="display:flex;align-items:center;gap:6px"><div style="width:8px;height:8px;background:var(--primary);border-radius:50%;flex-shrink:0"></div><div style="flex:1;height:6px;background:rgba(255,121,0,0.2);border-radius:3px"></div></div><div style="display:flex;align-items:center;gap:6px"><div style="width:8px;height:8px;background:#22c55e;border-radius:50%;flex-shrink:0"></div><div style="flex:1;height:6px;background:rgba(255,255,255,0.08);border-radius:3px"></div></div></div></div><div class="wp-overlay"><span class="wp-view">View Details</span></div></div>
-          <div class="wp-info"><div class="wp-tags"><span class="wp-tag">Automation</span><span class="wp-tag">CRM</span></div><p class="wp-title">Business Automation System</p><p class="wp-client">MarketHive — USA</p></div>
-        </div>
-
-        <div class="wp-card" data-category="seo" data-aos="fade-up" data-aos-delay="0">
-          <div class="wp-img" style="background:linear-gradient(135deg,#1a0a0a,#2e1a1a)"><div class="wp-mock"><div class="wm-bar"></div><div style="display:flex;flex-direction:column;gap:7px"><div style="height:8px;background:rgba(255,121,0,0.25);border-radius:4px;width:90%"></div><div style="height:6px;background:rgba(255,255,255,0.07);border-radius:3px;width:75%"></div><div style="height:6px;background:rgba(255,255,255,0.05);border-radius:3px;width:60%"></div><div style="height:6px;background:rgba(255,255,255,0.07);border-radius:3px;width:80%"></div></div></div><div class="wp-overlay"><span class="wp-view">View Details</span></div></div>
-          <div class="wp-info"><div class="wp-tags"><span class="wp-tag">SEO</span><span class="wp-tag">Content</span></div><p class="wp-title">SEO Growth Campaign</p><p class="wp-client">HKP Group — Asia</p></div>
-        </div>
-
-        <div class="wp-card" data-category="cloud" data-aos="fade-up" data-aos-delay="60">
-          <div class="wp-img" style="background:linear-gradient(135deg,#0a1a0a,#0f3a0f)"><div class="wp-mock"><div class="wm-bar"></div><div style="display:grid;grid-template-columns:1fr 1fr;gap:6px"><div style="height:30px;background:rgba(34,197,94,0.15);border-radius:6px"></div><div style="height:30px;background:rgba(255,255,255,0.06);border-radius:6px"></div><div style="height:30px;background:rgba(255,255,255,0.06);border-radius:6px"></div><div style="height:30px;background:rgba(34,197,94,0.1);border-radius:6px"></div></div></div><div class="wp-overlay"><span class="wp-view">View Details</span></div></div>
-          <div class="wp-info"><div class="wp-tags"><span class="wp-tag">Cloud</span><span class="wp-tag">VPS</span></div><p class="wp-title">Dedicated Server Migration</p><p class="wp-client">STEM Academy — Europe</p></div>
-        </div>
-
-        <div class="wp-card" data-category="wordpress" data-aos="fade-up" data-aos-delay="120">
-          <div class="wp-img" style="background:linear-gradient(135deg,#1a1a0a,#3a3a0f)"><div class="wp-mock"><div class="wm-bar"></div><div class="wm-hero" style="height:55px;background:rgba(255,200,0,0.08)"></div><div class="wm-cols"><div style="height:28px;background:rgba(255,255,255,0.05)"></div><div style="height:28px;background:rgba(255,255,255,0.05)"></div><div style="height:28px;background:rgba(255,255,255,0.05)"></div></div></div><div class="wp-overlay"><span class="wp-view">View Details</span></div></div>
-          <div class="wp-info"><div class="wp-tags"><span class="wp-tag">WordPress</span><span class="wp-tag">News</span></div><p class="wp-title">News & Media Portal</p><p class="wp-client">Scan Media — Bangladesh</p></div>
-        </div>
-
+        @endforeach
       </div>
 
       <div style="text-align:center" data-aos="fade-up">

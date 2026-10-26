@@ -1,8 +1,12 @@
 <?php
 
+use App\Http\Controllers\CaseStudyController;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\OurResourcesController;
+use App\Http\Controllers\OurWorksController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', fn () => view('pages.home'))->name('home');
+Route::get('/', [HomeController::class, 'index'])->name('home');
 
 // Services
 Route::get('/web-development', fn () => view('pages.services.web-development'))->name('web-development');
@@ -16,10 +20,10 @@ Route::get('/cloud-solution', fn () => view('pages.solutions.cloud-solution'))->
 Route::get('/automation-solution', fn () => view('pages.solutions.automation-solution'))->name('automation-solution');
 
 // Resources
-Route::get('/our-works', fn () => view('pages.our-works'))->name('our-works');
+Route::get('/our-works', [OurWorksController::class, 'index'])->name('our-works');
 Route::get('/about-us', fn () => view('pages.about-us'))->name('about-us');
-Route::get('/case-study', fn () => view('pages.case-study'))->name('case-study');
-Route::get('/our-resources', fn () => view('pages.our-resources'))->name('our-resources');
+Route::get('/case-study', [CaseStudyController::class, 'index'])->name('case-study');
+Route::get('/our-resources', [OurResourcesController::class, 'index'])->name('our-resources');
 Route::get('/affiliate-program', fn () => view('pages.affiliate-program'))->name('affiliate-program');
 
 // Hidden page — intentionally not linked in nav/footer, matches noindex,nofollow from the static site

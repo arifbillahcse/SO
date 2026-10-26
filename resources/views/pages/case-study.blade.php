@@ -49,6 +49,7 @@
   <section class="section">
     <div class="container">
 
+      @if($featuredCaseStudy)
       <!-- Featured Case Study -->
       <div class="cs-featured" data-aos="fade-up">
         <div class="cs-featured-img">
@@ -59,117 +60,56 @@
           </div>
         </div>
         <div>
-          <div class="cs-meta"><span class="cs-tag">Featured</span><span class="cs-tag">WordPress</span><span class="cs-tag">Enterprise</span></div>
-          <h2 class="section-title" style="text-align:left;font-size:clamp(1.5rem,3vw,2rem)">Ask Media: <span class="text-gradient">Scaling to Millions</span></h2>
-          <p style="font-size:0.95rem;color:var(--text-secondary);line-height:1.7;margin-bottom:20px">Ask Media Group needed an enterprise-grade WordPress platform capable of handling millions of monthly page views — with zero downtime, blazing speed, and editorial flexibility for a large content team.</p>
-          <p style="font-size:0.9rem;color:var(--text-secondary);line-height:1.7;margin-bottom:24px">We built and deployed a custom WordPress VIP-compliant platform with CDN integration, Redis caching, and a custom editorial workflow — delivering a site that loads in under 1.5 seconds at peak traffic.</p>
+          <div class="cs-meta">
+            @foreach($featuredCaseStudy->tags as $tag)
+            <span class="cs-tag">{{ $tag }}</span>
+            @endforeach
+          </div>
+          <h2 class="section-title" style="text-align:left;font-size:clamp(1.5rem,3vw,2rem)">{{ $featuredCaseStudy->title }}</h2>
+          <p style="font-size:0.95rem;color:var(--text-secondary);line-height:1.7;margin-bottom:24px">{{ $featuredCaseStudy->description }}</p>
           <div class="cs-results">
-            <div class="cs-result"><span class="cs-result-num">1.2s</span><div class="cs-result-label">Page Load Time</div></div>
-            <div class="cs-result"><span class="cs-result-num">0</span><div class="cs-result-label">Downtime Events</div></div>
-            <div class="cs-result"><span class="cs-result-num">5M+</span><div class="cs-result-label">Monthly Page Views</div></div>
+            @foreach($featuredCaseStudy->metrics as $metric)
+            <div class="cs-result"><span class="cs-result-num">{{ $metric['value'] }}</span><div class="cs-result-label">{{ $metric['label'] }}</div></div>
+            @endforeach
           </div>
           <a href="{{ route('home') }}#contact" class="btn btn-primary">Start a Similar Project</a>
         </div>
       </div>
+      @endif
 
+      @php
+        $csGradients = [
+          'linear-gradient(135deg,#0f2027,#203a43)',
+          'linear-gradient(135deg,#1a0a2e,#2d1a4e)',
+          'linear-gradient(135deg,#0d0d0d,#1a1a2e)',
+          'linear-gradient(135deg,#0f0c29,#302b63)',
+          'linear-gradient(135deg,#1a0a0a,#2e1a1a)',
+          'linear-gradient(135deg,#0d1a0d,#1a3a1a)',
+        ];
+      @endphp
       <!-- Case Study Grid -->
       <div class="cs-grid">
-
-        <div class="cs-card" data-aos="fade-up" data-aos-delay="0">
-          <div class="cs-card-img" style="background:linear-gradient(135deg,#0f2027,#203a43)">
+        @foreach($caseStudies as $caseStudy)
+        <div class="cs-card" data-aos="fade-up" data-aos-delay="{{ ($loop->index % 3) * 100 }}">
+          <div class="cs-card-img" style="background:{{ $csGradients[$loop->index % count($csGradients)] }}">
             <div style="width:80%;display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px"><div style="height:38px;background:rgba(255,255,255,0.08);border-radius:5px"></div><div style="height:38px;background:rgba(255,255,255,0.08);border-radius:5px"></div><div style="height:38px;background:rgba(255,255,255,0.08);border-radius:5px"></div></div>
           </div>
           <div class="cs-card-body">
-            <div class="cs-card-meta"><span class="cs-tag">eCommerce</span><span class="cs-tag">WooCommerce</span></div>
-            <p class="cs-card-title">Tropicana Online Store</p>
-            <p class="cs-card-desc">Complete WooCommerce store rebuild with custom checkout, multi-currency support, and email automation for Tropicana's online sales.</p>
+            <div class="cs-card-meta">
+              @foreach($caseStudy->tags as $tag)
+              <span class="cs-tag">{{ $tag }}</span>
+              @endforeach
+            </div>
+            <p class="cs-card-title">{{ $caseStudy->title }}</p>
+            <p class="cs-card-desc">{{ $caseStudy->description }}</p>
             <div class="cs-card-results">
-              <div class="cs-mini-result"><span class="cs-mini-num">+220%</span><div class="cs-mini-label">Conversion Rate</div></div>
-              <div class="cs-mini-result"><span class="cs-mini-num">0.8s</span><div class="cs-mini-label">Checkout Speed</div></div>
-              <div class="cs-mini-result"><span class="cs-mini-num">Stripe</span><div class="cs-mini-label">+ PayPal</div></div>
+              @foreach($caseStudy->metrics as $metric)
+              <div class="cs-mini-result"><span class="cs-mini-num">{{ $metric['value'] }}</span><div class="cs-mini-label">{{ $metric['label'] }}</div></div>
+              @endforeach
             </div>
           </div>
         </div>
-
-        <div class="cs-card" data-aos="fade-up" data-aos-delay="100">
-          <div class="cs-card-img" style="background:linear-gradient(135deg,#1a0a2e,#2d1a4e)">
-            <div style="width:80%;display:flex;flex-direction:column;gap:8px"><div style="height:8px;background:rgba(255,255,255,0.1);border-radius:4px"></div><div style="height:40px;background:rgba(255,255,255,0.05);border-radius:6px"></div><div style="display:flex;gap:6px"><div style="flex:1;height:25px;background:rgba(255,255,255,0.05);border-radius:4px"></div><div style="flex:1;height:25px;background:rgba(255,255,255,0.05);border-radius:4px"></div></div></div>
-          </div>
-          <div class="cs-card-body">
-            <div class="cs-card-meta"><span class="cs-tag">WordPress</span><span class="cs-tag">Publishing</span></div>
-            <p class="cs-card-title">AAP Publisher Platform</p>
-            <p class="cs-card-desc">Multi-author publishing platform with custom editorial workflows, member access control, and advanced content permissions.</p>
-            <div class="cs-card-results">
-              <div class="cs-mini-result"><span class="cs-mini-num">50+</span><div class="cs-mini-label">Authors</div></div>
-              <div class="cs-mini-result"><span class="cs-mini-num">99.9%</span><div class="cs-mini-label">Uptime</div></div>
-              <div class="cs-mini-result"><span class="cs-mini-num">3x</span><div class="cs-mini-label">Publish Speed</div></div>
-            </div>
-          </div>
-        </div>
-
-        <div class="cs-card" data-aos="fade-up" data-aos-delay="200">
-          <div class="cs-card-img" style="background:linear-gradient(135deg,#0d0d0d,#1a1a2e)">
-            <div style="width:80%;display:grid;grid-template-columns:1fr 1fr;gap:6px"><div style="height:32px;background:rgba(255,121,0,0.15);border-radius:6px"></div><div style="height:32px;background:rgba(255,255,255,0.06);border-radius:6px"></div><div style="height:32px;background:rgba(255,255,255,0.06);border-radius:6px"></div><div style="height:32px;background:rgba(34,197,94,0.15);border-radius:6px"></div></div>
-          </div>
-          <div class="cs-card-body">
-            <div class="cs-card-meta"><span class="cs-tag">Cloud</span><span class="cs-tag">Infrastructure</span></div>
-            <p class="cs-card-title">Storyful Cloud Migration</p>
-            <p class="cs-card-desc">Full server migration from shared hosting to a managed VPS with CDN, mail server, and automated backups for zero-downtime publishing.</p>
-            <div class="cs-card-results">
-              <div class="cs-mini-result"><span class="cs-mini-num">99.97%</span><div class="cs-mini-label">Uptime</div></div>
-              <div class="cs-mini-result"><span class="cs-mini-num">4x</span><div class="cs-mini-label">Faster Loading</div></div>
-              <div class="cs-mini-result"><span class="cs-mini-num">$0</span><div class="cs-mini-label">Downtime Cost</div></div>
-            </div>
-          </div>
-        </div>
-
-        <div class="cs-card" data-aos="fade-up" data-aos-delay="0">
-          <div class="cs-card-img" style="background:linear-gradient(135deg,#0f0c29,#302b63)">
-            <div style="width:80%;display:flex;flex-direction:column;gap:7px"><div style="display:flex;align-items:center;gap:6px"><div style="width:7px;height:7px;background:#22c55e;border-radius:50%"></div><div style="flex:1;height:6px;background:rgba(255,255,255,0.08);border-radius:3px"></div></div><div style="display:flex;align-items:center;gap:6px"><div style="width:7px;height:7px;background:var(--primary);border-radius:50%"></div><div style="flex:1;height:6px;background:rgba(255,121,0,0.2);border-radius:3px"></div></div><div style="display:flex;align-items:center;gap:6px"><div style="width:7px;height:7px;background:#22c55e;border-radius:50%"></div><div style="flex:1;height:6px;background:rgba(255,255,255,0.08);border-radius:3px"></div></div></div>
-          </div>
-          <div class="cs-card-body">
-            <div class="cs-card-meta"><span class="cs-tag">Automation</span><span class="cs-tag">CRM</span></div>
-            <p class="cs-card-title">MarketHive Automation</p>
-            <p class="cs-card-desc">End-to-end sales automation — lead capture, CRM pipeline, email sequences, and weekly reporting. Saved 15 hours per week.</p>
-            <div class="cs-card-results">
-              <div class="cs-mini-result"><span class="cs-mini-num">15h</span><div class="cs-mini-label">Saved/Week</div></div>
-              <div class="cs-mini-result"><span class="cs-mini-num">3x</span><div class="cs-mini-label">Lead Response</div></div>
-              <div class="cs-mini-result"><span class="cs-mini-num">+40%</span><div class="cs-mini-label">Close Rate</div></div>
-            </div>
-          </div>
-        </div>
-
-        <div class="cs-card" data-aos="fade-up" data-aos-delay="100">
-          <div class="cs-card-img" style="background:linear-gradient(135deg,#1a0a0a,#2e1a1a)">
-            <div style="width:80%;display:flex;flex-direction:column;gap:7px"><div style="height:7px;background:rgba(255,121,0,0.25);border-radius:4px;width:90%"></div><div style="height:6px;background:rgba(255,255,255,0.07);border-radius:3px;width:75%"></div><div style="height:6px;background:rgba(255,255,255,0.05);border-radius:3px;width:60%"></div></div>
-          </div>
-          <div class="cs-card-body">
-            <div class="cs-card-meta"><span class="cs-tag">SEO</span><span class="cs-tag">Content</span></div>
-            <p class="cs-card-title">HKP Group SEO Campaign</p>
-            <p class="cs-card-desc">Full technical SEO audit, on-page optimisation, and 6-month content campaign that took 18 keywords from page 4 to page 1.</p>
-            <div class="cs-card-results">
-              <div class="cs-mini-result"><span class="cs-mini-num">+340%</span><div class="cs-mini-label">Organic Traffic</div></div>
-              <div class="cs-mini-result"><span class="cs-mini-num">18</span><div class="cs-mini-label">Page 1 Keywords</div></div>
-              <div class="cs-mini-result"><span class="cs-mini-num">4 mo</span><div class="cs-mini-label">Time to Results</div></div>
-            </div>
-          </div>
-        </div>
-
-        <div class="cs-card" data-aos="fade-up" data-aos-delay="200">
-          <div class="cs-card-img" style="background:linear-gradient(135deg,#0d1a0d,#1a3a1a)">
-            <div style="width:80%;display:grid;grid-template-columns:1fr 1fr;gap:6px"><div style="height:32px;background:rgba(255,255,255,0.07);border-radius:6px"></div><div style="height:32px;background:rgba(255,121,0,0.15);border-radius:6px"></div><div style="height:32px;background:rgba(255,255,255,0.05);border-radius:6px"></div><div style="height:32px;background:rgba(255,255,255,0.07);border-radius:6px"></div></div>
-          </div>
-          <div class="cs-card-body">
-            <div class="cs-card-meta"><span class="cs-tag">eCommerce</span><span class="cs-tag">B2B</span></div>
-            <p class="cs-card-title">DC Innovation Marketplace</p>
-            <p class="cs-card-desc">Multi-vendor B2B marketplace with custom vendor dashboards, bulk ordering, and invoice automation for a UK-based distribution company.</p>
-            <div class="cs-card-results">
-              <div class="cs-mini-result"><span class="cs-mini-num">120+</span><div class="cs-mini-label">Vendors</div></div>
-              <div class="cs-mini-result"><span class="cs-mini-num">+180%</span><div class="cs-mini-label">GMV Growth</div></div>
-              <div class="cs-mini-result"><span class="cs-mini-num">Auto</span><div class="cs-mini-label">Invoicing</div></div>
-            </div>
-          </div>
-        </div>
+        @endforeach
       </div>
     </div>
   </section>

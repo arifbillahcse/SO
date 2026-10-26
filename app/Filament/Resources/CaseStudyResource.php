@@ -19,7 +19,7 @@ class CaseStudyResource extends Resource
 {
     protected static ?string $model = CaseStudy::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-chart-bar';
+    protected static string | \BackedEnum | null $navigationIcon = 'heroicon-o-chart-bar';
 
     protected static string | \UnitEnum | null $navigationGroup = 'Content';
 

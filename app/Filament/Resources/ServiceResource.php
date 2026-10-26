@@ -18,7 +18,7 @@ class ServiceResource extends Resource
 {
     protected static ?string $model = Service::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-briefcase';
+    protected static string | \BackedEnum | null $navigationIcon = 'heroicon-o-briefcase';
 
     protected static string | \UnitEnum | null $navigationGroup = 'Content';
 

@@ -22,10 +22,34 @@ jobs:
         with:
           node-version: 20
 
-      - run: npm install
-      - run: npm run build
+      - name: npm install
+        id: npm_install
+        run: npm install 2>&1 | tee /tmp/npm-install.log
+        continue-on-error: true
+
+      - name: npm run build
+        id: npm_build
+        if: steps.npm_install.outcome == 'success'
+        run: npm run build 2>&1 | tee /tmp/npm-build.log
+        continue-on-error: true
+
+      - name: Report failure as commit comment
+        if: steps.npm_install.outcome == 'failure' || steps.npm_build.outcome == 'failure'
+        run: |
+          {
+            echo "### Build Vite assets failed"
+            echo '```'
+            tail -n 100 /tmp/npm-install.log /tmp/npm-build.log 2>/dev/null
+            echo '```'
+          } > /tmp/comment.md
+          gh api repos/${{ github.repository }}/commits/${{ github.sha }}/comments \
+            -f body=@/tmp/comment.md
+          exit 1
+        env:
+          GH_TOKEN: ${{ github.token }}
 
       - name: Commit compiled assets
+        if: steps.npm_build.outcome == 'success'
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"

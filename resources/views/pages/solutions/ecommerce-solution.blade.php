@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('title', 'eCommerce Solution — Softorio')
+@section('description', 'Everything you need to launch, grow, and scale your online store — WooCommerce development, hosting, SEO, and marketing automation bundled into one complete solution.')
 
 @section('content')
 <section class="page-hero">

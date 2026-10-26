@@ -1,2 +1,7 @@
 User-agent: *
-Disallow:
+Disallow: /admin
+Disallow: /our-founders
+Disallow: /contact
+Disallow: /affiliate-referral
+
+Sitemap: /sitemap.xml

@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('title', 'About Us — Softorio')
+@section('description', "For over 10 years we've been the trusted digital partner for businesses worldwide — from solo entrepreneurs to Fortune 500 companies. Here's our story.")
 
 @section('content')
 <section class="page-hero" style="padding-bottom:0">

@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('title', 'Case Studies — Softorio')
+@section('description', "Behind every number is a business that trusted us to solve a real problem. See the results we've delivered in WordPress, eCommerce, cloud, automation, and SEO.")
 
 @push('head')
 <style>

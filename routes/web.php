@@ -7,6 +7,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\OurFoundersController;
 use App\Http\Controllers\OurResourcesController;
 use App\Http\Controllers\OurWorksController;
+use App\Http\Controllers\SitemapController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
@@ -31,6 +32,8 @@ Route::get('/affiliate-program', fn () => view('pages.affiliate-program'))->name
 
 // Hidden page — intentionally not linked in nav/footer, matches noindex,nofollow from the static site
 Route::get('/our-founders', [OurFoundersController::class, 'index'])->name('our-founders');
+
+Route::get('/sitemap.xml', [SitemapController::class, 'index'])->name('sitemap');
 
 // Form submissions — throttled to 5 attempts per minute per IP to deter spam/abuse
 Route::post('/contact', [ContactSubmissionController::class, 'store'])

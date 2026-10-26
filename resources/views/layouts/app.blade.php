@@ -8,6 +8,30 @@
   @hasSection('description')
   <meta name="description" content="@yield('description')" />
   @endif
+  <link rel="canonical" href="{{ url()->current() }}" />
+
+  {{-- Open Graph --}}
+  <meta property="og:site_name" content="Softorio" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="{{ url()->current() }}" />
+  <meta property="og:title" content="@yield('title', 'Softorio — Your Vision, Our Innovation')" />
+  @hasSection('description')
+  <meta property="og:description" content="@yield('description')" />
+  @endif
+  @hasSection('image')
+  <meta property="og:image" content="@yield('image')" />
+  @endif
+
+  {{-- Twitter Card --}}
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="@yield('title', 'Softorio — Your Vision, Our Innovation')" />
+  @hasSection('description')
+  <meta name="twitter:description" content="@yield('description')" />
+  @endif
+  @hasSection('image')
+  <meta name="twitter:image" content="@yield('image')" />
+  @endif
+
   @yield('meta')
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />

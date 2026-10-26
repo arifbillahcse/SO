@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('title', 'Softorio — Your Vision, Our Innovation')
+@section('description', 'Softorio drives digital transformation. We build fast, scalable, and stunning websites, cloud infrastructure, SEO, and automation — so you can focus on growing your business.')
 
 @section('content')
 <!-- ========== HERO ========== -->

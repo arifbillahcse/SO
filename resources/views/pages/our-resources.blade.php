@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('title', 'Our Resources — Softorio')
+@section('description', 'Free guides from the Softorio team — WordPress tutorials, SEO tips, cloud infrastructure walkthroughs, and business automation insights.')
 
 @push('head')
 <style>

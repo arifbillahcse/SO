@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('title', 'Automation Services — Softorio')
+@section('description', 'Stop doing the same repetitive tasks manually. We build custom automation systems that handle your workflows, emails, and data — so you can focus on what matters.')
 
 @section('content')
 <section class="page-hero">

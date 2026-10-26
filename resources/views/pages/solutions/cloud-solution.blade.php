@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('title', 'Cloud Solution — Softorio')
+@section('description', 'VPS setup, server hardening, firewall, DNS, mail server, CDN, and full monitoring — all configured and managed by our cloud experts.')
 
 @section('content')
 <section class="page-hero">

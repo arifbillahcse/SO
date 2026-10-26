@@ -70,11 +70,11 @@
         </div>
       </div>
       <div class="sp-contact-right">
-        <div class="sp-form-card">
-          <input type="text" class="cta-input" placeholder="Your Name" />
-          <input type="email" class="cta-input" placeholder="Email Address" />
-          <input type="tel" class="cta-input" placeholder="Phone Number" />
-          <select class="cta-input">
+        <div class="sp-form-card" data-endpoint="{{ route('contact.store') }}">
+          <input type="text" name="name" class="cta-input" placeholder="Your Name" />
+          <input type="email" name="email" class="cta-input" placeholder="Email Address" />
+          <input type="tel" name="phone" class="cta-input" placeholder="Phone Number" />
+          <select name="service_interested" class="cta-input">
             <option value="" disabled selected>Select Service</option>
             <option>Website Development</option>
             <option>SEO Optimization</option>
@@ -83,7 +83,8 @@
             <option>eCommerce Solution</option>
             <option>Cloud Solution</option>
           </select>
-          <textarea class="cta-input cta-textarea" placeholder="Tell us about your products, your target customers, and what you're hoping to achieve..."></textarea>
+          <textarea name="message" class="cta-input cta-textarea" placeholder="Tell us about your products, your target customers, and what you're hoping to achieve..."></textarea>
+          <input type="text" name="company_website" class="hp-field" tabindex="-1" autocomplete="off" aria-hidden="true" />
           <button class="btn btn-primary btn-lg sp-submit" style="width:100%;justify-content:center;margin-top:4px;">Get eCommerce Proposal</button>
           <p class="sp-form-note">We respond within 24 hours with a detailed proposal and timeline.</p>
         </div>

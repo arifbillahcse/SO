@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\AffiliateReferralController;
 use App\Http\Controllers\CaseStudyController;
+use App\Http\Controllers\ContactSubmissionController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\OurFoundersController;
 use App\Http\Controllers\OurResourcesController;
@@ -29,3 +31,12 @@ Route::get('/affiliate-program', fn () => view('pages.affiliate-program'))->name
 
 // Hidden page — intentionally not linked in nav/footer, matches noindex,nofollow from the static site
 Route::get('/our-founders', [OurFoundersController::class, 'index'])->name('our-founders');
+
+// Form submissions — throttled to 5 attempts per minute per IP to deter spam/abuse
+Route::post('/contact', [ContactSubmissionController::class, 'store'])
+    ->middleware('throttle:5,1')
+    ->name('contact.store');
+
+Route::post('/affiliate-referral', [AffiliateReferralController::class, 'store'])
+    ->middleware('throttle:5,1')
+    ->name('affiliate-referral.store');

@@ -470,20 +470,21 @@
           </div>
         </div>
       </div>
-      <div class="cta-form">
-        <input type="text" placeholder="Your Name" class="cta-input" />
-        <input type="email" placeholder="Your Email" class="cta-input" />
-        <input type="tel" placeholder="Phone Number" class="cta-input" />
-        <select class="cta-input">
+      <div class="cta-form" data-endpoint="{{ route('contact.store') }}">
+        <input type="text" name="name" placeholder="Your Name" class="cta-input" />
+        <input type="email" name="email" placeholder="Your Email" class="cta-input" />
+        <input type="tel" name="phone" placeholder="Phone Number" class="cta-input" />
+        <select name="service_interested" class="cta-input">
           <option value="" disabled selected>Select Service</option>
           <option>Website Development</option>
           <option>SEO Optimization</option>
-          <option>Web Hosting</option>
+          <option>Manage Cloud</option>
           <option>Automation</option>
           <option>eCommerce Solution</option>
           <option>Cloud Solution</option>
         </select>
-        <textarea placeholder="Tell us about your project..." class="cta-input cta-textarea"></textarea>
+        <textarea name="message" placeholder="Tell us about your project..." class="cta-input cta-textarea"></textarea>
+        <input type="text" name="company_website" class="hp-field" tabindex="-1" autocomplete="off" aria-hidden="true" />
         <button class="btn btn-primary btn-lg cta-submit">Send Message</button>
       </div>
     </div>

@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\CaseStudyController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\OurFoundersController;
 use App\Http\Controllers\OurResourcesController;
 use App\Http\Controllers\OurWorksController;
 use Illuminate\Support\Facades\Route;
@@ -27,4 +28,4 @@ Route::get('/our-resources', [OurResourcesController::class, 'index'])->name('ou
 Route::get('/affiliate-program', fn () => view('pages.affiliate-program'))->name('affiliate-program');
 
 // Hidden page — intentionally not linked in nav/footer, matches noindex,nofollow from the static site
-Route::get('/our-founders', fn () => view('pages.our-founders'))->name('our-founders');
+Route::get('/our-founders', [OurFoundersController::class, 'index'])->name('our-founders');

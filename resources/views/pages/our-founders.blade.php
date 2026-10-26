@@ -168,18 +168,14 @@
       </div>
       <div class="page-hero-visual" data-aos="fade-left">
         <div class="founders-hero-visual">
+          @foreach($teamMembers as $member)
           <div class="fh-avatar">
-            <div class="fh-monogram"><img src="{{ asset('images/arif.png') }}" alt="Md. Arif Billah" /></div>
-            <div class="fh-name">Md. Arif Billah</div>
-            <div class="fh-role">Founder &amp; CEO</div>
+            <div class="fh-monogram"><img src="{{ asset($member->photo_path) }}" alt="{{ $member->name }}" /></div>
+            <div class="fh-name">{{ $member->name }}</div>
+            <div class="fh-role">{{ $member->short_role }}</div>
             <div class="fh-cse">B.Sc. CSE</div>
           </div>
-          <div class="fh-avatar">
-            <div class="fh-monogram"><img src="{{ asset('images/asma-formal.png') }}" alt="Asma Akter" /></div>
-            <div class="fh-name">Asma Akter</div>
-            <div class="fh-role">Co-Founder</div>
-            <div class="fh-cse">B.Sc. CSE</div>
-          </div>
+          @endforeach
         </div>
       </div>
     </div>
@@ -215,90 +211,53 @@
         </div>
       </div>
 
-      <!-- ARIF -->
-      <div class="founder" data-aos="fade-up">
+      @foreach($teamMembers as $i => $member)
+      <div class="founder{{ $i % 2 === 1 ? ' reverse' : '' }}" data-aos="fade-up">
         <div class="founder-media">
           <div class="founder-photo">
-            <img src="{{ asset('images/arif.png') }}" alt="Md. Arif Billah — Founder &amp; CEO, Softorio" />
+            <img src="{{ asset($member->photo_path) }}" alt="{{ $member->name }} — {{ $member->short_role }}, Softorio" />
           </div>
           <div class="founder-socials">
-            <a href="https://arifbillah.com" target="_blank" rel="noopener" aria-label="Website">web</a>
-            <a href="mailto:contact@arifbillah.com" aria-label="Email">@</a>
+            @if($member->website_url)
+            <a href="{{ $member->website_url }}" target="_blank" rel="noopener" aria-label="Website">web</a>
+            @endif
+            @if($member->email)
+            <a href="mailto:{{ $member->email }}" aria-label="Email">@</a>
+            @endif
           </div>
         </div>
         <div class="founder-info">
-          <span class="founder-tag"><span class="badge-dot"></span>B.Sc. CSE &nbsp;·&nbsp; Founder &amp; CEO</span>
-          <h3 class="founder-name">Md. Arif Billah</h3>
-          <div class="founder-title">Founder &amp; Chief Executive Officer</div>
+          <span class="founder-tag"><span class="badge-dot"></span>B.Sc. CSE &nbsp;·&nbsp; {{ $member->short_role }}</span>
+          <h3 class="founder-name">{{ $member->name }}</h3>
+          <div class="founder-title">{{ $member->role }}</div>
           <div class="founder-bio">
-            <p>Arif founded Softorio in 2021 while studying Computer Science &amp; Engineering — turning years of freelancing into a full-service digital agency serving international clients. He also founded Hostorio, a web hosting company providing shared, business, reseller and VPS hosting.</p>
-            <p>A cloud and systems specialist, he architects infrastructure on AWS, manages Linux servers (Ubuntu &amp; AlmaLinux), and leads WordPress development end to end. He's a Fiverr Level 2 Seller, an Upwork Top Rated freelancer, and an AWS-certified engineer.</p>
+            @foreach(explode("\n\n", $member->bio) as $paragraph)
+            <p>{{ $paragraph }}</p>
+            @endforeach
           </div>
 
           <div class="founder-highlights">
-            <div class="fh-stat" style="border-color:rgba(255,121,0,0.25)"><div class="fh-stat-num">B.Sc. CSE</div><div class="fh-stat-label">Computer Science &amp; Engineering</div></div>
-            <div class="fh-stat"><div class="fh-stat-num">300+</div><div class="fh-stat-label">Websites Delivered</div></div>
-            <div class="fh-stat"><div class="fh-stat-num">Top Rated</div><div class="fh-stat-label">Upwork Freelancer</div></div>
-            <div class="fh-stat"><div class="fh-stat-num">Level 2</div><div class="fh-stat-label">Fiverr Seller</div></div>
+            @foreach($member->stats ?? [] as $j => $stat)
+            <div class="fh-stat"@if($j === 0) style="border-color:rgba(255,121,0,0.25)"@endif><div class="fh-stat-num">{{ $stat['value'] }}</div><div class="fh-stat-label">{{ $stat['label'] }}</div></div>
+            @endforeach
           </div>
 
-          <div class="founder-sub-h">Recognition &amp; Roles</div>
+          <div class="founder-sub-h">{{ $member->credentials_heading }}</div>
           <div class="founder-creds">
-            <div class="founder-cred"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>1st Runner Up — Hult Prize On-Campus Competition</div>
-            <div class="founder-cred"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>Membership Development Coordinator — IEEE Computer Society, GUB</div>
-            <div class="founder-cred"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>AWS Certified — BASIS Institute of Technology &amp; Management</div>
-            <div class="founder-cred"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>BSc in Computer Science &amp; Engineering — Green University of Bangladesh</div>
+            @foreach($member->credentials ?? [] as $credential)
+            <div class="founder-cred"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>{{ $credential }}</div>
+            @endforeach
           </div>
 
           <div class="founder-sub-h">Core Expertise</div>
           <div class="skill-tags">
-            <span>AWS Cloud</span><span>Linux Server Admin</span><span>WordPress</span><span>PHP</span>
-            <span>DevOps</span><span>cPanel / WHM</span><span>DNS &amp; SSL/TLS</span><span>Web Hosting</span>
+            @foreach($member->skills ?? [] as $skill)
+            <span>{{ $skill }}</span>
+            @endforeach
           </div>
         </div>
       </div>
-
-      <!-- ASMA -->
-      <div class="founder reverse" data-aos="fade-up">
-        <div class="founder-media">
-          <div class="founder-photo">
-            <img src="{{ asset('images/asma-formal.png') }}" alt="Asma Akter — Co-Founder, Softorio" />
-          </div>
-          <div class="founder-socials">
-            <a href="mailto:asmaakter3648@gmail.com" aria-label="Email">@</a>
-          </div>
-        </div>
-        <div class="founder-info">
-          <span class="founder-tag"><span class="badge-dot"></span>B.Sc. CSE &nbsp;·&nbsp; Co-Founder</span>
-          <h3 class="founder-name">Asma Akter</h3>
-          <div class="founder-title">Co-Founder &amp; Head of Research</div>
-          <div class="founder-bio">
-            <p>Asma co-leads Softorio with a focus on research, quality, and emerging technology. A Computer Science &amp; Engineering engineer from Green University of Bangladesh, she brings a strong analytical foundation in programming, databases, networking, and artificial intelligence.</p>
-            <p>Her passion lies in cybersecurity and machine learning — particularly AI-based cyber threat detection and secure, intelligent systems. That research mindset shapes how Softorio approaches security, reliability, and innovation on every project.</p>
-          </div>
-
-          <div class="founder-highlights">
-            <div class="fh-stat" style="border-color:rgba(255,121,0,0.25)"><div class="fh-stat-num">B.Sc. CSE</div><div class="fh-stat-label">Computer Science &amp; Engineering</div></div>
-            <div class="fh-stat"><div class="fh-stat-num">5.00</div><div class="fh-stat-label">SSC — Perfect GPA</div></div>
-            <div class="fh-stat"><div class="fh-stat-num">AI / ML</div><div class="fh-stat-label">Research Focus</div></div>
-            <div class="fh-stat"><div class="fh-stat-num">Security</div><div class="fh-stat-label">Cyber Threat Detection</div></div>
-          </div>
-
-          <div class="founder-sub-h">Focus &amp; Strengths</div>
-          <div class="founder-creds">
-            <div class="founder-cred"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>Cybersecurity &amp; AI-based cyber threat detection research</div>
-            <div class="founder-cred"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>Web programming with PHP &amp; MySQL, CRUD &amp; file systems</div>
-            <div class="founder-cred"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10z"/></svg>Network design &amp; simulation, Java socket programming</div>
-            <div class="founder-cred"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>BSc in Computer Science &amp; Engineering — Green University of Bangladesh</div>
-          </div>
-
-          <div class="founder-sub-h">Core Expertise</div>
-          <div class="skill-tags">
-            <span>Python</span><span>Java</span><span>C / C++</span><span>Cybersecurity</span>
-            <span>Machine Learning</span><span>PHP &amp; MySQL</span><span>Networking</span><span>Data Analysis</span>
-          </div>
-        </div>
-      </div>
+      @endforeach
     </div>
   </section>
 

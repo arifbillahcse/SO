@@ -1,0 +1,354 @@
+@extends('layouts.app')
+
+@section('title', 'Arif &amp; Asma — Co-Founders | Softorio')
+@section('description', 'Meet Md. Arif Billah and Asma Akter — the co-founders leading Softorio. Two CSE engineers building world-class digital solutions for clients worldwide.')
+
+@section('meta')
+  <meta name="robots" content="noindex, nofollow" />
+@endsection
+
+@push('head')
+<style>
+/* ===== FOUNDERS PAGE — scoped styles ===== */
+    .founders-hero-visual { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; }
+    .fh-avatar {
+      width: 150px; height: 180px; border-radius: var(--radius-lg);
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      border: 1px solid var(--border); position: relative; overflow: hidden;
+      background: linear-gradient(160deg, var(--dark-3), var(--dark-2));
+      box-shadow: var(--shadow-card);
+    }
+    .fh-avatar::before {
+      content: ''; position: absolute; inset: 0;
+      background: radial-gradient(circle at 50% 0%, var(--primary-glow), transparent 70%);
+    }
+    .fh-monogram {
+      width: 80px; height: 80px; border-radius: 50%;
+      overflow: hidden; position: relative; z-index: 1;
+      border: 3px solid var(--primary);
+      box-shadow: 0 0 0 4px rgba(255,121,0,0.15), 0 6px 24px rgba(255,121,0,0.3);
+    }
+    .fh-monogram img { width: 100%; height: 100%; object-fit: cover; object-position: top center; }
+    .fh-name { font-size: 0.95rem; font-weight: 700; margin-top: 14px; position: relative; z-index: 1; }
+    .fh-role { font-size: 0.72rem; color: var(--primary); position: relative; z-index: 1; margin-top: 2px; }
+    .fh-cse { font-size: 0.68rem; color: var(--text-muted); position: relative; z-index: 1; margin-top: 4px; letter-spacing: 0.04em; }
+
+    /* CSE shared callout banner */
+    .cse-banner {
+      display: flex; align-items: center; gap: 20px; flex-wrap: wrap;
+      background: linear-gradient(135deg, rgba(255,121,0,0.08), rgba(255,121,0,0.03));
+      border: 1px solid rgba(255,121,0,0.2); border-radius: var(--radius-lg);
+      padding: 28px 32px; margin-bottom: 56px;
+    }
+    .cse-banner-icon {
+      width: 52px; height: 52px; border-radius: var(--radius-md); flex-shrink: 0;
+      background: var(--primary-glow); display: flex; align-items: center; justify-content: center;
+      color: var(--primary);
+    }
+    .cse-banner-text { flex: 1; min-width: 200px; }
+    .cse-banner-text strong { display: block; font-size: 1rem; font-weight: 700; color: var(--text-primary); margin-bottom: 4px; }
+    .cse-banner-text span { font-size: 0.88rem; color: var(--text-secondary); }
+    .cse-banner-badge {
+      display: inline-flex; align-items: center; gap: 8px; padding: 8px 18px;
+      border-radius: 100px; border: 1px solid rgba(255,121,0,0.3);
+      font-size: 0.82rem; font-weight: 700; color: var(--primary); white-space: nowrap;
+    }
+
+    /* Founder profile block */
+    .founder {
+      display: grid; grid-template-columns: 320px 1fr; gap: 56px; align-items: start;
+      padding: 64px 0; border-bottom: 1px solid var(--border);
+    }
+    .founder.reverse { grid-template-columns: 1fr 320px; }
+    .founder.reverse .founder-media { order: 2; }
+
+    .founder-media { position: sticky; top: 100px; }
+    .founder-photo {
+      width: 100%; aspect-ratio: 4/5; border-radius: var(--radius-lg); overflow: hidden;
+      background: linear-gradient(160deg, var(--dark-3), var(--dark-2));
+      border: 1px solid var(--border); box-shadow: var(--shadow-card);
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      position: relative;
+    }
+    .founder-photo img { width: 100%; height: 100%; object-fit: cover; }
+    .founder-photo::after {
+      content: ''; position: absolute; inset: 0;
+      background: radial-gradient(circle at 50% 10%, var(--primary-glow), transparent 65%); pointer-events: none;
+    }
+    .founder-photo .fp-mono {
+      width: 96px; height: 96px; border-radius: 50%;
+      background: linear-gradient(135deg, var(--primary), var(--primary-light));
+      display: flex; align-items: center; justify-content: center;
+      font-size: 2.2rem; font-weight: 800; color: #fff; position: relative; z-index: 1;
+      box-shadow: 0 8px 30px rgba(255,121,0,0.45);
+    }
+    .founder-socials { display: flex; gap: 10px; margin-top: 20px; justify-content: center; }
+    .founder-socials a {
+      width: 40px; height: 40px; border-radius: var(--radius-sm);
+      display: flex; align-items: center; justify-content: center;
+      background: var(--dark-3); border: 1px solid var(--border);
+      color: var(--text-secondary); font-size: 0.78rem; font-weight: 700;
+      transition: var(--transition);
+    }
+    .founder-socials a:hover { border-color: var(--primary); color: var(--primary); transform: translateY(-2px); }
+
+    .founder-tag {
+      display: inline-flex; align-items: center; gap: 8px; padding: 6px 14px;
+      border-radius: 100px; background: var(--primary-glow); color: var(--primary);
+      font-size: 0.78rem; font-weight: 600; margin-bottom: 14px;
+    }
+    .founder-name { font-size: 2.1rem; font-weight: 800; line-height: 1.15; }
+    .founder-title { font-size: 1rem; color: var(--primary); font-weight: 600; margin: 6px 0 20px; }
+    .founder-bio p { font-size: 0.95rem; color: var(--text-secondary); line-height: 1.8; margin-bottom: 14px; }
+
+    .founder-highlights { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 26px 0; }
+    .fh-stat {
+      background: var(--dark-3); border: 1px solid var(--border); border-radius: var(--radius-md);
+      padding: 18px 20px; transition: var(--transition);
+    }
+    .fh-stat:hover { border-color: rgba(255,121,0,0.3); transform: translateY(-3px); }
+    .fh-stat-num { font-size: 1.5rem; font-weight: 800; color: var(--primary); }
+    .fh-stat-label { font-size: 0.8rem; color: var(--text-secondary); margin-top: 2px; }
+
+    .skill-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px; }
+    .skill-tags span {
+      font-size: 0.78rem; padding: 6px 13px; border-radius: 100px;
+      background: var(--dark-3); border: 1px solid var(--border); color: var(--text-secondary);
+    }
+    .founder-sub-h { font-size: 0.78rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-muted); margin: 24px 0 10px; }
+
+    .founder-creds { display: flex; flex-direction: column; gap: 10px; margin-top: 8px; }
+    .founder-cred { display: flex; gap: 12px; align-items: flex-start; font-size: 0.88rem; color: var(--text-secondary); }
+    .founder-cred svg { flex-shrink: 0; margin-top: 2px; color: var(--primary); }
+
+    /* Couple note */
+    .couple-note {
+      max-width: 760px; margin: 0 auto; text-align: center;
+      background: linear-gradient(160deg, var(--dark-3), var(--dark-2));
+      border: 1px solid var(--border); border-radius: var(--radius-xl);
+      padding: 48px 40px; position: relative; overflow: hidden;
+    }
+    .couple-note::before {
+      content: ''; position: absolute; inset: 0;
+      background: radial-gradient(circle at 50% 0%, var(--primary-glow), transparent 60%); pointer-events: none;
+    }
+    .couple-note .cn-icon {
+      width: 56px; height: 56px; border-radius: 50%; margin: 0 auto 20px;
+      background: var(--primary-glow); display: flex; align-items: center; justify-content: center;
+      color: var(--primary); position: relative; z-index: 1;
+    }
+    .couple-note p { font-size: 1.15rem; line-height: 1.7; color: var(--text-primary); position: relative; z-index: 1; font-weight: 500; }
+    .couple-note .cn-sign { margin-top: 18px; font-size: 0.9rem; color: var(--primary); font-weight: 600; position: relative; z-index: 1; }
+
+    @media (max-width: 768px) {
+      .founder, .founder.reverse { grid-template-columns: 1fr; gap: 28px; }
+      .founder.reverse .founder-media { order: -1; }
+      .founder-media { position: static; max-width: 280px; margin: 0 auto; }
+      .founder-name { font-size: 1.7rem; }
+      .couple-note { padding: 36px 24px; }
+      .couple-note p { font-size: 1rem; }
+    }
+</style>
+@endpush
+
+@section('content')
+<!-- ===== HERO ===== -->
+  <section class="page-hero" style="padding-bottom:0">
+    <div class="page-hero-bg"><div class="ph-orb ph-orb-1"></div><div class="ph-orb ph-orb-2"></div><div class="ph-grid"></div></div>
+    <div class="container page-hero-inner">
+      <div class="page-hero-content" data-aos="fade-up">
+        <div class="breadcrumb"><a href="{{ route('home') }}">Home</a><span>/</span><a href="{{ route('about-us') }}">About</a><span>/</span><span class="bc-current">Co-Founders</span></div>
+        <div class="hero-badge"><span class="badge-dot"></span>B.Sc. Computer Science &amp; Engineering — Both Founders</div>
+        <h1 class="page-hero-title">Arif &amp; <span class="text-gradient">Asma</span></h1>
+        <p class="page-hero-sub">Two Computer Science &amp; Engineering graduates who built Softorio from the ground up. Every project is led by engineers who understand the technology — not just manage it.</p>
+        <div class="page-hero-cta">
+          <a href="{{ route('home') }}#contact" class="btn btn-primary btn-lg">Work With Us</a>
+          <a href="{{ route('our-works') }}" class="btn btn-outline btn-lg">See Our Work</a>
+        </div>
+      </div>
+      <div class="page-hero-visual" data-aos="fade-left">
+        <div class="founders-hero-visual">
+          <div class="fh-avatar">
+            <div class="fh-monogram"><img src="{{ asset('images/arif.png') }}" alt="Md. Arif Billah" /></div>
+            <div class="fh-name">Md. Arif Billah</div>
+            <div class="fh-role">Founder &amp; CEO</div>
+            <div class="fh-cse">B.Sc. CSE</div>
+          </div>
+          <div class="fh-avatar">
+            <div class="fh-monogram"><img src="{{ asset('images/asma-formal.png') }}" alt="Asma Akter" /></div>
+            <div class="fh-name">Asma Akter</div>
+            <div class="fh-role">Co-Founder</div>
+            <div class="fh-cse">B.Sc. CSE</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="trust-bar"><div class="container trust-inner">
+      <div class="trust-item"><span class="trust-num">300+</span><span class="trust-label">Websites Delivered</span></div><div class="trust-sep"></div>
+      <div class="trust-item"><span class="trust-num">200+</span><span class="trust-label">Servers Managed</span></div><div class="trust-sep"></div>
+      <div class="trust-item"><span class="trust-num">2</span><span class="trust-label">Tech Companies Founded</span></div><div class="trust-sep"></div>
+      <div class="trust-item"><span class="trust-num">2021</span><span class="trust-label">Founded</span></div>
+    </div></div>
+  </section>
+
+  <!-- ===== FOUNDER PROFILES ===== -->
+  <section class="section" style="padding-top:80px;padding-bottom:40px">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <span class="section-tag">Meet the Founders</span>
+        <h2 class="section-title">Two <span class="text-gradient">CSE Engineers</span> Leading Every Project</h2>
+        <p class="section-sub">Both founders hold a Bachelor of Science in Computer Science &amp; Engineering — which means when you work with Softorio, you're working directly with people who understand the technology at every level.</p>
+      </div>
+
+      <!-- CSE CALLOUT -->
+      <div class="cse-banner" data-aos="fade-up">
+        <div class="cse-banner-icon">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+        </div>
+        <div class="cse-banner-text">
+          <strong>Both founders are Computer Science &amp; Engineering graduates</strong>
+          <span>B.Sc. in Computer Science &amp; Engineering — Green University of Bangladesh &nbsp;·&nbsp; IEEE Members &nbsp;·&nbsp; Active researchers and practitioners</span>
+        </div>
+        <div class="cse-banner-badge">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+          Verified CSE Engineers
+        </div>
+      </div>
+
+      <!-- ARIF -->
+      <div class="founder" data-aos="fade-up">
+        <div class="founder-media">
+          <div class="founder-photo">
+            <img src="{{ asset('images/arif.png') }}" alt="Md. Arif Billah — Founder &amp; CEO, Softorio" />
+          </div>
+          <div class="founder-socials">
+            <a href="https://arifbillah.com" target="_blank" rel="noopener" aria-label="Website">web</a>
+            <a href="mailto:contact@arifbillah.com" aria-label="Email">@</a>
+          </div>
+        </div>
+        <div class="founder-info">
+          <span class="founder-tag"><span class="badge-dot"></span>B.Sc. CSE &nbsp;·&nbsp; Founder &amp; CEO</span>
+          <h3 class="founder-name">Md. Arif Billah</h3>
+          <div class="founder-title">Founder &amp; Chief Executive Officer</div>
+          <div class="founder-bio">
+            <p>Arif founded Softorio in 2021 while studying Computer Science &amp; Engineering — turning years of freelancing into a full-service digital agency serving international clients. He also founded Hostorio, a web hosting company providing shared, business, reseller and VPS hosting.</p>
+            <p>A cloud and systems specialist, he architects infrastructure on AWS, manages Linux servers (Ubuntu &amp; AlmaLinux), and leads WordPress development end to end. He's a Fiverr Level 2 Seller, an Upwork Top Rated freelancer, and an AWS-certified engineer.</p>
+          </div>
+
+          <div class="founder-highlights">
+            <div class="fh-stat" style="border-color:rgba(255,121,0,0.25)"><div class="fh-stat-num">B.Sc. CSE</div><div class="fh-stat-label">Computer Science &amp; Engineering</div></div>
+            <div class="fh-stat"><div class="fh-stat-num">300+</div><div class="fh-stat-label">Websites Delivered</div></div>
+            <div class="fh-stat"><div class="fh-stat-num">Top Rated</div><div class="fh-stat-label">Upwork Freelancer</div></div>
+            <div class="fh-stat"><div class="fh-stat-num">Level 2</div><div class="fh-stat-label">Fiverr Seller</div></div>
+          </div>
+
+          <div class="founder-sub-h">Recognition &amp; Roles</div>
+          <div class="founder-creds">
+            <div class="founder-cred"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>1st Runner Up — Hult Prize On-Campus Competition</div>
+            <div class="founder-cred"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>Membership Development Coordinator — IEEE Computer Society, GUB</div>
+            <div class="founder-cred"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>AWS Certified — BASIS Institute of Technology &amp; Management</div>
+            <div class="founder-cred"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>BSc in Computer Science &amp; Engineering — Green University of Bangladesh</div>
+          </div>
+
+          <div class="founder-sub-h">Core Expertise</div>
+          <div class="skill-tags">
+            <span>AWS Cloud</span><span>Linux Server Admin</span><span>WordPress</span><span>PHP</span>
+            <span>DevOps</span><span>cPanel / WHM</span><span>DNS &amp; SSL/TLS</span><span>Web Hosting</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- ASMA -->
+      <div class="founder reverse" data-aos="fade-up">
+        <div class="founder-media">
+          <div class="founder-photo">
+            <img src="{{ asset('images/asma-formal.png') }}" alt="Asma Akter — Co-Founder, Softorio" />
+          </div>
+          <div class="founder-socials">
+            <a href="mailto:asmaakter3648@gmail.com" aria-label="Email">@</a>
+          </div>
+        </div>
+        <div class="founder-info">
+          <span class="founder-tag"><span class="badge-dot"></span>B.Sc. CSE &nbsp;·&nbsp; Co-Founder</span>
+          <h3 class="founder-name">Asma Akter</h3>
+          <div class="founder-title">Co-Founder &amp; Head of Research</div>
+          <div class="founder-bio">
+            <p>Asma co-leads Softorio with a focus on research, quality, and emerging technology. A Computer Science &amp; Engineering engineer from Green University of Bangladesh, she brings a strong analytical foundation in programming, databases, networking, and artificial intelligence.</p>
+            <p>Her passion lies in cybersecurity and machine learning — particularly AI-based cyber threat detection and secure, intelligent systems. That research mindset shapes how Softorio approaches security, reliability, and innovation on every project.</p>
+          </div>
+
+          <div class="founder-highlights">
+            <div class="fh-stat" style="border-color:rgba(255,121,0,0.25)"><div class="fh-stat-num">B.Sc. CSE</div><div class="fh-stat-label">Computer Science &amp; Engineering</div></div>
+            <div class="fh-stat"><div class="fh-stat-num">5.00</div><div class="fh-stat-label">SSC — Perfect GPA</div></div>
+            <div class="fh-stat"><div class="fh-stat-num">AI / ML</div><div class="fh-stat-label">Research Focus</div></div>
+            <div class="fh-stat"><div class="fh-stat-num">Security</div><div class="fh-stat-label">Cyber Threat Detection</div></div>
+          </div>
+
+          <div class="founder-sub-h">Focus &amp; Strengths</div>
+          <div class="founder-creds">
+            <div class="founder-cred"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>Cybersecurity &amp; AI-based cyber threat detection research</div>
+            <div class="founder-cred"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>Web programming with PHP &amp; MySQL, CRUD &amp; file systems</div>
+            <div class="founder-cred"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10z"/></svg>Network design &amp; simulation, Java socket programming</div>
+            <div class="founder-cred"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>BSc in Computer Science &amp; Engineering — Green University of Bangladesh</div>
+          </div>
+
+          <div class="founder-sub-h">Core Expertise</div>
+          <div class="skill-tags">
+            <span>Python</span><span>Java</span><span>C / C++</span><span>Cybersecurity</span>
+            <span>Machine Learning</span><span>PHP &amp; MySQL</span><span>Networking</span><span>Data Analysis</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== STORY ===== -->
+  <section class="section sp-why" style="background:var(--dark-2)">
+    <div class="container sp-why-inner">
+      <div class="sp-why-left" data-aos="fade-right">
+        <span class="section-tag">Our Story</span>
+        <h2 class="section-title">How <span class="text-gradient">Softorio</span> Began</h2>
+        <p class="section-sub" style="text-align:left">It started the way most good things do — with curiosity, late nights, and a refusal to settle for "good enough."</p>
+        <p style="font-size:0.95rem;color:var(--text-secondary);line-height:1.8;margin-top:16px">In 2021, two Computer Science &amp; Engineering students at Green University of Bangladesh decided to turn freelance expertise into something bigger. Arif — already a Top Rated Upwork freelancer and Fiverr Level 2 Seller — had delivered hundreds of websites and managed servers for clients worldwide. Asma brought the research rigour: a deep focus on security, AI, and engineering systems that don't just work, but work <em>reliably</em>.</p>
+        <p style="font-size:0.95rem;color:var(--text-secondary);line-height:1.8;margin-top:12px">Together they built Softorio into a full-service digital agency — web development, cloud, hosting, SEO, and automation — serving clients worldwide from Dhaka, Bangladesh. Two companies, hundreds of projects, and one shared standard: do it right, every time.</p>
+      </div>
+      <div class="sp-why-right" data-aos="fade-left">
+        <div class="sp-why-cards">
+          <div class="sp-why-card" style="background:var(--dark-3)"><div class="sp-wc-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></div><h4>Engineering First</h4><p>Both founders are CSE engineers — we lead with technical depth, not sales talk.</p></div>
+          <div class="sp-why-card" style="background:var(--dark-3)"><div class="sp-wc-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div><h4>Reliability</h4><p>From server uptime to security hardening, we obsess over the things that keep clients online.</p></div>
+          <div class="sp-why-card" style="background:var(--dark-3)"><div class="sp-wc-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg></div><h4>Innovation</h4><p>A research-driven approach means we bring AI, automation, and modern cloud to every solution.</p></div>
+          <div class="sp-why-card" style="background:var(--dark-3)"><div class="sp-wc-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg></div><h4>Human-First</h4><p>Technology should serve people. Every decision starts with what's best for the client.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== COUPLE NOTE ===== -->
+  <section class="section">
+    <div class="container">
+      <div class="couple-note" data-aos="fade-up">
+        <div class="cn-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></div>
+        <p>"We're not just business partners — we're partners in life. Softorio is what happens when two people who trust each other completely decide to build something they believe in. That trust shows up in every line of code and every client we serve."</p>
+        <div class="cn-sign">— Arif &amp; Asma, Co-Founders of Softorio</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CTA ===== -->
+  <section class="section sp-contact" style="background:var(--dark-2)">
+    <div class="sp-contact-bg"><div class="sp-contact-orb"></div></div>
+    <div class="container" style="text-align:center;position:relative" data-aos="fade-up">
+      <span class="section-tag">Let's Build Together</span>
+      <h2 class="section-title" style="margin-top:14px">Want to Work With <span class="text-gradient">Us Directly?</span></h2>
+      <p class="section-sub" style="margin:0 auto 36px;max-width:520px">Whether it's a website, cloud infrastructure, hosting, or a complete digital solution — we'd love to hear about your project.</p>
+      <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap">
+        <a href="{{ route('home') }}#contact" class="btn btn-primary btn-lg">Start a Conversation</a>
+        <a href="{{ route('about-us') }}" class="btn btn-outline btn-lg">About Softorio</a>
+      </div>
+    </div>
+  </section>
+@endsection
+
+@push('scripts')
+  @vite(['resources/js/service.js'])
+@endpush

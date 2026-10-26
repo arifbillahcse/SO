@@ -19,7 +19,7 @@ class PortfolioItemResource extends Resource
 
     protected static ?string $navigationIcon = 'heroicon-o-squares-2x2';
 
-    protected static ?string $navigationGroup = 'Content';
+    protected static string | \UnitEnum | null $navigationGroup = 'Content';
 
     protected static ?string $navigationLabel = 'Portfolio';
 

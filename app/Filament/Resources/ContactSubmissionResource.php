@@ -19,7 +19,7 @@ class ContactSubmissionResource extends Resource
 
     protected static ?string $navigationIcon = 'heroicon-o-inbox';
 
-    protected static ?string $navigationGroup = 'Leads';
+    protected static string | \UnitEnum | null $navigationGroup = 'Leads';
 
     protected static ?string $navigationLabel = 'Contact Submissions';
 

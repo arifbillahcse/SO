@@ -19,7 +19,7 @@ class AffiliateReferralResource extends Resource
 
     protected static ?string $navigationIcon = 'heroicon-o-user-plus';
 
-    protected static ?string $navigationGroup = 'Leads';
+    protected static string | \UnitEnum | null $navigationGroup = 'Leads';
 
     protected static ?string $navigationLabel = 'Affiliate Referrals';
 

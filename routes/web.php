@@ -12,6 +12,23 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 
+// Temporary diagnostic route — remove once SQLite driver issue is confirmed fixed.
+// Skips session/cookie middleware since those also hit the (currently broken) DB connection.
+Route::get('/__diag', function () {
+    return response()->json([
+        'pdo_drivers' => \PDO::getAvailableDrivers(),
+        'pdo_sqlite_loaded' => extension_loaded('pdo_sqlite'),
+        'sqlite3_loaded' => extension_loaded('sqlite3'),
+        'php_version' => PHP_VERSION,
+        'php_ini_loaded_file' => php_ini_loaded_file(),
+        'loaded_extensions' => get_loaded_extensions(),
+    ]);
+})->withoutMiddleware([
+    \Illuminate\Session\Middleware\StartSession::class,
+    \Illuminate\Cookie\Middleware\EncryptCookies::class,
+    \Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse::class,
+]);
+
 // Services
 Route::get('/web-development', fn () => view('pages.services.web-development'))->name('web-development');
 Route::get('/seo', fn () => view('pages.services.seo'))->name('seo');

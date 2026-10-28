@@ -1,7 +1,8 @@
 <header class="navbar" id="navbar">
   <div class="container nav-inner">
     <a href="{{ route('home') }}" class="logo">
-      <img src="{{ asset('images/logo.png') }}" alt="Softorio" class="logo-img">
+      <span class="logo-icon">S</span>
+      <span class="logo-text">Softorio</span>
     </a>
     <nav class="nav-links" id="navLinks">
 

@@ -2,8 +2,7 @@
   <div class="container footer-grid">
     <div class="footer-brand">
       <a href="{{ route('home') }}" class="logo">
-        <span class="logo-icon">S</span>
-        <span class="logo-text">Softorio</span>
+        <img src="{{ asset('images/logo.png') }}" alt="Softorio" class="logo-img">
       </a>
       <p class="footer-tagline">Your Vision, Our Innovation. Driving digital transformation for businesses worldwide.</p>
       <div class="footer-socials">

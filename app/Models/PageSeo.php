@@ -14,6 +14,7 @@ use Illuminate\Database\Eloquent\Model;
     'robots_index',
     'robots_follow',
     'robots_advanced',
+    'schema_type',
     'og_title',
     'og_description',
     'og_image',

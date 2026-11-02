@@ -30,6 +30,33 @@
             ],
         ]);
     }
+
+    $organizationSchema = json_encode(array_filter([
+        '@context' => 'https://schema.org',
+        '@type' => 'Organization',
+        'name' => $orgSettings->name,
+        'url' => url('/'),
+        'logo' => $orgSettings->logo ? asset('storage/' . $orgSettings->logo) : null,
+        'description' => $orgSettings->description,
+        'telephone' => $orgSettings->telephone,
+        'email' => $orgSettings->email,
+        'sameAs' => array_values(array_filter([
+            $orgSettings->facebook_url,
+            $orgSettings->twitter_url,
+            $orgSettings->linkedin_url,
+            $orgSettings->youtube_url,
+        ])),
+    ]));
+
+    $pageSchemaType = $pageSeo?->schema_type ?: 'WebPage';
+    $pageSchema = json_encode(array_filter([
+        '@context' => 'https://schema.org',
+        '@type' => $pageSchemaType,
+        'name' => $seoTitle,
+        'description' => $seoDescription,
+        'url' => $canonicalUrl,
+        'provider' => $pageSchemaType === 'Service' ? ['@type' => 'Organization', 'name' => $orgSettings->name, 'url' => url('/')] : null,
+    ]));
   @endphp
   <title>{{ $seoTitle }}</title>
   <meta name="robots" content="{{ implode(', ', $robotsParts) }}" />
@@ -60,6 +87,8 @@
   <meta name="twitter:image" content="{{ $pageSeo?->twitter_image ? asset('storage/' . $pageSeo->twitter_image) : $seoImage }}" />
   @endif
 
+  <script type="application/ld+json">{!! $organizationSchema !!}</script>
+  <script type="application/ld+json">{!! $pageSchema !!}</script>
   @if($breadcrumbSchema)
   <script type="application/ld+json">{!! $breadcrumbSchema !!}</script>
   @endif

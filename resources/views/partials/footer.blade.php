@@ -7,10 +7,10 @@
       </a>
       <p class="footer-tagline">Your Vision, Our Innovation. Driving digital transformation for businesses worldwide.</p>
       <div class="footer-socials">
-        <a href="#" class="social-btn sm" aria-label="Facebook">f</a>
-        <a href="#" class="social-btn sm" aria-label="Twitter">t</a>
-        <a href="#" class="social-btn sm" aria-label="LinkedIn">in</a>
-        <a href="#" class="social-btn sm" aria-label="YouTube">yt</a>
+        <a href="{{ $orgSettings?->facebook_url ?: '#' }}" class="social-btn sm" aria-label="Facebook">f</a>
+        <a href="{{ $orgSettings?->twitter_url ?: '#' }}" class="social-btn sm" aria-label="Twitter">t</a>
+        <a href="{{ $orgSettings?->linkedin_url ?: '#' }}" class="social-btn sm" aria-label="LinkedIn">in</a>
+        <a href="{{ $orgSettings?->youtube_url ?: '#' }}" class="social-btn sm" aria-label="YouTube">yt</a>
       </div>
     </div>
     <div class="footer-col">

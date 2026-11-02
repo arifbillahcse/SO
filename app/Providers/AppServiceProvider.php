@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use App\Models\OrganizationSettings;
 use App\Models\PageSeo;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
@@ -25,6 +26,11 @@ class AppServiceProvider extends ServiceProvider
             $routeName = request()->route()?->getName();
 
             $view->with('pageSeo', $routeName ? PageSeo::where('route_name', $routeName)->first() : null);
+            $view->with('orgSettings', OrganizationSettings::current());
+        });
+
+        View::composer('partials.footer', function ($view): void {
+            $view->with('orgSettings', OrganizationSettings::current());
         });
     }
 }

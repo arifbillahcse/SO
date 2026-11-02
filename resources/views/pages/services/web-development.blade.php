@@ -653,82 +653,18 @@
     </div>
   </section>
 
-  <!-- ========== FAQ ========== -->
-  <section class="section sp-faq" id="faq">
-    <div class="container sp-faq-inner">
-      <div class="sp-faq-left" data-aos="fade-right">
-        <span class="section-tag">FAQ</span>
-        <h2 class="section-title">Frequently Asked <span class="text-gradient">Questions</span></h2>
-        <p class="section-sub" style="text-align:left;">Still have questions? We're happy to answer anything. Reach out directly anytime.</p>
-        <a href="#contact-form" class="btn btn-primary" style="margin-top:24px;">Ask Us Anything</a>
-      </div>
-      <div class="sp-faq-right" data-aos="fade-left">
-        <div class="faq-list">
-
-          <div class="faq-item">
-            <button class="faq-q">
-              How long does it take to build a website?
-              <svg class="faq-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
-            </button>
-            <div class="faq-a">
-              <p>Timelines vary by project scope. A standard 5-page business website typically takes 2–3 weeks. A custom WordPress site takes 4–6 weeks, and a full eCommerce build usually takes 6–10 weeks. We provide an exact timeline during the discovery phase.</p>
-            </div>
-          </div>
-
-          <div class="faq-item">
-            <button class="faq-q">
-              Do I need to provide content (text & images)?
-              <svg class="faq-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
-            </button>
-            <div class="faq-a">
-              <p>You can provide your own content, or we can help. We offer copywriting and professional stock imagery as add-on services. We'll provide a content checklist to guide you through what's needed for each page.</p>
-            </div>
-          </div>
-
-          <div class="faq-item">
-            <button class="faq-q">
-              Will my website be mobile-friendly?
-              <svg class="faq-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
-            </button>
-            <div class="faq-a">
-              <p>Absolutely. Every website we build is fully responsive and tested on all major screen sizes — desktop, tablet, and mobile. Mobile-first design is a standard part of our process, not an afterthought.</p>
-            </div>
-          </div>
-
-          <div class="faq-item">
-            <button class="faq-q">
-              Can I update my website myself after launch?
-              <svg class="faq-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
-            </button>
-            <div class="faq-a">
-              <p>Yes. WordPress makes it easy to manage your own content. We provide a handoff training session and documentation so you can update text, images, blog posts, and more — no coding required.</p>
-            </div>
-          </div>
-
-          <div class="faq-item">
-            <button class="faq-q">
-              What happens after the website launches?
-              <svg class="faq-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
-            </button>
-            <div class="faq-a">
-              <p>All packages include a post-launch support period. We also offer monthly maintenance retainers that cover updates, backups, uptime monitoring, and security scanning. We're here for the long term, not just launch day.</p>
-            </div>
-          </div>
-
-          <div class="faq-item">
-            <button class="faq-q">
-              Do you work with clients outside Bangladesh?
-              <svg class="faq-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
-            </button>
-            <div class="faq-a">
-              <p>Yes — our global team serves clients across North America, Europe, and Asia. We work asynchronously and schedule calls across time zones. Most of our enterprise clients are international.</p>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </div>
-  </section>
+  @include('partials.faq-section', [
+      'faqTitle' => 'Frequently Asked <span class="text-gradient">Questions</span>',
+      'faqSubtitle' => "Still have questions? We're happy to answer anything. Reach out directly anytime.",
+      'faqs' => [
+          ['q' => 'How long does it take to build a website?', 'a' => 'Timelines vary by project scope. A standard 5-page business website typically takes 2–3 weeks. A custom WordPress site takes 4–6 weeks, and a full eCommerce build usually takes 6–10 weeks. We provide an exact timeline during the discovery phase.'],
+          ['q' => 'Do I need to provide content (text & images)?', 'a' => "You can provide your own content, or we can help. We offer copywriting and professional stock imagery as add-on services. We'll provide a content checklist to guide you through what's needed for each page."],
+          ['q' => 'Will my website be mobile-friendly?', 'a' => 'Absolutely. Every website we build is fully responsive and tested on all major screen sizes — desktop, tablet, and mobile. Mobile-first design is a standard part of our process, not an afterthought.'],
+          ['q' => 'Can I update my website myself after launch?', 'a' => 'Yes. WordPress makes it easy to manage your own content. We provide a handoff training session and documentation so you can update text, images, blog posts, and more — no coding required.'],
+          ['q' => 'What happens after the website launches?', 'a' => "All packages include a post-launch support period. We also offer monthly maintenance retainers that cover updates, backups, uptime monitoring, and security scanning. We're here for the long term, not just launch day."],
+          ['q' => 'Do you work with clients outside Bangladesh?', 'a' => 'Yes — our global team serves clients across North America, Europe, and Asia. We work asynchronously and schedule calls across time zones. Most of our enterprise clients are international.'],
+      ],
+  ])
 
   <!-- ========== CONTACT FORM ========== -->
   <section class="section sp-contact" id="contact-form">

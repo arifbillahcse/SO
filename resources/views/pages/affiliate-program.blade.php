@@ -208,82 +208,18 @@
     </div>
   </section>
 
-  <!-- ========== FAQ ========== -->
-  <section class="section sp-faq" id="faq">
-    <div class="container sp-faq-inner">
-      <div class="sp-faq-left" data-aos="fade-right">
-        <span class="section-tag">FAQ</span>
-        <h2 class="section-title">Common <span class="text-gradient">Questions</span></h2>
-        <p class="section-sub" style="text-align:left;">Still curious about how the program works? Reach out and we'll walk you through it.</p>
-        <a href="#contact-form" class="btn btn-primary" style="margin-top:24px;">Ask Us Anything</a>
-      </div>
-      <div class="sp-faq-right" data-aos="fade-left">
-        <div class="faq-list">
-
-          <div class="faq-item">
-            <button class="faq-q">
-              Who can join the affiliate program?
-              <svg class="faq-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
-            </button>
-            <div class="faq-a">
-              <p>Anyone. You don't need to be an existing client or have any special credentials — friends, business contacts, past clients, or anyone who trusts your recommendation can qualify you for a commission.</p>
-            </div>
-          </div>
-
-          <div class="faq-item">
-            <button class="faq-q">
-              How is the 20% commission calculated?
-              <svg class="faq-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
-            </button>
-            <div class="faq-a">
-              <p>You earn 20% of the profit Softorio makes from your referral's account. This applies to every payment they make to us — the first project, hosting renewals, and any future services — for as long as they remain a client.</p>
-            </div>
-          </div>
-
-          <div class="faq-item">
-            <button class="faq-q">
-              How long do I keep earning from one referral?
-              <svg class="faq-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
-            </button>
-            <div class="faq-a">
-              <p>For life. This isn't a one-time referral bonus. As long as the client you referred stays with Softorio — whether that's a single project or years of ongoing hosting and support — you continue earning your share.</p>
-            </div>
-          </div>
-
-          <div class="faq-item">
-            <button class="faq-q">
-              Is there a limit to how many people I can refer?
-              <svg class="faq-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
-            </button>
-            <div class="faq-a">
-              <p>No cap. Refer as many people or businesses as you want — there's no ceiling on how much you can earn through the program.</p>
-            </div>
-          </div>
-
-          <div class="faq-item">
-            <button class="faq-q">
-              How and when do I get paid?
-              <svg class="faq-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
-            </button>
-            <div class="faq-a">
-              <p>Once your referral becomes a confirmed, paying client, we'll reach out to set up simple tracking and agree on a payout method that works for you. We keep this process straightforward and transparent.</p>
-            </div>
-          </div>
-
-          <div class="faq-item">
-            <button class="faq-q">
-              What counts as a successful referral?
-              <svg class="faq-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
-            </button>
-            <div class="faq-a">
-              <p>Any person or business you introduce to us who goes on to become a paying Softorio client — for web development, hosting, SEO, automation, eCommerce, or any other service we offer.</p>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </div>
-  </section>
+  @include('partials.faq-section', [
+      'faqTitle' => 'Common <span class="text-gradient">Questions</span>',
+      'faqSubtitle' => "Still curious about how the program works? Reach out and we'll walk you through it.",
+      'faqs' => [
+          ['q' => 'Who can join the affiliate program?', 'a' => "Anyone. You don't need to be an existing client or have any special credentials — friends, business contacts, past clients, or anyone who trusts your recommendation can qualify you for a commission."],
+          ['q' => 'How is the 20% commission calculated?', 'a' => "You earn 20% of the profit Softorio makes from your referral's account. This applies to every payment they make to us — the first project, hosting renewals, and any future services — for as long as they remain a client."],
+          ['q' => 'How long do I keep earning from one referral?', 'a' => "For life. This isn't a one-time referral bonus. As long as the client you referred stays with Softorio — whether that's a single project or years of ongoing hosting and support — you continue earning your share."],
+          ['q' => 'Is there a limit to how many people I can refer?', 'a' => "No cap. Refer as many people or businesses as you want — there's no ceiling on how much you can earn through the program."],
+          ['q' => 'How and when do I get paid?', 'a' => "Once your referral becomes a confirmed, paying client, we'll reach out to set up simple tracking and agree on a payout method that works for you. We keep this process straightforward and transparent."],
+          ['q' => 'What counts as a successful referral?', 'a' => 'Any person or business you introduce to us who goes on to become a paying Softorio client — for web development, hosting, SEO, automation, eCommerce, or any other service we offer.'],
+      ],
+  ])
 
   <!-- ========== CTA / SIGNUP ========== -->
   <section class="section sp-contact" id="contact-form">

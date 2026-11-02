@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\PageSeo;
 use Illuminate\Http\Response;
 
 class SitemapController extends Controller
@@ -28,10 +29,13 @@ class SitemapController extends Controller
 
     public function index(): Response
     {
+        $lastModByRoute = PageSeo::pluck('updated_at', 'route_name');
+
         $urls = collect(self::ROUTES)->map(fn (array $route) => [
             'loc' => route($route['name']),
             'priority' => $route['priority'],
             'changefreq' => $route['changefreq'],
+            'lastmod' => ($lastModByRoute->get($route['name']) ?? now())->toAtomString(),
         ]);
 
         $xml = view('sitemap', ['urls' => $urls])->render();

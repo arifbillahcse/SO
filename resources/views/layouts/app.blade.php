@@ -17,6 +17,19 @@
     if (! empty($pageSeo?->robots_advanced)) {
         $robotsParts = array_merge($robotsParts, array_map('trim', explode(',', $pageSeo->robots_advanced)));
     }
+
+    $currentRouteName = request()->route()?->getName();
+    $breadcrumbSchema = null;
+    if ($currentRouteName && $currentRouteName !== 'home') {
+        $breadcrumbSchema = json_encode([
+            '@context' => 'https://schema.org',
+            '@type' => 'BreadcrumbList',
+            'itemListElement' => [
+                ['@type' => 'ListItem', 'position' => 1, 'name' => 'Home', 'item' => route('home')],
+                ['@type' => 'ListItem', 'position' => 2, 'name' => \Illuminate\Support\Str::headline($currentRouteName), 'item' => $canonicalUrl],
+            ],
+        ]);
+    }
   @endphp
   <title>{{ $seoTitle }}</title>
   <meta name="robots" content="{{ implode(', ', $robotsParts) }}" />
@@ -45,6 +58,10 @@
   @endif
   @if($seoImage)
   <meta name="twitter:image" content="{{ $pageSeo?->twitter_image ? asset('storage/' . $pageSeo->twitter_image) : $seoImage }}" />
+  @endif
+
+  @if($breadcrumbSchema)
+  <script type="application/ld+json">{!! $breadcrumbSchema !!}</script>
   @endif
 
   @yield('meta')

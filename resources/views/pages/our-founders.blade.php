@@ -3,10 +3,6 @@
 @section('title', 'Arif &amp; Asma — Co-Founders | Softorio')
 @section('description', 'Meet Md. Arif Billah and Asma Akter — the co-founders leading Softorio. Two CSE engineers building world-class digital solutions for clients worldwide.')
 
-@section('meta')
-  <meta name="robots" content="noindex, nofollow" />
-@endsection
-
 @push('head')
 <style>
 /* ===== FOUNDERS PAGE — scoped styles ===== */

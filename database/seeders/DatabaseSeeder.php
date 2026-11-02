@@ -29,6 +29,7 @@ class DatabaseSeeder extends Seeder
             PortfolioItemSeeder::class,
             ArticleSeeder::class,
             TeamMemberSeeder::class,
+            PageSeoSeeder::class,
         ]);
     }
 }

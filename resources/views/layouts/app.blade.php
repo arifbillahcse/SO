@@ -4,32 +4,47 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="csrf-token" content="{{ csrf_token() }}" />
-  <title>@yield('title', 'Softorio — Your Vision, Our Innovation')</title>
-  @hasSection('description')
-  <meta name="description" content="@yield('description')" />
+  @php
+    $defaultTitle = 'Softorio — Your Vision, Our Innovation';
+    $seoTitle = $pageSeo?->title ?: $__env->yieldContent('title', $defaultTitle);
+    $seoDescription = $pageSeo?->meta_description ?: ($__env->yieldContent('description') ?: null);
+    $seoImage = $pageSeo?->og_image ? asset('storage/' . $pageSeo->og_image) : ($__env->yieldContent('image') ?: null);
+    $canonicalUrl = $pageSeo?->canonical_url ?: url()->current();
+    $robotsParts = [
+        ($pageSeo?->robots_index ?? true) ? 'index' : 'noindex',
+        ($pageSeo?->robots_follow ?? true) ? 'follow' : 'nofollow',
+    ];
+    if (! empty($pageSeo?->robots_advanced)) {
+        $robotsParts = array_merge($robotsParts, array_map('trim', explode(',', $pageSeo->robots_advanced)));
+    }
+  @endphp
+  <title>{{ $seoTitle }}</title>
+  <meta name="robots" content="{{ implode(', ', $robotsParts) }}" />
+  @if($seoDescription)
+  <meta name="description" content="{{ $seoDescription }}" />
   @endif
-  <link rel="canonical" href="{{ url()->current() }}" />
+  <link rel="canonical" href="{{ $canonicalUrl }}" />
 
   {{-- Open Graph --}}
   <meta property="og:site_name" content="Softorio" />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="{{ url()->current() }}" />
-  <meta property="og:title" content="@yield('title', 'Softorio — Your Vision, Our Innovation')" />
-  @hasSection('description')
-  <meta property="og:description" content="@yield('description')" />
+  <meta property="og:url" content="{{ $canonicalUrl }}" />
+  <meta property="og:title" content="{{ $pageSeo?->og_title ?: $seoTitle }}" />
+  @if($seoDescription)
+  <meta property="og:description" content="{{ $pageSeo?->og_description ?: $seoDescription }}" />
   @endif
-  @hasSection('image')
-  <meta property="og:image" content="@yield('image')" />
+  @if($seoImage)
+  <meta property="og:image" content="{{ $seoImage }}" />
   @endif
 
   {{-- Twitter Card --}}
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="@yield('title', 'Softorio — Your Vision, Our Innovation')" />
-  @hasSection('description')
-  <meta name="twitter:description" content="@yield('description')" />
+  <meta name="twitter:card" content="{{ $pageSeo?->twitter_card_type ?: 'summary_large_image' }}" />
+  <meta name="twitter:title" content="{{ $pageSeo?->twitter_title ?: $seoTitle }}" />
+  @if($seoDescription)
+  <meta name="twitter:description" content="{{ $pageSeo?->twitter_description ?: $seoDescription }}" />
   @endif
-  @hasSection('image')
-  <meta name="twitter:image" content="@yield('image')" />
+  @if($seoImage)
+  <meta name="twitter:image" content="{{ $pageSeo?->twitter_image ? asset('storage/' . $pageSeo->twitter_image) : $seoImage }}" />
   @endif
 
   @yield('meta')

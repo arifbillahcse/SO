@@ -4,7 +4,9 @@ namespace App\Filament\Resources;
 
 use App\Filament\Resources\PageSeoResource\Pages;
 use App\Models\PageSeo;
+use App\Services\SeoAnalyzer;
 use Filament\Forms\Components\FileUpload;
+use Filament\Forms\Components\Placeholder;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
@@ -14,6 +16,7 @@ use Filament\Schemas\Schema;
 use Filament\Tables\Columns\IconColumn;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
+use Illuminate\Support\HtmlString;
 
 class PageSeoResource extends Resource
 {
@@ -40,6 +43,12 @@ class PageSeoResource extends Resource
                 ->afterStateHydrated(fn ($component, $state) => $component->state(is_array($state) ? implode(', ', $state) : $state))
                 ->dehydrateStateUsing(fn ($state) => array_values(array_filter(array_map('trim', explode(',', $state ?? ''))))),
 
+            Select::make('schema_type')->label('Schema.org Type')->options([
+                'WebPage' => 'Web Page (generic)',
+                'Service' => 'Service',
+                'AboutPage' => 'About Page',
+            ])->default('WebPage')->required(),
+
             TextInput::make('canonical_url')->url()->maxLength(255)
                 ->helperText('Leave blank to use this page\'s own URL.'),
             Toggle::make('robots_index')->label('Allow search engines to index this page')->default(true),
@@ -59,7 +68,34 @@ class PageSeoResource extends Resource
                 ->helperText('Leave blank to reuse the SEO title.'),
             Textarea::make('twitter_description')->label('Twitter Description')->rows(3)->maxLength(320)->columnSpanFull(),
             FileUpload::make('twitter_image')->label('Twitter Image')->image()->directory('seo')->visibility('public'),
+
+            Placeholder::make('seo_analysis')
+                ->label('SEO Analysis')
+                ->columnSpanFull()
+                ->content(fn (?PageSeo $record) => $record ? static::renderSeoAnalysis($record) : 'Save the page first to run an analysis.'),
         ]);
+    }
+
+    protected static function renderSeoAnalysis(PageSeo $record): HtmlString
+    {
+        try {
+            $url = route($record->route_name);
+        } catch (\Throwable) {
+            return new HtmlString('<p class="text-sm text-gray-500">Unable to resolve this page\'s URL.</p>');
+        }
+
+        $checks = app(SeoAnalyzer::class)->analyze($record, $url);
+
+        $items = collect($checks)->map(function (array $check) {
+            $icon = $check['passed']
+                ? '<span style="color:#16a34a;">&#10003;</span>'
+                : '<span style="color:#dc2626;">&#10007;</span>';
+            $message = $check['passed'] ? '' : '<div style="font-size:12px;color:#6b7280;margin-top:2px;">'.e($check['message']).'</div>';
+
+            return '<li style="padding:6px 0;border-bottom:1px solid #e5e7eb;">'.$icon.' <strong>'.e($check['label']).'</strong>'.$message.'</li>';
+        })->implode('');
+
+        return new HtmlString('<ul style="list-style:none;margin:0;padding:0;">'.$items.'</ul>');
     }
 
     public static function table(Table $table): Table

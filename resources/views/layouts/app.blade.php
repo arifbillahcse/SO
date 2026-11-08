@@ -93,6 +93,16 @@
   <script type="application/ld+json">{!! $breadcrumbSchema !!}</script>
   @endif
 
+  @if($orgSettings->google_analytics_id)
+  <script async src="https://www.googletagmanager.com/gtag/js?id={{ $orgSettings->google_analytics_id }}"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', '{{ $orgSettings->google_analytics_id }}');
+  </script>
+  @endif
+
   @yield('meta')
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />

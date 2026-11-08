@@ -34,6 +34,9 @@ class OrganizationSettingsResource extends Resource
             TextInput::make('twitter_url')->url()->label('Twitter / X URL')->maxLength(255),
             TextInput::make('linkedin_url')->url()->label('LinkedIn URL')->maxLength(255),
             TextInput::make('youtube_url')->url()->label('YouTube URL')->maxLength(255),
+            TextInput::make('google_analytics_id')->label('Google Analytics Measurement ID')->maxLength(255)
+                ->placeholder('G-XXXXXXXXXX')
+                ->helperText('Leave blank to disable Analytics tracking.'),
         ]);
     }
 

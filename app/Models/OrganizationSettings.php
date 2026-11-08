@@ -15,6 +15,7 @@ use Illuminate\Database\Eloquent\Model;
     'twitter_url',
     'linkedin_url',
     'youtube_url',
+    'google_analytics_id',
 ])]
 class OrganizationSettings extends Model
 {

@@ -5,6 +5,7 @@ namespace App\Filament\Resources;
 use App\Filament\Resources\PageSeoResource\Pages;
 use App\Models\PageSeo;
 use App\Services\SeoAnalyzer;
+use Filament\Actions\EditAction;
 use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\Placeholder;
 use Filament\Forms\Components\Select;
@@ -106,7 +107,10 @@ class PageSeoResource extends Resource
                 TextColumn::make('title')->label('SEO Title')->limit(50)->placeholder('— using default —'),
                 IconColumn::make('robots_index')->label('Indexed')->boolean(),
             ])
-            ->defaultSort('route_name');
+            ->defaultSort('route_name')
+            ->recordActions([
+                EditAction::make(),
+            ]);
     }
 
     public static function canCreate(): bool

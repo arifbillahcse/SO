@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Article;
+use App\Models\CaseStudy;
 use App\Models\PageSeo;
+use App\Models\PortfolioItem;
 use Illuminate\Http\Response;
 
 class SitemapController extends Controller
@@ -37,6 +40,29 @@ class SitemapController extends Controller
             'changefreq' => $route['changefreq'],
             'lastmod' => ($lastModByRoute->get($route['name']) ?? now())->toAtomString(),
         ]);
+
+        $articleUrls = Article::where('robots_index', true)->get()->map(fn (Article $article) => [
+            'loc' => route('our-resources.show', $article),
+            'priority' => '0.6',
+            'changefreq' => 'monthly',
+            'lastmod' => $article->updated_at->toAtomString(),
+        ]);
+
+        $caseStudyUrls = CaseStudy::where('robots_index', true)->get()->map(fn (CaseStudy $caseStudy) => [
+            'loc' => route('case-study.show', $caseStudy),
+            'priority' => '0.6',
+            'changefreq' => 'monthly',
+            'lastmod' => $caseStudy->updated_at->toAtomString(),
+        ]);
+
+        $portfolioUrls = PortfolioItem::where('robots_index', true)->get()->map(fn (PortfolioItem $portfolioItem) => [
+            'loc' => route('our-works.show', $portfolioItem),
+            'priority' => '0.6',
+            'changefreq' => 'monthly',
+            'lastmod' => $portfolioItem->updated_at->toAtomString(),
+        ]);
+
+        $urls = $urls->concat($articleUrls)->concat($caseStudyUrls)->concat($portfolioUrls);
 
         $xml = view('sitemap', ['urls' => $urls])->render();
 

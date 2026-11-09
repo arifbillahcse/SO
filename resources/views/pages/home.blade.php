@@ -154,7 +154,7 @@
             <li>{{ $feature }}</li>
             @endforeach
           </ul>
-          <a href="#contact" class="service-link">Learn More &rarr;</a>
+          <a href="{{ $service->route_name ? route($service->route_name) : '#contact' }}" class="service-link">Learn More &rarr;</a>
         </div>
         @endforeach
       </div>

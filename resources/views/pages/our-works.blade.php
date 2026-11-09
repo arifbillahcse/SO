@@ -72,7 +72,7 @@
       @endphp
       <div class="works-page-grid" id="portfolioGrid">
         @foreach($portfolioItems as $item)
-        <div class="wp-card" data-category="{{ $item->category }}" data-aos="fade-up" data-aos-delay="{{ ($loop->index % 3) * 60 }}">
+        <a href="{{ route('our-works.show', $item) }}" class="wp-card" style="display:block;color:inherit" data-category="{{ $item->category }}" data-aos="fade-up" data-aos-delay="{{ ($loop->index % 3) * 60 }}">
           <div class="wp-img" style="background:{{ $wpGradients[$loop->index % count($wpGradients)] }}">
             <div class="wp-mock">
               <div class="wm-bar"></div>
@@ -89,7 +89,7 @@
             <p class="wp-title">{{ $item->title }}</p>
             <p class="wp-client">{{ $item->client }}</p>
           </div>
-        </div>
+        </a>
         @endforeach
       </div>
 

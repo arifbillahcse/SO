@@ -73,7 +73,7 @@
             <div class="cs-result"><span class="cs-result-num">{{ $metric['value'] }}</span><div class="cs-result-label">{{ $metric['label'] }}</div></div>
             @endforeach
           </div>
-          <a href="{{ route('home') }}#contact" class="btn btn-primary">Start a Similar Project</a>
+          <a href="{{ route('case-study.show', $featuredCaseStudy) }}" class="btn btn-primary">Read Full Story</a>
         </div>
       </div>
       @endif
@@ -91,7 +91,7 @@
       <!-- Case Study Grid -->
       <div class="cs-grid">
         @foreach($caseStudies as $caseStudy)
-        <div class="cs-card" data-aos="fade-up" data-aos-delay="{{ ($loop->index % 3) * 100 }}">
+        <a href="{{ route('case-study.show', $caseStudy) }}" class="cs-card" style="display:block;color:inherit" data-aos="fade-up" data-aos-delay="{{ ($loop->index % 3) * 100 }}">
           <div class="cs-card-img" style="background:{{ $csGradients[$loop->index % count($csGradients)] }}">
             <div style="width:80%;display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px"><div style="height:38px;background:rgba(255,255,255,0.08);border-radius:5px"></div><div style="height:38px;background:rgba(255,255,255,0.08);border-radius:5px"></div><div style="height:38px;background:rgba(255,255,255,0.08);border-radius:5px"></div></div>
           </div>
@@ -109,7 +109,7 @@
               @endforeach
             </div>
           </div>
-        </div>
+        </a>
         @endforeach
       </div>
     </div>

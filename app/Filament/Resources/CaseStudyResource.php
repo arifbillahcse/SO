@@ -4,8 +4,10 @@ namespace App\Filament\Resources;
 
 use App\Filament\Resources\CaseStudyResource\Pages;
 use App\Models\CaseStudy;
+use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\Grid;
 use Filament\Forms\Components\Repeater;
+use Filament\Forms\Components\RichEditor;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Toggle;
@@ -42,8 +44,24 @@ class CaseStudyResource extends Resource
                 ])
                 ->columnSpanFull()
                 ->defaultItems(3),
+            RichEditor::make('body')->columnSpanFull()
+                ->helperText('Full case study write-up. Leave blank to show only the description above.'),
             Toggle::make('featured')->helperText('Only one case study should be featured at a time.'),
             TextInput::make('sort_order')->numeric()->default(0),
+
+            TextInput::make('meta_title')->label('SEO Title')->maxLength(255)
+                ->helperText('Overrides the default page title. Leave blank to use the title above.'),
+            Textarea::make('meta_description')->rows(3)->maxLength(320)->columnSpanFull()
+                ->helperText('Shown under your title in Google search results.'),
+            TextInput::make('focus_keywords')
+                ->label('Focus Keywords')
+                ->helperText('Comma-separated, up to 5, e.g. "ecommerce case study, woocommerce migration"')
+                ->afterStateHydrated(fn ($component, $state) => $component->state(is_array($state) ? implode(', ', $state) : $state))
+                ->dehydrateStateUsing(fn ($state) => array_values(array_filter(array_map('trim', explode(',', $state ?? ''))))),
+            FileUpload::make('og_image')->label('Open Graph Image')->image()->directory('seo')->visibility('public')
+                ->helperText('Shown when this case study is shared on social media.'),
+            Toggle::make('robots_index')->label('Allow search engines to index this page')->default(true),
+            Toggle::make('robots_follow')->label('Allow search engines to follow links on this page')->default(true),
         ]);
     }
 

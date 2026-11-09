@@ -57,7 +57,7 @@
             <span style="font-size:0.78rem;color:var(--text-muted);font-weight:500">&#128197; {{ $featuredArticle->published_at?->format('F Y') }}</span>
             <span style="font-size:0.78rem;color:var(--primary);font-weight:600;background:var(--primary-glow);padding:2px 10px;border-radius:100px">{{ $featuredArticle->category }}</span>
           </div>
-          <a href="#" class="btn btn-primary">Read Full Guide</a>
+          <a href="{{ route('our-resources.show', $featuredArticle) }}" class="btn btn-primary">Read Full Guide</a>
         </div>
         <div style="height:240px;background:linear-gradient(135deg,#0a1a2e,#1a2e3e);border-radius:var(--radius-lg);display:flex;align-items:center;justify-content:center;border:1px solid var(--border)">
           <div style="width:80%">
@@ -103,7 +103,7 @@
             <div class="res-meta">&#128336; {{ $article->read_minutes }} min read &nbsp;|&nbsp; {{ $article->category }}</div>
             <p class="res-title">{{ $article->title }}</p>
             <p class="res-desc">{{ $article->excerpt }}</p>
-            <a href="#" class="res-read">Read Article &rarr;</a>
+            <a href="{{ route('our-resources.show', $article) }}" class="res-read">Read Article &rarr;</a>
           </div>
         </div>
         @endforeach

@@ -14,4 +14,12 @@ class OurResourcesController extends Controller
             'articles' => Article::where('featured', false)->orderBy('published_at', 'desc')->get(),
         ]);
     }
+
+    public function show(Article $article): View
+    {
+        return view('pages.article-show', [
+            'article' => $article,
+            'relatedArticles' => Article::where('id', '!=', $article->id)->orderBy('published_at', 'desc')->limit(3)->get(),
+        ]);
+    }
 }

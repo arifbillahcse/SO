@@ -42,9 +42,12 @@ Route::get('/automation-solution', fn () => view('pages.solutions.automation-sol
 
 // Resources
 Route::get('/our-works', [OurWorksController::class, 'index'])->name('our-works');
+Route::get('/our-works/{portfolioItem:slug}', [OurWorksController::class, 'show'])->name('our-works.show');
 Route::get('/about-us', fn () => view('pages.about-us'))->name('about-us');
 Route::get('/case-study', [CaseStudyController::class, 'index'])->name('case-study');
+Route::get('/case-study/{caseStudy:slug}', [CaseStudyController::class, 'show'])->name('case-study.show');
 Route::get('/our-resources', [OurResourcesController::class, 'index'])->name('our-resources');
+Route::get('/our-resources/{article:slug}', [OurResourcesController::class, 'show'])->name('our-resources.show');
 Route::get('/affiliate-program', fn () => view('pages.affiliate-program'))->name('affiliate-program');
 
 // Hidden page — intentionally not linked in nav/footer, matches noindex,nofollow from the static site

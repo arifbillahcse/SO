@@ -5,6 +5,7 @@ namespace App\Filament\Resources;
 use App\Filament\Resources\ArticleResource\Pages;
 use App\Models\Article;
 use Filament\Forms\Components\DateTimePicker;
+use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\RichEditor;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\Textarea;
@@ -45,6 +46,20 @@ class ArticleResource extends Resource
             TextInput::make('read_minutes')->numeric()->default(5)->required(),
             Toggle::make('featured')->helperText('Only one article should be featured at a time.'),
             DateTimePicker::make('published_at'),
+
+            TextInput::make('meta_title')->label('SEO Title')->maxLength(255)
+                ->helperText('Overrides the default page title. Leave blank to use the title above.'),
+            Textarea::make('meta_description')->rows(3)->maxLength(320)->columnSpanFull()
+                ->helperText('Shown under your title in Google search results. Leave blank to use the excerpt.'),
+            TextInput::make('focus_keywords')
+                ->label('Focus Keywords')
+                ->helperText('Comma-separated, up to 5, e.g. "wordpress speed optimization"')
+                ->afterStateHydrated(fn ($component, $state) => $component->state(is_array($state) ? implode(', ', $state) : $state))
+                ->dehydrateStateUsing(fn ($state) => array_values(array_filter(array_map('trim', explode(',', $state ?? ''))))),
+            FileUpload::make('og_image')->label('Open Graph Image')->image()->directory('seo')->visibility('public')
+                ->helperText('Shown when this article is shared on social media.'),
+            Toggle::make('robots_index')->label('Allow search engines to index this page')->default(true),
+            Toggle::make('robots_follow')->label('Allow search engines to follow links on this page')->default(true),
         ]);
     }
 

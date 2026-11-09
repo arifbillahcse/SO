@@ -21,17 +21,25 @@
     }
 
     $currentRouteName = request()->route()?->getName();
-    $breadcrumbSchema = null;
-    if ($currentRouteName && $currentRouteName !== 'home') {
-        $breadcrumbSchema = json_encode([
-            '@context' => 'https://schema.org',
-            '@type' => 'BreadcrumbList',
-            'itemListElement' => [
-                ['@type' => 'ListItem', 'position' => 1, 'name' => 'Home', 'item' => route('home')],
-                ['@type' => 'ListItem', 'position' => 2, 'name' => \Illuminate\Support\Str::headline($currentRouteName), 'item' => $canonicalUrl],
-            ],
-        ]);
+    $breadcrumbItems = null;
+    if ($__env->hasSection('breadcrumbs')) {
+        $breadcrumbItems = json_decode($__env->yieldContent('breadcrumbs'), true);
+    } elseif ($currentRouteName && $currentRouteName !== 'home') {
+        $breadcrumbItems = [
+            ['name' => 'Home', 'url' => route('home')],
+            ['name' => \Illuminate\Support\Str::headline($currentRouteName), 'url' => $canonicalUrl],
+        ];
     }
+    $breadcrumbSchema = $breadcrumbItems ? json_encode([
+        '@context' => 'https://schema.org',
+        '@type' => 'BreadcrumbList',
+        'itemListElement' => collect($breadcrumbItems)->values()->map(fn ($item, $i) => [
+            '@type' => 'ListItem',
+            'position' => $i + 1,
+            'name' => $item['name'],
+            'item' => $item['url'],
+        ])->all(),
+    ]) : null;
 
     $organizationSchema = json_encode(array_filter([
         '@context' => 'https://schema.org',

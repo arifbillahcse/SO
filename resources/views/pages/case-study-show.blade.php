@@ -5,6 +5,11 @@
 @if($caseStudy->og_image)
 @section('image', asset('storage/' . $caseStudy->og_image))
 @endif
+@section('breadcrumbs', json_encode([
+    ['name' => 'Home', 'url' => route('home')],
+    ['name' => 'Case Studies', 'url' => route('case-study')],
+    ['name' => $caseStudy->title, 'url' => route('case-study.show', $caseStudy)],
+]))
 @if(! ($caseStudy->robots_index ?? true) || ! ($caseStudy->robots_follow ?? true))
 @section('meta')
   <meta name="robots" content="{{ ($caseStudy->robots_index ?? true) ? 'index' : 'noindex' }}, {{ ($caseStudy->robots_follow ?? true) ? 'follow' : 'nofollow' }}" />
@@ -26,6 +31,19 @@
 .article-body a { color:var(--primary); text-decoration:underline; }
 @media(max-width:600px){ .cs-results{grid-template-columns:1fr 1fr;} }
 </style>
+@php
+  $caseStudySchema = json_encode(array_filter([
+      '@context' => 'https://schema.org',
+      '@type' => 'CreativeWork',
+      'name' => $caseStudy->title,
+      'description' => $caseStudy->meta_description ?: $caseStudy->description,
+      'image' => $caseStudy->og_image ? asset('storage/' . $caseStudy->og_image) : null,
+      'dateModified' => $caseStudy->updated_at->toAtomString(),
+      'creator' => ['@type' => 'Organization', 'name' => 'Softorio'],
+      'mainEntityOfPage' => route('case-study.show', $caseStudy),
+  ]));
+@endphp
+<script type="application/ld+json">{!! $caseStudySchema !!}</script>
 @endpush
 
 @section('content')

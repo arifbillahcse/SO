@@ -2,6 +2,7 @@
 
 namespace App\Filament\Resources;
 
+use App\Filament\Concerns\HasSeoCompletionColumn;
 use App\Filament\Resources\PageSeoResource\Pages;
 use App\Models\PageSeo;
 use App\Services\SeoAnalyzer;
@@ -21,6 +22,8 @@ use Illuminate\Support\HtmlString;
 
 class PageSeoResource extends Resource
 {
+    use HasSeoCompletionColumn;
+
     protected static ?string $model = PageSeo::class;
 
     protected static string | \BackedEnum | null $navigationIcon = 'heroicon-o-magnifying-glass';
@@ -106,6 +109,7 @@ class PageSeoResource extends Resource
                 TextColumn::make('route_name')->label('Page')->searchable(),
                 TextColumn::make('title')->label('SEO Title')->limit(50)->placeholder('— using default —'),
                 IconColumn::make('robots_index')->label('Indexed')->boolean(),
+                static::seoCompletionColumn('title'),
             ])
             ->defaultSort('route_name')
             ->recordActions([

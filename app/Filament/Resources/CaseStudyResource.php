@@ -2,6 +2,7 @@
 
 namespace App\Filament\Resources;
 
+use App\Filament\Concerns\HasSeoCompletionColumn;
 use App\Filament\Resources\CaseStudyResource\Pages;
 use App\Models\CaseStudy;
 use Filament\Forms\Components\FileUpload;
@@ -19,6 +20,8 @@ use Filament\Tables\Table;
 
 class CaseStudyResource extends Resource
 {
+    use HasSeoCompletionColumn;
+
     protected static ?string $model = CaseStudy::class;
 
     protected static string | \BackedEnum | null $navigationIcon = 'heroicon-o-chart-bar';
@@ -73,6 +76,7 @@ class CaseStudyResource extends Resource
                 TextColumn::make('title')->searchable(),
                 TextColumn::make('client'),
                 IconColumn::make('featured')->boolean(),
+                static::seoCompletionColumn(),
             ])
             ->defaultSort('sort_order');
     }

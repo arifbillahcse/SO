@@ -2,6 +2,7 @@
 
 namespace App\Filament\Resources;
 
+use App\Filament\Concerns\HasSeoCompletionColumn;
 use App\Filament\Resources\ArticleResource\Pages;
 use App\Models\Article;
 use Filament\Forms\Components\DateTimePicker;
@@ -20,6 +21,8 @@ use Illuminate\Support\Str;
 
 class ArticleResource extends Resource
 {
+    use HasSeoCompletionColumn;
+
     protected static ?string $model = Article::class;
 
     protected static string | \BackedEnum | null $navigationIcon = 'heroicon-o-document-text';
@@ -72,6 +75,7 @@ class ArticleResource extends Resource
                 TextColumn::make('read_minutes')->label('Min Read'),
                 IconColumn::make('featured')->boolean(),
                 TextColumn::make('published_at')->dateTime()->sortable(),
+                static::seoCompletionColumn(),
             ])
             ->defaultSort('published_at', 'desc');
     }

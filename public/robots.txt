@@ -4,4 +4,4 @@ Disallow: /our-founders
 Disallow: /contact
 Disallow: /affiliate-referral
 
-Sitemap: /sitemap.xml
+Sitemap: https://softorio.com/sitemap.xml

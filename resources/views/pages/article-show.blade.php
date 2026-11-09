@@ -5,6 +5,11 @@
 @if($article->og_image)
 @section('image', asset('storage/' . $article->og_image))
 @endif
+@section('breadcrumbs', json_encode([
+    ['name' => 'Home', 'url' => route('home')],
+    ['name' => 'Our Resources', 'url' => route('our-resources')],
+    ['name' => $article->title, 'url' => route('our-resources.show', $article)],
+]))
 @if(! ($article->robots_index ?? true) || ! ($article->robots_follow ?? true))
 @section('meta')
   <meta name="robots" content="{{ ($article->robots_index ?? true) ? 'index' : 'noindex' }}, {{ ($article->robots_follow ?? true) ? 'follow' : 'nofollow' }}" />
@@ -24,6 +29,21 @@
 .related-articles-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:24px; margin-top:16px; }
 @media(max-width:768px){ .related-articles-grid{grid-template-columns:1fr;} }
 </style>
+@php
+  $articleSchema = json_encode(array_filter([
+      '@context' => 'https://schema.org',
+      '@type' => 'Article',
+      'headline' => $article->title,
+      'description' => $article->meta_description ?: $article->excerpt,
+      'image' => $article->og_image ? asset('storage/' . $article->og_image) : null,
+      'datePublished' => $article->published_at?->toAtomString(),
+      'dateModified' => $article->updated_at->toAtomString(),
+      'author' => ['@type' => 'Organization', 'name' => 'Softorio'],
+      'publisher' => ['@type' => 'Organization', 'name' => 'Softorio'],
+      'mainEntityOfPage' => route('our-resources.show', $article),
+  ]));
+@endphp
+<script type="application/ld+json">{!! $articleSchema !!}</script>
 @endpush
 
 @section('content')

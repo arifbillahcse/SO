@@ -2,6 +2,7 @@
 
 namespace App\Filament\Resources;
 
+use App\Filament\Concerns\HasSeoCompletionColumn;
 use App\Filament\Resources\PortfolioItemResource\Pages;
 use App\Models\PortfolioItem;
 use Filament\Forms\Components\FileUpload;
@@ -19,6 +20,8 @@ use Illuminate\Support\Str;
 
 class PortfolioItemResource extends Resource
 {
+    use HasSeoCompletionColumn;
+
     protected static ?string $model = PortfolioItem::class;
 
     protected static string | \BackedEnum | null $navigationIcon = 'heroicon-o-squares-2x2';
@@ -73,6 +76,7 @@ class PortfolioItemResource extends Resource
                 TextColumn::make('title')->searchable(),
                 TextColumn::make('client'),
                 TextColumn::make('category')->badge(),
+                static::seoCompletionColumn(),
             ])
             ->defaultSort('sort_order')
             ->filters([

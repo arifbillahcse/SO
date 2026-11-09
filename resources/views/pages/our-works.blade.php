@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Our Works — Softorio Portfolio')
+@section('title', 'Our Works — Softorio Web & Cloud Project Portfolio')
 @section('description', '200+ projects delivered across WordPress, eCommerce, cloud infrastructure, and automation — for clients across 3 continents.')
 
 @push('head')
@@ -93,8 +93,9 @@
         @endforeach
       </div>
 
-      <div style="text-align:center" data-aos="fade-up">
+      <div style="text-align:center;display:flex;gap:16px;justify-content:center;flex-wrap:wrap" data-aos="fade-up">
         <a href="{{ route('home') }}#contact" class="btn btn-primary btn-lg">Start Your Project</a>
+        <a href="{{ route('case-study') }}" class="btn btn-outline btn-lg">See Case Studies</a>
       </div>
     </div>
   </section>

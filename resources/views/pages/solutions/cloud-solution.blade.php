@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Cloud Solution — Softorio')
+@section('title', 'Enterprise Cloud Infrastructure Solution — Softorio')
 @section('description', 'VPS setup, server hardening, firewall, DNS, mail server, CDN, and full monitoring — all configured and managed by our cloud experts.')
 
 @section('content')
@@ -8,7 +8,7 @@
     <div class="page-hero-bg"><div class="ph-orb ph-orb-1"></div><div class="ph-orb ph-orb-2"></div><div class="ph-grid"></div></div>
     <div class="container page-hero-inner">
       <div class="page-hero-content" data-aos="fade-up">
-        <div class="breadcrumb"><a href="{{ route('home') }}">Home</a><span>/</span><a href="#">Solutions</a><span>/</span><span class="bc-current">Cloud Solution</span></div>
+        <div class="breadcrumb"><a href="{{ route('home') }}">Home</a><span>/</span><span>Solutions</span><span>/</span><span class="bc-current">Cloud Solution</span></div>
         <div class="hero-badge"><span class="badge-dot"></span>Enterprise Cloud Infrastructure</div>
         <h1 class="page-hero-title">Enterprise Cloud,<br/><span class="text-gradient">SMB Price Tag</span></h1>
         <p class="page-hero-sub">VPS setup, server hardening, firewall, DNS, mail server, CDN, and full monitoring — all configured and managed by our cloud experts so you get enterprise infrastructure without the complexity.</p>
@@ -46,7 +46,7 @@
 
   <section class="section sp-services" id="whats-included">
     <div class="container">
-      <div class="section-header" data-aos="fade-up"><span class="section-tag">What's Included</span><h2 class="section-title">Complete Cloud <span class="text-gradient">Infrastructure Stack</span></h2><p class="section-sub">From bare server to fully configured production environment — we handle every layer of your cloud setup.</p></div>
+      <div class="section-header" data-aos="fade-up"><span class="section-tag">What's Included</span><h2 class="section-title">Complete Cloud <span class="text-gradient">Infrastructure Stack</span></h2><p class="section-sub">From bare server to fully configured production environment — we handle every layer of your cloud setup. Looking for ongoing hosting and support after launch? Explore our <a href="{{ route('manage-cloud') }}" style="color:var(--primary);text-decoration:underline;">Managed Cloud</a> service.</p></div>
       <div class="sp-services-grid">
         <div class="sp-service-card" data-aos="fade-up" data-aos-delay="0"><div class="sp-svc-header"><div class="sp-svc-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="2" width="20" height="8" rx="2"/><rect x="2" y="14" width="20" height="8" rx="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/></svg></div><span class="sp-svc-tag">Foundation</span></div><h3>VPS / Server Setup</h3><p>Full server provisioning on your preferred cloud provider — OS hardened, stack installed, and ready for production.</p><ul class="sp-feature-list"><li>Ubuntu / CentOS Setup</li><li>Nginx / Apache Install</li><li>PHP, MySQL, Redis Stack</li><li>SSH Key Authentication</li><li>Server Hardening</li><li>Swap / Memory Optimisation</li></ul></div>
         <div class="sp-service-card" data-aos="fade-up" data-aos-delay="100"><div class="sp-svc-header"><div class="sp-svc-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div></div><h3>Firewall & Security</h3><p>Multi-layered security setup to protect your server from unauthorised access, brute-force attacks, and malicious traffic.</p><ul class="sp-feature-list"><li>UFW / CSF Firewall Rules</li><li>Fail2Ban Configuration</li><li>DDoS Basic Protection</li><li>Root Login Disabled</li><li>Intrusion Detection</li><li>Regular Security Audits</li></ul></div>

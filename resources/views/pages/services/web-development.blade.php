@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
-@section('title', 'Website Development Services — Softorio')
-@section('description', 'Custom WordPress & business website development by Softorio. WordPress VIP Gold Partner with 10+ years experience building fast, scalable, and stunning websites.')
+@section('title', 'WordPress Website Development Services — Softorio')
+@section('description', 'Custom WordPress and business website development by Softorio — a WordPress VIP Gold Partner with 10+ years building fast, scalable websites.')
 
 @section('content')
 <!-- ========== PAGE HERO ========== -->
@@ -16,7 +16,7 @@
         <div class="breadcrumb">
           <a href="{{ route('home') }}">Home</a>
           <span>/</span>
-          <a href="#">Services</a>
+          <span>Services</span>
           <span>/</span>
           <span class="bc-current">Website Development</span>
         </div>
@@ -113,7 +113,7 @@
       <div class="section-header" data-aos="fade-up">
         <span class="section-tag">What We Build</span>
         <h2 class="section-title">Development Services <span class="text-gradient">We Offer</span></h2>
-        <p class="section-sub">Every business is different. We build the right type of website for your goals, budget, and growth stage.</p>
+        <p class="section-sub">Every business is different. We build the right type of website for your goals, budget, and growth stage. Selling products online? See our dedicated <a href="{{ route('ecommerce-solution') }}" style="color:var(--primary);text-decoration:underline;">eCommerce Solution</a>.</p>
       </div>
       <div class="sp-services-grid">
 

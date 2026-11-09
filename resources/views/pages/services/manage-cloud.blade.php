@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Manage Cloud Services — Softorio')
+@section('title', 'Managed Cloud Hosting & Server Services — Softorio')
 @section('description', 'Lightning-fast VPS and managed WordPress hosting with 99.9% uptime, daily backups, SSL, and expert server configuration.')
 
 @section('content')
@@ -9,7 +9,7 @@
     <div class="page-hero-bg"><div class="ph-orb ph-orb-1"></div><div class="ph-orb ph-orb-2"></div><div class="ph-grid"></div></div>
     <div class="container page-hero-inner">
       <div class="page-hero-content" data-aos="fade-up">
-        <div class="breadcrumb"><a href="{{ route('home') }}">Home</a><span>/</span><a href="#">Services</a><span>/</span><span class="bc-current">Manage Cloud</span></div>
+        <div class="breadcrumb"><a href="{{ route('home') }}">Home</a><span>/</span><span>Services</span><span>/</span><span class="bc-current">Manage Cloud</span></div>
         <div class="hero-badge"><span class="badge-dot"></span>99.9% Uptime Guarantee</div>
         <h1 class="page-hero-title">Blazing-Fast Hosting<br/><span class="text-gradient">Built for WordPress</span></h1>
         <p class="page-hero-sub">VPS and cloud hosting configured, secured, and managed by experts — so your site stays fast, safe, and always online. No shared hosting limitations.</p>
@@ -63,7 +63,7 @@
   <!-- FEATURES -->
   <section class="section sp-services" id="services">
     <div class="container">
-      <div class="section-header" data-aos="fade-up"><span class="section-tag">What's Included</span><h2 class="section-title">Everything You Need <span class="text-gradient">to Stay Online</span></h2><p class="section-sub">Every hosting plan includes full server configuration, security hardening, and hands-on management by our DevOps team.</p></div>
+      <div class="section-header" data-aos="fade-up"><span class="section-tag">What's Included</span><h2 class="section-title">Everything You Need <span class="text-gradient">to Stay Online</span></h2><p class="section-sub">Every hosting plan includes full server configuration, security hardening, and hands-on management by our DevOps team. Need a one-time infrastructure build instead of ongoing hosting? See our <a href="{{ route('cloud-solution') }}" style="color:var(--primary);text-decoration:underline;">Cloud Solution</a>.</p></div>
       <div class="sp-services-grid">
         <div class="sp-service-card" data-aos="fade-up" data-aos-delay="0">
           <div class="sp-svc-header"><div class="sp-svc-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="2" width="20" height="8" rx="2"/><rect x="2" y="14" width="20" height="8" rx="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/></svg></div><span class="sp-svc-tag">Most Popular</span></div>

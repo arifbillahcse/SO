@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'SEO Optimization Services — Softorio')
+@section('title', 'Professional SEO Optimization Services — Softorio')
 @section('description', 'Technical SEO, on-page optimization and content strategies that drive organic rankings. Trusted by enterprises for 10+ years.')
 
 @section('content')
@@ -9,7 +9,7 @@
     <div class="page-hero-bg"><div class="ph-orb ph-orb-1"></div><div class="ph-orb ph-orb-2"></div><div class="ph-grid"></div></div>
     <div class="container page-hero-inner">
       <div class="page-hero-content" data-aos="fade-up">
-        <div class="breadcrumb"><a href="{{ route('home') }}">Home</a><span>/</span><a href="#">Services</a><span>/</span><span class="bc-current">SEO Optimization</span></div>
+        <div class="breadcrumb"><a href="{{ route('home') }}">Home</a><span>/</span><span>Services</span><span>/</span><span class="bc-current">SEO Optimization</span></div>
         <div class="hero-badge"><span class="badge-dot"></span>Data-Driven SEO</div>
         <h1 class="page-hero-title">Rank Higher.<br /><span class="text-gradient">Get Found. Grow Faster.</span></h1>
         <p class="page-hero-sub">We combine technical precision with content strategy to put your website in front of the right audience — consistently and sustainably.</p>

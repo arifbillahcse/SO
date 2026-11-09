@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Automation Solution — Softorio')
+@section('title', 'End-to-End Business Automation Solution — Softorio')
 @section('description', 'A complete business automation system — from lead capture to CRM, email nurturing, order processing, and reporting. We build it once and it runs forever.')
 
 @section('content')
@@ -8,7 +8,7 @@
     <div class="page-hero-bg"><div class="ph-orb ph-orb-1"></div><div class="ph-orb ph-orb-2"></div><div class="ph-grid"></div></div>
     <div class="container page-hero-inner">
       <div class="page-hero-content" data-aos="fade-up">
-        <div class="breadcrumb"><a href="{{ route('home') }}">Home</a><span>/</span><a href="#">Solutions</a><span>/</span><span class="bc-current">Automation Solution</span></div>
+        <div class="breadcrumb"><a href="{{ route('home') }}">Home</a><span>/</span><span>Solutions</span><span>/</span><span class="bc-current">Automation Solution</span></div>
         <div class="hero-badge"><span class="badge-dot"></span>End-to-End Business Automation</div>
         <h1 class="page-hero-title">Your Business on<br/><span class="text-gradient">Autopilot</span></h1>
         <p class="page-hero-sub">A complete business automation system — from lead capture to CRM, email nurturing, order processing, and reporting. We build it once and it runs forever.</p>
@@ -57,7 +57,7 @@
   <!-- PIPELINE -->
   <section class="section sp-process" id="pipeline">
     <div class="container">
-      <div class="section-header" data-aos="fade-up"><span class="section-tag">The Automation Pipeline</span><h2 class="section-title">From First Touch <span class="text-gradient">to Loyal Customer</span></h2><p class="section-sub">We build end-to-end automation pipelines that handle every step of your customer journey — automatically.</p></div>
+      <div class="section-header" data-aos="fade-up"><span class="section-tag">The Automation Pipeline</span><h2 class="section-title">From First Touch <span class="text-gradient">to Loyal Customer</span></h2><p class="section-sub">We build end-to-end automation pipelines that handle every step of your customer journey — automatically. Need a single automated workflow instead? Visit our <a href="{{ route('automation') }}" style="color:var(--primary);text-decoration:underline;">Automation Services</a> page.</p></div>
       <div class="process-timeline">
         <div class="process-step" data-aos="fade-up"><div class="ps-left"><div class="ps-num">01</div></div><div class="ps-connector"><div class="ps-dot"></div><div class="ps-line"></div></div><div class="ps-content"><div class="ps-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div><h3>Lead Capture</h3><p>Website forms, landing pages, and chatbots automatically capture leads and send the data to your CRM — zero manual entry.</p><div class="ps-deliverables"><span>Form Integration</span><span>CRM Sync</span><span>Lead Scoring</span></div></div></div>
         <div class="process-step" data-aos="fade-up" data-aos-delay="100"><div class="ps-left"><div class="ps-num">02</div></div><div class="ps-connector"><div class="ps-dot"></div><div class="ps-line"></div></div><div class="ps-content"><div class="ps-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg></div><h3>CRM & Lead Routing</h3><p>Leads are automatically classified, scored, and assigned to the right sales person based on rules you define.</p><div class="ps-deliverables"><span>Auto-assignment</span><span>Lead Scoring</span><span>Team Alerts</span></div></div></div>

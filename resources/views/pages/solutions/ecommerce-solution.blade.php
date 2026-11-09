@@ -1,14 +1,14 @@
 @extends('layouts.app')
 
-@section('title', 'eCommerce Solution — Softorio')
-@section('description', 'Everything you need to launch, grow, and scale your online store — WooCommerce development, hosting, SEO, and marketing automation bundled into one complete solution.')
+@section('title', 'Complete eCommerce Solution & Store Setup — Softorio')
+@section('description', 'Everything you need to launch, grow, and scale your online store — WooCommerce development, hosting, SEO, and automation in one complete solution.')
 
 @section('content')
 <section class="page-hero">
     <div class="page-hero-bg"><div class="ph-orb ph-orb-1"></div><div class="ph-orb ph-orb-2"></div><div class="ph-grid"></div></div>
     <div class="container page-hero-inner">
       <div class="page-hero-content" data-aos="fade-up">
-        <div class="breadcrumb"><a href="{{ route('home') }}">Home</a><span>/</span><a href="#">Solutions</a><span>/</span><span class="bc-current">eCommerce Solution</span></div>
+        <div class="breadcrumb"><a href="{{ route('home') }}">Home</a><span>/</span><span>Solutions</span><span>/</span><span class="bc-current">eCommerce Solution</span></div>
         <div class="hero-badge"><span class="badge-dot"></span>Complete eCommerce Package</div>
         <h1 class="page-hero-title">Sell More Online with a<br/><span class="text-gradient">Complete eCommerce System</span></h1>
         <p class="page-hero-sub">Everything you need to launch, grow, and scale your online store — WooCommerce development, hosting, SEO, and marketing automation bundled into one complete solution.</p>
@@ -45,7 +45,7 @@
   <!-- WHAT'S INCLUDED -->
   <section class="section sp-services" id="whats-included">
     <div class="container">
-      <div class="section-header" data-aos="fade-up"><span class="section-tag">What's Included</span><h2 class="section-title">Everything Your Store <span class="text-gradient">Needs to Succeed</span></h2><p class="section-sub">Our eCommerce solution bundles every service your online store needs — from setup to growth — into one integrated package.</p></div>
+      <div class="section-header" data-aos="fade-up"><span class="section-tag">What's Included</span><h2 class="section-title">Everything Your Store <span class="text-gradient">Needs to Succeed</span></h2><p class="section-sub">Our eCommerce solution bundles every service your online store needs — from setup to growth — into one integrated package. Need a non-store business website instead? See our <a href="{{ route('web-development') }}" style="color:var(--primary);text-decoration:underline;">Website Development</a> service.</p></div>
       <div class="sp-services-grid">
         <div class="sp-service-card" data-aos="fade-up" data-aos-delay="0"><div class="sp-svc-header"><div class="sp-svc-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg></div><span class="sp-svc-tag">Core</span></div><h3>WooCommerce Store</h3><p>Custom-designed WooCommerce store with product pages, cart, checkout, and account management built for conversion.</p><ul class="sp-feature-list"><li>Custom Theme Design</li><li>Product Catalogue Setup</li><li>Variable Products & Attributes</li><li>Cart & Checkout Optimization</li><li>Customer Account Pages</li><li>Order Management</li></ul></div>
         <div class="sp-service-card" data-aos="fade-up" data-aos-delay="100"><div class="sp-svc-header"><div class="sp-svc-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="1" y="4" width="22" height="16" rx="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg></div></div><h3>Payment Gateways</h3><p>Secure payment integrations so customers can pay with their preferred method — locally and internationally.</p><ul class="sp-feature-list"><li>Stripe Integration</li><li>PayPal Setup</li><li>Local Payment Methods</li><li>SSL Secured Checkout</li><li>3D Secure / SCA</li><li>Subscription Payments</li></ul></div>

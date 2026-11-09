@@ -1,14 +1,14 @@
 @extends('layouts.app')
 
-@section('title', 'Automation Services — Softorio')
-@section('description', 'Stop doing the same repetitive tasks manually. We build custom automation systems that handle your workflows, emails, and data — so you can focus on what matters.')
+@section('title', 'Business Process Automation Services — Softorio')
+@section('description', 'Stop doing repetitive tasks manually. We build custom automation systems that handle your workflows, emails, and data — so you can focus on what matters.')
 
 @section('content')
 <section class="page-hero">
     <div class="page-hero-bg"><div class="ph-orb ph-orb-1"></div><div class="ph-orb ph-orb-2"></div><div class="ph-grid"></div></div>
     <div class="container page-hero-inner">
       <div class="page-hero-content" data-aos="fade-up">
-        <div class="breadcrumb"><a href="{{ route('home') }}">Home</a><span>/</span><a href="#">Services</a><span>/</span><span class="bc-current">Automation</span></div>
+        <div class="breadcrumb"><a href="{{ route('home') }}">Home</a><span>/</span><span>Services</span><span>/</span><span class="bc-current">Automation</span></div>
         <div class="hero-badge"><span class="badge-dot"></span>Business Process Automation</div>
         <h1 class="page-hero-title">Automate the Work.<br/><span class="text-gradient">Amplify the Growth.</span></h1>
         <p class="page-hero-sub">Stop doing the same repetitive tasks manually. We build custom automation systems that handle your workflows, emails, and data — so you can focus on what matters.</p>
@@ -68,7 +68,7 @@
 
   <section class="section sp-services" id="services">
     <div class="container">
-      <div class="section-header" data-aos="fade-up"><span class="section-tag">What We Automate</span><h2 class="section-title">Automation for <span class="text-gradient">Every Business Process</span></h2><p class="section-sub">From lead capture to reporting — we automate the tasks that eat your time and slow your growth.</p></div>
+      <div class="section-header" data-aos="fade-up"><span class="section-tag">What We Automate</span><h2 class="section-title">Automation for <span class="text-gradient">Every Business Process</span></h2><p class="section-sub">From lead capture to reporting — we automate the tasks that eat your time and slow your growth. Want a complete end-to-end system instead of individual automations? See our <a href="{{ route('automation-solution') }}" style="color:var(--primary);text-decoration:underline;">Automation Solution</a>.</p></div>
       <div class="sp-services-grid">
         <div class="sp-service-card" data-aos="fade-up" data-aos-delay="0">
           <div class="sp-svc-header"><div class="sp-svc-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 3H5a2 2 0 0 0-2 2v4m6-6h10a2 2 0 0 1 2 2v4M9 3v18m0 0h10a2 2 0 0 0 2-2V9M9 21H5a2 2 0 0 1-2-2V9m0 0h18"/></svg></div><span class="sp-svc-tag">High Impact</span></div>

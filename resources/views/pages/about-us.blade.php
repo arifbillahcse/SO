@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'About Us — Softorio')
+@section('title', 'About Softorio — Our Story, Team & Mission')
 @section('description', "For over 10 years we've been the trusted digital partner for businesses worldwide — from solo entrepreneurs to Fortune 500 companies. Here's our story.")
 
 @section('content')
@@ -8,7 +8,7 @@
     <div class="page-hero-bg"><div class="ph-orb ph-orb-1"></div><div class="ph-orb ph-orb-2"></div><div class="ph-grid"></div></div>
     <div class="container page-hero-inner">
       <div class="page-hero-content" data-aos="fade-up">
-        <div class="breadcrumb"><a href="{{ route('home') }}">Home</a><span>/</span><a href="#">Resources</a><span>/</span><span class="bc-current">About Us</span></div>
+        <div class="breadcrumb"><a href="{{ route('home') }}">Home</a><span>/</span><span>Resources</span><span>/</span><span class="bc-current">About Us</span></div>
         <div class="hero-badge"><span class="badge-dot"></span>WordPress VIP Gold Partner</div>
         <h1 class="page-hero-title">The Team Behind <span class="text-gradient">Softorio</span></h1>
         <p class="page-hero-sub">For over 10 years we've been the trusted digital partner for businesses worldwide — from solo entrepreneurs to Fortune 500 companies. Here's our story.</p>

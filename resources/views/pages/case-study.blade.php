@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
-@section('title', 'Case Studies — Softorio')
-@section('description', "Behind every number is a business that trusted us to solve a real problem. See the results we've delivered in WordPress, eCommerce, cloud, automation, and SEO.")
+@section('title', 'Client Success Stories & Case Studies — Softorio')
+@section('description', "Behind every number is a business that trusted us to solve a real problem. See results we've delivered in WordPress, eCommerce, cloud, and automation.")
 
 @push('head')
 <style>
@@ -34,7 +34,7 @@
 <section class="page-hero" style="padding-bottom:0">
     <div class="page-hero-bg"><div class="ph-orb ph-orb-1"></div><div class="ph-grid"></div></div>
     <div class="container" style="padding:100px 24px 60px;text-align:center;position:relative" data-aos="fade-up">
-      <div class="breadcrumb" style="justify-content:center"><a href="{{ route('home') }}">Home</a><span>/</span><a href="#">Resources</a><span>/</span><span class="bc-current">Case Studies</span></div>
+      <div class="breadcrumb" style="justify-content:center"><a href="{{ route('home') }}">Home</a><span>/</span><span>Resources</span><span>/</span><span class="bc-current">Case Studies</span></div>
       <div class="hero-badge" style="margin:16px auto"><span class="badge-dot"></span>Real Results</div>
       <h1 class="page-hero-title">Real Clients. <span class="text-gradient">Real Results.</span></h1>
       <p class="page-hero-sub" style="margin:0 auto;max-width:540px">Behind every number is a business that trusted us to solve a real problem. Here's proof of what we deliver.</p>
@@ -121,7 +121,10 @@
       <span class="section-tag">Your Project Next</span>
       <h2 class="section-title" style="margin-top:14px">Ready to Become a <span class="text-gradient">Success Story?</span></h2>
       <p class="section-sub" style="margin:0 auto 36px;max-width:480px">Let's discuss your project and show you how we can deliver results like these for your business.</p>
-      <a href="{{ route('home') }}#contact" class="btn btn-primary btn-lg">Start Your Project</a>
+      <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap">
+        <a href="{{ route('home') }}#contact" class="btn btn-primary btn-lg">Start Your Project</a>
+        <a href="{{ route('our-works') }}" class="btn btn-outline btn-lg">See Full Portfolio</a>
+      </div>
     </div>
   </section>
 @endsection

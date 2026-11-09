@@ -5,10 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="csrf-token" content="{{ csrf_token() }}" />
   @php
-    $defaultTitle = 'Softorio — Your Vision, Our Innovation';
+    $defaultTitle = 'Softorio — Website Development, Cloud & SEO Agency';
     $seoTitle = $pageSeo?->title ?: $__env->yieldContent('title', $defaultTitle);
     $seoDescription = $pageSeo?->meta_description ?: ($__env->yieldContent('description') ?: null);
-    $seoImage = $pageSeo?->og_image ? asset('storage/' . $pageSeo->og_image) : ($__env->yieldContent('image') ?: null);
+    $seoImage = $pageSeo?->og_image
+        ? asset('storage/' . $pageSeo->og_image)
+        : ($__env->yieldContent('image') ?: asset('images/logo-icon.png'));
     $canonicalUrl = $pageSeo?->canonical_url ?: url()->current();
     $robotsParts = [
         ($pageSeo?->robots_index ?? true) ? 'index' : 'noindex',

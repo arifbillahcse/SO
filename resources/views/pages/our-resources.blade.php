@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Our Resources — Softorio')
+@section('title', 'Free SEO, WordPress & Cloud Guides — Softorio')
 @section('description', 'Free guides from the Softorio team — WordPress tutorials, SEO tips, cloud infrastructure walkthroughs, and business automation insights.')
 
 @push('head')
@@ -29,7 +29,7 @@
 <section class="page-hero" style="padding-bottom:0">
     <div class="page-hero-bg"><div class="ph-orb ph-orb-1"></div><div class="ph-grid"></div></div>
     <div class="container" style="padding:100px 24px 60px;text-align:center;position:relative" data-aos="fade-up">
-      <div class="breadcrumb" style="justify-content:center"><a href="{{ route('home') }}">Home</a><span>/</span><a href="#">Resources</a><span>/</span><span class="bc-current">Our Resources</span></div>
+      <div class="breadcrumb" style="justify-content:center"><a href="{{ route('home') }}">Home</a><span>/</span><span>Resources</span><span>/</span><span class="bc-current">Our Resources</span></div>
       <div class="hero-badge" style="margin:16px auto"><span class="badge-dot"></span>Knowledge Base</div>
       <h1 class="page-hero-title">Guides, Tips & <span class="text-gradient">Industry Insights</span></h1>
       <p class="page-hero-sub" style="margin:0 auto;max-width:540px">Free resources from the Softorio team — WordPress guides, SEO tips, cloud infrastructure tutorials, and business automation insights.</p>

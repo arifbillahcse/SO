@@ -5,6 +5,8 @@
 
 @push('head')
 <style>
+/* card headings are h3 (was h4) so heading levels don't skip */
+.sp-why-card h3 { font-size: 0.95rem; font-weight: 700; color: var(--text-primary); margin-bottom: 8px; }
 /* ===== AFFILIATE PAGE — scoped styles ===== */
     .aff-steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
     .aff-step {
@@ -105,7 +107,7 @@
         <h1 class="page-hero-title">
           Turn Your Network Into <span class="text-gradient">Recurring Income</span>
         </h1>
-        <p class="page-hero-sub">Know a business that needs a website, hosting, or cloud infrastructure? Refer them to Softorio and earn <strong style="color:var(--primary)">20% of the profit</strong> from that client — for life. Not just the first project. Forever, as long as they stay with us.</p>
+        <p class="page-hero-sub">Know a business that needs a <a href="{{ route('web-development') }}" style="color:var(--primary);text-decoration:underline;">website</a>, <a href="{{ route('manage-cloud') }}" style="color:var(--primary);text-decoration:underline;">hosting</a>, or <a href="{{ route('cloud-solution') }}" style="color:var(--primary);text-decoration:underline;">cloud infrastructure</a>? Refer them to Softorio and earn <strong style="color:var(--primary)">20% of the profit</strong> from that client — for life. Not just the first project. Forever, as long as they stay with us.</p>
         <div class="page-hero-cta">
           <a href="#contact-form" class="btn btn-primary btn-lg">Join the Program</a>
           <a href="#how-it-works" class="btn btn-outline btn-lg">See How It Works</a>
@@ -181,10 +183,10 @@
         <p class="section-sub">We designed this program to be simple, fair, and genuinely rewarding — not a gimmick.</p>
       </div>
       <div class="sp-why-cards" data-aos="fade-up" style="display:grid;grid-template-columns:repeat(4,1fr);gap:24px">
-        <div class="sp-why-card"><div class="sp-wc-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div><h4>Lifetime, Not One-Time</h4><p>You keep earning for as long as your referral stays a client — hosting renewals, new projects, everything.</p></div>
-        <div class="sp-why-card"><div class="sp-wc-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10z"/></svg></div><h4>No Cap, No Limit</h4><p>Refer one person or fifty. There's no ceiling on how much you can earn through the program.</p></div>
-        <div class="sp-why-card"><div class="sp-wc-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></div><h4>Zero Risk to Refer</h4><p>Softorio has delivered 300+ projects with real client results — your name is attached to a service you can trust.</p></div>
-        <div class="sp-why-card"><div class="sp-wc-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></div><h4>Simple &amp; Transparent</h4><p>No tiers, no confusing point systems. One flat rate: 20% of profit, explained clearly, every time.</p></div>
+        <div class="sp-why-card"><div class="sp-wc-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div><h3>Lifetime, Not One-Time</h3><p>You keep earning for as long as your referral stays a client — hosting renewals, new projects, everything.</p></div>
+        <div class="sp-why-card"><div class="sp-wc-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10z"/></svg></div><h3>No Cap, No Limit</h3><p>Refer one person or fifty. There's no ceiling on how much you can earn through the program.</p></div>
+        <div class="sp-why-card"><div class="sp-wc-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></div><h3>Zero Risk to Refer</h3><p>Softorio has delivered 300+ projects with real client results — your name is attached to a service you can trust.</p></div>
+        <div class="sp-why-card"><div class="sp-wc-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></div><h3>Simple &amp; Transparent</h3><p>No tiers, no confusing point systems. One flat rate: 20% of profit, explained clearly, every time.</p></div>
       </div>
     </div>
   </section>

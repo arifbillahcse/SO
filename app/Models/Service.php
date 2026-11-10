@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasOne;
 
 class Service extends Model
 {
@@ -21,4 +22,12 @@ class Service extends Model
         'features' => 'array',
         'featured' => 'boolean',
     ];
+
+    /**
+     * Each service is presented on its own static page; that page's SEO row.
+     */
+    public function pageSeo(): HasOne
+    {
+        return $this->hasOne(PageSeo::class, 'route_name', 'route_name');
+    }
 }

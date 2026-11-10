@@ -86,7 +86,7 @@
               <span class="wp-tag">{{ $tag }}</span>
               @endforeach
             </div>
-            <p class="wp-title">{{ $item->title }}</p>
+            <h2 class="wp-title">{{ $item->title }}</h2>
             <p class="wp-client">{{ $item->client }}</p>
           </div>
         </a>

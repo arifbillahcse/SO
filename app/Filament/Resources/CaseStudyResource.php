@@ -2,17 +2,17 @@
 
 namespace App\Filament\Resources;
 
-use App\Filament\Concerns\HasSeoCompletionColumn;
 use App\Filament\Resources\CaseStudyResource\Pages;
+use App\Filament\Seo\SeoFormSchema;
 use App\Models\CaseStudy;
-use Filament\Forms\Components\FileUpload;
-use Filament\Forms\Components\Grid;
 use Filament\Forms\Components\Repeater;
 use Filament\Forms\Components\RichEditor;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Toggle;
 use Filament\Resources\Resource;
+use Filament\Schemas\Components\Grid;
+use Filament\Schemas\Components\Section;
 use Filament\Schemas\Schema;
 use Filament\Tables\Columns\IconColumn;
 use Filament\Tables\Columns\TextColumn;
@@ -20,13 +20,11 @@ use Filament\Tables\Table;
 
 class CaseStudyResource extends Resource
 {
-    use HasSeoCompletionColumn;
-
     protected static ?string $model = CaseStudy::class;
 
-    protected static string | \BackedEnum | null $navigationIcon = 'heroicon-o-chart-bar';
+    protected static string|\BackedEnum|null $navigationIcon = 'heroicon-o-chart-bar';
 
-    protected static string | \UnitEnum | null $navigationGroup = 'Content';
+    protected static string|\UnitEnum|null $navigationGroup = 'Content';
 
     public static function form(Schema $schema): Schema
     {
@@ -52,19 +50,12 @@ class CaseStudyResource extends Resource
             Toggle::make('featured')->helperText('Only one case study should be featured at a time.'),
             TextInput::make('sort_order')->numeric()->default(0),
 
-            TextInput::make('meta_title')->label('SEO Title')->maxLength(255)
-                ->helperText('Overrides the default page title. Leave blank to use the title above.'),
-            Textarea::make('meta_description')->rows(3)->maxLength(320)->columnSpanFull()
-                ->helperText('Shown under your title in Google search results.'),
-            TextInput::make('focus_keywords')
-                ->label('Focus Keywords')
-                ->helperText('Comma-separated, up to 5, e.g. "ecommerce case study, woocommerce migration"')
-                ->afterStateHydrated(fn ($component, $state) => $component->state(is_array($state) ? implode(', ', $state) : $state))
-                ->dehydrateStateUsing(fn ($state) => array_values(array_filter(array_map('trim', explode(',', $state ?? ''))))),
-            FileUpload::make('og_image')->label('Open Graph Image')->image()->directory('seo')->visibility('public')
-                ->helperText('Shown when this case study is shared on social media.'),
-            Toggle::make('robots_index')->label('Allow search engines to index this page')->default(true),
-            Toggle::make('robots_follow')->label('Allow search engines to follow links on this page')->default(true),
+            Section::make('SEO')
+                ->description('How this page appears in Google and when shared. Saved values go live immediately.')
+                ->relationship('seo')
+                ->schema([SeoFormSchema::tabs()])
+                ->collapsible()
+                ->columnSpanFull(),
         ]);
     }
 
@@ -76,7 +67,7 @@ class CaseStudyResource extends Resource
                 TextColumn::make('title')->searchable(),
                 TextColumn::make('client'),
                 IconColumn::make('featured')->boolean(),
-                static::seoCompletionColumn(),
+                SeoFormSchema::scoreColumn('seo.seo_score', sortable: false)->label('SEO'),
             ])
             ->defaultSort('sort_order');
     }

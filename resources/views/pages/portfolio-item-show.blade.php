@@ -1,17 +1,24 @@
 @extends('layouts.app')
 
-@section('title', $portfolioItem->meta_title ?: $portfolioItem->title . ' — Softorio Portfolio')
-@section('description', $portfolioItem->meta_description ?: \Illuminate\Support\Str::limit($portfolioItem->description ?? $portfolioItem->title, 155))
+@section('title', $portfolioItem->seoDefaultTitle())
+@section('description', \App\Support\Seo::excerpt($portfolioItem->seoDefaultDescription()))
 @section('breadcrumbs', json_encode([
     ['name' => 'Home', 'url' => route('home')],
     ['name' => 'Our Works', 'url' => route('our-works')],
     ['name' => $portfolioItem->title, 'url' => route('our-works.show', $portfolioItem)],
 ]))
-@if(! ($portfolioItem->robots_index ?? true) || ! ($portfolioItem->robots_follow ?? true))
-@section('meta')
-  <meta name="robots" content="{{ ($portfolioItem->robots_index ?? true) ? 'index' : 'noindex' }}, {{ ($portfolioItem->robots_follow ?? true) ? 'follow' : 'nofollow' }}" />
-@endsection
-@endif
+@section('page_schema', json_encode(array_filter([
+    '@context' => 'https://schema.org',
+    '@type' => 'CreativeWork',
+    '@id' => \App\Support\Seo::url($portfolioItem->seoPath()).'#project',
+    'name' => $portfolioItem->title,
+    'description' => \App\Support\Seo::plain($portfolioItem->seo?->meta_description) ?: $portfolioItem->seoDefaultDescription(),
+    'image' => \App\Support\Seo::imageUrl($portfolioItem->seo?->og_image ?: $portfolioItem->thumbnail_path),
+    'keywords' => implode(', ', $portfolioItem->tags ?? []) ?: null,
+    'dateModified' => $portfolioItem->updated_at?->toAtomString(),
+    'creator' => ['@id' => \App\Support\SeoHead::organizationId()],
+    'mainEntityOfPage' => \App\Support\Seo::url($portfolioItem->seoPath()),
+])))
 
 @push('head')
 <style>
@@ -26,19 +33,6 @@
 .related-works-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:24px; margin-top:16px; }
 @media(max-width:768px){ .related-works-grid{grid-template-columns:1fr;} }
 </style>
-@php
-  $portfolioItemSchema = json_encode(array_filter([
-      '@context' => 'https://schema.org',
-      '@type' => 'CreativeWork',
-      'name' => $portfolioItem->title,
-      'description' => $portfolioItem->meta_description ?: $portfolioItem->description,
-      'image' => $portfolioItem->thumbnail_path ? asset('storage/' . $portfolioItem->thumbnail_path) : null,
-      'dateModified' => $portfolioItem->updated_at->toAtomString(),
-      'creator' => ['@type' => 'Organization', 'name' => 'Softorio'],
-      'mainEntityOfPage' => route('our-works.show', $portfolioItem),
-  ]));
-@endphp
-<script type="application/ld+json">{!! $portfolioItemSchema !!}</script>
 @endpush
 
 @section('content')

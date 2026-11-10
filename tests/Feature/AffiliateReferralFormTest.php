@@ -40,8 +40,8 @@ class AffiliateReferralFormTest extends TestCase
             'status' => 'new',
         ]);
 
-        Mail::assertSent(AffiliateReferralReceived::class);
-        Mail::assertSent(AffiliateReferralAutoReply::class, function ($mail) {
+        Mail::assertQueued(AffiliateReferralReceived::class);
+        Mail::assertQueued(AffiliateReferralAutoReply::class, function ($mail) {
             return $mail->hasTo('john@example.com');
         });
     }
@@ -69,7 +69,7 @@ class AffiliateReferralFormTest extends TestCase
 
         $response->assertStatus(422);
         $this->assertDatabaseCount('affiliate_referrals', 0);
-        Mail::assertNothingSent();
+        Mail::assertNothingOutgoing();
     }
 
     public function test_submission_does_not_leak_into_contact_submissions_table(): void

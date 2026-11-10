@@ -3,12 +3,14 @@
 namespace App\Filament\Resources;
 
 use App\Filament\Resources\ServiceResource\Pages;
+use App\Filament\Seo\SeoFormSchema;
 use App\Models\Service;
 use Filament\Forms\Components\Repeater;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Toggle;
 use Filament\Resources\Resource;
+use Filament\Schemas\Components\Section;
 use Filament\Schemas\Schema;
 use Filament\Tables\Columns\IconColumn;
 use Filament\Tables\Columns\TextColumn;
@@ -18,9 +20,9 @@ class ServiceResource extends Resource
 {
     protected static ?string $model = Service::class;
 
-    protected static string | \BackedEnum | null $navigationIcon = 'heroicon-o-briefcase';
+    protected static string|\BackedEnum|null $navigationIcon = 'heroicon-o-briefcase';
 
-    protected static string | \UnitEnum | null $navigationGroup = 'Content';
+    protected static string|\UnitEnum|null $navigationGroup = 'Content';
 
     protected static ?string $navigationLabel = 'Services';
 
@@ -43,6 +45,13 @@ class ServiceResource extends Resource
                 ->columnSpanFull(),
             Toggle::make('featured')->helperText('Shown as the highlighted card on the homepage.'),
             TextInput::make('sort_order')->numeric()->default(0),
+
+            Section::make('SEO for this service\'s page')
+                ->description('The service is presented on its own page (see Route name). These settings control how that page appears in Google.')
+                ->relationship('pageSeo')
+                ->schema([SeoFormSchema::tabs()])
+                ->collapsible()
+                ->columnSpanFull(),
         ]);
     }
 
@@ -54,6 +63,7 @@ class ServiceResource extends Resource
                 TextColumn::make('title')->searchable(),
                 TextColumn::make('route_name')->badge(),
                 IconColumn::make('featured')->boolean(),
+                SeoFormSchema::scoreColumn('pageSeo.seo_score', sortable: false)->label('Page SEO'),
                 TextColumn::make('updated_at')->dateTime()->sortable()->toggleable(isToggledHiddenByDefault: true),
             ])
             ->defaultSort('sort_order');

@@ -2,58 +2,25 @@
 
 namespace Database\Seeders;
 
+use App\Models\Article;
+use App\Models\CaseStudy;
 use App\Models\PageSeo;
+use App\Models\PortfolioItem;
 use Illuminate\Database\Seeder;
 
 class PageSeoSeeder extends Seeder
 {
     /**
-     * One row per public route, so the SEO admin screen always lists
-     * every page even before an editor has customized anything.
+     * One row per public URL — every static route in config/seo.php and every
+     * content detail page — so the SEO dashboard always lists the whole site.
+     * Never overwrites SEO an editor has already written.
      */
-    private const ROUTES = [
-        'home',
-        'web-development',
-        'seo',
-        'manage-cloud',
-        'automation',
-        'ecommerce-solution',
-        'cloud-solution',
-        'automation-solution',
-        'our-works',
-        'about-us',
-        'case-study',
-        'our-resources',
-        'affiliate-program',
-        'our-founders',
-    ];
-
-    /**
-     * Pages whose schema.org type is more specific than the generic
-     * "WebPage" default. Applied unconditionally since the schema_type
-     * column is new and can't yet have been customized by an editor.
-     */
-    private const SCHEMA_TYPES = [
-        'web-development' => 'Service',
-        'seo' => 'Service',
-        'manage-cloud' => 'Service',
-        'automation' => 'Service',
-        'about-us' => 'AboutPage',
-    ];
-
     public function run(): void
     {
-        foreach (self::ROUTES as $routeName) {
-            $pageSeo = PageSeo::firstOrCreate(
-                ['route_name' => $routeName],
-                $routeName === 'our-founders'
-                    ? ['robots_index' => false, 'robots_follow' => false]
-                    : []
-            );
+        PageSeo::syncStaticPages();
 
-            if (isset(self::SCHEMA_TYPES[$routeName])) {
-                $pageSeo->update(['schema_type' => self::SCHEMA_TYPES[$routeName]]);
-            }
+        foreach ([Article::class, CaseStudy::class, PortfolioItem::class] as $class) {
+            $class::query()->each(fn ($record) => $record->ensureSeo());
         }
     }
 }

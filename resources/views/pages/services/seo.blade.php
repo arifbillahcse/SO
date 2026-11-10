@@ -58,7 +58,7 @@
       <div class="section-header" data-aos="fade-up">
         <span class="section-tag">What We Do</span>
         <h2 class="section-title">Complete SEO <span class="text-gradient">Service Suite</span></h2>
-        <p class="section-sub">Every angle covered — from site architecture to link authority — for sustainable, long-term organic growth.</p>
+        <p class="section-sub">Every angle covered — from site architecture to link authority — for sustainable, long-term organic growth. See the results in our <a href="{{ route('case-study') }}" style="color:var(--primary);text-decoration:underline;">client case studies</a>, or read our free <a href="{{ route('our-resources') }}" style="color:var(--primary);text-decoration:underline;">SEO and Core Web Vitals guides</a>.</p>
       </div>
       <div class="sp-services-grid">
         <div class="sp-service-card" data-aos="fade-up" data-aos-delay="0">
@@ -125,7 +125,7 @@
       <div class="section-header" data-aos="fade-up">
         <span class="section-tag">How We Work</span>
         <h2 class="section-title">Our SEO <span class="text-gradient">Process</span></h2>
-        <p class="section-sub">A proven, repeatable process that delivers consistent ranking improvements month after month.</p>
+        <p class="section-sub">A proven, repeatable process that delivers consistent ranking improvements month after month. Rankings start with a fast, well-built site — see our <a href="{{ route('web-development') }}" style="color:var(--primary);text-decoration:underline;">website development</a> service.</p>
       </div>
       <div class="process-timeline">
         <div class="process-step" data-aos="fade-up"><div class="ps-left"><div class="ps-num">01</div></div><div class="ps-connector"><div class="ps-dot"></div><div class="ps-line"></div></div>

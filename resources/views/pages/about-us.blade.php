@@ -3,6 +3,13 @@
 @section('title', 'About Softorio — Our Story, Team & Mission')
 @section('description', "For over 10 years we've been the trusted digital partner for businesses worldwide — from solo entrepreneurs to Fortune 500 companies. Here's our story.")
 
+@push('head')
+<style>
+/* card headings are h3 (was h4) so heading levels don't skip */
+.sp-why-card h3 { font-size: 0.95rem; font-weight: 700; color: var(--text-primary); margin-bottom: 8px; }
+</style>
+@endpush
+
 @section('content')
 <section class="page-hero" style="padding-bottom:0">
     <div class="page-hero-bg"><div class="ph-orb ph-orb-1"></div><div class="ph-orb ph-orb-2"></div><div class="ph-grid"></div></div>
@@ -50,10 +57,10 @@
       </div>
       <div class="sp-why-right" data-aos="fade-left">
         <div class="sp-why-cards">
-          <div class="sp-why-card"><div class="sp-wc-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div><h4>Reliability First</h4><p>We build systems that stay online, stay fast, and stay secure — because downtime is not an option for our clients.</p></div>
-          <div class="sp-why-card"><div class="sp-wc-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg></div><h4>Client-Centric</h4><p>Every decision we make is guided by what's best for the client — not what's easiest or most profitable for us.</p></div>
-          <div class="sp-why-card"><div class="sp-wc-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></div><h4>Technical Excellence</h4><p>We hold ourselves to the highest standards — clean code, security hardening, and performance optimisation on every project.</p></div>
-          <div class="sp-why-card"><div class="sp-wc-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10z"/></svg></div><h4>Global Perspective</h4><p>With clients across North America, Europe, and Asia, we understand how to build digital solutions that work across cultures and markets.</p></div>
+          <div class="sp-why-card"><div class="sp-wc-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div><h3>Reliability First</h3><p>We build systems that stay online, stay fast, and stay secure — because downtime is not an option for our clients.</p></div>
+          <div class="sp-why-card"><div class="sp-wc-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg></div><h3>Client-Centric</h3><p>Every decision we make is guided by what's best for the client — not what's easiest or most profitable for us.</p></div>
+          <div class="sp-why-card"><div class="sp-wc-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></div><h3>Technical Excellence</h3><p>We hold ourselves to the highest standards — clean code, security hardening, and performance optimisation on every project.</p></div>
+          <div class="sp-why-card"><div class="sp-wc-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10z"/></svg></div><h3>Global Perspective</h3><p>With clients across North America, Europe, and Asia, we understand how to build digital solutions that work across cultures and markets.</p></div>
         </div>
       </div>
     </div>
@@ -70,17 +77,17 @@
       <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px" data-aos="fade-up">
         <div class="sp-why-card" style="background:var(--dark-3)">
           <div class="sp-wc-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg></div>
-          <h4>WordPress Core Contributor</h4>
+          <h3>WordPress Core Contributor</h3>
           <p>13,768+ hours contributed to WordPress core, WooCommerce, and BuddyPress development.</p>
         </div>
         <div class="sp-why-card" style="background:var(--dark-3)">
           <div class="sp-wc-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
-          <h4>WordCamp Organiser</h4>
+          <h3>WordCamp Organiser</h3>
           <p>Actively organising WordCamp and Meetup events in Ahmedabad — connecting the global WordPress community.</p>
         </div>
         <div class="sp-why-card" style="background:var(--dark-3)">
           <div class="sp-wc-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></div>
-          <h4>Five for the Future</h4>
+          <h3>Five for the Future</h3>
           <p>Backing 7 WordPress contributors with 28 hours weekly through Automattic's "Five for the Future" initiative.</p>
         </div>
       </div>
@@ -93,7 +100,7 @@
     <div class="container" style="text-align:center;position:relative" data-aos="fade-up">
       <span class="section-tag">Join Our Clients</span>
       <h2 class="section-title" style="margin-top:14px">Ready to Work with <span class="text-gradient">Softorio?</span></h2>
-      <p class="section-sub" style="margin:0 auto 36px;max-width:500px">Whether you need a website, hosting, SEO, or a complete digital solution — we're here to help. Let's talk about your project.</p>
+      <p class="section-sub" style="margin:0 auto 36px;max-width:500px">Whether you need a <a href="{{ route('web-development') }}" style="color:var(--primary);text-decoration:underline;">website</a>, <a href="{{ route('manage-cloud') }}" style="color:var(--primary);text-decoration:underline;">hosting</a>, <a href="{{ route('seo') }}" style="color:var(--primary);text-decoration:underline;">SEO</a>, or a complete digital solution — we're here to help. Let's talk about your project.</p>
       <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap">
         <a href="{{ route('home') }}#contact" class="btn btn-primary btn-lg">Start a Project</a>
         <a href="{{ route('our-works') }}" class="btn btn-outline btn-lg">View Our Work</a>

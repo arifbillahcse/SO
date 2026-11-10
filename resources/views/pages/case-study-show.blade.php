@@ -1,20 +1,25 @@
 @extends('layouts.app')
 
-@section('title', $caseStudy->meta_title ?: $caseStudy->title . ' — Softorio Case Study')
-@section('description', $caseStudy->meta_description ?: \Illuminate\Support\Str::limit($caseStudy->description, 155))
-@if($caseStudy->og_image)
-@section('image', asset('storage/' . $caseStudy->og_image))
-@endif
+@section('title', $caseStudy->seoDefaultTitle())
+@section('description', \App\Support\Seo::excerpt($caseStudy->description))
 @section('breadcrumbs', json_encode([
     ['name' => 'Home', 'url' => route('home')],
     ['name' => 'Case Studies', 'url' => route('case-study')],
     ['name' => $caseStudy->title, 'url' => route('case-study.show', $caseStudy)],
 ]))
-@if(! ($caseStudy->robots_index ?? true) || ! ($caseStudy->robots_follow ?? true))
-@section('meta')
-  <meta name="robots" content="{{ ($caseStudy->robots_index ?? true) ? 'index' : 'noindex' }}, {{ ($caseStudy->robots_follow ?? true) ? 'follow' : 'nofollow' }}" />
-@endsection
-@endif
+@section('page_schema', json_encode(array_filter([
+    '@context' => 'https://schema.org',
+    '@type' => 'CreativeWork',
+    '@id' => \App\Support\Seo::url($caseStudy->seoPath()).'#casestudy',
+    'name' => $caseStudy->title,
+    'headline' => $caseStudy->title,
+    'description' => \App\Support\Seo::plain($caseStudy->seo?->meta_description) ?: $caseStudy->description,
+    'image' => \App\Support\Seo::imageUrl($caseStudy->seo?->og_image),
+    'keywords' => implode(', ', $caseStudy->tags ?? []) ?: null,
+    'dateModified' => $caseStudy->updated_at?->toAtomString(),
+    'creator' => ['@id' => \App\Support\SeoHead::organizationId()],
+    'mainEntityOfPage' => \App\Support\Seo::url($caseStudy->seoPath()),
+])))
 
 @push('head')
 <style>
@@ -30,20 +35,9 @@
 .article-body ul, .article-body ol { margin:0 0 18px 20px; }
 .article-body a { color:var(--primary); text-decoration:underline; }
 @media(max-width:600px){ .cs-results{grid-template-columns:1fr 1fr;} }
+.related-articles-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:24px; margin-top:16px; }
+@media(max-width:768px){ .related-articles-grid{grid-template-columns:1fr;} }
 </style>
-@php
-  $caseStudySchema = json_encode(array_filter([
-      '@context' => 'https://schema.org',
-      '@type' => 'CreativeWork',
-      'name' => $caseStudy->title,
-      'description' => $caseStudy->meta_description ?: $caseStudy->description,
-      'image' => $caseStudy->og_image ? asset('storage/' . $caseStudy->og_image) : null,
-      'dateModified' => $caseStudy->updated_at->toAtomString(),
-      'creator' => ['@type' => 'Organization', 'name' => 'Softorio'],
-      'mainEntityOfPage' => route('case-study.show', $caseStudy),
-  ]));
-@endphp
-<script type="application/ld+json">{!! $caseStudySchema !!}</script>
 @endpush
 
 @section('content')
@@ -86,6 +80,25 @@
     </div>
   </div>
 </section>
+
+@if($relatedCaseStudies->isNotEmpty())
+<section class="section" style="background:var(--dark-2);padding:70px 0">
+  <div class="container">
+    <div class="section-header" data-aos="fade-up" style="text-align:center">
+      <span class="section-tag">More Results</span>
+      <h2 class="section-title">Related <span class="text-gradient">Case Studies</span></h2>
+    </div>
+    <div class="related-articles-grid">
+      @foreach($relatedCaseStudies as $related)
+      <a href="{{ route('case-study.show', $related) }}" style="display:block;background:var(--dark-3);border:1px solid var(--border);border-radius:var(--radius-lg);padding:22px;color:inherit" data-aos="fade-up">
+        <div style="font-size:0.75rem;color:var(--primary);font-weight:600;margin-bottom:8px">{{ implode(' · ', $related->tags ?? []) }}</div>
+        <h3 style="font-size:1rem;font-weight:700;color:var(--text-primary);line-height:1.4">{{ $related->title }}</h3>
+      </a>
+      @endforeach
+    </div>
+  </div>
+</section>
+@endif
 
 <section class="section sp-contact" style="padding:70px 0" id="contact-form">
   <div class="sp-contact-bg"><div class="sp-contact-orb"></div></div>

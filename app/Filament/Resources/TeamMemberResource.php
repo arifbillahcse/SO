@@ -5,11 +5,11 @@ namespace App\Filament\Resources;
 use App\Filament\Resources\TeamMemberResource\Pages;
 use App\Models\TeamMember;
 use Filament\Forms\Components\FileUpload;
-use Filament\Forms\Components\Grid;
 use Filament\Forms\Components\Repeater;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
 use Filament\Resources\Resource;
+use Filament\Schemas\Components\Grid;
 use Filament\Schemas\Schema;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
@@ -18,9 +18,9 @@ class TeamMemberResource extends Resource
 {
     protected static ?string $model = TeamMember::class;
 
-    protected static string | \BackedEnum | null $navigationIcon = 'heroicon-o-users';
+    protected static string|\BackedEnum|null $navigationIcon = 'heroicon-o-users';
 
-    protected static string | \UnitEnum | null $navigationGroup = 'Content';
+    protected static string|\UnitEnum|null $navigationGroup = 'Content';
 
     protected static ?string $navigationLabel = 'Team / Founders';
 

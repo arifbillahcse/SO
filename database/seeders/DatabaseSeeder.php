@@ -30,6 +30,7 @@ class DatabaseSeeder extends Seeder
             ArticleSeeder::class,
             TeamMemberSeeder::class,
             PageSeoSeeder::class,
+            SeoContentSeeder::class,
             OrganizationSettingsSeeder::class,
         ]);
     }

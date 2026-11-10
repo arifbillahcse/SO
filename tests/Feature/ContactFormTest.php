@@ -4,7 +4,6 @@ namespace Tests\Feature;
 
 use App\Mail\ContactSubmissionAutoReply;
 use App\Mail\ContactSubmissionReceived;
-use App\Models\ContactSubmission;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Support\Facades\Mail;
 use Tests\TestCase;
@@ -41,8 +40,8 @@ class ContactFormTest extends TestCase
             'status' => 'new',
         ]);
 
-        Mail::assertSent(ContactSubmissionReceived::class);
-        Mail::assertSent(ContactSubmissionAutoReply::class, function ($mail) {
+        Mail::assertQueued(ContactSubmissionReceived::class);
+        Mail::assertQueued(ContactSubmissionAutoReply::class, function ($mail) {
             return $mail->hasTo('jane@example.com');
         });
     }
@@ -96,7 +95,7 @@ class ContactFormTest extends TestCase
 
         $response->assertStatus(422);
         $this->assertDatabaseCount('contact_submissions', 0);
-        Mail::assertNothingSent();
+        Mail::assertNothingOutgoing();
     }
 
     public function test_sixth_submission_within_a_minute_is_rate_limited(): void

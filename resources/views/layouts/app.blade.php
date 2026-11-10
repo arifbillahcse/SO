@@ -5,103 +5,33 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="csrf-token" content="{{ csrf_token() }}" />
   @php
-    $defaultTitle = 'Softorio — Website Development, Cloud & SEO Agency';
-    $seoTitle = $pageSeo?->title ?: $__env->yieldContent('title', $defaultTitle);
-    $seoDescription = $pageSeo?->meta_description ?: ($__env->yieldContent('description') ?: null);
-    $seoImage = $pageSeo?->og_image
-        ? asset('storage/' . $pageSeo->og_image)
-        : ($__env->yieldContent('image') ?: asset('images/logo-icon.png'));
-    $canonicalUrl = $pageSeo?->canonical_url ?: url()->current();
-    $robotsParts = [
-        ($pageSeo?->robots_index ?? true) ? 'index' : 'noindex',
-        ($pageSeo?->robots_follow ?? true) ? 'follow' : 'nofollow',
-    ];
-    if (! empty($pageSeo?->robots_advanced)) {
-        $robotsParts = array_merge($robotsParts, array_map('trim', explode(',', $pageSeo->robots_advanced)));
-    }
-
-    $currentRouteName = request()->route()?->getName();
-    $breadcrumbItems = null;
-    if ($__env->hasSection('breadcrumbs')) {
-        $breadcrumbItems = json_decode($__env->yieldContent('breadcrumbs'), true);
-    } elseif ($currentRouteName && $currentRouteName !== 'home') {
-        $breadcrumbItems = [
-            ['name' => 'Home', 'url' => route('home')],
-            ['name' => \Illuminate\Support\Str::headline($currentRouteName), 'url' => $canonicalUrl],
-        ];
-    }
-    $breadcrumbSchema = $breadcrumbItems ? json_encode([
-        '@context' => 'https://schema.org',
-        '@type' => 'BreadcrumbList',
-        'itemListElement' => collect($breadcrumbItems)->values()->map(fn ($item, $i) => [
-            '@type' => 'ListItem',
-            'position' => $i + 1,
-            'name' => $item['name'],
-            'item' => $item['url'],
-        ])->all(),
-    ]) : null;
-
-    $organizationSchema = json_encode(array_filter([
-        '@context' => 'https://schema.org',
-        '@type' => 'Organization',
-        'name' => $orgSettings->name,
-        'url' => url('/'),
-        'logo' => $orgSettings->logo ? asset('storage/' . $orgSettings->logo) : null,
-        'description' => $orgSettings->description,
-        'telephone' => $orgSettings->telephone,
-        'email' => $orgSettings->email,
-        'sameAs' => array_values(array_filter([
-            $orgSettings->facebook_url,
-            $orgSettings->twitter_url,
-            $orgSettings->linkedin_url,
-            $orgSettings->youtube_url,
-        ])),
-    ]));
-
-    $pageSchemaType = $pageSeo?->schema_type ?: 'WebPage';
-    $pageSchema = json_encode(array_filter([
-        '@context' => 'https://schema.org',
-        '@type' => $pageSchemaType,
-        'name' => $seoTitle,
-        'description' => $seoDescription,
-        'url' => $canonicalUrl,
-        'provider' => $pageSchemaType === 'Service' ? ['@type' => 'Organization', 'name' => $orgSettings->name, 'url' => url('/')] : null,
-    ]));
+    $sectionValue = fn (string $name) => $__env->hasSection($name) ? $__env->yieldContent($name) : null;
+    $seoHead = \App\Support\SeoHead::build($pageSeo, [
+        'title' => $sectionValue('title'),
+        'description' => $sectionValue('description'),
+        'image' => $sectionValue('image'),
+        'og_type' => $sectionValue('og_type'),
+        'breadcrumbs' => $sectionValue('breadcrumbs'),
+        'page_schema' => $sectionValue('page_schema'),
+    ], $orgSettings, request()->path());
   @endphp
-  <title>{{ $seoTitle }}</title>
-  <meta name="robots" content="{{ implode(', ', $robotsParts) }}" />
-  @if($seoDescription)
-  <meta name="description" content="{{ $seoDescription }}" />
+  <title>{{ $seoHead['title'] }}</title>
+  @if($seoHead['description'])
+  <meta name="description" content="{{ $seoHead['description'] }}" />
   @endif
-  <link rel="canonical" href="{{ $canonicalUrl }}" />
+  <meta name="robots" content="{{ $seoHead['robots'] }}" />
+  <link rel="canonical" href="{{ $seoHead['canonical'] }}" />
 
-  {{-- Open Graph --}}
-  <meta property="og:site_name" content="Softorio" />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="{{ $canonicalUrl }}" />
-  <meta property="og:title" content="{{ $pageSeo?->og_title ?: $seoTitle }}" />
-  @if($seoDescription)
-  <meta property="og:description" content="{{ $pageSeo?->og_description ?: $seoDescription }}" />
-  @endif
-  @if($seoImage)
-  <meta property="og:image" content="{{ $seoImage }}" />
-  @endif
+  @foreach($seoHead['og'] as $property => $content)
+  <meta property="{{ $property }}" content="{{ $content }}" />
+  @endforeach
+  @foreach($seoHead['twitter'] as $name => $content)
+  <meta name="{{ $name }}" content="{{ $content }}" />
+  @endforeach
 
-  {{-- Twitter Card --}}
-  <meta name="twitter:card" content="{{ $pageSeo?->twitter_card_type ?: 'summary_large_image' }}" />
-  <meta name="twitter:title" content="{{ $pageSeo?->twitter_title ?: $seoTitle }}" />
-  @if($seoDescription)
-  <meta name="twitter:description" content="{{ $pageSeo?->twitter_description ?: $seoDescription }}" />
-  @endif
-  @if($seoImage)
-  <meta name="twitter:image" content="{{ $pageSeo?->twitter_image ? asset('storage/' . $pageSeo->twitter_image) : $seoImage }}" />
-  @endif
-
-  <script type="application/ld+json">{!! $organizationSchema !!}</script>
-  <script type="application/ld+json">{!! $pageSchema !!}</script>
-  @if($breadcrumbSchema)
-  <script type="application/ld+json">{!! $breadcrumbSchema !!}</script>
-  @endif
+  @foreach($seoHead['jsonld'] as $schema)
+  <script type="application/ld+json">{!! \App\Support\SeoHead::encode($schema) !!}</script>
+  @endforeach
 
   @if($orgSettings->google_analytics_id)
   <script async src="https://www.googletagmanager.com/gtag/js?id={{ $orgSettings->google_analytics_id }}"></script>
@@ -113,7 +43,6 @@
   </script>
   @endif
 
-  @yield('meta')
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />

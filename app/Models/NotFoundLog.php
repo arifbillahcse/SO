@@ -6,6 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class NotFoundLog extends Model
 {
+    protected $fillable = ['path'];
+
     protected function casts(): array
     {
         return [

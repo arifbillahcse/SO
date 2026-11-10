@@ -2,10 +2,13 @@
 
 namespace App\Models;
 
+use App\Models\Concerns\HasSeo;
 use Illuminate\Database\Eloquent\Model;
 
 class CaseStudy extends Model
 {
+    use HasSeo;
+
     protected $fillable = [
         'title',
         'slug',
@@ -16,25 +19,41 @@ class CaseStudy extends Model
         'metrics',
         'featured',
         'sort_order',
-        'meta_title',
-        'meta_description',
-        'focus_keywords',
-        'og_image',
-        'robots_index',
-        'robots_follow',
     ];
 
     protected $casts = [
         'tags' => 'array',
         'metrics' => 'array',
         'featured' => 'boolean',
-        'focus_keywords' => 'array',
-        'robots_index' => 'boolean',
-        'robots_follow' => 'boolean',
     ];
 
     public function getRouteKeyName(): string
     {
         return 'slug';
+    }
+
+    public function seoRouteName(): string
+    {
+        return 'case-study.show';
+    }
+
+    public function seoPageType(): string
+    {
+        return 'case_study';
+    }
+
+    public function seoDefaultTitle(): string
+    {
+        return $this->title.' — Case Study | '.config('seo.site_name');
+    }
+
+    public function seoDefaultDescription(): ?string
+    {
+        return $this->description;
+    }
+
+    public function seoBodyText(): string
+    {
+        return $this->description.' '.$this->body;
     }
 }

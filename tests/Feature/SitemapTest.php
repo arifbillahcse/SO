@@ -34,16 +34,16 @@ class SitemapTest extends TestCase
     {
         $response = $this->get('/sitemap.xml');
 
-        $response->assertSee(route('home'), false);
-        $response->assertDontSee(route('our-founders'), false);
+        $response->assertSee('<loc>https://softorio.com/</loc>', false);
+        $response->assertDontSee('/our-founders', false);
     }
 
     public function test_sitemap_does_not_include_post_only_form_routes(): void
     {
         $response = $this->get('/sitemap.xml');
 
-        $response->assertDontSee(route('contact.store'), false);
-        $response->assertDontSee(route('affiliate-referral.store'), false);
+        $response->assertDontSee('/contact<', false);
+        $response->assertDontSee('/affiliate-referral<', false);
     }
 
     public function test_robots_txt_points_to_the_sitemap(): void
@@ -54,7 +54,9 @@ class SitemapTest extends TestCase
         // which would 404 against the test HTTP kernel.
         $contents = file_get_contents(public_path('robots.txt'));
 
-        $this->assertStringContainsString('Sitemap:', $contents);
-        $this->assertStringContainsString('Disallow: /our-founders', $contents);
+        $this->assertStringContainsString('Sitemap: https://softorio.com/sitemap.xml', $contents);
+        // our-founders must stay crawlable: it is kept out of the index by its
+        // noindex tag, which Google can only read if robots.txt allows the URL.
+        $this->assertStringNotContainsString('Disallow: /our-founders', $contents);
     }
 }

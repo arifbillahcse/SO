@@ -2,70 +2,59 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Article;
-use App\Models\CaseStudy;
 use App\Models\PageSeo;
-use App\Models\PortfolioItem;
+use App\Models\Redirect;
+use Carbon\CarbonInterface;
 use Illuminate\Http\Response;
+use Illuminate\Support\Carbon;
 
 class SitemapController extends Controller
 {
     /**
-     * Public, indexable pages only — our-founders is intentionally
-     * excluded (noindex,nofollow), as are the POST-only form routes.
+     * Every indexable, self-canonical public URL from the SEO registry. Built
+     * live on each request, so new, edited, unpublished or deleted content is
+     * reflected immediately.
      */
-    private const ROUTES = [
-        ['name' => 'home', 'priority' => '1.0', 'changefreq' => 'weekly'],
-        ['name' => 'web-development', 'priority' => '0.9', 'changefreq' => 'monthly'],
-        ['name' => 'seo', 'priority' => '0.9', 'changefreq' => 'monthly'],
-        ['name' => 'manage-cloud', 'priority' => '0.9', 'changefreq' => 'monthly'],
-        ['name' => 'automation', 'priority' => '0.9', 'changefreq' => 'monthly'],
-        ['name' => 'ecommerce-solution', 'priority' => '0.8', 'changefreq' => 'monthly'],
-        ['name' => 'cloud-solution', 'priority' => '0.8', 'changefreq' => 'monthly'],
-        ['name' => 'automation-solution', 'priority' => '0.8', 'changefreq' => 'monthly'],
-        ['name' => 'our-works', 'priority' => '0.7', 'changefreq' => 'weekly'],
-        ['name' => 'about-us', 'priority' => '0.6', 'changefreq' => 'monthly'],
-        ['name' => 'case-study', 'priority' => '0.7', 'changefreq' => 'weekly'],
-        ['name' => 'our-resources', 'priority' => '0.7', 'changefreq' => 'weekly'],
-        ['name' => 'affiliate-program', 'priority' => '0.6', 'changefreq' => 'monthly'],
-    ];
-
     public function index(): Response
     {
-        $lastModByRoute = PageSeo::pluck('updated_at', 'route_name');
+        PageSeo::syncStaticPages();
 
-        $urls = collect(self::ROUTES)->map(fn (array $route) => [
-            'loc' => route($route['name']),
-            'priority' => $route['priority'],
-            'changefreq' => $route['changefreq'],
-            'lastmod' => ($lastModByRoute->get($route['name']) ?? now())->toAtomString(),
-        ]);
+        $redirectedPaths = Redirect::where('is_active', true)->pluck('from_path')
+            ->map(fn ($path) => '/'.trim($path, '/'))
+            ->flip();
 
-        $articleUrls = Article::where('robots_index', true)->get()->map(fn (Article $article) => [
-            'loc' => route('our-resources.show', $article),
-            'priority' => '0.6',
-            'changefreq' => 'monthly',
-            'lastmod' => $article->updated_at->toAtomString(),
-        ]);
-
-        $caseStudyUrls = CaseStudy::where('robots_index', true)->get()->map(fn (CaseStudy $caseStudy) => [
-            'loc' => route('case-study.show', $caseStudy),
-            'priority' => '0.6',
-            'changefreq' => 'monthly',
-            'lastmod' => $caseStudy->updated_at->toAtomString(),
-        ]);
-
-        $portfolioUrls = PortfolioItem::where('robots_index', true)->get()->map(fn (PortfolioItem $portfolioItem) => [
-            'loc' => route('our-works.show', $portfolioItem),
-            'priority' => '0.6',
-            'changefreq' => 'monthly',
-            'lastmod' => $portfolioItem->updated_at->toAtomString(),
-        ]);
-
-        $urls = $urls->concat($articleUrls)->concat($caseStudyUrls)->concat($portfolioUrls);
+        $urls = PageSeo::with('seoable')
+            ->get()
+            ->filter(fn (PageSeo $seo) => ($seo->isStatic() || $seo->seoable) && $seo->belongsInSitemap())
+            ->reject(fn (PageSeo $seo) => $redirectedPaths->has($seo->path()))
+            ->map(fn (PageSeo $seo) => [
+                'loc' => $seo->selfUrl(),
+                'lastmod' => $this->lastModified($seo)->toAtomString(),
+            ])
+            ->unique('loc')
+            ->sortBy('loc')
+            ->values();
 
         $xml = view('sitemap', ['urls' => $urls])->render();
 
-        return response($xml, 200)->header('Content-Type', 'application/xml');
+        return response($xml, 200)->header('Content-Type', 'application/xml; charset=UTF-8');
+    }
+
+    /**
+     * When the page's content last changed: the record itself for content
+     * pages; the template file (deployments) or its SEO row for static pages.
+     */
+    private function lastModified(PageSeo $seo): CarbonInterface
+    {
+        if ($seo->seoable) {
+            return max($seo->seoable->updated_at, $seo->updated_at);
+        }
+
+        $view = config("seo.pages.{$seo->route_name}.view");
+        $file = $view ? resource_path('views/'.str_replace('.', '/', $view).'.blade.php') : null;
+
+        return $file && is_file($file)
+            ? max($seo->updated_at, Carbon::createFromTimestamp(filemtime($file)))
+            : $seo->updated_at;
     }
 }

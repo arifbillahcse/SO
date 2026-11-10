@@ -1,10 +1,12 @@
 @extends('layouts.app')
 
-@section('title', 'Arif &amp; Asma — Co-Founders | Softorio')
+@section('title', 'Arif & Asma — Co-Founders | Softorio')
 @section('description', 'Meet Md. Arif Billah and Asma Akter — the co-founders leading Softorio. Two CSE engineers building world-class digital solutions for clients worldwide.')
 
 @push('head')
 <style>
+/* card headings are h3 (was h4) so heading levels don't skip */
+.sp-why-card h3 { font-size: 0.95rem; font-weight: 700; color: var(--text-primary); margin-bottom: 8px; }
 /* ===== FOUNDERS PAGE — scoped styles ===== */
     .founders-hero-visual { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; }
     .fh-avatar {
@@ -269,10 +271,10 @@
       </div>
       <div class="sp-why-right" data-aos="fade-left">
         <div class="sp-why-cards">
-          <div class="sp-why-card" style="background:var(--dark-3)"><div class="sp-wc-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></div><h4>Engineering First</h4><p>Both founders are CSE engineers — we lead with technical depth, not sales talk.</p></div>
-          <div class="sp-why-card" style="background:var(--dark-3)"><div class="sp-wc-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div><h4>Reliability</h4><p>From server uptime to security hardening, we obsess over the things that keep clients online.</p></div>
-          <div class="sp-why-card" style="background:var(--dark-3)"><div class="sp-wc-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg></div><h4>Innovation</h4><p>A research-driven approach means we bring AI, automation, and modern cloud to every solution.</p></div>
-          <div class="sp-why-card" style="background:var(--dark-3)"><div class="sp-wc-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg></div><h4>Human-First</h4><p>Technology should serve people. Every decision starts with what's best for the client.</p></div>
+          <div class="sp-why-card" style="background:var(--dark-3)"><div class="sp-wc-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></div><h3>Engineering First</h3><p>Both founders are CSE engineers — we lead with technical depth, not sales talk.</p></div>
+          <div class="sp-why-card" style="background:var(--dark-3)"><div class="sp-wc-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div><h3>Reliability</h3><p>From server uptime to security hardening, we obsess over the things that keep clients online.</p></div>
+          <div class="sp-why-card" style="background:var(--dark-3)"><div class="sp-wc-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg></div><h3>Innovation</h3><p>A research-driven approach means we bring AI, automation, and modern cloud to every solution.</p></div>
+          <div class="sp-why-card" style="background:var(--dark-3)"><div class="sp-wc-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg></div><h3>Human-First</h3><p>Technology should serve people. Every decision starts with what's best for the client.</p></div>
         </div>
       </div>
     </div>

@@ -2,12 +2,15 @@
 
 namespace App\Filament\Resources\CaseStudyResource\Pages;
 
+use App\Filament\Concerns\RescansSeo;
 use App\Filament\Resources\CaseStudyResource;
 use Filament\Actions\DeleteAction;
 use Filament\Resources\Pages\EditRecord;
 
 class EditCaseStudy extends EditRecord
 {
+    use RescansSeo;
+
     protected static string $resource = CaseStudyResource::class;
 
     protected function getHeaderActions(): array

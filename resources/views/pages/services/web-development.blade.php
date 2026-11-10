@@ -3,6 +3,14 @@
 @section('title', 'WordPress Website Development Services — Softorio')
 @section('description', 'Custom WordPress and business website development by Softorio — a WordPress VIP Gold Partner with 10+ years building fast, scalable websites.')
 
+@push('head')
+<style>
+/* card headings are h3 (was h4) so heading levels don't skip */
+.sp-why-card h3 { font-size: 0.95rem; font-weight: 700; color: var(--text-primary); margin-bottom: 8px; }
+.sp-port-info h3 { font-size: 0.95rem; font-weight: 700; color: var(--text-primary); margin-bottom: 5px; }
+</style>
+@endpush
+
 @section('content')
 <!-- ========== PAGE HERO ========== -->
   <section class="page-hero">
@@ -267,28 +275,28 @@
             <div class="sp-wc-icon">
               <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/></svg>
             </div>
-            <h4>Flexible & Scalable</h4>
+            <h3>Flexible & Scalable</h3>
             <p>WordPress grows with your business — from a simple blog to an enterprise platform with thousands of products.</p>
           </div>
           <div class="sp-why-card">
             <div class="sp-wc-icon">
               <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
             </div>
-            <h4>SEO-Friendly by Nature</h4>
+            <h3>SEO-Friendly by Nature</h3>
             <p>Clean semantic markup, fast load times, and powerful SEO plugins make WordPress the top choice for organic growth.</p>
           </div>
           <div class="sp-why-card">
             <div class="sp-wc-icon">
               <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
             </div>
-            <h4>Secure & Reliable</h4>
+            <h3>Secure & Reliable</h3>
             <p>With proper configuration, WordPress is hardened against attacks. We implement best-practice security on every project.</p>
           </div>
           <div class="sp-why-card">
             <div class="sp-wc-icon">
               <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
             </div>
-            <h4>Easy to Manage</h4>
+            <h3>Easy to Manage</h3>
             <p>Your team can update content, add pages, and manage the site without needing a developer — keeping costs low.</p>
           </div>
         </div>
@@ -302,7 +310,7 @@
       <div class="section-header" data-aos="fade-up">
         <span class="section-tag">How We Work</span>
         <h2 class="section-title">Our Development <span class="text-gradient">Process</span></h2>
-        <p class="section-sub">A clear, transparent, and collaborative workflow — from first conversation to launch day and beyond.</p>
+        <p class="section-sub">A clear, transparent, and collaborative workflow — from first conversation to launch day and beyond. Browse <a href="{{ route('our-works') }}" style="color:var(--primary);text-decoration:underline;">recent projects</a> we've delivered, and keep your new site fast and visible after launch with <a href="{{ route('manage-cloud') }}" style="color:var(--primary);text-decoration:underline;">managed cloud hosting</a> and <a href="{{ route('seo') }}" style="color:var(--primary);text-decoration:underline;">SEO services</a>.</p>
       </div>
       <div class="process-timeline">
         <div class="process-step" data-aos="fade-up" data-aos-delay="0">
@@ -501,7 +509,7 @@
               <span>WordPress</span>
               <span>Enterprise</span>
             </div>
-            <h4>Enterprise Media Platform</h4>
+            <h3>Enterprise Media Platform</h3>
             <p>High-traffic WordPress VIP platform serving millions of monthly readers across North America.</p>
             <div class="sp-port-client">
               <span class="sp-port-client-dot"></span> Ask Media Group
@@ -523,7 +531,7 @@
           </div>
           <div class="sp-port-info">
             <div class="sp-port-tags"><span>WooCommerce</span></div>
-            <h4>eCommerce Store</h4>
+            <h3>eCommerce Store</h3>
             <p>WooCommerce-powered store with custom checkout and multi-currency support.</p>
             <div class="sp-port-client"><span class="sp-port-client-dot"></span> Tropicana (PepsiCo)</div>
           </div>
@@ -545,7 +553,7 @@
           </div>
           <div class="sp-port-info">
             <div class="sp-port-tags"><span>WordPress</span><span>Publishing</span></div>
-            <h4>Publisher Platform</h4>
+            <h3>Publisher Platform</h3>
             <p>Complex multi-author publishing system with editorial workflows and member access.</p>
             <div class="sp-port-client"><span class="sp-port-client-dot"></span> Assoc. of American Publishers</div>
           </div>
@@ -565,7 +573,7 @@
           </div>
           <div class="sp-port-info">
             <div class="sp-port-tags"><span>WordPress</span><span>News</span></div>
-            <h4>News & Media Site</h4>
+            <h3>News & Media Site</h3>
             <p>Real-time news platform with social media integration and advanced content curation.</p>
             <div class="sp-port-client"><span class="sp-port-client-dot"></span> Storyful (NewsCorp)</div>
           </div>

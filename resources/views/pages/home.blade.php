@@ -314,7 +314,7 @@
           </div>
           <div class="work-info">
             <span class="work-tag">WordPress</span>
-            <h4 class="work-title">Business Corporate Site</h4>
+            <h3 class="work-title">Business Corporate Site</h3>
             <p class="work-client">Ask Media Group</p>
           </div>
         </div>
@@ -327,7 +327,7 @@
           </div>
           <div class="work-info">
             <span class="work-tag">eCommerce</span>
-            <h4 class="work-title">Online Store — WooCommerce</h4>
+            <h3 class="work-title">Online Store — WooCommerce</h3>
             <p class="work-client">Tropicana (PepsiCo)</p>
           </div>
         </div>
@@ -343,7 +343,7 @@
           </div>
           <div class="work-info">
             <span class="work-tag">Cloud / VPS</span>
-            <h4 class="work-title">Cloud Infrastructure Setup</h4>
+            <h3 class="work-title">Cloud Infrastructure Setup</h3>
             <p class="work-client">Storyful (NewsCorp)</p>
           </div>
         </div>
@@ -357,7 +357,7 @@
           </div>
           <div class="work-info">
             <span class="work-tag">WordPress</span>
-            <h4 class="work-title">Publisher Platform</h4>
+            <h3 class="work-title">Publisher Platform</h3>
             <p class="work-client">Association of American Publishers</p>
           </div>
         </div>
@@ -370,7 +370,7 @@
           </div>
           <div class="work-info">
             <span class="work-tag">eCommerce</span>
-            <h4 class="work-title">Multi-Vendor Marketplace</h4>
+            <h3 class="work-title">Multi-Vendor Marketplace</h3>
             <p class="work-client">DC Innovation</p>
           </div>
         </div>
@@ -386,7 +386,7 @@
           </div>
           <div class="work-info">
             <span class="work-tag">Automation</span>
-            <h4 class="work-title">Workflow Automation System</h4>
+            <h3 class="work-title">Workflow Automation System</h3>
             <p class="work-client">MarketHive</p>
           </div>
         </div>

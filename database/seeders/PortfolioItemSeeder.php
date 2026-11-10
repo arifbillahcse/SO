@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use App\Models\PortfolioItem;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Str;
 
 class PortfolioItemSeeder extends Seeder
 {
@@ -24,7 +25,7 @@ class PortfolioItemSeeder extends Seeder
         foreach ($items as $i => $item) {
             PortfolioItem::updateOrCreate(
                 ['title' => $item['title'], 'client' => $item['client']],
-                $item + ['sort_order' => $i + 1]
+                $item + ['slug' => Str::slug($item['title']), 'sort_order' => $i + 1]
             );
         }
     }

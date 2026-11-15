@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Our Works — Softorio Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" /><link rel="stylesheet" href="service-page.css" />
+  <style>
+    .works-page-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:24px; margin-bottom:60px; }
+    .wp-card { background:var(--dark-2); border:1px solid var(--border); border-radius:var(--radius-lg); overflow:hidden; transition:var(--transition); cursor:pointer; }
+    .wp-card:hover { transform:translateY(-6px); box-shadow:var(--shadow-card); border-color:rgba(255,121,0,0.3); }
+    .wp-card.hidden { display:none; }
+    .wp-img { height:200px; display:flex; align-items:center; justify-content:center; position:relative; overflow:hidden; }
+    .wp-overlay { position:absolute; inset:0; background:rgba(0,0,0,0.65); display:flex; align-items:center; justify-content:center; opacity:0; transition:var(--transition); }
+    .wp-card:hover .wp-overlay { opacity:1; }
+    .wp-view { padding:10px 22px; background:var(--primary); color:#fff; font-size:0.88rem; font-weight:700; border-radius:var(--radius-sm); }
+    .wp-info { padding:20px 22px; }
+    .wp-tags { display:flex; gap:6px; flex-wrap:wrap; margin-bottom:10px; }
+    .wp-tag { font-size:0.7rem; font-weight:700; color:var(--primary); background:var(--primary-glow); padding:2px 10px; border-radius:100px; letter-spacing:0.05em; }
+    .wp-title { font-size:1rem; font-weight:700; color:var(--text-primary); margin-bottom:4px; }
+    .wp-client { font-size:0.8rem; color:var(--text-muted); }
+    .wp-mock { width:82%; }
+    .wm-bar { height:8px; background:rgba(255,255,255,0.1); border-radius:4px; margin-bottom:10px; }
+    .wm-hero { border-radius:6px; margin-bottom:10px; }
+    .wm-cols { display:flex; gap:8px; }
+    .wm-cols div { flex:1; border-radius:6px; }
+    @media(max-width:1024px){ .works-page-grid{grid-template-columns:repeat(2,1fr);} }
+    @media(max-width:600px){ .works-page-grid{grid-template-columns:1fr;} }
+  </style>
+</head>
+<body>
+  <div id="nav-placeholder"></div>
+
+  <section class="page-hero" style="padding-bottom:0">
+    <div class="page-hero-bg"><div class="ph-orb ph-orb-1"></div><div class="ph-grid"></div></div>
+    <div class="container" style="padding:100px 24px 60px; text-align:center; position:relative">
+      <div data-aos="fade-up">
+        <div class="breadcrumb" style="justify-content:center"><a href="index.html">Home</a><span>/</span><span class="bc-current">Our Works</span></div>
+        <div class="hero-badge" style="margin:16px auto"><span class="badge-dot"></span>Portfolio</div>
+        <h1 class="page-hero-title">Projects We're <span class="text-gradient">Proud Of</span></h1>
+        <p class="page-hero-sub" style="margin:0 auto 36px;max-width:540px">200+ projects delivered across WordPress, eCommerce, cloud infrastructure, and automation — for clients across 3 continents.</p>
+      </div>
+    </div>
+    <div class="trust-bar"><div class="container trust-inner">
+      <div class="trust-item"><span class="trust-num">200+</span><span class="trust-label">Projects Delivered</span></div><div class="trust-sep"></div>
+      <div class="trust-item"><span class="trust-num">50+</span><span class="trust-label">Enterprise Clients</span></div><div class="trust-sep"></div>
+      <div class="trust-item"><span class="trust-num">3</span><span class="trust-label">Continents</span></div><div class="trust-sep"></div>
+      <div class="trust-item"><span class="trust-num">10+</span><span class="trust-label">Years Active</span></div>
+    </div></div>
+  </section>
+
+  <section class="section" id="portfolio">
+    <div class="container">
+      <div class="works-filter" data-aos="fade-up">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="wordpress">WordPress</button>
+        <button class="filter-btn" data-filter="ecommerce">eCommerce</button>
+        <button class="filter-btn" data-filter="cloud">Cloud</button>
+        <button class="filter-btn" data-filter="automation">Automation</button>
+        <button class="filter-btn" data-filter="seo">SEO</button>
+      </div>
+      <div class="works-page-grid" id="portfolioGrid">
+
+        <div class="wp-card" data-category="wordpress" data-aos="fade-up" data-aos-delay="0">
+          <div class="wp-img" style="background:linear-gradient(135deg,#0a0a1a,#1a1a3e)"><div class="wp-mock"><div class="wm-bar"></div><div class="wm-hero" style="height:55px;background:rgba(255,121,0,0.15)"></div><div class="wm-cols"><div style="height:30px;background:rgba(255,255,255,0.06)"></div><div style="height:30px;background:rgba(255,255,255,0.06)"></div></div></div><div class="wp-overlay"><span class="wp-view">View Details</span></div></div>
+          <div class="wp-info"><div class="wp-tags"><span class="wp-tag">WordPress</span><span class="wp-tag">Enterprise</span></div><p class="wp-title">Enterprise Media Platform</p><p class="wp-client">Ask Media Group — North America</p></div>
+        </div>
+
+        <div class="wp-card" data-category="ecommerce" data-aos="fade-up" data-aos-delay="60">
+          <div class="wp-img" style="background:linear-gradient(135deg,#0f2027,#203a43)"><div class="wp-mock"><div class="wm-bar"></div><div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px"><div style="height:40px;background:rgba(255,255,255,0.08);border-radius:4px"></div><div style="height:40px;background:rgba(255,255,255,0.08);border-radius:4px"></div><div style="height:40px;background:rgba(255,255,255,0.08);border-radius:4px"></div></div></div><div class="wp-overlay"><span class="wp-view">View Details</span></div></div>
+          <div class="wp-info"><div class="wp-tags"><span class="wp-tag">WooCommerce</span><span class="wp-tag">eCommerce</span></div><p class="wp-title">Online Store — WooCommerce</p><p class="wp-client">Tropicana (PepsiCo) — USA</p></div>
+        </div>
+
+        <div class="wp-card" data-category="cloud" data-aos="fade-up" data-aos-delay="120">
+          <div class="wp-img" style="background:linear-gradient(135deg,#0d0d0d,#1a1a2e)"><div class="wp-mock"><div class="wm-bar"></div><div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-bottom:8px"><div style="height:28px;background:rgba(255,121,0,0.2);border-radius:6px"></div><div style="height:28px;background:rgba(255,255,255,0.06);border-radius:6px"></div><div style="height:28px;background:rgba(255,255,255,0.06);border-radius:6px"></div><div style="height:28px;background:rgba(255,121,0,0.1);border-radius:6px"></div></div></div><div class="wp-overlay"><span class="wp-view">View Details</span></div></div>
+          <div class="wp-info"><div class="wp-tags"><span class="wp-tag">Cloud</span><span class="wp-tag">Infrastructure</span></div><p class="wp-title">Cloud Infrastructure Setup</p><p class="wp-client">Storyful (NewsCorp) — Ireland</p></div>
+        </div>
+
+        <div class="wp-card" data-category="wordpress" data-aos="fade-up" data-aos-delay="0">
+          <div class="wp-img" style="background:linear-gradient(135deg,#200122,#6f0000)"><div class="wp-mock"><div class="wm-bar"></div><div class="wm-hero" style="height:50px;background:rgba(255,255,255,0.06)"></div><div class="wm-cols"><div style="height:28px;background:rgba(255,255,255,0.05)"></div><div style="height:28px;background:rgba(255,255,255,0.05)"></div></div></div><div class="wp-overlay"><span class="wp-view">View Details</span></div></div>
+          <div class="wp-info"><div class="wp-tags"><span class="wp-tag">WordPress</span><span class="wp-tag">Publishing</span></div><p class="wp-title">Publisher Platform</p><p class="wp-client">Association of American Publishers — USA</p></div>
+        </div>
+
+        <div class="wp-card" data-category="ecommerce" data-aos="fade-up" data-aos-delay="60">
+          <div class="wp-img" style="background:linear-gradient(135deg,#0d1a0d,#1a3a1a)"><div class="wp-mock"><div class="wm-bar"></div><div style="display:grid;grid-template-columns:1fr 1fr;gap:6px"><div style="height:45px;background:rgba(255,255,255,0.07);border-radius:5px"></div><div style="height:45px;background:rgba(255,255,255,0.07);border-radius:5px"></div><div style="height:45px;background:rgba(255,255,255,0.07);border-radius:5px"></div><div style="height:45px;background:rgba(255,121,0,0.15);border-radius:5px"></div></div></div><div class="wp-overlay"><span class="wp-view">View Details</span></div></div>
+          <div class="wp-info"><div class="wp-tags"><span class="wp-tag">WooCommerce</span><span class="wp-tag">B2B</span></div><p class="wp-title">Multi-Vendor Marketplace</p><p class="wp-client">DC Innovation — UK</p></div>
+        </div>
+
+        <div class="wp-card" data-category="automation" data-aos="fade-up" data-aos-delay="120">
+          <div class="wp-img" style="background:linear-gradient(135deg,#0f0c29,#302b63)"><div class="wp-mock"><div class="wm-bar"></div><div style="display:flex;flex-direction:column;gap:6px"><div style="display:flex;align-items:center;gap:6px"><div style="width:8px;height:8px;background:#22c55e;border-radius:50%;flex-shrink:0"></div><div style="flex:1;height:6px;background:rgba(255,255,255,0.08);border-radius:3px"></div></div><div style="display:flex;align-items:center;gap:6px"><div style="width:8px;height:8px;background:var(--primary);border-radius:50%;flex-shrink:0"></div><div style="flex:1;height:6px;background:rgba(255,121,0,0.2);border-radius:3px"></div></div><div style="display:flex;align-items:center;gap:6px"><div style="width:8px;height:8px;background:#22c55e;border-radius:50%;flex-shrink:0"></div><div style="flex:1;height:6px;background:rgba(255,255,255,0.08);border-radius:3px"></div></div></div></div><div class="wp-overlay"><span class="wp-view">View Details</span></div></div>
+          <div class="wp-info"><div class="wp-tags"><span class="wp-tag">Automation</span><span class="wp-tag">CRM</span></div><p class="wp-title">Business Automation System</p><p class="wp-client">MarketHive — USA</p></div>
+        </div>
+
+        <div class="wp-card" data-category="seo" data-aos="fade-up" data-aos-delay="0">
+          <div class="wp-img" style="background:linear-gradient(135deg,#1a0a0a,#2e1a1a)"><div class="wp-mock"><div class="wm-bar"></div><div style="display:flex;flex-direction:column;gap:7px"><div style="height:8px;background:rgba(255,121,0,0.25);border-radius:4px;width:90%"></div><div style="height:6px;background:rgba(255,255,255,0.07);border-radius:3px;width:75%"></div><div style="height:6px;background:rgba(255,255,255,0.05);border-radius:3px;width:60%"></div><div style="height:6px;background:rgba(255,255,255,0.07);border-radius:3px;width:80%"></div></div></div><div class="wp-overlay"><span class="wp-view">View Details</span></div></div>
+          <div class="wp-info"><div class="wp-tags"><span class="wp-tag">SEO</span><span class="wp-tag">Content</span></div><p class="wp-title">SEO Growth Campaign</p><p class="wp-client">HKP Group — Asia</p></div>
+        </div>
+
+        <div class="wp-card" data-category="cloud" data-aos="fade-up" data-aos-delay="60">
+          <div class="wp-img" style="background:linear-gradient(135deg,#0a1a0a,#0f3a0f)"><div class="wp-mock"><div class="wm-bar"></div><div style="display:grid;grid-template-columns:1fr 1fr;gap:6px"><div style="height:30px;background:rgba(34,197,94,0.15);border-radius:6px"></div><div style="height:30px;background:rgba(255,255,255,0.06);border-radius:6px"></div><div style="height:30px;background:rgba(255,255,255,0.06);border-radius:6px"></div><div style="height:30px;background:rgba(34,197,94,0.1);border-radius:6px"></div></div></div><div class="wp-overlay"><span class="wp-view">View Details</span></div></div>
+          <div class="wp-info"><div class="wp-tags"><span class="wp-tag">Cloud</span><span class="wp-tag">VPS</span></div><p class="wp-title">Dedicated Server Migration</p><p class="wp-client">STEM Academy — Europe</p></div>
+        </div>
+
+        <div class="wp-card" data-category="wordpress" data-aos="fade-up" data-aos-delay="120">
+          <div class="wp-img" style="background:linear-gradient(135deg,#1a1a0a,#3a3a0f)"><div class="wp-mock"><div class="wm-bar"></div><div class="wm-hero" style="height:55px;background:rgba(255,200,0,0.08)"></div><div class="wm-cols"><div style="height:28px;background:rgba(255,255,255,0.05)"></div><div style="height:28px;background:rgba(255,255,255,0.05)"></div><div style="height:28px;background:rgba(255,255,255,0.05)"></div></div></div><div class="wp-overlay"><span class="wp-view">View Details</span></div></div>
+          <div class="wp-info"><div class="wp-tags"><span class="wp-tag">WordPress</span><span class="wp-tag">News</span></div><p class="wp-title">News & Media Portal</p><p class="wp-client">Scan Media — Bangladesh</p></div>
+        </div>
+
+      </div>
+
+      <div style="text-align:center" data-aos="fade-up">
+        <a href="index.html#contact" class="btn btn-primary btn-lg">Start Your Project</a>
+      </div>
+    </div>
+  </section>
+
+  <div id="footer-placeholder"></div>
+  <script src="nav.js"></script>
+  <script src="service-page.js"></script>
+  <script>
+    // Portfolio filter
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const cards = document.querySelectorAll('.wp-card');
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const f = btn.dataset.filter;
+        cards.forEach(card => {
+          const match = f === 'all' || card.dataset.category === f;
+          card.classList.toggle('hidden', !match);
+          if (match) { card.style.opacity = '1'; card.style.transform = ''; }
+        });
+      });
+    });
+  </script>
+</body>
+</html>

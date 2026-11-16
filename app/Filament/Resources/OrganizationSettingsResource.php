@@ -30,6 +30,13 @@ class OrganizationSettingsResource extends Resource
         return $schema->components([
             TextInput::make('name')->required()->maxLength(255),
             FileUpload::make('logo')->image()->directory('seo')->visibility('public'),
+            Section::make('Website favicon')->description('The small icon in browser tabs, bookmarks and the admin panel.')->schema([
+                FileUpload::make('favicon_path')->label('Favicon')
+                    ->disk('public')->directory('seo/favicons')->visibility('public')
+                    ->acceptedFileTypes(['image/png', 'image/x-icon', 'image/vnd.microsoft.icon'])
+                    ->rules(['extensions:png,ico'])->maxSize(1024)
+                    ->helperText('Upload a square PNG (512 x 512 recommended) or a genuine ICO file, up to 1 MB. Remove it to use the Softorio logo. Save changes to apply.'),
+            ])->columnSpanFull(),
             Textarea::make('description')->rows(3)->columnSpanFull(),
             TextInput::make('telephone')->tel()->maxLength(255),
             TextInput::make('email')->email()->maxLength(255),

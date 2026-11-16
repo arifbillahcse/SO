@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Attributes\Fillable;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Storage;
 
 #[Fillable([
     'name',
@@ -12,6 +13,7 @@ use Illuminate\Database\Eloquent\Model;
     'privacy_policy_url',
     'terms_of_service_url',
     'logo',
+    'favicon_path',
     'description',
     'telephone',
     'email',
@@ -40,6 +42,19 @@ class OrganizationSettings extends Model
         'tos_effective_date' => 'date',
         'privacy_effective_date' => 'date',
     ];
+
+    public function faviconUrl(): string
+    {
+        $path = $this->favicon_path;
+
+        if ($path && str_starts_with($path, 'seo/favicons/') && ! str_contains($path, '..')
+            && in_array(strtolower(pathinfo($path, PATHINFO_EXTENSION)), ['png', 'ico'], true)
+            && Storage::disk('public')->exists($path)) {
+            return Storage::disk('public')->url($path);
+        }
+
+        return asset('images/logo-icon.png');
+    }
 
     public function googleAnalyticsId(): ?string
     {

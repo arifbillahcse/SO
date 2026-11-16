@@ -45,7 +45,9 @@ class AppServiceProvider extends ServiceProvider
         });
 
         View::composer('partials.footer', function ($view): void {
-            $view->with('orgSettings', OrganizationSettings::current());
+            $organization = OrganizationSettings::current();
+            $view->with('orgSettings', $organization);
+            $view->with('footerContact', ContactPageSettings::current()->publicDetails($organization));
         });
     }
 

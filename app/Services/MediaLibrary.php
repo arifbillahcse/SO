@@ -68,6 +68,7 @@ class MediaLibrary
         foreach (OrganizationSettings::all() as $organization) {
             $url = OrganizationSettingsResource::getUrl('edit', ['record' => $organization]);
             $this->add($images, $organization->logo, 'Organization ? Logo', $url);
+            $this->add($images, $organization->favicon_path, 'Organization ? Favicon', $url);
             foreach (['custom_head_code', 'custom_body_start_code', 'custom_body_end_code'] as $field) {
                 $this->content($images, $organization->{$field}, 'Organization ? Saved custom code', $url);
             }

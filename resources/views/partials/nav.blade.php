@@ -16,7 +16,7 @@
         </button>
         </div>
         <div class="dropdown-menu" id="servicesMenu">
-          <a href="{{ route('web-development') }}" class="dropdown-item{{ request()->routeIs('web-development') ? ' active' : '' }}"><span class="d-icon">&#9001;</span> Website Development</a>
+          <a href="{{ route('web-development') }}" class="dropdown-item{{ request()->routeIs('web-development') ? ' active' : '' }}"><svg class="d-icon" aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0"><rect x="2.5" y="3.5" width="19" height="17" rx="2.5"/><path d="M2.5 8h19M8.5 12l-2.5 2.5L8.5 17m7-5 2.5 2.5-2.5 2.5M13 11.5l-2 6"/></svg> Website Development</a>
           <a href="{{ route('seo') }}" class="dropdown-item{{ request()->routeIs('seo') ? ' active' : '' }}"><span class="d-icon">&#128269;</span> SEO Optimization</a>
           <a href="{{ route('manage-cloud') }}" class="dropdown-item{{ request()->routeIs('manage-cloud') ? ' active' : '' }}"><span class="d-icon">&#9729;</span> Manage Cloud</a>
           <a href="{{ route('automation') }}" class="dropdown-item{{ request()->routeIs('automation') ? ' active' : '' }}"><span class="d-icon">&#9881;</span> Automation</a>

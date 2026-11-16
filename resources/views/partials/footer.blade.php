@@ -6,6 +6,22 @@
         <span class="logo-text">Softorio</span>
       </a>
       <p class="footer-tagline">Your Vision, Our Innovation. Driving digital transformation for businesses worldwide.</p>
+      @if($footerContact['telephone_url'] || $footerContact['email'])
+      <div class="footer-contact-details">
+        @if($footerContact['telephone_url'])
+        <a href="{{ $footerContact['telephone_url'] }}">
+          <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="m7 3 3 5-2.5 2.5a14 14 0 0 0 6 6L16 14l5 3v3a2 2 0 0 1-2.2 2C9.7 21.1 2.9 14.3 2 5.2A2 2 0 0 1 4 3h3Z"/></svg>
+          <span>{{ $footerContact['phone'] }}</span>
+        </a>
+        @endif
+        @if($footerContact['email'])
+        <a href="mailto:{{ $footerContact['email'] }}">
+          <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="m3 7 9 6 9-6"/></svg>
+          <span>{{ $footerContact['email'] }}</span>
+        </a>
+        @endif
+      </div>
+      @endif
       @if(count($orgSettings->publicSocialLinks()))
       <div class="footer-socials">
         @foreach($orgSettings->publicSocialLinks() as $label => $url)

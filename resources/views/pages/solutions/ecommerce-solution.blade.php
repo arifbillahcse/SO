@@ -10,7 +10,7 @@
       <div class="page-hero-content" data-aos="fade-up">
         <div class="breadcrumb"><a href="{{ route('home') }}">Home</a><span>/</span><span>Solutions</span><span>/</span><span class="bc-current">eCommerce Solution</span></div>
         <div class="hero-badge"><span class="badge-dot"></span>Complete eCommerce Package</div>
-        <h1 class="page-hero-title">Sell More Online with a<br/><span class="text-gradient">Complete eCommerce System</span></h1>
+        <h1 class="page-hero-title">Sell More Online with<br/><span class="text-gradient">Complete eCommerce System</span></h1>
         <p class="page-hero-sub">Everything you need to launch, grow, and scale your online store — WooCommerce development, hosting, SEO, and marketing automation bundled into one complete solution.</p>
         <div class="page-hero-cta">
           <a href="#contact-form" class="btn btn-primary btn-lg">Launch My Store</a>

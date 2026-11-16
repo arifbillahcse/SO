@@ -29,6 +29,36 @@ class WebsiteConsistencyTest extends TestCase
         }
     }
 
+    public function test_footer_shows_clickable_contact_details_above_socials_with_contact_page_overrides(): void
+    {
+        OrganizationSettings::current()->update([
+            'email' => 'organization@example.test', 'telephone' => '+880 1111111111',
+            'facebook_url' => 'https://example.test/facebook',
+        ]);
+        $settings = ContactPageSettings::current();
+        $settings->update(['contact_email' => 'footer@example.test', 'contact_phone' => '+880 2222222222']);
+
+        $this->get('/privacy')->assertOk()->assertSeeInOrder([
+            'class="footer-contact-details"', 'href="tel:+8802222222222"',
+            'href="mailto:footer@example.test"', 'class="footer-socials"',
+        ], false)->assertSee('+880 2222222222');
+
+        $settings->update(['contact_email' => null, 'contact_phone' => null]);
+        $this->get('/tos')->assertOk()->assertSee('href="mailto:organization@example.test"', false)
+            ->assertSee('href="tel:+8801111111111"', false);
+    }
+
+    public function test_footer_omits_empty_or_invalid_contact_details(): void
+    {
+        OrganizationSettings::current()->update(['email' => null, 'telephone' => null]);
+        ContactPageSettings::current()->update(['contact_email' => null, 'contact_phone' => null]);
+        $this->get('/privacy')->assertOk()->assertDontSee('class="footer-contact-details"', false);
+
+        ContactPageSettings::current()->update(['contact_email' => 'invalid-email', 'contact_phone' => 'invalid-phone']);
+        $this->get('/privacy')->assertOk()->assertDontSee('class="footer-contact-details"', false)
+            ->assertDontSee('invalid-email')->assertDontSee('invalid-phone');
+    }
+
     public function test_footer_and_homepage_omit_missing_social_links_and_use_saved_destinations(): void
     {
         OrganizationSettings::current()->update([

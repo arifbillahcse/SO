@@ -38,7 +38,7 @@
             </div>
             <div style="margin-top:12px;display:grid;grid-template-columns:1fr 1fr;gap:8px">
               <div style="background:var(--dark-4);border:1px solid var(--border);border-radius:8px;padding:8px"><div style="font-size:0.6rem;color:var(--text-muted)">Leads Today</div><div style="font-size:1rem;font-weight:800;color:var(--primary)">24</div></div>
-              <div style="background:var(--dark-4);border:1px solid var(--border);border-radius:8px;padding:8px"><div style="font-size:0.6rem;color:var(--text-muted)">Converted</div><div style="font-size:1rem;font-weight:800;color:#22c55e">8</div></div>
+              <div style="background:var(--dark-4);border:1px solid var(--border);border-radius:8px;padding:8px"><div style="font-size:0.6rem;color:var(--text-muted)">Converted</div><div style="font-size:1rem;font-weight:800;color:var(--success)">8</div></div>
             </div>
           </div>
         </div>

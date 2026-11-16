@@ -1,0 +1,201 @@
+{
+  "pages": [
+    {
+      "route_name": "home",
+      "title": "Website Development, SEO & Cloud Services | Softorio",
+      "meta_description": "Explore website development, SEO, cloud hosting and automation from Softorio. Discuss your business goals and find the right services for your next project.",
+      "focus_keyword": "website development",
+      "secondary_keywords": [
+        "Softorio",
+        "SEO services",
+        "managed cloud hosting",
+        "business automation"
+      ],
+      "content_notes": "Brand and service discovery. Introduce the five core services and link to their detail pages. Avoid unverified project totals, partner badges or guaranteed results."
+    },
+    {
+      "route_name": "web-development",
+      "title": "WordPress Website Development & Design | Softorio",
+      "meta_description": "Explore WordPress website development with Softorio, including business websites, WooCommerce stores, customization and maintenance. Discuss your project.",
+      "focus_keyword": "WordPress website development",
+      "secondary_keywords": [
+        "business website design",
+        "WooCommerce development",
+        "WordPress customization",
+        "website maintenance"
+      ],
+      "content_notes": "Commercial website-building intent. Explain scope, editing, maintenance and handover. Keep hosting infrastructure and complete eCommerce solutions on their own pages. Do not repeat unverified VIP partnership or client claims."
+    },
+    {
+      "route_name": "seo",
+      "title": "SEO Services: Technical & On-Page Optimization | Softorio",
+      "meta_description": "Explore SEO services from Softorio, including technical audits, on-page optimization, local search and reporting. Discuss your website and search goals.",
+      "focus_keyword": "SEO services",
+      "secondary_keywords": [
+        "technical SEO audits",
+        "on-page optimization",
+        "local SEO",
+        "eCommerce SEO",
+        "SEO reporting"
+      ],
+      "content_notes": "Commercial SEO support intent. Explain audits, prioritization, implementation and reporting. No guaranteed rankings, traffic forecasts or invented results. Client reporting requires access to the relevant accounts."
+    },
+    {
+      "route_name": "manage-cloud",
+      "title": "Managed Cloud Hosting & Server Support | Softorio",
+      "meta_description": "Explore managed cloud hosting with Softorio, covering VPS configuration, WordPress hosting, SSL, backups and monitoring. Discuss your server support needs.",
+      "focus_keyword": "managed cloud hosting",
+      "secondary_keywords": [
+        "VPS management",
+        "WordPress hosting",
+        "server support",
+        "SSL configuration",
+        "hosting backups"
+      ],
+      "content_notes": "Ongoing hosting and administration intent. Separate recurring hosting support from the cloud infrastructure solution page. Avoid uptime guarantees and fixed performance promises that have not been verified."
+    },
+    {
+      "route_name": "automation",
+      "title": "Business Automation & API Integration | Softorio",
+      "meta_description": "Explore business automation with Softorio for workflows, CRM, email and API integrations. Discuss repetitive tasks and plan connections between your tools.",
+      "focus_keyword": "business automation",
+      "secondary_keywords": [
+        "workflow automation",
+        "API integration",
+        "CRM automation",
+        "email automation"
+      ],
+      "content_notes": "Individual workflow and integration intent. Explain triggers, tool access and handover. Keep complete connected business systems on the automation solution page. Do not invent measured hours saved or integration case studies."
+    },
+    {
+      "route_name": "diagnostic-management-system",
+      "title": "Diagnostic Management System & Setup | Softorio",
+      "meta_description": "Explore Softorio's diagnostic management system for patients, billing, samples and reports. Software is under development; discuss availability and setup.",
+      "focus_keyword": "diagnostic management system",
+      "secondary_keywords": [
+        "diagnostic center software",
+        "patient registration",
+        "laboratory sample tracking",
+        "diagnostic billing",
+        "report workflows"
+      ],
+      "content_notes": "Diagnostic center software exploration and setup intent. Software is under development. Preserve that qualification, distinguish planned core features from optional add-ons, and confirm availability before agreeing scope. No diagnostic-accuracy claims."
+    },
+    {
+      "route_name": "ecommerce-solution",
+      "title": "eCommerce Solution: Store, Hosting & SEO | Softorio",
+      "meta_description": "Explore an eCommerce solution from Softorio combining WooCommerce store development, hosting, SEO and automation. Discuss setup and support your store needs.",
+      "focus_keyword": "eCommerce solution",
+      "secondary_keywords": [
+        "WooCommerce store setup",
+        "online store development",
+        "eCommerce hosting",
+        "store automation"
+      ],
+      "content_notes": "Integrated online-store solution intent. Distinguish the complete stack from a standalone development service. Describe only agreed payment, shipping and support scope. No promised sales increases."
+    },
+    {
+      "route_name": "cloud-solution",
+      "title": "Cloud Infrastructure Solution & Deployment | Softorio",
+      "meta_description": "Explore a cloud infrastructure solution from Softorio for server deployment, security, DNS, backups and monitoring. Plan the environment your application needs.",
+      "focus_keyword": "cloud infrastructure solution",
+      "secondary_keywords": [
+        "server deployment",
+        "cloud infrastructure setup",
+        "server security",
+        "DNS configuration"
+      ],
+      "content_notes": "Infrastructure design and initial deployment intent. Keep ongoing managed hosting on its service page. Align platform references with available skills and portfolio topics. Avoid unsupported enterprise delivery or uptime claims."
+    },
+    {
+      "route_name": "automation-solution",
+      "title": "Business Automation Solution: Connected Tools | Softorio",
+      "meta_description": "Explore a business automation solution from Softorio connecting lead capture, CRM, email, orders and reporting. Discuss connected workflows for your business.",
+      "focus_keyword": "business automation solution",
+      "secondary_keywords": [
+        "connected business workflows",
+        "CRM integration",
+        "lead capture automation",
+        "automated reporting"
+      ],
+      "content_notes": "End-to-end connected system intent. Distinguish a complete business workflow from individual automation tasks. Explain ownership, credentials, maintenance and handover. Avoid statements that a system runs forever without maintenance."
+    },
+    {
+      "route_name": "our-works",
+      "title": "Website & Cloud Portfolio: Projects & Topics | Softorio",
+      "meta_description": "Explore Softorio's website and cloud portfolio, including website projects, design concepts and Arif Billah's technical topics, with details and references.",
+      "focus_keyword": "website and cloud portfolio",
+      "secondary_keywords": [
+        "Softorio portfolio",
+        "website projects",
+        "WordPress design concepts",
+        "Arif Billah cloud portfolio"
+      ],
+      "content_notes": "Portfolio discovery intent. Distinguish website projects, design demos and technical overviews. Use video demonstration labels only for eligible references. Portfolio entry availability does not independently establish customer ownership or delivery."
+    },
+    {
+      "route_name": "case-study",
+      "title": "Softorio Case Studies | Website, Cloud & Automation",
+      "meta_description": "Follow Softorio's case study collection as project write-ups are added. Discuss your website, hosting or automation requirements directly with our team.",
+      "focus_keyword": "Softorio case studies",
+      "secondary_keywords": [
+        "website project write-ups",
+        "cloud project analysis",
+        "automation case studies"
+      ],
+      "content_notes": "Case study collection intent. The local case study table is currently empty. Do not promise existing measured results or verified success stories. Review metadata as substantive case studies are published. Preserve current index settings."
+    },
+    {
+      "route_name": "our-resources",
+      "title": "Softorio Resources | WordPress, SEO & Cloud Guides",
+      "meta_description": "Follow Softorio's resources section as guides on WordPress, SEO, cloud hosting and automation are published. Contact our team to discuss your next project.",
+      "focus_keyword": "Softorio resources",
+      "secondary_keywords": [
+        "WordPress guides",
+        "SEO learning resources",
+        "cloud hosting guides",
+        "automation insights"
+      ],
+      "content_notes": "Educational resource collection intent. The local article table is currently empty. The description reflects publication of guides rather than claiming an existing library. Update it when articles are available. Preserve current index settings."
+    },
+    {
+      "route_name": "about-us",
+      "title": "About Softorio | Website, SEO & Cloud Services Team",
+      "meta_description": "Learn about Softorio, our approach to website development, SEO, cloud hosting and automation, and how our team can support your next digital project.",
+      "focus_keyword": "about Softorio",
+      "secondary_keywords": [
+        "Softorio team",
+        "Softorio services",
+        "website development team",
+        "cloud and SEO support"
+      ],
+      "content_notes": "Brand and team research intent. Explain the team's approach and service focus. Verify qualifications and partnerships before using them in metadata. Avoid unsupported Fortune 500, company age and delivery-volume claims."
+    },
+    {
+      "route_name": "affiliate-program",
+      "title": "Softorio Affiliate Program | Refer Business Projects",
+      "meta_description": "Explore the Softorio affiliate program, learn how referrals and commissions work, and discuss the terms before referring a website, hosting or SEO project.",
+      "focus_keyword": "Softorio affiliate program",
+      "secondary_keywords": [
+        "Softorio referrals",
+        "service referral program",
+        "affiliate commissions",
+        "business project referrals"
+      ],
+      "content_notes": "Referral-program research intent. Explain the referral process, eligibility and commission terms. Do not turn the stated profit-based commission into a revenue-based rate or imply guaranteed earnings. Keep exact commercial terms on the page."
+    },
+    {
+      "route_name": "our-founders",
+      "title": "Softorio Founders: Md Arif Billah & Asma Akter",
+      "meta_description": "Meet the Softorio founders, Md Arif Billah and Asma Akter. Learn about their roles and approach to website development, cloud hosting and business automation.",
+      "focus_keyword": "Softorio founders",
+      "secondary_keywords": [
+        "Md Arif Billah",
+        "Asma Akter",
+        "Softorio leadership",
+        "Softorio team"
+      ],
+      "content_notes": "Founder and team background. This page is intentionally noindex, nofollow and excluded from the sitemap. Fill metadata for consistency and sharing without changing that setting. Avoid unverified credentials or achievements."
+    }
+  ]
+}

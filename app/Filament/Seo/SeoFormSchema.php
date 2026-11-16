@@ -29,7 +29,7 @@ use Livewire\Features\SupportFileUploads\TemporaryUploadedFile;
  */
 class SeoFormSchema
 {
-    public static function tabs(): Tabs
+    public static function tabs(?string $pageType = null): Tabs
     {
         return Tabs::make('SEO')
             ->persistTabInQueryString('seo-tab')
@@ -38,7 +38,7 @@ class SeoFormSchema
                 Tab::make('Search appearance')->icon('heroicon-o-magnifying-glass')->schema(static::basic()),
                 Tab::make('Indexing')->icon('heroicon-o-shield-check')->schema(static::indexing()),
                 Tab::make('Social sharing')->icon('heroicon-o-share')->schema(static::social()),
-                Tab::make('Structured data')->icon('heroicon-o-code-bracket')->schema(static::structuredData()),
+                Tab::make('Structured data')->icon('heroicon-o-code-bracket')->schema(static::structuredData($pageType)),
                 Tab::make('SEO analysis')->icon('heroicon-o-clipboard-document-check')->schema(static::analysis()),
             ]);
     }
@@ -196,13 +196,17 @@ class SeoFormSchema
     /**
      * @return array<Component>
      */
-    public static function structuredData(): array
+    public static function structuredData(?string $pageType = null): array
     {
         return [
             Select::make('schema_type')
                 ->label('Schema.org type')
-                ->options(fn (?PageSeo $record) => static::schemaOptions($record))
-                ->default('WebPage')
+                ->options(fn (?PageSeo $record) => static::schemaOptions($record, $pageType))
+                ->default(match ($pageType) {
+                    'article' => 'Article',
+                    'portfolio', 'case_study' => 'CreativeWork',
+                    default => 'WebPage',
+                })
                 ->selectablePlaceholder(false)
                 ->disabled(fn (?PageSeo $record) => $record?->seoable_type !== null)
                 ->helperText(fn (?PageSeo $record) => $record?->seoable_type
@@ -241,11 +245,11 @@ class SeoFormSchema
             ->sortable($sortable);
     }
 
-    private static function schemaOptions(?PageSeo $record): array
+    private static function schemaOptions(?PageSeo $record, ?string $pageType = null): array
     {
         $all = config('seo.schema_types');
 
-        return match ($record?->page_type) {
+        return match ($record?->page_type ?? $pageType) {
             'article' => array_intersect_key($all, ['Article' => 1]),
             'case_study', 'portfolio' => array_intersect_key($all, ['CreativeWork' => 1]),
             default => array_diff_key($all, ['Article' => 1, 'CreativeWork' => 1]),

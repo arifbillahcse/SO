@@ -1,0 +1,1957 @@
+{
+  "source_document": "Website Development.pdf",
+  "projects": [
+    {
+      "attributes": {
+        "title": "Verde Glow - Website",
+        "slug": "verde-glow-com",
+        "client": "Verde Glow",
+        "category": "ecommerce",
+        "tags": [
+          "eCommerce"
+        ],
+        "website_url": "https://www.verde-glow.com/",
+        "description": "An eCommerce website project for Verde Glow.",
+        "body": "<h2>Project overview</h2><p>An eCommerce website project for Verde Glow.</p>",
+        "sort_order": 1
+      },
+      "source": {
+        "inventory_id": 1,
+        "pdf_pages": [
+          1,
+          12
+        ],
+        "pdf_sections": [
+          "1. Custom E-commerce Website",
+          "58. Dropshipping"
+        ],
+        "link_status": "connection_error",
+        "flags": [
+          "multiple_source_categories"
+        ]
+      }
+    },
+    {
+      "attributes": {
+        "title": "UPC Mart - Website",
+        "slug": "upcmartbd-com",
+        "client": "UPC Mart",
+        "category": "ecommerce",
+        "tags": [
+          "eCommerce"
+        ],
+        "website_url": "https://www.upcmartbd.com/",
+        "description": "An eCommerce website project for UPC Mart.",
+        "body": "<h2>Project overview</h2><p>An eCommerce website project for UPC Mart.</p>",
+        "sort_order": 2
+      },
+      "source": {
+        "inventory_id": 2,
+        "pdf_pages": [
+          1
+        ],
+        "pdf_sections": [
+          "1. Custom E-commerce Website"
+        ],
+        "link_status": "reachable",
+        "flags": []
+      }
+    },
+    {
+      "attributes": {
+        "title": "Aram Store - Website",
+        "slug": "aramstorebd-com",
+        "client": "Aram Store",
+        "category": "ecommerce",
+        "tags": [
+          "eCommerce"
+        ],
+        "website_url": "https://www.aramstorebd.com/",
+        "description": "An eCommerce website project for Aram Store.",
+        "body": "<h2>Project overview</h2><p>An eCommerce website project for Aram Store.</p>",
+        "sort_order": 3
+      },
+      "source": {
+        "inventory_id": 3,
+        "pdf_pages": [
+          1,
+          12
+        ],
+        "pdf_sections": [
+          "1. Custom E-commerce Website",
+          "58. Dropshipping"
+        ],
+        "link_status": "connection_error",
+        "flags": [
+          "multiple_source_categories"
+        ]
+      }
+    },
+    {
+      "attributes": {
+        "title": "KC Fashion - Website",
+        "slug": "kcfashionbd-com",
+        "client": "KC Fashion",
+        "category": "ecommerce",
+        "tags": [
+          "eCommerce"
+        ],
+        "website_url": "https://www.kcfashionbd.com/",
+        "description": "An eCommerce website project for KC Fashion.",
+        "body": "<h2>Project overview</h2><p>An eCommerce website project for KC Fashion.</p>",
+        "sort_order": 4
+      },
+      "source": {
+        "inventory_id": 4,
+        "pdf_pages": [
+          1
+        ],
+        "pdf_sections": [
+          "1. Custom E-commerce Website"
+        ],
+        "link_status": "connection_error",
+        "flags": []
+      }
+    },
+    {
+      "attributes": {
+        "title": "Hello Ruap - Website",
+        "slug": "helloruap-com",
+        "client": "Hello Ruap",
+        "category": "ecommerce",
+        "tags": [
+          "eCommerce"
+        ],
+        "website_url": "https://helloruap.com/",
+        "description": "An eCommerce website project for Hello Ruap.",
+        "body": "<h2>Project overview</h2><p>An eCommerce website project for Hello Ruap.</p>",
+        "sort_order": 5
+      },
+      "source": {
+        "inventory_id": 5,
+        "pdf_pages": [
+          1
+        ],
+        "pdf_sections": [
+          "1. Custom E-commerce Website"
+        ],
+        "link_status": "connection_error",
+        "flags": []
+      }
+    },
+    {
+      "attributes": {
+        "title": "Chemsyte - Website",
+        "slug": "chemsyte-com-bd",
+        "client": "Chemsyte",
+        "category": "ecommerce",
+        "tags": [
+          "eCommerce"
+        ],
+        "website_url": "http://chemsyte.com.bd/",
+        "description": "An eCommerce website project for Chemsyte.",
+        "body": "<h2>Project overview</h2><p>An eCommerce website project for Chemsyte.</p>",
+        "sort_order": 6
+      },
+      "source": {
+        "inventory_id": 6,
+        "pdf_pages": [
+          1
+        ],
+        "pdf_sections": [
+          "1. Custom E-commerce Website"
+        ],
+        "link_status": "reachable",
+        "flags": []
+      }
+    },
+    {
+      "attributes": {
+        "title": "Trenz BD - Website",
+        "slug": "trenzbd-com",
+        "client": "Trenz BD",
+        "category": "ecommerce",
+        "tags": [
+          "eCommerce"
+        ],
+        "website_url": "https://www.trenzbd.com/",
+        "description": "An eCommerce website project for Trenz BD.",
+        "body": "<h2>Project overview</h2><p>An eCommerce website project for Trenz BD.</p>",
+        "sort_order": 7
+      },
+      "source": {
+        "inventory_id": 7,
+        "pdf_pages": [
+          1
+        ],
+        "pdf_sections": [
+          "1. Custom E-commerce Website"
+        ],
+        "link_status": "connection_error",
+        "flags": []
+      }
+    },
+    {
+      "attributes": {
+        "title": "Nebula Cooling - Website",
+        "slug": "nebulacooling-nl",
+        "client": "Nebula Cooling",
+        "category": "ecommerce",
+        "tags": [
+          "eCommerce"
+        ],
+        "website_url": "https://nebulacooling.nl/",
+        "description": "An eCommerce website project for Nebula Cooling.",
+        "body": "<h2>Project overview</h2><p>An eCommerce website project for Nebula Cooling.</p>",
+        "sort_order": 8
+      },
+      "source": {
+        "inventory_id": 8,
+        "pdf_pages": [
+          1
+        ],
+        "pdf_sections": [
+          "1. Custom E-commerce Website"
+        ],
+        "link_status": "reachable",
+        "flags": []
+      }
+    },
+    {
+      "attributes": {
+        "title": "BTechJ - Website",
+        "slug": "btechj-com",
+        "client": "BTechJ",
+        "category": "ecommerce",
+        "tags": [
+          "eCommerce"
+        ],
+        "website_url": "https://btechj.com/",
+        "description": "An eCommerce website project for BTechJ.",
+        "body": "<h2>Project overview</h2><p>An eCommerce website project for BTechJ.</p>",
+        "sort_order": 9
+      },
+      "source": {
+        "inventory_id": 9,
+        "pdf_pages": [
+          1,
+          3
+        ],
+        "pdf_sections": [
+          "1. Custom E-commerce Website",
+          "11. Online Marketplace"
+        ],
+        "link_status": "access_restricted",
+        "flags": [
+          "multiple_source_categories"
+        ]
+      }
+    },
+    {
+      "attributes": {
+        "title": "Graphics Pixels - Website",
+        "slug": "graphicspixels-com",
+        "client": "Graphics Pixels",
+        "category": "wordpress",
+        "tags": [
+          "Agency"
+        ],
+        "website_url": "https://graphicspixels.com/",
+        "description": "An agency website project for Graphics Pixels.",
+        "body": "<h2>Project overview</h2><p>An agency website project for Graphics Pixels.</p>",
+        "sort_order": 10
+      },
+      "source": {
+        "inventory_id": 10,
+        "pdf_pages": [
+          1,
+          5
+        ],
+        "pdf_sections": [
+          "2. Custom Portfolio Website for Creative Agencies",
+          "19. Graphics Photo Agencies"
+        ],
+        "link_status": "reachable",
+        "flags": [
+          "multiple_source_categories"
+        ]
+      }
+    },
+    {
+      "attributes": {
+        "title": "Softorio - Website",
+        "slug": "softorio-com",
+        "client": "Softorio",
+        "category": "wordpress",
+        "tags": [
+          "Agency",
+          "Company Website"
+        ],
+        "website_url": "https://softorio.com",
+        "description": "An agency website project for Softorio.",
+        "body": "<h2>Project overview</h2><p>An agency website project for Softorio.</p>",
+        "sort_order": 11
+      },
+      "source": {
+        "inventory_id": 11,
+        "pdf_pages": [
+          1
+        ],
+        "pdf_sections": [
+          "2. Custom Portfolio Website for Creative Agencies"
+        ],
+        "link_status": "reachable",
+        "flags": [
+          "own_company_website"
+        ]
+      }
+    },
+    {
+      "attributes": {
+        "title": "Agency Website - Demo 2",
+        "slug": "arifs-work-demo2",
+        "client": "Concept / Demo",
+        "category": "wordpress",
+        "tags": [
+          "Demo",
+          "Agency"
+        ],
+        "website_url": "https://arifs.work/demo2/",
+        "description": "An agency website design demonstration from the Arif Billah portfolio.",
+        "body": "<h2>Project overview</h2><p>An agency website design demonstration from the Arif Billah portfolio.</p><p>This project is a design demonstration.</p>",
+        "sort_order": 12
+      },
+      "source": {
+        "inventory_id": 12,
+        "pdf_pages": [
+          1
+        ],
+        "pdf_sections": [
+          "2. Custom Portfolio Website for Creative Agencies"
+        ],
+        "link_status": "connection_error",
+        "flags": [
+          "label_as_demo"
+        ]
+      }
+    },
+    {
+      "attributes": {
+        "title": "Agency Website - Demo 12",
+        "slug": "arifs-work-demo12",
+        "client": "Concept / Demo",
+        "category": "wordpress",
+        "tags": [
+          "Demo",
+          "Agency"
+        ],
+        "website_url": "https://arifs.work/demo12/",
+        "description": "An agency website design demonstration from the Arif Billah portfolio.",
+        "body": "<h2>Project overview</h2><p>An agency website design demonstration from the Arif Billah portfolio.</p><p>This project is a design demonstration.</p>",
+        "sort_order": 13
+      },
+      "source": {
+        "inventory_id": 13,
+        "pdf_pages": [
+          1,
+          6
+        ],
+        "pdf_sections": [
+          "2. Custom Portfolio Website for Creative Agencies",
+          "31. Custom Classifieds Website"
+        ],
+        "link_status": "connection_error",
+        "flags": [
+          "multiple_source_categories",
+          "label_as_demo"
+        ]
+      }
+    },
+    {
+      "attributes": {
+        "title": "ProHost - Website",
+        "slug": "prohost-sa",
+        "client": "ProHost",
+        "category": "wordpress",
+        "tags": [
+          "Agency"
+        ],
+        "website_url": "https://prohost.sa/",
+        "description": "An agency website project for ProHost.",
+        "body": "<h2>Project overview</h2><p>An agency website project for ProHost.</p>",
+        "sort_order": 14
+      },
+      "source": {
+        "inventory_id": 14,
+        "pdf_pages": [
+          1
+        ],
+        "pdf_sections": [
+          "2. Custom Portfolio Website for Creative Agencies"
+        ],
+        "link_status": "reachable",
+        "flags": []
+      }
+    },
+    {
+      "attributes": {
+        "title": "Roller Growth - Website",
+        "slug": "rollergrowth-com",
+        "client": "Roller Growth",
+        "category": "wordpress",
+        "tags": [
+          "Agency"
+        ],
+        "website_url": "https://rollergrowth.com/",
+        "description": "An agency website project for Roller Growth.",
+        "body": "<h2>Project overview</h2><p>An agency website project for Roller Growth.</p>",
+        "sort_order": 15
+      },
+      "source": {
+        "inventory_id": 15,
+        "pdf_pages": [
+          1
+        ],
+        "pdf_sections": [
+          "2. Custom Portfolio Website for Creative Agencies"
+        ],
+        "link_status": "connection_error",
+        "flags": []
+      }
+    },
+    {
+      "attributes": {
+        "title": "Proactive Class Resources - Website",
+        "slug": "proactiveclassresources-com",
+        "client": "Proactive Class Resources",
+        "category": "wordpress",
+        "tags": [
+          "Education"
+        ],
+        "website_url": "https://proactiveclassresources.com/",
+        "description": "An education website project for Proactive Class Resources.",
+        "body": "<h2>Project overview</h2><p>An education website project for Proactive Class Resources.</p>",
+        "sort_order": 16
+      },
+      "source": {
+        "inventory_id": 16,
+        "pdf_pages": [
+          2,
+          5,
+          8
+        ],
+        "pdf_sections": [
+          "3. Online Learning Management System (LMS)",
+          "18. Custom Online Quiz Platform",
+          "43. Custom E-learning Platform with Certifications"
+        ],
+        "link_status": "connection_error",
+        "flags": [
+          "multiple_source_categories"
+        ]
+      }
+    },
+    {
+      "attributes": {
+        "title": "Indian Royals School - Website",
+        "slug": "indianroyalsschool-com",
+        "client": "Indian Royals School",
+        "category": "wordpress",
+        "tags": [
+          "Education"
+        ],
+        "website_url": "https://indianroyalsschool.com/",
+        "description": "An education website project for Indian Royals School.",
+        "body": "<h2>Project overview</h2><p>An education website project for Indian Royals School.</p>",
+        "sort_order": 17
+      },
+      "source": {
+        "inventory_id": 17,
+        "pdf_pages": [
+          2
+        ],
+        "pdf_sections": [
+          "3. Online Learning Management System (LMS)"
+        ],
+        "link_status": "reachable",
+        "flags": []
+      }
+    },
+    {
+      "attributes": {
+        "title": "BH Relocation - Website",
+        "slug": "bhrelocationinc-com",
+        "client": "BH Relocation",
+        "category": "wordpress",
+        "tags": [
+          "Corporate"
+        ],
+        "website_url": "https://bhrelocationinc.com/",
+        "description": "A corporate website project for BH Relocation.",
+        "body": "<h2>Project overview</h2><p>A corporate website project for BH Relocation.</p>",
+        "sort_order": 18
+      },
+      "source": {
+        "inventory_id": 18,
+        "pdf_pages": [
+          2,
+          10
+        ],
+        "pdf_sections": [
+          "4. Corporate Website with Custom Features",
+          "53. Courier / Delivery Service Website"
+        ],
+        "link_status": "reachable",
+        "flags": [
+          "multiple_source_categories"
+        ]
+      }
+    },
+    {
+      "attributes": {
+        "title": "Innovate Together - Website",
+        "slug": "innovatetogether-co-uk",
+        "client": "Innovate Together",
+        "category": "wordpress",
+        "tags": [
+          "Corporate"
+        ],
+        "website_url": "https://innovatetogether.co.uk/",
+        "description": "A corporate website project for Innovate Together.",
+        "body": "<h2>Project overview</h2><p>A corporate website project for Innovate Together.</p>",
+        "sort_order": 19
+      },
+      "source": {
+        "inventory_id": 19,
+        "pdf_pages": [
+          2
+        ],
+        "pdf_sections": [
+          "4. Corporate Website with Custom Features"
+        ],
+        "link_status": "connection_error",
+        "flags": []
+      }
+    },
+    {
+      "attributes": {
+        "title": "Cata Tax - Website",
+        "slug": "cata-tax",
+        "client": "Cata Tax",
+        "category": "wordpress",
+        "tags": [
+          "Corporate"
+        ],
+        "website_url": "https://cata.tax/",
+        "description": "A corporate website project for Cata Tax.",
+        "body": "<h2>Project overview</h2><p>A corporate website project for Cata Tax.</p>",
+        "sort_order": 20
+      },
+      "source": {
+        "inventory_id": 20,
+        "pdf_pages": [
+          2,
+          11
+        ],
+        "pdf_sections": [
+          "4. Corporate Website with Custom Features",
+          "56. Finance/Accounting Website"
+        ],
+        "link_status": "connection_error",
+        "flags": [
+          "multiple_source_categories"
+        ]
+      }
+    },
+    {
+      "attributes": {
+        "title": "Corporate Website - Demo 3",
+        "slug": "arifs-work-demo3",
+        "client": "Concept / Demo",
+        "category": "wordpress",
+        "tags": [
+          "Demo",
+          "Corporate"
+        ],
+        "website_url": "https://arifs.work/demo3/",
+        "description": "A corporate website design demonstration from the Arif Billah portfolio.",
+        "body": "<h2>Project overview</h2><p>A corporate website design demonstration from the Arif Billah portfolio.</p><p>This project is a design demonstration.</p>",
+        "sort_order": 21
+      },
+      "source": {
+        "inventory_id": 21,
+        "pdf_pages": [
+          2
+        ],
+        "pdf_sections": [
+          "4. Corporate Website with Custom Features"
+        ],
+        "link_status": "connection_error",
+        "flags": [
+          "label_as_demo"
+        ]
+      }
+    },
+    {
+      "attributes": {
+        "title": "Community Website - Demo 20",
+        "slug": "arifs-work-demo20",
+        "client": "Concept / Demo",
+        "category": "wordpress",
+        "tags": [
+          "Demo",
+          "Community"
+        ],
+        "website_url": "https://arifs.work/demo20",
+        "description": "A community platform design demonstration from the Arif Billah portfolio.",
+        "body": "<h2>Project overview</h2><p>A community platform design demonstration from the Arif Billah portfolio.</p><p>This project is a design demonstration.</p>",
+        "sort_order": 22
+      },
+      "source": {
+        "inventory_id": 22,
+        "pdf_pages": [
+          2
+        ],
+        "pdf_sections": [
+          "5. Social Network or Community Platform"
+        ],
+        "link_status": "connection_error",
+        "flags": [
+          "label_as_demo"
+        ]
+      }
+    },
+    {
+      "attributes": {
+        "title": "Real Estate Website - Design 1",
+        "slug": "arifs-work-design1",
+        "client": "Concept / Demo",
+        "category": "wordpress",
+        "tags": [
+          "Demo",
+          "Real Estate"
+        ],
+        "website_url": "https://arifs.work/design1/",
+        "description": "A real estate website design demonstration from the Arif Billah portfolio.",
+        "body": "<h2>Project overview</h2><p>A real estate website design demonstration from the Arif Billah portfolio.</p><p>This project is a design demonstration.</p>",
+        "sort_order": 23
+      },
+      "source": {
+        "inventory_id": 23,
+        "pdf_pages": [
+          2,
+          4
+        ],
+        "pdf_sections": [
+          "6. Real Estate Listing Website",
+          "14. Custom Directory Website"
+        ],
+        "link_status": "connection_error",
+        "flags": [
+          "multiple_source_categories",
+          "label_as_demo"
+        ]
+      }
+    },
+    {
+      "attributes": {
+        "title": "Land of Crete - Website",
+        "slug": "landofcrete-com",
+        "client": "Land of Crete",
+        "category": "wordpress",
+        "tags": [
+          "Real Estate"
+        ],
+        "website_url": "https://landofcrete.com/",
+        "description": "A real estate website project for Land of Crete.",
+        "body": "<h2>Project overview</h2><p>A real estate website project for Land of Crete.</p>",
+        "sort_order": 24
+      },
+      "source": {
+        "inventory_id": 24,
+        "pdf_pages": [
+          2,
+          9
+        ],
+        "pdf_sections": [
+          "6. Real Estate Listing Website",
+          "47. Custom Real Estate Management System"
+        ],
+        "link_status": "reachable",
+        "flags": [
+          "multiple_source_categories"
+        ]
+      }
+    },
+    {
+      "attributes": {
+        "title": "The Quran Is Life - Website",
+        "slug": "thequranislife-net",
+        "client": "The Quran Is Life",
+        "category": "wordpress",
+        "tags": [
+          "Nonprofit"
+        ],
+        "website_url": "https://thequranislife.net/",
+        "description": "A nonprofit website project for The Quran Is Life.",
+        "body": "<h2>Project overview</h2><p>A nonprofit website project for The Quran Is Life.</p>",
+        "sort_order": 25
+      },
+      "source": {
+        "inventory_id": 25,
+        "pdf_pages": [
+          3
+        ],
+        "pdf_sections": [
+          "7. Non-Profit Organization Website"
+        ],
+        "link_status": "reachable",
+        "flags": []
+      }
+    },
+    {
+      "attributes": {
+        "title": "Passi Foundation - Website",
+        "slug": "passifoundation-com",
+        "client": "Passi Foundation",
+        "category": "wordpress",
+        "tags": [
+          "Nonprofit"
+        ],
+        "website_url": "https://passifoundation.com/",
+        "description": "A nonprofit website project for Passi Foundation.",
+        "body": "<h2>Project overview</h2><p>A nonprofit website project for Passi Foundation.</p>",
+        "sort_order": 26
+      },
+      "source": {
+        "inventory_id": 26,
+        "pdf_pages": [
+          3
+        ],
+        "pdf_sections": [
+          "7. Non-Profit Organization Website"
+        ],
+        "link_status": "connection_error",
+        "flags": []
+      }
+    },
+    {
+      "attributes": {
+        "title": "Easy Hire - Website",
+        "slug": "easy-hire-co",
+        "client": "Easy Hire",
+        "category": "wordpress",
+        "tags": [
+          "Portfolio"
+        ],
+        "website_url": "https://easy-hire.co/",
+        "description": "A portfolio website project for Easy Hire.",
+        "body": "<h2>Project overview</h2><p>A portfolio website project for Easy Hire.</p>",
+        "sort_order": 27
+      },
+      "source": {
+        "inventory_id": 27,
+        "pdf_pages": [
+          3,
+          5
+        ],
+        "pdf_sections": [
+          "9. Portfolio Website for Creative Professionals",
+          "21. Job Board Website"
+        ],
+        "link_status": "reachable",
+        "flags": [
+          "multiple_source_categories"
+        ]
+      }
+    },
+    {
+      "attributes": {
+        "title": "Unique Glass Design - Website",
+        "slug": "uniqueglassdesign-com",
+        "client": "Unique Glass Design",
+        "category": "wordpress",
+        "tags": [
+          "Portfolio"
+        ],
+        "website_url": "https://uniqueglassdesign.com/",
+        "description": "A portfolio website project for Unique Glass Design.",
+        "body": "<h2>Project overview</h2><p>A portfolio website project for Unique Glass Design.</p>",
+        "sort_order": 28
+      },
+      "source": {
+        "inventory_id": 28,
+        "pdf_pages": [
+          3
+        ],
+        "pdf_sections": [
+          "9. Portfolio Website for Creative Professionals"
+        ],
+        "link_status": "connection_error",
+        "flags": []
+      }
+    },
+    {
+      "attributes": {
+        "title": "Pantera Golf - Website",
+        "slug": "panteragolf-com",
+        "client": "Pantera Golf",
+        "category": "ecommerce",
+        "tags": [
+          "Marketplace"
+        ],
+        "website_url": "https://panteragolf.com/",
+        "description": "A marketplace website project for Pantera Golf.",
+        "body": "<h2>Project overview</h2><p>A marketplace website project for Pantera Golf.</p>",
+        "sort_order": 29
+      },
+      "source": {
+        "inventory_id": 29,
+        "pdf_pages": [
+          3
+        ],
+        "pdf_sections": [
+          "11. Online Marketplace"
+        ],
+        "link_status": "reachable",
+        "flags": []
+      }
+    },
+    {
+      "attributes": {
+        "title": "MW Group - Website",
+        "slug": "mw-grp-com",
+        "client": "MW Group",
+        "category": "wordpress",
+        "tags": [
+          "Directory"
+        ],
+        "website_url": "https://mw-grp.com",
+        "description": "A directory website project for MW Group.",
+        "body": "<h2>Project overview</h2><p>A directory website project for MW Group.</p>",
+        "sort_order": 30
+      },
+      "source": {
+        "inventory_id": 30,
+        "pdf_pages": [
+          4
+        ],
+        "pdf_sections": [
+          "12. Custom Business Directory with Reviews"
+        ],
+        "link_status": "reachable",
+        "flags": [
+          "embedded_pdf_link_points_to_admin_use_visible_public_url"
+        ]
+      }
+    },
+    {
+      "attributes": {
+        "title": "Lares Pet Sitting - Website",
+        "slug": "larespetsitting-com",
+        "client": "Lares Pet Sitting",
+        "category": "wordpress",
+        "tags": [
+          "Booking"
+        ],
+        "website_url": "https://larespetsitting.com/",
+        "description": "A service booking website project for Lares Pet Sitting.",
+        "body": "<h2>Project overview</h2><p>A service booking website project for Lares Pet Sitting.</p>",
+        "sort_order": 31
+      },
+      "source": {
+        "inventory_id": 31,
+        "pdf_pages": [
+          4
+        ],
+        "pdf_sections": [
+          "13. Booking System for Services",
+          "15. Pet Caring Website"
+        ],
+        "link_status": "reachable",
+        "flags": [
+          "multiple_source_categories"
+        ]
+      }
+    },
+    {
+      "attributes": {
+        "title": "I-Arbitrate - Website",
+        "slug": "i-arbitrate-com",
+        "client": "I-Arbitrate",
+        "category": "wordpress",
+        "tags": [
+          "Booking"
+        ],
+        "website_url": "https://i-arbitrate.com/",
+        "description": "A service booking website project for I-Arbitrate.",
+        "body": "<h2>Project overview</h2><p>A service booking website project for I-Arbitrate.</p>",
+        "sort_order": 32
+      },
+      "source": {
+        "inventory_id": 32,
+        "pdf_pages": [
+          4,
+          5
+        ],
+        "pdf_sections": [
+          "13. Booking System for Services",
+          "18. Custom Online Quiz Platform"
+        ],
+        "link_status": "connection_error",
+        "flags": [
+          "multiple_source_categories"
+        ]
+      }
+    },
+    {
+      "attributes": {
+        "title": "Facial Beauty - Website",
+        "slug": "facialbeauty-com",
+        "client": "Facial Beauty",
+        "category": "wordpress",
+        "tags": [
+          "Booking"
+        ],
+        "website_url": "https://facialbeauty.com/",
+        "description": "A service booking website project for Facial Beauty.",
+        "body": "<h2>Project overview</h2><p>A service booking website project for Facial Beauty.</p>",
+        "sort_order": 33
+      },
+      "source": {
+        "inventory_id": 33,
+        "pdf_pages": [
+          4
+        ],
+        "pdf_sections": [
+          "13. Booking System for Services"
+        ],
+        "link_status": "reachable",
+        "flags": []
+      }
+    },
+    {
+      "attributes": {
+        "title": "Digital Growr - Website",
+        "slug": "digitalgrowr-com",
+        "client": "Digital Growr",
+        "category": "wordpress",
+        "tags": [
+          "Marketing"
+        ],
+        "website_url": "http://digitalgrowr.com/",
+        "description": "A digital marketing agency website project for Digital Growr.",
+        "body": "<h2>Project overview</h2><p>A digital marketing agency website project for Digital Growr.</p>",
+        "sort_order": 34
+      },
+      "source": {
+        "inventory_id": 34,
+        "pdf_pages": [
+          4
+        ],
+        "pdf_sections": [
+          "16. Digital Marketing Agencies"
+        ],
+        "link_status": "connection_error",
+        "flags": []
+      }
+    },
+    {
+      "attributes": {
+        "title": "Weblitical - Website",
+        "slug": "weblitical-com",
+        "client": "Weblitical",
+        "category": "wordpress",
+        "tags": [
+          "Marketing"
+        ],
+        "website_url": "https://weblitical.com/",
+        "description": "A digital marketing agency website project for Weblitical.",
+        "body": "<h2>Project overview</h2><p>A digital marketing agency website project for Weblitical.</p>",
+        "sort_order": 35
+      },
+      "source": {
+        "inventory_id": 35,
+        "pdf_pages": [
+          4
+        ],
+        "pdf_sections": [
+          "16. Digital Marketing Agencies"
+        ],
+        "link_status": "connection_error",
+        "flags": []
+      }
+    },
+    {
+      "attributes": {
+        "title": "Posticy - Website",
+        "slug": "posticy-com",
+        "client": "Posticy",
+        "category": "wordpress",
+        "tags": [
+          "Marketing"
+        ],
+        "website_url": "https://posticy.com/",
+        "description": "A digital marketing agency website project for Posticy.",
+        "body": "<h2>Project overview</h2><p>A digital marketing agency website project for Posticy.</p>",
+        "sort_order": 36
+      },
+      "source": {
+        "inventory_id": 36,
+        "pdf_pages": [
+          4
+        ],
+        "pdf_sections": [
+          "16. Digital Marketing Agencies"
+        ],
+        "link_status": "reachable",
+        "flags": []
+      }
+    },
+    {
+      "attributes": {
+        "title": "Photo Touch Enhance - Website",
+        "slug": "phototouchenhance-com",
+        "client": "Photo Touch Enhance",
+        "category": "wordpress",
+        "tags": [
+          "Creative Services"
+        ],
+        "website_url": "https://phototouchenhance.com/",
+        "description": "A creative services website project for Photo Touch Enhance.",
+        "body": "<h2>Project overview</h2><p>A creative services website project for Photo Touch Enhance.</p>",
+        "sort_order": 37
+      },
+      "source": {
+        "inventory_id": 37,
+        "pdf_pages": [
+          5
+        ],
+        "pdf_sections": [
+          "19. Graphics Photo Agencies"
+        ],
+        "link_status": "reachable",
+        "flags": [
+          "redirects_to_different_host"
+        ]
+      }
+    },
+    {
+      "attributes": {
+        "title": "Sarionena’s Food Hub - Website",
+        "slug": "sarionenasfoodhub-com",
+        "client": "Sarionena’s Food Hub",
+        "category": "wordpress",
+        "tags": [
+          "Food"
+        ],
+        "website_url": "https://sarionenasfoodhub.com/",
+        "description": "A food website project for Sarionena’s Food Hub.",
+        "body": "<h2>Project overview</h2><p>A food website project for Sarionena’s Food Hub.</p>",
+        "sort_order": 38
+      },
+      "source": {
+        "inventory_id": 38,
+        "pdf_pages": [
+          5
+        ],
+        "pdf_sections": [
+          "20. Custom Recipe Sharing Website"
+        ],
+        "link_status": "reachable",
+        "flags": [
+          "redirects_to_different_host"
+        ]
+      }
+    },
+    {
+      "attributes": {
+        "title": "iWhatsChat - Website",
+        "slug": "iwhatschat-com",
+        "client": "iWhatsChat",
+        "category": "wordpress",
+        "tags": [
+          "Communication"
+        ],
+        "website_url": "https://iwhatschat.com/",
+        "description": "A communication platform project for iWhatsChat.",
+        "body": "<h2>Project overview</h2><p>A communication platform project for iWhatsChat.</p>",
+        "sort_order": 39
+      },
+      "source": {
+        "inventory_id": 39,
+        "pdf_pages": [
+          6
+        ],
+        "pdf_sections": [
+          "24. Custom Real-time Chat Application"
+        ],
+        "link_status": "connection_error",
+        "flags": []
+      }
+    },
+    {
+      "attributes": {
+        "title": "Nahid Razon - Website",
+        "slug": "nahidrazon-com",
+        "client": "Nahid Razon",
+        "category": "wordpress",
+        "tags": [
+          "Art"
+        ],
+        "website_url": "http://nahidrazon.com/",
+        "description": "An art portfolio website project for Nahid Razon.",
+        "body": "<h2>Project overview</h2><p>An art portfolio website project for Nahid Razon.</p>",
+        "sort_order": 40
+      },
+      "source": {
+        "inventory_id": 40,
+        "pdf_pages": [
+          6
+        ],
+        "pdf_sections": [
+          "25. Online Art Gallery"
+        ],
+        "link_status": "reachable",
+        "flags": []
+      }
+    },
+    {
+      "attributes": {
+        "title": "Orange Circle - Website",
+        "slug": "orange-circle-com",
+        "client": "Orange Circle",
+        "category": "wordpress",
+        "tags": [
+          "Surveys"
+        ],
+        "website_url": "https://orange-circle.com",
+        "description": "A survey website project for Orange Circle.",
+        "body": "<h2>Project overview</h2><p>A survey website project for Orange Circle.</p>",
+        "sort_order": 41
+      },
+      "source": {
+        "inventory_id": 41,
+        "pdf_pages": [
+          6
+        ],
+        "pdf_sections": [
+          "27. Custom Survey or Polling Website"
+        ],
+        "link_status": "reachable",
+        "flags": []
+      }
+    },
+    {
+      "attributes": {
+        "title": "It’s Legit Notary - Website",
+        "slug": "itslegitnotary-com-services",
+        "client": "It’s Legit Notary",
+        "category": "wordpress",
+        "tags": [
+          "Appointments"
+        ],
+        "website_url": "https://itslegitnotary.com/services/",
+        "description": "An appointment scheduling website project for It’s Legit Notary.",
+        "body": "<h2>Project overview</h2><p>An appointment scheduling website project for It’s Legit Notary.</p>",
+        "sort_order": 42
+      },
+      "source": {
+        "inventory_id": 42,
+        "pdf_pages": [
+          6
+        ],
+        "pdf_sections": [
+          "28. Online Appointment Scheduling System"
+        ],
+        "link_status": "connection_error",
+        "flags": []
+      }
+    },
+    {
+      "attributes": {
+        "title": "Appointments Website - Design 4",
+        "slug": "arifs-work-design4",
+        "client": "Concept / Demo",
+        "category": "wordpress",
+        "tags": [
+          "Demo",
+          "Appointments"
+        ],
+        "website_url": "https://arifs.work/design4/",
+        "description": "An appointment scheduling website design demonstration from the Arif Billah portfolio.",
+        "body": "<h2>Project overview</h2><p>An appointment scheduling website design demonstration from the Arif Billah portfolio.</p><p>This project is a design demonstration.</p>",
+        "sort_order": 43
+      },
+      "source": {
+        "inventory_id": 43,
+        "pdf_pages": [
+          6,
+          9,
+          11
+        ],
+        "pdf_sections": [
+          "28. Online Appointment Scheduling System",
+          "44. Online Bookstore with Custom Features",
+          "54. Medical Health Website"
+        ],
+        "link_status": "connection_error",
+        "flags": [
+          "multiple_source_categories",
+          "label_as_demo"
+        ]
+      }
+    },
+    {
+      "attributes": {
+        "title": "Wanna Sauna - Website",
+        "slug": "wannasauna-me",
+        "client": "Wanna Sauna",
+        "category": "wordpress",
+        "tags": [
+          "Membership"
+        ],
+        "website_url": "https://wannasauna.me/",
+        "description": "A subscription website project for Wanna Sauna.",
+        "body": "<h2>Project overview</h2><p>A subscription website project for Wanna Sauna.</p>",
+        "sort_order": 44
+      },
+      "source": {
+        "inventory_id": 44,
+        "pdf_pages": [
+          7
+        ],
+        "pdf_sections": [
+          "33. Subscription-based Content Website"
+        ],
+        "link_status": "connection_error",
+        "flags": []
+      }
+    },
+    {
+      "attributes": {
+        "title": "Light Side Up - Website",
+        "slug": "lightsideup-com",
+        "client": "Light Side Up",
+        "category": "wordpress",
+        "tags": [
+          "Entertainment"
+        ],
+        "website_url": "https://lightsideup.com/",
+        "description": "An entertainment website project for Light Side Up.",
+        "body": "<h2>Project overview</h2><p>An entertainment website project for Light Side Up.</p>",
+        "sort_order": 45
+      },
+      "source": {
+        "inventory_id": 45,
+        "pdf_pages": [
+          7
+        ],
+        "pdf_sections": [
+          "34. Fun and Entertainment"
+        ],
+        "link_status": "connection_error",
+        "flags": []
+      }
+    },
+    {
+      "attributes": {
+        "title": "Instituto Santiago Aranegui - Website",
+        "slug": "institutosantiagoaranegui-com",
+        "client": "Instituto Santiago Aranegui",
+        "category": "wordpress",
+        "tags": [
+          "Education"
+        ],
+        "website_url": "https://institutosantiagoaranegui.com/",
+        "description": "An education website project for Instituto Santiago Aranegui.",
+        "body": "<h2>Project overview</h2><p>An education website project for Instituto Santiago Aranegui.</p>",
+        "sort_order": 46
+      },
+      "source": {
+        "inventory_id": 46,
+        "pdf_pages": [
+          9
+        ],
+        "pdf_sections": [
+          "43. Custom E-learning Platform with Certifications"
+        ],
+        "link_status": "connection_error",
+        "flags": []
+      }
+    },
+    {
+      "attributes": {
+        "title": "Impact MACRS - Website",
+        "slug": "impactmacrs-org",
+        "client": "Impact MACRS",
+        "category": "wordpress",
+        "tags": [
+          "Education"
+        ],
+        "website_url": "https://www.impactmacrs.org/",
+        "description": "An education website project for Impact MACRS.",
+        "body": "<h2>Project overview</h2><p>An education website project for Impact MACRS.</p>",
+        "sort_order": 47
+      },
+      "source": {
+        "inventory_id": 47,
+        "pdf_pages": [
+          9
+        ],
+        "pdf_sections": [
+          "43. Custom E-learning Platform with Certifications"
+        ],
+        "link_status": "reachable",
+        "flags": []
+      }
+    },
+    {
+      "attributes": {
+        "title": "Matthias Jakob Becker - Website",
+        "slug": "matthiasjakobbecker-com",
+        "client": "Matthias Jakob Becker",
+        "category": "ecommerce",
+        "tags": [
+          "Books"
+        ],
+        "website_url": "https://matthiasjakobbecker.com/",
+        "description": "A book website project for Matthias Jakob Becker.",
+        "body": "<h2>Project overview</h2><p>A book website project for Matthias Jakob Becker.</p>",
+        "sort_order": 48
+      },
+      "source": {
+        "inventory_id": 48,
+        "pdf_pages": [
+          9
+        ],
+        "pdf_sections": [
+          "44. Online Bookstore with Custom Features"
+        ],
+        "link_status": "connection_error",
+        "flags": []
+      }
+    },
+    {
+      "attributes": {
+        "title": "Food Website - Demo 10",
+        "slug": "arifs-work-demo10",
+        "client": "Concept / Demo",
+        "category": "ecommerce",
+        "tags": [
+          "Demo",
+          "Food"
+        ],
+        "website_url": "https://arifs.work/demo10/",
+        "description": "A restaurant website design demonstration from the Arif Billah portfolio.",
+        "body": "<h2>Project overview</h2><p>A restaurant website design demonstration from the Arif Billah portfolio.</p><p>This project is a design demonstration.</p>",
+        "sort_order": 49
+      },
+      "source": {
+        "inventory_id": 49,
+        "pdf_pages": [
+          9
+        ],
+        "pdf_sections": [
+          "45. Online Food Ordering System for Restaurants"
+        ],
+        "link_status": "connection_error",
+        "flags": [
+          "label_as_demo"
+        ]
+      }
+    },
+    {
+      "attributes": {
+        "title": "Nonprofit Website - Design 6",
+        "slug": "arifs-work-design6",
+        "client": "Concept / Demo",
+        "category": "wordpress",
+        "tags": [
+          "Demo",
+          "Nonprofit"
+        ],
+        "website_url": "https://arifs.work/design6/",
+        "description": "A donation website design demonstration from the Arif Billah portfolio.",
+        "body": "<h2>Project overview</h2><p>A donation website design demonstration from the Arif Billah portfolio.</p><p>This project is a design demonstration.</p>",
+        "sort_order": 50
+      },
+      "source": {
+        "inventory_id": 50,
+        "pdf_pages": [
+          9
+        ],
+        "pdf_sections": [
+          "46. Custom Donation and Crowdfunding Platform"
+        ],
+        "link_status": "connection_error",
+        "flags": [
+          "label_as_demo"
+        ]
+      }
+    },
+    {
+      "attributes": {
+        "title": "Uniflex Limited - Website",
+        "slug": "uniflexlimited-com-bd",
+        "client": "Uniflex Limited",
+        "category": "wordpress",
+        "tags": [
+          "Real Estate"
+        ],
+        "website_url": "https://uniflexlimited.com.bd/",
+        "description": "A real estate website project for Uniflex Limited.",
+        "body": "<h2>Project overview</h2><p>A real estate website project for Uniflex Limited.</p>",
+        "sort_order": 51
+      },
+      "source": {
+        "inventory_id": 51,
+        "pdf_pages": [
+          9
+        ],
+        "pdf_sections": [
+          "47. Custom Real Estate Management System"
+        ],
+        "link_status": "connection_error",
+        "flags": []
+      }
+    },
+    {
+      "attributes": {
+        "title": "Visit Sardinia - Website",
+        "slug": "visitsardinia-vip",
+        "client": "Visit Sardinia",
+        "category": "wordpress",
+        "tags": [
+          "Travel"
+        ],
+        "website_url": "https://www.visitsardinia.vip/",
+        "description": "A travel website project for Visit Sardinia.",
+        "body": "<h2>Project overview</h2><p>A travel website project for Visit Sardinia.</p>",
+        "sort_order": 52
+      },
+      "source": {
+        "inventory_id": 52,
+        "pdf_pages": [
+          10
+        ],
+        "pdf_sections": [
+          "48. Travel/tour website"
+        ],
+        "link_status": "reachable",
+        "flags": [
+          "redirects_to_different_host"
+        ]
+      }
+    },
+    {
+      "attributes": {
+        "title": "Samskydd - Website",
+        "slug": "samskydd-se",
+        "client": "Samskydd",
+        "category": "wordpress",
+        "tags": [
+          "Membership"
+        ],
+        "website_url": "https://www.samskydd.se/",
+        "description": "A membership website project for Samskydd.",
+        "body": "<h2>Project overview</h2><p>A membership website project for Samskydd.</p>",
+        "sort_order": 53
+      },
+      "source": {
+        "inventory_id": 53,
+        "pdf_pages": [
+          10
+        ],
+        "pdf_sections": [
+          "51. Membership Website"
+        ],
+        "link_status": "reachable",
+        "flags": []
+      }
+    },
+    {
+      "attributes": {
+        "title": "Iscandari - Website",
+        "slug": "iscandari-com",
+        "client": "Iscandari",
+        "category": "wordpress",
+        "tags": [
+          "Streaming"
+        ],
+        "website_url": "https://iscandari.com/",
+        "description": "A streaming website project for Iscandari.",
+        "body": "<h2>Project overview</h2><p>A streaming website project for Iscandari.</p>",
+        "sort_order": 54
+      },
+      "source": {
+        "inventory_id": 54,
+        "pdf_pages": [
+          10
+        ],
+        "pdf_sections": [
+          "52. Movie or Streaming Website"
+        ],
+        "link_status": "connection_error",
+        "flags": []
+      }
+    },
+    {
+      "attributes": {
+        "title": "Logistics Website - Design 21",
+        "slug": "arifs-work-design21",
+        "client": "Concept / Demo",
+        "category": "wordpress",
+        "tags": [
+          "Demo",
+          "Logistics"
+        ],
+        "website_url": "https://arifs.work/design21/",
+        "description": "A relocation and logistics website design demonstration from the Arif Billah portfolio.",
+        "body": "<h2>Project overview</h2><p>A relocation and logistics website design demonstration from the Arif Billah portfolio.</p><p>This project is a design demonstration.</p>",
+        "sort_order": 55
+      },
+      "source": {
+        "inventory_id": 55,
+        "pdf_pages": [
+          10
+        ],
+        "pdf_sections": [
+          "53. Courier / Delivery Service Website"
+        ],
+        "link_status": "connection_error",
+        "flags": [
+          "label_as_demo"
+        ]
+      }
+    },
+    {
+      "attributes": {
+        "title": "Volt Relocation - Website",
+        "slug": "voltrelocation-com",
+        "client": "Volt Relocation",
+        "category": "wordpress",
+        "tags": [
+          "Logistics"
+        ],
+        "website_url": "https://voltrelocation.com/",
+        "description": "A relocation and logistics website project for Volt Relocation.",
+        "body": "<h2>Project overview</h2><p>A relocation and logistics website project for Volt Relocation.</p>",
+        "sort_order": 56
+      },
+      "source": {
+        "inventory_id": 56,
+        "pdf_pages": [
+          10
+        ],
+        "pdf_sections": [
+          "53. Courier / Delivery Service Website"
+        ],
+        "link_status": "reachable",
+        "flags": []
+      }
+    },
+    {
+      "attributes": {
+        "title": "Kitchens Logistic - Website",
+        "slug": "kitchenslogistic-com",
+        "client": "Kitchens Logistic",
+        "category": "wordpress",
+        "tags": [
+          "Logistics"
+        ],
+        "website_url": "https://kitchenslogistic.com/",
+        "description": "A relocation and logistics website project for Kitchens Logistic.",
+        "body": "<h2>Project overview</h2><p>A relocation and logistics website project for Kitchens Logistic.</p>",
+        "sort_order": 57
+      },
+      "source": {
+        "inventory_id": 57,
+        "pdf_pages": [
+          10
+        ],
+        "pdf_sections": [
+          "53. Courier / Delivery Service Website"
+        ],
+        "link_status": "connection_error",
+        "flags": []
+      }
+    },
+    {
+      "attributes": {
+        "title": "One to One Healthcare Companion - Website",
+        "slug": "onetoonehealthcarecompanion-com",
+        "client": "One to One Healthcare Companion",
+        "category": "wordpress",
+        "tags": [
+          "Healthcare"
+        ],
+        "website_url": "https://onetoonehealthcarecompanion.com/",
+        "description": "A healthcare website project for One to One Healthcare Companion.",
+        "body": "<h2>Project overview</h2><p>A healthcare website project for One to One Healthcare Companion.</p>",
+        "sort_order": 58
+      },
+      "source": {
+        "inventory_id": 58,
+        "pdf_pages": [
+          11
+        ],
+        "pdf_sections": [
+          "54. Medical Health Website"
+        ],
+        "link_status": "connection_error",
+        "flags": []
+      }
+    },
+    {
+      "attributes": {
+        "title": "Medinova Malibagh - Website",
+        "slug": "medinovamalibagh-com",
+        "client": "Medinova Malibagh",
+        "category": "wordpress",
+        "tags": [
+          "Healthcare"
+        ],
+        "website_url": "https://medinovamalibagh.com/",
+        "description": "A healthcare website project for Medinova Malibagh.",
+        "body": "<h2>Project overview</h2><p>A healthcare website project for Medinova Malibagh.</p>",
+        "sort_order": 59
+      },
+      "source": {
+        "inventory_id": 59,
+        "pdf_pages": [
+          11
+        ],
+        "pdf_sections": [
+          "54. Medical Health Website"
+        ],
+        "link_status": "reachable",
+        "flags": []
+      }
+    },
+    {
+      "attributes": {
+        "title": "Technology Website - Design 5",
+        "slug": "arifs-work-design5",
+        "client": "Concept / Demo",
+        "category": "wordpress",
+        "tags": [
+          "Demo",
+          "Technology"
+        ],
+        "website_url": "https://arifs.work/design5/",
+        "description": "A science and robotics website design demonstration from the Arif Billah portfolio.",
+        "body": "<h2>Project overview</h2><p>A science and robotics website design demonstration from the Arif Billah portfolio.</p><p>This project is a design demonstration.</p>",
+        "sort_order": 60
+      },
+      "source": {
+        "inventory_id": 60,
+        "pdf_pages": [
+          11
+        ],
+        "pdf_sections": [
+          "55. Science Robotics Website"
+        ],
+        "link_status": "connection_error",
+        "flags": [
+          "label_as_demo"
+        ]
+      }
+    },
+    {
+      "attributes": {
+        "title": "Jen Arthur Enterprise - Website",
+        "slug": "jenarthurenterprise-com",
+        "client": "Jen Arthur Enterprise",
+        "category": "wordpress",
+        "tags": [
+          "Finance"
+        ],
+        "website_url": "https://jenarthurenterprise.com/",
+        "description": "A finance and accounting website project for Jen Arthur Enterprise.",
+        "body": "<h2>Project overview</h2><p>A finance and accounting website project for Jen Arthur Enterprise.</p>",
+        "sort_order": 61
+      },
+      "source": {
+        "inventory_id": 61,
+        "pdf_pages": [
+          11
+        ],
+        "pdf_sections": [
+          "56. Finance/Accounting Website"
+        ],
+        "link_status": "connection_error",
+        "flags": []
+      }
+    },
+    {
+      "attributes": {
+        "title": "Finabee - Website",
+        "slug": "finabee-com",
+        "client": "Finabee",
+        "category": "wordpress",
+        "tags": [
+          "Finance"
+        ],
+        "website_url": "https://finabee.com/",
+        "description": "A finance and accounting website project for Finabee.",
+        "body": "<h2>Project overview</h2><p>A finance and accounting website project for Finabee.</p>",
+        "sort_order": 62
+      },
+      "source": {
+        "inventory_id": 62,
+        "pdf_pages": [
+          11
+        ],
+        "pdf_sections": [
+          "56. Finance/Accounting Website"
+        ],
+        "link_status": "reachable",
+        "flags": []
+      }
+    },
+    {
+      "attributes": {
+        "title": "The Financial Star - Website",
+        "slug": "thefinancialstar-com",
+        "client": "The Financial Star",
+        "category": "wordpress",
+        "tags": [
+          "Finance"
+        ],
+        "website_url": "https://thefinancialstar.com/",
+        "description": "A finance and accounting website project for The Financial Star.",
+        "body": "<h2>Project overview</h2><p>A finance and accounting website project for The Financial Star.</p>",
+        "sort_order": 63
+      },
+      "source": {
+        "inventory_id": 63,
+        "pdf_pages": [
+          11
+        ],
+        "pdf_sections": [
+          "56. Finance/Accounting Website"
+        ],
+        "link_status": "reachable",
+        "flags": []
+      }
+    },
+    {
+      "attributes": {
+        "title": "SVCCN - Website",
+        "slug": "svccn-net-bd",
+        "client": "SVCCN",
+        "category": "wordpress",
+        "tags": [
+          "Landing Page"
+        ],
+        "website_url": "https://svccn.net.bd/",
+        "description": "A landing page project for SVCCN.",
+        "body": "<h2>Project overview</h2><p>A landing page project for SVCCN.</p>",
+        "sort_order": 64
+      },
+      "source": {
+        "inventory_id": 64,
+        "pdf_pages": [
+          12
+        ],
+        "pdf_sections": [
+          "58. Landing Page"
+        ],
+        "link_status": "connection_error",
+        "flags": []
+      }
+    },
+    {
+      "attributes": {
+        "title": "Dongpou - Website",
+        "slug": "dongpou-com",
+        "client": "Dongpou",
+        "category": "wordpress",
+        "tags": [
+          "Landing Page"
+        ],
+        "website_url": "https://www.dongpou.com/",
+        "description": "A landing page project for Dongpou.",
+        "body": "<h2>Project overview</h2><p>A landing page project for Dongpou.</p>",
+        "sort_order": 65
+      },
+      "source": {
+        "inventory_id": 65,
+        "pdf_pages": [
+          12
+        ],
+        "pdf_sections": [
+          "58. Landing Page"
+        ],
+        "link_status": "reachable",
+        "flags": []
+      }
+    },
+    {
+      "attributes": {
+        "title": "OTO Wellbeing - Website",
+        "slug": "oto-otowellbeing-com-our-range",
+        "client": "OTO Wellbeing",
+        "category": "wordpress",
+        "tags": [
+          "Landing Page"
+        ],
+        "website_url": "https://oto.otowellbeing.com/our-range/",
+        "description": "A landing page project for OTO Wellbeing.",
+        "body": "<h2>Project overview</h2><p>A landing page project for OTO Wellbeing.</p>",
+        "sort_order": 66
+      },
+      "source": {
+        "inventory_id": 66,
+        "pdf_pages": [
+          12
+        ],
+        "pdf_sections": [
+          "58. Landing Page"
+        ],
+        "link_status": "connection_error",
+        "flags": []
+      }
+    },
+    {
+      "attributes": {
+        "title": "Dropshipping Website - Demo 1",
+        "slug": "arifs-work-demo1",
+        "client": "Concept / Demo",
+        "category": "ecommerce",
+        "tags": [
+          "Demo",
+          "Dropshipping"
+        ],
+        "website_url": "https://arifs.work/demo1/",
+        "description": "An eCommerce website design demonstration from the Arif Billah portfolio.",
+        "body": "<h2>Project overview</h2><p>An eCommerce website design demonstration from the Arif Billah portfolio.</p><p>This project is a design demonstration.</p>",
+        "sort_order": 67
+      },
+      "source": {
+        "inventory_id": 67,
+        "pdf_pages": [
+          12
+        ],
+        "pdf_sections": [
+          "58. Dropshipping"
+        ],
+        "link_status": "connection_error",
+        "flags": [
+          "label_as_demo"
+        ]
+      }
+    },
+    {
+      "attributes": {
+        "title": "Dropshipping Website - Demo 5",
+        "slug": "arifs-work-demo5",
+        "client": "Concept / Demo",
+        "category": "ecommerce",
+        "tags": [
+          "Demo",
+          "Dropshipping"
+        ],
+        "website_url": "https://arifs.work/demo5/",
+        "description": "An eCommerce website design demonstration from the Arif Billah portfolio.",
+        "body": "<h2>Project overview</h2><p>An eCommerce website design demonstration from the Arif Billah portfolio.</p><p>This project is a design demonstration.</p>",
+        "sort_order": 68
+      },
+      "source": {
+        "inventory_id": 68,
+        "pdf_pages": [
+          12
+        ],
+        "pdf_sections": [
+          "58. Dropshipping"
+        ],
+        "link_status": "connection_error",
+        "flags": [
+          "label_as_demo"
+        ]
+      }
+    },
+    {
+      "attributes": {
+        "title": "Dropshipping Website - Demo 7",
+        "slug": "arifs-work-demo7",
+        "client": "Concept / Demo",
+        "category": "ecommerce",
+        "tags": [
+          "Demo",
+          "Dropshipping"
+        ],
+        "website_url": "https://arifs.work/demo7/",
+        "description": "An eCommerce website design demonstration from the Arif Billah portfolio.",
+        "body": "<h2>Project overview</h2><p>An eCommerce website design demonstration from the Arif Billah portfolio.</p><p>This project is a design demonstration.</p>",
+        "sort_order": 69
+      },
+      "source": {
+        "inventory_id": 69,
+        "pdf_pages": [
+          12
+        ],
+        "pdf_sections": [
+          "58. Dropshipping"
+        ],
+        "link_status": "connection_error",
+        "flags": [
+          "label_as_demo"
+        ]
+      }
+    },
+    {
+      "attributes": {
+        "title": "InAllWeb - Billing Portal",
+        "slug": "clientes-inallweb-com",
+        "client": "InAllWeb",
+        "category": "cloud",
+        "tags": [
+          "Billing"
+        ],
+        "website_url": "https://clientes.inallweb.com/",
+        "description": "A billing portal project for InAllWeb.",
+        "body": "<h2>Project overview</h2><p>A billing portal project for InAllWeb.</p>",
+        "sort_order": 70
+      },
+      "source": {
+        "inventory_id": 70,
+        "pdf_pages": [
+          12
+        ],
+        "pdf_sections": [
+          "59. Other Billing Panel Configurations"
+        ],
+        "link_status": "reachable",
+        "flags": []
+      }
+    },
+    {
+      "attributes": {
+        "title": "Hostorio - Billing Portal",
+        "slug": "my-hostorio-com",
+        "client": "Hostorio",
+        "category": "cloud",
+        "tags": [
+          "Billing"
+        ],
+        "website_url": "http://my.hostorio.com/",
+        "description": "A billing portal project for Hostorio.",
+        "body": "<h2>Project overview</h2><p>A billing portal project for Hostorio.</p>",
+        "sort_order": 71
+      },
+      "source": {
+        "inventory_id": 71,
+        "pdf_pages": [
+          12
+        ],
+        "pdf_sections": [
+          "59. Other Billing Panel Configurations"
+        ],
+        "link_status": "reachable",
+        "flags": []
+      }
+    }
+  ]
+}

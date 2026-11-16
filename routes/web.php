@@ -7,7 +7,11 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\OurFoundersController;
 use App\Http\Controllers\OurResourcesController;
 use App\Http\Controllers\OurWorksController;
+use App\Http\Controllers\ServicesController;
 use App\Http\Controllers\SitemapController;
+use Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse;
+use Illuminate\Cookie\Middleware\EncryptCookies;
+use Illuminate\Session\Middleware\StartSession;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
@@ -16,7 +20,7 @@ Route::get('/', [HomeController::class, 'index'])->name('home');
 // Skips session/cookie middleware since those also hit the (currently broken) DB connection.
 Route::get('/__diag', function () {
     return response()->json([
-        'pdo_drivers' => \PDO::getAvailableDrivers(),
+        'pdo_drivers' => PDO::getAvailableDrivers(),
         'pdo_sqlite_loaded' => extension_loaded('pdo_sqlite'),
         'sqlite3_loaded' => extension_loaded('sqlite3'),
         'php_version' => PHP_VERSION,
@@ -24,16 +28,18 @@ Route::get('/__diag', function () {
         'loaded_extensions' => get_loaded_extensions(),
     ]);
 })->withoutMiddleware([
-    \Illuminate\Session\Middleware\StartSession::class,
-    \Illuminate\Cookie\Middleware\EncryptCookies::class,
-    \Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse::class,
+    StartSession::class,
+    EncryptCookies::class,
+    AddQueuedCookiesToResponse::class,
 ]);
 
 // Services
+Route::get('/services', [ServicesController::class, 'index'])->name('services');
 Route::get('/web-development', fn () => view('pages.services.web-development'))->name('web-development');
 Route::get('/seo', fn () => view('pages.services.seo'))->name('seo');
 Route::get('/manage-cloud', fn () => view('pages.services.manage-cloud'))->name('manage-cloud');
 Route::get('/automation', fn () => view('pages.services.automation'))->name('automation');
+Route::get('/diagnostic-management-system', fn () => view('pages.services.diagnostic-management-system'))->name('diagnostic-management-system');
 
 // Solutions
 Route::get('/ecommerce-solution', fn () => view('pages.solutions.ecommerce-solution'))->name('ecommerce-solution');

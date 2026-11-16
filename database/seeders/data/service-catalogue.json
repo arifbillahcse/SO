@@ -1,0 +1,576 @@
+{
+    "groups": [
+        {
+            "key": "website-development",
+            "title": "Website Development",
+            "route_name": "web-development",
+            "description": "Business websites, online stores and custom applications built around your content and workflows.",
+            "items": [
+                {
+                    "key": "custom-laravel-php",
+                    "title": "Custom Laravel & PHP Applications",
+                    "description": "Plan and build a web application around your business requirements, with the features and workflows your team needs.",
+                    "scope": [
+                        "Application structure and database planning",
+                        "Business-specific screens and workflows",
+                        "Deployment and handover planning"
+                    ],
+                    "related_source_keys": [],
+                    "primary_action": {
+                        "label": "Discuss Your Application",
+                        "route_name": "home",
+                        "fragment": "contact"
+                    }
+                },
+                {
+                    "key": "business-management-systems",
+                    "title": "Business Management Systems",
+                    "description": "Bring operational records, staff tasks and reporting into a workspace designed for the way your business works.",
+                    "scope": [
+                        "Business records and user roles",
+                        "Operational workflows",
+                        "Reports and administrative screens"
+                    ],
+                    "related_source_keys": [],
+                    "primary_action": {
+                        "label": "Discuss Your System",
+                        "route_name": "home",
+                        "fragment": "contact"
+                    }
+                },
+                {
+                    "key": "wordpress-development",
+                    "title": "WordPress Website Development",
+                    "description": "Create a business website, blog or service website with WordPress and a content structure your team can manage.",
+                    "scope": [
+                        "Business pages and content structure",
+                        "Responsive layouts and redesigns",
+                        "Maintenance and handover options"
+                    ],
+                    "related_source_keys": [
+                        "arif-cloud-portfolio-045",
+                        "arif-cloud-portfolio-044"
+                    ],
+                    "primary_action": {
+                        "label": "Explore Website Development",
+                        "route_name": "web-development"
+                    }
+                },
+                {
+                    "key": "wordpress-themes-plugins",
+                    "title": "Custom WordPress Themes & Plugins",
+                    "description": "Extend your WordPress website with layouts, functionality and integrations tailored to a defined project brief.",
+                    "scope": [
+                        "Theme customization",
+                        "Business-specific plugin features",
+                        "Compatibility and maintenance planning"
+                    ],
+                    "related_source_keys": [],
+                    "primary_action": {
+                        "label": "Discuss WordPress Customization",
+                        "route_name": "home",
+                        "fragment": "contact"
+                    }
+                },
+                {
+                    "key": "woocommerce-development",
+                    "title": "WooCommerce Store Development",
+                    "description": "Build an online store with product pages, shopping-cart and checkout workflows suited to your business.",
+                    "scope": [
+                        "Products and categories",
+                        "Cart, checkout and shipping configuration",
+                        "Store administration and handover"
+                    ],
+                    "related_source_keys": [
+                        "arif-cloud-portfolio-006"
+                    ],
+                    "related_website_slugs": [
+                        "verde-glow-com",
+                        "upcmartbd-com"
+                    ],
+                    "primary_action": {
+                        "label": "Explore Website Development",
+                        "route_name": "web-development"
+                    }
+                },
+                {
+                    "key": "elementor-acf",
+                    "title": "Elementor & ACF Builds",
+                    "description": "Create editable WordPress layouts with Elementor, with structured custom fields where the agreed content model requires them.",
+                    "scope": [
+                        "Elementor layouts and reusable templates",
+                        "Content fields defined for the project",
+                        "Responsive styling and editing guidance"
+                    ],
+                    "related_source_keys": [
+                        "arif-cloud-portfolio-018"
+                    ],
+                    "primary_action": {
+                        "label": "Discuss Your WordPress Layout",
+                        "route_name": "home",
+                        "fragment": "contact"
+                    }
+                },
+                {
+                    "key": "payment-integrations",
+                    "title": "Payment Gateway Integration",
+                    "description": "Connect a supported payment provider to your website or store and configure the checkout and transaction workflow.",
+                    "scope": [
+                        "Provider and platform compatibility review",
+                        "Checkout integration and transaction states",
+                        "Test-mode checks and handover"
+                    ],
+                    "related_source_keys": [
+                        "arif-cloud-portfolio-006",
+                        "arif-cloud-portfolio-040"
+                    ],
+                    "primary_action": {
+                        "label": "Discuss Payment Integration",
+                        "route_name": "home",
+                        "fragment": "contact"
+                    }
+                }
+            ]
+        },
+        {
+            "key": "seo-optimization",
+            "title": "SEO Optimization",
+            "route_name": "seo",
+            "description": "Technical checks, page optimization and search visibility work informed by your website's content and goals.",
+            "items": [
+                {
+                    "key": "technical-seo",
+                    "title": "Technical SEO Audits",
+                    "description": "Review crawling, indexing, sitemaps and website structure to identify technical issues and practical next steps.",
+                    "scope": [
+                        "Crawl and indexing review",
+                        "Canonical and sitemap checks",
+                        "Prioritized technical recommendations"
+                    ],
+                    "related_source_keys": [
+                        "arif-cloud-portfolio-041"
+                    ],
+                    "primary_action": {
+                        "label": "Explore SEO Services",
+                        "route_name": "seo"
+                    }
+                },
+                {
+                    "key": "on-page-seo",
+                    "title": "On-Page SEO & Content Planning",
+                    "description": "Align page titles, headings, descriptions and internal links with the topics and search intent each page serves.",
+                    "scope": [
+                        "Keyword and search-intent mapping",
+                        "Titles, descriptions and headings",
+                        "Internal links and content gaps"
+                    ],
+                    "related_source_keys": [
+                        "arif-cloud-portfolio-041"
+                    ],
+                    "primary_action": {
+                        "label": "Explore SEO Services",
+                        "route_name": "seo"
+                    }
+                },
+                {
+                    "key": "link-building",
+                    "title": "Link Building & Outreach",
+                    "description": "Plan relevant outreach opportunities and review backlink quality as part of an agreed search visibility strategy.",
+                    "scope": [
+                        "Backlink profile review",
+                        "Relevant outreach research",
+                        "Activity and placement reporting"
+                    ],
+                    "related_source_keys": [],
+                    "primary_action": {
+                        "label": "Discuss Outreach",
+                        "route_name": "home",
+                        "fragment": "contact"
+                    }
+                },
+                {
+                    "key": "local-seo",
+                    "title": "Local SEO",
+                    "description": "Improve the consistency and relevance of your local business information and location-focused website content.",
+                    "scope": [
+                        "Business profile review",
+                        "Local information consistency",
+                        "Location and service-page recommendations"
+                    ],
+                    "related_source_keys": [],
+                    "primary_action": {
+                        "label": "Explore SEO Services",
+                        "route_name": "seo"
+                    }
+                },
+                {
+                    "key": "ecommerce-seo",
+                    "title": "eCommerce SEO",
+                    "description": "Review product pages, categories and store structure to help search engines understand your online catalogue.",
+                    "scope": [
+                        "Product and category metadata",
+                        "Store navigation and internal links",
+                        "Indexing and structured-data review"
+                    ],
+                    "related_source_keys": [],
+                    "primary_action": {
+                        "label": "Explore SEO Services",
+                        "route_name": "seo"
+                    }
+                },
+                {
+                    "key": "seo-reporting",
+                    "title": "SEO Reporting & Analytics",
+                    "description": "Set up an agreed reporting view for search performance and track completed work alongside the data available from your accounts.",
+                    "scope": [
+                        "Search Console and analytics setup review",
+                        "Search visibility and traffic reporting",
+                        "Recommendations and activity summaries"
+                    ],
+                    "related_source_keys": [
+                        "arif-cloud-portfolio-041"
+                    ],
+                    "primary_action": {
+                        "label": "Explore SEO Services",
+                        "route_name": "seo"
+                    }
+                }
+            ]
+        },
+        {
+            "key": "managed-cloud",
+            "title": "Managed Cloud",
+            "route_name": "manage-cloud",
+            "description": "Server setup, hosting configuration, security and maintenance for your website and application infrastructure.",
+            "items": [
+                {
+                    "key": "linux-administration",
+                    "title": "Linux Server Administration",
+                    "description": "Configure and maintain Linux servers, including user access, system services and routine troubleshooting.",
+                    "scope": [
+                        "Operating system and service configuration",
+                        "Users, permissions and SSH access",
+                        "Routine administration and diagnostics"
+                    ],
+                    "related_source_keys": [
+                        "arif-cloud-portfolio-007",
+                        "arif-cloud-portfolio-022",
+                        "arif-cloud-portfolio-027"
+                    ],
+                    "primary_action": {
+                        "label": "Explore Cloud Management",
+                        "route_name": "manage-cloud"
+                    }
+                },
+                {
+                    "key": "apache-nginx",
+                    "title": "Apache & Nginx Configuration",
+                    "description": "Configure web servers, virtual hosts and application routing for the websites and services you need to run.",
+                    "scope": [
+                        "Virtual hosts and document roots",
+                        "Reverse proxy and application routing",
+                        "HTTPS configuration"
+                    ],
+                    "related_source_keys": [
+                        "arif-cloud-portfolio-010",
+                        "arif-cloud-portfolio-008",
+                        "arif-cloud-portfolio-015"
+                    ],
+                    "primary_action": {
+                        "label": "Explore Cloud Management",
+                        "route_name": "manage-cloud"
+                    }
+                },
+                {
+                    "key": "cloud-deployment",
+                    "title": "Cloud Deployment & Management",
+                    "description": "Deploy your application to a suitable cloud environment and plan the configuration and administration it needs.",
+                    "scope": [
+                        "Application and hosting requirements",
+                        "Deployment and database configuration",
+                        "Operational handover and management scope"
+                    ],
+                    "related_source_keys": [
+                        "arif-cloud-portfolio-001",
+                        "arif-cloud-portfolio-012",
+                        "arif-cloud-portfolio-023"
+                    ],
+                    "primary_action": {
+                        "label": "Explore Cloud Management",
+                        "route_name": "manage-cloud"
+                    }
+                },
+                {
+                    "key": "vps-hosting",
+                    "title": "VPS & Web Hosting Setup",
+                    "description": "Prepare a VPS or hosting account for your website, including the web stack, domain configuration and access settings.",
+                    "scope": [
+                        "VPS provisioning and hosting stack",
+                        "Domain and website configuration",
+                        "Access and deployment preparation"
+                    ],
+                    "related_source_keys": [
+                        "arif-cloud-portfolio-002",
+                        "arif-cloud-portfolio-027",
+                        "arif-cloud-portfolio-042",
+                        "arif-cloud-portfolio-044"
+                    ],
+                    "primary_action": {
+                        "label": "Explore Cloud Management",
+                        "route_name": "manage-cloud"
+                    }
+                },
+                {
+                    "key": "hosting-panels",
+                    "title": "Hosting Control Panel Setup",
+                    "description": "Install and configure a suitable hosting panel so your websites, databases and hosting accounts are easier to administer.",
+                    "scope": [
+                        "Panel selection and installation",
+                        "Website and database setup",
+                        "Hosting account administration"
+                    ],
+                    "related_source_keys": [
+                        "arif-cloud-portfolio-045",
+                        "arif-cloud-portfolio-013",
+                        "arif-cloud-portfolio-020",
+                        "arif-cloud-portfolio-030",
+                        "arif-cloud-portfolio-033"
+                    ],
+                    "primary_action": {
+                        "label": "Explore Cloud Management",
+                        "route_name": "manage-cloud"
+                    }
+                },
+                {
+                    "key": "website-server-security",
+                    "title": "Website & Server Security",
+                    "description": "Review and configure access controls, firewall rules and HTTPS settings for your website and hosting environment.",
+                    "scope": [
+                        "SSH and administrative access",
+                        "Firewall and security configuration",
+                        "SSL certificates and HTTPS checks"
+                    ],
+                    "related_source_keys": [
+                        "arif-cloud-portfolio-043",
+                        "arif-cloud-portfolio-004",
+                        "arif-cloud-portfolio-007",
+                        "arif-cloud-portfolio-035"
+                    ],
+                    "primary_action": {
+                        "label": "Explore Cloud Management",
+                        "route_name": "manage-cloud"
+                    }
+                },
+                {
+                    "key": "dns-cloudflare",
+                    "title": "DNS, Cloudflare CDN & WAF",
+                    "description": "Configure domain records, Cloudflare caching and suitable security rules around your website's requirements.",
+                    "scope": [
+                        "DNS zones and records",
+                        "CDN and SSL configuration",
+                        "WAF and rate-limiting rules"
+                    ],
+                    "related_source_keys": [
+                        "arif-cloud-portfolio-003",
+                        "arif-cloud-portfolio-016",
+                        "arif-cloud-portfolio-024"
+                    ],
+                    "primary_action": {
+                        "label": "Explore Cloud Management",
+                        "route_name": "manage-cloud"
+                    }
+                },
+                {
+                    "key": "email-authentication",
+                    "title": "Email Authentication & SMTP",
+                    "description": "Configure email DNS records and supported SMTP settings to connect your domain, mail service and website email workflow.",
+                    "scope": [
+                        "MX, SPF, DKIM and DMARC records",
+                        "Mail-provider and SMTP configuration",
+                        "Authentication and sending checks"
+                    ],
+                    "related_source_keys": [
+                        "arif-cloud-portfolio-046",
+                        "arif-cloud-portfolio-005"
+                    ],
+                    "primary_action": {
+                        "label": "Explore Cloud Management",
+                        "route_name": "manage-cloud"
+                    }
+                },
+                {
+                    "key": "bash-backups-monitoring",
+                    "title": "Bash Automation, Backups & Monitoring",
+                    "description": "Automate recurring server tasks and configure backup jobs and monitoring around an agreed maintenance plan.",
+                    "scope": [
+                        "Bash scripts and scheduled tasks",
+                        "File and database backup workflows",
+                        "Uptime checks and alerts"
+                    ],
+                    "related_source_keys": [
+                        "arif-cloud-portfolio-011",
+                        "arif-cloud-portfolio-019",
+                        "arif-cloud-portfolio-025"
+                    ],
+                    "primary_action": {
+                        "label": "Explore Cloud Management",
+                        "route_name": "manage-cloud"
+                    }
+                },
+                {
+                    "key": "migration-troubleshooting",
+                    "title": "Migrations, Performance & Troubleshooting",
+                    "description": "Move websites between hosts, review performance settings and investigate application or server issues.",
+                    "scope": [
+                        "Website files, databases and DNS migration",
+                        "Caching and server configuration review",
+                        "Log analysis and fault investigation"
+                    ],
+                    "related_source_keys": [
+                        "arif-cloud-portfolio-009",
+                        "arif-cloud-portfolio-014",
+                        "arif-cloud-portfolio-029",
+                        "arif-cloud-portfolio-039"
+                    ],
+                    "primary_action": {
+                        "label": "Explore Cloud Management",
+                        "route_name": "manage-cloud"
+                    }
+                }
+            ]
+        },
+        {
+            "key": "business-automation",
+            "title": "Business Automation",
+            "route_name": "automation",
+            "description": "Connect applications and reduce repetitive work with integrations and workflows shaped around your business.",
+            "items": [
+                {
+                    "key": "rest-api",
+                    "title": "REST API Development & Integration",
+                    "description": "Build or connect APIs so your website, business applications and third-party tools can exchange the data they need.",
+                    "scope": [
+                        "API requirements and data mapping",
+                        "Endpoints, webhooks and tool connections",
+                        "Authentication and error-handling design"
+                    ],
+                    "related_source_keys": [],
+                    "primary_action": {
+                        "label": "Discuss Your Integration",
+                        "route_name": "home",
+                        "fragment": "contact"
+                    }
+                },
+                {
+                    "key": "workflow-automation",
+                    "title": "Workflow Automation",
+                    "description": "Connect business tools and automate recurring steps across enquiries, customer records, email and reporting.",
+                    "scope": [
+                        "Workflow mapping and triggers",
+                        "CRM, email and WordPress task connections",
+                        "Scheduled reporting and notifications"
+                    ],
+                    "related_source_keys": [
+                        "arif-cloud-portfolio-040"
+                    ],
+                    "primary_action": {
+                        "label": "Explore Business Automation",
+                        "route_name": "automation"
+                    }
+                },
+                {
+                    "key": "ai-chatbots",
+                    "title": "AI Chatbots & Assisted Features",
+                    "description": "Explore a chatbot or AI-assisted website feature for a defined task, using the content and integrations your project requires.",
+                    "scope": [
+                        "Use-case and content planning",
+                        "Website or application integration",
+                        "Human handoff and response testing"
+                    ],
+                    "related_source_keys": [],
+                    "primary_action": {
+                        "label": "Discuss an AI Feature",
+                        "route_name": "home",
+                        "fragment": "contact"
+                    }
+                }
+            ]
+        },
+        {
+            "key": "diagnostic-management",
+            "title": "Diagnostic Management System",
+            "route_name": "diagnostic-management-system",
+            "description": "Explore a diagnostic center workflow covering patients, billing, laboratory work and reports. Software under development; contact us for current availability.",
+            "items": [
+                {
+                    "key": "diagnostic-registration-billing",
+                    "title": "Patient Registration & Billing",
+                    "description": "Explore the planned workflow for patient details, test orders, invoices, payments and outstanding balances.",
+                    "scope": [
+                        "Patient registration and test orders",
+                        "Invoices and payment records",
+                        "Balances and daily closing"
+                    ],
+                    "related_source_keys": [],
+                    "availability": "Under development",
+                    "primary_action": {
+                        "label": "Discuss Your Center",
+                        "route_name": "diagnostic-management-system",
+                        "fragment": "contact"
+                    }
+                },
+                {
+                    "key": "diagnostic-samples-results",
+                    "title": "Sample Tracking & Laboratory Results",
+                    "description": "Explore the planned connection between test orders, sample handling and laboratory result entry.",
+                    "scope": [
+                        "Sample labels and tracking",
+                        "Test progress and result entry",
+                        "Staff roles and workflow access"
+                    ],
+                    "related_source_keys": [],
+                    "availability": "Under development",
+                    "primary_action": {
+                        "label": "Discuss Your Center",
+                        "route_name": "diagnostic-management-system",
+                        "fragment": "contact"
+                    }
+                },
+                {
+                    "key": "diagnostic-reporting",
+                    "title": "Report Review & Release",
+                    "description": "Explore the planned workflow for arranging results, reviewing reports and preparing the approved report for release.",
+                    "scope": [
+                        "Report layouts and result organization",
+                        "Review and release workflow",
+                        "Printing and operational summaries"
+                    ],
+                    "related_source_keys": [],
+                    "availability": "Under development",
+                    "primary_action": {
+                        "label": "Discuss Your Center",
+                        "route_name": "diagnostic-management-system",
+                        "fragment": "contact"
+                    }
+                },
+                {
+                    "key": "diagnostic-setup",
+                    "title": "Offline, Cloud & Custom Setup",
+                    "description": "Discuss installation options, your center's workflow and the setup or support scope available for the developing system.",
+                    "scope": [
+                        "Offline installation requirements",
+                        "Cloud hosting and setup requirements",
+                        "Custom requirements and support planning"
+                    ],
+                    "related_source_keys": [],
+                    "availability": "Discuss current availability",
+                    "primary_action": {
+                        "label": "Discuss Setup Options",
+                        "route_name": "diagnostic-management-system",
+                        "fragment": "contact"
+                    }
+                }
+            ]
+        }
+    ]
+}

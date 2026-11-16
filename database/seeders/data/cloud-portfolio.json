@@ -1,0 +1,2475 @@
+{
+  "source_document": "Arif_Cloud_Portfolio_Complete.docx (1).pdf",
+  "source_sha256": "480f25219e983a59a0a1be3c37f9d1c018d688c070844e9757e5fe55f5bd8f20",
+  "import_namespace": "arif-cloud-portfolio",
+  "reviewed_at_utc": "2026-11-16T10:59:34.819929+00:00",
+  "identity_policy": "Match source_key, never the shared evidence URL. Preserve existing records and admin edits.",
+  "projects": [
+    {
+      "attributes": {
+        "title": "WordPress Deployment on AWS EC2",
+        "slug": "arif-cloud-deployed-a-full-wordpress-site-on-aws-ec2-ubuntu-lamp",
+        "client": null,
+        "category": "cloud",
+        "tags": [
+          "Technical portfolio",
+          "AWS EC2",
+          "Ubuntu",
+          "Apache",
+          "MySQL",
+          "PHP"
+        ],
+        "project_type": "technical_demonstration",
+        "attribution": "Md Arif Billah",
+        "website_url": null,
+        "video_url": "https://youtu.be/Y7bMa_o5TBM",
+        "repository_url": null,
+        "evidence_status": "linked_video_unavailable",
+        "evidence_notes": "Original PDF reference: https://youtu.be/Y7bMa_o5TBM\nYouTube oEmbed returned 404 and public player metadata reported ERROR / This video is unavailable. The reason for unavailability is not established.\nRetain source title, description and original URL in inventory. Obtain a working matching video, or later publish as an attributed technical overview without a verified-video claim.",
+        "evidence_checked_at": "2026-11-16 10:59:34",
+        "source_key": "arif-cloud-portfolio-001",
+        "description": "WordPress hosting on an AWS EC2 instance using Ubuntu and a LAMP stack, including Apache, MySQL and PHP configuration.",
+        "body": "<h2>Technical overview</h2><p>WordPress hosting on an AWS EC2 instance using Ubuntu and a LAMP stack, including Apache, MySQL and PHP configuration.</p><p>Technical portfolio by Md Arif Billah.</p><h2>Technologies and scope</h2><ul><li>AWS EC2</li><li>Ubuntu</li><li>Apache</li><li>MySQL</li><li>PHP</li><li>WordPress</li><li>LAMP Stack</li></ul><h2>Demonstration reference</h2><p>The source video was unavailable when reviewed. This entry is presented as a technical overview.</p>",
+        "sort_order": 101
+      },
+      "source": {
+        "source_number": 1,
+        "source_title": "Deployed a Full WordPress Site on AWS EC2 (Ubuntu + LAMP)",
+        "source_description": "Launched and configured a complete WordPress website on an AWS EC2 instance using Ubuntu and LAMP stack, including Apache, MySQL, and PHP setup from scratch.",
+        "pdf_pages": [
+          5
+        ],
+        "index_rows": [
+          1
+        ],
+        "original_evidence_url": "https://youtu.be/Y7bMa_o5TBM",
+        "normalized_evidence_url": "https://www.youtube.com/watch?v=Y7bMa_o5TBM",
+        "observed_video_title": null,
+        "shared_evidence_project_numbers": [
+          1,
+          32
+        ],
+        "review_flags": [
+          "no_named_client",
+          "independent_project_identity_unverified",
+          "evidence_reused_across_topics",
+          "video_reports_unavailable_at_review"
+        ],
+        "full_video_content_reviewed": false
+      }
+    },
+    {
+      "attributes": {
+        "title": "DigitalOcean VPS and CyberPanel Setup",
+        "slug": "arif-cloud-set-up-a-cloud-vps-with-cyberpanel-on-digitalocean",
+        "client": null,
+        "category": "cloud",
+        "tags": [
+          "Technical portfolio",
+          "DigitalOcean",
+          "VPS",
+          "CyberPanel",
+          "OpenLiteSpeed",
+          "DNS"
+        ],
+        "project_type": "technical_demonstration",
+        "attribution": "Md Arif Billah",
+        "website_url": null,
+        "video_url": "https://youtu.be/Q-VBXP5f9Zk",
+        "repository_url": null,
+        "evidence_status": "linked_video_unavailable",
+        "evidence_notes": "Original PDF reference: https://youtu.be/Q-VBXP5f9Zk\nYouTube oEmbed returned 404 and public player metadata reported ERROR / This video is unavailable. The reason for unavailability is not established.\nRetain source title, description and original URL in inventory. Obtain a working matching video, or later publish as an attributed technical overview without a verified-video claim.",
+        "evidence_checked_at": "2026-11-16 10:59:34",
+        "source_key": "arif-cloud-portfolio-002",
+        "description": "Provisioning a DigitalOcean Droplet and configuring CyberPanel with OpenLiteSpeed for website, email and database administration.",
+        "body": "<h2>Technical overview</h2><p>Provisioning a DigitalOcean Droplet and configuring CyberPanel with OpenLiteSpeed for website, email and database administration.</p><p>Technical portfolio by Md Arif Billah.</p><h2>Technologies and scope</h2><ul><li>DigitalOcean</li><li>VPS</li><li>CyberPanel</li><li>OpenLiteSpeed</li><li>DNS</li></ul><h2>Demonstration reference</h2><p>The source video was unavailable when reviewed. This entry is presented as a technical overview.</p>",
+        "sort_order": 102
+      },
+      "source": {
+        "source_number": 2,
+        "source_title": "Set Up a Cloud VPS with CyberPanel on DigitalOcean",
+        "source_description": "Provisioned a DigitalOcean Droplet and installed CyberPanel for managing websites, emails, and databases through a modern hosting panel.",
+        "pdf_pages": [
+          5
+        ],
+        "index_rows": [
+          2
+        ],
+        "original_evidence_url": "https://youtu.be/Q-VBXP5f9Zk",
+        "normalized_evidence_url": "https://www.youtube.com/watch?v=Q-VBXP5f9Zk",
+        "observed_video_title": null,
+        "shared_evidence_project_numbers": [
+          2
+        ],
+        "review_flags": [
+          "no_named_client",
+          "independent_project_identity_unverified",
+          "video_reports_unavailable_at_review"
+        ],
+        "full_video_content_reviewed": false
+      }
+    },
+    {
+      "attributes": {
+        "title": "Cloudflare CDN and DNS Configuration",
+        "slug": "arif-cloud-configured-cloudflare-cdn-dns-for-website-performance",
+        "client": null,
+        "category": "cloud",
+        "tags": [
+          "Technical portfolio",
+          "Cloudflare",
+          "CDN",
+          "DNS Management",
+          "SSL",
+          "DDoS Protection"
+        ],
+        "project_type": "technical_demonstration",
+        "attribution": "Md Arif Billah",
+        "website_url": null,
+        "video_url": "https://youtu.be/fwH3p0dZpBQ",
+        "repository_url": null,
+        "evidence_status": "linked_video_unavailable",
+        "evidence_notes": "Original PDF reference: https://youtu.be/fwH3p0dZpBQ\nYouTube oEmbed returned 404 and public player metadata reported ERROR / This video is unavailable. The reason for unavailability is not established.\nRetain source title, description and original URL in inventory. Obtain a working matching video, or later publish as an attributed technical overview without a verified-video claim.",
+        "evidence_checked_at": "2026-11-16 10:59:34",
+        "source_key": "arif-cloud-portfolio-003",
+        "description": "Cloudflare configuration for DNS management, CDN caching, SSL and website security controls.",
+        "body": "<h2>Technical overview</h2><p>Cloudflare configuration for DNS management, CDN caching, SSL and website security controls.</p><p>Technical portfolio by Md Arif Billah.</p><h2>Technologies and scope</h2><ul><li>Cloudflare</li><li>CDN</li><li>DNS Management</li><li>SSL</li><li>DDoS Protection</li></ul><h2>Demonstration reference</h2><p>The source video was unavailable when reviewed. This entry is presented as a technical overview.</p>",
+        "sort_order": 103
+      },
+      "source": {
+        "source_number": 3,
+        "source_title": "Configured Cloudflare CDN & DNS for Website Performance",
+        "source_description": "Integrated Cloudflare with a live website for CDN caching, DDoS protection, and DNS management to optimize performance and security.",
+        "pdf_pages": [
+          5
+        ],
+        "index_rows": [
+          3
+        ],
+        "original_evidence_url": "https://youtu.be/fwH3p0dZpBQ",
+        "normalized_evidence_url": "https://www.youtube.com/watch?v=fwH3p0dZpBQ",
+        "observed_video_title": null,
+        "shared_evidence_project_numbers": [
+          3,
+          24
+        ],
+        "review_flags": [
+          "no_named_client",
+          "independent_project_identity_unverified",
+          "evidence_reused_across_topics",
+          "video_reports_unavailable_at_review"
+        ],
+        "full_video_content_reviewed": false
+      }
+    },
+    {
+      "attributes": {
+        "title": "Apache SSL Setup on Ubuntu",
+        "slug": "arif-cloud-installed-ssl-certificate-on-apache-ubuntu-vps",
+        "client": null,
+        "category": "cloud",
+        "tags": [
+          "Technical portfolio",
+          "SSL/TLS",
+          "Apache",
+          "Let's Encrypt",
+          "Ubuntu",
+          "HTTPS"
+        ],
+        "project_type": "technical_demonstration",
+        "attribution": "Md Arif Billah",
+        "website_url": null,
+        "video_url": "https://youtu.be/PiqMJdxKXVo",
+        "repository_url": null,
+        "evidence_status": "linked_video_unavailable",
+        "evidence_notes": "Original PDF reference: https://youtu.be/PiqMJdxKXVo\nYouTube oEmbed returned 404 and public player metadata reported ERROR / This video is unavailable. The reason for unavailability is not established.\nRetain source title, description and original URL in inventory. Obtain a working matching video, or later publish as an attributed technical overview without a verified-video claim.",
+        "evidence_checked_at": "2026-11-16 10:59:34",
+        "source_key": "arif-cloud-portfolio-004",
+        "description": "Configuring an Apache website on Ubuntu to use HTTPS with a Let's Encrypt SSL certificate.",
+        "body": "<h2>Technical overview</h2><p>Configuring an Apache website on Ubuntu to use HTTPS with a Let&#x27;s Encrypt SSL certificate.</p><p>Technical portfolio by Md Arif Billah.</p><h2>Technologies and scope</h2><ul><li>SSL/TLS</li><li>Apache</li><li>Let&#x27;s Encrypt</li><li>Ubuntu</li><li>HTTPS</li></ul><h2>Demonstration reference</h2><p>The source video was unavailable when reviewed. This entry is presented as a technical overview.</p>",
+        "sort_order": 104
+      },
+      "source": {
+        "source_number": 4,
+        "source_title": "Installed SSL Certificate on Apache (Ubuntu VPS)",
+        "source_description": "Generated and installed a free Let's Encrypt SSL certificate on Apache running on Ubuntu, ensuring secure HTTPS connections.",
+        "pdf_pages": [
+          5
+        ],
+        "index_rows": [
+          4
+        ],
+        "original_evidence_url": "https://youtu.be/PiqMJdxKXVo",
+        "normalized_evidence_url": "https://www.youtube.com/watch?v=PiqMJdxKXVo",
+        "observed_video_title": null,
+        "shared_evidence_project_numbers": [
+          4
+        ],
+        "review_flags": [
+          "no_named_client",
+          "independent_project_identity_unverified",
+          "video_reports_unavailable_at_review"
+        ],
+        "full_video_content_reviewed": false
+      }
+    },
+    {
+      "attributes": {
+        "title": "cPanel Webmail and Email DNS Configuration",
+        "slug": "arif-cloud-email-server-configuration-with-cpanel-webmail",
+        "client": null,
+        "category": "cloud",
+        "tags": [
+          "Technical portfolio",
+          "cPanel",
+          "Webmail",
+          "MX Records",
+          "SPF",
+          "DKIM"
+        ],
+        "project_type": "technical_demonstration",
+        "attribution": "Md Arif Billah",
+        "website_url": null,
+        "video_url": "https://youtu.be/UaTQC4PzrC0",
+        "repository_url": null,
+        "evidence_status": "available_video_partially_matches_topic",
+        "evidence_notes": "Original PDF reference: https://youtu.be/UaTQC4PzrC0\nObserved title covers MX/SPF/DMARC/DKIM DNS configuration and aligns directly with project 46. It does not independently establish a separate full email server deployment.\nKeep the topic separate in inventory; narrow the write-up to supported DNS/email configuration or supply separate evidence before claiming an independent server deployment.",
+        "evidence_checked_at": "2026-11-16 10:59:34",
+        "source_key": "arif-cloud-portfolio-005",
+        "description": "Email DNS configuration for cPanel webmail, covering MX, SPF, DKIM and DMARC records.",
+        "body": "<h2>Technical overview</h2><p>Email DNS configuration for cPanel webmail, covering MX, SPF, DKIM and DMARC records.</p><p>Technical portfolio by Md Arif Billah.</p><h2>Technologies and scope</h2><ul><li>cPanel</li><li>Webmail</li><li>MX Records</li><li>SPF</li><li>DKIM</li><li>DMARC</li></ul><h2>Demonstration reference</h2><p>This topic shares an email DNS reference with the Cloudflare and cPanel webmail entry. That reference does not establish a separate full email-server deployment.</p>",
+        "sort_order": 105
+      },
+      "source": {
+        "source_number": 5,
+        "source_title": "Email Server Configuration with cPanel Webmail",
+        "source_description": "Set up and configured a professional email server using cPanel webmail, including MX records, SPF, DKIM, and DMARC for email deliverability.",
+        "pdf_pages": [
+          5
+        ],
+        "index_rows": [
+          5
+        ],
+        "original_evidence_url": "https://youtu.be/UaTQC4PzrC0",
+        "normalized_evidence_url": "https://www.youtube.com/watch?v=UaTQC4PzrC0",
+        "observed_video_title": "How to add MX, SPF, DMRC and DKMI recoreds under cloudflare for cPanel web mail.",
+        "shared_evidence_project_numbers": [
+          5,
+          46
+        ],
+        "review_flags": [
+          "no_named_client",
+          "independent_project_identity_unverified",
+          "evidence_reused_across_topics",
+          "shared_video_supports_email_dns_setup_not_full_mail_server_deployment"
+        ],
+        "full_video_content_reviewed": false
+      }
+    },
+    {
+      "attributes": {
+        "title": "WooCommerce Store and Payment Setup",
+        "slug": "arif-cloud-built-a-woocommerce-online-store-with-payment-gateway",
+        "client": null,
+        "category": "ecommerce",
+        "tags": [
+          "Technical portfolio",
+          "WordPress",
+          "WooCommerce",
+          "Payment Gateway",
+          "SSL",
+          "E-commerce"
+        ],
+        "project_type": "technical_demonstration",
+        "attribution": "Md Arif Billah",
+        "website_url": null,
+        "video_url": "https://youtu.be/IhJzKaxhDdU",
+        "repository_url": null,
+        "evidence_status": "linked_video_unavailable",
+        "evidence_notes": "Original PDF reference: https://youtu.be/IhJzKaxhDdU\nYouTube oEmbed returned 404 and public player metadata reported ERROR / This video is unavailable. The reason for unavailability is not established.\nRetain source title, description and original URL in inventory. Obtain a working matching video, or later publish as an attributed technical overview without a verified-video claim.",
+        "evidence_checked_at": "2026-11-16 10:59:34",
+        "source_key": "arif-cloud-portfolio-006",
+        "description": "WooCommerce store configuration covering product listings, payment gateway integration, shipping and HTTPS.",
+        "body": "<h2>Technical overview</h2><p>WooCommerce store configuration covering product listings, payment gateway integration, shipping and HTTPS.</p><p>Technical portfolio by Md Arif Billah.</p><h2>Technologies and scope</h2><ul><li>WordPress</li><li>WooCommerce</li><li>Payment Gateway</li><li>SSL</li><li>E-commerce</li></ul><h2>Demonstration reference</h2><p>The source video was unavailable when reviewed. This entry is presented as a technical overview.</p>",
+        "sort_order": 106
+      },
+      "source": {
+        "source_number": 6,
+        "source_title": "Built a WooCommerce Online Store with Payment Gateway",
+        "source_description": "Developed a complete e-commerce website using WooCommerce with product listings, payment gateway integration, and shipping configuration.",
+        "pdf_pages": [
+          5,
+          6
+        ],
+        "index_rows": [
+          6
+        ],
+        "original_evidence_url": "https://youtu.be/IhJzKaxhDdU",
+        "normalized_evidence_url": "https://www.youtube.com/watch?v=IhJzKaxhDdU",
+        "observed_video_title": null,
+        "shared_evidence_project_numbers": [
+          6,
+          31
+        ],
+        "review_flags": [
+          "no_named_client",
+          "independent_project_identity_unverified",
+          "evidence_reused_across_topics",
+          "video_reports_unavailable_at_review"
+        ],
+        "full_video_content_reviewed": false
+      }
+    },
+    {
+      "attributes": {
+        "title": "Linux Server Hardening and Firewall Setup",
+        "slug": "arif-cloud-linux-server-hardening-firewall-setup",
+        "client": null,
+        "category": "cloud",
+        "tags": [
+          "Technical portfolio",
+          "Linux Security",
+          "UFW",
+          "iptables",
+          "fail2ban",
+          "SSH"
+        ],
+        "project_type": "technical_demonstration",
+        "attribution": "Md Arif Billah",
+        "website_url": null,
+        "video_url": "https://youtu.be/gV0-2XpfmKQ",
+        "repository_url": null,
+        "evidence_status": "linked_video_unavailable",
+        "evidence_notes": "Original PDF reference: https://youtu.be/gV0-2XpfmKQ\nYouTube oEmbed returned 404 and public player metadata reported ERROR / This video is unavailable. The reason for unavailability is not established.\nRetain source title, description and original URL in inventory. Obtain a working matching video, or later publish as an attributed technical overview without a verified-video claim.",
+        "evidence_checked_at": "2026-11-16 10:59:34",
+        "source_key": "arif-cloud-portfolio-007",
+        "description": "Linux security configuration covering UFW or iptables, fail2ban, SSH key authentication and port management.",
+        "body": "<h2>Technical overview</h2><p>Linux security configuration covering UFW or iptables, fail2ban, SSH key authentication and port management.</p><p>Technical portfolio by Md Arif Billah.</p><h2>Technologies and scope</h2><ul><li>Linux Security</li><li>UFW</li><li>iptables</li><li>fail2ban</li><li>SSH</li><li>Port Management</li></ul><h2>Demonstration reference</h2><p>The source video was unavailable when reviewed. This entry is presented as a technical overview.</p>",
+        "sort_order": 107
+      },
+      "source": {
+        "source_number": 7,
+        "source_title": "Linux Server Hardening & Firewall Setup",
+        "source_description": "Implemented comprehensive server hardening on Ubuntu/CentOS including UFW/iptables firewall rules, fail2ban, SSH key authentication, and port management.",
+        "pdf_pages": [
+          6
+        ],
+        "index_rows": [
+          7
+        ],
+        "original_evidence_url": "https://youtu.be/gV0-2XpfmKQ",
+        "normalized_evidence_url": "https://www.youtube.com/watch?v=gV0-2XpfmKQ",
+        "observed_video_title": null,
+        "shared_evidence_project_numbers": [
+          7,
+          22,
+          39
+        ],
+        "review_flags": [
+          "no_named_client",
+          "independent_project_identity_unverified",
+          "evidence_reused_across_topics",
+          "video_reports_unavailable_at_review"
+        ],
+        "full_video_content_reviewed": false
+      }
+    },
+    {
+      "attributes": {
+        "title": "Node.js Deployment with Nginx and PM2",
+        "slug": "arif-cloud-deployed-node-js-application-on-vps-with-nginx-reverse-proxy",
+        "client": null,
+        "category": "cloud",
+        "tags": [
+          "Technical portfolio",
+          "Node.js",
+          "Nginx",
+          "PM2",
+          "Reverse Proxy",
+          "SSL"
+        ],
+        "project_type": "technical_demonstration",
+        "attribution": "Md Arif Billah",
+        "website_url": null,
+        "video_url": "https://youtu.be/rR0dXX5E3n0",
+        "repository_url": null,
+        "evidence_status": "linked_video_unavailable",
+        "evidence_notes": "Original PDF reference: https://youtu.be/rR0dXX5E3n0\nYouTube oEmbed returned 404 and public player metadata reported ERROR / This video is unavailable. The reason for unavailability is not established.\nRetain source title, description and original URL in inventory. Obtain a working matching video, or later publish as an attributed technical overview without a verified-video claim.",
+        "evidence_checked_at": "2026-11-16 10:59:34",
+        "source_key": "arif-cloud-portfolio-008",
+        "description": "Deploying a Node.js application on a VPS with PM2 process management and an Nginx reverse proxy with SSL termination.",
+        "body": "<h2>Technical overview</h2><p>Deploying a Node.js application on a VPS with PM2 process management and an Nginx reverse proxy with SSL termination.</p><p>Technical portfolio by Md Arif Billah.</p><h2>Technologies and scope</h2><ul><li>Node.js</li><li>Nginx</li><li>PM2</li><li>Reverse Proxy</li><li>SSL</li><li>VPS</li></ul><h2>Demonstration reference</h2><p>The source video was unavailable when reviewed. This entry is presented as a technical overview.</p>",
+        "sort_order": 108
+      },
+      "source": {
+        "source_number": 8,
+        "source_title": "Deployed Node.js Application on VPS with Nginx Reverse Proxy",
+        "source_description": "Deployed a Node.js web application on a VPS using PM2 process manager and configured Nginx as a reverse proxy with SSL termination.",
+        "pdf_pages": [
+          6
+        ],
+        "index_rows": [
+          8
+        ],
+        "original_evidence_url": "https://youtu.be/rR0dXX5E3n0",
+        "normalized_evidence_url": "https://www.youtube.com/watch?v=rR0dXX5E3n0",
+        "observed_video_title": null,
+        "shared_evidence_project_numbers": [
+          8,
+          23
+        ],
+        "review_flags": [
+          "no_named_client",
+          "independent_project_identity_unverified",
+          "evidence_reused_across_topics",
+          "video_reports_unavailable_at_review"
+        ],
+        "full_video_content_reviewed": false
+      }
+    },
+    {
+      "attributes": {
+        "title": "WordPress Hosting Migration",
+        "slug": "arif-cloud-wordpress-migration-between-hosting-providers",
+        "client": null,
+        "category": "cloud",
+        "tags": [
+          "Technical portfolio",
+          "WordPress Migration",
+          "Database Transfer",
+          "DNS",
+          "cPanel",
+          "FTP"
+        ],
+        "project_type": "technical_demonstration",
+        "attribution": "Md Arif Billah",
+        "website_url": null,
+        "video_url": "https://youtu.be/6wLqlG2dKoI",
+        "repository_url": null,
+        "evidence_status": "linked_video_unavailable",
+        "evidence_notes": "Original PDF reference: https://youtu.be/6wLqlG2dKoI\nYouTube oEmbed returned 404 and public player metadata reported ERROR / This video is unavailable. The reason for unavailability is not established.\nRetain source title, description and original URL in inventory. Obtain a working matching video, or later publish as an attributed technical overview without a verified-video claim.",
+        "evidence_checked_at": "2026-11-16 10:59:34",
+        "source_key": "arif-cloud-portfolio-009",
+        "description": "A WordPress migration workflow covering website files, database transfer, hosting configuration and DNS changes.",
+        "body": "<h2>Technical overview</h2><p>A WordPress migration workflow covering website files, database transfer, hosting configuration and DNS changes.</p><p>Technical portfolio by Md Arif Billah.</p><h2>Technologies and scope</h2><ul><li>WordPress Migration</li><li>Database Transfer</li><li>DNS</li><li>cPanel</li><li>FTP</li></ul><h2>Demonstration reference</h2><p>The source video was unavailable when reviewed. This entry is presented as a technical overview.</p>",
+        "sort_order": 109
+      },
+      "source": {
+        "source_number": 9,
+        "source_title": "WordPress Migration Between Hosting Providers",
+        "source_description": "Successfully migrated a live WordPress website between different hosting providers with zero downtime, including database transfer and DNS propagation management.",
+        "pdf_pages": [
+          6
+        ],
+        "index_rows": [
+          9
+        ],
+        "original_evidence_url": "https://youtu.be/6wLqlG2dKoI",
+        "normalized_evidence_url": "https://www.youtube.com/watch?v=6wLqlG2dKoI",
+        "observed_video_title": null,
+        "shared_evidence_project_numbers": [
+          9
+        ],
+        "review_flags": [
+          "no_named_client",
+          "independent_project_identity_unverified",
+          "zero_downtime_claim_not_independently_verified",
+          "video_reports_unavailable_at_review"
+        ],
+        "full_video_content_reviewed": false
+      }
+    },
+    {
+      "attributes": {
+        "title": "Multi-Domain Hosting on a VPS",
+        "slug": "arif-cloud-set-up-multi-domain-hosting-on-single-vps",
+        "client": null,
+        "category": "cloud",
+        "tags": [
+          "Technical portfolio",
+          "Apache Virtual Hosts",
+          "Multi-Domain",
+          "VPS",
+          "SSL",
+          "DNS"
+        ],
+        "project_type": "technical_demonstration",
+        "attribution": "Md Arif Billah",
+        "website_url": null,
+        "video_url": "https://youtu.be/zcLRx8ocsyE",
+        "repository_url": null,
+        "evidence_status": "linked_video_unavailable",
+        "evidence_notes": "Original PDF reference: https://youtu.be/zcLRx8ocsyE\nYouTube oEmbed returned 404 and public player metadata reported ERROR / This video is unavailable. The reason for unavailability is not established.\nRetain source title, description and original URL in inventory. Obtain a working matching video, or later publish as an attributed technical overview without a verified-video claim.",
+        "evidence_checked_at": "2026-11-16 10:59:34",
+        "source_key": "arif-cloud-portfolio-010",
+        "description": "Apache virtual host configuration for multiple domains on one VPS, with separate document roots and SSL certificates.",
+        "body": "<h2>Technical overview</h2><p>Apache virtual host configuration for multiple domains on one VPS, with separate document roots and SSL certificates.</p><p>Technical portfolio by Md Arif Billah.</p><h2>Technologies and scope</h2><ul><li>Apache Virtual Hosts</li><li>Multi-Domain</li><li>VPS</li><li>SSL</li><li>DNS</li></ul><h2>Demonstration reference</h2><p>The source video was unavailable when reviewed. This entry is presented as a technical overview.</p>",
+        "sort_order": 110
+      },
+      "source": {
+        "source_number": 10,
+        "source_title": "Set Up Multi-Domain Hosting on Single VPS",
+        "source_description": "Configured Apache Virtual Hosts to serve multiple websites from a single VPS, each with its own domain, SSL certificate, and document root.",
+        "pdf_pages": [
+          6
+        ],
+        "index_rows": [
+          10
+        ],
+        "original_evidence_url": "https://youtu.be/zcLRx8ocsyE",
+        "normalized_evidence_url": "https://www.youtube.com/watch?v=zcLRx8ocsyE",
+        "observed_video_title": null,
+        "shared_evidence_project_numbers": [
+          10,
+          26
+        ],
+        "review_flags": [
+          "no_named_client",
+          "independent_project_identity_unverified",
+          "evidence_reused_across_topics",
+          "video_reports_unavailable_at_review"
+        ],
+        "full_video_content_reviewed": false
+      }
+    },
+    {
+      "attributes": {
+        "title": "Automated Server Backups with Bash and Cron",
+        "slug": "arif-cloud-automated-server-backup-system-with-cron-jobs",
+        "client": null,
+        "category": "automation",
+        "tags": [
+          "Technical portfolio",
+          "Bash Scripting",
+          "Cron Jobs",
+          "Backup",
+          "MySQL Dump",
+          "Automation"
+        ],
+        "project_type": "technical_demonstration",
+        "attribution": "Md Arif Billah",
+        "website_url": null,
+        "video_url": "https://youtu.be/RZ3NVUXkY6M",
+        "repository_url": null,
+        "evidence_status": "linked_video_unavailable",
+        "evidence_notes": "Original PDF reference: https://youtu.be/RZ3NVUXkY6M\nYouTube oEmbed returned 404 and public player metadata reported ERROR / This video is unavailable. The reason for unavailability is not established.\nRetain source title, description and original URL in inventory. Obtain a working matching video, or later publish as an attributed technical overview without a verified-video claim.",
+        "evidence_checked_at": "2026-11-16 10:59:34",
+        "source_key": "arif-cloud-portfolio-011",
+        "description": "Automating file and database backups using Bash and cron, including backup rotation and remote storage.",
+        "body": "<h2>Technical overview</h2><p>Automating file and database backups using Bash and cron, including backup rotation and remote storage.</p><p>Technical portfolio by Md Arif Billah.</p><h2>Technologies and scope</h2><ul><li>Bash Scripting</li><li>Cron Jobs</li><li>Backup</li><li>MySQL Dump</li><li>Automation</li></ul><h2>Demonstration reference</h2><p>The source video was unavailable when reviewed. This entry is presented as a technical overview.</p>",
+        "sort_order": 111
+      },
+      "source": {
+        "source_number": 11,
+        "source_title": "Automated Server Backup System with Cron Jobs",
+        "source_description": "Created automated backup scripts using bash and cron jobs for database and file system backups with rotation and remote storage.",
+        "pdf_pages": [
+          6
+        ],
+        "index_rows": [
+          11
+        ],
+        "original_evidence_url": "https://youtu.be/RZ3NVUXkY6M",
+        "normalized_evidence_url": "https://www.youtube.com/watch?v=RZ3NVUXkY6M",
+        "observed_video_title": null,
+        "shared_evidence_project_numbers": [
+          11,
+          25
+        ],
+        "review_flags": [
+          "no_named_client",
+          "independent_project_identity_unverified",
+          "evidence_reused_across_topics",
+          "video_reports_unavailable_at_review"
+        ],
+        "full_video_content_reviewed": false
+      }
+    },
+    {
+      "attributes": {
+        "title": "Docker Deployment for Web Applications",
+        "slug": "arif-cloud-docker-container-deployment-for-web-application",
+        "client": null,
+        "category": "automation",
+        "tags": [
+          "Technical portfolio",
+          "Docker",
+          "Dockerfile",
+          "Docker Compose",
+          "Containerization",
+          "DevOps"
+        ],
+        "project_type": "technical_demonstration",
+        "attribution": "Md Arif Billah",
+        "website_url": null,
+        "video_url": "https://youtu.be/dOKYGknf_jI",
+        "repository_url": null,
+        "evidence_status": "linked_video_unavailable",
+        "evidence_notes": "Original PDF reference: https://youtu.be/dOKYGknf_jI\nYouTube oEmbed returned 404 and public player metadata reported ERROR / This video is unavailable. The reason for unavailability is not established.\nRetain source title, description and original URL in inventory. Obtain a working matching video, or later publish as an attributed technical overview without a verified-video claim.",
+        "evidence_checked_at": "2026-11-16 10:59:34",
+        "source_key": "arif-cloud-portfolio-012",
+        "description": "Containerizing a web application using Dockerfiles and Docker Compose to manage application containers.",
+        "body": "<h2>Technical overview</h2><p>Containerizing a web application using Dockerfiles and Docker Compose to manage application containers.</p><p>Technical portfolio by Md Arif Billah.</p><h2>Technologies and scope</h2><ul><li>Docker</li><li>Dockerfile</li><li>Docker Compose</li><li>Containerization</li><li>DevOps</li></ul><h2>Demonstration reference</h2><p>The source video was unavailable when reviewed. This entry is presented as a technical overview.</p>",
+        "sort_order": 112
+      },
+      "source": {
+        "source_number": 12,
+        "source_title": "Docker Container Deployment for Web Application",
+        "source_description": "Containerized a web application using Docker, created Dockerfiles, managed containers, and set up Docker Compose for multi-container orchestration.",
+        "pdf_pages": [
+          6
+        ],
+        "index_rows": [
+          12
+        ],
+        "original_evidence_url": "https://youtu.be/dOKYGknf_jI",
+        "normalized_evidence_url": "https://www.youtube.com/watch?v=dOKYGknf_jI",
+        "observed_video_title": null,
+        "shared_evidence_project_numbers": [
+          12
+        ],
+        "review_flags": [
+          "no_named_client",
+          "independent_project_identity_unverified",
+          "video_reports_unavailable_at_review"
+        ],
+        "full_video_content_reviewed": false
+      }
+    },
+    {
+      "attributes": {
+        "title": "Dedicated Server Hosting with cPanel and WHM",
+        "slug": "arif-cloud-set-up-cpanel-whm-on-dedicated-server",
+        "client": null,
+        "category": "cloud",
+        "tags": [
+          "Technical portfolio",
+          "cPanel",
+          "WHM",
+          "Dedicated Server",
+          "Web Hosting",
+          "Server Management"
+        ],
+        "project_type": "technical_demonstration",
+        "attribution": "Md Arif Billah",
+        "website_url": null,
+        "video_url": "https://youtu.be/6JkW68MINyA",
+        "repository_url": null,
+        "evidence_status": "linked_video_unavailable",
+        "evidence_notes": "Original PDF reference: https://youtu.be/6JkW68MINyA\nYouTube oEmbed returned 404 and public player metadata reported ERROR / This video is unavailable. The reason for unavailability is not established.\nRetain source title, description and original URL in inventory. Obtain a working matching video, or later publish as an attributed technical overview without a verified-video claim.",
+        "evidence_checked_at": "2026-11-16 10:59:34",
+        "source_key": "arif-cloud-portfolio-013",
+        "description": "Installing and configuring cPanel and WHM for hosting account management, resource allocation and server security.",
+        "body": "<h2>Technical overview</h2><p>Installing and configuring cPanel and WHM for hosting account management, resource allocation and server security.</p><p>Technical portfolio by Md Arif Billah.</p><h2>Technologies and scope</h2><ul><li>cPanel</li><li>WHM</li><li>Dedicated Server</li><li>Web Hosting</li><li>Server Management</li></ul><h2>Demonstration reference</h2><p>The source video was unavailable when reviewed. This entry is presented as a technical overview.</p>",
+        "sort_order": 113
+      },
+      "source": {
+        "source_number": 13,
+        "source_title": "Set Up cPanel/WHM on Dedicated Server",
+        "source_description": "Installed and configured cPanel/WHM on a dedicated server for web hosting management, including account creation, resource allocation, and security configuration.",
+        "pdf_pages": [
+          6
+        ],
+        "index_rows": [
+          13
+        ],
+        "original_evidence_url": "https://youtu.be/6JkW68MINyA",
+        "normalized_evidence_url": "https://www.youtube.com/watch?v=6JkW68MINyA",
+        "observed_video_title": null,
+        "shared_evidence_project_numbers": [
+          13,
+          40
+        ],
+        "review_flags": [
+          "no_named_client",
+          "independent_project_identity_unverified",
+          "evidence_reused_across_topics",
+          "video_reports_unavailable_at_review"
+        ],
+        "full_video_content_reviewed": false
+      }
+    },
+    {
+      "attributes": {
+        "title": "WordPress Performance Optimization",
+        "slug": "arif-cloud-wordpress-speed-optimization-performance-tuning",
+        "client": null,
+        "category": "wordpress",
+        "tags": [
+          "Technical portfolio",
+          "WordPress",
+          "WP Rocket",
+          "Image Optimization",
+          "CDN",
+          "Performance"
+        ],
+        "project_type": "technical_demonstration",
+        "attribution": "Md Arif Billah",
+        "website_url": null,
+        "video_url": "https://youtu.be/YJuul-_xKJE",
+        "repository_url": null,
+        "evidence_status": "linked_video_unavailable",
+        "evidence_notes": "Original PDF reference: https://youtu.be/YJuul-_xKJE\nYouTube oEmbed returned 404 and public player metadata reported ERROR / This video is unavailable. The reason for unavailability is not established.\nRetain source title, description and original URL in inventory. Obtain a working matching video, or later publish as an attributed technical overview without a verified-video claim.",
+        "evidence_checked_at": "2026-11-16 10:59:34",
+        "source_key": "arif-cloud-portfolio-014",
+        "description": "WordPress performance work covering caching, image optimization, database cleanup and CDN configuration.",
+        "body": "<h2>Technical overview</h2><p>WordPress performance work covering caching, image optimization, database cleanup and CDN configuration.</p><p>Technical portfolio by Md Arif Billah.</p><h2>Technologies and scope</h2><ul><li>WordPress</li><li>WP Rocket</li><li>Image Optimization</li><li>CDN</li><li>Performance</li></ul><h2>Demonstration reference</h2><p>The source video was unavailable when reviewed. This entry is presented as a technical overview.</p>",
+        "sort_order": 114
+      },
+      "source": {
+        "source_number": 14,
+        "source_title": "WordPress Speed Optimization & Performance Tuning",
+        "source_description": "Optimized a WordPress website achieving significant performance improvements through caching, image optimization, database cleanup, and CDN integration.",
+        "pdf_pages": [
+          6,
+          7
+        ],
+        "index_rows": [
+          14
+        ],
+        "original_evidence_url": "https://youtu.be/YJuul-_xKJE",
+        "normalized_evidence_url": "https://www.youtube.com/watch?v=YJuul-_xKJE",
+        "observed_video_title": null,
+        "shared_evidence_project_numbers": [
+          14,
+          35,
+          41
+        ],
+        "review_flags": [
+          "no_named_client",
+          "independent_project_identity_unverified",
+          "evidence_reused_across_topics",
+          "video_reports_unavailable_at_review"
+        ],
+        "full_video_content_reviewed": false
+      }
+    },
+    {
+      "attributes": {
+        "title": "Nginx Load Balancer Configuration",
+        "slug": "arif-cloud-configured-nginx-as-load-balancer",
+        "client": null,
+        "category": "cloud",
+        "tags": [
+          "Technical portfolio",
+          "Nginx",
+          "Load Balancing",
+          "Reverse Proxy",
+          "High Availability"
+        ],
+        "project_type": "technical_demonstration",
+        "attribution": "Md Arif Billah",
+        "website_url": null,
+        "video_url": "https://youtu.be/xhm7VYOxcGk",
+        "repository_url": null,
+        "evidence_status": "linked_video_unavailable",
+        "evidence_notes": "Original PDF reference: https://youtu.be/xhm7VYOxcGk\nYouTube oEmbed returned 404 and public player metadata reported ERROR / This video is unavailable. The reason for unavailability is not established.\nRetain source title, description and original URL in inventory. Obtain a working matching video, or later publish as an attributed technical overview without a verified-video claim.",
+        "evidence_checked_at": "2026-11-16 10:59:34",
+        "source_key": "arif-cloud-portfolio-015",
+        "description": "Configuring Nginx to distribute requests across backend servers using reverse proxy and load balancing settings.",
+        "body": "<h2>Technical overview</h2><p>Configuring Nginx to distribute requests across backend servers using reverse proxy and load balancing settings.</p><p>Technical portfolio by Md Arif Billah.</p><h2>Technologies and scope</h2><ul><li>Nginx</li><li>Load Balancing</li><li>Reverse Proxy</li><li>High Availability</li></ul><h2>Demonstration reference</h2><p>The source video was unavailable when reviewed. This entry is presented as a technical overview.</p>",
+        "sort_order": 115
+      },
+      "source": {
+        "source_number": 15,
+        "source_title": "Configured Nginx as Load Balancer",
+        "source_description": "Set up Nginx as a reverse proxy load balancer distributing traffic across multiple backend servers for high availability and performance.",
+        "pdf_pages": [
+          7
+        ],
+        "index_rows": [
+          15
+        ],
+        "original_evidence_url": "https://youtu.be/xhm7VYOxcGk",
+        "normalized_evidence_url": "https://www.youtube.com/watch?v=xhm7VYOxcGk",
+        "observed_video_title": null,
+        "shared_evidence_project_numbers": [
+          15,
+          29
+        ],
+        "review_flags": [
+          "no_named_client",
+          "independent_project_identity_unverified",
+          "evidence_reused_across_topics",
+          "video_reports_unavailable_at_review"
+        ],
+        "full_video_content_reviewed": false
+      }
+    },
+    {
+      "attributes": {
+        "title": "DNS Zone and Record Management",
+        "slug": "arif-cloud-dns-zone-management-record-configuration",
+        "client": null,
+        "category": "cloud",
+        "tags": [
+          "Technical portfolio",
+          "DNS",
+          "Zone Management",
+          "A Record",
+          "CNAME",
+          "MX"
+        ],
+        "project_type": "technical_demonstration",
+        "attribution": "Md Arif Billah",
+        "website_url": null,
+        "video_url": "https://youtu.be/JX5tqJaW-5E",
+        "repository_url": null,
+        "evidence_status": "linked_video_unavailable",
+        "evidence_notes": "Original PDF reference: https://youtu.be/JX5tqJaW-5E\nYouTube oEmbed returned 404 and public player metadata reported ERROR / This video is unavailable. The reason for unavailability is not established.\nRetain source title, description and original URL in inventory. Obtain a working matching video, or later publish as an attributed technical overview without a verified-video claim.",
+        "evidence_checked_at": "2026-11-16 10:59:34",
+        "source_key": "arif-cloud-portfolio-016",
+        "description": "DNS zone administration covering A, CNAME, MX, TXT, SPF and DMARC records for website and email configuration.",
+        "body": "<h2>Technical overview</h2><p>DNS zone administration covering A, CNAME, MX, TXT, SPF and DMARC records for website and email configuration.</p><p>Technical portfolio by Md Arif Billah.</p><h2>Technologies and scope</h2><ul><li>DNS</li><li>Zone Management</li><li>A Record</li><li>CNAME</li><li>MX</li><li>SPF</li><li>DMARC</li></ul><h2>Demonstration reference</h2><p>The source video was unavailable when reviewed. This entry is presented as a technical overview.</p>",
+        "sort_order": 116
+      },
+      "source": {
+        "source_number": 16,
+        "source_title": "DNS Zone Management & Record Configuration",
+        "source_description": "Managed DNS zones including A, CNAME, MX, TXT, SPF, and DMARC records for domain routing, email delivery, and domain verification.",
+        "pdf_pages": [
+          7
+        ],
+        "index_rows": [
+          16
+        ],
+        "original_evidence_url": "https://youtu.be/JX5tqJaW-5E",
+        "normalized_evidence_url": "https://www.youtube.com/watch?v=JX5tqJaW-5E",
+        "observed_video_title": null,
+        "shared_evidence_project_numbers": [
+          16,
+          37
+        ],
+        "review_flags": [
+          "no_named_client",
+          "independent_project_identity_unverified",
+          "evidence_reused_across_topics",
+          "video_reports_unavailable_at_review"
+        ],
+        "full_video_content_reviewed": false
+      }
+    },
+    {
+      "attributes": {
+        "title": "Secure FTP Server Setup on Ubuntu",
+        "slug": "arif-cloud-set-up-ftp-server-on-ubuntu-vps",
+        "client": null,
+        "category": "cloud",
+        "tags": [
+          "Technical portfolio",
+          "FTP",
+          "vsftpd",
+          "Ubuntu",
+          "TLS/SSL",
+          "User Management"
+        ],
+        "project_type": "technical_demonstration",
+        "attribution": "Md Arif Billah",
+        "website_url": null,
+        "video_url": "https://youtu.be/UtgZcW9Cswo",
+        "repository_url": null,
+        "evidence_status": "linked_video_unavailable",
+        "evidence_notes": "Original PDF reference: https://youtu.be/UtgZcW9Cswo\nYouTube oEmbed returned 404 and public player metadata reported ERROR / This video is unavailable. The reason for unavailability is not established.\nRetain source title, description and original URL in inventory. Obtain a working matching video, or later publish as an attributed technical overview without a verified-video claim.",
+        "evidence_checked_at": "2026-11-16 10:59:34",
+        "source_key": "arif-cloud-portfolio-017",
+        "description": "Configuring a vsftpd FTP server on Ubuntu with TLS, user access controls and directory permissions.",
+        "body": "<h2>Technical overview</h2><p>Configuring a vsftpd FTP server on Ubuntu with TLS, user access controls and directory permissions.</p><p>Technical portfolio by Md Arif Billah.</p><h2>Technologies and scope</h2><ul><li>FTP</li><li>vsftpd</li><li>Ubuntu</li><li>TLS/SSL</li><li>User Management</li></ul><h2>Demonstration reference</h2><p>The source video was unavailable when reviewed. This entry is presented as a technical overview.</p>",
+        "sort_order": 117
+      },
+      "source": {
+        "source_number": 17,
+        "source_title": "Set Up FTP Server on Ubuntu VPS",
+        "source_description": "Installed and configured vsftpd FTP server on Ubuntu with secure TLS/SSL connections, user management, and directory permissions.",
+        "pdf_pages": [
+          7
+        ],
+        "index_rows": [
+          17
+        ],
+        "original_evidence_url": "https://youtu.be/UtgZcW9Cswo",
+        "normalized_evidence_url": "https://www.youtube.com/watch?v=UtgZcW9Cswo",
+        "observed_video_title": null,
+        "shared_evidence_project_numbers": [
+          17
+        ],
+        "review_flags": [
+          "no_named_client",
+          "independent_project_identity_unverified",
+          "video_reports_unavailable_at_review"
+        ],
+        "full_video_content_reviewed": false
+      }
+    },
+    {
+      "attributes": {
+        "title": "WordPress Theme Customization with Elementor",
+        "slug": "arif-cloud-wordpress-theme-customization-with-elementor-pro",
+        "client": null,
+        "category": "wordpress",
+        "tags": [
+          "Technical portfolio",
+          "WordPress",
+          "Elementor Pro",
+          "Responsive Design",
+          "CSS",
+          "Theme Development"
+        ],
+        "project_type": "technical_demonstration",
+        "attribution": "Md Arif Billah",
+        "website_url": null,
+        "video_url": "https://youtu.be/LCjJ_NXBRMU",
+        "repository_url": null,
+        "evidence_status": "linked_video_unavailable",
+        "evidence_notes": "Original PDF reference: https://youtu.be/LCjJ_NXBRMU\nYouTube oEmbed returned 404 and public player metadata reported ERROR / This video is unavailable. The reason for unavailability is not established.\nRetain source title, description and original URL in inventory. Obtain a working matching video, or later publish as an attributed technical overview without a verified-video claim.",
+        "evidence_checked_at": "2026-11-16 10:59:34",
+        "source_key": "arif-cloud-portfolio-018",
+        "description": "Customizing responsive WordPress layouts with Elementor Pro, templates, widgets, CSS and dynamic content.",
+        "body": "<h2>Technical overview</h2><p>Customizing responsive WordPress layouts with Elementor Pro, templates, widgets, CSS and dynamic content.</p><p>Technical portfolio by Md Arif Billah.</p><h2>Technologies and scope</h2><ul><li>WordPress</li><li>Elementor Pro</li><li>Responsive Design</li><li>CSS</li><li>Theme Development</li></ul><h2>Demonstration reference</h2><p>The source video was unavailable when reviewed. This entry is presented as a technical overview.</p>",
+        "sort_order": 118
+      },
+      "source": {
+        "source_number": 18,
+        "source_title": "WordPress Theme Customization with Elementor Pro",
+        "source_description": "Designed and customized responsive WordPress websites using Elementor Pro page builder with custom widgets, templates, and dynamic content.",
+        "pdf_pages": [
+          7
+        ],
+        "index_rows": [
+          18
+        ],
+        "original_evidence_url": "https://youtu.be/LCjJ_NXBRMU",
+        "normalized_evidence_url": "https://www.youtube.com/watch?v=LCjJ_NXBRMU",
+        "observed_video_title": null,
+        "shared_evidence_project_numbers": [
+          18,
+          21,
+          28,
+          38
+        ],
+        "review_flags": [
+          "no_named_client",
+          "independent_project_identity_unverified",
+          "evidence_reused_across_topics",
+          "video_reports_unavailable_at_review"
+        ],
+        "full_video_content_reviewed": false
+      }
+    },
+    {
+      "attributes": {
+        "title": "Server Uptime Monitoring",
+        "slug": "arif-cloud-set-up-monitoring-with-uptime-tools",
+        "client": null,
+        "category": "cloud",
+        "tags": [
+          "Technical portfolio",
+          "Server Monitoring",
+          "Uptime",
+          "Alerts",
+          "Performance Tracking"
+        ],
+        "project_type": "technical_demonstration",
+        "attribution": "Md Arif Billah",
+        "website_url": null,
+        "video_url": "https://youtu.be/8dFNg5XShIU",
+        "repository_url": null,
+        "evidence_status": "linked_video_unavailable",
+        "evidence_notes": "Original PDF reference: https://youtu.be/8dFNg5XShIU\nYouTube oEmbed returned 404 and public player metadata reported ERROR / This video is unavailable. The reason for unavailability is not established.\nRetain source title, description and original URL in inventory. Obtain a working matching video, or later publish as an attributed technical overview without a verified-video claim.",
+        "evidence_checked_at": "2026-11-16 10:59:34",
+        "source_key": "arif-cloud-portfolio-019",
+        "description": "Server and website monitoring configuration covering uptime checks, alerts and performance tracking.",
+        "body": "<h2>Technical overview</h2><p>Server and website monitoring configuration covering uptime checks, alerts and performance tracking.</p><p>Technical portfolio by Md Arif Billah.</p><h2>Technologies and scope</h2><ul><li>Server Monitoring</li><li>Uptime</li><li>Alerts</li><li>Performance Tracking</li></ul><h2>Demonstration reference</h2><p>The source video was unavailable when reviewed. This entry is presented as a technical overview.</p>",
+        "sort_order": 119
+      },
+      "source": {
+        "source_number": 19,
+        "source_title": "Set Up Monitoring with Uptime Tools",
+        "source_description": "Implemented server and website monitoring using various uptime monitoring tools for real-time alerts and performance tracking.",
+        "pdf_pages": [
+          7
+        ],
+        "index_rows": [
+          19
+        ],
+        "original_evidence_url": "https://youtu.be/8dFNg5XShIU",
+        "normalized_evidence_url": "https://www.youtube.com/watch?v=8dFNg5XShIU",
+        "observed_video_title": null,
+        "shared_evidence_project_numbers": [
+          19
+        ],
+        "review_flags": [
+          "no_named_client",
+          "independent_project_identity_unverified",
+          "video_reports_unavailable_at_review"
+        ],
+        "full_video_content_reviewed": false
+      }
+    },
+    {
+      "attributes": {
+        "title": "Plesk Hosting Panel on a Cloud VPS",
+        "slug": "arif-cloud-configured-plesk-panel-on-cloud-vps",
+        "client": null,
+        "category": "cloud",
+        "tags": [
+          "Technical portfolio",
+          "Plesk",
+          "VPS",
+          "WordPress Toolkit",
+          "Web Hosting Management"
+        ],
+        "project_type": "technical_demonstration",
+        "attribution": "Md Arif Billah",
+        "website_url": null,
+        "video_url": "https://youtu.be/gB9K3f4P2cQ",
+        "repository_url": null,
+        "evidence_status": "linked_video_unavailable",
+        "evidence_notes": "Original PDF reference: https://youtu.be/gB9K3f4P2cQ\nYouTube oEmbed returned 404 and public player metadata reported ERROR / This video is unavailable. The reason for unavailability is not established.\nRetain source title, description and original URL in inventory. Obtain a working matching video, or later publish as an attributed technical overview without a verified-video claim.",
+        "evidence_checked_at": "2026-11-16 10:59:34",
+        "source_key": "arif-cloud-portfolio-020",
+        "description": "Configuring Plesk on a VPS for web hosting administration and WordPress Toolkit management.",
+        "body": "<h2>Technical overview</h2><p>Configuring Plesk on a VPS for web hosting administration and WordPress Toolkit management.</p><p>Technical portfolio by Md Arif Billah.</p><h2>Technologies and scope</h2><ul><li>Plesk</li><li>VPS</li><li>WordPress Toolkit</li><li>Web Hosting Management</li></ul><h2>Demonstration reference</h2><p>The source video was unavailable when reviewed. This entry is presented as a technical overview.</p>",
+        "sort_order": 120
+      },
+      "source": {
+        "source_number": 20,
+        "source_title": "Configured Plesk Panel on Cloud VPS",
+        "source_description": "Deployed Plesk control panel on a cloud VPS for streamlined web hosting management with WordPress toolkit integration.",
+        "pdf_pages": [
+          7
+        ],
+        "index_rows": [
+          20
+        ],
+        "original_evidence_url": "https://youtu.be/gB9K3f4P2cQ",
+        "normalized_evidence_url": "https://www.youtube.com/watch?v=gB9K3f4P2cQ",
+        "observed_video_title": null,
+        "shared_evidence_project_numbers": [
+          20,
+          30,
+          33
+        ],
+        "review_flags": [
+          "no_named_client",
+          "independent_project_identity_unverified",
+          "evidence_reused_across_topics",
+          "video_reports_unavailable_at_review"
+        ],
+        "full_video_content_reviewed": false
+      }
+    },
+    {
+      "attributes": {
+        "title": "WordPress Learning Management System",
+        "slug": "arif-cloud-wordpress-lms-website-development",
+        "client": null,
+        "category": "wordpress",
+        "tags": [
+          "Technical portfolio",
+          "WordPress",
+          "LMS",
+          "LearnDash/Tutor LMS",
+          "E-learning",
+          "WooCommerce"
+        ],
+        "project_type": "technical_demonstration",
+        "attribution": "Md Arif Billah",
+        "website_url": null,
+        "video_url": "https://youtu.be/LCjJ_NXBRMU",
+        "repository_url": null,
+        "evidence_status": "linked_video_unavailable",
+        "evidence_notes": "Original PDF reference: https://youtu.be/LCjJ_NXBRMU\nYouTube oEmbed returned 404 and public player metadata reported ERROR / This video is unavailable. The reason for unavailability is not established.\nRetain source title, description and original URL in inventory. Obtain a working matching video, or later publish as an attributed technical overview without a verified-video claim.",
+        "evidence_checked_at": "2026-11-16 10:59:34",
+        "source_key": "arif-cloud-portfolio-021",
+        "description": "A WordPress LMS workflow covering course creation, enrollment, payment integration and course certificates.",
+        "body": "<h2>Technical overview</h2><p>A WordPress LMS workflow covering course creation, enrollment, payment integration and course certificates.</p><p>Technical portfolio by Md Arif Billah.</p><h2>Technologies and scope</h2><ul><li>WordPress</li><li>LMS</li><li>LearnDash/Tutor LMS</li><li>E-learning</li><li>WooCommerce</li></ul><h2>Demonstration reference</h2><p>The source video was unavailable when reviewed. This entry is presented as a technical overview.</p>",
+        "sort_order": 121
+      },
+      "source": {
+        "source_number": 21,
+        "source_title": "WordPress LMS Website Development",
+        "source_description": "Built a complete Learning Management System using WordPress with course creation, student enrollment, payment integration, and certificate generation.",
+        "pdf_pages": [
+          7
+        ],
+        "index_rows": [
+          22
+        ],
+        "original_evidence_url": "https://youtu.be/LCjJ_NXBRMU",
+        "normalized_evidence_url": "https://www.youtube.com/watch?v=LCjJ_NXBRMU",
+        "observed_video_title": null,
+        "shared_evidence_project_numbers": [
+          18,
+          21,
+          28,
+          38
+        ],
+        "review_flags": [
+          "no_named_client",
+          "independent_project_identity_unverified",
+          "evidence_reused_across_topics",
+          "video_reports_unavailable_at_review"
+        ],
+        "full_video_content_reviewed": false
+      }
+    },
+    {
+      "attributes": {
+        "title": "SSH Key Authentication and Access Hardening",
+        "slug": "arif-cloud-ssh-key-based-authentication-setup",
+        "client": null,
+        "category": "cloud",
+        "tags": [
+          "Technical portfolio",
+          "SSH",
+          "Key Authentication",
+          "Server Security",
+          "Linux Administration"
+        ],
+        "project_type": "technical_demonstration",
+        "attribution": "Md Arif Billah",
+        "website_url": null,
+        "video_url": "https://youtu.be/gV0-2XpfmKQ",
+        "repository_url": null,
+        "evidence_status": "linked_video_unavailable",
+        "evidence_notes": "Original PDF reference: https://youtu.be/gV0-2XpfmKQ\nYouTube oEmbed returned 404 and public player metadata reported ERROR / This video is unavailable. The reason for unavailability is not established.\nRetain source title, description and original URL in inventory. Obtain a working matching video, or later publish as an attributed technical overview without a verified-video claim.",
+        "evidence_checked_at": "2026-11-16 10:59:34",
+        "source_key": "arif-cloud-portfolio-022",
+        "description": "Configuring SSH key access, disabling direct root login and managing SSH settings for Linux servers.",
+        "body": "<h2>Technical overview</h2><p>Configuring SSH key access, disabling direct root login and managing SSH settings for Linux servers.</p><p>Technical portfolio by Md Arif Billah.</p><h2>Technologies and scope</h2><ul><li>SSH</li><li>Key Authentication</li><li>Server Security</li><li>Linux Administration</li></ul><h2>Demonstration reference</h2><p>The source video was unavailable when reviewed. This entry is presented as a technical overview.</p>",
+        "sort_order": 122
+      },
+      "source": {
+        "source_number": 22,
+        "source_title": "SSH Key-Based Authentication Setup",
+        "source_description": "Configured passwordless SSH access using key-pair authentication, disabled root login, and set up SSH config for multiple servers.",
+        "pdf_pages": [
+          8
+        ],
+        "index_rows": [],
+        "original_evidence_url": "https://youtu.be/gV0-2XpfmKQ",
+        "normalized_evidence_url": "https://www.youtube.com/watch?v=gV0-2XpfmKQ",
+        "observed_video_title": null,
+        "shared_evidence_project_numbers": [
+          7,
+          22,
+          39
+        ],
+        "review_flags": [
+          "no_named_client",
+          "independent_project_identity_unverified",
+          "evidence_reused_across_topics",
+          "not_individually_listed_in_final_index",
+          "video_reports_unavailable_at_review"
+        ],
+        "full_video_content_reviewed": false
+      }
+    },
+    {
+      "attributes": {
+        "title": "PHP Application Deployment on a VPS",
+        "slug": "arif-cloud-custom-php-application-deployment-on-vps",
+        "client": null,
+        "category": "cloud",
+        "tags": [
+          "Technical portfolio",
+          "PHP",
+          "Apache",
+          "Nginx",
+          "MySQL",
+          "VPS"
+        ],
+        "project_type": "technical_demonstration",
+        "attribution": "Md Arif Billah",
+        "website_url": null,
+        "video_url": "https://youtu.be/rR0dXX5E3n0",
+        "repository_url": null,
+        "evidence_status": "linked_video_unavailable",
+        "evidence_notes": "Original PDF reference: https://youtu.be/rR0dXX5E3n0\nYouTube oEmbed returned 404 and public player metadata reported ERROR / This video is unavailable. The reason for unavailability is not established.\nRetain source title, description and original URL in inventory. Obtain a working matching video, or later publish as an attributed technical overview without a verified-video claim.",
+        "evidence_checked_at": "2026-11-16 10:59:34",
+        "source_key": "arif-cloud-portfolio-023",
+        "description": "Deploying a PHP application with Apache or Nginx, virtual hosts, database connections and file permissions.",
+        "body": "<h2>Technical overview</h2><p>Deploying a PHP application with Apache or Nginx, virtual hosts, database connections and file permissions.</p><p>Technical portfolio by Md Arif Billah.</p><h2>Technologies and scope</h2><ul><li>PHP</li><li>Apache</li><li>Nginx</li><li>MySQL</li><li>VPS</li><li>Deployment</li></ul><h2>Demonstration reference</h2><p>The source video was unavailable when reviewed. This entry is presented as a technical overview.</p>",
+        "sort_order": 123
+      },
+      "source": {
+        "source_number": 23,
+        "source_title": "Custom PHP Application Deployment on VPS",
+        "source_description": "Deployed a custom PHP application on a VPS with Apache/Nginx, configured virtual hosts, database connections, and file permissions.",
+        "pdf_pages": [
+          8
+        ],
+        "index_rows": [],
+        "original_evidence_url": "https://youtu.be/rR0dXX5E3n0",
+        "normalized_evidence_url": "https://www.youtube.com/watch?v=rR0dXX5E3n0",
+        "observed_video_title": null,
+        "shared_evidence_project_numbers": [
+          8,
+          23
+        ],
+        "review_flags": [
+          "no_named_client",
+          "independent_project_identity_unverified",
+          "evidence_reused_across_topics",
+          "not_individually_listed_in_final_index",
+          "video_reports_unavailable_at_review"
+        ],
+        "full_video_content_reviewed": false
+      }
+    },
+    {
+      "attributes": {
+        "title": "Cloudflare WAF and Security Rules",
+        "slug": "arif-cloud-cloudflare-page-rules-security-configuration",
+        "client": null,
+        "category": "cloud",
+        "tags": [
+          "Technical portfolio",
+          "Cloudflare",
+          "WAF",
+          "Security Headers",
+          "Rate Limiting",
+          "Page Rules"
+        ],
+        "project_type": "technical_demonstration",
+        "attribution": "Md Arif Billah",
+        "website_url": null,
+        "video_url": "https://youtu.be/fwH3p0dZpBQ",
+        "repository_url": null,
+        "evidence_status": "linked_video_unavailable",
+        "evidence_notes": "Original PDF reference: https://youtu.be/fwH3p0dZpBQ\nYouTube oEmbed returned 404 and public player metadata reported ERROR / This video is unavailable. The reason for unavailability is not established.\nRetain source title, description and original URL in inventory. Obtain a working matching video, or later publish as an attributed technical overview without a verified-video claim.",
+        "evidence_checked_at": "2026-11-16 10:59:34",
+        "source_key": "arif-cloud-portfolio-024",
+        "description": "Cloudflare website security configuration covering WAF settings, rate limiting, page rules and security headers.",
+        "body": "<h2>Technical overview</h2><p>Cloudflare website security configuration covering WAF settings, rate limiting, page rules and security headers.</p><p>Technical portfolio by Md Arif Billah.</p><h2>Technologies and scope</h2><ul><li>Cloudflare</li><li>WAF</li><li>Security Headers</li><li>Rate Limiting</li><li>Page Rules</li></ul><h2>Demonstration reference</h2><p>The source video was unavailable when reviewed. This entry is presented as a technical overview.</p>",
+        "sort_order": 124
+      },
+      "source": {
+        "source_number": 24,
+        "source_title": "Cloudflare Page Rules & Security Configuration",
+        "source_description": "Configured advanced Cloudflare page rules, WAF settings, rate limiting, and security headers for enhanced website protection.",
+        "pdf_pages": [
+          8
+        ],
+        "index_rows": [],
+        "original_evidence_url": "https://youtu.be/fwH3p0dZpBQ",
+        "normalized_evidence_url": "https://www.youtube.com/watch?v=fwH3p0dZpBQ",
+        "observed_video_title": null,
+        "shared_evidence_project_numbers": [
+          3,
+          24
+        ],
+        "review_flags": [
+          "no_named_client",
+          "independent_project_identity_unverified",
+          "evidence_reused_across_topics",
+          "not_individually_listed_in_final_index",
+          "video_reports_unavailable_at_review"
+        ],
+        "full_video_content_reviewed": false
+      }
+    },
+    {
+      "attributes": {
+        "title": "WordPress Backup and Recovery",
+        "slug": "arif-cloud-wordpress-backup-disaster-recovery",
+        "client": null,
+        "category": "wordpress",
+        "tags": [
+          "Technical portfolio",
+          "WordPress",
+          "Backup",
+          "UpdraftPlus",
+          "Disaster Recovery",
+          "Database"
+        ],
+        "project_type": "technical_demonstration",
+        "attribution": "Md Arif Billah",
+        "website_url": null,
+        "video_url": "https://youtu.be/RZ3NVUXkY6M",
+        "repository_url": null,
+        "evidence_status": "linked_video_unavailable",
+        "evidence_notes": "Original PDF reference: https://youtu.be/RZ3NVUXkY6M\nYouTube oEmbed returned 404 and public player metadata reported ERROR / This video is unavailable. The reason for unavailability is not established.\nRetain source title, description and original URL in inventory. Obtain a working matching video, or later publish as an attributed technical overview without a verified-video claim.",
+        "evidence_checked_at": "2026-11-16 10:59:34",
+        "source_key": "arif-cloud-portfolio-025",
+        "description": "WordPress backup and restoration workflows using plugins and manual database and file backups.",
+        "body": "<h2>Technical overview</h2><p>WordPress backup and restoration workflows using plugins and manual database and file backups.</p><p>Technical portfolio by Md Arif Billah.</p><h2>Technologies and scope</h2><ul><li>WordPress</li><li>Backup</li><li>UpdraftPlus</li><li>Disaster Recovery</li><li>Database</li></ul><h2>Demonstration reference</h2><p>The source video was unavailable when reviewed. This entry is presented as a technical overview.</p>",
+        "sort_order": 125
+      },
+      "source": {
+        "source_number": 25,
+        "source_title": "WordPress Backup & Disaster Recovery",
+        "source_description": "Implemented comprehensive WordPress backup strategy using plugins and manual methods with disaster recovery procedures.",
+        "pdf_pages": [
+          8
+        ],
+        "index_rows": [],
+        "original_evidence_url": "https://youtu.be/RZ3NVUXkY6M",
+        "normalized_evidence_url": "https://www.youtube.com/watch?v=RZ3NVUXkY6M",
+        "observed_video_title": null,
+        "shared_evidence_project_numbers": [
+          11,
+          25
+        ],
+        "review_flags": [
+          "no_named_client",
+          "independent_project_identity_unverified",
+          "evidence_reused_across_topics",
+          "not_individually_listed_in_final_index",
+          "video_reports_unavailable_at_review"
+        ],
+        "full_video_content_reviewed": false
+      }
+    },
+    {
+      "attributes": {
+        "title": "WordPress Multisite Configuration",
+        "slug": "arif-cloud-set-up-wordpress-multisite-network",
+        "client": null,
+        "category": "wordpress",
+        "tags": [
+          "Technical portfolio",
+          "WordPress Multisite",
+          "Network Admin",
+          "Subdomain/Subdirectory"
+        ],
+        "project_type": "technical_demonstration",
+        "attribution": "Md Arif Billah",
+        "website_url": null,
+        "video_url": "https://youtu.be/zcLRx8ocsyE",
+        "repository_url": null,
+        "evidence_status": "linked_video_unavailable",
+        "evidence_notes": "Original PDF reference: https://youtu.be/zcLRx8ocsyE\nYouTube oEmbed returned 404 and public player metadata reported ERROR / This video is unavailable. The reason for unavailability is not established.\nRetain source title, description and original URL in inventory. Obtain a working matching video, or later publish as an attributed technical overview without a verified-video claim.",
+        "evidence_checked_at": "2026-11-16 10:59:34",
+        "source_key": "arif-cloud-portfolio-026",
+        "description": "Configuring a WordPress Multisite network to administer multiple sites with shared plugins and themes.",
+        "body": "<h2>Technical overview</h2><p>Configuring a WordPress Multisite network to administer multiple sites with shared plugins and themes.</p><p>Technical portfolio by Md Arif Billah.</p><h2>Technologies and scope</h2><ul><li>WordPress Multisite</li><li>Network Admin</li><li>Subdomain/Subdirectory</li></ul><h2>Demonstration reference</h2><p>The source video was unavailable when reviewed. This entry is presented as a technical overview.</p>",
+        "sort_order": 126
+      },
+      "source": {
+        "source_number": 26,
+        "source_title": "Set Up WordPress Multisite Network",
+        "source_description": "Configured WordPress Multisite network for managing multiple websites from a single WordPress installation with shared plugins and themes.",
+        "pdf_pages": [
+          8
+        ],
+        "index_rows": [],
+        "original_evidence_url": "https://youtu.be/zcLRx8ocsyE",
+        "normalized_evidence_url": "https://www.youtube.com/watch?v=zcLRx8ocsyE",
+        "observed_video_title": null,
+        "shared_evidence_project_numbers": [
+          10,
+          26
+        ],
+        "review_flags": [
+          "no_named_client",
+          "independent_project_identity_unverified",
+          "evidence_reused_across_topics",
+          "not_individually_listed_in_final_index",
+          "video_reports_unavailable_at_review"
+        ],
+        "full_video_content_reviewed": false
+      }
+    },
+    {
+      "attributes": {
+        "title": "Contabo VPS Configuration",
+        "slug": "arif-cloud-contabo-vps-setup-server-configuration",
+        "client": null,
+        "category": "cloud",
+        "tags": [
+          "Technical portfolio",
+          "Contabo",
+          "VPS",
+          "Linux",
+          "Server Configuration",
+          "Web Hosting"
+        ],
+        "project_type": "technical_demonstration",
+        "attribution": "Md Arif Billah",
+        "website_url": null,
+        "video_url": "https://youtu.be/0fBVe8hU3FU",
+        "repository_url": null,
+        "evidence_status": "linked_video_unavailable",
+        "evidence_notes": "Original PDF reference: https://youtu.be/0fBVe8hU3FU\nYouTube oEmbed returned 404 and public player metadata reported ERROR / This video is unavailable. The reason for unavailability is not established.\nRetain source title, description and original URL in inventory. Obtain a working matching video, or later publish as an attributed technical overview without a verified-video claim.",
+        "evidence_checked_at": "2026-11-16 10:59:34",
+        "source_key": "arif-cloud-portfolio-027",
+        "description": "Contabo VPS provisioning covering operating system setup, Linux security configuration and web hosting stack installation.",
+        "body": "<h2>Technical overview</h2><p>Contabo VPS provisioning covering operating system setup, Linux security configuration and web hosting stack installation.</p><p>Technical portfolio by Md Arif Billah.</p><h2>Technologies and scope</h2><ul><li>Contabo</li><li>VPS</li><li>Linux</li><li>Server Configuration</li><li>Web Hosting</li></ul><h2>Demonstration reference</h2><p>The source video was unavailable when reviewed. This entry is presented as a technical overview.</p>",
+        "sort_order": 127
+      },
+      "source": {
+        "source_number": 27,
+        "source_title": "Contabo VPS Setup & Server Configuration",
+        "source_description": "Provisioned and configured Contabo VPS instances including OS installation, security hardening, and web hosting stack deployment.",
+        "pdf_pages": [
+          8
+        ],
+        "index_rows": [
+          21
+        ],
+        "original_evidence_url": "https://youtu.be/0fBVe8hU3FU",
+        "normalized_evidence_url": "https://www.youtube.com/watch?v=0fBVe8hU3FU",
+        "observed_video_title": null,
+        "shared_evidence_project_numbers": [
+          27,
+          42
+        ],
+        "review_flags": [
+          "no_named_client",
+          "independent_project_identity_unverified",
+          "evidence_reused_across_topics",
+          "video_reports_unavailable_at_review"
+        ],
+        "full_video_content_reviewed": false
+      }
+    },
+    {
+      "attributes": {
+        "title": "WordPress Directory and Listing Website",
+        "slug": "arif-cloud-wordpress-directory-listing-website-development",
+        "client": null,
+        "category": "wordpress",
+        "tags": [
+          "Technical portfolio",
+          "WordPress",
+          "Directory",
+          "Listing",
+          "Google Maps",
+          "Custom Post Types"
+        ],
+        "project_type": "technical_demonstration",
+        "attribution": "Md Arif Billah",
+        "website_url": null,
+        "video_url": "https://youtu.be/LCjJ_NXBRMU",
+        "repository_url": null,
+        "evidence_status": "linked_video_unavailable",
+        "evidence_notes": "Original PDF reference: https://youtu.be/LCjJ_NXBRMU\nYouTube oEmbed returned 404 and public player metadata reported ERROR / This video is unavailable. The reason for unavailability is not established.\nRetain source title, description and original URL in inventory. Obtain a working matching video, or later publish as an attributed technical overview without a verified-video claim.",
+        "evidence_checked_at": "2026-11-16 10:59:34",
+        "source_key": "arif-cloud-portfolio-028",
+        "description": "A WordPress directory website workflow covering business listings, location search, reviews and map integration.",
+        "body": "<h2>Technical overview</h2><p>A WordPress directory website workflow covering business listings, location search, reviews and map integration.</p><p>Technical portfolio by Md Arif Billah.</p><h2>Technologies and scope</h2><ul><li>WordPress</li><li>Directory</li><li>Listing</li><li>Google Maps</li><li>Custom Post Types</li></ul><h2>Demonstration reference</h2><p>The source video was unavailable when reviewed. This entry is presented as a technical overview.</p>",
+        "sort_order": 128
+      },
+      "source": {
+        "source_number": 28,
+        "source_title": "WordPress Directory/Listing Website Development",
+        "source_description": "Built a directory listing website using WordPress with location-based search, business listings, reviews, and map integration.",
+        "pdf_pages": [
+          8
+        ],
+        "index_rows": [],
+        "original_evidence_url": "https://youtu.be/LCjJ_NXBRMU",
+        "normalized_evidence_url": "https://www.youtube.com/watch?v=LCjJ_NXBRMU",
+        "observed_video_title": null,
+        "shared_evidence_project_numbers": [
+          18,
+          21,
+          28,
+          38
+        ],
+        "review_flags": [
+          "no_named_client",
+          "independent_project_identity_unverified",
+          "evidence_reused_across_topics",
+          "not_individually_listed_in_final_index",
+          "video_reports_unavailable_at_review"
+        ],
+        "full_video_content_reviewed": false
+      }
+    },
+    {
+      "attributes": {
+        "title": "Apache Web Server Performance Tuning",
+        "slug": "arif-cloud-apache-performance-tuning-optimization",
+        "client": null,
+        "category": "cloud",
+        "tags": [
+          "Technical portfolio",
+          "Apache",
+          "MPM",
+          "mod_deflate",
+          "mod_expires",
+          "Performance Tuning"
+        ],
+        "project_type": "technical_demonstration",
+        "attribution": "Md Arif Billah",
+        "website_url": null,
+        "video_url": "https://youtu.be/xhm7VYOxcGk",
+        "repository_url": null,
+        "evidence_status": "linked_video_unavailable",
+        "evidence_notes": "Original PDF reference: https://youtu.be/xhm7VYOxcGk\nYouTube oEmbed returned 404 and public player metadata reported ERROR / This video is unavailable. The reason for unavailability is not established.\nRetain source title, description and original URL in inventory. Obtain a working matching video, or later publish as an attributed technical overview without a verified-video claim.",
+        "evidence_checked_at": "2026-11-16 10:59:34",
+        "source_key": "arif-cloud-portfolio-029",
+        "description": "Apache configuration topics including MPM settings, compression, cache expiry and KeepAlive.",
+        "body": "<h2>Technical overview</h2><p>Apache configuration topics including MPM settings, compression, cache expiry and KeepAlive.</p><p>Technical portfolio by Md Arif Billah.</p><h2>Technologies and scope</h2><ul><li>Apache</li><li>MPM</li><li>mod_deflate</li><li>mod_expires</li><li>Performance Tuning</li></ul><h2>Demonstration reference</h2><p>The source video was unavailable when reviewed. This entry is presented as a technical overview.</p>",
+        "sort_order": 129
+      },
+      "source": {
+        "source_number": 29,
+        "source_title": "Apache Performance Tuning & Optimization",
+        "source_description": "Optimized Apache web server configuration including MPM tuning, mod_deflate, mod_expires, and KeepAlive settings for better performance.",
+        "pdf_pages": [
+          8,
+          9
+        ],
+        "index_rows": [],
+        "original_evidence_url": "https://youtu.be/xhm7VYOxcGk",
+        "normalized_evidence_url": "https://www.youtube.com/watch?v=xhm7VYOxcGk",
+        "observed_video_title": null,
+        "shared_evidence_project_numbers": [
+          15,
+          29
+        ],
+        "review_flags": [
+          "no_named_client",
+          "independent_project_identity_unverified",
+          "evidence_reused_across_topics",
+          "not_individually_listed_in_final_index",
+          "video_reports_unavailable_at_review"
+        ],
+        "full_video_content_reviewed": false
+      }
+    },
+    {
+      "attributes": {
+        "title": "CloudPanel for PHP Application Hosting",
+        "slug": "arif-cloud-cloudpanel-setup-for-php-application-hosting",
+        "client": null,
+        "category": "cloud",
+        "tags": [
+          "Technical portfolio",
+          "CloudPanel",
+          "Nginx",
+          "PHP",
+          "VPS",
+          "SSL"
+        ],
+        "project_type": "technical_demonstration",
+        "attribution": "Md Arif Billah",
+        "website_url": null,
+        "video_url": "https://youtu.be/gB9K3f4P2cQ",
+        "repository_url": null,
+        "evidence_status": "linked_video_unavailable",
+        "evidence_notes": "Original PDF reference: https://youtu.be/gB9K3f4P2cQ\nYouTube oEmbed returned 404 and public player metadata reported ERROR / This video is unavailable. The reason for unavailability is not established.\nRetain source title, description and original URL in inventory. Obtain a working matching video, or later publish as an attributed technical overview without a verified-video claim.",
+        "evidence_checked_at": "2026-11-16 10:59:34",
+        "source_key": "arif-cloud-portfolio-030",
+        "description": "CloudPanel configuration on a VPS using Nginx, PHP, MariaDB and SSL for PHP application hosting.",
+        "body": "<h2>Technical overview</h2><p>CloudPanel configuration on a VPS using Nginx, PHP, MariaDB and SSL for PHP application hosting.</p><p>Technical portfolio by Md Arif Billah.</p><h2>Technologies and scope</h2><ul><li>CloudPanel</li><li>Nginx</li><li>PHP</li><li>VPS</li><li>SSL</li><li>MariaDB</li></ul><h2>Demonstration reference</h2><p>The source video was unavailable when reviewed. This entry is presented as a technical overview.</p>",
+        "sort_order": 130
+      },
+      "source": {
+        "source_number": 30,
+        "source_title": "CloudPanel Setup for PHP Application Hosting",
+        "source_description": "Installed CloudPanel on VPS for lightweight, high-performance PHP application hosting with automated SSL and Nginx optimization.",
+        "pdf_pages": [
+          9
+        ],
+        "index_rows": [],
+        "original_evidence_url": "https://youtu.be/gB9K3f4P2cQ",
+        "normalized_evidence_url": "https://www.youtube.com/watch?v=gB9K3f4P2cQ",
+        "observed_video_title": null,
+        "shared_evidence_project_numbers": [
+          20,
+          30,
+          33
+        ],
+        "review_flags": [
+          "no_named_client",
+          "independent_project_identity_unverified",
+          "evidence_reused_across_topics",
+          "not_individually_listed_in_final_index",
+          "video_reports_unavailable_at_review"
+        ],
+        "full_video_content_reviewed": false
+      }
+    },
+    {
+      "attributes": {
+        "title": "WordPress Booking and Appointment System",
+        "slug": "arif-cloud-wordpress-booking-system-implementation",
+        "client": null,
+        "category": "wordpress",
+        "tags": [
+          "Technical portfolio",
+          "WordPress",
+          "Booking",
+          "WooCommerce",
+          "Calendar",
+          "Payment Gateway"
+        ],
+        "project_type": "technical_demonstration",
+        "attribution": "Md Arif Billah",
+        "website_url": null,
+        "video_url": "https://youtu.be/IhJzKaxhDdU",
+        "repository_url": null,
+        "evidence_status": "linked_video_unavailable",
+        "evidence_notes": "Original PDF reference: https://youtu.be/IhJzKaxhDdU\nYouTube oEmbed returned 404 and public player metadata reported ERROR / This video is unavailable. The reason for unavailability is not established.\nRetain source title, description and original URL in inventory. Obtain a working matching video, or later publish as an attributed technical overview without a verified-video claim.",
+        "evidence_checked_at": "2026-11-16 10:59:34",
+        "source_key": "arif-cloud-portfolio-031",
+        "description": "A WordPress booking workflow covering calendar integration, payment processing and email notifications.",
+        "body": "<h2>Technical overview</h2><p>A WordPress booking workflow covering calendar integration, payment processing and email notifications.</p><p>Technical portfolio by Md Arif Billah.</p><h2>Technologies and scope</h2><ul><li>WordPress</li><li>Booking</li><li>WooCommerce</li><li>Calendar</li><li>Payment Gateway</li></ul><h2>Demonstration reference</h2><p>The source video was unavailable when reviewed. This entry is presented as a technical overview.</p>",
+        "sort_order": 131
+      },
+      "source": {
+        "source_number": 31,
+        "source_title": "WordPress Booking System Implementation",
+        "source_description": "Developed an online booking/appointment system using WordPress with calendar integration, payment processing, and email notifications.",
+        "pdf_pages": [
+          9
+        ],
+        "index_rows": [
+          22
+        ],
+        "original_evidence_url": "https://youtu.be/IhJzKaxhDdU",
+        "normalized_evidence_url": "https://www.youtube.com/watch?v=IhJzKaxhDdU",
+        "observed_video_title": null,
+        "shared_evidence_project_numbers": [
+          6,
+          31
+        ],
+        "review_flags": [
+          "no_named_client",
+          "independent_project_identity_unverified",
+          "evidence_reused_across_topics",
+          "video_reports_unavailable_at_review"
+        ],
+        "full_video_content_reviewed": false
+      }
+    },
+    {
+      "attributes": {
+        "title": "MySQL Database Administration",
+        "slug": "arif-cloud-database-management-mysql-administration",
+        "client": null,
+        "category": "cloud",
+        "tags": [
+          "Technical portfolio",
+          "MySQL",
+          "Database Administration",
+          "phpMyAdmin",
+          "Backup/Restore"
+        ],
+        "project_type": "technical_demonstration",
+        "attribution": "Md Arif Billah",
+        "website_url": null,
+        "video_url": "https://youtu.be/Y7bMa_o5TBM",
+        "repository_url": null,
+        "evidence_status": "linked_video_unavailable",
+        "evidence_notes": "Original PDF reference: https://youtu.be/Y7bMa_o5TBM\nYouTube oEmbed returned 404 and public player metadata reported ERROR / This video is unavailable. The reason for unavailability is not established.\nRetain source title, description and original URL in inventory. Obtain a working matching video, or later publish as an attributed technical overview without a verified-video claim.",
+        "evidence_checked_at": "2026-11-16 10:59:34",
+        "source_key": "arif-cloud-portfolio-032",
+        "description": "MySQL administration covering database users, privileges, backup and restoration, query optimization and performance tuning.",
+        "body": "<h2>Technical overview</h2><p>MySQL administration covering database users, privileges, backup and restoration, query optimization and performance tuning.</p><p>Technical portfolio by Md Arif Billah.</p><h2>Technologies and scope</h2><ul><li>MySQL</li><li>Database Administration</li><li>phpMyAdmin</li><li>Backup/Restore</li></ul><h2>Demonstration reference</h2><p>The source video was unavailable when reviewed. This entry is presented as a technical overview.</p>",
+        "sort_order": 132
+      },
+      "source": {
+        "source_number": 32,
+        "source_title": "Database Management & MySQL Administration",
+        "source_description": "Managed MySQL databases including user creation, privilege management, performance tuning, backup/restore operations, and query optimization.",
+        "pdf_pages": [
+          9
+        ],
+        "index_rows": [],
+        "original_evidence_url": "https://youtu.be/Y7bMa_o5TBM",
+        "normalized_evidence_url": "https://www.youtube.com/watch?v=Y7bMa_o5TBM",
+        "observed_video_title": null,
+        "shared_evidence_project_numbers": [
+          1,
+          32
+        ],
+        "review_flags": [
+          "no_named_client",
+          "independent_project_identity_unverified",
+          "evidence_reused_across_topics",
+          "not_individually_listed_in_final_index",
+          "video_reports_unavailable_at_review"
+        ],
+        "full_video_content_reviewed": false
+      }
+    },
+    {
+      "attributes": {
+        "title": "aaPanel Web Hosting Management",
+        "slug": "arif-cloud-aapanel-installation-web-hosting-management",
+        "client": null,
+        "category": "cloud",
+        "tags": [
+          "Technical portfolio",
+          "aaPanel",
+          "Linux",
+          "LNMP",
+          "LAMP",
+          "VPS"
+        ],
+        "project_type": "technical_demonstration",
+        "attribution": "Md Arif Billah",
+        "website_url": null,
+        "video_url": "https://youtu.be/gB9K3f4P2cQ",
+        "repository_url": null,
+        "evidence_status": "linked_video_unavailable",
+        "evidence_notes": "Original PDF reference: https://youtu.be/gB9K3f4P2cQ\nYouTube oEmbed returned 404 and public player metadata reported ERROR / This video is unavailable. The reason for unavailability is not established.\nRetain source title, description and original URL in inventory. Obtain a working matching video, or later publish as an attributed technical overview without a verified-video claim.",
+        "evidence_checked_at": "2026-11-16 10:59:34",
+        "source_key": "arif-cloud-portfolio-033",
+        "description": "Installing aaPanel on a Linux VPS and configuring LNMP or LAMP services for website hosting administration.",
+        "body": "<h2>Technical overview</h2><p>Installing aaPanel on a Linux VPS and configuring LNMP or LAMP services for website hosting administration.</p><p>Technical portfolio by Md Arif Billah.</p><h2>Technologies and scope</h2><ul><li>aaPanel</li><li>Linux</li><li>LNMP</li><li>LAMP</li><li>VPS</li><li>Web Hosting</li></ul><h2>Demonstration reference</h2><p>The source video was unavailable when reviewed. This entry is presented as a technical overview.</p>",
+        "sort_order": 133
+      },
+      "source": {
+        "source_number": 33,
+        "source_title": "aaPanel Installation & Web Hosting Management",
+        "source_description": "Set up aaPanel on Linux VPS for easy web hosting management with one-click LNMP/LAMP stack deployment and website management.",
+        "pdf_pages": [
+          9
+        ],
+        "index_rows": [],
+        "original_evidence_url": "https://youtu.be/gB9K3f4P2cQ",
+        "normalized_evidence_url": "https://www.youtube.com/watch?v=gB9K3f4P2cQ",
+        "observed_video_title": null,
+        "shared_evidence_project_numbers": [
+          20,
+          30,
+          33
+        ],
+        "review_flags": [
+          "no_named_client",
+          "independent_project_identity_unverified",
+          "evidence_reused_across_topics",
+          "not_individually_listed_in_final_index",
+          "video_reports_unavailable_at_review"
+        ],
+        "full_video_content_reviewed": false
+      }
+    },
+    {
+      "attributes": {
+        "title": "Git and GitHub Deployment Workflows",
+        "slug": "arif-cloud-git-github-for-code-deployment",
+        "client": null,
+        "category": "automation",
+        "tags": [
+          "Technical portfolio",
+          "Git",
+          "GitHub",
+          "Version Control",
+          "Deployment",
+          "CI/CD"
+        ],
+        "project_type": "technical_demonstration",
+        "attribution": "Md Arif Billah",
+        "website_url": null,
+        "video_url": null,
+        "repository_url": null,
+        "evidence_status": "specific_repository_needed",
+        "evidence_notes": "Original PDF reference: https://github.com/developer-arif\nThe provided address is a profile with zero public repositories at review time, not a project-specific repository.\nSupply a specific public repository or alternative demonstration; do not automatically substitute the other GitHub profile.",
+        "evidence_checked_at": "2026-11-16 10:59:34",
+        "source_key": "arif-cloud-portfolio-034",
+        "description": "Version control and deployment workflows using Git and GitHub for code management, collaboration and deployment automation.",
+        "body": "<h2>Technical overview</h2><p>Version control and deployment workflows using Git and GitHub for code management, collaboration and deployment automation.</p><p>Technical portfolio by Md Arif Billah.</p><h2>Technologies and scope</h2><ul><li>Git</li><li>GitHub</li><li>Version Control</li><li>Deployment</li><li>CI/CD</li></ul><h2>Demonstration reference</h2><p>A project-specific code repository has not been supplied. This entry is presented as a technical overview.</p>",
+        "sort_order": 134
+      },
+      "source": {
+        "source_number": 34,
+        "source_title": "Git & GitHub for Code Deployment",
+        "source_description": "Used Git version control and GitHub for code management, collaboration, and automated deployment workflows for web projects.",
+        "pdf_pages": [
+          9
+        ],
+        "index_rows": [],
+        "original_evidence_url": "https://github.com/developer-arif",
+        "normalized_evidence_url": "https://github.com/developer-arif",
+        "observed_video_title": null,
+        "shared_evidence_project_numbers": [
+          34,
+          36
+        ],
+        "review_flags": [
+          "no_named_client",
+          "independent_project_identity_unverified",
+          "evidence_reused_across_topics",
+          "profile_not_project_repository",
+          "github_profile_conflicts_with_cover_profile",
+          "not_individually_listed_in_final_index",
+          "linked_github_profile_has_no_public_repositories_at_check"
+        ],
+        "full_video_content_reviewed": false
+      }
+    },
+    {
+      "attributes": {
+        "title": "WordPress Security and Malware Removal",
+        "slug": "arif-cloud-wordpress-security-hardening-malware-removal",
+        "client": null,
+        "category": "wordpress",
+        "tags": [
+          "Technical portfolio",
+          "WordPress Security",
+          "Wordfence",
+          "Malware Removal",
+          "Security Headers"
+        ],
+        "project_type": "technical_demonstration",
+        "attribution": "Md Arif Billah",
+        "website_url": null,
+        "video_url": "https://youtu.be/YJuul-_xKJE",
+        "repository_url": null,
+        "evidence_status": "linked_video_unavailable",
+        "evidence_notes": "Original PDF reference: https://youtu.be/YJuul-_xKJE\nYouTube oEmbed returned 404 and public player metadata reported ERROR / This video is unavailable. The reason for unavailability is not established.\nRetain source title, description and original URL in inventory. Obtain a working matching video, or later publish as an attributed technical overview without a verified-video claim.",
+        "evidence_checked_at": "2026-11-16 10:59:34",
+        "source_key": "arif-cloud-portfolio-035",
+        "description": "WordPress security topics covering malware scanning and removal, firewall plugins and security headers.",
+        "body": "<h2>Technical overview</h2><p>WordPress security topics covering malware scanning and removal, firewall plugins and security headers.</p><p>Technical portfolio by Md Arif Billah.</p><h2>Technologies and scope</h2><ul><li>WordPress Security</li><li>Wordfence</li><li>Malware Removal</li><li>Security Headers</li></ul><h2>Demonstration reference</h2><p>The source video was unavailable when reviewed. This entry is presented as a technical overview.</p>",
+        "sort_order": 135
+      },
+      "source": {
+        "source_number": 35,
+        "source_title": "WordPress Security Hardening & Malware Removal",
+        "source_description": "Implemented WordPress security best practices including malware scanning, removal, firewall plugins, and security header configuration.",
+        "pdf_pages": [
+          9
+        ],
+        "index_rows": [],
+        "original_evidence_url": "https://youtu.be/YJuul-_xKJE",
+        "normalized_evidence_url": "https://www.youtube.com/watch?v=YJuul-_xKJE",
+        "observed_video_title": null,
+        "shared_evidence_project_numbers": [
+          14,
+          35,
+          41
+        ],
+        "review_flags": [
+          "no_named_client",
+          "independent_project_identity_unverified",
+          "evidence_reused_across_topics",
+          "not_individually_listed_in_final_index",
+          "video_reports_unavailable_at_review"
+        ],
+        "full_video_content_reviewed": false
+      }
+    },
+    {
+      "attributes": {
+        "title": "Responsive HTML, CSS and JavaScript Websites",
+        "slug": "arif-cloud-responsive-web-design-with-html-css-javascript",
+        "client": null,
+        "category": "web-development",
+        "tags": [
+          "Technical portfolio",
+          "HTML5",
+          "CSS3",
+          "JavaScript",
+          "jQuery",
+          "Responsive Design"
+        ],
+        "project_type": "technical_demonstration",
+        "attribution": "Md Arif Billah",
+        "website_url": null,
+        "video_url": null,
+        "repository_url": null,
+        "evidence_status": "specific_repository_needed",
+        "evidence_notes": "Original PDF reference: https://github.com/developer-arif\nThe provided address is a profile with zero public repositories at review time, not a project-specific repository.\nSupply a specific public repository or alternative demonstration; do not automatically substitute the other GitHub profile.",
+        "evidence_checked_at": "2026-11-16 10:59:34",
+        "source_key": "arif-cloud-portfolio-036",
+        "description": "Responsive website development using HTML5, CSS3, JavaScript, jQuery and Bootstrap with a mobile-first approach.",
+        "body": "<h2>Technical overview</h2><p>Responsive website development using HTML5, CSS3, JavaScript, jQuery and Bootstrap with a mobile-first approach.</p><p>Technical portfolio by Md Arif Billah.</p><h2>Technologies and scope</h2><ul><li>HTML5</li><li>CSS3</li><li>JavaScript</li><li>jQuery</li><li>Responsive Design</li><li>Bootstrap</li></ul><h2>Demonstration reference</h2><p>A project-specific code repository has not been supplied. This entry is presented as a technical overview.</p>",
+        "sort_order": 136
+      },
+      "source": {
+        "source_number": 36,
+        "source_title": "Responsive Web Design with HTML, CSS & JavaScript",
+        "source_description": "Designed and developed responsive websites from scratch using HTML5, CSS3, JavaScript, and jQuery with mobile-first approach.",
+        "pdf_pages": [
+          9
+        ],
+        "index_rows": [
+          25
+        ],
+        "original_evidence_url": "https://github.com/developer-arif",
+        "normalized_evidence_url": "https://github.com/developer-arif",
+        "observed_video_title": null,
+        "shared_evidence_project_numbers": [
+          34,
+          36
+        ],
+        "review_flags": [
+          "no_named_client",
+          "independent_project_identity_unverified",
+          "evidence_reused_across_topics",
+          "profile_not_project_repository",
+          "github_profile_conflicts_with_cover_profile",
+          "linked_github_profile_has_no_public_repositories_at_check"
+        ],
+        "full_video_content_reviewed": false
+      }
+    },
+    {
+      "attributes": {
+        "title": "Domain Registration and Transfer Management",
+        "slug": "arif-cloud-domain-registration-transfer-management",
+        "client": null,
+        "category": "cloud",
+        "tags": [
+          "Technical portfolio",
+          "Domain Management",
+          "DNS",
+          "Registrar",
+          "WHOIS",
+          "Transfer"
+        ],
+        "project_type": "technical_demonstration",
+        "attribution": "Md Arif Billah",
+        "website_url": null,
+        "video_url": "https://youtu.be/JX5tqJaW-5E",
+        "repository_url": null,
+        "evidence_status": "linked_video_unavailable",
+        "evidence_notes": "Original PDF reference: https://youtu.be/JX5tqJaW-5E\nYouTube oEmbed returned 404 and public player metadata reported ERROR / This video is unavailable. The reason for unavailability is not established.\nRetain source title, description and original URL in inventory. Obtain a working matching video, or later publish as an attributed technical overview without a verified-video claim.",
+        "evidence_checked_at": "2026-11-16 10:59:34",
+        "source_key": "arif-cloud-portfolio-037",
+        "description": "Domain lifecycle management covering registration, registrar transfers, DNS pointing and WHOIS privacy configuration.",
+        "body": "<h2>Technical overview</h2><p>Domain lifecycle management covering registration, registrar transfers, DNS pointing and WHOIS privacy configuration.</p><p>Technical portfolio by Md Arif Billah.</p><h2>Technologies and scope</h2><ul><li>Domain Management</li><li>DNS</li><li>Registrar</li><li>WHOIS</li><li>Transfer</li></ul><h2>Demonstration reference</h2><p>The source video was unavailable when reviewed. This entry is presented as a technical overview.</p>",
+        "sort_order": 137
+      },
+      "source": {
+        "source_number": 37,
+        "source_title": "Domain Registration, Transfer & Management",
+        "source_description": "Managed domain lifecycle including registration, transfer between registrars, DNS pointing, and WHOIS privacy configuration.",
+        "pdf_pages": [
+          9,
+          10
+        ],
+        "index_rows": [],
+        "original_evidence_url": "https://youtu.be/JX5tqJaW-5E",
+        "normalized_evidence_url": "https://www.youtube.com/watch?v=JX5tqJaW-5E",
+        "observed_video_title": null,
+        "shared_evidence_project_numbers": [
+          16,
+          37
+        ],
+        "review_flags": [
+          "no_named_client",
+          "independent_project_identity_unverified",
+          "evidence_reused_across_topics",
+          "not_individually_listed_in_final_index",
+          "video_reports_unavailable_at_review"
+        ],
+        "full_video_content_reviewed": false
+      }
+    },
+    {
+      "attributes": {
+        "title": "Wix Website Design and Configuration",
+        "slug": "arif-cloud-wix-website-design-development",
+        "client": null,
+        "category": "web-development",
+        "tags": [
+          "Technical portfolio",
+          "Wix",
+          "Website Design",
+          "SEO",
+          "Drag-and-Drop Builder"
+        ],
+        "project_type": "technical_demonstration",
+        "attribution": "Md Arif Billah",
+        "website_url": null,
+        "video_url": "https://youtu.be/LCjJ_NXBRMU",
+        "repository_url": null,
+        "evidence_status": "linked_video_unavailable",
+        "evidence_notes": "Original PDF reference: https://youtu.be/LCjJ_NXBRMU\nYouTube oEmbed returned 404 and public player metadata reported ERROR / This video is unavailable. The reason for unavailability is not established.\nRetain source title, description and original URL in inventory. Obtain a working matching video, or later publish as an attributed technical overview without a verified-video claim.",
+        "evidence_checked_at": "2026-11-16 10:59:34",
+        "source_key": "arif-cloud-portfolio-038",
+        "description": "Wix website configuration covering custom layouts, search optimization and third-party integrations.",
+        "body": "<h2>Technical overview</h2><p>Wix website configuration covering custom layouts, search optimization and third-party integrations.</p><p>Technical portfolio by Md Arif Billah.</p><h2>Technologies and scope</h2><ul><li>Wix</li><li>Website Design</li><li>SEO</li><li>Drag-and-Drop Builder</li></ul><h2>Demonstration reference</h2><p>The source video was unavailable when reviewed. This entry is presented as a technical overview.</p>",
+        "sort_order": 138
+      },
+      "source": {
+        "source_number": 38,
+        "source_title": "Wix Website Design & Development",
+        "source_description": "Designed professional websites using Wix platform with custom layouts, SEO optimization, and third-party integrations.",
+        "pdf_pages": [
+          10
+        ],
+        "index_rows": [
+          26
+        ],
+        "original_evidence_url": "https://youtu.be/LCjJ_NXBRMU",
+        "normalized_evidence_url": "https://www.youtube.com/watch?v=LCjJ_NXBRMU",
+        "observed_video_title": null,
+        "shared_evidence_project_numbers": [
+          18,
+          21,
+          28,
+          38
+        ],
+        "review_flags": [
+          "no_named_client",
+          "independent_project_identity_unverified",
+          "evidence_reused_across_topics",
+          "video_reports_unavailable_at_review"
+        ],
+        "full_video_content_reviewed": false
+      }
+    },
+    {
+      "attributes": {
+        "title": "Server Log Analysis and Troubleshooting",
+        "slug": "arif-cloud-server-log-analysis-troubleshooting",
+        "client": null,
+        "category": "cloud",
+        "tags": [
+          "Technical portfolio",
+          "Log Analysis",
+          "Apache Logs",
+          "Nginx Logs",
+          "Troubleshooting",
+          "Security"
+        ],
+        "project_type": "technical_demonstration",
+        "attribution": "Md Arif Billah",
+        "website_url": null,
+        "video_url": "https://youtu.be/gV0-2XpfmKQ",
+        "repository_url": null,
+        "evidence_status": "linked_video_unavailable",
+        "evidence_notes": "Original PDF reference: https://youtu.be/gV0-2XpfmKQ\nYouTube oEmbed returned 404 and public player metadata reported ERROR / This video is unavailable. The reason for unavailability is not established.\nRetain source title, description and original URL in inventory. Obtain a working matching video, or later publish as an attributed technical overview without a verified-video claim.",
+        "evidence_checked_at": "2026-11-16 10:59:34",
+        "source_key": "arif-cloud-portfolio-039",
+        "description": "Apache, Nginx and system log analysis for troubleshooting server issues, investigating security events and reviewing performance.",
+        "body": "<h2>Technical overview</h2><p>Apache, Nginx and system log analysis for troubleshooting server issues, investigating security events and reviewing performance.</p><p>Technical portfolio by Md Arif Billah.</p><h2>Technologies and scope</h2><ul><li>Log Analysis</li><li>Apache Logs</li><li>Nginx Logs</li><li>Troubleshooting</li><li>Security</li></ul><h2>Demonstration reference</h2><p>The source video was unavailable when reviewed. This entry is presented as a technical overview.</p>",
+        "sort_order": 139
+      },
+      "source": {
+        "source_number": 39,
+        "source_title": "Server Log Analysis & Troubleshooting",
+        "source_description": "Analyzed Apache/Nginx access and error logs to diagnose server issues, identify security threats, and optimize server performance.",
+        "pdf_pages": [
+          10
+        ],
+        "index_rows": [],
+        "original_evidence_url": "https://youtu.be/gV0-2XpfmKQ",
+        "normalized_evidence_url": "https://www.youtube.com/watch?v=gV0-2XpfmKQ",
+        "observed_video_title": null,
+        "shared_evidence_project_numbers": [
+          7,
+          22,
+          39
+        ],
+        "review_flags": [
+          "no_named_client",
+          "independent_project_identity_unverified",
+          "evidence_reused_across_topics",
+          "not_individually_listed_in_final_index",
+          "video_reports_unavailable_at_review"
+        ],
+        "full_video_content_reviewed": false
+      }
+    },
+    {
+      "attributes": {
+        "title": "WHMCS Hosting Automation",
+        "slug": "arif-cloud-whmcs-installation-for-hosting-automation",
+        "client": null,
+        "category": "automation",
+        "tags": [
+          "Technical portfolio",
+          "WHMCS",
+          "Billing Automation",
+          "Hosting",
+          "Client Management",
+          "API"
+        ],
+        "project_type": "technical_demonstration",
+        "attribution": "Md Arif Billah",
+        "website_url": null,
+        "video_url": "https://youtu.be/6JkW68MINyA",
+        "repository_url": null,
+        "evidence_status": "linked_video_unavailable",
+        "evidence_notes": "Original PDF reference: https://youtu.be/6JkW68MINyA\nYouTube oEmbed returned 404 and public player metadata reported ERROR / This video is unavailable. The reason for unavailability is not established.\nRetain source title, description and original URL in inventory. Obtain a working matching video, or later publish as an attributed technical overview without a verified-video claim.",
+        "evidence_checked_at": "2026-11-16 10:59:34",
+        "source_key": "arif-cloud-portfolio-040",
+        "description": "WHMCS setup for hosting provisioning, billing, client account administration and payment processing.",
+        "body": "<h2>Technical overview</h2><p>WHMCS setup for hosting provisioning, billing, client account administration and payment processing.</p><p>Technical portfolio by Md Arif Billah.</p><h2>Technologies and scope</h2><ul><li>WHMCS</li><li>Billing Automation</li><li>Hosting</li><li>Client Management</li><li>API</li></ul><h2>Demonstration reference</h2><p>The source video was unavailable when reviewed. This entry is presented as a technical overview.</p>",
+        "sort_order": 140
+      },
+      "source": {
+        "source_number": 40,
+        "source_title": "WHMCS Installation for Hosting Automation",
+        "source_description": "Installed and configured WHMCS billing platform for automated hosting provisioning, client management, and payment processing.",
+        "pdf_pages": [
+          10
+        ],
+        "index_rows": [
+          24
+        ],
+        "original_evidence_url": "https://youtu.be/6JkW68MINyA",
+        "normalized_evidence_url": "https://www.youtube.com/watch?v=6JkW68MINyA",
+        "observed_video_title": null,
+        "shared_evidence_project_numbers": [
+          13,
+          40
+        ],
+        "review_flags": [
+          "no_named_client",
+          "independent_project_identity_unverified",
+          "evidence_reused_across_topics",
+          "video_reports_unavailable_at_review"
+        ],
+        "full_video_content_reviewed": false
+      }
+    },
+    {
+      "attributes": {
+        "title": "WordPress SEO and Search Console Setup",
+        "slug": "arif-cloud-wordpress-seo-optimization-google-search-console",
+        "client": null,
+        "category": "seo",
+        "tags": [
+          "Technical portfolio",
+          "WordPress",
+          "SEO",
+          "Yoast SEO",
+          "Google Search Console",
+          "Schema Markup"
+        ],
+        "project_type": "technical_demonstration",
+        "attribution": "Md Arif Billah",
+        "website_url": null,
+        "video_url": "https://youtu.be/YJuul-_xKJE",
+        "repository_url": null,
+        "evidence_status": "linked_video_unavailable",
+        "evidence_notes": "Original PDF reference: https://youtu.be/YJuul-_xKJE\nYouTube oEmbed returned 404 and public player metadata reported ERROR / This video is unavailable. The reason for unavailability is not established.\nRetain source title, description and original URL in inventory. Obtain a working matching video, or later publish as an attributed technical overview without a verified-video claim.",
+        "evidence_checked_at": "2026-11-16 10:59:34",
+        "source_key": "arif-cloud-portfolio-041",
+        "description": "WordPress SEO configuration covering Yoast SEO, sitemaps, schema markup and Google Search Console setup.",
+        "body": "<h2>Technical overview</h2><p>WordPress SEO configuration covering Yoast SEO, sitemaps, schema markup and Google Search Console setup.</p><p>Technical portfolio by Md Arif Billah.</p><h2>Technologies and scope</h2><ul><li>WordPress</li><li>SEO</li><li>Yoast SEO</li><li>Google Search Console</li><li>Schema Markup</li></ul><h2>Demonstration reference</h2><p>The source video was unavailable when reviewed. This entry is presented as a technical overview.</p>",
+        "sort_order": 141
+      },
+      "source": {
+        "source_number": 41,
+        "source_title": "WordPress SEO Optimization & Google Search Console",
+        "source_description": "Implemented SEO best practices on WordPress including Yoast SEO configuration, sitemap submission, schema markup, and Search Console setup.",
+        "pdf_pages": [
+          10
+        ],
+        "index_rows": [],
+        "original_evidence_url": "https://youtu.be/YJuul-_xKJE",
+        "normalized_evidence_url": "https://www.youtube.com/watch?v=YJuul-_xKJE",
+        "observed_video_title": null,
+        "shared_evidence_project_numbers": [
+          14,
+          35,
+          41
+        ],
+        "review_flags": [
+          "no_named_client",
+          "independent_project_identity_unverified",
+          "evidence_reused_across_topics",
+          "not_individually_listed_in_final_index",
+          "video_reports_unavailable_at_review"
+        ],
+        "full_video_content_reviewed": false
+      }
+    },
+    {
+      "attributes": {
+        "title": "OVH Dedicated Server Configuration",
+        "slug": "arif-cloud-ovh-dedicated-server-setup-management",
+        "client": null,
+        "category": "cloud",
+        "tags": [
+          "Technical portfolio",
+          "OVH",
+          "Dedicated Server",
+          "RAID",
+          "Linux",
+          "Network Configuration"
+        ],
+        "project_type": "technical_demonstration",
+        "attribution": "Md Arif Billah",
+        "website_url": null,
+        "video_url": "https://youtu.be/0fBVe8hU3FU",
+        "repository_url": null,
+        "evidence_status": "linked_video_unavailable",
+        "evidence_notes": "Original PDF reference: https://youtu.be/0fBVe8hU3FU\nYouTube oEmbed returned 404 and public player metadata reported ERROR / This video is unavailable. The reason for unavailability is not established.\nRetain source title, description and original URL in inventory. Obtain a working matching video, or later publish as an attributed technical overview without a verified-video claim.",
+        "evidence_checked_at": "2026-11-16 10:59:34",
+        "source_key": "arif-cloud-portfolio-042",
+        "description": "OVH dedicated server setup covering RAID configuration, operating system deployment, networking and hosting services.",
+        "body": "<h2>Technical overview</h2><p>OVH dedicated server setup covering RAID configuration, operating system deployment, networking and hosting services.</p><p>Technical portfolio by Md Arif Billah.</p><h2>Technologies and scope</h2><ul><li>OVH</li><li>Dedicated Server</li><li>RAID</li><li>Linux</li><li>Network Configuration</li></ul><h2>Demonstration reference</h2><p>The source video was unavailable when reviewed. This entry is presented as a technical overview.</p>",
+        "sort_order": 142
+      },
+      "source": {
+        "source_number": 42,
+        "source_title": "OVH Dedicated Server Setup & Management",
+        "source_description": "Provisioned and managed OVH dedicated servers including RAID configuration, OS deployment, network setup, and hosting stack installation.",
+        "pdf_pages": [
+          10
+        ],
+        "index_rows": [
+          23
+        ],
+        "original_evidence_url": "https://youtu.be/0fBVe8hU3FU",
+        "normalized_evidence_url": "https://www.youtube.com/watch?v=0fBVe8hU3FU",
+        "observed_video_title": null,
+        "shared_evidence_project_numbers": [
+          27,
+          42
+        ],
+        "review_flags": [
+          "no_named_client",
+          "independent_project_identity_unverified",
+          "evidence_reused_across_topics",
+          "video_reports_unavailable_at_review"
+        ],
+        "full_video_content_reviewed": false
+      }
+    },
+    {
+      "attributes": {
+        "title": "Comodo SSL on Namecheap WordPress Hosting",
+        "slug": "arif-cloud-install-comodo-ssl-on-namecheap-hosting-wordpress",
+        "client": null,
+        "category": "cloud",
+        "tags": [
+          "Technical portfolio",
+          "SSL Installation",
+          "Namecheap Hosting",
+          "WordPress Security",
+          "HTTPS Configuration",
+          "Comodo SSL"
+        ],
+        "project_type": "technical_demonstration",
+        "attribution": "Md Arif Billah",
+        "website_url": null,
+        "video_url": "https://youtu.be/YYKVGRjWGFI",
+        "repository_url": null,
+        "evidence_status": "available_video_title_matches_topic",
+        "evidence_notes": "Original PDF reference: https://youtu.be/YYKVGRjWGFI\nTitle matches the documented subject; this is not a full review of the video or verification of client delivery.\nPrepare an attributed technical demonstration entry; use restrained factual copy and the matching video link.",
+        "evidence_checked_at": "2026-11-16 10:59:34",
+        "source_key": "arif-cloud-portfolio-043",
+        "description": "Explore Comodo SSL installation for WordPress on Namecheap hosting, including certificate validation, HTTPS settings and mixed-content checks.",
+        "body": "<h2>Comodo SSL for a WordPress website</h2>\n<p>This technical demonstration by Md Arif Billah covers the connection between an SSL certificate, a Namecheap hosting account and a WordPress website. The documented scope includes certificate validation and installation, moving the website to HTTPS, and checking for mixed content. It is useful when reviewing how the hosting layer and application settings work together during an HTTPS setup.</p>\n<h2>What to review in the setup</h2>\n<ul><li>Certificate validation and installation for the intended website domain.</li><li>WordPress address settings and the transition from HTTP to HTTPS.</li><li>Images, stylesheets and other page resources that still request an HTTP address.</li><li>Browser checks for certificate warnings, missing assets and unexpected redirects.</li></ul>\n<p>Installing a certificate and updating the website are related tasks, but they are not identical. A page can be reachable over HTTPS while some embedded resources still use insecure addresses. The distinction helps explain why checking a complete page matters in addition to confirming that the certificate is present.</p>\n<h2>Using the demonstration</h2>\n<p>Use the linked video to follow the demonstrated workflow and compare the relevant hosting and WordPress settings with your own environment. Certificate products, hosting interfaces and existing site configurations can differ, so domain-specific values should come from the account being configured. This entry documents a technical demonstration without claiming a named client deployment or measured security improvement.</p>\n<p>Further reading: <a href=\"https://www.namecheap.com/support/knowledgebase/article.aspx/9491/2187/how-to-set-up-https-for-wordpress/\" rel=\"noopener noreferrer\" target=\"_blank\">Namecheap's HTTPS guidance for WordPress</a>.</p>",
+        "sort_order": 143
+      },
+      "source": {
+        "source_number": 43,
+        "source_title": "Install Comodo SSL on Namecheap Hosting (WordPress)",
+        "source_description": "Purchased, validated, and installed a Comodo SSL certificate on Namecheap shared hosting for a WordPress website, ensuring full HTTPS migration and mixed-content fixes.",
+        "pdf_pages": [
+          10
+        ],
+        "index_rows": [
+          27
+        ],
+        "original_evidence_url": "https://youtu.be/YYKVGRjWGFI",
+        "normalized_evidence_url": "https://www.youtube.com/watch?v=YYKVGRjWGFI",
+        "observed_video_title": "Install Comodo SSL on Namecheap Hosting _ WordPress (Step-by-Step)",
+        "shared_evidence_project_numbers": [
+          43
+        ],
+        "review_flags": [
+          "no_named_client",
+          "independent_project_identity_unverified"
+        ],
+        "full_video_content_reviewed": false
+      }
+    },
+    {
+      "attributes": {
+        "title": "HostGator Website Setup Walkthrough",
+        "slug": "arif-cloud-full-hostgator-tutorial-wordpress-domain-dns",
+        "client": null,
+        "category": "cloud",
+        "tags": [
+          "Technical portfolio",
+          "HostGator Configuration",
+          "WordPress Installation",
+          "Domain Management",
+          "DNS Setup",
+          "cPanel"
+        ],
+        "project_type": "technical_demonstration",
+        "attribution": "Md Arif Billah",
+        "website_url": null,
+        "video_url": "https://youtu.be/FFbGStiqZRk",
+        "repository_url": null,
+        "evidence_status": "available_video_title_matches_topic",
+        "evidence_notes": "Original PDF reference: https://youtu.be/FFbGStiqZRk\nTitle matches the documented subject; this is not a full review of the video or verification of client delivery.\nPrepare an attributed technical demonstration entry; use restrained factual copy and the matching video link.",
+        "evidence_checked_at": "2026-11-16 10:59:34",
+        "source_key": "arif-cloud-portfolio-044",
+        "description": "Follow a HostGator website setup overview covering domains, DNS, WordPress installation and the roles of the hosting dashboard and cPanel.",
+        "body": "<h2>Connecting a domain, hosting and WordPress</h2>\n<p>This HostGator setup walkthrough by Md Arif Billah brings together several tasks involved in preparing a WordPress website: accessing the hosting account, working with a domain, reviewing DNS configuration, installing WordPress and navigating cPanel. The scope is a practical introduction to how these parts fit together, rather than a comparison of hosting plans or a promise of a particular performance result.</p>\n<h2>What the walkthrough helps you identify</h2>\n<ul><li>The hosting account and control panel used to manage the website environment.</li><li>The domain name visitors will use and the DNS settings that connect it to hosting.</li><li>The WordPress installation and the separate dashboard used to manage website content.</li><li>The relationship between hosting administration, website files and application access.</li></ul>\n<p>Keeping these roles clear makes the setup easier to understand. Registering a domain does not by itself install a website, and signing in to the hosting control panel is different from signing in to WordPress. The walkthrough provides a reference for recognizing those boundaries during a hosting setup.</p>\n<h2>Applying the overview to a website</h2>\n<p>Follow the linked demonstration with the details from the hosting account and domain you intend to use. Existing domains, email services and website installations can affect which changes are appropriate. The portfolio record describes the documented setup topics; it does not provide credentials, account-specific DNS values or evidence of a separate customer engagement.</p>",
+        "sort_order": 144
+      },
+      "source": {
+        "source_number": 44,
+        "source_title": "Full HostGator Tutorial (WordPress, Domain, DNS)",
+        "source_description": "Demonstrated end-to-end website setup on HostGator including account creation, domain registration, WordPress installation, cPanel walkthrough, and DNS configuration.",
+        "pdf_pages": [
+          10
+        ],
+        "index_rows": [
+          28
+        ],
+        "original_evidence_url": "https://youtu.be/FFbGStiqZRk",
+        "normalized_evidence_url": "https://www.youtube.com/watch?v=FFbGStiqZRk",
+        "observed_video_title": "Full HostGator Tutorial in 10 minutes | WordPress Install | Domain | DNS",
+        "shared_evidence_project_numbers": [
+          44
+        ],
+        "review_flags": [
+          "no_named_client",
+          "independent_project_identity_unverified"
+        ],
+        "full_video_content_reviewed": false
+      }
+    },
+    {
+      "attributes": {
+        "title": "WordPress and Website Files on CyberPanel",
+        "slug": "arif-cloud-upload-website-files-install-wordpress-on-cyberpanel",
+        "client": null,
+        "category": "cloud",
+        "tags": [
+          "Technical portfolio",
+          "CyberPanel Management",
+          "WordPress Deployment",
+          "File Management",
+          "OpenLiteSpeed"
+        ],
+        "project_type": "technical_demonstration",
+        "attribution": "Md Arif Billah",
+        "website_url": null,
+        "video_url": "https://youtu.be/UYpGf4Vu0KM",
+        "repository_url": null,
+        "evidence_status": "available_video_title_matches_topic",
+        "evidence_notes": "Original PDF reference: https://youtu.be/UYpGf4Vu0KM\nTitle matches the documented subject; this is not a full review of the video or verification of client delivery.\nPrepare an attributed technical demonstration entry; use restrained factual copy and the matching video link.",
+        "evidence_checked_at": "2026-11-16 10:59:34",
+        "source_key": "arif-cloud-portfolio-045",
+        "description": "Explore WordPress deployment and website file management in CyberPanel, including the website workspace, database setup and OpenLiteSpeed hosting.",
+        "body": "<h2>WordPress deployment and file management in CyberPanel</h2>\n<p>This technical demonstration by Md Arif Billah covers two connected CyberPanel tasks: uploading website files and installing WordPress. Its documented scope includes creating or using the website workspace, managing files, preparing the database needed by WordPress and working with an OpenLiteSpeed hosting environment. The entry is useful for understanding how a hosting panel connects website administration with application deployment.</p>\n<h2>Files and application setup</h2>\n<ul><li>Identify the website being managed before uploading or changing its files.</li><li>Understand the distinction between a website's document root and unrelated server folders.</li><li>Review database preparation and the application installation workflow for WordPress.</li><li>Check that the intended domain opens the expected website after deployment.</li></ul>\n<p>A WordPress website combines application files with database content. File management and installation therefore serve different purposes, even when both are accessible through the same control panel. Understanding that separation helps when following an installation, reviewing a deployment or organizing a later maintenance task.</p>\n<h2>Following the reference</h2>\n<p>The linked video is the demonstration reference for this entry. Use the hosting environment's own website names, file locations and database settings when comparing the workflow. Panel interfaces and installed components can vary. This portfolio page describes the supported subject matter without presenting the thumbnail as a screenshot of a named client's system.</p>\n<p>Further reading: <a href=\"https://cyberpanel.net/KnowledgeBase/home/deploy-a-wordpress-on-cyberpanel/\" rel=\"noopener noreferrer\" target=\"_blank\">CyberPanel's WordPress deployment guide</a> and <a href=\"https://cyberpanel.net/KnowledgeBase/home/website-file-manager/\" rel=\"noopener noreferrer\" target=\"_blank\">website file manager documentation</a>.</p>",
+        "sort_order": 145
+      },
+      "source": {
+        "source_number": 45,
+        "source_title": "Upload Website Files / Install WordPress on CyberPanel",
+        "source_description": "Showed the complete process of uploading custom website files and installing WordPress via CyberPanel's interface, including database creation and file manager usage.",
+        "pdf_pages": [
+          11
+        ],
+        "index_rows": [
+          29
+        ],
+        "original_evidence_url": "https://youtu.be/UYpGf4Vu0KM",
+        "normalized_evidence_url": "https://www.youtube.com/watch?v=UYpGf4Vu0KM",
+        "observed_video_title": "Upload website files or Install wordpress on the cyberpanel",
+        "shared_evidence_project_numbers": [
+          45
+        ],
+        "review_flags": [
+          "no_named_client",
+          "independent_project_identity_unverified"
+        ],
+        "full_video_content_reviewed": false
+      }
+    },
+    {
+      "attributes": {
+        "title": "Cloudflare Email DNS Records for cPanel Webmail",
+        "slug": "arif-cloud-mx-spf-dmarc-dkim-records-configuration-under-cloudflare-for-cpanel-webmail",
+        "client": null,
+        "category": "cloud",
+        "tags": [
+          "Technical portfolio",
+          "Email DNS Records",
+          "Cloudflare DNS",
+          "cPanel Email",
+          "SPF/DKIM/DMARC Configuration"
+        ],
+        "project_type": "technical_demonstration",
+        "attribution": "Md Arif Billah",
+        "website_url": null,
+        "video_url": "https://www.youtube.com/watch?v=UaTQC4PzrC0",
+        "repository_url": null,
+        "evidence_status": "available_video_title_matches_topic",
+        "evidence_notes": "Original PDF reference: https://www.youtube.com/watch?v=UaTQC4PzrC0\nTitle matches the documented subject; this is not a full review of the video or verification of client delivery.\nPrepare an attributed technical demonstration entry; use restrained factual copy and the matching video link. Replace the unsupported maximum-deliverability claim with neutral configuration wording.",
+        "evidence_checked_at": "2026-11-16 10:59:34",
+        "source_key": "arif-cloud-portfolio-046",
+        "description": "Understand MX, SPF, DKIM and DMARC record configuration in Cloudflare DNS for cPanel webmail, with an attributed video demonstration.",
+        "body": "<h2>Email DNS for a cPanel-hosted domain</h2>\n<p>This technical demonstration by Md Arif Billah focuses on configuring email-related DNS records in Cloudflare for a domain using cPanel webmail. It covers MX, SPF, DKIM and DMARC as distinct parts of a domain's email setup. The purpose is to make the role of each record clearer and show the relationship between the DNS provider and the hosting system that supplies email settings.</p>\n<h2>The records in this overview</h2>\n<ul><li>MX records identify the mail service that receives email for the domain.</li><li>SPF records describe the systems authorized to send email for a domain.</li><li>DKIM publishes information used to verify email signatures.</li><li>DMARC communicates an authentication policy and can support reporting about email using the domain.</li></ul>\n<p>These records are related, but they do not replace one another. The correct values depend on the actual mail service and its configuration. Values shown in a demonstration should not be treated as settings for an unrelated domain. Review the records supplied by the hosting or email provider when applying the workflow.</p>\n<h2>Scope and demonstration reference</h2>\n<p>The linked video is specifically about Cloudflare DNS records for cPanel webmail. A separate portfolio overview also refers to this shared video; that does not establish an additional full mail-server deployment. Email authentication configuration is one part of operating email and does not guarantee inbox placement or a particular delivery rate.</p>\n<p>Further reading: <a href=\"https://developers.cloudflare.com/dns/manage-dns-records/reference/dns-record-types/\" rel=\"noopener noreferrer\" target=\"_blank\">Cloudflare's DNS record type reference</a>.</p>",
+        "sort_order": 146
+      },
+      "source": {
+        "source_number": 46,
+        "source_title": "MX, SPF, DMARC & DKIM Records Configuration under Cloudflare for cPanel Webmail",
+        "source_description": "Configured all essential email DNS records (MX, SPF, DMARC, DKIM) through Cloudflare DNS for a domain using cPanel webmail, ensuring maximum email deliverability and anti-spoofing protection.",
+        "pdf_pages": [
+          11
+        ],
+        "index_rows": [
+          30
+        ],
+        "original_evidence_url": "https://www.youtube.com/watch?v=UaTQC4PzrC0",
+        "normalized_evidence_url": "https://www.youtube.com/watch?v=UaTQC4PzrC0",
+        "observed_video_title": "How to add MX, SPF, DMRC and DKMI recoreds under cloudflare for cPanel web mail.",
+        "shared_evidence_project_numbers": [
+          5,
+          46
+        ],
+        "review_flags": [
+          "no_named_client",
+          "independent_project_identity_unverified",
+          "maximum_deliverability_claim_not_independently_verified",
+          "evidence_reused_across_topics"
+        ],
+        "full_video_content_reviewed": false
+      }
+    },
+    {
+      "attributes": {
+        "title": "Raw HTML Deployment on CyberPanel",
+        "slug": "arif-cloud-add-raw-html-on-cyberpanel",
+        "client": null,
+        "category": "cloud",
+        "tags": [
+          "Technical portfolio",
+          "CyberPanel Configuration",
+          "HTML Deployment",
+          "Web Hosting",
+          "OpenLiteSpeed"
+        ],
+        "project_type": "technical_demonstration",
+        "attribution": "Md Arif Billah",
+        "website_url": null,
+        "video_url": "https://youtu.be/7qDroBeHYn8",
+        "repository_url": null,
+        "evidence_status": "available_video_title_matches_topic",
+        "evidence_notes": "Original PDF reference: https://youtu.be/7qDroBeHYn8\nTitle matches the documented subject; this is not a full review of the video or verification of client delivery.\nPrepare an attributed technical demonstration entry; use restrained factual copy and the matching video link.",
+        "evidence_checked_at": "2026-11-16 10:59:34",
+        "source_key": "arif-cloud-portfolio-047",
+        "description": "Explore a raw HTML deployment workflow on CyberPanel, covering website files, document roots, permissions and OpenLiteSpeed virtual host settings.",
+        "body": "<h2>Hosting a static HTML website</h2>\n<p>This technical demonstration by Md Arif Billah covers deploying a raw HTML website on CyberPanel without installing a content management system. The documented scope includes placing website files in the intended document root, reviewing file permissions and working with the OpenLiteSpeed virtual host configuration associated with the website. It illustrates the relationship between static site files and the hosting environment that serves them.</p>\n<h2>What to check during deployment</h2>\n<ul><li>The intended website and domain are selected in the hosting panel.</li><li>The HTML entry file and supporting styles, scripts and images are placed in the appropriate website folder.</li><li>Relative file references still point to the correct resources after the upload.</li><li>File access and virtual host settings allow the expected website to be served.</li></ul>\n<p>Static deployment has a different shape from a WordPress installation. The website can consist of ordinary files instead of an application backed by a content database. That makes file organization and resource paths especially visible when checking a deployment: a page may open while a missing stylesheet or image still needs attention.</p>\n<h2>Using this portfolio reference</h2>\n<p>Use the linked demonstration to understand the workflow, then compare it with the actual website folders and domain configuration in your own hosting account. This page describes a technical demonstration and its stated scope; it does not claim a named client launch, availability guarantee or measured hosting performance.</p>\n<p>Further reading: <a href=\"https://cyberpanel.net/KnowledgeBase/home/website-file-manager/\" rel=\"noopener noreferrer\" target=\"_blank\">CyberPanel website file manager documentation</a>.</p>",
+        "sort_order": 147
+      },
+      "source": {
+        "source_number": 47,
+        "source_title": "Add Raw HTML on CyberPanel",
+        "source_description": "Demonstrated deploying a raw HTML website directly on CyberPanel without a CMS, covering document root placement, file permissions, and OpenLiteSpeed virtual host configuration.",
+        "pdf_pages": [
+          11
+        ],
+        "index_rows": [
+          31
+        ],
+        "original_evidence_url": "https://youtu.be/7qDroBeHYn8",
+        "normalized_evidence_url": "https://www.youtube.com/watch?v=7qDroBeHYn8",
+        "observed_video_title": "How to add raw html on cyberpanel",
+        "shared_evidence_project_numbers": [
+          47
+        ],
+        "review_flags": [
+          "no_named_client",
+          "independent_project_identity_unverified"
+        ],
+        "full_video_content_reviewed": false
+      }
+    }
+  ]
+}

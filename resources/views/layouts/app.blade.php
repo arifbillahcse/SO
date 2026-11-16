@@ -3,6 +3,15 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script>
+    try {
+      if (localStorage.getItem('softorio-theme') === 'light') {
+        document.documentElement.dataset.theme = 'light';
+      }
+    } catch (error) {
+      // The site remains usable when browser storage is unavailable.
+    }
+  </script>
   <meta name="csrf-token" content="{{ csrf_token() }}" />
   @php
     $sectionValue = fn (string $name) => $__env->hasSection($name) ? $__env->yieldContent($name) : null;

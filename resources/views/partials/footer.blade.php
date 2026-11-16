@@ -20,6 +20,7 @@
         <li><a href="{{ route('seo') }}">SEO Optimization</a></li>
         <li><a href="{{ route('manage-cloud') }}">Manage Cloud</a></li>
         <li><a href="{{ route('automation') }}">Automation</a></li>
+        <li><a href="{{ route('diagnostic-management-system') }}">Diagnostic Management System</a></li>
       </ul>
     </div>
     <div class="footer-col">

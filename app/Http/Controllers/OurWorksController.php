@@ -18,7 +18,10 @@ class OurWorksController extends Controller
     {
         return view('pages.portfolio-item-show', [
             'portfolioItem' => $portfolioItem,
-            'relatedItems' => PortfolioItem::where('id', '!=', $portfolioItem->id)->orderBy('sort_order')->limit(3)->get(),
+            'relatedItems' => PortfolioItem::where('id', '!=', $portfolioItem->id)
+                ->where('project_type', $portfolioItem->project_type)
+                ->orderByRaw('CASE WHEN category = ? THEN 0 ELSE 1 END', [$portfolioItem->category])
+                ->orderBy('sort_order')->limit(3)->get(),
         ]);
     }
 }

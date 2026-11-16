@@ -27,10 +27,12 @@ return [
     // Every public static route. A page_seos row is kept for each one.
     'pages' => [
         'home' => ['label' => 'Home', 'type' => 'page', 'view' => 'pages.home', 'schema' => 'WebPage'],
+        'services' => ['label' => 'Services', 'type' => 'listing', 'view' => 'pages.services.index', 'schema' => 'CollectionPage'],
         'web-development' => ['label' => 'Web Development', 'type' => 'service', 'view' => 'pages.services.web-development', 'schema' => 'Service'],
         'seo' => ['label' => 'SEO Services', 'type' => 'service', 'view' => 'pages.services.seo', 'schema' => 'Service'],
         'manage-cloud' => ['label' => 'Managed Cloud Hosting', 'type' => 'service', 'view' => 'pages.services.manage-cloud', 'schema' => 'Service'],
         'automation' => ['label' => 'Business Automation', 'type' => 'service', 'view' => 'pages.services.automation', 'schema' => 'Service'],
+        'diagnostic-management-system' => ['label' => 'Diagnostic Management System', 'type' => 'service', 'view' => 'pages.services.diagnostic-management-system', 'schema' => 'Service'],
         'ecommerce-solution' => ['label' => 'eCommerce Solution', 'type' => 'solution', 'view' => 'pages.solutions.ecommerce-solution', 'schema' => 'Service'],
         'cloud-solution' => ['label' => 'Cloud Solution', 'type' => 'solution', 'view' => 'pages.solutions.cloud-solution', 'schema' => 'Service'],
         'automation-solution' => ['label' => 'Automation Solution', 'type' => 'solution', 'view' => 'pages.solutions.automation-solution', 'schema' => 'Service'],

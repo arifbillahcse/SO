@@ -45,7 +45,7 @@
                 <div style="font-size:0.65rem;color:var(--text-muted)">Saved/Week</div>
               </div>
               <div style="background:var(--dark-4);border:1px solid var(--border);border-radius:8px;padding:10px;text-align:center">
-                <div style="font-size:1.2rem;font-weight:800;color:#22c55e">0</div>
+                <div style="font-size:1.2rem;font-weight:800;color:var(--success)">0</div>
                 <div style="font-size:0.65rem;color:var(--text-muted)">Manual Tasks</div>
               </div>
             </div>

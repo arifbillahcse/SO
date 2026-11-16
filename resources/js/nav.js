@@ -4,6 +4,28 @@
    this file only handles behavior.)
 ============================================ */
 document.addEventListener('DOMContentLoaded', () => {
+  const themeToggle = document.getElementById('themeToggle');
+  if (themeToggle) {
+    const updateThemeToggle = () => {
+      const isLight = document.documentElement.dataset.theme === 'light';
+      const label = isLight ? 'Switch to dark mode' : 'Switch to light mode';
+      themeToggle.setAttribute('aria-label', label);
+      themeToggle.querySelector('.theme-toggle-label').textContent = isLight ? 'Dark mode' : 'Light mode';
+    };
+    updateThemeToggle();
+    themeToggle.hidden = false;
+    themeToggle.addEventListener('click', () => {
+      const theme = document.documentElement.dataset.theme === 'light' ? 'dark' : 'light';
+      document.documentElement.dataset.theme = theme;
+      try {
+        localStorage.setItem('softorio-theme', theme);
+      } catch (error) {
+        // Switching still works for the current page when storage is unavailable.
+      }
+      updateThemeToggle();
+    });
+  }
+
   const navbar = document.getElementById('navbar');
   if (!navbar) return;
 
@@ -29,6 +51,7 @@ document.addEventListener('DOMContentLoaded', () => {
   document.querySelectorAll('.nav-dropdown').forEach(dd => {
     const menu = dd.querySelector('.dropdown-menu');
     if (!menu) return;
+    const submenuToggle = dd.querySelector('.services-menu-toggle');
     let timer;
 
     // Desktop hover
@@ -36,15 +59,31 @@ document.addEventListener('DOMContentLoaded', () => {
       if (window.innerWidth <= 768) return;
       clearTimeout(timer);
       menu.classList.add('show');
+      if (submenuToggle) submenuToggle.setAttribute('aria-expanded', 'true');
     });
     dd.addEventListener('mouseleave', () => {
       if (window.innerWidth <= 768) return;
-      timer = setTimeout(() => menu.classList.remove('show'), 150);
+      timer = setTimeout(() => {
+        menu.classList.remove('show');
+        if (submenuToggle) submenuToggle.setAttribute('aria-expanded', 'false');
+      }, 150);
     });
 
     // Mobile click
     const trigger = dd.querySelector('.nav-item');
-    if (trigger) {
+    if (submenuToggle) {
+      submenuToggle.addEventListener('click', () => {
+        const open = menu.classList.toggle('show');
+        submenuToggle.setAttribute('aria-expanded', String(open));
+      });
+      dd.addEventListener('keydown', e => {
+        if (e.key === 'Escape') {
+          menu.classList.remove('show');
+          submenuToggle.setAttribute('aria-expanded', 'false');
+          submenuToggle.focus();
+        }
+      });
+    } else if (trigger) {
       trigger.addEventListener('click', e => {
         if (window.innerWidth > 768) return;
         e.preventDefault();

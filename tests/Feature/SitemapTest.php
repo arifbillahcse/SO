@@ -46,6 +46,18 @@ class SitemapTest extends TestCase
         $response->assertDontSee('/affiliate-referral<', false);
     }
 
+    public function test_diagnostic_management_service_is_accessible_and_in_the_sitemap(): void
+    {
+        $this->get('/diagnostic-management-system')
+            ->assertOk()
+            ->assertSee('Diagnostic Management')
+            ->assertSee('Software under development');
+
+        $this->get('/sitemap.xml')
+            ->assertOk()
+            ->assertSee('/diagnostic-management-system', false);
+    }
+
     public function test_robots_txt_points_to_the_sitemap(): void
     {
         // public/robots.txt is served directly by the webserver in

@@ -1,0 +1,501 @@
+{
+  "projects": [
+    {
+      "slug": "verde-glow-com",
+      "website_url": "https://www.verde-glow.com/",
+      "thumbnail_path": "portfolio/covers/verde-glow-com.jpg",
+      "kind": "cover",
+      "captured_at": null
+    },
+    {
+      "slug": "upcmartbd-com",
+      "website_url": "https://www.upcmartbd.com/",
+      "thumbnail_path": "portfolio/screenshots/upcmartbd-com.jpg",
+      "kind": "screenshot",
+      "captured_at": "2026-11-16"
+    },
+    {
+      "slug": "aramstorebd-com",
+      "website_url": "https://www.aramstorebd.com/",
+      "thumbnail_path": "portfolio/covers/aramstorebd-com.jpg",
+      "kind": "cover",
+      "captured_at": null
+    },
+    {
+      "slug": "kcfashionbd-com",
+      "website_url": "https://www.kcfashionbd.com/",
+      "thumbnail_path": "portfolio/covers/kcfashionbd-com.jpg",
+      "kind": "cover",
+      "captured_at": null
+    },
+    {
+      "slug": "helloruap-com",
+      "website_url": "https://helloruap.com/",
+      "thumbnail_path": "portfolio/covers/helloruap-com.jpg",
+      "kind": "cover",
+      "captured_at": null
+    },
+    {
+      "slug": "chemsyte-com-bd",
+      "website_url": "http://chemsyte.com.bd/",
+      "thumbnail_path": "portfolio/covers/chemsyte-com-bd.jpg",
+      "kind": "cover",
+      "captured_at": null
+    },
+    {
+      "slug": "trenzbd-com",
+      "website_url": "https://www.trenzbd.com/",
+      "thumbnail_path": "portfolio/covers/trenzbd-com.jpg",
+      "kind": "cover",
+      "captured_at": null
+    },
+    {
+      "slug": "nebulacooling-nl",
+      "website_url": "https://nebulacooling.nl/",
+      "thumbnail_path": "portfolio/screenshots/nebulacooling-nl.jpg",
+      "kind": "screenshot",
+      "captured_at": "2026-11-16"
+    },
+    {
+      "slug": "btechj-com",
+      "website_url": "https://btechj.com/",
+      "thumbnail_path": "portfolio/covers/btechj-com.jpg",
+      "kind": "cover",
+      "captured_at": null
+    },
+    {
+      "slug": "graphicspixels-com",
+      "website_url": "https://graphicspixels.com/",
+      "thumbnail_path": "portfolio/screenshots/graphicspixels-com.jpg",
+      "kind": "screenshot",
+      "captured_at": "2026-11-16"
+    },
+    {
+      "slug": "softorio-com",
+      "website_url": "https://softorio.com",
+      "thumbnail_path": "portfolio/screenshots/softorio-com.jpg",
+      "kind": "screenshot",
+      "captured_at": "2026-11-16"
+    },
+    {
+      "slug": "arifs-work-demo2",
+      "website_url": "https://arifs.work/demo2/",
+      "thumbnail_path": "portfolio/covers/arifs-work-demo2.jpg",
+      "kind": "cover",
+      "captured_at": null
+    },
+    {
+      "slug": "arifs-work-demo12",
+      "website_url": "https://arifs.work/demo12/",
+      "thumbnail_path": "portfolio/covers/arifs-work-demo12.jpg",
+      "kind": "cover",
+      "captured_at": null
+    },
+    {
+      "slug": "prohost-sa",
+      "website_url": "https://prohost.sa/",
+      "thumbnail_path": "portfolio/screenshots/prohost-sa.jpg",
+      "kind": "screenshot",
+      "captured_at": "2026-11-16"
+    },
+    {
+      "slug": "rollergrowth-com",
+      "website_url": "https://rollergrowth.com/",
+      "thumbnail_path": "portfolio/covers/rollergrowth-com.jpg",
+      "kind": "cover",
+      "captured_at": null
+    },
+    {
+      "slug": "proactiveclassresources-com",
+      "website_url": "https://proactiveclassresources.com/",
+      "thumbnail_path": "portfolio/covers/proactiveclassresources-com.jpg",
+      "kind": "cover",
+      "captured_at": null
+    },
+    {
+      "slug": "indianroyalsschool-com",
+      "website_url": "https://indianroyalsschool.com/",
+      "thumbnail_path": "portfolio/screenshots/indianroyalsschool-com.jpg",
+      "kind": "screenshot",
+      "captured_at": "2026-11-16"
+    },
+    {
+      "slug": "bhrelocationinc-com",
+      "website_url": "https://bhrelocationinc.com/",
+      "thumbnail_path": "portfolio/screenshots/bhrelocationinc-com.jpg",
+      "kind": "screenshot",
+      "captured_at": "2026-11-16"
+    },
+    {
+      "slug": "innovatetogether-co-uk",
+      "website_url": "https://innovatetogether.co.uk/",
+      "thumbnail_path": "portfolio/covers/innovatetogether-co-uk.jpg",
+      "kind": "cover",
+      "captured_at": null
+    },
+    {
+      "slug": "cata-tax",
+      "website_url": "https://cata.tax/",
+      "thumbnail_path": "portfolio/covers/cata-tax.jpg",
+      "kind": "cover",
+      "captured_at": null
+    },
+    {
+      "slug": "arifs-work-demo3",
+      "website_url": "https://arifs.work/demo3/",
+      "thumbnail_path": "portfolio/covers/arifs-work-demo3.jpg",
+      "kind": "cover",
+      "captured_at": null
+    },
+    {
+      "slug": "arifs-work-demo20",
+      "website_url": "https://arifs.work/demo20",
+      "thumbnail_path": "portfolio/covers/arifs-work-demo20.jpg",
+      "kind": "cover",
+      "captured_at": null
+    },
+    {
+      "slug": "arifs-work-design1",
+      "website_url": "https://arifs.work/design1/",
+      "thumbnail_path": "portfolio/covers/arifs-work-design1.jpg",
+      "kind": "cover",
+      "captured_at": null
+    },
+    {
+      "slug": "landofcrete-com",
+      "website_url": "https://landofcrete.com/",
+      "thumbnail_path": "portfolio/covers/landofcrete-com.jpg",
+      "kind": "cover",
+      "captured_at": null
+    },
+    {
+      "slug": "thequranislife-net",
+      "website_url": "https://thequranislife.net/",
+      "thumbnail_path": "portfolio/screenshots/thequranislife-net.jpg",
+      "kind": "screenshot",
+      "captured_at": "2026-11-16"
+    },
+    {
+      "slug": "passifoundation-com",
+      "website_url": "https://passifoundation.com/",
+      "thumbnail_path": "portfolio/covers/passifoundation-com.jpg",
+      "kind": "cover",
+      "captured_at": null
+    },
+    {
+      "slug": "easy-hire-co",
+      "website_url": "https://easy-hire.co/",
+      "thumbnail_path": "portfolio/screenshots/easy-hire-co.jpg",
+      "kind": "screenshot",
+      "captured_at": "2026-11-16"
+    },
+    {
+      "slug": "uniqueglassdesign-com",
+      "website_url": "https://uniqueglassdesign.com/",
+      "thumbnail_path": "portfolio/covers/uniqueglassdesign-com.jpg",
+      "kind": "cover",
+      "captured_at": null
+    },
+    {
+      "slug": "panteragolf-com",
+      "website_url": "https://panteragolf.com/",
+      "thumbnail_path": "portfolio/screenshots/panteragolf-com.jpg",
+      "kind": "screenshot",
+      "captured_at": "2026-11-16"
+    },
+    {
+      "slug": "mw-grp-com",
+      "website_url": "https://mw-grp.com",
+      "thumbnail_path": "portfolio/covers/mw-grp-com.jpg",
+      "kind": "cover",
+      "captured_at": null
+    },
+    {
+      "slug": "larespetsitting-com",
+      "website_url": "https://larespetsitting.com/",
+      "thumbnail_path": "portfolio/screenshots/larespetsitting-com.jpg",
+      "kind": "screenshot",
+      "captured_at": "2026-11-16"
+    },
+    {
+      "slug": "i-arbitrate-com",
+      "website_url": "https://i-arbitrate.com/",
+      "thumbnail_path": "portfolio/covers/i-arbitrate-com.jpg",
+      "kind": "cover",
+      "captured_at": null
+    },
+    {
+      "slug": "facialbeauty-com",
+      "website_url": "https://facialbeauty.com/",
+      "thumbnail_path": "portfolio/screenshots/facialbeauty-com.jpg",
+      "kind": "screenshot",
+      "captured_at": "2026-11-16"
+    },
+    {
+      "slug": "digitalgrowr-com",
+      "website_url": "http://digitalgrowr.com/",
+      "thumbnail_path": "portfolio/covers/digitalgrowr-com.jpg",
+      "kind": "cover",
+      "captured_at": null
+    },
+    {
+      "slug": "weblitical-com",
+      "website_url": "https://weblitical.com/",
+      "thumbnail_path": "portfolio/covers/weblitical-com.jpg",
+      "kind": "cover",
+      "captured_at": null
+    },
+    {
+      "slug": "posticy-com",
+      "website_url": "https://posticy.com/",
+      "thumbnail_path": "portfolio/screenshots/posticy-com.jpg",
+      "kind": "screenshot",
+      "captured_at": "2026-11-16"
+    },
+    {
+      "slug": "phototouchenhance-com",
+      "website_url": "https://phototouchenhance.com/",
+      "thumbnail_path": "portfolio/covers/phototouchenhance-com.jpg",
+      "kind": "cover",
+      "captured_at": null
+    },
+    {
+      "slug": "sarionenasfoodhub-com",
+      "website_url": "https://sarionenasfoodhub.com/",
+      "thumbnail_path": "portfolio/covers/sarionenasfoodhub-com.jpg",
+      "kind": "cover",
+      "captured_at": null
+    },
+    {
+      "slug": "iwhatschat-com",
+      "website_url": "https://iwhatschat.com/",
+      "thumbnail_path": "portfolio/covers/iwhatschat-com.jpg",
+      "kind": "cover",
+      "captured_at": null
+    },
+    {
+      "slug": "nahidrazon-com",
+      "website_url": "http://nahidrazon.com/",
+      "thumbnail_path": "portfolio/screenshots/nahidrazon-com.jpg",
+      "kind": "screenshot",
+      "captured_at": "2026-11-16"
+    },
+    {
+      "slug": "orange-circle-com",
+      "website_url": "https://orange-circle.com",
+      "thumbnail_path": "portfolio/covers/orange-circle-com.jpg",
+      "kind": "cover",
+      "captured_at": null
+    },
+    {
+      "slug": "itslegitnotary-com-services",
+      "website_url": "https://itslegitnotary.com/services/",
+      "thumbnail_path": "portfolio/covers/itslegitnotary-com-services.jpg",
+      "kind": "cover",
+      "captured_at": null
+    },
+    {
+      "slug": "arifs-work-design4",
+      "website_url": "https://arifs.work/design4/",
+      "thumbnail_path": "portfolio/covers/arifs-work-design4.jpg",
+      "kind": "cover",
+      "captured_at": null
+    },
+    {
+      "slug": "wannasauna-me",
+      "website_url": "https://wannasauna.me/",
+      "thumbnail_path": "portfolio/covers/wannasauna-me.jpg",
+      "kind": "cover",
+      "captured_at": null
+    },
+    {
+      "slug": "lightsideup-com",
+      "website_url": "https://lightsideup.com/",
+      "thumbnail_path": "portfolio/covers/lightsideup-com.jpg",
+      "kind": "cover",
+      "captured_at": null
+    },
+    {
+      "slug": "institutosantiagoaranegui-com",
+      "website_url": "https://institutosantiagoaranegui.com/",
+      "thumbnail_path": "portfolio/covers/institutosantiagoaranegui-com.jpg",
+      "kind": "cover",
+      "captured_at": null
+    },
+    {
+      "slug": "impactmacrs-org",
+      "website_url": "https://www.impactmacrs.org/",
+      "thumbnail_path": "portfolio/covers/impactmacrs-org.jpg",
+      "kind": "cover",
+      "captured_at": null
+    },
+    {
+      "slug": "matthiasjakobbecker-com",
+      "website_url": "https://matthiasjakobbecker.com/",
+      "thumbnail_path": "portfolio/covers/matthiasjakobbecker-com.jpg",
+      "kind": "cover",
+      "captured_at": null
+    },
+    {
+      "slug": "arifs-work-demo10",
+      "website_url": "https://arifs.work/demo10/",
+      "thumbnail_path": "portfolio/covers/arifs-work-demo10.jpg",
+      "kind": "cover",
+      "captured_at": null
+    },
+    {
+      "slug": "arifs-work-design6",
+      "website_url": "https://arifs.work/design6/",
+      "thumbnail_path": "portfolio/covers/arifs-work-design6.jpg",
+      "kind": "cover",
+      "captured_at": null
+    },
+    {
+      "slug": "uniflexlimited-com-bd",
+      "website_url": "https://uniflexlimited.com.bd/",
+      "thumbnail_path": "portfolio/covers/uniflexlimited-com-bd.jpg",
+      "kind": "cover",
+      "captured_at": null
+    },
+    {
+      "slug": "visitsardinia-vip",
+      "website_url": "https://www.visitsardinia.vip/",
+      "thumbnail_path": "portfolio/covers/visitsardinia-vip.jpg",
+      "kind": "cover",
+      "captured_at": null
+    },
+    {
+      "slug": "samskydd-se",
+      "website_url": "https://www.samskydd.se/",
+      "thumbnail_path": "portfolio/screenshots/samskydd-se.jpg",
+      "kind": "screenshot",
+      "captured_at": "2026-11-16"
+    },
+    {
+      "slug": "iscandari-com",
+      "website_url": "https://iscandari.com/",
+      "thumbnail_path": "portfolio/covers/iscandari-com.jpg",
+      "kind": "cover",
+      "captured_at": null
+    },
+    {
+      "slug": "arifs-work-design21",
+      "website_url": "https://arifs.work/design21/",
+      "thumbnail_path": "portfolio/covers/arifs-work-design21.jpg",
+      "kind": "cover",
+      "captured_at": null
+    },
+    {
+      "slug": "voltrelocation-com",
+      "website_url": "https://voltrelocation.com/",
+      "thumbnail_path": "portfolio/covers/voltrelocation-com.jpg",
+      "kind": "cover",
+      "captured_at": null
+    },
+    {
+      "slug": "kitchenslogistic-com",
+      "website_url": "https://kitchenslogistic.com/",
+      "thumbnail_path": "portfolio/covers/kitchenslogistic-com.jpg",
+      "kind": "cover",
+      "captured_at": null
+    },
+    {
+      "slug": "onetoonehealthcarecompanion-com",
+      "website_url": "https://onetoonehealthcarecompanion.com/",
+      "thumbnail_path": "portfolio/covers/onetoonehealthcarecompanion-com.jpg",
+      "kind": "cover",
+      "captured_at": null
+    },
+    {
+      "slug": "medinovamalibagh-com",
+      "website_url": "https://medinovamalibagh.com/",
+      "thumbnail_path": "portfolio/screenshots/medinovamalibagh-com.jpg",
+      "kind": "screenshot",
+      "captured_at": "2026-11-16"
+    },
+    {
+      "slug": "arifs-work-design5",
+      "website_url": "https://arifs.work/design5/",
+      "thumbnail_path": "portfolio/covers/arifs-work-design5.jpg",
+      "kind": "cover",
+      "captured_at": null
+    },
+    {
+      "slug": "jenarthurenterprise-com",
+      "website_url": "https://jenarthurenterprise.com/",
+      "thumbnail_path": "portfolio/covers/jenarthurenterprise-com.jpg",
+      "kind": "cover",
+      "captured_at": null
+    },
+    {
+      "slug": "finabee-com",
+      "website_url": "https://finabee.com/",
+      "thumbnail_path": "portfolio/covers/finabee-com.jpg",
+      "kind": "cover",
+      "captured_at": null
+    },
+    {
+      "slug": "thefinancialstar-com",
+      "website_url": "https://thefinancialstar.com/",
+      "thumbnail_path": "portfolio/screenshots/thefinancialstar-com.jpg",
+      "kind": "screenshot",
+      "captured_at": "2026-11-16"
+    },
+    {
+      "slug": "svccn-net-bd",
+      "website_url": "https://svccn.net.bd/",
+      "thumbnail_path": "portfolio/covers/svccn-net-bd.jpg",
+      "kind": "cover",
+      "captured_at": null
+    },
+    {
+      "slug": "dongpou-com",
+      "website_url": "https://www.dongpou.com/",
+      "thumbnail_path": "portfolio/covers/dongpou-com.jpg",
+      "kind": "cover",
+      "captured_at": null
+    },
+    {
+      "slug": "oto-otowellbeing-com-our-range",
+      "website_url": "https://oto.otowellbeing.com/our-range/",
+      "thumbnail_path": "portfolio/covers/oto-otowellbeing-com-our-range.jpg",
+      "kind": "cover",
+      "captured_at": null
+    },
+    {
+      "slug": "arifs-work-demo1",
+      "website_url": "https://arifs.work/demo1/",
+      "thumbnail_path": "portfolio/covers/arifs-work-demo1.jpg",
+      "kind": "cover",
+      "captured_at": null
+    },
+    {
+      "slug": "arifs-work-demo5",
+      "website_url": "https://arifs.work/demo5/",
+      "thumbnail_path": "portfolio/covers/arifs-work-demo5.jpg",
+      "kind": "cover",
+      "captured_at": null
+    },
+    {
+      "slug": "arifs-work-demo7",
+      "website_url": "https://arifs.work/demo7/",
+      "thumbnail_path": "portfolio/covers/arifs-work-demo7.jpg",
+      "kind": "cover",
+      "captured_at": null
+    },
+    {
+      "slug": "clientes-inallweb-com",
+      "website_url": "https://clientes.inallweb.com/",
+      "thumbnail_path": "portfolio/screenshots/clientes-inallweb-com.jpg",
+      "kind": "screenshot",
+      "captured_at": "2026-11-16"
+    },
+    {
+      "slug": "my-hostorio-com",
+      "website_url": "http://my.hostorio.com/",
+      "thumbnail_path": "portfolio/screenshots/my-hostorio-com.jpg",
+      "kind": "screenshot",
+      "captured_at": "2026-11-16"
+    }
+  ]
+}

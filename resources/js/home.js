@@ -97,6 +97,7 @@ document.addEventListener('DOMContentLoaded', () => {
     function buildDots() {
       if (!dotsWrap) return;
       dotsWrap.innerHTML = '';
+      if (pageCount <= 1) return;
       for (let i = 0; i < pageCount; i++) {
         const dot = document.createElement('button');
         dot.className = 'testi-dot' + (i === current ? ' active' : '');
@@ -112,12 +113,14 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function updateButtons() {
+      if (prevBtn) prevBtn.hidden = pageCount <= 1;
+      if (nextBtn) nextBtn.hidden = pageCount <= 1;
       if (prevBtn) prevBtn.disabled = current === 0;
       if (nextBtn) nextBtn.disabled = current === pageCount - 1;
     }
 
     function cardOffset(card) {
-      return card.getBoundingClientRect().left - track.getBoundingClientRect().left + viewport.scrollLeft;
+      return card.getBoundingClientRect().left - track.getBoundingClientRect().left;
     }
 
     function goTo(index) {
@@ -135,7 +138,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function resetAuto() {
       clearInterval(autoTimer);
-      autoTimer = setInterval(() => goTo((current + 1) % pageCount), 5000);
+      if (pageCount > 1 && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        autoTimer = setInterval(() => goTo((current + 1) % pageCount), 5000);
+      }
     }
 
     // Detect manual scroll/swipe and sync dots/buttons to nearest page
@@ -164,6 +169,7 @@ document.addEventListener('DOMContentLoaded', () => {
       current   = Math.min(current, pageCount - 1);
       buildDots();
       updateButtons();
+      goTo(current);
     });
 
     buildDots();

@@ -30,11 +30,11 @@
               </div>
               <div style="background:var(--dark-4);border:1px solid var(--border);border-radius:8px;padding:12px">
                 <div style="font-size:0.65rem;color:var(--text-muted);font-weight:600;margin-bottom:4px">LOAD TIME</div>
-                <div style="font-size:1rem;font-weight:800;color:#22c55e">0.8s</div>
+                <div style="font-size:1rem;font-weight:800;color:var(--success)">0.8s</div>
               </div>
               <div style="background:var(--dark-4);border:1px solid var(--border);border-radius:8px;padding:12px">
                 <div style="font-size:0.65rem;color:var(--text-muted);font-weight:600;margin-bottom:4px">SSL</div>
-                <div style="font-size:1rem;font-weight:800;color:#22c55e">Active</div>
+                <div style="font-size:1rem;font-weight:800;color:var(--success)">Active</div>
               </div>
               <div style="background:var(--dark-4);border:1px solid var(--border);border-radius:8px;padding:12px">
                 <div style="font-size:0.65rem;color:var(--text-muted);font-weight:600;margin-bottom:4px">BACKUP</div>

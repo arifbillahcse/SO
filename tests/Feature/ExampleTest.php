@@ -2,6 +2,8 @@
 
 namespace Tests\Feature;
 
+use App\Models\Testimonial;
+use Database\Seeders\ServiceCatalogueSeeder;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestCase;
 
@@ -22,5 +24,46 @@ class ExampleTest extends TestCase
         $response = $this->get('/');
 
         $response->assertStatus(200);
+    }
+
+    public function test_homepage_shows_labeled_examples_when_no_featured_testimonials_exist(): void
+    {
+        $this->get('/')
+            ->assertOk()
+            ->assertSee('Example preview')
+            ->assertSee('Placeholder content')
+            ->assertDontSee('From 120+ client reviews');
+    }
+
+    public function test_homepage_shows_featured_testimonials_instead_of_examples(): void
+    {
+        Testimonial::create([
+            'name' => 'Test Client',
+            'role' => 'Owner',
+            'avatar_initial' => 'T',
+            'stars' => 5,
+            'text' => 'A review supplied for this test.',
+            'featured' => true,
+            'sort_order' => 1,
+        ]);
+
+        $this->get('/')
+            ->assertOk()
+            ->assertSee('A review supplied for this test.')
+            ->assertDontSee('Example preview');
+    }
+
+    public function test_services_page_lists_and_links_to_every_service(): void
+    {
+        $this->seed(ServiceCatalogueSeeder::class);
+        $response = $this->get('/services')->assertOk();
+
+        foreach (['web-development', 'seo', 'manage-cloud', 'automation', 'diagnostic-management-system'] as $service) {
+            $response->assertSee(route($service), false);
+        }
+
+        $response->assertSee('Software under development');
+        $this->get('/')->assertSee('href="'.route('services').'"', false);
+        $this->get('/sitemap.xml')->assertSee('/services', false);
     }
 }

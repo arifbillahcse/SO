@@ -8,16 +8,19 @@
 
       <a href="{{ route('home') }}" class="nav-item{{ request()->routeIs('home') ? ' active' : '' }}">Home</a>
 
-      <div class="nav-dropdown">
-        <a href="#" class="nav-item has-dropdown{{ request()->routeIs('web-development', 'seo', 'manage-cloud', 'automation') ? ' active' : '' }}">
-          Services
+      <div class="nav-dropdown services-dropdown">
+        <div class="services-nav-heading">
+        <a href="{{ route('services') }}" class="nav-item{{ request()->routeIs('services', 'web-development', 'seo', 'manage-cloud', 'automation', 'diagnostic-management-system') ? ' active' : '' }}">Services</a>
+        <button type="button" class="services-menu-toggle" aria-label="Show services submenu" aria-expanded="false" aria-controls="servicesMenu">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
-        </a>
-        <div class="dropdown-menu">
+        </button>
+        </div>
+        <div class="dropdown-menu" id="servicesMenu">
           <a href="{{ route('web-development') }}" class="dropdown-item{{ request()->routeIs('web-development') ? ' active' : '' }}"><span class="d-icon">&#9001;</span> Website Development</a>
           <a href="{{ route('seo') }}" class="dropdown-item{{ request()->routeIs('seo') ? ' active' : '' }}"><span class="d-icon">&#128269;</span> SEO Optimization</a>
           <a href="{{ route('manage-cloud') }}" class="dropdown-item{{ request()->routeIs('manage-cloud') ? ' active' : '' }}"><span class="d-icon">&#9729;</span> Manage Cloud</a>
           <a href="{{ route('automation') }}" class="dropdown-item{{ request()->routeIs('automation') ? ' active' : '' }}"><span class="d-icon">&#9881;</span> Automation</a>
+          <a href="{{ route('diagnostic-management-system') }}" class="dropdown-item{{ request()->routeIs('diagnostic-management-system') ? ' active' : '' }}"><span class="d-icon">&#10010;</span> Diagnostic Management</a>
         </div>
       </div>
 
@@ -50,6 +53,11 @@
 
     </nav>
     <div class="nav-actions">
+      <button type="button" class="theme-toggle" id="themeToggle" aria-label="Switch to light mode" hidden>
+        <svg class="theme-icon-sun" aria-hidden="true" width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M4.93 4.93l1.41 1.41m11.32 11.32 1.41 1.41M2 12h2m16 0h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+        <svg class="theme-icon-moon" aria-hidden="true" width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20.5 14.5A8.5 8.5 0 0 1 9.5 3.5a8.5 8.5 0 1 0 11 11Z"/></svg>
+        <span class="theme-toggle-label">Light mode</span>
+      </button>
       <a href="{{ route('home') }}#contact" class="btn btn-primary">Get in Touch</a>
       <button class="hamburger" id="hamburger" aria-label="Menu">
         <span></span><span></span><span></span>

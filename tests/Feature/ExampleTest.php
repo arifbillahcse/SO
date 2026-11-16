@@ -26,12 +26,13 @@ class ExampleTest extends TestCase
         $response->assertStatus(200);
     }
 
-    public function test_homepage_shows_labeled_examples_when_no_featured_testimonials_exist(): void
+    public function test_homepage_hides_testimonials_when_none_are_published(): void
     {
         $this->get('/')
             ->assertOk()
-            ->assertSee('Example preview')
-            ->assertSee('Placeholder content')
+            ->assertDontSee('id="testimonials"', false)
+            ->assertDontSee('Example preview')
+            ->assertDontSee('Placeholder content')
             ->assertDontSee('From 120+ client reviews');
     }
 

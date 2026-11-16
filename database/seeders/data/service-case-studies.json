@@ -1,0 +1,322 @@
+{
+  "studies": [
+    {
+      "source_key": "softorio-service-scenario-woocommerce",
+      "title": "WooCommerce Checkout Planning: An Illustrative Scenario",
+      "slug": "woocommerce-checkout-planning-scenario",
+      "tags": [
+        "WooCommerce",
+        "Website Development"
+      ],
+      "description": "An illustrative WooCommerce checkout scenario showing how store configuration, payment checks and a transparent conversion model can shape a project plan.",
+      "metrics": [
+        {
+          "value": "2,000",
+          "label": "Assumed monthly visits"
+        },
+        {
+          "value": "100 to 125",
+          "label": "Modelled monthly orders"
+        },
+        {
+          "value": "25%",
+          "label": "Illustrative order increase"
+        }
+      ],
+      "service_route": "web-development",
+      "portfolio_keys": [
+        "arif-cloud-portfolio-006",
+        "arif-cloud-portfolio-018"
+      ],
+      "focus_keyword": "WooCommerce checkout planning",
+      "secondary_keywords": [
+        "WooCommerce store setup",
+        "payment gateway integration",
+        "checkout scenario"
+      ],
+      "sections": [
+        {
+          "heading": "The scenario and its limits",
+          "paragraphs": [
+            "Consider a hypothetical small online store that wants a clearer path from product selection to payment. This is a planning example based on Softorio's WooCommerce and WordPress service topics. It is not a report about a named customer, a completed store rebuild or an observed increase in sales.",
+            "Assume the store receives 2,000 visits each month and initially converts 5% of visits into orders. Traffic is held constant so the example isolates a change in conversion. The alternative rate of 6.25% is an invented scenario input, not a forecast, benchmark or result from the linked portfolio topic."
+          ]
+        },
+        {
+          "heading": "A practical implementation approach",
+          "paragraphs": [
+            "Start by reviewing products, categories, shipping rules and payment-provider requirements. Check whether customers can understand delivery charges before paying and whether required checkout fields are relevant. Map successful payments, declined transactions, cancelled checkouts and payment notifications before agreeing implementation scope.",
+            "Build and test in a staging environment using the provider's test mode. Include mobile layouts, order emails, stock changes and administrator handover in the review. The exact provider, extensions and custom code should follow the store's requirements rather than be assumed from this example."
+          ]
+        },
+        {
+          "heading": "The illustrative calculation",
+          "paragraphs": [
+            "At the assumed baseline, 2,000 visits multiplied by 5% gives 100 monthly orders. At the alternative assumed rate, 2,000 multiplied by 6.25% gives 125 orders. The difference is 25 orders, or a 25% relative increase. The conversion rate itself increases by 1.25 percentage points. None of those changes has been measured on a customer website.",
+            "Real evaluation would require a defined conversion event, a comparable observation period, reliable analytics and enough traffic to interpret variation. Changes in product demand, marketing, prices or traffic quality could explain an apparent improvement. Avoid treating this simple arithmetic model as proof that a checkout change caused an increase."
+          ]
+        },
+        {
+          "heading": "What to measure on an actual project",
+          "paragraphs": [
+            "Agree a baseline and measurement plan before launch. Track completed purchases, payment errors and checkout abandonment where data collection is appropriate. Record what changed and compare like-for-like periods. The related portfolio entries establish topic relevance only; their presence does not validate the assumptions or outcomes in this scenario."
+          ]
+        }
+      ]
+    },
+    {
+      "source_key": "softorio-service-scenario-seo",
+      "title": "WordPress SEO Cleanup: An Illustrative Scenario",
+      "slug": "wordpress-seo-cleanup-scenario",
+      "tags": [
+        "SEO",
+        "WordPress"
+      ],
+      "description": "An illustrative WordPress SEO cleanup scenario covering page metadata, index settings, sitemaps and a clearly assumed audit workload, without ranking promises.",
+      "metrics": [
+        {
+          "value": "48",
+          "label": "Assumed audit URLs"
+        },
+        {
+          "value": "12",
+          "label": "Assumed title gaps"
+        },
+        {
+          "value": "18",
+          "label": "Assumed description gaps"
+        }
+      ],
+      "service_route": "seo",
+      "portfolio_keys": [
+        "arif-cloud-portfolio-041"
+      ],
+      "focus_keyword": "WordPress SEO cleanup",
+      "secondary_keywords": [
+        "technical SEO audit",
+        "page metadata",
+        "WordPress sitemap"
+      ],
+      "sections": [
+        {
+          "heading": "The scenario and audit assumptions",
+          "paragraphs": [
+            "Imagine a WordPress website with 48 URLs selected for an SEO review. Assume that 12 URLs have missing or unsuitable title fields and 18 have missing description fields. These are fictional audit inputs used to explain a process. They are not findings about a real customer or the linked technical portfolio entry.",
+            "The title and description counts describe fields, so a single URL can appear in both groups. Adding the counts gives 30 field issues, not necessarily 30 different affected pages. An actual audit should also distinguish empty saved fields from metadata that a theme or plugin already renders as a fallback."
+          ]
+        },
+        {
+          "heading": "Prioritizing the work",
+          "paragraphs": [
+            "Inventory the public URLs and identify the purpose of each page. Map a primary topic to service pages, supporting content and collections so that similar pages are not written as interchangeable duplicates. Review headings, internal links, canonical tags and sitemap membership alongside the visible copy.",
+            "Draft descriptive titles and summaries that match the page content. Preserve intentional noindex settings for pages that should not appear in search. Check plugin output in the rendered HTML rather than assume an admin field controls every tag. Treat thin or empty pages as a content decision instead of attempting to solve them with metadata alone."
+          ]
+        },
+        {
+          "heading": "Success criteria without invented rankings",
+          "paragraphs": [
+            "In this scenario, the implementation target is to review all 48 selected URLs and resolve the agreed title and description issues. That is a proposed work target, not a recorded completion statistic. There is no claimed movement in rankings, organic traffic, enquiries or revenue.",
+            "For a real project, record the before-and-after metadata, confirm crawl access and inspect sitemap output. Search Console and analytics can support later evaluation, but an indexable page is not automatically indexed and a complete metadata checklist does not establish a Google ranking improvement."
+          ]
+        },
+        {
+          "heading": "An evidence-based handover",
+          "paragraphs": [
+            "Provide an editable page inventory, a change log and unresolved content recommendations. Separate technical corrections from business performance measurements, and state the comparison period for any later results. The related WordPress SEO topic describes a relevant setup workflow; it is not evidence that this hypothetical audit or its assumed issue counts occurred."
+          ]
+        }
+      ]
+    },
+    {
+      "source_key": "softorio-service-scenario-cloud",
+      "title": "Cloud Hosting and Email DNS: An Illustrative Scenario",
+      "slug": "cloud-hosting-email-dns-scenario",
+      "tags": [
+        "Managed Cloud",
+        "DNS",
+        "CyberPanel"
+      ],
+      "description": "An illustrative cloud hosting and email DNS scenario covering website deployment, authentication records, backup planning and checks for a small setup.",
+      "metrics": [
+        {
+          "value": "3",
+          "label": "Assumed hosted websites"
+        },
+        {
+          "value": "4",
+          "label": "Email DNS record types"
+        },
+        {
+          "value": "7",
+          "label": "Assumed daily backup copies"
+        }
+      ],
+      "service_route": "manage-cloud",
+      "portfolio_keys": [
+        "arif-cloud-portfolio-045",
+        "arif-cloud-portfolio-046",
+        "arif-cloud-portfolio-043"
+      ],
+      "focus_keyword": "cloud hosting and email DNS",
+      "secondary_keywords": [
+        "CyberPanel deployment",
+        "Cloudflare email records",
+        "hosting backup planning"
+      ],
+      "sections": [
+        {
+          "heading": "A hypothetical hosting brief",
+          "paragraphs": [
+            "Consider a small business planning a hosting environment for three websites. It wants documented website deployment, HTTPS, email-domain configuration and a backup routine. The three-site scope and seven daily backup copies are assumptions for this example, not specifications or measured results from a customer project.",
+            "The scenario draws its topics from CyberPanel deployment, Comodo SSL and Cloudflare email DNS entries in Arif Billah's technical portfolio. Those references are useful starting points for discussing the workflow. They do not establish that a single customer deployment combined all of these tasks or achieved a particular uptime figure."
+          ]
+        },
+        {
+          "heading": "Deployment and access planning",
+          "paragraphs": [
+            "Begin with application requirements, domain ownership, access permissions and the chosen hosting provider. Prepare website records, database access and document roots. Configure HTTPS for the relevant names and check redirects and mixed content. Keep credentials separate from public project documentation.",
+            "For each website, define the deployment sequence and a rollback path. Test expected pages, forms and scheduled tasks before a DNS change. A hosting panel can simplify administration, but it does not replace the need to review permissions, updates and the operational responsibilities assigned to the website owner."
+          ]
+        },
+        {
+          "heading": "Email records and backup assumptions",
+          "paragraphs": [
+            "Review MX, SPF, DKIM and DMARC as four distinct DNS record categories used in an email-domain configuration. Their exact values come from the mail provider and the sending systems in use. Successful record publication alone does not guarantee delivery to every recipient or establish a particular inbox-placement rate.",
+            "Assume one backup copy is retained per day for seven days. Under that simplified policy, the environment holds seven daily copies once the rotation is full. This describes retention only. Storage capacity, recovery-point objectives, encryption and off-server storage still require separate decisions. A backup job should be paired with a documented restoration check."
+          ]
+        },
+        {
+          "heading": "Checks for a real deployment",
+          "paragraphs": [
+            "Verify website responses, certificate validity, DNS propagation and application mail using the actual environment. Agree monitoring, alert recipients and a maintenance schedule. No uptime percentage, migration downtime or response-time improvement is claimed here. A real case study would need monitoring records and a defined observation period before reporting those outcomes."
+          ]
+        }
+      ]
+    },
+    {
+      "source_key": "softorio-service-scenario-automation",
+      "title": "Hosting Billing Automation: An Illustrative Scenario",
+      "slug": "hosting-billing-automation-scenario",
+      "tags": [
+        "Business Automation",
+        "WHMCS"
+      ],
+      "description": "An illustrative hosting billing automation scenario using invoice volumes and handling-time assumptions to explain workflow design and modelled time savings.",
+      "metrics": [
+        {
+          "value": "50",
+          "label": "Assumed invoices per month"
+        },
+        {
+          "value": "300 to 130 min",
+          "label": "Modelled monthly handling"
+        },
+        {
+          "value": "57%",
+          "label": "Approximate illustrative saving"
+        }
+      ],
+      "service_route": "automation",
+      "portfolio_keys": [
+        "arif-cloud-portfolio-040",
+        "arif-cloud-portfolio-011"
+      ],
+      "focus_keyword": "hosting billing automation",
+      "secondary_keywords": [
+        "WHMCS workflows",
+        "invoice automation",
+        "automation time model"
+      ],
+      "sections": [
+        {
+          "heading": "The scenario and starting assumptions",
+          "paragraphs": [
+            "Imagine a small hosting operation processing 50 invoices each month. Assume the current process takes six minutes of staff handling per invoice, covering preparation, checking and follow-up. These figures are invented inputs for a workflow model. They are not time records from a Softorio customer.",
+            "The proposed scenario combines invoice scheduling, payment notifications and an exception queue. Relevant portfolio topics include WHMCS hosting automation and Bash scheduling. A related topic demonstrates an area of technical interest; it does not prove that this particular billing workflow has been delivered or that its estimated savings have been achieved."
+          ]
+        },
+        {
+          "heading": "Designing a controlled workflow",
+          "paragraphs": [
+            "Map the invoice lifecycle before selecting integrations. Identify the customer record, billing schedule, payment state and actions that require human approval. Define what happens when a payment fails, a notification is duplicated or an account needs review. Avoid making irreversible account changes solely because an unverified event was received.",
+            "Implement and test a small workflow with a clear audit trail. Use test transactions, inspect duplicate-event handling and agree who owns exception resolution. Document credentials, access permissions and the steps required to pause the automation. A handover should explain both the normal path and the cases that remain manual."
+          ]
+        },
+        {
+          "heading": "The modelled time calculation",
+          "paragraphs": [
+            "At the assumed baseline, 50 invoices multiplied by six minutes equals 300 minutes per month. For the alternative scenario, assume two minutes of review per invoice plus 30 minutes per month for exceptions. That gives 50 multiplied by two, plus 30, or 130 minutes. The modelled difference is 170 minutes, equivalent to two hours and 50 minutes.",
+            "Dividing 170 by the 300-minute baseline gives about 56.7%, rounded to 57%. This is an illustrative handling-time calculation, not a measured efficiency result, staffing reduction or financial return. It excludes development time, maintenance, subscription costs and any additional work created by integration failures."
+          ]
+        },
+        {
+          "heading": "How to evaluate a real project",
+          "paragraphs": [
+            "Measure handling time and exception volume before and after implementation using comparable invoice types. Include maintenance effort and check billing accuracy, not just speed. Replace the scenario inputs with observed records before describing savings as actual project outcomes. The correct decision may be to automate only part of the process."
+          ]
+        }
+      ]
+    },
+    {
+      "source_key": "softorio-service-scenario-diagnostic",
+      "title": "Diagnostic Center Workflow: An Illustrative Scenario",
+      "slug": "diagnostic-center-workflow-scenario",
+      "tags": [
+        "Diagnostic Management",
+        "Workflow Planning"
+      ],
+      "description": "An illustrative diagnostic center workflow scenario with clearly assumed reception volumes and handling times. The software remains under development.",
+      "metrics": [
+        {
+          "value": "60",
+          "label": "Assumed visits per day"
+        },
+        {
+          "value": "6 to 4 min",
+          "label": "Modelled desk time per visit"
+        },
+        {
+          "value": "120 min",
+          "label": "Illustrative daily time difference"
+        }
+      ],
+      "service_route": "diagnostic-management-system",
+      "portfolio_keys": [],
+      "focus_keyword": "diagnostic center workflow",
+      "secondary_keywords": [
+        "diagnostic management system",
+        "patient registration planning",
+        "laboratory workflow"
+      ],
+      "sections": [
+        {
+          "heading": "A planning example for a developing system",
+          "paragraphs": [
+            "Consider a hypothetical diagnostic center with one active branch and 60 patient visits per day. The planning brief connects registration, test orders, billing, sample handling and report release. This is an illustrative operational scenario. It does not describe a deployed customer system or claim that every planned feature is currently available.",
+            "Softorio's diagnostic management software is under development. The current service page distinguishes the planned core from optional extensions and asks centers to confirm availability. This scenario follows that distinction. It does not imply completed pharmacy, inpatient, imaging, PACS or DICOM functionality."
+          ]
+        },
+        {
+          "heading": "Defining the operational workflow",
+          "paragraphs": [
+            "Start by documenting the information collected at reception, test identifiers, prices, staff permissions and report formats. Agree which records can be edited and how corrections should be reviewed. Keep patient registration and billing responsibilities distinct from laboratory result entry and report approval.",
+            "Map the handoffs between the front desk and laboratory. The proposed workflow should identify when a sample is collected, which staff enter results and who may release a report. Confirm the actual feature status before selecting an offline or cloud setup, and plan training and support around the center's agreed scope."
+          ]
+        },
+        {
+          "heading": "An illustrative reception-time model",
+          "paragraphs": [
+            "Assume registration and billing currently require six minutes of desk handling per visit. At 60 visits, that represents 360 minutes of desk activity per day. Now assume an alternative process requires four minutes per visit, giving 240 minutes. The difference is 120 minutes, or two hours of modelled desk activity per day.",
+            "These handling times are invented assumptions. The calculation does not measure patient waiting time, laboratory turnaround, report accuracy or clinical outcomes. It also does not prove that staff can handle more visits, because arrival patterns, staffing, exceptions and other tasks may constrain the day. No medical or diagnostic-performance claim is made."
+          ]
+        },
+        {
+          "heading": "What must be confirmed before a real rollout",
+          "paragraphs": [
+            "Review current software availability, access controls, backup arrangements and the center's operating requirements. Use a limited pilot to collect real workflow observations and document unresolved issues. Replace assumed volumes and times with measured operational records before presenting a customer case study. Until then, this page remains a planning example rather than evidence of completed diagnostic software delivery."
+          ]
+        }
+      ]
+    }
+  ]
+}

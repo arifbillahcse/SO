@@ -1,0 +1,219 @@
+{
+  "articles": [
+    {
+      "source_key": "softorio-service-guide-woocommerce-launch",
+      "slug": "woocommerce-launch-checklist",
+      "title": "WooCommerce Launch Checklist: Checkout, Content and SEO",
+      "category": "eCommerce",
+      "excerpt": "Plan a WooCommerce launch with practical checks for products, mobile checkout, payment testing, search metadata and the handover your team needs.",
+      "seo_title": "WooCommerce Launch Checklist for Your Store | Softorio",
+      "focus_keyword": "WooCommerce launch checklist",
+      "secondary_keywords": [
+        "WooCommerce checkout testing",
+        "store launch planning",
+        "eCommerce SEO"
+      ],
+      "service_route": "web-development",
+      "portfolio_keys": [
+        "arif-cloud-portfolio-006",
+        "arif-cloud-portfolio-018"
+      ],
+      "sections": [
+        {
+          "heading": "Start with a launch plan your team can use",
+          "paragraphs": [
+            "A WooCommerce launch checklist should connect the storefront to the work happening behind it. A customer needs to understand the product, complete payment and receive a useful order confirmation. Your team needs to recognise that order, fulfil it and handle questions. A polished homepage alone does not establish that the whole process is ready.",
+            "This guide draws on the WooCommerce, WordPress and SEO topics in Softorio's service and portfolio collection. It is a practical planning guide, not a report of a particular customer's sales results. Agree the launch scope first: the products being sold, the locations being served, the payment providers and the person who can approve the release."
+          ]
+        },
+        {
+          "heading": "Check product information before visual details",
+          "paragraphs": [
+            "Review a small but representative selection of products, including a simple item, a product with variations and an out-of-stock item where applicable. Confirm names, prices, images, stock settings and the information customers need to choose correctly. Check that variation selections update the product information as expected.",
+            "Read the delivery and returns information from a customer's point of view. Can someone understand the delivery options before committing to an order? Identify which parts require the store owner's approval, including shipping rules and business policies. Keep that approval in the handover record so technical changes do not silently redefine the business offering."
+          ]
+        },
+        {
+          "heading": "Test checkout as a sequence, including failures",
+          "paragraphs": [
+            "Work through the journey on a phone and a desktop: choose an item, update the basket, enter delivery details and attempt payment. Test guest and account-based checkout if both are offered. Record the device, browser, product and expected outcome so a second person can repeat the check.",
+            "Use the payment provider's documented sandbox or test mode with appropriate test credentials. WooPayments documents test mode for exercising payment functions without accepting real funds; other providers have their own procedures. Do not assume that a successful test with one gateway validates another. Check a declined payment, a cancelled attempt and the order status after a successful test. Confirm which emails reach the customer and the store team."
+          ]
+        },
+        {
+          "heading": "Make search information match the actual pages",
+          "paragraphs": [
+            "Give important category and product pages descriptive titles and summaries that fit their content. Use headings that help readers understand the page rather than repeating a keyword everywhere. Check navigation links, image descriptions and the destination of promotional buttons. Include a useful description for category pages where it helps shoppers choose.",
+            "Keep staging pages separate from the intended public website. Before release, review the site's search visibility settings, canonical URLs and sitemap with the person responsible for SEO. These checks improve launch readiness; they do not promise a ranking or a particular increase in sales."
+          ]
+        },
+        {
+          "heading": "Prepare recovery and a useful handover",
+          "paragraphs": [
+            "Take a recoverable backup before the launch change and agree who can restore it. Record the plugins and integrations that matter to checkout, together with access ownership and renewal responsibilities. Keep credentials in an approved password manager rather than in an article, spreadsheet or email handover.",
+            "Give the store owner a short operating checklist: where to find new orders, how to recognise a failed payment, how to update stock and whom to contact when an integration fails. Define the immediate post-launch checks, including placing an authorised verification order using the provider's guidance and confirming the notification path. Treat launch as the beginning of monitoring, not evidence that every future transaction will succeed."
+          ]
+        },
+        {
+          "heading": "Measure what changes after launch",
+          "paragraphs": [
+            "Choose a baseline for completed orders, checkout errors and support questions before evaluating improvements. Use comparable periods and record changes to traffic sources, promotions and stock availability. A change in order volume can have several explanations. Keep any illustrative calculations separate from measured analytics, and explain what data supports each conclusion.",
+            "Softorio can discuss the website build, checkout integration and SEO work as one connected scope. Bring the product requirements, payment-provider details and current workflow to the conversation so the proposed work answers the store's actual needs."
+          ]
+        }
+      ],
+      "sources": [
+        [
+          "WooPayments test-mode documentation",
+          "https://woocommerce.com/document/woopayments/testing-and-troubleshooting/testing/"
+        ]
+      ]
+    },
+    {
+      "source_key": "softorio-service-guide-hosting-migration",
+      "slug": "website-migration-backup-dns-checklist",
+      "title": "Website Migration Checklist: Backups, DNS and Handover",
+      "category": "Cloud",
+      "excerpt": "Plan a website migration around verified backups, staging checks, DNS records and a rollback decision, with a clear handover after the move.",
+      "seo_title": "Website Migration Checklist: Backups and DNS | Softorio",
+      "focus_keyword": "website migration checklist",
+      "secondary_keywords": [
+        "WordPress hosting migration",
+        "DNS planning",
+        "backup restore testing"
+      ],
+      "service_route": "manage-cloud",
+      "portfolio_keys": [
+        "arif-cloud-portfolio-009",
+        "arif-cloud-portfolio-011",
+        "arif-cloud-portfolio-025"
+      ],
+      "sections": [
+        {
+          "heading": "Treat migration as a controlled change",
+          "paragraphs": [
+            "A website migration checklist should describe what is moving, what must keep working and how the team will respond if the new environment fails an important check. Copying files is one part of that work. The database, application configuration, email dependencies, scheduled jobs and DNS records can all affect whether visitors see a working website after the move.",
+            "This guide connects the hosting, backup and server-management topics in Softorio's portfolio and services. It offers planning steps rather than a claim of zero downtime or a fixed transfer time. The right sequence depends on the application, access available and how frequently customers change data."
+          ]
+        },
+        {
+          "heading": "Inventory the website and its dependencies",
+          "paragraphs": [
+            "List the domains and subdomains involved, the application runtime, the database and the storage used for uploads. Identify scheduled tasks, external APIs and transactional email. Note where DNS is managed and who controls the current hosting account. A website address and its email service may depend on different providers.",
+            "Make the inventory useful for decisions. Record which settings must be recreated, which credentials need a new secure location and which integrations need a test after the move. Avoid copying obsolete configuration without understanding it. Decide who can approve the cutover and who will be available during the agreed change window."
+          ]
+        },
+        {
+          "heading": "Verify a backup by restoring it",
+          "paragraphs": [
+            "For a WordPress website, the official backup handbook describes the importance of both the files and the database. Capture the components that belong together and keep the backup outside the environment being changed. Record when the copy was taken, what it contains and who is allowed to access it.",
+            "Restore a copy into an isolated environment before depending on it as a recovery plan. Check that pages load, uploads appear and required records can be read. Keep production email, live payment actions and other external side effects disabled during this rehearsal. Agree how much recent data could be lost if recovery uses this backup; a successful restore test does not make an old copy current."
+          ]
+        },
+        {
+          "heading": "Validate the destination before changing DNS",
+          "paragraphs": [
+            "Prepare the destination with the application requirements in mind. Review runtime compatibility, required extensions, file access, database connectivity and TLS configuration. Use a staging address or a controlled local hostname mapping to test the destination where appropriate. Ensure that the testing method itself does not expose private content.",
+            "Check the pages and functions customers rely on, including forms, login, checkout or downloads as relevant. Review application logs after exercising those paths. Compare the destination with the agreed inventory rather than assuming that a rendered homepage validates every service. Define clear pass and fail criteria before the cutover begins."
+          ]
+        },
+        {
+          "heading": "Plan DNS and changing data together",
+          "paragraphs": [
+            "Preserve a record of the existing DNS zone before making changes. Identify the website records and the email-related records separately. Cloudflare explains that TTL controls how long DNS records are cached; a DNS update therefore should not be treated as an instant switch for every visitor. Review the relevant provider's options in advance.",
+            "For a site that accepts orders or user submissions, agree how new writes will be handled during the move. A maintenance window, a final synchronisation or another application-specific approach may be needed. Document when the final data copy is taken and how to avoid sending traffic to two diverging versions. Choose the approach with the website owner rather than promising an uninterrupted move by default."
+          ]
+        },
+        {
+          "heading": "Set a rollback decision and complete the handover",
+          "paragraphs": [
+            "Define the failures that would trigger rollback, the person who makes that decision and the steps needed to return to the previous environment. Consider new data received after cutover: changing DNS back alone may leave those records on the new server. Keep the original environment available for the agreed recovery period.",
+            "After the move, verify DNS resolution, TLS, forms, scheduled work and email delivery using the actual setup. Record what changed and who now owns backups, updates and monitoring. Remove temporary access once the handover is complete. Review the old hosting account only after dependencies and the recovery period have been considered, so a tidy-up does not become an unplanned second outage."
+          ]
+        }
+      ],
+      "sources": [
+        [
+          "WordPress backup handbook",
+          "https://developer.wordpress.org/advanced-administration/security/backup/"
+        ],
+        [
+          "Cloudflare DNS TTL reference",
+          "https://developers.cloudflare.com/dns/manage-dns-records/reference/ttl/"
+        ]
+      ]
+    },
+    {
+      "source_key": "softorio-service-guide-billing-automation",
+      "slug": "billing-automation-workflow-checklist",
+      "title": "Billing Automation: Build a Workflow Your Team Can Trust",
+      "category": "Automation",
+      "excerpt": "Map invoice creation, reminders and payment updates before automating billing. Add exception handling, testing and clear ownership to your workflow.",
+      "seo_title": "Billing Automation: A Practical Workflow Guide | Softorio",
+      "focus_keyword": "billing automation",
+      "secondary_keywords": [
+        "WHMCS workflow planning",
+        "invoice automation",
+        "billing exception handling"
+      ],
+      "service_route": "automation",
+      "portfolio_keys": [
+        "arif-cloud-portfolio-040"
+      ],
+      "sections": [
+        {
+          "heading": "Start with the process, then choose the automation",
+          "paragraphs": [
+            "Billing automation works best when the team understands the manual process it is replacing. Before connecting software, write down how a service becomes an invoice, how a customer receives it and how a payment changes its status. Identify the person responsible when a record is missing or a payment cannot be matched.",
+            "This guide is based on the business automation and hosting-billing topics already represented in Softorio's website. It describes a planning approach rather than a completed client implementation. It does not attach an invented time saving or revenue figure to your business. The controls and measurements should be agreed for the actual workflow."
+          ]
+        },
+        {
+          "heading": "Define events, records and ownership",
+          "paragraphs": [
+            "Describe the events that should create or update a billing record: a new order, a renewal, an approved plan change or a confirmed payment. For each event, identify the system that owns the source data. A customer name is not a reliable identifier by itself; document which internal reference connects the customer, service and invoice.",
+            "Decide which information may change automatically and which changes need review. Keep a written responsibility for pricing approval, customer communication and disputed records. Automation should carry out a defined business rule, not become an accidental way to introduce an unapproved rule. Confirm financial and contractual requirements with the people who own them."
+          ]
+        },
+        {
+          "heading": "Handle duplicate events and failed steps",
+          "paragraphs": [
+            "Design for messages arriving more than once, arriving late or failing to arrive. Agree how the integration recognises an event it has already processed. A retry should not create a second invoice or send the same reminder indefinitely. Record enough context to identify the original event and the decision taken.",
+            "Make failures visible to an accountable person. If an email cannot be delivered, a payment update is rejected or an integration becomes unavailable, the team needs a queue or alert with a clear next action. Keep sensitive customer and payment information out of general-purpose logs. Follow each provider's supported integration and security guidance."
+          ]
+        },
+        {
+          "heading": "Review scheduled tasks before enabling actions",
+          "paragraphs": [
+            "In a self-hosted WHMCS setup, scheduled tasks are part of the automation path. The official system-cron guidance describes automated tasks such as invoice generation and reminders. Confirm the requirements for the installed version and hosting arrangement rather than copying a command from another server.",
+            "Review each enabled action with the business owner, especially reminders, payment collection and service suspension. Agree the timing and the exception policy before switching it on. A reminder sent at the wrong stage can create customer confusion even if the software performs exactly the configured action. Keep an approval record for changes that affect customers or service access."
+          ]
+        },
+        {
+          "heading": "Test a complete workflow in a safe environment",
+          "paragraphs": [
+            "Use test records and the providers' documented test facilities where available. Isolate customer notifications and live payment actions so a rehearsal does not contact real customers or charge them accidentally. Test the ordinary path from invoice creation through payment confirmation, then repeat the exercise with failures and duplicate events.",
+            "Include an invoice that remains unpaid, a payment that cannot be matched and an integration response that arrives after a retry. Check both the customer-facing result and the administrator's view. Write expected results before running the test so a successful screen message does not hide an incorrect record in another system."
+          ]
+        },
+        {
+          "heading": "Measure workload and keep a manual recovery path",
+          "paragraphs": [
+            "Record the time spent handling invoices, the number needing manual review and the causes of exceptions before evaluating automation. Choose comparable periods and distinguish setup work from recurring operations. If invoice volume changes, explain that alongside any reported time difference. The goal is a reliable workflow with evidence for improvement, not a percentage chosen before measurement.",
+            "Keep a procedure for pausing automation and resolving pending records manually. Assign ownership for monitoring, access reviews and integration updates. A useful handover explains where to find failed jobs, how to avoid processing the same item twice and when to escalate. Softorio can help scope the workflow and its integrations around these operational needs, with testing and responsibilities agreed before release."
+          ]
+        }
+      ],
+      "sources": [
+        [
+          "WHMCS system-cron guidance",
+          "https://docs.whmcs.com/9-1/system/automation/system-cron/"
+        ],
+        [
+          "WHMCS automation-settings reference",
+          "https://docs.whmcs.com/9-1/system/automation/automation-settings/"
+        ]
+      ]
+    }
+  ]
+}

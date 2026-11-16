@@ -7,6 +7,7 @@ use App\Filament\Seo\SeoFormSchema;
 use App\Models\CaseStudy;
 use Filament\Forms\Components\Repeater;
 use Filament\Forms\Components\RichEditor;
+use Filament\Forms\Components\Select;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Toggle;
@@ -32,6 +33,8 @@ class CaseStudyResource extends Resource
             TextInput::make('title')->required()->maxLength(255),
             TextInput::make('slug')->required()->maxLength(255)->unique(ignoreRecord: true),
             TextInput::make('client')->maxLength(255),
+            Select::make('study_type')->options(CaseStudy::STUDY_TYPE_OPTIONS)->default('project')->required()
+                ->helperText('Use Illustrative scenario for hypothetical situations or assumed figures. Project case studies should describe an actual engagement.'),
             TextInput::make('tags')->required()->helperText('Comma-separated, e.g. "eCommerce, WooCommerce"')
                 ->afterStateHydrated(fn ($component, $state) => $component->state(is_array($state) ? implode(', ', $state) : $state))
                 ->dehydrateStateUsing(fn ($state) => array_values(array_filter(array_map('trim', explode(',', $state))))),
@@ -66,6 +69,8 @@ class CaseStudyResource extends Resource
                 TextColumn::make('sort_order')->sortable()->label('#'),
                 TextColumn::make('title')->searchable(),
                 TextColumn::make('client'),
+                TextColumn::make('study_type')->label('Type')->badge()
+                    ->formatStateUsing(fn (?string $state): string => CaseStudy::STUDY_TYPE_OPTIONS[$state] ?? 'Project case study'),
                 IconColumn::make('featured')->boolean(),
                 SeoFormSchema::scoreColumn('seo.seo_score', sortable: false)->label('SEO'),
             ])

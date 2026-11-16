@@ -12,7 +12,7 @@ class HomeController extends Controller
     {
         return view('pages.home', [
             'services' => Service::where('is_published', true)->orderBy('sort_order')->orderBy('id')->get(),
-            'testimonials' => Testimonial::where('featured', true)->orderBy('sort_order')->get(),
+            'testimonials' => Testimonial::where('featured', true)->orderBy('sort_order')->orderBy('id')->get(),
         ]);
     }
 }

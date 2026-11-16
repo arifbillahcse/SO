@@ -1006,10 +1006,15 @@ html[data-theme="light"] .theme-icon-moon { display: block; }
   -ms-overflow-style: none;
 }
 .testi-viewport::-webkit-scrollbar { display: none; }
+@media (prefers-reduced-motion: reduce) {
+  .testi-viewport { scroll-behavior: auto; }
+}
 
 .testi-track { display: flex; gap: 24px; padding: 8px 0 16px; }
 
 .testi-card {
+  min-width: 0;
+  overflow-wrap: anywhere;
   scroll-snap-align: start;
   flex: 0 0 calc((100% - 48px) / 3);
   background: var(--dark-2);

@@ -3,15 +3,18 @@
 namespace App\Http\Controllers;
 
 use App\Models\CaseStudy;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\View\View;
 
 class CaseStudyController extends Controller
 {
     public function index(): View
     {
+        $featured = CaseStudy::where('featured', true)->orderBy('sort_order')->orderBy('id')->first();
+
         return view('pages.case-study', [
-            'featuredCaseStudy' => CaseStudy::where('featured', true)->first(),
-            'caseStudies' => CaseStudy::where('featured', false)->orderBy('sort_order')->get(),
+            'featuredCaseStudy' => $featured,
+            'caseStudies' => CaseStudy::when($featured, fn (Builder $query): Builder => $query->where('id', '!=', $featured->id))->orderBy('sort_order')->orderBy('id')->get(),
         ]);
     }
 

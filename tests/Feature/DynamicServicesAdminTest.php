@@ -3,6 +3,7 @@
 namespace Tests\Feature;
 
 use App\Filament\Resources\ServiceResource\Pages\EditService;
+use App\Filament\Resources\ServiceResource\Pages\ListServices;
 use App\Filament\Resources\ServiceResource\RelationManagers\OfferingsRelationManager;
 use App\Models\PortfolioItem;
 use App\Models\Service;
@@ -111,5 +112,22 @@ class DynamicServicesAdminTest extends TestCase
 
         $this->get('/services')->assertOk()->assertSee('&lt;script&gt;', false)
             ->assertDontSee('<script>alert("xss")</script>', false)->assertDontSee('href="javascript:', false);
+    }
+
+    public function test_core_group_order_is_shared_by_the_homepage_and_catalogue_and_empty_groups_have_no_detail_section(): void
+    {
+        $this->actingAs(User::factory()->create());
+        $first = Service::factory()->create(['title' => 'Development group', 'route_name' => 'web-development', 'sort_order' => 1]);
+        $empty = Service::factory()->create(['title' => 'Empty SEO group', 'route_name' => 'seo', 'sort_order' => 2]);
+        $hidden = Service::factory()->create(['title' => 'Hidden cloud group', 'route_name' => 'manage-cloud', 'is_published' => false]);
+        ServiceOffering::factory()->for($first)->create(['title' => 'The published offering', 'is_published' => true]);
+
+        Livewire::test(ListServices::class)->call('reorderTable', [$empty->id, $hidden->id, $first->id]);
+
+        $this->get('/')->assertOk()->assertSeeInOrder(['Empty SEO group', 'Development group'])->assertDontSee('Hidden cloud group');
+        $this->get('/services')->assertOk()->assertViewHas('serviceGroups', fn ($groups): bool => $groups->pluck('title')->all() === ['Empty SEO group', 'Development group'])
+            ->assertViewHas('serviceCount', 1)
+            ->assertViewHas('catalogueSchema', fn (array $schema): bool => $schema['mainEntity']['numberOfItems'] === 1)
+            ->assertDontSee('class="services-group" id="'.$empty->slug.'"', false);
     }
 }

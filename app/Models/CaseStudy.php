@@ -9,6 +9,13 @@ class CaseStudy extends Model
 {
     use HasSeo;
 
+    public const STUDY_TYPE_OPTIONS = ['project' => 'Project case study', 'illustrative' => 'Illustrative scenario'];
+
+    public function isIllustrative(): bool
+    {
+        return $this->study_type === 'illustrative';
+    }
+
     protected $fillable = [
         'title',
         'slug',
@@ -19,6 +26,8 @@ class CaseStudy extends Model
         'metrics',
         'featured',
         'sort_order',
+        'source_key',
+        'study_type',
     ];
 
     protected $casts = [

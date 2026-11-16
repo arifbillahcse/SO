@@ -401,23 +401,24 @@
   </section>
 
   <!-- ========== TESTIMONIALS ========== -->
-  <section class="testimonials-section section">
+  @if($testimonials->isNotEmpty())
+  <section class="testimonials-section section" id="testimonials" aria-labelledby="testimonials-title">
     <div class="container">
       <div class="testi-header">
         <div class="testi-header-text">
           <span class="section-tag">Testimonials</span>
-          <h2 class="section-title">Let Our Clients <span class="text-gradient">Speak</span></h2>
-          <p class="section-sub" style="margin:0">{{ $testimonials->isEmpty() ? 'A preview of how client feedback will appear here.' : 'Feedback from businesses we have worked with.' }}</p>
+          <h2 class="section-title" id="testimonials-title">Let Our Clients <span class="text-gradient">Speak</span></h2>
+          <p class="section-sub" style="margin:0">Feedback shared by our customers.</p>
         </div>
       </div>
 
       <div class="testi-carousel">
         <div class="testi-viewport" id="testiViewport">
           <div class="testi-track" id="testiTrack">
-            @forelse($testimonials as $testimonial)
+            @foreach($testimonials as $testimonial)
             <div class="testi-card">
               <svg class="testi-quote" width="34" height="26" viewBox="0 0 34 26" fill="none"><path d="M0 26V15.6C0 10.6 1.1 6.9 3.4 4.5C5.7 2.1 8.9 0.6 13 0V5.4C10.9 5.9 9.3 6.8 8.2 8.1C7.1 9.4 6.5 11.1 6.4 13.2H13V26H0ZM21 26V15.6C21 10.6 22.1 6.9 24.4 4.5C26.7 2.1 29.9 0.6 34 0V5.4C31.9 5.9 30.3 6.8 29.2 8.1C28.1 9.4 27.5 11.1 27.4 13.2H34V26H21Z" fill="currentColor"/></svg>
-              <div class="testi-stars">{!! str_repeat('&#9733;', $testimonial->stars) !!}</div>
+              <div class="testi-stars" aria-label="{{ max(1, min(5, $testimonial->stars)) }} out of 5 stars">{!! str_repeat('&#9733;', max(1, min(5, $testimonial->stars))) !!}</div>
               <p class="testi-text">{{ $testimonial->text }}</p>
               <div class="testi-author">
                 <div class="testi-avatar">{{ $testimonial->avatar_initial }}</div>
@@ -427,21 +428,7 @@
                 </div>
               </div>
             </div>
-            @empty
-            @foreach([
-              ['title' => 'Website project', 'text' => 'A space for a client to share their experience working with Softorio on a website project.'],
-              ['title' => 'Cloud services', 'text' => 'A space for feedback about setting up and managing a client’s cloud infrastructure.'],
-              ['title' => 'SEO and growth', 'text' => 'A space for a client to describe their experience with SEO and ongoing support.'],
-            ] as $example)
-            <article class="testi-card testi-example">
-              <span class="testi-example-label">Example preview</span>
-              <div class="testi-example-icon" aria-hidden="true">&#10077;</div>
-              <h3>{{ $example['title'] }}</h3>
-              <p class="testi-text">{{ $example['text'] }}</p>
-              <div class="testi-author"><div class="testi-avatar" aria-hidden="true">S</div><div><div class="testi-name">Sample testimonial</div><div class="testi-role">Placeholder content</div></div></div>
-            </article>
             @endforeach
-            @endforelse
           </div>
         </div>
         <button class="testi-btn testi-btn-prev" id="testiPrev" type="button" aria-label="Previous reviews" hidden>&#8592;</button>
@@ -450,6 +437,7 @@
       <div class="testi-dots" id="testiDots"></div>
     </div>
   </section>
+  @endif
 
   <!-- ========== CTA BANNER ========== -->
   <section class="cta-section" id="contact">

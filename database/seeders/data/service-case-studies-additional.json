@@ -1,0 +1,94 @@
+{
+  "studies": [
+    {
+      "source_key":"softorio-service-scenario-migration",
+      "title":"WordPress Migration Planning: An Illustrative Scenario",
+      "slug":"wordpress-migration-planning-scenario",
+      "tags":["WordPress","Hosting Migration"],
+      "description":"An illustrative WordPress migration planning scenario covering backups, staging, DNS cutover and a transparent transfer-time model with stated assumptions.",
+      "metrics":[{"value":"9 GB","label":"Assumed transfer size"},{"value":"30 Mb/s","label":"Assumed effective transfer rate"},{"value":"40 min","label":"Theoretical transfer calculation"}],
+      "service_route":"manage-cloud",
+      "portfolio_keys":["arif-cloud-portfolio-009","arif-cloud-portfolio-045"],
+      "focus_keyword":"WordPress migration planning",
+      "secondary_keywords":["hosting migration","WordPress staging","DNS cutover planning"],
+      "sections":[
+        {"heading":"A hypothetical hosting move","paragraphs":["Consider a WordPress website moving to a different hosting environment. The proposed scope includes files, a database, DNS changes and post-migration checks. This is an illustrative planning example based on Softorio's hosting and WordPress migration topics. It does not describe a completed customer migration or establish a measured downtime figure.","Assume the export contains 9 GB of data and the transfer achieves an effective rate of 30 megabits per second. Decimal units are used throughout this example: one gigabyte equals 1,000 megabytes and one byte equals eight bits. The size and rate are invented inputs, not observations from the referenced portfolio entries."]},
+        {"heading":"Preparation before a cutover","paragraphs":["Inventory the application, database, uploads, email dependencies and scheduled tasks. Review compatibility with the destination environment and identify who controls the domain records. Agree a change window, a content freeze where appropriate, and a rollback decision before making production changes.","Create backups and prepare a staging copy on the destination. Check important pages, forms, administrator access and database connections. Plan how new orders or edits made during the move will be handled. Copying an old snapshot without considering ongoing changes can leave records out of sync, even when the transfer itself succeeds."]},
+        {"heading":"Understanding the transfer-time model","paragraphs":["Under the stated decimal assumptions, 9 GB represents 9,000 megabytes, or 72,000 megabits. Dividing 72,000 by 30 gives 2,400 seconds: 40 minutes. This is a theoretical transfer calculation only. It is not a promised migration duration, downtime estimate or measured result.","The calculation excludes export time, database import, verification, retransmissions and changes in throughput. DNS caching and the cutover method also affect the user experience. An actual migration schedule should be based on a rehearsal and the site's operating requirements rather than this simple size-divided-by-rate model."]},
+        {"heading":"Verification and handover","paragraphs":["After cutover, compare key content and records, test forms and payment flows where applicable, and inspect application logs. Confirm the rollback window and retain the agreed backups. Record actual timings separately from customer-visible interruption. The related portfolio topics provide technical context, not evidence that this hypothetical move or its assumed transfer conditions occurred."]}
+      ]
+    },
+    {
+      "source_key":"softorio-service-scenario-backups",
+      "title":"Backup and Restore Planning: An Illustrative Scenario",
+      "slug":"backup-restore-planning-scenario",
+      "tags":["Backups","Server Management"],
+      "description":"An illustrative backup and restore planning scenario covering scheduled jobs, retention, recovery checks and a clearly assumed storage-capacity calculation.",
+      "metrics":[{"value":"14","label":"Assumed retained full copies"},{"value":"10 GB","label":"Assumed size per full copy"},{"value":"140 GB","label":"Modelled raw backup storage"}],
+      "service_route":"manage-cloud",
+      "portfolio_keys":["arif-cloud-portfolio-011","arif-cloud-portfolio-025"],
+      "focus_keyword":"backup and restore planning",
+      "secondary_keywords":["automated server backups","backup retention","restoration checks"],
+      "sections":[
+        {"heading":"A hypothetical retention requirement","paragraphs":["Imagine a website owner asking for daily backups and a documented restoration procedure. For this example, assume each full backup is 10 GB and the retention policy keeps 14 daily full copies. These figures define an illustrative storage model. They are not measurements from a Softorio customer or a tested recovery environment.","The scenario is related to Bash and cron backup automation and WordPress backup topics in the portfolio. Those references explain relevant areas of work. They do not confirm that a particular retention policy has been deployed, that every backup succeeded or that a specific recovery time has been achieved."]},
+        {"heading":"Designing the backup workflow","paragraphs":["Identify the files, database records and configuration required for recovery. Decide when backups run, where they are stored and who can access them. Separate job completion from backup usability: a successful scheduler entry is not evidence that an application can be restored from the resulting files.","Agree how failures are reported and who responds. Consider encryption, credentials, retention rotation and protection against accidental deletion. Review whether the business needs off-server copies and how those copies are checked. The design should reflect the actual system and operating requirements instead of treating a single script as a complete recovery plan."]},
+        {"heading":"The illustrative capacity calculation","paragraphs":["Fourteen full copies multiplied by the assumed 10 GB per copy gives 140 GB of raw backup data. This assumes that all copies are the same size and stored independently. It does not account for compression, deduplication, incremental backups, metadata, temporary files or future growth.","A real capacity plan should consider those factors and the storage service's charging and retention behavior. No price or guaranteed storage saving is claimed here. If the application grows, the original 140 GB model can become insufficient even when the number of retained copies remains unchanged."]},
+        {"heading":"Restoration is a separate acceptance check","paragraphs":["Plan a restoration exercise in an isolated environment. Verify that the database, uploads and required configuration work together, and document access steps and unresolved dependencies. Record the actual recovery process and elapsed time during that exercise. Until such evidence exists, this scenario should remain a planning example rather than a claim of guaranteed recovery or zero data loss."]}
+      ]
+    },
+    {
+      "source_key":"softorio-service-scenario-linux-access",
+      "title":"Linux Server Access Review: An Illustrative Scenario",
+      "slug":"linux-server-access-review-scenario",
+      "tags":["Linux","Server Security"],
+      "description":"An illustrative Linux server access review scenario covering account permissions, SSH access, firewall rules and a clearly assumed configuration-review workload.",
+      "metrics":[{"value":"6","label":"Assumed servers in scope"},{"value":"4","label":"Review areas per server"},{"value":"24","label":"Modelled configuration checks"}],
+      "service_route":"manage-cloud",
+      "portfolio_keys":["arif-cloud-portfolio-007","arif-cloud-portfolio-022"],
+      "focus_keyword":"Linux server access review",
+      "secondary_keywords":["SSH key authentication","Linux access permissions","server configuration review"],
+      "sections":[
+        {"heading":"A hypothetical access-management brief","paragraphs":["Consider a small organization reviewing administrative access across six Linux servers. Assume the initial checklist covers four areas on each server: account ownership, SSH authentication, privilege assignment and network access rules. This is an illustrative scope model, not a report of discovered vulnerabilities or completed security remediation.","The chosen topics relate to Linux hardening and SSH access entries in Arif Billah's technical portfolio. Their inclusion establishes subject relevance only. It does not imply that this six-server environment exists, that a customer engagement took place or that any system has passed an independent security assessment."]},
+        {"heading":"Review before changing access","paragraphs":["Begin by identifying system owners, authorized administrators and the business purpose of each server. Document how access is requested, approved and removed. Check whether named accounts and appropriate authentication methods are used, and identify shared access that requires a deliberate operational decision.","Review privileges against actual responsibilities and inspect network rules in the context of required services. Plan changes with an authorized owner and maintain a recovery path so an access change does not lock out the team. The exact configuration depends on the environment and should not be copied from a generic checklist without testing."]},
+        {"heading":"What the assumed numbers mean","paragraphs":["Six servers multiplied by four review areas gives 24 configuration checks in this simplified model. A check is a review task, not a confirmed problem. The count does not measure attack resistance, risk reduction, incident frequency or the number of vulnerabilities removed.","Actual reviews often uncover additional dependencies and require follow-up checks. A complete security program also includes processes outside this example, such as patch management, monitoring and incident response. None of the illustrative workload numbers establishes compliance, certifies a server as secure or guarantees that an incident cannot occur."]},
+        {"heading":"A useful operational handover","paragraphs":["Record the agreed access model, approved changes and outstanding decisions. Keep sensitive connection details and credentials out of public case-study content. For a real project, retain evidence of authorized changes and operational verification. Only then should a customer write-up describe what was actually reviewed and changed, with limitations stated separately from any measured outcomes."]}
+      ]
+    },
+    {
+      "source_key":"softorio-service-scenario-lms",
+      "title":"WordPress Course Enrollment: An Illustrative Scenario",
+      "slug":"wordpress-course-enrollment-scenario",
+      "tags":["WordPress","Learning Management"],
+      "description":"An illustrative WordPress course enrollment scenario using stated registration volumes and handling-time assumptions to explain a connected administration workflow.",
+      "metrics":[{"value":"100","label":"Assumed enrollments per month"},{"value":"600 to 360 min","label":"Modelled monthly handling"},{"value":"40%","label":"Illustrative time difference"}],
+      "service_route":"web-development",
+      "portfolio_keys":["arif-cloud-portfolio-021","arif-cloud-portfolio-031"],
+      "focus_keyword":"WordPress course enrollment",
+      "secondary_keywords":["WordPress LMS workflow","course registration","enrollment administration"],
+      "sections":[
+        {"heading":"A hypothetical course-administration problem","paragraphs":["Imagine a training provider accepting 100 course enrollments each month. Registration details, payment status and course access need to reach the right administrative workflow. This example is based on WordPress learning-management and workflow topics. It does not describe a real provider or claim that Softorio has measured an educational or commercial outcome.","Assume the current process takes six minutes of staff handling per enrollment. For an alternative workflow, assume three minutes of review per enrollment plus 60 minutes of monthly exception handling. These values are invented planning inputs, not time records or a promise about the performance of a particular LMS plugin."]},
+        {"heading":"Planning the enrollment workflow","paragraphs":["Define the course catalogue, registration fields and access rules before selecting tools. Decide which payment states permit enrollment and which exceptions need manual approval. Map customer notifications and explain how cancellations, duplicate registrations and account corrections should be handled.","Configure and test the agreed process with non-production records. Verify that course access follows the intended rules and that an administrator can identify and correct exceptions. Include ownership of integrations, communication templates and maintenance tasks in the handover. Do not assume that every plugin supports every desired workflow without checking the selected implementation."]},
+        {"heading":"The illustrative time calculation","paragraphs":["At the assumed baseline, 100 enrollments multiplied by six minutes gives 600 minutes of monthly handling. In the alternative model, 100 multiplied by three gives 300 minutes, with another 60 minutes for exceptions. The resulting 360 minutes is 240 minutes lower than the baseline.","Dividing the 240-minute difference by 600 gives a 40% illustrative reduction in the modelled handling workload. This is not a measured saving, an improvement in course completion or a claim about student learning. It excludes development effort, software costs and ongoing maintenance, which must be considered separately."]},
+        {"heading":"How an actual project would be evaluated","paragraphs":["Measure administrative handling and exception volume across comparable enrollment periods. Check the accuracy of access decisions and communications alongside time spent. Replace the invented inputs with observed records before reporting a customer result. The related technical topics provide context for a possible implementation; they do not validate the assumed volumes or the calculated difference in this scenario."]}
+      ]
+    },
+    {
+      "source_key":"softorio-service-scenario-images",
+      "title":"WordPress Image Optimization: An Illustrative Scenario",
+      "slug":"wordpress-image-optimization-scenario",
+      "tags":["WordPress","Performance"],
+      "description":"An illustrative WordPress image optimization scenario with a transparent payload calculation, a quality-review workflow and clear limits on performance claims.",
+      "metrics":[{"value":"24","label":"Assumed images on a page"},{"value":"400 to 150 kB","label":"Assumed average image size"},{"value":"62.5%","label":"Modelled image-payload reduction"}],
+      "service_route":"web-development",
+      "portfolio_keys":["arif-cloud-portfolio-014","arif-cloud-portfolio-029"],
+      "focus_keyword":"WordPress image optimization",
+      "secondary_keywords":["website image payload","WordPress performance review","responsive image planning"],
+      "sections":[
+        {"heading":"An illustrative page-payload problem","paragraphs":["Consider a WordPress page containing 24 images. Assume the original files average 400 kilobytes each and an alternative set averages 150 kilobytes each. Decimal units are used for the calculation. These are fictional planning values, not measurements from a customer website or a published performance test.","The scenario relates to WordPress performance and web-server optimization topics in the portfolio. It focuses on image payload so the arithmetic is easy to inspect. It does not establish that a particular site has excessive images or that an actual optimization project achieved the percentages shown here."]},
+        {"heading":"Reviewing content and delivery requirements","paragraphs":["Inventory the images and identify where they appear, which sizes are displayed and which visual details matter. Review dimensions, responsive variants and delivery behavior before selecting replacement files. A smaller file is useful only if it still serves the intended content and presentation.","Prepare candidate assets in a staging environment and compare visual quality on relevant screen sizes. Check layout stability, alternative text and any lazy-loading behavior used by the page. Review caching and server delivery separately. These steps define a workflow to evaluate, not a claim that one setting or file format is universally appropriate."]},
+        {"heading":"The modelled payload calculation","paragraphs":["At the assumed starting size, 24 images multiplied by 400 kilobytes gives 9,600 kilobytes, or 9.6 MB. At 150 kilobytes each, the total is 3,600 kilobytes, or 3.6 MB. The difference is 6 MB. Dividing 6 by 9.6 gives a 62.5% reduction in this modelled image payload.","That percentage applies only to the assumed image bytes. It is not an observed improvement in loading time, a Core Web Vitals result or an increase in conversions. Real page behavior also depends on scripts, fonts, caching, network conditions and server responses. Delivered bytes can differ from the simple total when responsive variants or cached resources are involved."]},
+        {"heading":"Measuring a real implementation","paragraphs":["Compare before-and-after asset sizes and page behavior under documented test conditions. Include visual review and record the exact pages, devices and cache states used. A real case study should report those measurements and their limits rather than convert a theoretical payload calculation into a loading-speed promise. Until measured data is available, the figures on this page remain illustrative assumptions."]}
+      ]
+    }
+  ]
+}

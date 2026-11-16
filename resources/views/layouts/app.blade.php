@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  @include('partials.site-tracking-head')
   <script>
     try {
       if (localStorage.getItem('softorio-theme') === 'light') {
@@ -42,16 +43,6 @@
   <script type="application/ld+json">{!! \App\Support\SeoHead::encode($schema) !!}</script>
   @endforeach
 
-  @if($orgSettings->google_analytics_id)
-  <script async src="https://www.googletagmanager.com/gtag/js?id={{ $orgSettings->google_analytics_id }}"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', '{{ $orgSettings->google_analytics_id }}');
-  </script>
-  @endif
-
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
@@ -59,6 +50,7 @@
   @stack('head')
 </head>
 <body>
+  @include('partials.site-tracking-body-start')
 
   @include('partials.nav')
 
@@ -67,5 +59,6 @@
   @include('partials.footer')
 
   @stack('scripts')
+  @include('partials.site-tracking-body-end')
 </body>
 </html>

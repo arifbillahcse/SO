@@ -100,8 +100,10 @@ document.addEventListener('DOMContentLoaded', () => {
       if (pageCount <= 1) return;
       for (let i = 0; i < pageCount; i++) {
         const dot = document.createElement('button');
+        dot.type = 'button';
         dot.className = 'testi-dot' + (i === current ? ' active' : '');
         dot.setAttribute('aria-label', `Go to review page ${i + 1}`);
+        dot.setAttribute('aria-current', i === current ? 'true' : 'false');
         dot.addEventListener('click', () => goTo(i));
         dotsWrap.appendChild(dot);
       }
@@ -109,7 +111,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function updateDots() {
       if (!dotsWrap) return;
-      dotsWrap.querySelectorAll('.testi-dot').forEach((d, i) => d.classList.toggle('active', i === current));
+      dotsWrap.querySelectorAll('.testi-dot').forEach((d, i) => {
+        d.classList.toggle('active', i === current);
+        d.setAttribute('aria-current', i === current ? 'true' : 'false');
+      });
     }
 
     function updateButtons() {
@@ -123,13 +128,18 @@ document.addEventListener('DOMContentLoaded', () => {
       return card.getBoundingClientRect().left - track.getBoundingClientRect().left;
     }
 
+    function pageOffset(index) {
+      const firstCard = Math.min(index * perView, Math.max(cards.length - perView, 0));
+      return Math.min(cardOffset(cards[firstCard]), Math.max(viewport.scrollWidth - viewport.clientWidth, 0));
+    }
+
     function goTo(index) {
       current = Math.max(0, Math.min(index, pageCount - 1));
       isSyncing = true;
-      const targetCard = cards[current * perView];
-      if (targetCard) {
-        viewport.scrollTo({ left: cardOffset(targetCard), behavior: 'smooth' });
-      }
+      viewport.scrollTo({
+        left: pageOffset(current),
+        behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth',
+      });
       updateDots();
       updateButtons();
       resetAuto();
@@ -149,9 +159,8 @@ document.addEventListener('DOMContentLoaded', () => {
       if (isSyncing) return;
       clearTimeout(scrollTimer);
       scrollTimer = setTimeout(() => {
-        const cardW = cards[1] ? cardOffset(cards[1]) - cardOffset(cards[0]) : viewport.clientWidth;
-        const scrolledIndex = Math.round(viewport.scrollLeft / cardW);
-        current = Math.max(0, Math.min(Math.round(scrolledIndex / perView), pageCount - 1));
+        current = Array.from({ length: pageCount }, (_, index) => index).reduce((closest, index) =>
+          Math.abs(pageOffset(index) - viewport.scrollLeft) < Math.abs(pageOffset(closest) - viewport.scrollLeft) ? index : closest, 0);
         updateDots();
         updateButtons();
       }, 120);

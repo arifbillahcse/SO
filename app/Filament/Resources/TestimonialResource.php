@@ -12,28 +12,30 @@ use Filament\Resources\Resource;
 use Filament\Schemas\Schema;
 use Filament\Tables\Columns\IconColumn;
 use Filament\Tables\Columns\TextColumn;
+use Filament\Tables\Filters\TernaryFilter;
 use Filament\Tables\Table;
 
 class TestimonialResource extends Resource
 {
     protected static ?string $model = Testimonial::class;
 
-    protected static string | \BackedEnum | null $navigationIcon = 'heroicon-o-chat-bubble-left-right';
+    protected static string|\BackedEnum|null $navigationIcon = 'heroicon-o-chat-bubble-left-right';
 
-    protected static string | \UnitEnum | null $navigationGroup = 'Content';
+    protected static string|\UnitEnum|null $navigationGroup = 'Content';
 
     public static function form(Schema $schema): Schema
     {
         return $schema->components([
             TextInput::make('name')->required()->maxLength(255),
-            TextInput::make('role')->required()->maxLength(255),
-            TextInput::make('avatar_initial')->required()->maxLength(2)
-                ->helperText('1-2 letters shown in the avatar circle.'),
+            TextInput::make('role')->label('Role / company')->required()->maxLength(255),
+            TextInput::make('avatar_initial')->maxLength(2)->regex('/^[\p{L}]{1,2}$/u')
+                ->helperText('Optional: 1-2 letters. Leave blank to generate initials from the name.'),
             Select::make('stars')->options([1 => '1', 2 => '2', 3 => '3', 4 => '4', 5 => '5'])
-                ->default(5)->required(),
-            Textarea::make('text')->required()->rows(4)->columnSpanFull(),
-            Toggle::make('featured')->default(true)->helperText('Only featured testimonials show on the homepage carousel.'),
-            TextInput::make('sort_order')->numeric()->default(0),
+                ->default(5)->required()->rules(['integer', 'between:1,5']),
+            Textarea::make('text')->label('Customer quote')->required()->rows(5)->columnSpanFull(),
+            Toggle::make('featured')->label('Published on homepage')->default(false)
+                ->helperText('Enable when this testimonial is ready to appear. Disable to keep it as a draft.'),
+            TextInput::make('sort_order')->label('Display order')->integer()->minValue(0)->maxValue(65535)->default(0),
         ]);
     }
 
@@ -45,10 +47,13 @@ class TestimonialResource extends Resource
                 TextColumn::make('name')->searchable(),
                 TextColumn::make('role'),
                 TextColumn::make('stars'),
-                IconColumn::make('featured')->boolean(),
+                IconColumn::make('featured')->label('Published')->boolean(),
                 TextColumn::make('text')->limit(50),
             ])
-            ->defaultSort('sort_order');
+            ->defaultSort('sort_order')->reorderable('sort_order')
+            ->filters([TernaryFilter::make('featured')->label('Published')])
+            ->emptyStateHeading('No testimonials yet')
+            ->emptyStateDescription('Add customer feedback, then enable Published on homepage when it is ready.');
     }
 
     public static function getPages(): array

@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\Article;
+use App\Models\ArticleCategory;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Str;
 
@@ -57,6 +58,8 @@ class ArticleSeeder extends Seeder
         ];
 
         foreach ($articles as $i => $article) {
+            $category = ArticleCategory::firstOrCreate(['name' => $article['category']], ['slug' => Str::slug($article['category'])]);
+            $article['article_category_id'] = $category->id;
             $article['slug'] = Str::slug($article['title']);
             $article['published_at'] = now()->subDays(($i + 1) * 7);
             Article::updateOrCreate(['slug' => $article['slug']], $article);

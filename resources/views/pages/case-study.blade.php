@@ -1,134 +1,73 @@
 @extends('layouts.app')
-
-@section('title', 'Client Success Stories & Case Studies — Softorio')
-@section('description', "Behind every number is a business that trusted us to solve a real problem. See results we've delivered in WordPress, eCommerce, cloud, and automation.")
+@section('title', 'Case Studies & Illustrative Scenarios | Softorio')
+@section('description', 'Explore project approaches and clearly labelled illustrative scenarios for websites, SEO, cloud infrastructure, automation and diagnostic center workflows.')
 
 @push('head')
-<style>
-.cs-featured { background:linear-gradient(135deg,rgba(255,121,0,0.1),var(--dark-2)); border:1px solid rgba(255,121,0,0.25); border-radius:var(--radius-xl); padding:48px; display:grid; grid-template-columns:1fr 1fr; gap:48px; align-items:center; margin-bottom:60px; }
-    .cs-featured-img { height:280px; background:linear-gradient(135deg,#0a0a1a,#1a1a3e); border-radius:var(--radius-lg); display:flex; align-items:center; justify-content:center; border:1px solid var(--border); }
-    .cs-meta { display:flex; flex-wrap:wrap; gap:10px; margin-bottom:20px; }
-    .cs-tag { font-size:0.72rem; font-weight:700; color:var(--primary); background:var(--primary-glow); border:1px solid rgba(255,121,0,0.2); padding:3px 12px; border-radius:100px; }
-    .cs-results { display:grid; grid-template-columns:1fr 1fr 1fr; gap:16px; margin:24px 0; }
-    .cs-result { background:var(--dark-3); border:1px solid var(--border); border-radius:var(--radius-md); padding:16px; text-align:center; }
-    .cs-result-num { font-size:1.6rem; font-weight:800; color:var(--primary); display:block; letter-spacing:-0.03em; }
-    .cs-result-label { font-size:0.75rem; color:var(--text-muted); margin-top:4px; font-weight:500; }
-    .cs-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:24px; }
-    .cs-card { background:var(--dark-2); border:1px solid var(--border); border-radius:var(--radius-lg); overflow:hidden; transition:var(--transition); }
-    .cs-card:hover { transform:translateY(-6px); box-shadow:var(--shadow-card); border-color:rgba(255,121,0,0.3); }
-    .cs-card-img { height:160px; display:flex; align-items:center; justify-content:center; }
-    .cs-card-body { padding:24px; }
-    .cs-card-meta { display:flex; gap:6px; margin-bottom:12px; }
-    .cs-card-title { font-size:1rem; font-weight:700; color:var(--text-primary); margin-bottom:8px; }
-    .cs-card-desc { font-size:0.87rem; color:var(--text-secondary); line-height:1.6; margin-bottom:16px; }
-    .cs-card-results { display:flex; gap:16px; }
-    .cs-mini-result { text-align:center; }
-    .cs-mini-num { font-size:1.1rem; font-weight:800; color:var(--primary); display:block; }
-    .cs-mini-label { font-size:0.68rem; color:var(--text-muted); }
-    @media(max-width:1024px){ .cs-featured{grid-template-columns:1fr;} .cs-grid{grid-template-columns:repeat(2,1fr);} }
-    @media(max-width:600px){ .cs-grid{grid-template-columns:1fr;} .cs-results{grid-template-columns:1fr 1fr;} }
-</style>
+@include('partials.case-study-styles')
 @endpush
 
 @section('content')
-<section class="page-hero" style="padding-bottom:0">
-    <div class="page-hero-bg"><div class="ph-orb ph-orb-1"></div><div class="ph-grid"></div></div>
-    <div class="container" style="padding:100px 24px 60px;text-align:center;position:relative" data-aos="fade-up">
-      <div class="breadcrumb" style="justify-content:center"><a href="{{ route('home') }}">Home</a><span>/</span><span>Resources</span><span>/</span><span class="bc-current">Case Studies</span></div>
-      <div class="hero-badge" style="margin:16px auto"><span class="badge-dot"></span>Real Results</div>
-      <h1 class="page-hero-title">Real Clients. <span class="text-gradient">Real Results.</span></h1>
-      <p class="page-hero-sub" style="margin:0 auto;max-width:540px">Behind every number is a business that trusted us to solve a real problem. Here's proof of what we deliver.</p>
+<main class="case-library">
+  <section class="case-hero">
+    <div class="page-hero-bg" aria-hidden="true"><div class="ph-orb ph-orb-1"></div><div class="ph-grid"></div></div>
+    <div class="container">
+      <div class="breadcrumb"><a href="{{ route('home') }}">Home</a><span>/</span><span class="bc-current">Case Studies</span></div>
+      <span class="section-tag">Ideas into practice</span>
+      <h1>Explore the approach.<br><span class="text-gradient">Understand the details.</span></h1>
+      <p class="case-lead">Case Studies &amp; Illustrative Scenarios covering websites, cloud infrastructure and connected workflows. Follow the thinking, scope and calculations behind each approach.</p>
+      <div class="case-hero-bottom"><span>{{ $caseStudies->count() + ($featuredCaseStudy ? 1 : 0) }} studies to explore</span><span>Illustrative figures are labelled throughout.</span><a href="#study-collection">Browse the collection <span aria-hidden="true">&darr;</span></a></div>
     </div>
-    <div class="trust-bar"><div class="container trust-inner">
-      <div class="trust-item"><span class="trust-num">340%</span><span class="trust-label">Avg Traffic Increase (SEO)</span></div><div class="trust-sep"></div>
-      <div class="trust-item"><span class="trust-num">220%</span><span class="trust-label">Avg Conversion Lift</span></div><div class="trust-sep"></div>
-      <div class="trust-item"><span class="trust-num">99.97%</span><span class="trust-label">Avg Server Uptime</span></div><div class="trust-sep"></div>
-      <div class="trust-item"><span class="trust-num">80%</span><span class="trust-label">Reduction in Manual Work</span></div>
-    </div></div>
   </section>
 
-  <section class="section">
+  <section class="case-collection" id="study-collection">
     <div class="container">
-
       @if($featuredCaseStudy)
-      <!-- Featured Case Study -->
-      <div class="cs-featured" data-aos="fade-up">
-        <div class="cs-featured-img">
-          <div style="width:80%">
-            <div style="height:8px;background:rgba(255,255,255,0.1);border-radius:4px;margin-bottom:12px"></div>
-            <div style="height:60px;background:rgba(255,121,0,0.1);border-radius:8px;margin-bottom:12px"></div>
-            <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px"><div style="height:35px;background:rgba(255,255,255,0.06);border-radius:6px"></div><div style="height:35px;background:rgba(255,255,255,0.06);border-radius:6px"></div><div style="height:35px;background:rgba(255,255,255,0.06);border-radius:6px"></div></div>
-          </div>
+      <article class="case-featured">
+        <div class="case-featured-copy">
+          <span class="case-eyebrow">Featured {{ $featuredCaseStudy->isIllustrative() ? 'scenario' : 'case study' }}</span>
+          <div class="case-tags">@foreach($featuredCaseStudy->tags ?? [] as $tag)<span>{{ $tag }}</span>@endforeach</div>
+          <h2>{{ $featuredCaseStudy->title }}</h2>
+          <p>{{ $featuredCaseStudy->description }}</p>
+          <a class="btn btn-primary" href="{{ route('case-study.show', $featuredCaseStudy) }}">Explore the study <span aria-hidden="true">&nearr;</span></a>
         </div>
-        <div>
-          <div class="cs-meta">
-            @foreach($featuredCaseStudy->tags as $tag)
-            <span class="cs-tag">{{ $tag }}</span>
-            @endforeach
-          </div>
-          <h2 class="section-title" style="text-align:left;font-size:clamp(1.5rem,3vw,2rem)">{{ $featuredCaseStudy->title }}</h2>
-          <p style="font-size:0.95rem;color:var(--text-secondary);line-height:1.7;margin-bottom:24px">{{ $featuredCaseStudy->description }}</p>
-          <div class="cs-results">
-            @foreach($featuredCaseStudy->metrics as $metric)
-            <div class="cs-result"><span class="cs-result-num">{{ $metric['value'] }}</span><div class="cs-result-label">{{ $metric['label'] }}</div></div>
-            @endforeach
-          </div>
-          <a href="{{ route('case-study.show', $featuredCaseStudy) }}" class="btn btn-primary">Read Full Story</a>
+        <div class="case-featured-summary">
+          <span class="case-eyebrow">Inside this {{ $featuredCaseStudy->isIllustrative() ? 'scenario' : 'study' }}</span>
+          @if($featuredCaseStudy->isIllustrative())<p class="case-summary-note">Illustrative scenario: assumptions, not measured client results.</p>@endif
+          @foreach($featuredCaseStudy->metrics ?? [] as $metric)
+          <div class="case-featured-metric"><strong>{{ $metric['value'] }}</strong><span>{{ $metric['label'] }}</span></div>
+          @endforeach
         </div>
-      </div>
+      </article>
       @endif
 
-      @php
-        $csGradients = [
-          'linear-gradient(135deg,#0f2027,#203a43)',
-          'linear-gradient(135deg,#1a0a2e,#2d1a4e)',
-          'linear-gradient(135deg,#0d0d0d,#1a1a2e)',
-          'linear-gradient(135deg,#0f0c29,#302b63)',
-          'linear-gradient(135deg,#1a0a0a,#2e1a1a)',
-          'linear-gradient(135deg,#0d1a0d,#1a3a1a)',
-        ];
-      @endphp
-      <!-- Case Study Grid -->
-      <div class="cs-grid">
+      <div class="case-collection-heading"><div><span class="case-eyebrow">The collection</span><h2>Find a topic for your <span class="text-gradient">next project.</span></h2></div><p>Read the context, the proposed approach and what would need to be measured.</p></div>
+      <div class="case-grid">
         @foreach($caseStudies as $caseStudy)
-        <a href="{{ route('case-study.show', $caseStudy) }}" class="cs-card" style="display:block;color:inherit" data-aos="fade-up" data-aos-delay="{{ ($loop->index % 3) * 100 }}">
-          <div class="cs-card-img" style="background:{{ $csGradients[$loop->index % count($csGradients)] }}">
-            <div style="width:80%;display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px"><div style="height:38px;background:rgba(255,255,255,0.08);border-radius:5px"></div><div style="height:38px;background:rgba(255,255,255,0.08);border-radius:5px"></div><div style="height:38px;background:rgba(255,255,255,0.08);border-radius:5px"></div></div>
-          </div>
-          <div class="cs-card-body">
-            <div class="cs-card-meta">
-              @foreach($caseStudy->tags as $tag)
-              <span class="cs-tag">{{ $tag }}</span>
-              @endforeach
-            </div>
-            <p class="cs-card-title">{{ $caseStudy->title }}</p>
-            <p class="cs-card-desc">{{ $caseStudy->description }}</p>
-            <div class="cs-card-results">
+        <a href="{{ route('case-study.show', $caseStudy) }}" class="case-card">
+          <div class="case-card-top"><span>{{ str_pad($loop->iteration, 2, '0', STR_PAD_LEFT) }}</span><span class="case-type">{{ $caseStudy->isIllustrative() ? 'Illustrative scenario' : 'Case study' }}</span></div>
+          <div class="case-tags">@foreach($caseStudy->tags ?? [] as $tag)<span>{{ $tag }}</span>@endforeach</div>
+          <h3>{{ $caseStudy->title }}</h3>
+          <p class="case-card-description">{{ $caseStudy->description }}</p>
+          <div class="case-card-bottom">
+            @if($caseStudy->isIllustrative())<p class="case-card-note">Assumptions, not measured client results.</p>@endif
+            @if(!empty($caseStudy->metrics))
+            <div class="case-card-metrics">
               @foreach($caseStudy->metrics as $metric)
-              <div class="cs-mini-result"><span class="cs-mini-num">{{ $metric['value'] }}</span><div class="cs-mini-label">{{ $metric['label'] }}</div></div>
+              <div><strong>{{ $metric['value'] }}</strong><span>{{ $metric['label'] }}</span></div>
               @endforeach
             </div>
+            @endif
+            <span class="case-read">Read the study <span aria-hidden="true">&nearr;</span></span>
           </div>
         </a>
         @endforeach
       </div>
+      @if(!$featuredCaseStudy && $caseStudies->isEmpty())<p class="case-empty">New studies will appear here as they are published. Tell us about the project you have in mind.</p>@endif
     </div>
   </section>
-
-  <section class="section sp-contact" style="padding:80px 0" id="contact-form">
-    <div class="sp-contact-bg"><div class="sp-contact-orb"></div></div>
-    <div class="container" style="text-align:center;position:relative" data-aos="fade-up">
-      <span class="section-tag">Your Project Next</span>
-      <h2 class="section-title" style="margin-top:14px">Ready to Become a <span class="text-gradient">Success Story?</span></h2>
-      <p class="section-sub" style="margin:0 auto 36px;max-width:480px">Let's discuss your project and show you how we can deliver results like these for your business.</p>
-      <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap">
-        <a href="{{ route('home') }}#contact" class="btn btn-primary btn-lg">Start Your Project</a>
-        <a href="{{ route('our-works') }}" class="btn btn-outline btn-lg">See Full Portfolio</a>
-      </div>
-    </div>
-  </section>
+  <section class="case-contact"><div class="container"><div class="case-contact-inner"><div><span class="case-eyebrow">Your next step</span><h2>Let's plan <span class="text-gradient">your project.</span></h2><p>Discuss your requirements and agree an approach, scope and measurement plan for your project.</p></div><div class="case-contact-actions"><a href="{{ route('home') }}#contact" class="btn btn-primary">Discuss Your Project <span aria-hidden="true">&nearr;</span></a><a href="{{ route('our-works') }}" class="case-text-link">See the portfolio <span aria-hidden="true">&rarr;</span></a></div></div></div></section>
+</main>
 @endsection
-
 @push('scripts')
   @vite(['resources/js/service.js'])
 @endpush

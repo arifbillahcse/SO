@@ -16,7 +16,7 @@
           any client you refer, for as long as they stay with Softorio.
         </p>
         <p style="font-size:14px;color:#444;line-height:1.7;margin:0 0 16px;">
-          We'll respond within 24 hours with everything you need to get started.
+          Our team will review your referral and follow up about the next steps.
         </p>
         <div style="background:#f9f9f9;border-radius:8px;padding:16px 20px;margin:20px 0;">
           <p style="color:#888;font-size:13px;margin:0 0 8px;">Your message</p>

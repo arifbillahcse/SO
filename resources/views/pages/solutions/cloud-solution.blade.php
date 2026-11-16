@@ -76,27 +76,19 @@
       <div class="sp-contact-left">
         <span class="section-tag">Get Your Server Set Up</span>
         <h2 class="section-title">Ready to Build Something <span class="text-gradient">Amazing?</span></h2>
-        <p class="section-sub" style="text-align:left;max-width:400px;">Tell us about your project. We'll respond within 24 hours and get you started on the path to digital success.</p>
+        <p class="section-sub" style="text-align:left;max-width:400px;">Tell us about your project. We'll review your requirements and discuss a practical next step.</p>
         <div class="sp-contact-info">
-          <div class="sp-ci-item"><div class="sp-ci-icon">&#128222;</div><div><div class="sp-ci-label">Phone</div><div class="sp-ci-val">+880 1779440247</div></div></div>
-          <div class="sp-ci-item"><div class="sp-ci-icon">&#9993;</div><div><div class="sp-ci-label">Email</div><div class="sp-ci-val">support@softorio.com</div></div></div>
+          <div class="sp-ci-item"><div class="sp-ci-icon">&#128222;</div><div><div class="sp-ci-label">Phone</div><div class="sp-ci-val">@if($siteContact['telephone_url'])<a href="{{ $siteContact['telephone_url'] }}">{{ $siteContact['phone'] }}</a>@else<a href="{{ route('contact') }}">Contact us</a>@endif</div></div></div>
+          <div class="sp-ci-item"><div class="sp-ci-icon">&#9993;</div><div><div class="sp-ci-label">Email</div><div class="sp-ci-val">@if($siteContact['email'])<a href="mailto:{{ $siteContact['email'] }}">{{ $siteContact['email'] }}</a>@else<a href="{{ route('contact') }}">Contact us</a>@endif</div></div></div>
         </div>
       </div>
       <div class="sp-contact-right">
         <div class="sp-form-card" data-endpoint="{{ route('contact.store') }}">
-          <input type="text" name="name" class="cta-input" placeholder="Your Name" />
-          <input type="email" name="email" class="cta-input" placeholder="Email Address" />
-          <input type="tel" name="phone" class="cta-input" placeholder="Phone Number" />
-          <select name="service_interested" class="cta-input">
-            <option value="" disabled selected>Select Service</option>
-            <option>Website Development</option>
-            <option>SEO Optimization</option>
-            <option>Manage Cloud</option>
-            <option>Automation</option>
-            <option>eCommerce Solution</option>
-            <option>Cloud Solution</option>
-          </select>
-          <textarea name="message" class="cta-input cta-textarea" placeholder="Tell us about your project..."></textarea>
+          <input type="text" name="name" maxlength="255" aria-label="Your name" class="cta-input" placeholder="Your Name" />
+          <input type="email" name="email" maxlength="255" aria-label="Email address" class="cta-input" placeholder="Email Address" />
+          <input type="tel" name="phone" maxlength="50" aria-label="Phone number (optional)" class="cta-input" placeholder="Phone Number" />
+          <select name="service_interested" aria-label="Service you are interested in" class="cta-input"><option value="" selected>Choose a service (optional)</option>@foreach($contactServiceOptions as $contactServiceOption)<option value="{{ $contactServiceOption->title }}" @selected(request()->routeIs($contactServiceOption->route_name))>{{ $contactServiceOption->title }}</option>@endforeach</select>
+          <textarea name="message" maxlength="5000" aria-label="Your message" class="cta-input cta-textarea" placeholder="Tell us about your project..."></textarea>
           <input type="text" name="company_website" class="hp-field" tabindex="-1" autocomplete="off" aria-hidden="true" />
           <button class="btn btn-primary btn-lg sp-submit" style="width:100%;justify-content:center;margin-top:4px;">Send Message</button>
         </div>

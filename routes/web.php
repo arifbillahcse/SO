@@ -2,36 +2,21 @@
 
 use App\Http\Controllers\AffiliateReferralController;
 use App\Http\Controllers\CaseStudyController;
+use App\Http\Controllers\ContactPageController;
 use App\Http\Controllers\ContactSubmissionController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\LegalPageController;
 use App\Http\Controllers\OurFoundersController;
 use App\Http\Controllers\OurResourcesController;
 use App\Http\Controllers\OurWorksController;
 use App\Http\Controllers\ServicesController;
 use App\Http\Controllers\SitemapController;
-use Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse;
-use Illuminate\Cookie\Middleware\EncryptCookies;
-use Illuminate\Session\Middleware\StartSession;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
-
-// Temporary diagnostic route — remove once SQLite driver issue is confirmed fixed.
-// Skips session/cookie middleware since those also hit the (currently broken) DB connection.
-Route::get('/__diag', function () {
-    return response()->json([
-        'pdo_drivers' => PDO::getAvailableDrivers(),
-        'pdo_sqlite_loaded' => extension_loaded('pdo_sqlite'),
-        'sqlite3_loaded' => extension_loaded('sqlite3'),
-        'php_version' => PHP_VERSION,
-        'php_ini_loaded_file' => php_ini_loaded_file(),
-        'loaded_extensions' => get_loaded_extensions(),
-    ]);
-})->withoutMiddleware([
-    StartSession::class,
-    EncryptCookies::class,
-    AddQueuedCookiesToResponse::class,
-]);
+Route::get('/contact', ContactPageController::class)->name('contact');
+Route::get('/tos', LegalPageController::class)->name('tos');
+Route::get('/privacy', LegalPageController::class)->name('privacy');
 
 // Services
 Route::get('/services', [ServicesController::class, 'index'])->name('services');

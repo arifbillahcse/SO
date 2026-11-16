@@ -9,6 +9,7 @@ export default defineConfig({
                 'resources/js/nav.js',
                 'resources/js/home.js',
                 'resources/js/service.js',
+                'resources/js/contact.js',
             ],
             refresh: true,
         }),

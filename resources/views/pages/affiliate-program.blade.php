@@ -230,27 +230,19 @@
       <div class="sp-contact-left">
         <span class="section-tag">Start Earning Today</span>
         <h2 class="section-title">Ready to Turn Referrals Into <span class="text-gradient">Recurring Income?</span></h2>
-        <p class="section-sub" style="text-align:left;max-width:400px;">Tell us a bit about yourself and who you'd like to refer. We'll respond within 24 hours with everything you need to get started.</p>
+        <p class="section-sub" style="text-align:left;max-width:400px;">Tell us a bit about yourself and who you'd like to refer. We'll review your referral and discuss how to get started.</p>
         <div class="sp-contact-info">
-          <div class="sp-ci-item"><div class="sp-ci-icon">&#128222;</div><div><div class="sp-ci-label">Phone</div><div class="sp-ci-val">+880 1776060247</div></div></div>
-          <div class="sp-ci-item"><div class="sp-ci-icon">&#9993;</div><div><div class="sp-ci-label">Email</div><div class="sp-ci-val">support@softorio.com</div></div></div>
+          <div class="sp-ci-item"><div class="sp-ci-icon">&#128222;</div><div><div class="sp-ci-label">Phone</div><div class="sp-ci-val">@if($siteContact['telephone_url'])<a href="{{ $siteContact['telephone_url'] }}">{{ $siteContact['phone'] }}</a>@else<a href="{{ route('contact') }}">Contact us</a>@endif</div></div></div>
+          <div class="sp-ci-item"><div class="sp-ci-icon">&#9993;</div><div><div class="sp-ci-label">Email</div><div class="sp-ci-val">@if($siteContact['email'])<a href="mailto:{{ $siteContact['email'] }}">{{ $siteContact['email'] }}</a>@else<a href="{{ route('contact') }}">Contact us</a>@endif</div></div></div>
         </div>
       </div>
       <div class="sp-contact-right">
         <div class="sp-form-card" data-endpoint="{{ route('affiliate-referral.store') }}">
-          <input type="text" name="name" class="cta-input" placeholder="Your Name" />
-          <input type="email" name="email" class="cta-input" placeholder="Email Address" />
-          <input type="tel" name="phone" class="cta-input" placeholder="Phone Number" />
-          <select name="service_interested" class="cta-input">
-            <option value="" disabled selected>Select Service</option>
-            <option>Website Development</option>
-            <option>SEO Optimization</option>
-            <option>Manage Cloud</option>
-            <option>Automation</option>
-            <option>eCommerce Solution</option>
-            <option>Cloud Solution</option>
-          </select>
-          <textarea name="message" class="cta-input cta-textarea" placeholder="Tell us about yourself and who you'd like to refer..."></textarea>
+          <input type="text" name="name" maxlength="255" aria-label="Your name" class="cta-input" placeholder="Your Name" />
+          <input type="email" name="email" maxlength="255" aria-label="Email address" class="cta-input" placeholder="Email Address" />
+          <input type="tel" name="phone" maxlength="50" aria-label="Phone number (optional)" class="cta-input" placeholder="Phone Number" />
+          
+          <textarea name="message" maxlength="5000" aria-label="Your message" class="cta-input cta-textarea" placeholder="Tell us about yourself and who you'd like to refer..."></textarea>
           <input type="text" name="company_website" class="hp-field" tabindex="-1" autocomplete="off" aria-hidden="true" />
           <button class="btn btn-primary btn-lg sp-submit" style="width:100%;justify-content:center;margin-top:4px;">Join the Affiliate Program</button>
         </div>

@@ -53,8 +53,8 @@ class MainPagesSeoTest extends TestCase
             $descriptions[] = $seo->meta_description;
         }
 
-        $this->assertCount(16, array_unique($titles));
-        $this->assertCount(16, array_unique($descriptions));
+        $this->assertCount(19, array_unique($titles));
+        $this->assertCount(19, array_unique($descriptions));
     }
 
     public function test_import_preserves_admin_edits_settings_and_other_page_types_and_is_safe_to_repeat(): void

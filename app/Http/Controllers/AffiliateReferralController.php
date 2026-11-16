@@ -27,7 +27,7 @@ class AffiliateReferralController extends Controller
             ->send(new AffiliateReferralAutoReply($referral));
 
         return response()->json([
-            'message' => "Thanks! We'll respond within 24 hours.",
+            'message' => 'Thanks for your referral. Our team will review it and follow up.',
         ]);
     }
 }

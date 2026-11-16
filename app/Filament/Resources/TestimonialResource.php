@@ -4,6 +4,7 @@ namespace App\Filament\Resources;
 
 use App\Filament\Resources\TestimonialResource\Pages;
 use App\Models\Testimonial;
+use Filament\Actions\EditAction;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
@@ -34,7 +35,7 @@ class TestimonialResource extends Resource
                 ->default(5)->required()->rules(['integer', 'between:1,5']),
             Textarea::make('text')->label('Customer quote')->required()->rows(5)->columnSpanFull(),
             Toggle::make('featured')->label('Published on homepage')->default(false)
-                ->helperText('Enable when this testimonial is ready to appear. Disable to keep it as a draft.'),
+                ->helperText('Publish only feedback supplied or approved by the named customer. Disable to keep it as a draft.'),
             TextInput::make('sort_order')->label('Display order')->integer()->minValue(0)->maxValue(65535)->default(0),
         ]);
     }
@@ -48,10 +49,11 @@ class TestimonialResource extends Resource
                 TextColumn::make('role'),
                 TextColumn::make('stars'),
                 IconColumn::make('featured')->label('Published')->boolean(),
-                TextColumn::make('text')->limit(50),
+                TextColumn::make('text')->label('Quote / draft wording')->limit(70)->searchable(),
             ])
             ->defaultSort('sort_order')->reorderable('sort_order')
             ->filters([TernaryFilter::make('featured')->label('Published')])
+            ->recordActions([EditAction::make()])
             ->emptyStateHeading('No testimonials yet')
             ->emptyStateDescription('Add customer feedback, then enable Published on homepage when it is ready.');
     }

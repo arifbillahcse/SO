@@ -1,114 +1,91 @@
-/* ============================================
-   SOFTORIO — Nav & Footer Interactivity
-   (Markup is now server-rendered via Blade partials;
-   this file only handles behavior.)
-============================================ */
 document.addEventListener('DOMContentLoaded', () => {
-  const themeToggle = document.getElementById('themeToggle');
-  if (themeToggle) {
-    const updateThemeToggle = () => {
-      const isLight = document.documentElement.dataset.theme === 'light';
-      const label = isLight ? 'Switch to dark mode' : 'Switch to light mode';
-      themeToggle.setAttribute('aria-label', label);
-      themeToggle.querySelector('.theme-toggle-label').textContent = isLight ? 'Dark mode' : 'Light mode';
-    };
-    updateThemeToggle();
-    themeToggle.hidden = false;
-    themeToggle.addEventListener('click', () => {
-      const theme = document.documentElement.dataset.theme === 'light' ? 'dark' : 'light';
-      document.documentElement.dataset.theme = theme;
-      try {
-        localStorage.setItem('softorio-theme', theme);
-      } catch (error) {
-        // Switching still works for the current page when storage is unavailable.
-      }
-      updateThemeToggle();
-    });
-  }
-
-  const navbar = document.getElementById('navbar');
-  if (!navbar) return;
-
-  // Scroll effect
-  const onScroll = () => navbar.classList.toggle('scrolled', window.scrollY > 20);
-  window.addEventListener('scroll', onScroll, { passive: true });
-  onScroll();
-
-  // Hamburger
-  const hamburger = document.getElementById('hamburger');
-  const navLinks  = document.getElementById('navLinks');
-  if (hamburger && navLinks) {
-    hamburger.addEventListener('click', () => {
-      const open = navLinks.classList.toggle('open');
-      const s = hamburger.querySelectorAll('span');
-      s[0].style.transform = open ? 'translateY(7px) rotate(45deg)' : '';
-      s[1].style.opacity   = open ? '0' : '';
-      s[2].style.transform = open ? 'translateY(-7px) rotate(-45deg)' : '';
-    });
-  }
-
-  // Dropdowns — hover (desktop) with gap-tolerance, click (mobile)
-  document.querySelectorAll('.nav-dropdown').forEach(dd => {
-    const menu = dd.querySelector('.dropdown-menu');
-    if (!menu) return;
-    const submenuToggle = dd.querySelector('.services-menu-toggle');
-    let timer;
-
-    // Desktop hover
-    dd.addEventListener('mouseenter', () => {
-      if (window.innerWidth <= 768) return;
-      clearTimeout(timer);
-      menu.classList.add('show');
-      if (submenuToggle) submenuToggle.setAttribute('aria-expanded', 'true');
-    });
-    dd.addEventListener('mouseleave', () => {
-      if (window.innerWidth <= 768) return;
-      timer = setTimeout(() => {
-        menu.classList.remove('show');
-        if (submenuToggle) submenuToggle.setAttribute('aria-expanded', 'false');
-      }, 150);
-    });
-
-    // Mobile click
-    const trigger = dd.querySelector('.nav-item');
-    if (submenuToggle) {
-      submenuToggle.addEventListener('click', () => {
-        const open = menu.classList.toggle('show');
-        submenuToggle.setAttribute('aria-expanded', String(open));
-      });
-      dd.addEventListener('keydown', e => {
-        if (e.key === 'Escape') {
-          menu.classList.remove('show');
-          submenuToggle.setAttribute('aria-expanded', 'false');
-          submenuToggle.focus();
-        }
-      });
-    } else if (trigger) {
-      trigger.addEventListener('click', e => {
-        if (window.innerWidth > 768) return;
-        e.preventDefault();
-        menu.classList.toggle('show');
-      });
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (!reducedMotion && 'IntersectionObserver' in window) document.documentElement.classList.add('motion-ready');
+    const themeToggle = document.getElementById('themeToggle');
+    if (themeToggle) {
+        const update = () => {
+            const isLight = document.documentElement.dataset.theme === 'light';
+            themeToggle.setAttribute('aria-label', isLight ? 'Switch to dark mode' : 'Switch to light mode');
+            themeToggle.querySelector('.theme-toggle-label').textContent = isLight ? 'Dark mode' : 'Light mode';
+        };
+        update(); themeToggle.hidden = false;
+        themeToggle.addEventListener('click', () => {
+            const theme = document.documentElement.dataset.theme === 'light' ? 'dark' : 'light';
+            document.documentElement.dataset.theme = theme;
+            try { localStorage.setItem('softorio-theme', theme); } catch {}
+            update();
+        });
     }
-  });
-
-  // Close nav on mobile when a dropdown link is clicked
-  document.querySelectorAll('.dropdown-item').forEach(link => {
-    link.addEventListener('click', () => {
-      const nl = document.getElementById('navLinks');
-      if (nl) nl.classList.remove('open');
-      document.querySelectorAll('.dropdown-menu.show').forEach(m => m.classList.remove('show'));
-      if (hamburger) {
-        hamburger.querySelectorAll('span').forEach(s => { s.style.transform = ''; s.style.opacity = ''; });
-      }
+    const navbar = document.getElementById('navbar');
+    const navLinks = document.getElementById('navLinks');
+    const hamburger = document.getElementById('hamburger');
+    if (navbar) {
+        const onScroll = () => navbar.classList.toggle('scrolled', window.scrollY > 20);
+        window.addEventListener('scroll', onScroll, { passive: true }); onScroll();
+    }
+    const dropdowns = [];
+    const closeDropdowns = () => dropdowns.forEach(({menu, toggle}) => {
+        menu.classList.remove('show'); toggle?.setAttribute('aria-expanded', 'false');
     });
-  });
-
-  // Smooth scroll for anchor links
-  document.querySelectorAll('a[href^="#"]').forEach(a => {
-    a.addEventListener('click', e => {
-      const target = document.querySelector(a.getAttribute('href'));
-      if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth' }); }
+    const setMobileMenu = open => {
+        navLinks?.classList.toggle('open', open);
+        hamburger?.setAttribute('aria-expanded', String(open));
+        const spans = hamburger?.querySelectorAll('span');
+        if (spans?.length === 3) {
+            spans[0].style.transform = open ? 'translateY(7px) rotate(45deg)' : '';
+            spans[1].style.opacity = open ? '0' : '';
+            spans[2].style.transform = open ? 'translateY(-7px) rotate(-45deg)' : '';
+        }
+        if (!open) closeDropdowns();
+    };
+    if (hamburger && navLinks) {
+        hamburger.setAttribute('aria-controls', 'navLinks'); hamburger.setAttribute('aria-expanded', 'false');
+        hamburger.addEventListener('click', () => setMobileMenu(!navLinks.classList.contains('open')));
+    }
+    document.querySelectorAll('.nav-dropdown').forEach((dropdown, index) => {
+        const menu = dropdown.querySelector('.dropdown-menu');
+        const toggle = dropdown.querySelector('.services-menu-toggle, .has-dropdown');
+        if (!menu || !toggle) return;
+        menu.id ||= 'navigation-submenu-' + index;
+        toggle.setAttribute('aria-controls', menu.id); toggle.setAttribute('aria-expanded', 'false'); toggle.setAttribute('aria-haspopup', 'true');
+        dropdowns.push({ menu, toggle });
+        let timer;
+        const setOpen = open => { menu.classList.toggle('show', open); toggle.setAttribute('aria-expanded', String(open)); };
+        dropdown.addEventListener('mouseenter', () => {
+            if (innerWidth <= 768) return;
+            clearTimeout(timer); setOpen(true);
+        });
+        dropdown.addEventListener('mouseleave', () => {
+            if (innerWidth <= 768) return;
+            timer = setTimeout(() => setOpen(false), 150);
+        });
+        toggle.addEventListener('click', event => {
+            event.preventDefault();
+            const open = innerWidth > 768 || !menu.classList.contains('show');
+            closeDropdowns(); setOpen(open);
+        });
+        dropdown.addEventListener('keydown', event => {
+            if (event.key === 'Escape' && menu.classList.contains('show')) {
+                event.preventDefault(); event.stopPropagation(); setOpen(false); toggle.focus();
+            } else if (event.key === 'ArrowDown' && event.target === toggle) {
+                event.preventDefault(); setOpen(true); menu.querySelector('a')?.focus();
+            }
+        });
+        dropdown.addEventListener('focusout', () => { setTimeout(() => { if (!dropdown.contains(document.activeElement)) setOpen(false); }, 0); });
     });
-  });
+    navLinks?.querySelectorAll('a[href]').forEach(link => link.addEventListener('click', () => setMobileMenu(false)));
+    document.addEventListener('keydown', event => {
+        if (event.key === 'Escape' && navLinks?.classList.contains('open')) { setMobileMenu(false); hamburger?.focus(); }
+    });
+    document.addEventListener('click', event => { if (navbar && !navbar.contains(event.target)) setMobileMenu(false); });
+    window.addEventListener('resize', () => { if (innerWidth > 768) setMobileMenu(false); });
+    document.querySelectorAll('a[href^="#"]').forEach(link => {
+        link.addEventListener('click', event => {
+            const fragment = link.getAttribute('href').slice(1);
+            if (!fragment) { event.preventDefault(); return; }
+            let id; try { id = decodeURIComponent(fragment); } catch { return; }
+            const target = document.getElementById(id);
+            if (target) { event.preventDefault(); target.scrollIntoView({ behavior: reducedMotion ? 'auto' : 'smooth', block: 'start' }); if (link.classList.contains('skip-link')) target.focus({ preventScroll: true }); }
+        });
+    });
 });

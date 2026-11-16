@@ -52,9 +52,10 @@
 <body>
   @include('partials.site-tracking-body-start')
 
+  <a href="#main-content" class="skip-link">Skip to main content</a>
   @include('partials.nav')
 
-  @yield('content')
+  <div id="main-content" tabindex="-1">@yield('content')</div>
 
   @include('partials.footer')
 

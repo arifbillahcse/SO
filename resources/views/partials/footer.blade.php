@@ -6,12 +6,13 @@
         <span class="logo-text">Softorio</span>
       </a>
       <p class="footer-tagline">Your Vision, Our Innovation. Driving digital transformation for businesses worldwide.</p>
+      @if(count($orgSettings->publicSocialLinks()))
       <div class="footer-socials">
-        <a href="{{ $orgSettings?->facebook_url ?: '#' }}" class="social-btn sm" aria-label="Facebook">f</a>
-        <a href="{{ $orgSettings?->twitter_url ?: '#' }}" class="social-btn sm" aria-label="Twitter">t</a>
-        <a href="{{ $orgSettings?->linkedin_url ?: '#' }}" class="social-btn sm" aria-label="LinkedIn">in</a>
-        <a href="{{ $orgSettings?->youtube_url ?: '#' }}" class="social-btn sm" aria-label="YouTube">yt</a>
+        @foreach($orgSettings->publicSocialLinks() as $label => $url)
+        <a href="{{ $url }}" class="social-btn sm" aria-label="{{ $label }}" target="_blank" rel="noopener noreferrer">{{ ['Facebook' => 'f', 'X / Twitter' => 'x', 'LinkedIn' => 'in', 'YouTube' => 'yt'][$label] }}</a>
+        @endforeach
       </div>
+      @endif
     </div>
     <div class="footer-col">
       <h4 class="footer-heading">Services</h4>
@@ -39,17 +40,18 @@
         <li><a href="{{ route('our-resources') }}">Our Resources</a></li>
         <li><a href="{{ route('affiliate-program') }}">Affiliate Program</a></li>
         <li><a href="{{ route('our-works') }}">Our Works</a></li>
-        <li><a href="{{ route('home') }}#contact">Contact Us</a></li>
+        <li><a href="{{ route('contact') }}">Contact Us</a></li>
       </ul>
     </div>
   </div>
   <div class="footer-bottom">
     <div class="container footer-bottom-inner">
       <p>&copy; {{ date('Y') }} Softorio. All Rights Reserved.</p>
+      @if(count($orgSettings->publicLegalLinks()))
       <div class="footer-legal">
-        <a href="#">Privacy Policy</a>
-        <a href="#">Terms of Service</a>
+        @foreach($orgSettings->publicLegalLinks() as $label => $url)<a href="{{ $url }}">{{ $label }}</a>@endforeach
       </div>
+      @endif
     </div>
   </div>
 </footer>

@@ -26,6 +26,9 @@ return [
 
     // Every public static route. A page_seos row is kept for each one.
     'pages' => [
+        'tos' => ['label' => 'Terms & Conditions', 'type' => 'page', 'view' => 'pages.legal', 'schema' => 'WebPage'],
+        'privacy' => ['label' => 'Privacy Policy', 'type' => 'page', 'view' => 'pages.legal', 'schema' => 'WebPage'],
+        'contact' => ['label' => 'Contact Us', 'type' => 'page', 'view' => 'pages.contact', 'schema' => 'ContactPage'],
         'home' => ['label' => 'Home', 'type' => 'page', 'view' => 'pages.home', 'schema' => 'WebPage'],
         'services' => ['label' => 'Services', 'type' => 'listing', 'view' => 'pages.services.index', 'schema' => 'CollectionPage'],
         'web-development' => ['label' => 'Web Development', 'type' => 'service', 'view' => 'pages.services.web-development', 'schema' => 'Service'],

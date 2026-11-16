@@ -178,25 +178,17 @@
         <h2 class="section-title">Find Out Why You're <span class="text-gradient">Not Ranking</span></h2>
         <p class="section-sub" style="text-align:left;max-width:400px;">We'll analyse your site and send you a free report highlighting your biggest SEO issues and opportunities — no strings attached.</p>
         <div class="sp-contact-info">
-          <div class="sp-ci-item"><div class="sp-ci-icon">&#128222;</div><div><div class="sp-ci-label">Phone</div><div class="sp-ci-val">+880 1776060247</div></div></div>
-          <div class="sp-ci-item"><div class="sp-ci-icon">&#9993;</div><div><div class="sp-ci-label">Email</div><div class="sp-ci-val">support@softorio.com</div></div></div>
+          <div class="sp-ci-item"><div class="sp-ci-icon">&#128222;</div><div><div class="sp-ci-label">Phone</div><div class="sp-ci-val">@if($siteContact['telephone_url'])<a href="{{ $siteContact['telephone_url'] }}">{{ $siteContact['phone'] }}</a>@else<a href="{{ route('contact') }}">Contact us</a>@endif</div></div></div>
+          <div class="sp-ci-item"><div class="sp-ci-icon">&#9993;</div><div><div class="sp-ci-label">Email</div><div class="sp-ci-val">@if($siteContact['email'])<a href="mailto:{{ $siteContact['email'] }}">{{ $siteContact['email'] }}</a>@else<a href="{{ route('contact') }}">Contact us</a>@endif</div></div></div>
         </div>
       </div>
       <div class="sp-contact-right">
         <div class="sp-form-card" data-endpoint="{{ route('contact.store') }}">
-          <input type="text" name="name" class="cta-input" placeholder="Your Name" />
-          <input type="email" name="email" class="cta-input" placeholder="Email Address" />
-          <input type="tel" name="phone" class="cta-input" placeholder="Phone Number" />
-          <select name="service_interested" class="cta-input">
-            <option value="" disabled selected>Select Service</option>
-            <option>Website Development</option>
-            <option>SEO Optimization</option>
-            <option>Manage Cloud</option>
-            <option>Automation</option>
-            <option>eCommerce Solution</option>
-            <option>Cloud Solution</option>
-          </select>
-          <textarea name="message" class="cta-input cta-textarea" placeholder="Tell us about your current SEO situation and goals..."></textarea>
+          <input type="text" name="name" maxlength="255" aria-label="Your name" class="cta-input" placeholder="Your Name" />
+          <input type="email" name="email" maxlength="255" aria-label="Email address" class="cta-input" placeholder="Email Address" />
+          <input type="tel" name="phone" maxlength="50" aria-label="Phone number (optional)" class="cta-input" placeholder="Phone Number" />
+          <select name="service_interested" aria-label="Service you are interested in" class="cta-input"><option value="" selected>Choose a service (optional)</option>@foreach($contactServiceOptions as $contactServiceOption)<option value="{{ $contactServiceOption->title }}" @selected(request()->routeIs($contactServiceOption->route_name))>{{ $contactServiceOption->title }}</option>@endforeach</select>
+          <textarea name="message" maxlength="5000" aria-label="Your message" class="cta-input cta-textarea" placeholder="Tell us about your current SEO situation and goals..."></textarea>
           <input type="text" name="company_website" class="hp-field" tabindex="-1" autocomplete="off" aria-hidden="true" />
           <button class="btn btn-primary btn-lg sp-submit" style="width:100%;justify-content:center;margin-top:4px;">Request Free Audit</button>
           <p class="sp-form-note">Free audit delivered within 48 hours. No commitment required.</p>

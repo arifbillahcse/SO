@@ -2,8 +2,11 @@
 
 namespace App\Providers;
 
+use App\Models\ContactPageSettings;
 use App\Models\OrganizationSettings;
 use App\Models\PageSeo;
+use App\Models\PortfolioItem;
+use App\Models\Service;
 use App\Services\Seo\NullSearchPerformance;
 use App\Services\Seo\SearchPerformance;
 use Illuminate\Database\Eloquent\Model;
@@ -28,6 +31,17 @@ class AppServiceProvider extends ServiceProvider
         View::composer('layouts.app', function ($view): void {
             $view->with('pageSeo', $this->currentPageSeo());
             $view->with('orgSettings', OrganizationSettings::current());
+        });
+
+        View::composer(['pages.home', 'pages.affiliate-program', 'pages.services.*', 'pages.solutions.*'], function ($view): void {
+            $organization = OrganizationSettings::current();
+            $view->with('siteContact', ContactPageSettings::current()->publicDetails($organization));
+            $view->with('contactServiceOptions', Service::where('is_published', true)->orderBy('sort_order')->orderBy('id')->get(['id', 'title', 'route_name']));
+        });
+
+        View::composer('pages.services.web-development', function ($view): void {
+            $view->with('webDevelopmentProjects', PortfolioItem::whereIn('category', ['wordpress', 'ecommerce', 'web-development'])
+                ->orderBy('sort_order')->orderBy('id')->limit(4)->get());
         });
 
         View::composer('partials.footer', function ($view): void {

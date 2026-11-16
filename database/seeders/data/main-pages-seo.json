@@ -196,6 +196,42 @@
         "Softorio team"
       ],
       "content_notes": "Founder and team background. This page is intentionally noindex, nofollow and excluded from the sitemap. Fill metadata for consistency and sharing without changing that setting. Avoid unverified credentials or achievements."
+    },
+    {
+      "route_name": "contact",
+      "title": "Contact Softorio | Website, Cloud and Automation Projects",
+      "meta_description": "Contact Softorio to discuss website development, SEO, cloud hosting and automation. Share your project requirements and explore the next steps with our team.",
+      "focus_keyword": "contact Softorio",
+      "secondary_keywords": [
+        "Softorio contact",
+        "website project enquiry",
+        "cloud hosting support"
+      ],
+      "content_notes": "Contact-page intent. Use actual business details from Contact Page and Organization settings. Avoid unconfirmed addresses, response-time promises or project outcomes. Preserve saved administrator edits."
+    },
+    {
+      "route_name": "tos",
+      "title": "Terms & Conditions for Website and Services | Softorio",
+      "meta_description": "Read the Softorio terms and conditions covering website use, service enquiries, project agreements, intellectual property and third-party services.",
+      "focus_keyword": "Softorio terms and conditions",
+      "secondary_keywords": [
+        "website terms",
+        "project agreements",
+        "service conditions"
+      ],
+      "content_notes": "Policy information for visitors. Keep project-specific fees, cancellation and ownership in written agreements. Owner review required before live deployment."
+    },
+    {
+      "route_name": "privacy",
+      "title": "Privacy Policy for Website Visitors & Enquiries | Softorio",
+      "meta_description": "Learn how Softorio handles website enquiries, affiliate referrals, browser storage and configured analytics, and how to contact us about your information.",
+      "focus_keyword": "Softorio privacy policy",
+      "secondary_keywords": [
+        "website privacy",
+        "enquiry information",
+        "cookies and analytics"
+      ],
+      "content_notes": "Describe actual website collection and configured integrations. Owner must verify provider details, retention, applicable lawful bases and regional requirements."
     }
   ]
 }

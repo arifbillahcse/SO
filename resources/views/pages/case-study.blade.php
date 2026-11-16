@@ -65,7 +65,7 @@
       @if(!$featuredCaseStudy && $caseStudies->isEmpty())<p class="case-empty">New studies will appear here as they are published. Tell us about the project you have in mind.</p>@endif
     </div>
   </section>
-  <section class="case-contact"><div class="container"><div class="case-contact-inner"><div><span class="case-eyebrow">Your next step</span><h2>Let's plan <span class="text-gradient">your project.</span></h2><p>Discuss your requirements and agree an approach, scope and measurement plan for your project.</p></div><div class="case-contact-actions"><a href="{{ route('home') }}#contact" class="btn btn-primary">Discuss Your Project <span aria-hidden="true">&nearr;</span></a><a href="{{ route('our-works') }}" class="case-text-link">See the portfolio <span aria-hidden="true">&rarr;</span></a></div></div></div></section>
+  <section class="case-contact"><div class="container"><div class="case-contact-inner"><div><span class="case-eyebrow">Your next step</span><h2>Let's plan <span class="text-gradient">your project.</span></h2><p>Discuss your requirements and agree an approach, scope and measurement plan for your project.</p></div><div class="case-contact-actions"><a href="{{ route('contact') }}" class="btn btn-primary">Discuss Your Project <span aria-hidden="true">&nearr;</span></a><a href="{{ route('our-works') }}" class="case-text-link">See the portfolio <span aria-hidden="true">&rarr;</span></a></div></div></div></section>
 </main>
 @endsection
 @push('scripts')

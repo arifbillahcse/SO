@@ -82,7 +82,7 @@
   </section>
   @endif
 
-  <section class="case-contact"><div class="container"><div class="case-contact-inner"><div><span class="case-eyebrow">Your next step</span><h2>Let's plan <span class="text-gradient">your project.</span></h2><p>Discuss your requirements and agree an approach, scope and measurement plan for your project.</p></div><div class="case-contact-actions"><a href="{{ route('home') }}#contact" class="btn btn-primary">Discuss Your Project <span aria-hidden="true">&nearr;</span></a><a href="{{ route('case-study') }}" class="case-text-link">Back to the collection <span aria-hidden="true">&rarr;</span></a></div></div></div></section>
+  <section class="case-contact"><div class="container"><div class="case-contact-inner"><div><span class="case-eyebrow">Your next step</span><h2>Let's plan <span class="text-gradient">your project.</span></h2><p>Discuss your requirements and agree an approach, scope and measurement plan for your project.</p></div><div class="case-contact-actions"><a href="{{ route('contact') }}" class="btn btn-primary">Discuss Your Project <span aria-hidden="true">&nearr;</span></a><a href="{{ route('case-study') }}" class="case-text-link">Back to the collection <span aria-hidden="true">&rarr;</span></a></div></div></div></section>
 </main>
 @endsection
 

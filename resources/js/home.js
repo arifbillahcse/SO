@@ -1,8 +1,25 @@
+import { initializeLeadForms } from './lead-forms.js';
+
 /* ============================================
    SOFTORIO — Interactions & Animations
 ============================================ */
 
 document.addEventListener('DOMContentLoaded', () => {
+
+  const forge = document.querySelector('[data-service-forge]');
+  if (forge) {
+    const toggle = forge.querySelector('[data-forge-toggle]');
+    toggle?.addEventListener('click', () => {
+      const paused = forge.dataset.paused !== 'true';
+      forge.dataset.paused = String(paused);
+      toggle.setAttribute('aria-pressed', String(paused));
+      toggle.setAttribute('aria-label', paused ? 'Play hero animation' : 'Pause hero animation');
+    });
+    const visibility = new IntersectionObserver(entries => {
+      forge.dataset.inView = String(entries[0].isIntersecting);
+    }, { threshold: 0 });
+    visibility.observe(forge);
+  }
 
   // Nav is handled by nav.js
 
@@ -16,7 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
         observer.unobserve(entry.target);
       }
     });
-  }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
+  }, { threshold: 0.01, rootMargin: '0px 0px -60px 0px' });
   aosEls.forEach(el => observer.observe(el));
 
   // ========== COUNTER ANIMATION ==========
@@ -33,6 +50,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function animateCounter(el) {
     const target   = parseInt(el.dataset.count);
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) { el.textContent = target; return; }
     const duration = 1800;
     const start    = performance.now();
     const update   = (now) => {
@@ -186,86 +204,10 @@ document.addEventListener('DOMContentLoaded', () => {
     resetAuto();
   }
 
-  // ========== CONTACT FORM ==========
-  const form      = document.querySelector('.cta-form');
-  const submitBtn = document.querySelector('.cta-submit');
-  if (form && submitBtn) {
-    const originalText  = submitBtn.textContent;
-    const requiredNames = ['name', 'email', 'message'];
-
-    submitBtn.addEventListener('click', async (e) => {
-      e.preventDefault();
-
-      let valid = true;
-      requiredNames.forEach(fieldName => {
-        const inp = form.querySelector(`[name="${fieldName}"]`);
-        if (inp && !inp.value.trim()) {
-          inp.style.borderColor = '#ef4444';
-          valid = false;
-          setTimeout(() => inp.style.borderColor = '', 2000);
-        }
-      });
-      if (!valid) return;
-
-      const payload = {};
-      form.querySelectorAll('[name]').forEach(inp => { payload[inp.name] = inp.value; });
-
-      submitBtn.textContent = 'Sending...';
-      submitBtn.disabled    = true;
-      submitBtn.style.background = '';
-
-      try {
-        const token = document.querySelector('meta[name="csrf-token"]')?.content;
-        const res = await fetch(form.dataset.endpoint, {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-            'Accept': 'application/json',
-            'X-CSRF-TOKEN': token || '',
-          },
-          body: JSON.stringify(payload),
-        });
-
-        if (res.ok) {
-          submitBtn.textContent = 'Message Sent!';
-          submitBtn.style.background = '#22c55e';
-          form.querySelectorAll('[name]').forEach(inp => {
-            if (inp.name !== 'company_website') inp.value = '';
-          });
-        } else if (res.status === 422) {
-          const body = await res.json();
-          const firstError = Object.values(body.errors || {})[0]?.[0];
-          submitBtn.textContent = firstError || 'Please check your info and try again';
-          submitBtn.style.background = '#ef4444';
-        } else {
-          throw new Error('Request failed with status ' + res.status);
-        }
-      } catch (err) {
-        submitBtn.textContent = 'Something went wrong — please try again';
-        submitBtn.style.background = '#ef4444';
-      }
-
-      setTimeout(() => {
-        submitBtn.textContent      = originalText;
-        submitBtn.style.background = '';
-        submitBtn.disabled         = false;
-      }, 3000);
-    });
-  }
-
-  // ========== SMOOTH SCROLL (index.html in-page anchors) ==========
-  document.querySelectorAll('a[href^="#"]').forEach(a => {
-    a.addEventListener('click', e => {
-      const target = document.querySelector(a.getAttribute('href'));
-      if (target) {
-        e.preventDefault();
-        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      }
-    });
-  });
+  initializeLeadForms('.cta-form');
 
   // ========== CURSOR GLOW (desktop) ==========
-  if (window.innerWidth > 768) {
+  if (window.innerWidth > 768 && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
     const glow = document.createElement('div');
     glow.style.cssText = `
       position:fixed; pointer-events:none; z-index:9999;

@@ -39,7 +39,7 @@
           We craft visually stunning, lightning-fast, and conversion-optimised websites — from custom WordPress builds to full-scale eCommerce platforms. Trusted by enterprises globally for over 10 years.
         </p>
         <div class="page-hero-cta">
-          <a href="#contact" class="btn btn-primary btn-lg">Start Your Project</a>
+          <a href="#contact-form" class="btn btn-primary btn-lg">Start Your Project</a>
           <a href="#process" class="btn btn-outline btn-lg">See Our Process</a>
         </div>
       </div>
@@ -483,102 +483,25 @@
     <div class="container">
       <div class="section-header" data-aos="fade-up">
         <span class="section-tag">Portfolio</span>
-        <h2 class="section-title">Recent <span class="text-gradient">Web Projects</span></h2>
-        <p class="section-sub">A selection of websites and platforms we've built for clients across industries and continents.</p>
+        <h2 class="section-title">Selected <span class="text-gradient">Web Projects</span></h2>
+        <p class="section-sub">Explore website projects and related technical work from our portfolio.</p>
       </div>
+      @if($webDevelopmentProjects->isNotEmpty())
       <div class="sp-portfolio-grid">
-        <div class="sp-port-card featured-port" data-aos="fade-up" data-aos-delay="0">
-          <div class="sp-port-img" style="background:linear-gradient(135deg,#0a0a1a,#1a1a3e)">
-            <div class="sp-port-mock">
-              <div class="spm-nav"></div>
-              <div class="spm-hero-block"></div>
-              <div class="spm-rows">
-                <div class="spm-row"></div>
-                <div class="spm-row short"></div>
-              </div>
-              <div class="spm-cards">
-                <div></div><div></div><div></div>
-              </div>
-            </div>
-            <div class="sp-port-overlay">
-              <a href="#" class="sp-port-btn">View Project</a>
-            </div>
+        @foreach($webDevelopmentProjects as $project)
+        <article class="sp-port-card" data-aos="fade-up">
+          <div class="sp-port-img" style="background:var(--dark-2)">
+            @if($project->thumbnailUrl())<img src="{{ $project->thumbnailUrl() }}" alt="{{ $project->thumbnailAltText() }}" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover">@endif
+            <div class="sp-port-overlay"><a href="{{ route('our-works.show', $project) }}" class="sp-port-btn">View Project</a></div>
           </div>
-          <div class="sp-port-info">
-            <div class="sp-port-tags">
-              <span>WordPress</span>
-              <span>Enterprise</span>
-            </div>
-            <h3>Enterprise Media Platform</h3>
-            <p>High-traffic WordPress VIP platform serving millions of monthly readers across North America.</p>
-            <div class="sp-port-client">
-              <span class="sp-port-client-dot"></span> Ask Media Group
-            </div>
-          </div>
-        </div>
-
-        <div class="sp-port-card" data-aos="fade-up" data-aos-delay="100">
-          <div class="sp-port-img" style="background:linear-gradient(135deg,#0f2027,#203a43)">
-            <div class="sp-port-mock">
-              <div class="spm-nav"></div>
-              <div class="spm-product-grid">
-                <div></div><div></div><div></div><div></div>
-              </div>
-            </div>
-            <div class="sp-port-overlay">
-              <a href="#" class="sp-port-btn">View Project</a>
-            </div>
-          </div>
-          <div class="sp-port-info">
-            <div class="sp-port-tags"><span>WooCommerce</span></div>
-            <h3>eCommerce Store</h3>
-            <p>WooCommerce-powered store with custom checkout and multi-currency support.</p>
-            <div class="sp-port-client"><span class="sp-port-client-dot"></span> Tropicana (PepsiCo)</div>
-          </div>
-        </div>
-
-        <div class="sp-port-card" data-aos="fade-up" data-aos-delay="200">
-          <div class="sp-port-img" style="background:linear-gradient(135deg,#1a0a2e,#2d1a4e)">
-            <div class="sp-port-mock">
-              <div class="spm-nav"></div>
-              <div class="spm-hero-block short"></div>
-              <div class="spm-rows">
-                <div class="spm-row"></div>
-                <div class="spm-row short"></div>
-              </div>
-            </div>
-            <div class="sp-port-overlay">
-              <a href="#" class="sp-port-btn">View Project</a>
-            </div>
-          </div>
-          <div class="sp-port-info">
-            <div class="sp-port-tags"><span>WordPress</span><span>Publishing</span></div>
-            <h3>Publisher Platform</h3>
-            <p>Complex multi-author publishing system with editorial workflows and member access.</p>
-            <div class="sp-port-client"><span class="sp-port-client-dot"></span> Assoc. of American Publishers</div>
-          </div>
-        </div>
-
-        <div class="sp-port-card" data-aos="fade-up" data-aos-delay="300">
-          <div class="sp-port-img" style="background:linear-gradient(135deg,#0d1a0d,#1a3a1a)">
-            <div class="sp-port-mock">
-              <div class="spm-nav"></div>
-              <div class="spm-product-grid">
-                <div></div><div></div><div></div><div></div>
-              </div>
-            </div>
-            <div class="sp-port-overlay">
-              <a href="#" class="sp-port-btn">View Project</a>
-            </div>
-          </div>
-          <div class="sp-port-info">
-            <div class="sp-port-tags"><span>WordPress</span><span>News</span></div>
-            <h3>News & Media Site</h3>
-            <p>Real-time news platform with social media integration and advanced content curation.</p>
-            <div class="sp-port-client"><span class="sp-port-client-dot"></span> Storyful (NewsCorp)</div>
-          </div>
-        </div>
+          <div class="sp-port-info"><div class="sp-port-tags">@foreach(array_slice($project->tags ?? [], 0, 3) as $tag)<span>{{ $tag }}</span>@endforeach</div><h3><a href="{{ route('our-works.show', $project) }}">{{ $project->title }}</a></h3><p>{{ \App\Support\Seo::excerpt($project->description) }}</p><div class="sp-port-client">{{ $project->project_type === 'technical_demonstration' ? 'Technical demonstration' : $project->client }}</div></div>
+        </article>
+        @endforeach
       </div>
+      @else
+      <p class="section-sub" style="text-align:center;margin:24px auto">Explore our portfolio for website and technical project topics.</p>
+      @endif
+
       <div class="sp-portfolio-cta" data-aos="fade-up">
         <a href="{{ route('home') }}#works" class="btn btn-outline btn-lg">View All Projects</a>
       </div>
@@ -683,44 +606,36 @@
       <div class="sp-contact-left">
         <span class="section-tag">Get a Quote</span>
         <h2 class="section-title">Let's Build Your <span class="text-gradient">Next Website</span></h2>
-        <p class="section-sub" style="text-align:left;max-width:420px;">Tell us about your project and we'll get back to you within 24 hours with a detailed proposal and timeline.</p>
+        <p class="section-sub" style="text-align:left;max-width:420px;">Tell us about your project, priorities and timing. We'll review the requirements and discuss the next steps.</p>
         <div class="sp-contact-info">
           <div class="sp-ci-item">
             <div class="sp-ci-icon">&#128222;</div>
             <div>
               <div class="sp-ci-label">Phone</div>
-              <div class="sp-ci-val">+880 1776060247</div>
+              <div class="sp-ci-val">@if($siteContact['telephone_url'])<a href="{{ $siteContact['telephone_url'] }}">{{ $siteContact['phone'] }}</a>@else<a href="{{ route('contact') }}">Contact us</a>@endif</div>
             </div>
           </div>
           <div class="sp-ci-item">
             <div class="sp-ci-icon">&#9993;</div>
             <div>
               <div class="sp-ci-label">Email</div>
-              <div class="sp-ci-val">support@softorio.com</div>
+              <div class="sp-ci-val">@if($siteContact['email'])<a href="mailto:{{ $siteContact['email'] }}">{{ $siteContact['email'] }}</a>@else<a href="{{ route('contact') }}">Contact us</a>@endif</div>
             </div>
           </div>
         </div>
       </div>
       <div class="sp-contact-right">
         <div class="sp-form-card" data-endpoint="{{ route('contact.store') }}">
-          <input type="text" name="name" class="cta-input" placeholder="Your Name" />
-          <input type="email" name="email" class="cta-input" placeholder="Email Address" />
-          <input type="tel" name="phone" class="cta-input" placeholder="Phone Number" />
-          <select name="service_interested" class="cta-input">
-            <option value="" disabled selected>Select Service</option>
-            <option>Website Development</option>
-            <option>SEO Optimization</option>
-            <option>Manage Cloud</option>
-            <option>Automation</option>
-            <option>eCommerce Solution</option>
-            <option>Cloud Solution</option>
-          </select>
-          <textarea name="message" class="cta-input cta-textarea" placeholder="Describe your project — what do you need, who is it for, and what are your goals?"></textarea>
+          <input type="text" name="name" maxlength="255" aria-label="Your name" class="cta-input" placeholder="Your Name" />
+          <input type="email" name="email" maxlength="255" aria-label="Email address" class="cta-input" placeholder="Email Address" />
+          <input type="tel" name="phone" maxlength="50" aria-label="Phone number (optional)" class="cta-input" placeholder="Phone Number" />
+          <select name="service_interested" aria-label="Service you are interested in" class="cta-input"><option value="" selected>Choose a service (optional)</option>@foreach($contactServiceOptions as $contactServiceOption)<option value="{{ $contactServiceOption->title }}" @selected(request()->routeIs($contactServiceOption->route_name))>{{ $contactServiceOption->title }}</option>@endforeach</select>
+          <textarea name="message" maxlength="5000" aria-label="Your message" class="cta-input cta-textarea" placeholder="Describe your project — what do you need, who is it for, and what are your goals?"></textarea>
           <input type="text" name="company_website" class="hp-field" tabindex="-1" autocomplete="off" aria-hidden="true" />
           <button class="btn btn-primary btn-lg sp-submit" style="width:100%;justify-content:center;margin-top:4px;">
             Send Project Brief
           </button>
-          <p class="sp-form-note">We respond within 24 hours. No spam, no commitments.</p>
+          <p class="sp-form-note">We'll review your message and follow up. No spam, no commitments.</p>
         </div>
       </div>
     </div>

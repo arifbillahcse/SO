@@ -38,11 +38,11 @@ class SitemapTest extends TestCase
         $response->assertDontSee('/our-founders', false);
     }
 
-    public function test_sitemap_does_not_include_post_only_form_routes(): void
+    public function test_sitemap_includes_contact_page_and_excludes_post_only_affiliate_form_route(): void
     {
         $response = $this->get('/sitemap.xml');
 
-        $response->assertDontSee('/contact<', false);
+        $response->assertSee('<loc>https://softorio.com/contact</loc>', false);
         $response->assertDontSee('/affiliate-referral<', false);
     }
 

@@ -186,7 +186,7 @@
     <span class="section-tag">Your Project Next</span>
     <h2 class="section-title" style="margin-top:14px">Ready to Start Your <span class="text-gradient">Own Project?</span></h2>
     <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;margin-top:24px">
-      <a href="{{ route('home') }}#contact" class="btn btn-primary btn-lg">Start Your Project</a>
+      <a href="{{ route('contact') }}" class="btn btn-primary btn-lg">Start Your Project</a>
       <a href="{{ route('our-works') }}" class="btn btn-outline btn-lg">See More Work</a>
     </div>
   </div>

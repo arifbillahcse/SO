@@ -87,7 +87,7 @@
       <span class="hero-badge"><span class="badge-dot"></span> Softorio services</span>
       <h1>Build your website.<br>Connect your tools.<br><span class="text-gradient">Manage your infrastructure.</span></h1>
       <p class="services-intro">Explore website development, SEO, managed cloud, business automation and diagnostic software services. Find the support that fits your next project.</p>
-      <div class="services-actions"><a class="btn btn-primary btn-lg" href="#service-catalogue">Explore Our Services <span aria-hidden="true">&darr;</span></a><a class="btn btn-outline btn-lg" href="{{ route('home') }}#contact">Discuss Your Project</a></div>
+      <div class="services-actions"><a class="btn btn-primary btn-lg" href="#service-catalogue">Explore Our Services <span aria-hidden="true">&darr;</span></a><a class="btn btn-outline btn-lg" href="{{ route('contact') }}">Discuss Your Project</a></div>
       @if($serviceGroups->isNotEmpty())<div class="services-facts"><span><strong>{{ $serviceGroups->count() }} core services</strong></span><span><strong>{{ $serviceCount }} ways to help</strong></span><span>From your first idea to ongoing support.</span></div>@endif
     </div>
   </section>
@@ -160,6 +160,6 @@
       </div>
     </div></section>
   @endif
-  <section class="services-cta"><div class="container"><div class="services-cta-inner"><div><span class="section-tag">Let's work together</span><h2 class="section-title">What are you <span class="text-gradient">planning next?</span></h2><p>Tell us about your website, workflow or infrastructure. We'll discuss the requirements and help you choose a practical next step.</p></div><a class="btn btn-primary btn-lg" href="{{ route('home') }}#contact">Discuss Your Project <span aria-hidden="true">&nearr;</span></a></div></div></section>
+  <section class="services-cta"><div class="container"><div class="services-cta-inner"><div><span class="section-tag">Let's work together</span><h2 class="section-title">What are you <span class="text-gradient">planning next?</span></h2><p>Tell us about your website, workflow or infrastructure. We'll discuss the requirements and help you choose a practical next step.</p></div><a class="btn btn-primary btn-lg" href="{{ route('contact') }}">Discuss Your Project <span aria-hidden="true">&nearr;</span></a></div></div></section>
 </main>
 @endsection

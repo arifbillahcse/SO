@@ -204,7 +204,7 @@
       <p class="portfolio-note">Technical overviews, video demonstrations, and design demos are labeled separately. Illustrated covers represent topics rather than screenshots of client systems. Linked content may change over time.</p>
 
       <div style="text-align:center;display:flex;gap:16px;justify-content:center;flex-wrap:wrap" data-aos="fade-up">
-        <a href="{{ route('home') }}#contact" class="btn btn-primary btn-lg">Start Your Project</a>
+        <a href="{{ route('contact') }}" class="btn btn-primary btn-lg">Start Your Project</a>
         <a href="{{ route('case-study') }}" class="btn btn-outline btn-lg">See Case Studies</a>
       </div>
     </div>

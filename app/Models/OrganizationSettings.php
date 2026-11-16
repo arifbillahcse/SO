@@ -7,6 +7,10 @@ use Illuminate\Database\Eloquent\Model;
 
 #[Fillable([
     'name',
+    'tos_title', 'tos_intro', 'tos_body', 'tos_effective_date',
+    'privacy_title', 'privacy_intro', 'privacy_body', 'privacy_effective_date',
+    'privacy_policy_url',
+    'terms_of_service_url',
     'logo',
     'description',
     'telephone',
@@ -33,6 +37,8 @@ class OrganizationSettings extends Model
 
     protected $casts = [
         'custom_code_enabled' => 'boolean',
+        'tos_effective_date' => 'date',
+        'privacy_effective_date' => 'date',
     ];
 
     public function googleAnalyticsId(): ?string
@@ -54,6 +60,38 @@ class OrganizationSettings extends Model
         $value = trim((string) $this->google_site_verification);
 
         return preg_match('/\\A[A-Za-z0-9_-]{1,255}\\z/', $value) ? $value : null;
+    }
+
+    /** @return array<string, string> */
+    public function publicSocialLinks(): array
+    {
+        return collect([
+            'Facebook' => $this->facebook_url, 'X / Twitter' => $this->twitter_url,
+            'LinkedIn' => $this->linkedin_url, 'YouTube' => $this->youtube_url,
+        ])->filter(fn (?string $url): bool => $this->isPublicUrl($url))->all();
+    }
+
+    /** @return array<string, string> */
+    public function publicLegalLinks(): array
+    {
+        return ['Terms & Conditions' => route('tos'), 'Privacy Policy' => route('privacy')];
+    }
+
+    /** @return array{title: string, intro: string, body: string, effective_date: string} */
+    public function legalPage(string $page): array
+    {
+        abort_unless(in_array($page, ['tos', 'privacy'], true), 404);
+
+        return collect(config("legal.{$page}"))->map(function (string $default, string $field) use ($page): string {
+            $value = $this->getAttribute("{$page}_{$field}");
+
+            return $field === 'effective_date' ? ($value?->format('Y-m-d') ?? $default) : ($value ?? $default);
+        })->all();
+    }
+
+    private function isPublicUrl(?string $url): bool
+    {
+        return filter_var($url, FILTER_VALIDATE_URL) && in_array(parse_url($url, PHP_URL_SCHEME), ['http', 'https'], true);
     }
 
     public static function current(): self

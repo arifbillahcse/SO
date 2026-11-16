@@ -3,6 +3,10 @@
 @section('title', 'Softorio — Website Development, Cloud & SEO Agency')
 @section('description', 'Softorio builds fast, scalable websites and manages cloud infrastructure, SEO, and automation — so you can focus on growing your business.')
 
+@push('head')
+@include('partials.hero-service-forge-styles')
+@endpush
+
 @section('content')
 <!-- ========== HERO ========== -->
   <section class="hero" id="home">
@@ -46,40 +50,7 @@
         </div>
       </div>
       <div class="hero-visual" data-aos="fade-left">
-        <div class="hero-card-stack">
-          <div class="float-card card-perf">
-            <div class="card-icon-sm">&#9889;</div>
-            <div>
-              <div class="card-title-sm">Page Speed</div>
-              <div class="card-val">99 / 100</div>
-            </div>
-          </div>
-          <div class="hero-browser">
-            <div class="browser-bar">
-              <span class="dot r"></span>
-              <span class="dot y"></span>
-              <span class="dot g"></span>
-              <div class="browser-url">softorio.com</div>
-            </div>
-            <div class="browser-body">
-              <div class="mock-hero-strip"></div>
-              <div class="mock-cards">
-                <div class="mock-card"></div>
-                <div class="mock-card"></div>
-                <div class="mock-card"></div>
-              </div>
-              <div class="mock-line"></div>
-              <div class="mock-line short"></div>
-            </div>
-          </div>
-          <div class="float-card card-seo">
-            <div class="card-icon-sm">&#128200;</div>
-            <div>
-              <div class="card-title-sm">SEO Score</div>
-              <div class="card-val green">Excellent</div>
-            </div>
-          </div>
-        </div>
+        @include('partials.hero-service-forge')
       </div>
     </div>
     <div class="hero-scroll-hint">
@@ -447,44 +418,33 @@
     <div class="container cta-inner" data-aos="fade-up">
       <div class="cta-content">
         <h2 class="cta-title">Ready to Build Something <span>Amazing?</span></h2>
-        <p class="cta-sub">Tell us about your project. We'll respond within 24 hours and get you started on the path to digital success.</p>
+        <p class="cta-sub">Tell us about your project. We'll review your requirements and discuss a practical next step.</p>
         <div class="cta-info">
           <div class="info-block">
             <div class="info-icon">&#128222;</div>
             <div>
               <div class="info-label">Phone</div>
-              <div class="info-val">+880 1776060247</div>
+              <div class="info-val">@if($siteContact['telephone_url'])<a href="{{ $siteContact['telephone_url'] }}">{{ $siteContact['phone'] }}</a>@else<a href="{{ route('contact') }}">Contact us</a>@endif</div>
             </div>
           </div>
           <div class="info-block">
             <div class="info-icon">&#9993;</div>
             <div>
               <div class="info-label">Email</div>
-              <div class="info-val">support@softorio.com</div>
+              <div class="info-val">@if($siteContact['email'])<a href="mailto:{{ $siteContact['email'] }}">{{ $siteContact['email'] }}</a>@else<a href="{{ route('contact') }}">Contact us</a>@endif</div>
             </div>
           </div>
-          <div class="cta-socials">
-            <a href="#" class="social-btn" aria-label="Facebook">f</a>
-            <a href="#" class="social-btn" aria-label="Twitter">t</a>
-            <a href="#" class="social-btn" aria-label="LinkedIn">in</a>
-            <a href="#" class="social-btn" aria-label="YouTube">yt</a>
-          </div>
+          @if(count($siteContact['social_links']))
+          <div class="cta-socials">@foreach($siteContact['social_links'] as $label => $url)<a href="{{ $url }}" class="social-btn" aria-label="{{ $label }}" target="_blank" rel="noopener noreferrer">{{ ['Facebook' => 'f', 'X / Twitter' => 'x', 'LinkedIn' => 'in', 'YouTube' => 'yt'][$label] }}</a>@endforeach</div>
+          @endif
         </div>
       </div>
       <div class="cta-form" data-endpoint="{{ route('contact.store') }}">
-        <input type="text" name="name" placeholder="Your Name" class="cta-input" />
-        <input type="email" name="email" placeholder="Your Email" class="cta-input" />
-        <input type="tel" name="phone" placeholder="Phone Number" class="cta-input" />
-        <select name="service_interested" class="cta-input">
-          <option value="" disabled selected>Select Service</option>
-          <option>Website Development</option>
-          <option>SEO Optimization</option>
-          <option>Manage Cloud</option>
-          <option>Automation</option>
-          <option>eCommerce Solution</option>
-          <option>Cloud Solution</option>
-        </select>
-        <textarea name="message" placeholder="Tell us about your project..." class="cta-input cta-textarea"></textarea>
+        <input type="text" name="name" maxlength="255" aria-label="Your name" placeholder="Your Name" class="cta-input" />
+        <input type="email" name="email" maxlength="255" aria-label="Email address" placeholder="Your Email" class="cta-input" />
+        <input type="tel" name="phone" maxlength="50" aria-label="Phone number (optional)" placeholder="Phone Number" class="cta-input" />
+        <select name="service_interested" aria-label="Service you are interested in" class="cta-input"><option value="" selected>Choose a service (optional)</option>@foreach($contactServiceOptions as $contactServiceOption)<option value="{{ $contactServiceOption->title }}" @selected(request()->routeIs($contactServiceOption->route_name))>{{ $contactServiceOption->title }}</option>@endforeach</select>
+        <textarea name="message" maxlength="5000" aria-label="Your message" placeholder="Tell us about your project..." class="cta-input cta-textarea"></textarea>
         <input type="text" name="company_website" class="hp-field" tabindex="-1" autocomplete="off" aria-hidden="true" />
         <button class="btn btn-primary btn-lg cta-submit">Send Message</button>
       </div>

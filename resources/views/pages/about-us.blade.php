@@ -20,7 +20,7 @@
         <h1 class="page-hero-title">The Team Behind <span class="text-gradient">Softorio</span></h1>
         <p class="page-hero-sub">For over 10 years we've been the trusted digital partner for businesses worldwide — from solo entrepreneurs to Fortune 500 companies. Here's our story.</p>
         <div class="page-hero-cta">
-          <a href="{{ route('home') }}#contact" class="btn btn-primary btn-lg">Work With Us</a>
+          <a href="{{ route('contact') }}" class="btn btn-primary btn-lg">Work With Us</a>
           <a href="{{ route('our-works') }}" class="btn btn-outline btn-lg">See Our Work</a>
         </div>
       </div>
@@ -102,7 +102,7 @@
       <h2 class="section-title" style="margin-top:14px">Ready to Work with <span class="text-gradient">Softorio?</span></h2>
       <p class="section-sub" style="margin:0 auto 36px;max-width:500px">Whether you need a <a href="{{ route('web-development') }}" style="color:var(--primary);text-decoration:underline;">website</a>, <a href="{{ route('manage-cloud') }}" style="color:var(--primary);text-decoration:underline;">hosting</a>, <a href="{{ route('seo') }}" style="color:var(--primary);text-decoration:underline;">SEO</a>, or a complete digital solution — we're here to help. Let's talk about your project.</p>
       <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap">
-        <a href="{{ route('home') }}#contact" class="btn btn-primary btn-lg">Start a Project</a>
+        <a href="{{ route('contact') }}" class="btn btn-primary btn-lg">Start a Project</a>
         <a href="{{ route('our-works') }}" class="btn btn-outline btn-lg">View Our Work</a>
       </div>
     </div>

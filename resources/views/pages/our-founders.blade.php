@@ -160,7 +160,7 @@
         <h1 class="page-hero-title">Arif &amp; <span class="text-gradient">Asma</span></h1>
         <p class="page-hero-sub">Two Computer Science &amp; Engineering graduates who built Softorio from the ground up. Every project is led by engineers who understand the technology — not just manage it.</p>
         <div class="page-hero-cta">
-          <a href="{{ route('home') }}#contact" class="btn btn-primary btn-lg">Work With Us</a>
+          <a href="{{ route('contact') }}" class="btn btn-primary btn-lg">Work With Us</a>
           <a href="{{ route('our-works') }}" class="btn btn-outline btn-lg">See Our Work</a>
         </div>
       </div>
@@ -299,7 +299,7 @@
       <h2 class="section-title" style="margin-top:14px">Want to Work With <span class="text-gradient">Us Directly?</span></h2>
       <p class="section-sub" style="margin:0 auto 36px;max-width:520px">Whether it's a website, cloud infrastructure, hosting, or a complete digital solution — we'd love to hear about your project.</p>
       <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap">
-        <a href="{{ route('home') }}#contact" class="btn btn-primary btn-lg">Start a Conversation</a>
+        <a href="{{ route('contact') }}" class="btn btn-primary btn-lg">Start a Conversation</a>
         <a href="{{ route('about-us') }}" class="btn btn-outline btn-lg">About Softorio</a>
       </div>
     </div>

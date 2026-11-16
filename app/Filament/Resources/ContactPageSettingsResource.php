@@ -1,0 +1,96 @@
+<?php
+
+namespace App\Filament\Resources;
+
+use App\Filament\Resources\ContactPageSettingsResource\Pages;
+use App\Models\ContactPageSettings;
+use Filament\Actions\EditAction;
+use Filament\Forms\Components\Repeater;
+use Filament\Forms\Components\Textarea;
+use Filament\Forms\Components\TextInput;
+use Filament\Resources\Resource;
+use Filament\Schemas\Components\Section;
+use Filament\Schemas\Schema;
+use Filament\Tables\Columns\TextColumn;
+use Filament\Tables\Table;
+use Illuminate\Database\Eloquent\Model;
+
+class ContactPageSettingsResource extends Resource
+{
+    protected static ?string $model = ContactPageSettings::class;
+
+    protected static string|\BackedEnum|null $navigationIcon = 'heroicon-o-envelope';
+
+    protected static string|\UnitEnum|null $navigationGroup = 'Content';
+
+    protected static ?string $navigationLabel = 'Contact Page';
+
+    protected static ?string $modelLabel = 'contact page';
+
+    protected static ?string $pluralModelLabel = 'Contact Page';
+
+    public static function form(Schema $schema): Schema
+    {
+        return $schema->components([
+            Section::make('Page introduction')->schema([
+                TextInput::make('hero_tag')->label('Small heading')->required()->maxLength(255),
+                TextInput::make('hero_title')->label('Main heading')->required()->maxLength(255),
+                Textarea::make('hero_description')->label('Introduction')->required()->rows(4)->maxLength(2000)->columnSpanFull(),
+            ])->columns(2)->columnSpanFull(),
+            Section::make('Contact details')->description('Blank phone and email fields use the values in SEO > Organization.')->schema([
+                TextInput::make('contact_email')->label('Public email')->email()->maxLength(255),
+                TextInput::make('contact_phone')->label('Public phone')->tel()->maxLength(50),
+                TextInput::make('whatsapp_number')->label('WhatsApp number')->maxLength(20)
+                    ->regex('/\A\+?[1-9][0-9]{6,14}\z/')->helperText('Optional. Country code and digits only, for example +8801776060247.'),
+                TextInput::make('map_url')->label('Map link')->url()->maxLength(2048)->rules(['starts_with:https://'])
+                    ->helperText('Optional HTTPS link to your location.'),
+                Textarea::make('address')->rows(3)->maxLength(2000),
+                Textarea::make('business_hours')->rows(3)->maxLength(2000),
+            ])->columns(2)->columnSpanFull(),
+            Section::make('Message form')->schema([
+                TextInput::make('form_title')->label('Form heading')->required()->maxLength(255),
+                TextInput::make('submit_label')->label('Send button text')->required()->maxLength(100),
+                Textarea::make('form_description')->label('Form introduction')->required()->maxLength(2000)->columnSpanFull(),
+                Textarea::make('success_message')->label('Confirmation message')->required()->maxLength(1000)->columnSpanFull(),
+                TextInput::make('notification_email')->label('Notification recipient')->email()->maxLength(255)
+                    ->helperText('Optional private inbox for contact-form notifications. Blank uses the configured ADMIN_NOTIFICATION_EMAIL.'),
+            ])->columns(2)->columnSpanFull(),
+            Section::make('Next steps and questions')->schema([
+                Repeater::make('next_steps')->label('What happens next')->schema([
+                    TextInput::make('title')->required()->maxLength(255),
+                    Textarea::make('description')->required()->maxLength(1500),
+                ])->maxItems(6)->defaultItems(0)->collapsible()->columnSpanFull(),
+                Repeater::make('faqs')->label('Frequently asked questions')->schema([
+                    TextInput::make('question')->required()->maxLength(255),
+                    Textarea::make('answer')->required()->maxLength(2000),
+                ])->maxItems(12)->defaultItems(0)->collapsible()->columnSpanFull(),
+            ])->columnSpanFull(),
+        ]);
+    }
+
+    public static function table(Table $table): Table
+    {
+        return $table->columns([
+            TextColumn::make('hero_title')->label('Contact page heading'),
+            TextColumn::make('updated_at')->label('Last updated')->dateTime(),
+        ])->recordActions([EditAction::make()]);
+    }
+
+    public static function canCreate(): bool
+    {
+        return false;
+    }
+
+    public static function canDelete(Model $record): bool
+    {
+        return false;
+    }
+
+    public static function getPages(): array
+    {
+        return [
+            'index' => Pages\ListContactPageSettings::route('/'),
+            'edit' => Pages\EditContactPageSettings::route('/{record}/edit'),
+        ];
+    }
+}

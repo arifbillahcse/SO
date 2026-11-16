@@ -25,10 +25,10 @@
       </div>
 
       <div class="nav-dropdown">
-        <a href="#" class="nav-item has-dropdown{{ request()->routeIs('ecommerce-solution', 'cloud-solution', 'automation-solution') ? ' active' : '' }}">
+        <button type="button" class="nav-item has-dropdown{{ request()->routeIs('ecommerce-solution', 'cloud-solution', 'automation-solution') ? ' active' : '' }}">
           Solutions
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
-        </a>
+        </button>
         <div class="dropdown-menu">
           <a href="{{ route('ecommerce-solution') }}" class="dropdown-item{{ request()->routeIs('ecommerce-solution') ? ' active' : '' }}"><span class="d-icon">&#128722;</span> eCommerce Solution</a>
           <a href="{{ route('cloud-solution') }}" class="dropdown-item{{ request()->routeIs('cloud-solution') ? ' active' : '' }}"><span class="d-icon">&#9729;</span> Cloud Solution</a>
@@ -39,10 +39,10 @@
       <a href="{{ route('our-works') }}" class="nav-item{{ request()->routeIs('our-works') ? ' active' : '' }}">Our Works</a>
 
       <div class="nav-dropdown">
-        <a href="#" class="nav-item has-dropdown{{ request()->routeIs('about-us', 'case-study', 'our-resources', 'affiliate-program') ? ' active' : '' }}">
+        <button type="button" class="nav-item has-dropdown{{ request()->routeIs('about-us', 'case-study', 'our-resources', 'affiliate-program') ? ' active' : '' }}">
           Resources
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
-        </a>
+        </button>
         <div class="dropdown-menu">
           <a href="{{ route('about-us') }}" class="dropdown-item{{ request()->routeIs('about-us') ? ' active' : '' }}"><span class="d-icon">&#128101;</span> About Us</a>
           <a href="{{ route('case-study') }}" class="dropdown-item{{ request()->routeIs('case-study') ? ' active' : '' }}"><span class="d-icon">&#128196;</span> Case Study</a>
@@ -58,8 +58,8 @@
         <svg class="theme-icon-moon" aria-hidden="true" width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20.5 14.5A8.5 8.5 0 0 1 9.5 3.5a8.5 8.5 0 1 0 11 11Z"/></svg>
         <span class="theme-toggle-label">Light mode</span>
       </button>
-      <a href="{{ route('home') }}#contact" class="btn btn-primary">Get in Touch</a>
-      <button class="hamburger" id="hamburger" aria-label="Menu">
+      <a href="{{ route('contact') }}" class="btn btn-primary">Get in Touch</a>
+      <button type="button" class="hamburger" id="hamburger" aria-label="Menu">
         <span></span><span></span><span></span>
       </button>
     </div>

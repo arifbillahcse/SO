@@ -32,14 +32,29 @@ class SitemapController extends Controller
             ->map(fn (PageSeo $seo) => [
                 'loc' => $seo->selfUrl(),
                 'lastmod' => $this->lastModified($seo)->toAtomString(),
+                'priority' => $this->priority($seo),
             ])
             ->unique('loc')
-            ->sortBy('loc')
+            ->sortBy([['priority', 'desc'], ['loc', 'asc']])
             ->values();
 
         $xml = view('sitemap', ['urls' => $urls])->render();
 
         return response($xml, 200)->header('Content-Type', 'application/xml; charset=UTF-8');
+    }
+
+    private function priority(PageSeo $seo): string
+    {
+        if (! $seo->isStatic()) {
+            return '0.6';
+        }
+
+        return match (true) {
+            $seo->route_name === 'home' => '1.0',
+            in_array($seo->route_name, ['tos', 'privacy'], true) => '0.3',
+            $seo->route_name === 'services' || in_array($seo->page_type, ['service', 'solution'], true) => '0.9',
+            default => '0.8',
+        };
     }
 
     /**

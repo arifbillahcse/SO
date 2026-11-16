@@ -2,6 +2,7 @@
 
 namespace Tests\Feature;
 
+use App\Models\Article;
 use App\Models\ContactPageSettings;
 use App\Models\OrganizationSettings;
 use App\Models\PageSeo;
@@ -79,7 +80,37 @@ class SitemapTest extends TestCase
         $xpath = new \DOMXPath($document);
         $xpath->registerNamespace('s', 'http://www.sitemaps.org/schemas/sitemap/0.9');
         $this->assertSame(0, $xpath->query('/s:urlset/*[not(self::s:url)]')->length);
-        $this->assertSame(0, $xpath->query('/s:urlset/s:url/*[not(self::s:loc or self::s:lastmod)]')->length);
+        $this->assertSame(0, $xpath->query('/s:urlset/s:url/*[not(self::s:loc or self::s:lastmod or self::s:priority)]')->length);
+    }
+
+    public function test_main_pages_have_higher_priorities_and_appear_before_content_detail_pages(): void
+    {
+        $article = Article::factory()->create(['body' => '<p>'.str_repeat('useful content ', 100).'</p>']);
+        $xml = simplexml_load_string($this->get('/sitemap.xml')->assertOk()->getContent());
+        $priorities = [];
+
+        foreach ($xml->url as $url) {
+            $value = (string) $url->priority;
+            $this->assertMatchesRegularExpression('/^(0\\.[0-9]|1\\.0)$/', $value);
+            $priorities[(string) $url->loc] = $value;
+        }
+
+        $this->assertSame('https://softorio.com/', array_key_first($priorities));
+        $this->assertSame('1.0', $priorities['https://softorio.com/']);
+        foreach (['services', 'web-development', 'cloud-solution'] as $path) {
+            $this->assertSame('0.9', $priorities['https://softorio.com/'.$path]);
+        }
+        foreach (['about-us', 'contact', 'our-works', 'case-study', 'our-resources', 'affiliate-program'] as $path) {
+            $this->assertSame('0.8', $priorities['https://softorio.com/'.$path]);
+        }
+        $this->assertSame('0.6', $priorities['https://softorio.com'.$article->seoPath()]);
+        foreach (['tos', 'privacy'] as $path) {
+            $this->assertSame('0.3', $priorities['https://softorio.com/'.$path]);
+        }
+
+        $sorted = array_values($priorities);
+        rsort($sorted, SORT_NUMERIC);
+        $this->assertSame($sorted, array_values($priorities));
     }
 
     public function test_sitemap_includes_contact_page_and_excludes_post_only_affiliate_form_route(): void

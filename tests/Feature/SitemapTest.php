@@ -2,7 +2,11 @@
 
 namespace Tests\Feature;
 
+use App\Models\ContactPageSettings;
+use App\Models\OrganizationSettings;
+use App\Models\PageSeo;
 use Illuminate\Foundation\Testing\RefreshDatabase;
+use Illuminate\Support\Carbon;
 use Tests\TestCase;
 
 class SitemapTest extends TestCase
@@ -36,6 +40,46 @@ class SitemapTest extends TestCase
 
         $response->assertSee('<loc>https://softorio.com/</loc>', false);
         $response->assertDontSee('/our-founders', false);
+    }
+
+    public function test_saved_contact_and_policy_edits_are_reflected_in_last_modified_dates(): void
+    {
+        $baseline = Carbon::createFromTimestamp(filemtime(resource_path('views/pages/legal.blade.php')))->addDay();
+        $this->travelTo($baseline);
+        PageSeo::syncStaticPages();
+        $contact = ContactPageSettings::current();
+        $organization = OrganizationSettings::current();
+        $this->travel(2)->hours();
+
+        $contact->update(['hero_title' => 'Updated contact information']);
+        $organization->update(['tos_intro' => 'Updated terms introduction.', 'privacy_intro' => 'Updated privacy introduction.']);
+        $xml = simplexml_load_string($this->get('/sitemap.xml')->assertOk()->getContent());
+        $dates = [];
+
+        foreach ($xml->url as $url) {
+            $dates[(string) $url->loc] = (string) $url->lastmod;
+        }
+
+        foreach (['contact', 'tos', 'privacy'] as $path) {
+            $this->assertSame(now()->toAtomString(), $dates['https://softorio.com/'.$path]);
+        }
+    }
+
+    public function test_sitemap_stays_unchanged_between_requests_and_contains_only_protocol_elements(): void
+    {
+        $first = $this->get('/sitemap.xml')->assertOk()->getContent();
+        $this->travel(2)->hours();
+        $second = $this->get('/sitemap.xml')->assertOk()->getContent();
+        $this->assertSame($first, $second);
+        $this->assertStringNotContainsString('<script', $second);
+        $this->assertStringNotContainsString('chrome-extension://', $second);
+
+        $document = new \DOMDocument;
+        $this->assertTrue($document->loadXML($second));
+        $xpath = new \DOMXPath($document);
+        $xpath->registerNamespace('s', 'http://www.sitemaps.org/schemas/sitemap/0.9');
+        $this->assertSame(0, $xpath->query('/s:urlset/*[not(self::s:url)]')->length);
+        $this->assertSame(0, $xpath->query('/s:urlset/s:url/*[not(self::s:loc or self::s:lastmod)]')->length);
     }
 
     public function test_sitemap_includes_contact_page_and_excludes_post_only_affiliate_form_route(): void

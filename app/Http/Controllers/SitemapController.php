@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\ContactPageSettings;
+use App\Models\OrganizationSettings;
 use App\Models\PageSeo;
 use App\Models\Redirect;
 use Carbon\CarbonInterface;
@@ -42,7 +44,7 @@ class SitemapController extends Controller
 
     /**
      * When the page's content last changed: the record itself for content
-     * pages; the template file (deployments) or its SEO row for static pages.
+     * pages; the template, SEO row or saved page settings for static routes.
      */
     private function lastModified(PageSeo $seo): CarbonInterface
     {
@@ -52,9 +54,16 @@ class SitemapController extends Controller
 
         $view = config("seo.pages.{$seo->route_name}.view");
         $file = $view ? resource_path('views/'.str_replace('.', '/', $view).'.blade.php') : null;
-
-        return $file && is_file($file)
+        $modified = $file && is_file($file)
             ? max($seo->updated_at, Carbon::createFromTimestamp(filemtime($file)))
             : $seo->updated_at;
+
+        $settingsModified = match ($seo->route_name) {
+            'contact' => ContactPageSettings::query()->value('updated_at'),
+            'tos', 'privacy' => OrganizationSettings::query()->value('updated_at'),
+            default => null,
+        };
+
+        return $settingsModified ? max($modified, Carbon::parse($settingsModified)) : $modified;
     }
 }

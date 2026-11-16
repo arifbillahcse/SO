@@ -59,6 +59,7 @@
   <div id="main-content" tabindex="-1">@yield('content')</div>
 
   @include('partials.footer')
+  @include('partials.whatsapp-chat')
 
   @stack('scripts')
   @include('partials.site-tracking-body-end')

@@ -11,17 +11,19 @@ class ContactPageSettings extends Model
 
     protected $fillable = [
         'hero_tag', 'hero_title', 'hero_description', 'contact_email', 'contact_phone',
-        'whatsapp_number', 'address', 'map_url', 'business_hours', 'form_title', 'form_description',
+        'whatsapp_number', 'whatsapp_chat_enabled', 'address', 'map_url', 'business_hours', 'form_title', 'form_description',
         'submit_label', 'success_message', 'notification_email', 'next_steps', 'faqs',
     ];
 
-    protected $casts = ['next_steps' => 'array', 'faqs' => 'array'];
+    protected $casts = ['next_steps' => 'array', 'faqs' => 'array', 'whatsapp_chat_enabled' => 'boolean'];
 
     /** @return array<string, mixed> */
     public static function defaults(): array
     {
         return [
             'hero_tag' => 'Contact Softorio',
+            'whatsapp_chat_enabled' => true,
+            'whatsapp_number' => '+8801779440297',
             'hero_title' => "Let's talk about your next project.",
             'hero_description' => 'Have a website to build, a cloud setup to improve or a workflow to simplify? Tell us what you are working on, where you need help and what a useful outcome would look like.',
             'form_title' => 'Tell us what you have in mind.',

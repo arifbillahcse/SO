@@ -44,6 +44,11 @@ class AppServiceProvider extends ServiceProvider
                 ->orderBy('sort_order')->orderBy('id')->limit(4)->get());
         });
 
+        View::composer('partials.whatsapp-chat', function ($view): void {
+            $settings = ContactPageSettings::current();
+            $view->with('whatsappChatUrl', $settings->whatsapp_chat_enabled ? $settings->whatsappUrl() : null);
+        });
+
         View::composer('partials.footer', function ($view): void {
             $organization = OrganizationSettings::current();
             $view->with('orgSettings', $organization);

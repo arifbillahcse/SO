@@ -1,7 +1,6 @@
 User-agent: *
 Disallow: /admin
 Disallow: /livewire/
-Disallow: /contact$
 Disallow: /affiliate-referral$
 
 Sitemap: https://softorio.com/sitemap.xml

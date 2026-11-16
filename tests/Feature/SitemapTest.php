@@ -142,6 +142,7 @@ class SitemapTest extends TestCase
         $contents = file_get_contents(public_path('robots.txt'));
 
         $this->assertStringContainsString('Sitemap: https://softorio.com/sitemap.xml', $contents);
+        $this->assertStringNotContainsString('Disallow: /contact', $contents);
         // our-founders must stay crawlable: it is kept out of the index by its
         // noindex tag, which Google can only read if robots.txt allows the URL.
         $this->assertStringNotContainsString('Disallow: /our-founders', $contents);

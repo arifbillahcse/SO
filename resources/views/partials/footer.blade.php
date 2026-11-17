@@ -43,6 +43,8 @@
     <div class="footer-col">
       <h4 class="footer-heading">Solutions</h4>
       <ul class="footer-links">
+        <li><a href="{{ route('solutions') }}">All Solutions</a></li>
+        <li><a href="{{ route('diagnostic-centers-solution') }}">Diagnostic Centers</a></li>
         <li><a href="{{ route('ecommerce-solution') }}">eCommerce Solution</a></li>
         <li><a href="{{ route('cloud-solution') }}">Cloud Solution</a></li>
         <li><a href="{{ route('automation-solution') }}">Automation Solution</a></li>

@@ -6,6 +6,15 @@ import { initializeLeadForms } from './lead-forms.js';
 
 document.addEventListener('DOMContentLoaded', () => {
 
+  document.querySelectorAll('.client-brand-image').forEach(image => {
+    const fallback = () => {
+      image.hidden = true;
+      image.nextElementSibling.hidden = false;
+    };
+    image.addEventListener('error', fallback);
+    if (image.complete && image.naturalWidth === 0) fallback();
+  });
+
   const forge = document.querySelector('[data-service-forge]');
   if (forge) {
     const toggle = forge.querySelector('[data-forge-toggle]');
@@ -64,29 +73,18 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // ========== WORKS FILTER ==========
-  const filterBtns = document.querySelectorAll('.filter-btn');
-  const workCards  = document.querySelectorAll('.work-card');
+  const filterBtns = document.querySelectorAll('[data-home-portfolio-filters] .filter-btn');
+  const workCards = document.querySelectorAll('#works .work-card');
 
-  filterBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
-      filterBtns.forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-      const filter = btn.dataset.filter;
+  filterBtns.forEach(button => {
+    button.addEventListener('click', () => {
+      filterBtns.forEach(filterButton => {
+        const selected = filterButton === button;
+        filterButton.classList.toggle('active', selected);
+        filterButton.setAttribute('aria-pressed', String(selected));
+      });
       workCards.forEach(card => {
-        const match = filter === 'all' || card.dataset.category === filter;
-        card.style.opacity    = '0';
-        card.style.transform  = 'scale(0.9)';
-        setTimeout(() => {
-          card.classList.toggle('hidden', !match);
-          if (match) {
-            card.style.display = '';
-            requestAnimationFrame(() => {
-              card.style.opacity   = '1';
-              card.style.transform = 'scale(1)';
-              card.style.transition = 'opacity 0.4s ease, transform 0.4s ease';
-            });
-          }
-        }, 200);
+        card.classList.toggle('hidden', button.dataset.filter !== 'all' && card.dataset.category !== button.dataset.filter);
       });
     });
   });

@@ -232,6 +232,29 @@
         "cookies and analytics"
       ],
       "content_notes": "Describe actual website collection and configured integrations. Owner must verify provider details, retention, applicable lawful bases and regional requirements."
+    },
+    {
+      "route_name": "solutions",
+      "title": "Business Solutions for Websites, Cloud & Diagnostic Centers | Softorio",
+      "meta_description": "Explore Softorio solutions for eCommerce, cloud infrastructure, automation and a planned diagnostic center software rollout. Discuss your next project.",
+      "focus_keyword": "business solutions",
+      "secondary_keywords": [
+        "eCommerce",
+        "managed cloud",
+        "business automation"
+      ],
+      "content_notes": "Overview of the four solution areas with links to individual pages."
+    },
+    {
+      "route_name": "diagnostic-centers-solution",
+      "title": "Diagnostic Center Software Solution & Rollout Plan | Softorio",
+      "meta_description": "Plan diagnostic center software for billing, laboratory reports and owner operations, with modular development, clinic review and a real-world pilot.",
+      "focus_keyword": "diagnostic center software solution",
+      "secondary_keywords": [
+        "phased development",
+        "modular software"
+      ],
+      "content_notes": "Planned development; no claim of a ready-to-use product or verified production capacity."
     }
   ]
 }

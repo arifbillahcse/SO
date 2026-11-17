@@ -6,6 +6,7 @@
 @push('head')
 @include('partials.hero-service-forge-styles')
 @include('partials.about-styles')
+@include('partials.portfolio-card-styles')
 @endpush
 
 @section('content')
@@ -20,7 +21,7 @@
       <div class="hero-content" data-aos="fade-up">
         <div class="hero-badge">
           <span class="badge-dot"></span>
-          WordPress VIP Gold Partner
+          Website, Cloud &amp; SEO Services
         </div>
         <h1 class="hero-title">
           Your Vision,<br />
@@ -60,40 +61,30 @@
     </div>
   </section>
 
-  <!-- ========== CLIENTS MARQUEE ========== -->
-  <section class="clients-section">
+  @if($clientBrands->isNotEmpty())
+  <section class="clients-section" aria-labelledby="client-brands-label">
     <div class="container">
-      <p class="clients-label">Trusted by leading brands worldwide</p>
+      <p class="clients-label" id="client-brands-label">Trusted by leading brands worldwide</p>
     </div>
     <div class="marquee-wrapper">
       <div class="marquee-track">
-        <div class="marquee-group">
-        <span class="client-logo">Ask Media</span>
-        <span class="client-logo">Tropicana</span>
-        <span class="client-logo">Storyful</span>
-        <span class="client-logo">PepsiCo</span>
-        <span class="client-logo">NewsCorp</span>
-        <span class="client-logo">HKP Group</span>
-        <span class="client-logo">Scan Media</span>
-        <span class="client-logo">DC Innovation</span>
-        <span class="client-logo">MarketHive</span>
-        <span class="client-logo">STEM Academy</span>
+        @foreach([false, true] as $duplicate)
+        <div class="marquee-group" @if($duplicate) aria-hidden="true" @endif>
+          @foreach($clientBrands as $brand)
+          @php($brandLogoUrl = $brand->logoUrl())
+          <span class="client-logo" data-client-brand="{{ $brand->id }}">
+            @if($brandLogoUrl)
+            <img class="client-brand-image" src="{{ $brandLogoUrl }}" alt="{{ $brand->name }}" width="144" height="60" decoding="async">
+            @endif
+            <span @if($brandLogoUrl) hidden @endif>{{ $brand->name }}</span>
+          </span>
+          @endforeach
         </div>
-        <div class="marquee-group" aria-hidden="true">
-        <span class="client-logo">Ask Media</span>
-        <span class="client-logo">Tropicana</span>
-        <span class="client-logo">Storyful</span>
-        <span class="client-logo">PepsiCo</span>
-        <span class="client-logo">NewsCorp</span>
-        <span class="client-logo">HKP Group</span>
-        <span class="client-logo">Scan Media</span>
-        <span class="client-logo">DC Innovation</span>
-        <span class="client-logo">MarketHive</span>
-        <span class="client-logo">STEM Academy</span>
-        </div>
+        @endforeach
       </div>
     </div>
   </section>
+  @endif
 
   <!-- ========== SERVICES ========== -->
   <section class="services-section section" id="services">
@@ -141,179 +132,40 @@
 
   @include('partials.work-approach')
 
-  <!-- ========== SOLUTIONS ========== -->
-  <section class="solutions-section section" id="solutions">
-    <div class="container">
-      <div class="section-header" data-aos="fade-up">
-        <span class="section-tag">Solutions</span>
-        <h2 class="section-title">Complete Solutions for <span class="text-gradient">Every Business</span></h2>
-        <p class="section-sub">Packaged offerings that combine our services into focused, results-driven digital solutions.</p>
-      </div>
-      <div class="solutions-grid">
-
-        <div class="solution-card" data-aos="fade-up" data-aos-delay="0">
-          <div class="solution-num">01</div>
-          <div class="solution-icon">
-            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
-          </div>
-          <h3 class="solution-name">eCommerce Solution</h3>
-          <p class="solution-desc">Launch and scale your online store with WooCommerce, secure payments, inventory management, and conversion-focused design.</p>
-          <ul class="solution-features">
-            <li>WooCommerce Setup</li>
-            <li>Payment Gateway Integration</li>
-            <li>Inventory Management</li>
-            <li>Analytics & Reporting</li>
-            <li>SEO & Content Marketing</li>
-          </ul>
-          <a href="#contact" class="btn btn-outline-sm">Get Started &rarr;</a>
-        </div>
-
-        <div class="solution-card highlight" data-aos="fade-up" data-aos-delay="150">
-          <div class="solution-badge">Most Popular</div>
-          <div class="solution-num">02</div>
-          <div class="solution-icon">
-            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/></svg>
-          </div>
-          <h3 class="solution-name">Cloud Solution</h3>
-          <p class="solution-desc">Enterprise-grade cloud infrastructure — VPS deployment, firewalls, CDN, mail setup, and server management for total reliability.</p>
-          <ul class="solution-features">
-            <li>VPS/Dedicated Server</li>
-            <li>Server Setup & Firewall</li>
-            <li>Mail Server Configuration</li>
-            <li>DNS Management</li>
-            <li>Cron & Email Marketing</li>
-          </ul>
-          <a href="#contact" class="btn btn-primary-sm">Get Started &rarr;</a>
-        </div>
-
-        <div class="solution-card" data-aos="fade-up" data-aos-delay="300">
-          <div class="solution-num">03</div>
-          <div class="solution-icon">
-            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
-          </div>
-          <h3 class="solution-name">Automation Solution</h3>
-          <p class="solution-desc">Automate your business workflows, marketing pipelines, and repetitive tasks to save time and scale operations efficiently.</p>
-          <ul class="solution-features">
-            <li>Workflow Automation</li>
-            <li>API & Tool Integration</li>
-            <li>Email Sequence Automation</li>
-            <li>CRM Pipeline Setup</li>
-            <li>Reporting Automation</li>
-          </ul>
-          <a href="#contact" class="btn btn-outline-sm">Get Started &rarr;</a>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
   <!-- ========== OUR WORKS ========== -->
-  <section class="works-section section" id="works">
+  <section class="works-section section" id="works" aria-labelledby="home-works-title">
     <div class="container">
       <div class="section-header" data-aos="fade-up">
         <span class="section-tag">Portfolio</span>
-        <h2 class="section-title">Our <span class="text-gradient">Recent Works</span></h2>
-        <p class="section-sub">A snapshot of projects we've built — from eCommerce stores to enterprise platforms.</p>
+        <h2 class="section-title" id="home-works-title">Our <span class="text-gradient">Selected Work</span></h2>
+        <p class="section-sub">Website projects, design demonstrations and technical work from our portfolio.</p>
       </div>
-      <div class="works-filter" data-aos="fade-up">
-        <button class="filter-btn active" data-filter="all">All</button>
-        <button class="filter-btn" data-filter="wordpress">WordPress</button>
-        <button class="filter-btn" data-filter="ecommerce">eCommerce</button>
-        <button class="filter-btn" data-filter="cloud">Cloud</button>
+      @if($homePortfolioItems->pluck('category')->unique()->count() > 1)
+      <div class="works-filter" data-home-portfolio-filters role="group" aria-label="Filter featured portfolio projects">
+        <button type="button" class="filter-btn active" data-filter="all" aria-pressed="true">All projects</button>
+        @foreach(\App\Models\PortfolioItem::CATEGORY_OPTIONS as $category => $label)
+          @if($homePortfolioItems->contains('category', $category))
+          <button type="button" class="filter-btn" data-filter="{{ $category }}" aria-pressed="false">{{ $label }}</button>
+          @endif
+        @endforeach
       </div>
+      @endif
+      @if($homePortfolioItems->isNotEmpty())
       <div class="works-grid">
-        <div class="work-card" data-category="wordpress" data-aos="fade-up" data-aos-delay="0">
-          <div class="work-img" style="background:linear-gradient(135deg,#1a1a2e,#16213e)">
-            <div class="work-mock">
-              <div class="wm-bar"></div>
-              <div class="wm-hero"></div>
-              <div class="wm-cols"><div></div><div></div></div>
-            </div>
-          </div>
-          <div class="work-info">
-            <span class="work-tag">WordPress</span>
-            <h3 class="work-title">Business Corporate Site</h3>
-            <p class="work-client">Ask Media Group</p>
-          </div>
-        </div>
-        <div class="work-card" data-category="ecommerce" data-aos="fade-up" data-aos-delay="100">
-          <div class="work-img" style="background:linear-gradient(135deg,#0f2027,#203a43)">
-            <div class="work-mock">
-              <div class="wm-bar"></div>
-              <div class="wm-products"><div></div><div></div><div></div></div>
-            </div>
-          </div>
-          <div class="work-info">
-            <span class="work-tag">eCommerce</span>
-            <h3 class="work-title">Online Store — WooCommerce</h3>
-            <p class="work-client">Tropicana (PepsiCo)</p>
-          </div>
-        </div>
-        <div class="work-card" data-category="cloud" data-aos="fade-up" data-aos-delay="200">
-          <div class="work-img" style="background:linear-gradient(135deg,#1a1a1a,#2d2d2d)">
-            <div class="work-mock">
-              <div class="wm-bar"></div>
-              <div class="wm-dashboard">
-                <div class="wm-metric"></div>
-                <div class="wm-chart"></div>
-              </div>
-            </div>
-          </div>
-          <div class="work-info">
-            <span class="work-tag">Cloud / VPS</span>
-            <h3 class="work-title">Cloud Infrastructure Setup</h3>
-            <p class="work-client">Storyful (NewsCorp)</p>
-          </div>
-        </div>
-        <div class="work-card" data-category="wordpress" data-aos="fade-up" data-aos-delay="300">
-          <div class="work-img" style="background:linear-gradient(135deg,#200122,#6f0000)">
-            <div class="work-mock">
-              <div class="wm-bar"></div>
-              <div class="wm-hero"></div>
-              <div class="wm-cols"><div></div><div></div></div>
-            </div>
-          </div>
-          <div class="work-info">
-            <span class="work-tag">WordPress</span>
-            <h3 class="work-title">Publisher Platform</h3>
-            <p class="work-client">Association of American Publishers</p>
-          </div>
-        </div>
-        <div class="work-card" data-category="ecommerce" data-aos="fade-up" data-aos-delay="400">
-          <div class="work-img" style="background:linear-gradient(135deg,#0d0d0d,#1a3a1a)">
-            <div class="work-mock">
-              <div class="wm-bar"></div>
-              <div class="wm-products"><div></div><div></div><div></div></div>
-            </div>
-          </div>
-          <div class="work-info">
-            <span class="work-tag">eCommerce</span>
-            <h3 class="work-title">Multi-Vendor Marketplace</h3>
-            <p class="work-client">DC Innovation</p>
-          </div>
-        </div>
-        <div class="work-card" data-category="cloud" data-aos="fade-up" data-aos-delay="500">
-          <div class="work-img" style="background:linear-gradient(135deg,#0f0c29,#302b63)">
-            <div class="work-mock">
-              <div class="wm-bar"></div>
-              <div class="wm-dashboard">
-                <div class="wm-metric"></div>
-                <div class="wm-chart"></div>
-              </div>
-            </div>
-          </div>
-          <div class="work-info">
-            <span class="work-tag">Automation</span>
-            <h3 class="work-title">Workflow Automation System</h3>
-            <p class="work-client">MarketHive</p>
-          </div>
-        </div>
+        @foreach($homePortfolioItems as $item)
+        <x-portfolio-card :project="$item" :delay="($loop->index % 3) * 60" heading="h3" class="work-card" />
+        @endforeach
       </div>
+      @else
+      <p class="portfolio-note" style="text-align:center;color:var(--text-secondary);margin-bottom:28px">New work will appear here as our portfolio grows.</p>
+      @endif
       <div class="works-cta" data-aos="fade-up">
-        <a href="#contact" class="btn btn-primary btn-lg">Start Your Project</a>
+        <a href="{{ route('our-works') }}" class="btn btn-primary btn-lg">View all projects <span aria-hidden="true">&nearr;</span></a>
       </div>
     </div>
   </section>
+
+  @include('partials.client-map')
 
   <!-- ========== TESTIMONIALS ========== -->
   @if($testimonials->isNotEmpty())

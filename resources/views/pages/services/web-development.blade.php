@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('title', 'WordPress Website Development Services — Softorio')
-@section('description', 'Custom WordPress and business website development by Softorio — a WordPress VIP Gold Partner with 10+ years building fast, scalable websites.')
+@section('description', 'WordPress, WooCommerce and custom business website development by Softorio, from planning and design to launch and ongoing support.')
 
 @push('head')
 <style>
@@ -30,7 +30,7 @@
         </div>
         <div class="hero-badge">
           <span class="badge-dot"></span>
-          WordPress VIP Gold Partner
+          WordPress &amp; WooCommerce Development
         </div>
         <h1 class="page-hero-title">
           World-Class <span class="text-gradient">Website Development</span><br />That Drives Results
@@ -244,7 +244,7 @@
       <div class="sp-why-left" data-aos="fade-right">
         <span class="section-tag">Why WordPress</span>
         <h2 class="section-title">The World's #1 CMS — <span class="text-gradient">We Master It</span></h2>
-        <p class="section-sub" style="text-align:left;">WordPress powers 43% of the web. We are a WordPress VIP Gold Partner — the highest level of recognition awarded by Automattic, the company behind WordPress.com, WooCommerce, and Tumblr.</p>
+        <p class="section-sub" style="text-align:left;">We build WordPress websites and WooCommerce stores around your business needs, with custom development, integrations and ongoing technical support.</p>
         <div class="sp-why-stats">
           <div class="sp-why-stat">
             <div class="sp-ws-num">43%</div>
@@ -264,8 +264,8 @@
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#FF7900" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
           </div>
           <div>
-            <div class="vip-title">WordPress VIP Gold Partner</div>
-            <div class="vip-sub">Certified by Automattic — the highest tier of WordPress agency recognition.</div>
+            <div class="vip-title">WordPress &amp; WooCommerce Development</div>
+            <div class="vip-sub">Custom websites, online stores and ongoing technical support.</div>
           </div>
         </div>
       </div>

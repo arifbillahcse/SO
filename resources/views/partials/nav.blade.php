@@ -4,7 +4,7 @@
       <span class="logo-icon"><img src="{{ asset('images/logo-icon.png') }}" alt="" class="logo-icon-img"></span>
       <span class="logo-text">Softorio</span>
     </a>
-    <nav class="nav-links" id="navLinks">
+    <nav class="nav-links" id="navLinks" aria-label="Main navigation">
 
       <a href="{{ route('home') }}" class="nav-item{{ request()->routeIs('home') ? ' active' : '' }}">Home</a>
 
@@ -25,11 +25,13 @@
       </div>
 
       <div class="nav-dropdown">
-        <button type="button" class="nav-item has-dropdown{{ request()->routeIs('ecommerce-solution', 'cloud-solution', 'automation-solution') ? ' active' : '' }}">
+        <button type="button" class="nav-item has-dropdown{{ request()->routeIs('solutions', 'ecommerce-solution', 'cloud-solution', 'automation-solution', 'diagnostic-centers-solution') ? ' active' : '' }}">
           Solutions
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
         </button>
         <div class="dropdown-menu">
+          <a href="{{ route('solutions') }}" class="dropdown-item{{ request()->routeIs('solutions') ? ' active' : '' }}"><span class="d-icon" aria-hidden="true">&nearr;</span> All Solutions</a>
+          <a href="{{ route('diagnostic-centers-solution') }}" class="dropdown-item{{ request()->routeIs('diagnostic-centers-solution') ? ' active' : '' }}"><span class="d-icon" aria-hidden="true">&#10010;</span> Diagnostic Centers</a>
           <a href="{{ route('ecommerce-solution') }}" class="dropdown-item{{ request()->routeIs('ecommerce-solution') ? ' active' : '' }}"><span class="d-icon">&#128722;</span> eCommerce Solution</a>
           <a href="{{ route('cloud-solution') }}" class="dropdown-item{{ request()->routeIs('cloud-solution') ? ' active' : '' }}"><span class="d-icon">&#9729;</span> Cloud Solution</a>
           <a href="{{ route('automation-solution') }}" class="dropdown-item{{ request()->routeIs('automation-solution') ? ' active' : '' }}"><span class="d-icon">&#9881;</span> Automation Solution</a>
@@ -51,6 +53,7 @@
         </div>
       </div>
 
+      <a href="{{ route('contact') }}" class="btn btn-primary mobile-nav-contact">Get in Touch <span aria-hidden="true">&nearr;</span></a>
     </nav>
     <div class="nav-actions">
       <button type="button" class="theme-toggle" id="themeToggle" aria-label="Switch to light mode" hidden>
@@ -59,7 +62,7 @@
         <span class="theme-toggle-label">Light mode</span>
       </button>
       <a href="{{ route('contact') }}" class="btn btn-primary">Get in Touch</a>
-      <button type="button" class="hamburger" id="hamburger" aria-label="Menu">
+      <button type="button" class="hamburger" id="hamburger" aria-label="Open menu">
         <span></span><span></span><span></span>
       </button>
     </div>

@@ -7,6 +7,7 @@
 .portfolio-cover-arrow{position:absolute;right:20px;top:20px;display:grid;place-items:center;width:28px;height:28px;background:var(--dark-2);border:1px solid var(--border);border-radius:50%;color:var(--primary);font-size:.9rem}
 .portfolio-media>img{position:absolute;inset:0;display:block;width:100%;height:100%;object-fit:cover;object-position:top;z-index:1;background:var(--dark-2)}
 .portfolio-media>img[hidden]{display:none}
+.portfolio-media[data-image-state="pending"]>img{opacity:0}
 .portfolio-media>img.wp-thumbnail--video,.portfolio-media>img.portfolio-preview--video{object-fit:contain;object-position:center;background:#09090d}
 .portfolio-media--detail{border:1px solid var(--border);border-radius:18px}
 .portfolio-media--detail>img{object-fit:contain;object-position:center;border:0;border-radius:0;box-shadow:none}
@@ -15,3 +16,4 @@
 @media(max-width:600px){.portfolio-title-cover{padding:24px}.portfolio-cover-title{font-size:1.7rem}.portfolio-media--detail .portfolio-cover-title{font-size:1.7rem}}
 @media(max-width:360px){.portfolio-title-cover{padding:20px}.portfolio-cover-title{font-size:1.4rem;margin-top:12px}}
 </style>
+<noscript><style>.portfolio-media[data-image-state="pending"]>img{opacity:1}</style></noscript>

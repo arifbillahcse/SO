@@ -38,7 +38,7 @@ class OrganizationSettingsResource extends Resource
                     ->helperText('Upload a square PNG (512 x 512 recommended) or a genuine ICO file, up to 1 MB. Remove it to use the Softorio logo. Save changes to apply.'),
             ])->columnSpanFull(),
             Section::make('International client map')
-                ->description('Shown on the About Us page. The total is calculated from the selected countries and territories.')
+                ->description('Shown on the homepage and About Us page. The total is calculated from the selected countries and territories.')
                 ->schema([
                     Toggle::make('client_map_enabled')->label('Show client map')->default(true),
                     Select::make('client_countries')->label('Client countries and territories')

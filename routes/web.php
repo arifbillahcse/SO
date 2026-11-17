@@ -27,6 +27,8 @@ Route::get('/automation', fn () => view('pages.services.automation'))->name('aut
 Route::get('/diagnostic-management-system', fn () => view('pages.services.diagnostic-management-system'))->name('diagnostic-management-system');
 
 // Solutions
+Route::get('/solutions', fn () => view('pages.solutions.index'))->name('solutions');
+Route::get('/diagnostic-centers-solution', fn () => view('pages.solutions.diagnostic-centers-solution'))->name('diagnostic-centers-solution');
 Route::get('/ecommerce-solution', fn () => view('pages.solutions.ecommerce-solution'))->name('ecommerce-solution');
 Route::get('/cloud-solution', fn () => view('pages.solutions.cloud-solution'))->name('cloud-solution');
 Route::get('/automation-solution', fn () => view('pages.solutions.automation-solution'))->name('automation-solution');

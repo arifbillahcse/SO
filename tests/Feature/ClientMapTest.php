@@ -46,6 +46,25 @@ class ClientMapTest extends TestCase
         $this->get('/about-us')->assertOk()->assertDontSee('id="client-map"', false);
     }
 
+    public function test_homepage_map_uses_the_shared_country_list_and_visibility_setting(): void
+    {
+        $organization = OrganizationSettings::current();
+        $organization->update(['client_countries' => ['CA', 'GB'], 'client_map_enabled' => true]);
+
+        foreach (['/', '/about-us'] as $page) {
+            $this->get($page)->assertOk()->assertSee('id="client-map"', false)
+                ->assertSee('Explore all 2 countries &amp; territories', false)
+                ->assertSee('data-map-country="CA"', false)->assertSee('data-map-country="GB"', false)
+                ->assertDontSee('data-map-country="US"', false);
+        }
+
+        $organization->update(['client_map_enabled' => false]);
+        $this->get('/')->assertOk()->assertDontSee('id="client-map"', false);
+
+        $organization->update(['client_map_enabled' => true, 'client_countries' => []]);
+        $this->get('/')->assertOk()->assertDontSee('id="client-map"', false);
+    }
+
     public function test_invalid_location_is_rejected_and_guest_cannot_edit(): void
     {
         $organization = OrganizationSettings::current();

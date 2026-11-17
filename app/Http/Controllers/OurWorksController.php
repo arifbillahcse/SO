@@ -10,7 +10,7 @@ class OurWorksController extends Controller
     public function index(): View
     {
         return view('pages.our-works', [
-            'portfolioItems' => PortfolioItem::orderBy('sort_order')->get(),
+            'portfolioItems' => PortfolioItem::orderBy('sort_order')->orderBy('id')->get(),
         ]);
     }
 

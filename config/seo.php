@@ -36,6 +36,8 @@ return [
         'manage-cloud' => ['label' => 'Managed Cloud Hosting', 'type' => 'service', 'view' => 'pages.services.manage-cloud', 'schema' => 'Service'],
         'automation' => ['label' => 'Business Automation', 'type' => 'service', 'view' => 'pages.services.automation', 'schema' => 'Service'],
         'diagnostic-management-system' => ['label' => 'Diagnostic Management System', 'type' => 'service', 'view' => 'pages.services.diagnostic-management-system', 'schema' => 'Service'],
+        'solutions' => ['label' => 'Solutions', 'type' => 'listing', 'view' => 'pages.solutions.index', 'schema' => 'CollectionPage'],
+        'diagnostic-centers-solution' => ['label' => 'Diagnostic Centers Solution', 'type' => 'solution', 'view' => 'pages.solutions.diagnostic-centers-solution', 'schema' => 'Service'],
         'ecommerce-solution' => ['label' => 'eCommerce Solution', 'type' => 'solution', 'view' => 'pages.solutions.ecommerce-solution', 'schema' => 'Service'],
         'cloud-solution' => ['label' => 'Cloud Solution', 'type' => 'solution', 'view' => 'pages.solutions.cloud-solution', 'schema' => 'Service'],
         'automation-solution' => ['label' => 'Automation Solution', 'type' => 'solution', 'view' => 'pages.solutions.automation-solution', 'schema' => 'Service'],

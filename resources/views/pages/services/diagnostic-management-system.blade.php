@@ -155,4 +155,5 @@
 
   <section class="diag-section" id="contact"><div class="container"><div class="diag-contact diag-split"><div><span class="section-tag">Ready to talk?</span><h2 class="section-title">Let's talk about <span class="text-gradient">your center.</span></h2><p class="diag-copy" style="margin-top:18px">Request a demo or discuss the setup, features and support your team needs.</p></div><div class="diag-contact-action"><a href="{{ route('contact') }}" class="btn btn-primary btn-lg">Contact Softorio</a></div></div></div></section>
 </main>
+<section class="diag-section"><div class="container"><div class="diag-card"><span class="section-tag">Plan the rollout</span><h2 class="section-title" style="margin-top:18px">Explore the diagnostic center solution.</h2><p class="diag-copy">Review the design-first development roadmap, clinic decisions, pilot and phased expansion.</p><a href="{{ route('diagnostic-centers-solution') }}" class="btn btn-primary" style="margin-top:24px">View the solution roadmap &nearr;</a></div></div></section>
 @endsection

@@ -4,12 +4,14 @@ namespace App\Services;
 
 use App\Filament\Resources\ArticleResource;
 use App\Filament\Resources\CaseStudyResource;
+use App\Filament\Resources\ClientBrandResource;
 use App\Filament\Resources\OrganizationSettingsResource;
 use App\Filament\Resources\PageSeoResource;
 use App\Filament\Resources\PortfolioItemResource;
 use App\Filament\Resources\TeamMemberResource;
 use App\Models\Article;
 use App\Models\CaseStudy;
+use App\Models\ClientBrand;
 use App\Models\OrganizationSettings;
 use App\Models\PageSeo;
 use App\Models\PortfolioItem;
@@ -46,6 +48,9 @@ class MediaLibrary
             $url = ArticleResource::getUrl('edit', ['record' => $article]);
             $this->add($images, $article->featured_image_path, 'Article: '.$article->title.' ? Featured image', $url);
             $this->content($images, $article->body, 'Article: '.$article->title.' ? Body', $url);
+        }
+        foreach (ClientBrand::all() as $brand) {
+            $this->add($images, $brand->logo_path, 'Client brand: '.$brand->name.' / Logo', ClientBrandResource::getUrl('edit', ['record' => $brand]));
         }
         foreach (PortfolioItem::get(['id', 'title', 'slug', 'thumbnail_path', 'body']) as $project) {
             $url = PortfolioItemResource::getUrl('edit', ['record' => $project]);

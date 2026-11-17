@@ -48,14 +48,16 @@ class PortfolioItemResource extends Resource
                 ->rules(['url:http,https'])->maxLength(2048)
                 ->helperText('Public project or demo address, including https://. Leave blank if unavailable.'),
             Select::make('category')->options(PortfolioItem::CATEGORY_OPTIONS)->required(),
-            TextInput::make('tags')->required()->helperText('Comma-separated, e.g. "WordPress, Enterprise"')
+            TextInput::make('tags')->label('Technologies and focus tags')->required()->helperText('Comma-separated technologies or areas of work, e.g. WordPress, WooCommerce, PHP.')
                 ->afterStateHydrated(fn ($component, $state) => $component->state(is_array($state) ? implode(', ', $state) : $state))
                 ->dehydrateStateUsing(fn ($state) => array_values(array_filter(array_map('trim', explode(',', $state))))),
-            FileUpload::make('thumbnail_path')->image()->disk('public')->directory('portfolio')->visibility('public'),
-            Textarea::make('description')->rows(3)->columnSpanFull()
-                ->helperText('Short summary shown on the project detail page.'),
-            RichEditor::make('body')->columnSpanFull()
-                ->helperText('Full project write-up. Leave blank to show only the description.'),
+            FileUpload::make('thumbnail_path')->label('Project image')->image()->disk('public')->directory('portfolio')->visibility('public')
+                ->helperText('Optional screenshot or project image. Without one, the website displays a title cover automatically.'),
+            Textarea::make('description')->label('Project brief')->rows(3)->columnSpanFull()
+                ->helperText('A short, factual summary shown on the project card and at the top of its detail page. Explain what the project covers.'),
+            RichEditor::make('body')->label('Project write-up')->columnSpanFull()
+                ->fileAttachmentsDisk('public')->fileAttachmentsDirectory('portfolio/details')->fileAttachmentsVisibility('public')
+                ->helperText('Add Overview and What we did headings, the work completed, and supporting screenshots. Only include outcomes you can verify. Leave blank to show the brief and project information.'),
             TextInput::make('sort_order')->numeric()->default(0),
 
             Section::make('Demonstration evidence')

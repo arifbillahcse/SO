@@ -5,6 +5,7 @@
 
 @push('head')
 @include('partials.hero-service-forge-styles')
+@include('partials.about-styles')
 @endpush
 
 @section('content')
@@ -66,6 +67,7 @@
     </div>
     <div class="marquee-wrapper">
       <div class="marquee-track">
+        <div class="marquee-group">
         <span class="client-logo">Ask Media</span>
         <span class="client-logo">Tropicana</span>
         <span class="client-logo">Storyful</span>
@@ -76,7 +78,8 @@
         <span class="client-logo">DC Innovation</span>
         <span class="client-logo">MarketHive</span>
         <span class="client-logo">STEM Academy</span>
-        <!-- duplicate for seamless loop -->
+        </div>
+        <div class="marquee-group" aria-hidden="true">
         <span class="client-logo">Ask Media</span>
         <span class="client-logo">Tropicana</span>
         <span class="client-logo">Storyful</span>
@@ -87,6 +90,7 @@
         <span class="client-logo">DC Innovation</span>
         <span class="client-logo">MarketHive</span>
         <span class="client-logo">STEM Academy</span>
+        </div>
       </div>
     </div>
   </section>
@@ -135,67 +139,7 @@
     </div>
   </section>
 
-  <!-- ========== WHY CHOOSE US ========== -->
-  <section class="why-section section">
-    <div class="container why-inner">
-      <div class="why-left" data-aos="fade-right">
-        <span class="section-tag">Why Softorio</span>
-        <h2 class="section-title">One Partner for Your<br/><span class="text-gradient">Entire Digital Stack</span></h2>
-        <p class="section-sub">We don't just build websites. We build digital infrastructure that supports your business goals — from day one to scale.</p>
-        <div class="why-features">
-          <div class="why-feat">
-            <div class="why-feat-icon">&#10003;</div>
-            <div>
-              <strong>10+ Years of Expertise</strong>
-              <p>Deep experience in WordPress, eCommerce, and cloud infrastructure.</p>
-            </div>
-          </div>
-          <div class="why-feat">
-            <div class="why-feat-icon">&#10003;</div>
-            <div>
-              <strong>WordPress VIP Gold Partner</strong>
-              <p>Recognized by Automattic for elite WordPress development standards.</p>
-            </div>
-          </div>
-          <div class="why-feat">
-            <div class="why-feat-icon">&#10003;</div>
-            <div>
-              <strong>End-to-End Services</strong>
-              <p>Design, development, hosting, SEO, and automation — all under one roof.</p>
-            </div>
-          </div>
-          <div class="why-feat">
-            <div class="why-feat-icon">&#10003;</div>
-            <div>
-              <strong>Global Clients, Local Care</strong>
-              <p>Serving businesses across North America, Europe, and Asia with personal attention.</p>
-            </div>
-          </div>
-        </div>
-        <a href="#contact" class="btn btn-primary">Start a Project</a>
-      </div>
-      <div class="why-right" data-aos="fade-left">
-        <div class="why-metrics">
-          <div class="metric-card">
-            <div class="metric-num">13,768</div>
-            <div class="metric-label">Hours Contributed to WordPress Core</div>
-          </div>
-          <div class="metric-card accent">
-            <div class="metric-num">200+</div>
-            <div class="metric-label">Projects Successfully Delivered</div>
-          </div>
-          <div class="metric-card">
-            <div class="metric-num">3</div>
-            <div class="metric-label">Continents Served</div>
-          </div>
-          <div class="metric-card accent">
-            <div class="metric-num">99.9%</div>
-            <div class="metric-label">Uptime Guarantee</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+  @include('partials.work-approach')
 
   <!-- ========== SOLUTIONS ========== -->
   <section class="solutions-section section" id="solutions">

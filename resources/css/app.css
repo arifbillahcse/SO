@@ -621,6 +621,15 @@ html[data-theme="light"] .theme-icon-moon { display: block; }
   width: max-content;
   animation: marquee 30s linear infinite;
 }
+.marquee-group {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex: 0 0 auto;
+  min-width: 100vw;
+  gap: 48px;
+  padding-inline: 24px;
+}
 @keyframes marquee {
   from { transform: translateX(0); }
   to   { transform: translateX(-50%); }
@@ -635,9 +644,15 @@ html[data-theme="light"] .theme-icon-moon { display: block; }
   transition: var(--transition);
   cursor: default;
   padding: 8px 0;
-  margin-right: 48px;
+  flex: 0 0 auto;
 }
 .client-logo:hover { color: var(--primary); }
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track { width: 100%; }
+  .marquee-group { min-width: 0; width: 100%; flex-wrap: wrap; gap: 16px 32px; justify-content: center; }
+  .marquee-group[aria-hidden="true"] { display: none; }
+  .marquee-wrapper::before, .marquee-wrapper::after { display: none; }
+}
 
 /* ========== SERVICES ========== */
 .services-section { background: var(--dark); }

@@ -23,6 +23,7 @@
 ])))
 
 @push('head')
+@include('partials.portfolio-cover-styles')
 <style>
 .wp-tags { display:flex; gap:6px; flex-wrap:wrap; margin-bottom:10px; justify-content:center; }
 .wp-tag { font-size:0.7rem; font-weight:700; color:var(--primary); background:var(--primary-glow); padding:2px 10px; border-radius:100px; letter-spacing:0.05em; }
@@ -60,6 +61,33 @@
 .related-project-info { padding:22px; }
 @media(max-width:768px){ .related-works-grid{grid-template-columns:1fr;} }
 @media(max-width:600px){ .technical-meta { grid-template-columns:repeat(2,minmax(0,1fr)); gap:18px; padding:22px; } .technical-meta > div:last-child { grid-column:1/-1; } .technical-evidence { padding:18px; } .portfolio-service { flex-direction:column; align-items:flex-start; padding:22px; } }
+
+.project-detail-hero>.container{max-width:1008px;text-align:left!important}
+.project-detail-hero .breadcrumb{justify-content:flex-start!important}
+.project-detail-hero .wp-tags{display:none}
+.project-category{font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--primary);font-weight:700;margin:30px 0 18px}
+.project-detail-hero .page-hero-title{max-width:900px!important;margin-left:0!important;letter-spacing:-.045em;font-size:clamp(2.1rem,4.4vw,4rem);line-height:1.12}
+.project-detail-hero .page-hero-sub{margin:18px 0 0!important;font-size:.85rem}
+.project-detail-hero .portfolio-intro{margin:24px 0 0;max-width:800px;font-size:1.08rem;line-height:1.85}
+.project-story-grid{display:grid;grid-template-columns:minmax(0,1fr) 260px;gap:52px;max-width:960px;margin:auto}
+.project-write-up{max-width:none;width:100%;min-width:0}
+.project-write-up>:first-child,.project-write-up>div>:first-child{margin-top:0}
+.project-write-up img{max-width:100%;height:auto;border-radius:12px}
+.project-write-up a{overflow-wrap:anywhere}
+.project-facts{align-self:start;background:var(--dark-2);border:1px solid var(--border);border-radius:16px;padding:24px;min-width:0}
+.project-facts h2{font-size:.95rem;margin-bottom:22px;color:var(--text-primary)}
+.project-facts dl>div+div{border-top:1px solid var(--border);padding-top:16px;margin-top:16px}
+.project-facts dt{font-size:.7rem;color:var(--text-muted);margin-bottom:8px}
+.project-facts dd{font-size:.85rem;color:var(--text-primary);line-height:1.7;overflow-wrap:anywhere}
+.project-back-link{display:inline-flex;gap:8px;margin-top:24px;font-size:.74rem;color:var(--primary);font-weight:600}
+.project-technologies{border-top:1px solid var(--border);margin-top:28px;padding-top:6px}
+.project-technologies ul{display:flex;gap:8px;flex-wrap:wrap;margin:0;list-style:none}
+.project-technologies li{padding:6px 12px;font-size:.76rem;background:var(--primary-glow);color:var(--primary);border-radius:6px;margin:0}
+.project-visual-section{max-width:960px;margin:48px auto 0}
+.project-visual-section>h2{font-size:1.35rem;letter-spacing:-.03em;margin-bottom:22px}
+.related-project-brief{font-size:.82rem;color:var(--text-secondary);line-height:1.8;margin-top:12px;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;overflow:hidden}
+.related-project-link{display:block;margin-top:20px;color:var(--primary);font-size:.76rem;font-weight:600}
+@media(max-width:768px){.project-story-grid{grid-template-columns:1fr;gap:32px}.project-facts{width:100%}.project-detail-hero .portfolio-intro{font-size:.96rem}.project-detail-hero>.container{padding-bottom:40px!important}}
 </style>
 @endpush
 
@@ -74,7 +102,7 @@
         default => ['route' => 'services', 'label' => 'our services'],
     };
 @endphp
-<section class="page-hero" style="padding-bottom:0">
+<section class="page-hero project-detail-hero" style="padding-bottom:0">
   <div class="page-hero-bg"><div class="ph-orb ph-orb-1"></div><div class="ph-grid"></div></div>
   <div class="container" style="padding:100px 24px 60px;text-align:center;position:relative" data-aos="fade-up">
     <div class="breadcrumb portfolio-breadcrumb" style="justify-content:center">
@@ -82,20 +110,14 @@
       <a href="{{ route('our-works') }}">Our Works</a><span>/</span>
       <span class="bc-current">{{ $portfolioItem->title }}</span>
     </div>
-    <div class="wp-tags">
-      @foreach($portfolioItem->tags as $tag)
-      <span class="wp-tag">{{ $tag }}</span>
-      @endforeach
-    </div>
+    <p class="project-category">{{ $portfolioItem->categoryLabel() }}</p>
     <h1 class="page-hero-title" style="max-width:760px;margin-left:auto;margin-right:auto">{{ $portfolioItem->title }}</h1>
     @if($portfolioItem->project_type === 'technical_demonstration')
     <p class="page-hero-sub" style="margin:0 auto;max-width:540px">Technical portfolio by {{ $portfolioItem->attribution }}</p>
     @elseif($portfolioItem->client)
     <p class="page-hero-sub" style="margin:0 auto;max-width:540px">{{ in_array('Demo', $portfolioItem->tags ?? [], true) ? 'Design demonstration' : $portfolioItem->client }}</p>
     @endif
-    @if($portfolioItem->description)
-    <p class="portfolio-intro">{{ $portfolioItem->description }}</p>
-    @endif
+    <p class="portfolio-intro">{{ $portfolioItem->publicBrief() }}</p>
     @if($portfolioItem->publicVideoUrl())
     <a class="btn btn-primary" style="margin-top:24px" href="{{ $portfolioItem->publicVideoUrl() }}" target="_blank" rel="noopener noreferrer" aria-label="Watch demonstration (opens in a new tab)">Watch demonstration <span aria-hidden="true">↗</span></a>
     @endif
@@ -128,27 +150,50 @@
       } }}</p>
     </div>
     @endif
-    @if($portfolioItem->thumbnail_path)
+    <div class="project-story-grid">
+      <article class="article-body project-write-up">
+        @if(\App\Support\Seo::wordCount($portfolioItem->body))
+          {{ \Filament\Forms\Components\RichEditor\RichContentRenderer::make($portfolioItem->body)->fileAttachmentsDisk('public')->fileAttachmentsVisibility('public') }}
+        @else
+          <h2>Overview</h2>
+          <p>{{ $portfolioItem->publicBrief() }}</p>
+        @endif
+        @if(count($portfolioItem->technologyTags()))
+        <section class="project-technologies" aria-labelledby="project-technologies-title">
+          <h2 id="project-technologies-title">Technologies &amp; focus</h2>
+          <ul>@foreach($portfolioItem->technologyTags() as $tag)<li>{{ $tag }}</li>@endforeach</ul>
+        </section>
+        @endif
+      </article>
+      <aside class="project-facts" aria-label="Project information">
+        <h2>Project information</h2>
+        <dl>
+          <div><dt>Service</dt><dd>{{ $portfolioItem->categoryLabel() }}</dd></div>
+          <div><dt>Format</dt><dd>{{ $portfolioItem->project_type === 'technical_demonstration' ? $portfolioItem->publicEvidenceLabel() : (in_array('Demo', $portfolioItem->tags ?? [], true) ? 'Design demonstration' : 'Website project') }}</dd></div>
+          @if($portfolioItem->project_type === 'technical_demonstration' && $portfolioItem->attribution)
+          <div><dt>Contributor</dt><dd>{{ $portfolioItem->attribution }}</dd></div>
+          @elseif($portfolioItem->client && !in_array('Demo', $portfolioItem->tags ?? [], true))
+          <div><dt>Client</dt><dd>{{ $portfolioItem->client }}</dd></div>
+          @endif
+        </dl>
+        <a href="{{ route('our-works') }}" class="project-back-link">Browse all projects <span aria-hidden="true">&nearr;</span></a>
+      </aside>
+    </div>
+    <section class="project-visual-section" aria-labelledby="project-visual-title">
+    <h2 id="project-visual-title">Project preview</h2>
     <figure class="portfolio-figure">
-      <img class="portfolio-preview{{ str_starts_with($portfolioItem->thumbnail_path, 'portfolio/cloud-videos/') ? ' portfolio-preview--video' : '' }}" src="{{ $portfolioItem->thumbnailUrl() }}" alt="{{ $portfolioItem->thumbnailAltText() }}" decoding="async" width="{{ str_starts_with($portfolioItem->thumbnail_path, 'portfolio/cloud-videos/') ? 480 : 1280 }}" height="{{ str_starts_with($portfolioItem->thumbnail_path, 'portfolio/cloud-videos/') ? 360 : 800 }}">
-      @if(str_starts_with($portfolioItem->thumbnail_path, 'portfolio/cloud-covers/'))
+      <x-portfolio-cover :project="$portfolioItem" variant="detail" />
+      @if(str_starts_with($portfolioItem->thumbnail_path ?? '', 'portfolio/cloud-covers/'))
       <figcaption>Illustrative technical cover · This image is not a screenshot of a client system.</figcaption>
-      @elseif(str_starts_with($portfolioItem->thumbnail_path, 'portfolio/cloud-videos/'))
+      @elseif(str_starts_with($portfolioItem->thumbnail_path ?? '', 'portfolio/cloud-videos/'))
       <figcaption>Video thumbnail from the linked demonstration by {{ $portfolioItem->attribution }}.</figcaption>
-      @elseif(str_starts_with($portfolioItem->thumbnail_path, 'portfolio/covers/'))
+      @elseif(str_starts_with($portfolioItem->thumbnail_path ?? '', 'portfolio/covers/'))
       <figcaption>Portfolio cover · A website screenshot is currently unavailable.</figcaption>
-      @elseif(str_starts_with($portfolioItem->thumbnail_path, 'portfolio/screenshots/'))
+      @elseif(str_starts_with($portfolioItem->thumbnail_path ?? '', 'portfolio/screenshots/'))
       <figcaption>Website captured in November 2026 · The live website may have changed since this capture.</figcaption>
       @endif
     </figure>
-    @endif
-    <article class="article-body" data-aos="fade-up">
-      @if($portfolioItem->body)
-        {!! $portfolioItem->body !!}
-      @elseif($portfolioItem->description)
-        <p>{{ $portfolioItem->description }}</p>
-      @endif
-    </article>
+    </section>
     <div class="portfolio-service">
       <div><h2>Planning a similar project?</h2><p>Explore Softorio's {{ $serviceLink['label'] }} and discuss the scope of your next project with our team.</p></div>
       <a href="{{ route($serviceLink['route']) }}" class="btn btn-outline">Explore {{ $serviceLink['label'] }}</a>
@@ -166,12 +211,12 @@
     <div class="related-works-grid">
       @foreach($relatedItems as $related)
       <a href="{{ route('our-works.show', $related) }}" class="related-project" data-aos="fade-up">
-        @if($related->thumbnail_path)
-        <img class="{{ str_starts_with($related->thumbnail_path, 'portfolio/cloud-videos/') ? 'video-thumbnail' : '' }}" src="{{ $related->thumbnailUrl() }}" alt="{{ $related->thumbnailAltText() }}" loading="lazy" decoding="async" width="640" height="400">
-        @endif
+        <x-portfolio-cover :project="$related" />
         <div class="related-project-info">
         <div style="font-size:0.75rem;color:var(--primary);font-weight:600;margin-bottom:8px">{{ \App\Models\PortfolioItem::CATEGORY_OPTIONS[$related->category] ?? ucfirst($related->category) }}</div>
         <div style="font-size:1rem;font-weight:700;color:var(--text-primary);line-height:1.4">{{ $related->title }}</div>
+        <p class="related-project-brief">{{ $related->publicBrief() }}</p>
+        <span class="related-project-link">View project &nearr;</span>
         </div>
       </a>
       @endforeach

@@ -65,8 +65,13 @@ class PortfolioIntegrityTest extends TestCase
             $this->assertSame('https://softorio.com/our-works/'.$project->slug, $canonical);
             $this->assertSame('https://softorio.com/storage/'.$project->thumbnail_path, $xpath->query('//meta[@property="og:image"]')->item(0)->getAttribute('content'));
             $image = $xpath->query('//img[contains(@class,"portfolio-preview")]');
-            $this->assertSame(1, $image->length);
-            $this->assertNotEmpty($image->item(0)->getAttribute('alt'));
+            if (str_starts_with($project->thumbnail_path, 'portfolio/covers/')) {
+                $this->assertSame(0, $image->length);
+                $this->assertSame(1, $xpath->query('//section[@aria-labelledby="project-visual-title"]//div[contains(@class,"portfolio-title-cover")]')->length);
+            } else {
+                $this->assertSame(1, $image->length);
+                $this->assertNotEmpty($image->item(0)->getAttribute('alt'));
+            }
             $schemas = [];
             foreach ($xpath->query('//script[@type="application/ld+json"]') as $script) {
                 $schema = json_decode($script->textContent, true, flags: JSON_THROW_ON_ERROR);

@@ -22,6 +22,7 @@
 ]))
 
 @push('head')
+@include('partials.portfolio-cover-styles')
 <style>
 .works-page-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:24px; margin-bottom:60px; }
     .wp-card { display:flex; flex-direction:column; min-width:0; color:inherit; background:var(--dark-2); border:1px solid var(--border); border-radius:var(--radius-lg); overflow:hidden; transition:var(--transition); cursor:pointer; }
@@ -36,12 +37,13 @@
     .wp-card:hover .wp-overlay, .wp-card:focus-visible .wp-overlay { opacity:1; }
     .wp-view { padding:10px 22px; background:#ff7900; color:#141414; font-size:0.88rem; font-weight:700; border-radius:var(--radius-sm); }
     .wp-info { padding:22px; display:flex; flex-direction:column; flex:1; }
-    .wp-tags { display:flex; gap:6px; flex-wrap:wrap; margin-bottom:10px; }
-    .wp-tag { font-size:0.7rem; font-weight:700; color:var(--primary); background:var(--primary-glow); padding:2px 10px; border-radius:100px; letter-spacing:0.05em; }
-    .wp-title { font-size:1rem; font-weight:700; color:var(--text-primary); margin-bottom:8px; line-height:1.5; }
+    .wp-tags { display:flex; gap:6px; flex-wrap:wrap; margin:18px 0 0; }
+    .wp-category { font-size:.65rem; text-transform:uppercase; letter-spacing:.09em; font-weight:700; color:var(--primary); margin-bottom:12px; }
+    .wp-tag { font-size:0.7rem; font-weight:700; color:var(--primary); background:var(--primary-glow); padding:2px 10px; border-radius:5px; letter-spacing:0; }
+    .wp-title { font-size:1.15rem; font-weight:700; color:var(--text-primary); margin-bottom:8px; line-height:1.5; }
     .wp-client { font-size:0.8rem; color:var(--text-secondary); }
     .wp-description { color:var(--text-secondary); font-size:0.82rem; line-height:1.7; margin:14px 0 0; display:-webkit-box; -webkit-box-orient:vertical; -webkit-line-clamp:2; overflow:hidden; }
-    .wp-bottom { display:flex; justify-content:space-between; align-items:center; gap:16px; border-top:1px solid var(--border); margin-top:auto; padding-top:14px; color:var(--text-secondary); font-size:0.75rem; }
+    .wp-bottom { display:flex; justify-content:space-between; align-items:center; gap:16px; border-top:1px solid var(--border); margin-top:auto; padding-top:14px; color:var(--primary); font-size:0.78rem; font-weight:600; }
     .wp-bottom-wrap { margin-top:20px; flex:1; display:flex; flex-direction:column; justify-content:flex-end; }
     .wp-arrow { color:var(--primary); font-size:1.2rem; }
     .portfolio-toolbar { display:flex; align-items:center; justify-content:space-between; gap:24px; flex-wrap:wrap; margin-bottom:30px; }
@@ -154,48 +156,23 @@
         </label>
         <p class="portfolio-count" id="portfolioCount" aria-live="polite" aria-atomic="true">Showing {{ $portfolioItems->count() }} of {{ $portfolioItems->count() }} projects</p>
       </div>
-      @php
-        $wpGradients = [
-          'linear-gradient(135deg,#0a0a1a,#1a1a3e)',
-          'linear-gradient(135deg,#0f2027,#203a43)',
-          'linear-gradient(135deg,#0d0d0d,#1a1a2e)',
-          'linear-gradient(135deg,#200122,#6f0000)',
-          'linear-gradient(135deg,#0d1a0d,#1a3a1a)',
-          'linear-gradient(135deg,#0f0c29,#302b63)',
-          'linear-gradient(135deg,#1a0a0a,#2e1a1a)',
-          'linear-gradient(135deg,#0a1a0a,#0f3a0f)',
-          'linear-gradient(135deg,#1a1a0a,#3a3a0f)',
-        ];
-      @endphp
       <div class="works-page-grid" id="portfolioGrid">
         @foreach($portfolioItems as $item)
         <a href="{{ route('our-works.show', $item) }}" class="wp-card" data-category="{{ $item->category }}" data-project-type="{{ $item->project_type }}" data-video="{{ $item->publicVideoUrl() ? 'true' : 'false' }}" data-demo="{{ $item->project_type !== 'technical_demonstration' && in_array('Demo', $item->tags ?? [], true) ? 'true' : 'false' }}" data-aos="fade-up" data-aos-delay="{{ ($loop->index % 3) * 60 }}">
-          <div class="wp-img" style="background:{{ $wpGradients[$loop->index % count($wpGradients)] }}">
-            @if($item->thumbnail_path)
-            <img class="wp-thumbnail{{ str_starts_with($item->thumbnail_path, 'portfolio/cloud-videos/') ? ' wp-thumbnail--video' : '' }}" src="{{ $item->thumbnailUrl() }}" alt="{{ $item->thumbnailAltText() }}" loading="lazy" decoding="async" width="640" height="400">
-            @else
-            <div class="wp-mock">
-              <div class="wm-bar"></div>
-              <div class="wm-hero" style="height:50px;background:rgba(255,121,0,0.12)"></div>
-            </div>
-            @endif
-            @if($item->project_type === 'technical_demonstration')
-            <span class="wp-kind">{{ $item->publicEvidenceLabel() }}</span>
-            @endif
-            <div class="wp-overlay"><span class="wp-view">View Details</span></div>
-          </div>
+          <x-portfolio-cover :project="$item" />
           <div class="wp-info">
-            <div class="wp-tags">
-              @foreach(array_slice(array_values(array_filter($item->tags ?? [], fn ($tag) => $tag !== 'Technical portfolio')), 0, 3) as $tag)
+            <p class="wp-category">{{ $item->categoryLabel() }}</p>
+            <h2 class="wp-title">{{ $item->title }}</h2>
+            <p class="wp-client">{{ $item->project_type === 'technical_demonstration' ? 'Technical portfolio ? '.$item->attribution : (in_array('Demo', $item->tags ?? [], true) ? 'Design demonstration' : $item->client) }}</p>
+            <p class="wp-description">{{ $item->publicBrief() }}</p>
+            @if(count($item->technologyTags()))
+            <div class="wp-tags" aria-label="Technologies and focus">
+              @foreach(array_slice($item->technologyTags(), 0, 4) as $tag)
               <span class="wp-tag">{{ $tag }}</span>
               @endforeach
             </div>
-            <h2 class="wp-title">{{ $item->title }}</h2>
-            <p class="wp-client">{{ $item->project_type === 'technical_demonstration' ? 'Technical portfolio · '.$item->attribution : $item->client }}</p>
-            @if($item->project_type === 'technical_demonstration' && $item->description)
-            <p class="wp-description">{{ $item->description }}</p>
             @endif
-            <div class="wp-bottom-wrap"><div class="wp-bottom"><span>{{ $categoryLabels[$item->category] ?? ucfirst($item->category) }}</span><span class="wp-arrow" aria-hidden="true">↗</span></div></div>
+            <div class="wp-bottom-wrap"><div class="wp-bottom"><span>View project</span><span class="wp-arrow" aria-hidden="true">&nearr;</span></div></div>
           </div>
         </a>
         @endforeach

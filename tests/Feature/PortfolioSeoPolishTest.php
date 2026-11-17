@@ -136,7 +136,12 @@ class PortfolioSeoPolishTest extends TestCase
         $response = $this->get(route('our-works.show', $project))->assertOk();
 
         $xpath = $this->dom($response->getContent());
-        $this->assertSame($alt, $xpath->query('//img[contains(@class,"portfolio-preview")]')->item(0)->getAttribute('alt'));
+        if (str_starts_with($path, 'portfolio/covers/')) {
+            $this->assertSame(0, $xpath->query('//img[contains(@class,"portfolio-preview")]')->length);
+            $response->assertSee('portfolio-title-cover')->assertSee('Cloud deployment');
+        } else {
+            $this->assertSame($alt, $xpath->query('//img[contains(@class,"portfolio-preview")]')->item(0)->getAttribute('alt'));
+        }
     }
 
     public function test_related_topics_prioritize_the_same_category(): void

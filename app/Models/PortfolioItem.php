@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use App\Models\Concerns\HasSeo;
+use App\Support\Seo;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
@@ -118,6 +119,41 @@ class PortfolioItem extends Model
         return in_array(strtolower(parse_url($url, PHP_URL_SCHEME) ?? ''), ['http', 'https'], true)
             ? $url
             : null;
+    }
+
+    public function categoryLabel(): string
+    {
+        return self::CATEGORY_OPTIONS[$this->category] ?? Str::headline($this->category);
+    }
+
+    public function publicBrief(): string
+    {
+        $description = Seo::excerpt($this->description, 240);
+
+        if ($description) {
+            return $description;
+        }
+
+        if (preg_match('/<p\b[^>]*>(.*?)<\/p>/is', $this->body ?? '', $paragraph)) {
+            $summary = Seo::excerpt($paragraph[1], 240);
+
+            if ($summary) {
+                return $summary;
+            }
+        }
+
+        $format = $this->project_type === 'technical_demonstration' ? 'technical portfolio entry' : 'project';
+        $client = $this->project_type !== 'technical_demonstration' && $this->client ? ' for '.$this->client : '';
+
+        return $this->categoryLabel().' '.$format.$client.'. Explore the project information and available references.';
+    }
+
+    /** @return list<string> */
+    public function technologyTags(): array
+    {
+        return array_values(array_unique(array_filter($this->tags ?? [], fn (mixed $tag): bool => is_string($tag)
+            && trim($tag) !== ''
+            && ! in_array($tag, ['Demo', 'Technical portfolio'], true))));
     }
 
     public function thumbnailUrl(): ?string

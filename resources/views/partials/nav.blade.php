@@ -1,3 +1,27 @@
+<style>
+@media (max-width: 1024px) {
+  html.mobile-menu-open, html.mobile-menu-open body { overflow: hidden; }
+  #navbar .nav-links { display: none; position: absolute; top: 100%; left: 0; right: 0; z-index: 999; background: var(--dark-2); flex: none; flex-direction: column; align-items: stretch; justify-content: flex-start; padding: 12px 20px 20px; gap: 4px; border-bottom: 1px solid var(--border); max-height: calc(100vh - 72px); max-height: calc(100dvh - 72px - env(safe-area-inset-bottom)); overflow-y: auto; overscroll-behavior: contain; box-shadow: 0 16px 30px rgba(0,0,0,.08); }
+  #navbar .nav-links.open { display: flex; }
+  #navbar .nav-links > .nav-item, #navbar .nav-links .has-dropdown { width: 100%; min-height: 48px; padding: 12px 14px; font-family: var(--font); font-size: .95rem; line-height: 1.4; height: 48px; text-align: left; }
+  #navbar .nav-links .has-dropdown { justify-content: space-between; }
+  #navbar .nav-links .has-dropdown svg { flex-shrink: 0; }
+  #navbar .nav-links > * { flex-shrink: 0; }
+  #navbar .nav-links a:focus-visible, #navbar .nav-links button:focus-visible { outline: 2px solid var(--primary); outline-offset: -2px; }
+  #navbar .services-nav-heading { min-height: 48px; height: 48px; }
+  #navbar .services-nav-heading > .nav-item { min-height: 48px; padding: 12px 14px; font-size: .95rem; line-height: 1.4; height: 48px; }
+  #navbar .nav-links .nav-contact-action { display: flex; justify-content: center; min-height: 46px; margin-top: 8px; }
+  #navbar .nav-dropdown { width: 100%; margin: 0; padding: 0; }
+  #navbar .services-nav-heading .nav-item { flex: 1; }
+  #navbar .services-menu-toggle { width: 44px; height: 48px; margin-right: 0; flex-shrink: 0; }
+  #navbar .dropdown-menu { display: none; position: static; width: 100%; min-width: 0; transform: none !important; opacity: 1; visibility: visible; pointer-events: auto; background: var(--dark-4); box-shadow: none; margin: 0 0 6px; padding: 6px; border: 1px solid var(--border); max-height: none; overflow: visible; transition: none; }
+  #navbar .dropdown-item { white-space: normal; min-height: 44px; line-height: 1.5; padding: 10px 12px; }
+  #navbar .dropdown-menu:not(.show) { display: none !important; height: 0; margin: 0; padding: 0; border: 0; }
+  #navbar .dropdown-menu.show { display: block; opacity: 1; max-height: none; pointer-events: auto; }
+  #navbar .nav-actions .btn { display: none; }
+  #navbar .hamburger { display: flex; width: 44px; height: 44px; align-items: center; justify-content: center; }
+}
+</style>
 <header class="navbar" id="navbar">
   <div class="container nav-inner">
     <a href="{{ route('home') }}" class="logo">
@@ -53,7 +77,6 @@
         </div>
       </div>
 
-      <a href="{{ route('contact') }}" class="btn btn-primary mobile-nav-contact">Get in Touch <span aria-hidden="true">&nearr;</span></a>
     </nav>
     <div class="nav-actions">
       <button type="button" class="theme-toggle" id="themeToggle" aria-label="Switch to light mode" hidden>
@@ -61,7 +84,7 @@
         <svg class="theme-icon-moon" aria-hidden="true" width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20.5 14.5A8.5 8.5 0 0 1 9.5 3.5a8.5 8.5 0 1 0 11 11Z"/></svg>
         <span class="theme-toggle-label">Light mode</span>
       </button>
-      <a href="{{ route('contact') }}" class="btn btn-primary">Get in Touch</a>
+      <a href="{{ route('contact') }}" class="btn btn-primary nav-contact-action" id="navContact">Get in Touch</a>
       <button type="button" class="hamburger" id="hamburger" aria-label="Open menu">
         <span></span><span></span><span></span>
       </button>

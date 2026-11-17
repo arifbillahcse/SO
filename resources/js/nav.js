@@ -77,12 +77,21 @@ document.addEventListener('DOMContentLoaded', () => {
         });
         dropdown.addEventListener('focusout', () => { setTimeout(() => { if (!dropdown.contains(document.activeElement)) setOpen(false); }, 0); });
     });
-    navLinks?.querySelectorAll('a[href]').forEach(link => link.addEventListener('click', () => setMobileMenu(false)));
+    const navContact = document.getElementById('navContact');
+    const navActions = navbar?.querySelector('.nav-actions');
+    const placeContactButton = () => {
+        if (!navContact || !navLinks || !navActions) return;
+        if (mobileNavigation.matches) navLinks.append(navContact);
+        else navActions.insertBefore(navContact, hamburger);
+    };
+    placeContactButton();
+    navContact?.addEventListener('click', () => setMobileMenu(false));
+    navLinks?.querySelectorAll('a[href]:not(#navContact)').forEach(link => link.addEventListener('click', () => setMobileMenu(false)));
     document.addEventListener('keydown', event => {
         if (event.key === 'Escape' && navLinks?.classList.contains('open')) { setMobileMenu(false); hamburger?.focus(); }
     });
     document.addEventListener('click', event => { if (navbar && !navbar.contains(event.target)) setMobileMenu(false); });
-    window.addEventListener('resize', () => { if (!mobileNavigation.matches) setMobileMenu(false); });
+    window.addEventListener('resize', () => { if (!mobileNavigation.matches) setMobileMenu(false); placeContactButton(); });
     document.querySelectorAll('a[href^="#"]').forEach(link => {
         link.addEventListener('click', event => {
             const fragment = link.getAttribute('href').slice(1);

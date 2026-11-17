@@ -37,6 +37,15 @@ class OrganizationSettingsResource extends Resource
                     ->rules(['extensions:png,ico'])->maxSize(1024)
                     ->helperText('Upload a square PNG (512 x 512 recommended) or a genuine ICO file, up to 1 MB. Remove it to use the Softorio logo. Save changes to apply.'),
             ])->columnSpanFull(),
+            Section::make('International client map')
+                ->description('Shown on the About Us page. The total is calculated from the selected countries and territories.')
+                ->schema([
+                    Toggle::make('client_map_enabled')->label('Show client map')->default(true),
+                    Select::make('client_countries')->label('Client countries and territories')
+                        ->multiple()->searchable()->options(config('client-map.countries'))
+                        ->in(array_keys(config('client-map.countries')))
+                        ->helperText('Select locations where you have worked with clients. Turning off the map keeps this list.'),
+                ])->columnSpanFull(),
             Textarea::make('description')->rows(3)->columnSpanFull(),
             TextInput::make('telephone')->tel()->maxLength(255),
             TextInput::make('email')->email()->maxLength(255),

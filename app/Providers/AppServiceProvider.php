@@ -7,9 +7,11 @@ use App\Models\OrganizationSettings;
 use App\Models\PageSeo;
 use App\Models\PortfolioItem;
 use App\Models\Service;
+use App\Models\TeamMember;
 use App\Services\Seo\NullSearchPerformance;
 use App\Services\Seo\SearchPerformance;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
 
@@ -42,6 +44,21 @@ class AppServiceProvider extends ServiceProvider
         View::composer('pages.services.web-development', function ($view): void {
             $view->with('webDevelopmentProjects', PortfolioItem::whereIn('category', ['wordpress', 'ecommerce', 'web-development'])
                 ->orderBy('sort_order')->orderBy('id')->limit(4)->get());
+        });
+
+        View::composer('pages.about-us', function ($view): void {
+            $founder = TeamMember::orderBy('sort_order')->orderBy('id')->first();
+            $photo = $founder?->photo_path;
+            $view->with('aboutFounder', $founder);
+            $view->with('aboutFounderPhoto', $photo
+                ? (str_starts_with($photo, 'images/') ? asset($photo) : Storage::disk('public')->url($photo))
+                : asset('images/arif.png'));
+        });
+
+        View::composer('partials.client-map', function ($view): void {
+            $organization = OrganizationSettings::current();
+            $view->with('clientMapEnabled', $organization->client_map_enabled);
+            $view->with('clientCountries', $organization->clientCountries());
         });
 
         View::composer('partials.whatsapp-chat', function ($view): void {

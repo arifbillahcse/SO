@@ -1,114 +1,128 @@
 @extends('layouts.app')
 
-@section('title', 'About Softorio — Our Story, Team & Mission')
-@section('description', "For over 10 years we've been the trusted digital partner for businesses worldwide — from solo entrepreneurs to Fortune 500 companies. Here's our story.")
+@section('title', 'About Softorio | Website, SEO & Cloud Services Team')
+@section('description', 'Meet Softorio: a hands-on team connecting website development, cloud infrastructure, SEO and automation, from your first idea to launch and support.')
+@section('breadcrumbs', json_encode([
+    ['name' => 'Home', 'url' => route('home')],
+    ['name' => 'About Us', 'url' => route('about-us')],
+]))
 
 @push('head')
-<style>
-/* card headings are h3 (was h4) so heading levels don't skip */
-.sp-why-card h3 { font-size: 0.95rem; font-weight: 700; color: var(--text-primary); margin-bottom: 8px; }
-</style>
+@include('partials.about-styles')
 @endpush
 
 @section('content')
-<section class="page-hero" style="padding-bottom:0">
-    <div class="page-hero-bg"><div class="ph-orb ph-orb-1"></div><div class="ph-orb ph-orb-2"></div><div class="ph-grid"></div></div>
-    <div class="container page-hero-inner">
-      <div class="page-hero-content" data-aos="fade-up">
-        <div class="breadcrumb"><a href="{{ route('home') }}">Home</a><span>/</span><span>Resources</span><span>/</span><span class="bc-current">About Us</span></div>
-        <div class="hero-badge"><span class="badge-dot"></span>WordPress VIP Gold Partner</div>
-        <h1 class="page-hero-title">The Team Behind <span class="text-gradient">Softorio</span></h1>
-        <p class="page-hero-sub">For over 10 years we've been the trusted digital partner for businesses worldwide — from solo entrepreneurs to Fortune 500 companies. Here's our story.</p>
-        <div class="page-hero-cta">
-          <a href="{{ route('contact') }}" class="btn btn-primary btn-lg">Work With Us</a>
-          <a href="{{ route('our-works') }}" class="btn btn-outline btn-lg">See Our Work</a>
+<main class="about-page">
+  <section class="ab-hero" aria-labelledby="about-title">
+    <div class="ab-wrap">
+      <nav class="ab-breadcrumb" aria-label="Breadcrumb"><a href="{{ route('home') }}">Home</a><span aria-hidden="true">/</span><span aria-current="page">About Us</span></nav>
+      <div class="ab-hero-grid">
+        <div>
+          <span class="ab-eyebrow">Meet Softorio</span>
+          <h1 id="about-title">Your digital ideas.<br>A team to bring<br>them <em>together.</em></h1>
+          <p class="ab-lead">Websites, cloud and smarter workflows. We connect the pieces so your next idea has a practical path from first sketch to everyday use.</p>
+          <div class="ab-actions">
+            <a href="{{ route('our-works') }}" class="btn btn-primary btn-lg">Explore our work <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a>
+            <a href="#our-story" class="ab-text-link">The people behind it <span aria-hidden="true">&darr;</span></a>
+          </div>
+          <p class="ab-signoff">Your Vision, Our Innovation.</p>
         </div>
-      </div>
-      <div class="page-hero-visual" data-aos="fade-left">
-        <div class="why-metrics">
-          <div class="metric-card accent"><div class="metric-num">10+</div><div class="metric-label">Years in Business</div></div>
-          <div class="metric-card"><div class="metric-num">200+</div><div class="metric-label">Projects Delivered</div></div>
-          <div class="metric-card"><div class="metric-num">13,768</div><div class="metric-label">Hours Contributed to WordPress Core</div></div>
-          <div class="metric-card accent"><div class="metric-num">3</div><div class="metric-label">Continents Served</div></div>
-        </div>
+        <div class="ab-visual">@include('partials.about-workspace')</div>
       </div>
     </div>
-    <div class="trust-bar"><div class="container trust-inner">
-      <div class="trust-item"><span class="trust-num">Ask Media</span><span class="trust-label">Enterprise Client</span></div><div class="trust-sep"></div>
-      <div class="trust-item"><span class="trust-num">Tropicana</span><span class="trust-label">PepsiCo Venture</span></div><div class="trust-sep"></div>
-      <div class="trust-item"><span class="trust-num">Storyful</span><span class="trust-label">NewsCorp Venture</span></div><div class="trust-sep"></div>
-      <div class="trust-item"><span class="trust-num">AAP</span><span class="trust-label">Publishers Association</span></div>
-    </div></div>
   </section>
 
-  <!-- STORY -->
-  <section class="section sp-why">
-    <div class="container sp-why-inner">
-      <div class="sp-why-left" data-aos="fade-right">
-        <span class="section-tag">Our Story</span>
-        <h2 class="section-title">Built on <span class="text-gradient">Craft & Commitment</span></h2>
-        <p class="section-sub" style="text-align:left">Softorio was founded with a simple mission: make world-class web technology accessible to every business — not just the big ones with big budgets.</p>
-        <p style="font-size:0.95rem;color:var(--text-secondary);line-height:1.75;margin-top:16px">Over the last decade, we've grown from a small WordPress agency into a full-service digital partner, earning WordPress VIP Gold Partner status and building digital infrastructure for enterprises like Ask Media, Tropicana, and Storyful.</p>
-        <p style="font-size:0.95rem;color:var(--text-secondary);line-height:1.75;margin-top:12px">We're also an active member of the WordPress community — contributing 13,768+ hours to WordPress core, WooCommerce, and BuddyPress, and organising WordCamp events globally.</p>
-        <div class="vip-badge" style="margin-top:28px" data-aos="fade-up">
-          <div class="vip-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#FF7900" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
-          <div><div class="vip-title">WordPress VIP Gold Partner</div><div class="vip-sub">Certified by Automattic — the highest tier of WordPress agency recognition worldwide.</div></div>
-        </div>
+  <section class="ab-section ab-story" id="our-story" aria-labelledby="about-story-title">
+    <div class="ab-wrap ab-story-grid">
+      <div>
+        <span class="ab-eyebrow">Who we are</span>
+        <h2 class="ab-title" id="about-story-title">People who care<br>about the whole picture.</h2>
+        <p class="ab-copy">Softorio brings web development and Linux systems experience into one hands-on team. We look at how your website, infrastructure and everyday tools work together.</p>
+        <p class="ab-copy">Founded by {{ $aboutFounder?->name ?? 'Md. Arif Billah' }}, with a background in Computer Science &amp; Engineering, our approach is simple: understand the business, make thoughtful choices and stay close to the work.</p>
       </div>
-      <div class="sp-why-right" data-aos="fade-left">
-        <div class="sp-why-cards">
-          <div class="sp-why-card"><div class="sp-wc-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div><h3>Reliability First</h3><p>We build systems that stay online, stay fast, and stay secure — because downtime is not an option for our clients.</p></div>
-          <div class="sp-why-card"><div class="sp-wc-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg></div><h3>Client-Centric</h3><p>Every decision we make is guided by what's best for the client — not what's easiest or most profitable for us.</p></div>
-          <div class="sp-why-card"><div class="sp-wc-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></div><h3>Technical Excellence</h3><p>We hold ourselves to the highest standards — clean code, security hardening, and performance optimisation on every project.</p></div>
-          <div class="sp-why-card"><div class="sp-wc-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10z"/></svg></div><h3>Global Perspective</h3><p>With clients across North America, Europe, and Asia, we understand how to build digital solutions that work across cultures and markets.</p></div>
+      <div class="ab-founder">
+        <div class="ab-founder-photo"><img src="{{ $aboutFounderPhoto }}" alt="{{ $aboutFounder?->name ?? 'Md. Arif Billah' }}, Softorio founder" width="300" height="300" loading="lazy" decoding="async"></div>
+        <div class="ab-founder-info">
+          <span class="ab-founder-label">The person behind Softorio</span>
+          <h3>{{ $aboutFounder?->name ?? 'Md. Arif Billah' }}</h3>
+          <p class="ab-founder-role">{{ $aboutFounder?->short_role ?: 'Founder & Web / Cloud Engineer' }}</p>
+          <p class="ab-founder-note">A practical mindset.<br>A personal commitment.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- COMMUNITY -->
-  <section class="section" style="background:var(--dark-2)">
-    <div class="container">
-      <div class="section-header" data-aos="fade-up">
-        <span class="section-tag">Community</span>
-        <h2 class="section-title">Giving Back to <span class="text-gradient">WordPress</span></h2>
-        <p class="section-sub">We believe in the open-source community that powers our work. That's why we actively contribute back.</p>
+  @include('partials.client-map')
+
+  <section class="ab-section ab-services" aria-labelledby="about-services-title">
+    <div class="ab-wrap">
+      <div class="ab-section-head">
+        <div><span class="ab-eyebrow">What we do</span><h2 class="ab-title" id="about-services-title">Five services.<br>One connected team.</h2></div>
+        <a href="{{ route('services') }}" class="ab-text-link">Explore all services <span aria-hidden="true">&nearr;</span></a>
       </div>
-      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px" data-aos="fade-up">
-        <div class="sp-why-card" style="background:var(--dark-3)">
-          <div class="sp-wc-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg></div>
-          <h3>WordPress Core Contributor</h3>
-          <p>13,768+ hours contributed to WordPress core, WooCommerce, and BuddyPress development.</p>
-        </div>
-        <div class="sp-why-card" style="background:var(--dark-3)">
-          <div class="sp-wc-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
-          <h3>WordCamp Organiser</h3>
-          <p>Actively organising WordCamp and Meetup events in Ahmedabad — connecting the global WordPress community.</p>
-        </div>
-        <div class="sp-why-card" style="background:var(--dark-3)">
-          <div class="sp-wc-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></div>
-          <h3>Five for the Future</h3>
-          <p>Backing 7 WordPress contributors with 28 hours weekly through Automattic's "Five for the Future" initiative.</p>
+      <div class="ab-services-grid">
+        <a href="{{ route('web-development') }}" class="ab-service">
+          <span class="ab-service-icon"><x-service-icon group="code" width="24" height="24" /></span>
+          <h3>Website development</h3><p>WordPress, WooCommerce and custom Laravel / PHP applications shaped around your business.</p>
+          <span class="ab-service-bottom">Build your presence <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span>
+        </a>
+        <a href="{{ route('seo') }}" class="ab-service">
+          <span class="ab-service-icon"><x-service-icon group="search" width="24" height="24" /></span>
+          <h3>SEO optimization</h3><p>Technical audits, on-page improvements and content planning for a stronger search foundation.</p>
+          <span class="ab-service-bottom">Make your work discoverable <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span>
+        </a>
+        <a href="{{ route('manage-cloud') }}" class="ab-service">
+          <span class="ab-service-icon"><x-service-icon group="cloud" width="24" height="24" /></span>
+          <h3>Managed cloud</h3><p>Linux servers, deployment, DNS, SSL and maintenance for the systems behind your website.</p>
+          <span class="ab-service-bottom">Support your foundation <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span>
+        </a>
+        <a href="{{ route('automation') }}" class="ab-service">
+          <span class="ab-service-icon"><x-service-icon group="gear" width="24" height="24" /></span>
+          <h3>Business automation</h3><p>API integrations, connected workflows and AI chatbots that reduce repetitive work.</p>
+          <span class="ab-service-bottom">Connect your tools <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span>
+        </a>
+        <a href="{{ route('diagnostic-management-system') }}" class="ab-service">
+          <span class="ab-service-icon"><x-service-icon group="medical" width="24" height="24" /></span>
+          <h3>Diagnostic Management System</h3><p>Software being developed for patient registration, billing, samples, results and reporting.</p>
+          <span class="ab-service-bottom"><span class="ab-development">In development</span><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="ab-section" aria-labelledby="about-values-title">
+    <div class="ab-wrap">
+      <span class="ab-eyebrow">Why work with us</span>
+      <h2 class="ab-title" id="about-values-title">Good work. Clear conversations.<br>No unnecessary complexity.</h2>
+      <div class="ab-values-grid">
+        <div class="ab-value"><span class="ab-value-number">01 / CONNECTED THINKING</span><h3>One partner, the full picture.</h3><p>Development, cloud, SEO and automation planned together, with fewer gaps between the people doing the work.</p></div>
+        <div class="ab-value"><span class="ab-value-number">02 / DIRECT COMMUNICATION</span><h3>Talk to the people building it.</h3><p>Share questions, see progress and discuss decisions directly with the team responsible for your project.</p></div>
+        <div class="ab-value"><span class="ab-value-number">03 / PRACTICAL CHOICES</span><h3>A scope you can understand.</h3><p>Agree on priorities, responsibilities and costs before building. Focus on what helps your business move forward.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="ab-section ab-process" aria-labelledby="about-process-title">
+    <div class="ab-wrap">
+      <div class="ab-process-panel">
+        <div class="ab-process-heading"><div><span class="ab-eyebrow">How we work</span><h2 class="ab-title" id="about-process-title">From a conversation<br>to something useful.</h2></div><p>A clear path, with room to ask questions and make informed decisions along the way.</p></div>
+        <div class="ab-steps">
+          <div class="ab-step"><span class="ab-step-number">01</span><h3>Discover</h3><p>Understand your goals, audience and constraints.</p></div>
+          <div class="ab-step"><span class="ab-step-number">02</span><h3>Plan</h3><p>Agree on the scope, approach and practical timeline.</p></div>
+          <div class="ab-step"><span class="ab-step-number">03</span><h3>Build</h3><p>Develop in clear stages and share regular updates.</p></div>
+          <div class="ab-step"><span class="ab-step-number">04</span><h3>Launch &amp; support</h3><p>Deploy, review and plan the support you need next.</p></div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- CTA -->
-  <section class="section sp-contact" id="contact-form">
-    <div class="sp-contact-bg"><div class="sp-contact-orb"></div></div>
-    <div class="container" style="text-align:center;position:relative" data-aos="fade-up">
-      <span class="section-tag">Join Our Clients</span>
-      <h2 class="section-title" style="margin-top:14px">Ready to Work with <span class="text-gradient">Softorio?</span></h2>
-      <p class="section-sub" style="margin:0 auto 36px;max-width:500px">Whether you need a <a href="{{ route('web-development') }}" style="color:var(--primary);text-decoration:underline;">website</a>, <a href="{{ route('manage-cloud') }}" style="color:var(--primary);text-decoration:underline;">hosting</a>, <a href="{{ route('seo') }}" style="color:var(--primary);text-decoration:underline;">SEO</a>, or a complete digital solution — we're here to help. Let's talk about your project.</p>
-      <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap">
-        <a href="{{ route('contact') }}" class="btn btn-primary btn-lg">Start a Project</a>
-        <a href="{{ route('our-works') }}" class="btn btn-outline btn-lg">View Our Work</a>
+  <section class="ab-cta" aria-labelledby="about-contact-title">
+    <div class="ab-wrap">
+      <div class="ab-cta-panel">
+        <div><h2 class="ab-title" id="about-contact-title">Your next idea<br>starts with a conversation.</h2><p>Tell us what you want to build, improve or simplify. We will help you find a practical next step.</p></div>
+        <a href="{{ route('contact') }}" class="btn btn-primary btn-lg">Get in touch <span aria-hidden="true">&nearr;</span></a>
       </div>
     </div>
   </section>
+</main>
 @endsection
-
-@push('scripts')
-  @vite(['resources/js/service.js'])
-@endpush

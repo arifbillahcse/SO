@@ -14,6 +14,8 @@ use Illuminate\Support\Facades\Storage;
     'terms_of_service_url',
     'logo',
     'favicon_path',
+    'client_countries',
+    'client_map_enabled',
     'description',
     'telephone',
     'email',
@@ -34,14 +36,25 @@ class OrganizationSettings extends Model
 {
     protected $attributes = [
         'tracking_mode' => 'ga4',
+        'client_map_enabled' => true,
         'custom_code_enabled' => false,
     ];
 
     protected $casts = [
         'custom_code_enabled' => 'boolean',
+        'client_countries' => 'array',
+        'client_map_enabled' => 'boolean',
         'tos_effective_date' => 'date',
         'privacy_effective_date' => 'date',
     ];
+
+    /** @return array<string, string> */
+    public function clientCountries(): array
+    {
+        $selected = array_filter($this->client_countries ?? [], fn (mixed $code): bool => is_string($code));
+
+        return array_intersect_key(config('client-map.countries'), array_flip($selected));
+    }
 
     public function faviconUrl(): string
     {

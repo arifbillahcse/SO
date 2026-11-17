@@ -21,8 +21,8 @@ class ClientMapTest extends TestCase
         $this->get('/about-us')->assertOk()->assertSee('Explore all 2 countries &amp; territories', false)
             ->assertSee('data-map-country="US"', false)->assertSee('data-map-country="BD"', false)
             ->assertDontSee('data-map-country="XX"', false)->assertDontSee('data-map-country="CA"', false)
-            ->assertSee('#client-map [data-country="US"]{fill:var(--primary)', false)
-            ->assertDontSee('#client-map [data-country="CA"]{fill:var(--primary)', false);
+            ->assertSee('#client-map [data-country="US"]{fill:var(--map-accent)', false)
+            ->assertDontSee('#client-map [data-country="CA"]{fill:var(--map-accent)', false);
     }
 
     public function test_admin_can_change_locations_and_hide_map_without_losing_list(): void

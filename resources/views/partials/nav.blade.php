@@ -55,7 +55,7 @@
         </button>
         <div class="dropdown-menu">
           <a href="{{ route('solutions') }}" class="dropdown-item{{ request()->routeIs('solutions') ? ' active' : '' }}"><span class="d-icon" aria-hidden="true">&nearr;</span> All Solutions</a>
-          <a href="{{ route('diagnostic-centers-solution') }}" class="dropdown-item{{ request()->routeIs('diagnostic-centers-solution') ? ' active' : '' }}"><span class="d-icon" aria-hidden="true">&#10010;</span> Diagnostic Centers</a>
+          <a href="{{ route('diagnostic-management-system') }}" class="dropdown-item{{ request()->routeIs('diagnostic-centers-solution') ? ' active' : '' }}"><span class="d-icon" aria-hidden="true">&#10010;</span> Diagnostic Centers</a>
           <a href="{{ route('ecommerce-solution') }}" class="dropdown-item{{ request()->routeIs('ecommerce-solution') ? ' active' : '' }}"><span class="d-icon">&#128722;</span> eCommerce Solution</a>
           <a href="{{ route('cloud-solution') }}" class="dropdown-item{{ request()->routeIs('cloud-solution') ? ' active' : '' }}"><span class="d-icon">&#9729;</span> Cloud Solution</a>
           <a href="{{ route('automation-solution') }}" class="dropdown-item{{ request()->routeIs('automation-solution') ? ' active' : '' }}"><span class="d-icon">&#9881;</span> Automation Solution</a>

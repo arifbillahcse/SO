@@ -2,6 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     if (!reducedMotion && 'IntersectionObserver' in window) document.documentElement.classList.add('motion-ready');
     const themeToggle = document.getElementById('themeToggle');
+    const browserTheme = window.matchMedia('(prefers-color-scheme: dark)');
     if (themeToggle) {
         const update = () => {
             const isLight = document.documentElement.dataset.theme === 'light';
@@ -9,9 +10,15 @@ document.addEventListener('DOMContentLoaded', () => {
             themeToggle.querySelector('.theme-toggle-label').textContent = isLight ? 'Dark mode' : 'Light mode';
         };
         update(); themeToggle.hidden = false;
+        browserTheme.addEventListener('change', () => {
+            if (document.documentElement.dataset.themePreference !== 'auto') return;
+            document.documentElement.dataset.theme = browserTheme.matches ? 'dark' : 'light';
+            update();
+        });
         themeToggle.addEventListener('click', () => {
             const theme = document.documentElement.dataset.theme === 'light' ? 'dark' : 'light';
             document.documentElement.dataset.theme = theme;
+            document.documentElement.dataset.themePreference = theme;
             try { localStorage.setItem('softorio-theme', theme); } catch {}
             update();
         });

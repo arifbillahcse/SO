@@ -6,7 +6,7 @@
 @push('head')
 <style>
 /* card headings are h3 (was h4) so heading levels don't skip */
-.sp-why-card h3 { font-size: 0.95rem; font-weight: 700; color: var(--text-primary); margin-bottom: 8px; }
+.affiliate-page .sp-why-card h3 { font-size: 0.95rem; font-weight: 700; color: var(--text-primary); margin-bottom: 8px; }
 /* ===== AFFILIATE PAGE — scoped styles ===== */
     .aff-steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
     .aff-step {
@@ -82,10 +82,53 @@
       .aff-steps { grid-template-columns: 1fr; }
       .aff-step-arrow { display: none !important; }
     }
+
+    .affiliate-page [id] { scroll-margin-top: 92px; }
+    .affiliate-page .aff-benefits { display: grid; grid-template-columns: repeat(4,minmax(0,1fr)); gap: 24px; }
+    .affiliate-page .page-hero-content, .affiliate-page .page-hero-visual,
+    .affiliate-page .sp-contact-left, .affiliate-page .sp-contact-right,
+    .affiliate-page .sp-form-card, .affiliate-page .sp-why-card, .affiliate-page .aff-step { min-width: 0; }
+    .affiliate-page .sp-form-card { width: 100%; max-width: 100%; }
+    .affiliate-page .sp-submit { white-space: normal; line-height: 1.5; min-height: 48px; }
+    .affiliate-page .sp-ci-item > div:last-child { min-width: 0; }
+    .affiliate-page .sp-ci-val { overflow-wrap: anywhere; }
+    .affiliate-page .faq-arrow { flex-shrink: 0; }
+    @media(max-width:1024px) {
+      .affiliate-page .page-hero-inner { gap: 36px; }
+      .affiliate-page .page-hero-content { order: 0; }
+      .affiliate-page .page-hero-visual { order: 1; }
+      .affiliate-page .why-metrics { grid-template-columns: repeat(2,minmax(0,1fr)); width: min(100%,480px); }
+      .affiliate-page .aff-benefits { grid-template-columns: repeat(2,minmax(0,1fr)); }
+      .affiliate-page .sp-contact-inner, .affiliate-page .sp-faq-inner { grid-template-columns: minmax(0,1fr); gap: 32px; }
+      .affiliate-page .cta-input { font-size: 16px; min-height: 48px; }
+    }
+    @media(max-width:600px) {
+      .affiliate-page .page-hero-inner { padding: 48px 24px 42px; }
+      .affiliate-page .page-hero-title { font-size: clamp(1.9rem,7.5vw,2.5rem); }
+      .affiliate-page .page-hero-sub { font-size: .95rem; line-height: 1.85; margin-bottom: 26px; }
+      .affiliate-page .page-hero-cta { flex-direction: column; align-items: stretch; max-width: 360px; margin-inline: auto; gap: 12px; }
+      .affiliate-page .page-hero-cta .btn { width: 100%; min-height: 48px; justify-content: center; white-space: normal; text-align: center; padding: 14px 18px; }
+      .affiliate-page .why-metrics { gap: 12px; }
+      .affiliate-page .metric-card { padding: 22px 14px; border-radius: 16px; }
+      .affiliate-page .metric-num { font-size: 1.8rem; }
+      .affiliate-page .metric-label { font-size: .78rem; }
+      .affiliate-page .aff-benefits { grid-template-columns: minmax(0,1fr); gap: 16px; }
+      .affiliate-page .aff-step { padding: 26px 22px; border-radius: 20px; }
+      .affiliate-page .aff-commission { padding: 36px 22px; border-radius: 20px; }
+      .affiliate-page .aff-commission-sub { font-size: 1.05rem; line-height: 1.5; }
+      .affiliate-page .aff-commission-text { font-size: .88rem; }
+      .affiliate-page .aff-who { gap: 10px; margin-top: 24px; }
+      .affiliate-page .aff-who span { max-width: 100%; padding: 10px 14px; font-size: .82rem; }
+      .affiliate-page .sp-form-card { padding: 24px 18px; border-radius: 20px; }
+      .affiliate-page .sp-submit { font-size: .9rem; padding: 14px 16px; }
+      .affiliate-page .faq-q { padding: 16px; font-size: .9rem; gap: 14px; }
+    }
+    @media(prefers-reduced-motion:reduce) { .affiliate-page .aff-step:hover { transform: none; } }
 </style>
 @endpush
 
 @section('content')
+<main class="affiliate-page">
 <!-- ========== PAGE HERO ========== -->
   <section class="page-hero">
     <div class="page-hero-bg">
@@ -182,7 +225,7 @@
         <h2 class="section-title">Built to Be <span class="text-gradient">Worth Your Time</span></h2>
         <p class="section-sub">We designed this program to be simple, fair, and genuinely rewarding — not a gimmick.</p>
       </div>
-      <div class="sp-why-cards" data-aos="fade-up" style="display:grid;grid-template-columns:repeat(4,1fr);gap:24px">
+      <div class="sp-why-cards aff-benefits" data-aos="fade-up">
         <div class="sp-why-card"><div class="sp-wc-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div><h3>Lifetime, Not One-Time</h3><p>You keep earning for as long as your referral stays a client — hosting renewals, new projects, everything.</p></div>
         <div class="sp-why-card"><div class="sp-wc-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10z"/></svg></div><h3>No Cap, No Limit</h3><p>Refer one person or fifty. There's no ceiling on how much you can earn through the program.</p></div>
         <div class="sp-why-card"><div class="sp-wc-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></div><h3>Zero Risk to Refer</h3><p>Softorio has delivered 300+ projects with real client results — your name is attached to a service you can trust.</p></div>
@@ -249,6 +292,7 @@
       </div>
     </div>
   </section>
+</main>
 @endsection
 
 @push('scripts')

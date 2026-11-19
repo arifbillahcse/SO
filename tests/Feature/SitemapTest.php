@@ -45,7 +45,7 @@ class SitemapTest extends TestCase
 
     public function test_saved_contact_and_policy_edits_are_reflected_in_last_modified_dates(): void
     {
-        $baseline = Carbon::createFromTimestamp(filemtime(resource_path('views/pages/legal.blade.php')))->addDay();
+        $baseline = now()->max(Carbon::createFromTimestamp(filemtime(resource_path('views/pages/legal.blade.php'))))->addDay();
         $this->travelTo($baseline);
         PageSeo::syncStaticPages();
         $contact = ContactPageSettings::current();
@@ -126,7 +126,7 @@ class SitemapTest extends TestCase
         $this->get('/diagnostic-management-system')
             ->assertOk()
             ->assertSee('Diagnostic Management')
-            ->assertSee('Software under development');
+            ->assertSee('DiagnoCare');
 
         $this->get('/sitemap.xml')
             ->assertOk()

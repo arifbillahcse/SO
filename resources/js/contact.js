@@ -1,8 +1,11 @@
+import { initializeRecaptcha } from './recaptcha.js';
+
 const form = document.getElementById('contactPageForm');
 
 if (form) {
     const button = form.querySelector('[type="submit"]');
     const status = form.querySelector('[data-contact-status]');
+    const captcha = initializeRecaptcha(form, button);
     const originalButtonContent = button.innerHTML;
     let submitting = false;
 
@@ -17,11 +20,14 @@ if (form) {
         form.querySelectorAll('[aria-invalid]').forEach(node => node.removeAttribute('aria-invalid'));
 
         try {
+            const token = await captcha.token();
+            const payload = new FormData(form);
+            if (token) payload.set('g-recaptcha-response', token);
             const response = await fetch(form.action, {
                 method: 'POST',
                 headers: { 'Accept': 'application/json' },
                 credentials: 'same-origin',
-                body: new FormData(form),
+                body: payload,
             });
             const data = await response.json().catch(() => ({}));
             if (response.ok) {
@@ -38,13 +44,13 @@ if (form) {
                     const field = form.elements.namedItem(name);
                     const errorNode = [...form.querySelectorAll('[data-error-for]')].find(node => node.dataset.errorFor === name);
                     if (errorNode) errorNode.textContent = errors[0];
-                    if (field && name !== 'company_website') {
+                    if (field && name !== 'company_website' && name !== 'g-recaptcha-response') {
                         field.setAttribute('aria-invalid', 'true');
                         firstInvalid ||= field;
                     }
                 });
                 if (firstInvalid) firstInvalid.focus();
-                else throw new Error(data.message || 'Please check your details and try again.');
+                else throw new Error(Object.values(data.errors || {})[0]?.[0] || data.message || 'Please check your details and try again.');
             } else {
                 throw new Error(response.status === 429
                     ? 'Too many attempts. Please wait a minute and try again.'
@@ -59,6 +65,7 @@ if (form) {
             status.hidden = false;
             status.focus();
         } finally {
+            captcha.reset();
             submitting = false;
             button.disabled = false;
             button.innerHTML = originalButtonContent;

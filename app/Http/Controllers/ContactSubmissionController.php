@@ -15,12 +15,20 @@ class ContactSubmissionController extends Controller
 {
     public function store(StoreContactSubmissionRequest $request): JsonResponse|RedirectResponse
     {
+        $message = $request->string('message')->toString();
+        if ($request->filled('clinic_name')) {
+            $message .= "\n\nClinic / lab: ".$request->string('clinic_name')->toString();
+        }
+        if ($request->filled('demo_plan')) {
+            $message .= "\nRequested plan: ".$request->string('demo_plan')->toString();
+        }
+
         $submission = ContactSubmission::create([
             'name' => $request->input('name'),
             'email' => $request->input('email'),
             'phone' => $request->input('phone'),
             'service_interested' => $request->input('service_interested'),
-            'message' => $request->input('message'),
+            'message' => $message,
         ]);
 
         $settings = ContactPageSettings::current();

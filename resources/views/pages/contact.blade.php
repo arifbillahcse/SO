@@ -104,6 +104,7 @@
           <div class="contact-honeypot" aria-hidden="true"><label for="contact-website">Leave this empty</label><input id="contact-website" name="company_website" tabindex="-1" autocomplete="off"></div>
           <div class="contact-form-actions"><button type="submit" class="btn btn-primary">{{ $contactSettings->submit_label }} <span aria-hidden="true">&nearr;</span></button><p><span aria-hidden="true">*</span> Required fields</p></div>
           <p class="contact-status" data-contact-status role="status" tabindex="-1" @if(!session('contact_success')) hidden @endif>{{ session('contact_success') }}</p>
+          @error('g-recaptcha-response')<p class="contact-error">{{ $message }}</p>@enderror
           @error('company_website')<p class="contact-error">{{ $message }}</p>@enderror
         </form>
       </section>

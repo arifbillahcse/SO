@@ -1,0 +1,41 @@
+# DiagnoCare
+
+> DiagnoCare is online software for diagnostic centers and pathology labs in Bangladesh, made by Softorio. It handles patient registration, billing, dues, lab results with verification, imaging reports, report printing on the clinic's letterhead, referral doctors, lab analyzer connection (ASTM and HL7), a patient report portal and multi-branch management.
+
+## Key facts
+
+- Type: web-based diagnostic center and laboratory management software (runs in a browser; nothing to install except a small analyzer connector on one lab computer).
+- Country: Bangladesh. Currency: Bangladeshi taka (BDT). Language: English.
+- Maker: Softorio (https://softorio.com/).
+- Plans: Basic (front desk, lab, lab reports; 1 branch), Standard (adds imaging, finance and owner reports, patient portal, SMS, inventory; 1 branch), Premium (adds analyzer connection, branches and collection centres, staff and payroll; up to 3 branches). Monthly or yearly subscription; prices on request.
+- Payments accepted from patients: cash, card, bKash, Nagad (transaction ID kept). Tubes and needles needed for the tests are added to the bill automatically. Subscription paid by bKash, Nagad or bank transfer.
+- Results: entered by hand or received from analyzers, flagged against ranges by age and sex, and verified by a second person before release.
+- Data security: a separate database for every clinic, HTTPS, encrypted nightly backups that are test-restored, two-step sign-in, and an audit log of every change to money, results and permissions. Saved bills and results are never edited or deleted; corrections are new entries.
+- Data ownership: the clinic owns its data and can export it at any time.
+- Setup time: usually within one week, including importing tests, prices and referral doctors from Excel, matching report layouts and staff training.
+
+## Full feature list
+
+- Front desk: patient records searched by name, code or mobile; babies' age in months and days; one-screen billing with keyboard shortcuts; test catalog with categories and packages; consumables added automatically; discounts with a reason and role limits; part payments and dues; refunds with approval; cash sessions per cashier; invoices with patient and office copies; money receipts; sample labels; numbers in the clinic's own format.
+- Laboratory: tests, analytes (number, short text, choice), reference ranges by age and sex, sample types with tube colours, barcode labels, collect, receive and reject, work list, flags for high, low, critical and abnormal, verification, corrections as new versions.
+- Lab reports: PDF report by department with barcodes and signatures; plain paper or pre-printed pad; header and footer banners; logo watermark; reports held while a due is unpaid.
+- Analyzers: ASTM and HL7 by serial cable or network, test code mapping, machine inbox for unmatched results, offline queue on the lab computer.
+- Branches: branch switcher, lists and reports by branch, collection centres sending samples to a main lab with tracked transfers and courier lists.
+- Imaging: templates per test and sex, example templates, phrases, draft, sign and versions, combined printing, overdue reports on the dashboard.
+- Patient portal: reports opened online with bill number and mobile number; "report ready" message links to it.
+- Owner and finance: dashboard with a 14-day collection chart; sales reports by day, test, doctor, cashier and branch; accounts for cash, bank, bKash, Nagad and card with transfers; expenses; referral commission and payouts; profit report.
+- Inventory: items, suppliers, purchases with batches and expiry, stock use per test, issue, wastage, stock count, low stock and expiry alerts.
+- Staff: staff records, daily and monthly attendance, advances, salary runs, payslips and salary sheet.
+- Messages: SMS and email for bill confirmation, report ready and due reminders, editable wording, message log with retries.
+- Admin: users, roles and permissions, two-step sign-in, audit log, modules switched on and off, data export as CSV, clinic settings, subscription page.
+
+## Pages
+
+- [Home](https://www.example.com.bd/): features, analyzer connection, security, pricing plans, FAQ and demo request.
+- [Privacy policy](https://www.example.com.bd/privacy.html)
+- [Terms](https://www.example.com.bd/terms.html)
+
+## Contact
+
+- WhatsApp / phone: +8801XXXXXXXXX
+- Email: hello@example.com.bd

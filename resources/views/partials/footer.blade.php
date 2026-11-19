@@ -44,7 +44,7 @@
       <h4 class="footer-heading">Solutions</h4>
       <ul class="footer-links">
         <li><a href="{{ route('solutions') }}">All Solutions</a></li>
-        <li><a href="{{ route('diagnostic-centers-solution') }}">Diagnostic Centers</a></li>
+        <li><a href="{{ route('diagnostic-management-system') }}">Diagnostic Centers</a></li>
         <li><a href="{{ route('ecommerce-solution') }}">eCommerce Solution</a></li>
         <li><a href="{{ route('cloud-solution') }}">Cloud Solution</a></li>
         <li><a href="{{ route('automation-solution') }}">Automation Solution</a></li>
@@ -64,7 +64,7 @@
   </div>
   <div class="footer-bottom">
     <div class="container footer-bottom-inner">
-      <p>&copy; {{ date('Y') }} Softorio. All Rights Reserved.</p>
+      <p>{{ $orgSettings->copyrightText() }}</p>
       @if(count($orgSettings->publicLegalLinks()))
       <div class="footer-legal">
         @foreach($orgSettings->publicLegalLinks() as $label => $url)<a href="{{ $url }}">{{ $label }}</a>@endforeach

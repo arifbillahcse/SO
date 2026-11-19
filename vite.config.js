@@ -10,6 +10,8 @@ export default defineConfig({
                 'resources/js/home.js',
                 'resources/js/service.js',
                 'resources/js/contact.js',
+                'resources/css/diagnocare.css',
+                'resources/js/diagnocare.js',
             ],
             refresh: true,
         }),

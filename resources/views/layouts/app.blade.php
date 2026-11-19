@@ -1,18 +1,26 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="{{ $orgSettings->defaultTheme() === 'dark' ? 'dark' : 'light' }}" data-default-theme="{{ $orgSettings->defaultTheme() }}">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  @if($orgSettings->recaptcha_enabled)
+  <meta name="recaptcha-site-key" content="{{ $orgSettings->recaptcha_site_key }}" />
+  @endif
   <link rel="icon" href="{{ $orgSettings->faviconUrl() }}" />
   @include('partials.site-tracking-head')
   <script>
-    try {
-      if (localStorage.getItem('softorio-theme') === 'light') {
-        document.documentElement.dataset.theme = 'light';
-      }
-    } catch (error) {
-      // The site remains usable when browser storage is unavailable.
-    }
+    (() => {
+      const root = document.documentElement;
+      let preference = root.dataset.defaultTheme;
+      try {
+        const saved = localStorage.getItem('softorio-theme');
+        if (saved === 'light' || saved === 'dark') preference = saved;
+      } catch (error) {}
+      root.dataset.themePreference = preference;
+      root.dataset.theme = preference === 'auto'
+        ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light')
+        : preference;
+    })();
   </script>
   <meta name="csrf-token" content="{{ csrf_token() }}" />
   @php

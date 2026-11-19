@@ -1,0 +1,334 @@
+/* DiagnoCare product page; colors follow the shared Softorio theme. */
+.diagnocare-page {
+  --bg: var(--dark); --sf: var(--dark-2); --ink: var(--text-primary); --mu: var(--text-secondary); --ln: var(--border);
+  --br: var(--primary); --br-dark: var(--primary-dark); --br-soft: var(--primary-glow); --mint: var(--primary);
+  --rose: #E34D59; --amb: #D97706; --nv: #151622; --nv-2: #22232F; --nv-text: #CDD2DE;
+  --sh: var(--shadow-card); --sh-lg: var(--shadow-card); --display: var(--font); --body: var(--font);
+  color: var(--ink); background: var(--bg); font: 400 1rem/1.7 var(--font);
+}
+.diagnocare-page [id] { scroll-margin-top: 105px; }
+.diagnocare-page img { max-width: 100%; height: auto; display: block; }
+.diagnocare-page a { color: inherit; }
+.diagnocare-page h1, .diagnocare-page h2, .diagnocare-page h3 { font-family: var(--font); letter-spacing: -.045em; line-height: 1.15; margin: 0; color: inherit; }
+.diagnocare-page h2 { font-size: clamp(1.9rem, 3.5vw, 2.75rem); font-weight: 700; max-width: 26ch; }
+.diagnocare-page h3 { font-weight: 700; }
+.diagnocare-page p { margin: 0; color: var(--mu); }
+.diagnocare-page .dg-w { max-width: 1180px; margin: 0 auto; padding: 0 24px; }
+.diagnocare-page .dg-narrow { max-width: 860px; }
+.diagnocare-page section { padding: 92px 0; }
+.diagnocare-page section.dg-pt0 { padding-top: 0; }
+.diagnocare-page .dg-lead { max-width: 56ch; margin-top: 16px; font-size: 1.05rem; }
+.diagnocare-page :focus-visible { outline: 2px solid var(--primary); outline-offset: 4px; }
+.diagnocare-page .dg-btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; padding: 14px 23px; min-height: 48px; border-radius: 12px; border: 1px solid transparent; background: var(--primary); color: #fff; font: 700 .9rem/1.4 var(--font); text-decoration: none; cursor: pointer; transition: background .2s, transform .2s; }
+.diagnocare-page .dg-btn:hover { background: var(--primary-dark); transform: translateY(-2px); }
+.diagnocare-page .dg-btn-alt { background: transparent; color: var(--primary); border-color: var(--ln); }
+.diagnocare-page .dg-btn-alt:hover { background: var(--primary-glow); }
+.diagnocare-page .dg-breadcrumb { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 28px; font-size: .75rem; color: var(--mu); }
+.diagnocare-page .dg-breadcrumb a { text-decoration: none; }
+/* Entrance animation */
+.diagnocare-page .dg-in { opacity: 0; transform: translateY(18px); animation: dg-rise .8s cubic-bezier(.2,.7,.2,1) forwards; }
+.diagnocare-page .dg-d1 { animation-delay: .08s; } .diagnocare-page .dg-d2 { animation-delay: .18s; } .diagnocare-page .dg-d3 { animation-delay: .3s; } .diagnocare-page .dg-d4 { animation-delay: .45s; }
+@keyframes dg-rise { to { opacity: 1; transform: none; } }
+
+/* Scroll reveal: only hidden once JS has said it can show them again */
+
+.diagnocare-page .dg-rv.seen { opacity: 1; transform: none; }
+
+/* Hero */
+.diagnocare-page .dg-hero { position: relative; padding: 56px 0 80px; overflow: hidden; }
+.diagnocare-page .dg-hero::before { content: ""; position: absolute; top: -18%; right: -12%; width: 820px; height: 820px; background: radial-gradient(circle, var(--primary-glow), transparent 64%); pointer-events: none; }
+.diagnocare-page .dg-hero-in { position: relative; display: grid; grid-template-columns: .9fr 1.1fr; gap: 48px; align-items: center; }
+.diagnocare-page .dg-kicker { font-weight: 600; color: var(--br); letter-spacing: .02em; }
+.diagnocare-page .dg-hero h1 { font-size: clamp(2.5rem, 5.6vw, 4.4rem); font-weight: 800; max-width: 13ch; margin-top: 14px; }
+.diagnocare-page .dg-hero .dg-lead { font-size: 1.18rem; }
+.diagnocare-page .dg-cta { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 30px; }
+@media (max-width: 980px) { .diagnocare-page .dg-hero-in { grid-template-columns: 1fr; } .diagnocare-page .dg-rack { display: none; } }
+
+.diagnocare-page .dg-rack { position: relative; display: flex; gap: 14px; align-items: flex-end; height: 150px; margin-top: 44px; max-width: 300px; border-bottom: 3px solid var(--ln); padding-left: 4px; }
+.diagnocare-page .dg-tube { position: relative; width: 30px; height: 112px; border: 2.5px solid color-mix(in srgb, var(--ink) 28%, transparent); border-top: 0; border-radius: 0 0 16px 16px; overflow: hidden; background: color-mix(in srgb, var(--sf) 70%, transparent); }
+.diagnocare-page .dg-tube::after { content: ""; position: absolute; inset: 0 auto 0 5px; width: 4px; background: rgba(255,255,255,.5); border-radius: 4px; }
+.diagnocare-page .dg-tube b { position: absolute; left: -2px; right: -2px; bottom: 0; height: var(--h); background: var(--c); animation: dg-level 4.5s ease-in-out infinite alternate; animation-delay: var(--d); }
+.diagnocare-page .dg-tube b::before { content: ""; position: absolute; top: -5px; left: 0; right: 0; height: 10px; background: var(--c); border-radius: 50%; }
+@keyframes dg-level { from { transform: translateY(14%); } to { transform: translateY(-6%); } }
+.diagnocare-page .dg-drop { position: absolute; left: 50px; top: -6px; width: 14px; height: 20px; background: var(--rose); border-radius: 50% 50% 50% 50% / 62% 62% 38% 38%; animation: dg-drip 2.6s ease-in infinite; }
+@keyframes dg-drip { 0% { transform: translateY(0) scale(.6); opacity: 0; } 15% { opacity: 1; transform: scale(1); } 85% { opacity: 1; } 100% { transform: translateY(80px); opacity: 0; } }
+
+.diagnocare-page .dg-hero-shot { position: relative; padding: 0 0 60px 0; }
+.diagnocare-page .dg-frame { margin: 0; background: var(--sf); border: 1px solid var(--ln); border-radius: 12px; overflow: hidden; box-shadow: 0 40px 80px -30px rgba(16,24,40,.45); transform: perspective(1600px) rotateY(-6deg) rotateX(2deg); transition: transform .6s ease; }
+.diagnocare-page .dg-hero-shot:hover .dg-frame { transform: perspective(1600px) rotateY(0) rotateX(0); }
+.diagnocare-page .dg-frame-bar { display: flex; align-items: center; gap: 6px; padding: 10px 14px; background: color-mix(in srgb, var(--ln) 55%, var(--sf)); }
+.diagnocare-page .dg-frame-bar span { width: 10px; height: 10px; border-radius: 50%; background: color-mix(in srgb, var(--ink) 22%, transparent); }
+.diagnocare-page .dg-frame-bar em { margin-left: 10px; font-style: normal; font-size: .8rem; color: var(--mu); }
+.diagnocare-page .dg-phone { position: absolute; right: -10px; bottom: 0; width: 26%; min-width: 120px; margin: 0; border: 7px solid var(--nv-2); border-radius: 12px; overflow: hidden; background: #fff; box-shadow: 0 30px 60px -20px rgba(16,24,40,.55); animation: dg-float 7s ease-in-out infinite; }
+@keyframes dg-float { 50% { transform: translateY(-12px); } }
+.diagnocare-page .dg-toasts { list-style: none; margin: 0; padding: 0; position: absolute; left: -24px; bottom: 6px; display: grid; gap: 8px; }
+.diagnocare-page .dg-toasts li { display: flex; align-items: center; gap: 9px; background: var(--sf); border: 1px solid var(--ln); box-shadow: var(--sh-lg); border-radius: 10px; padding: 9px 14px; font-weight: 600; font-size: .86rem; white-space: nowrap; opacity: 0; transform: translateX(-14px); animation: dg-toast 9s ease-in-out infinite; }
+.diagnocare-page .dg-toasts li:nth-child(2) { animation-delay: 3s; } .diagnocare-page .dg-toasts li:nth-child(3) { animation-delay: 6s; }
+.diagnocare-page .dg-toasts li b { color: var(--mint); }
+.diagnocare-page .dg-toasts i { width: 9px; height: 9px; border-radius: 50%; }
+.diagnocare-page .dg-toasts .dg-g { background: var(--mint); } .diagnocare-page .dg-toasts .dg-b { background: var(--br); } .diagnocare-page .dg-toasts .dg-a { background: var(--amb); }
+@keyframes dg-toast { 0%, 100% { opacity: 0; transform: translateX(-14px); } 6%, 30% { opacity: 1; transform: none; } 36% { opacity: 0; transform: translateX(10px); } }
+@media (max-width: 980px) { .diagnocare-page .dg-frame { transform: none; } .diagnocare-page .dg-toasts { left: 8px; } }
+@media (max-width: 520px) { .diagnocare-page .dg-toasts li { font-size: .78rem; padding: 7px 11px; } }
+
+/* Facts strip */
+.diagnocare-page .dg-strip { border-block: 1px solid var(--ln); background: var(--sf); overflow: hidden; }
+.diagnocare-page .dg-marquee { display: flex; width: max-content; animation: dg-slide 32s linear infinite; }
+.diagnocare-page .dg-marquee ul { list-style: none; margin: 0; padding: 18px 0; display: flex; }
+.diagnocare-page .dg-marquee li { padding: 0 28px; font-weight: 600; white-space: nowrap; position: relative; }
+.diagnocare-page .dg-marquee li::after { content: ""; position: absolute; right: -4px; top: 50%; width: 7px; height: 7px; border-radius: 50%; background: var(--mint); transform: translateY(-50%); }
+@keyframes dg-slide { to { transform: translateX(-50%); } }
+.diagnocare-page .dg-strip:hover .dg-marquee { animation-play-state: paused; }
+
+.diagnocare-page .dg-ticks { list-style: none; padding: 0; margin: 18px 0 0; }
+.diagnocare-page .dg-ticks li { position: relative; padding-left: 28px; margin-bottom: 9px; }
+.diagnocare-page .dg-ticks li::before { content: ""; position: absolute; left: 0; top: .45em; width: 16px; height: 9px; border-left: 2.5px solid var(--mint); border-bottom: 2.5px solid var(--mint); transform: rotate(-45deg); }
+
+/* Bento */
+.diagnocare-page .dg-bento { display: grid; grid-template-columns: repeat(6, 1fr); gap: 16px; margin-top: 48px; }
+.diagnocare-page .dg-bx { position: relative; background: var(--sf); border: 1px solid var(--ln); border-radius: 12px; padding: 28px; overflow: hidden; transition: transform .3s, box-shadow .3s; }
+.diagnocare-page .dg-bx:hover { transform: translateY(-3px); box-shadow: var(--sh-lg); }
+.diagnocare-page .dg-bx h3 { font-size: 1.4rem; margin-bottom: 8px; }
+.diagnocare-page .dg-b1 { grid-column: span 3; grid-row: span 2; } .diagnocare-page .dg-b2, .diagnocare-page .dg-b3 { grid-column: span 3; } .diagnocare-page .dg-b4, .diagnocare-page .dg-b5, .diagnocare-page .dg-b6 { grid-column: span 2; }
+@media (max-width: 900px) { .diagnocare-page .dg-bento > * { grid-column: 1 / -1 !important; grid-row: auto !important; } }
+.diagnocare-page .dg-dark { background: var(--nv); border-color: transparent; color: #fff; }
+.diagnocare-page .dg-dark p { color: var(--nv-text); }
+.diagnocare-page .dg-bill-lines { margin-top: 26px; }
+.diagnocare-page .dg-bill-lines div { display: flex; justify-content: space-between; gap: 12px; padding: 12px 0; border-top: 1px dashed var(--ln); }
+.diagnocare-page .dg-bill-lines b { font-weight: 600; font-variant-numeric: tabular-nums; }
+.diagnocare-page .dg-bill-lines .dg-tot { border-top: 2px solid var(--ink); font-size: 1.1rem; }
+.diagnocare-page .dg-ok { color: var(--mint); }
+.diagnocare-page .dg-range { position: relative; height: 12px; border-radius: 9px; margin: 22px 0 8px; background: var(--ln); overflow: visible; }
+.diagnocare-page .dg-range .dg-zone { position: absolute; left: 0; width: 70%; top: 0; bottom: 0; border-radius: 9px 0 0 9px; background: var(--mint); }
+.diagnocare-page .dg-range::after { content: ""; position: absolute; left: 70%; right: 0; top: 0; bottom: 0; border-radius: 0 9px 9px 0; background: var(--rose); }
+.diagnocare-page .dg-range i { position: absolute; z-index: 1; top: -7px; left: 0; width: 4px; height: 26px; background: var(--ink); border-radius: 3px; transition: left 1.4s cubic-bezier(.2,.7,.2,1) .3s; }
+.diagnocare-page .dg-seen .dg-range i, .diagnocare-page .dg-range i { left: var(--x); }
+.diagnocare-page .dg-bx small { color: var(--mu); }
+.diagnocare-page .dg-amend { margin-top: 18px; display: grid; gap: 6px; font-size: .92rem; }
+.diagnocare-page .dg-amend s { color: #B2BAC8; }
+.diagnocare-page .dg-amend span { color: #fff; background: rgba(255,255,255,.08); padding: 8px 12px; border-radius: 10px; border-left: 3px solid var(--amb); }
+
+/* Flow */
+.diagnocare-page .dg-flow { list-style: none; padding: 0; margin: 56px 0 0; display: grid; grid-template-columns: repeat(4, 1fr); position: relative; }
+.diagnocare-page .dg-flow::before { content: ""; position: absolute; top: 27px; left: 12%; right: 12%; height: 3px; background: repeating-linear-gradient(90deg, var(--br) 0 10px, transparent 10px 20px); transform: scaleX(0); transform-origin: left; transition: transform 1.6s ease .2s; }
+.diagnocare-page .dg-flow.seen::before, .diagnocare-page .dg-flow::before { transform: scaleX(1); }
+.diagnocare-page .dg-flow li { text-align: center; padding: 0 14px; position: relative; }
+.diagnocare-page .dg-flow em { display: grid; place-items: center; width: 56px; height: 56px; margin: 0 auto 16px; border-radius: 50%; background: var(--sf); border: 3px solid var(--br); font: 700 1.2rem var(--display); font-style: normal; }
+.diagnocare-page .dg-flow h3 { font-size: 1.2rem; margin-bottom: 6px; }
+@media (max-width: 800px) { .diagnocare-page .dg-flow { grid-template-columns: 1fr; gap: 28px; } .diagnocare-page .dg-flow::before { display: none; } }
+
+/* Modules */
+.diagnocare-page .dg-mods { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; }
+@media (max-width: 900px) { .diagnocare-page .dg-mods { grid-template-columns: 1fr; } }
+.diagnocare-page .dg-switches { margin-top: 28px; }
+.diagnocare-page .dg-sw { display: flex; align-items: center; gap: 14px; width: 100%; margin-bottom: 10px; padding: 14px 18px; background: var(--sf); border: 1px solid var(--ln); border-radius: 10px; font: 600 1rem var(--body); color: var(--ink); text-align: left; cursor: pointer; }
+.diagnocare-page .dg-sw small { margin-left: auto; font-weight: 400; color: var(--mu); }
+.diagnocare-page .dg-sw .dg-t { position: relative; flex: none; width: 44px; height: 26px; border-radius: 99px; background: var(--ln); transition: background .25s; }
+.diagnocare-page .dg-sw .dg-t::after { content: ""; position: absolute; top: 3px; left: 3px; width: 20px; height: 20px; border-radius: 50%; background: #fff; box-shadow: 0 2px 4px rgba(0,0,0,.25); transition: transform .25s; }
+.diagnocare-page .dg-sw[aria-pressed="true"] .dg-t { background: var(--br); }
+.diagnocare-page .dg-sw[aria-pressed="true"] .dg-t::after { transform: translateX(18px); }
+.diagnocare-page .dg-sw:disabled { opacity: .45; cursor: not-allowed; }
+.diagnocare-page .dg-menu-card { background: var(--nv); color: #fff; border-radius: 12px; padding: 28px; }
+.diagnocare-page .dg-menu-card h3 { font-size: 1.05rem; color: var(--nv-text); font-weight: 600; margin-bottom: 16px; font-family: var(--body); letter-spacing: 0; }
+.diagnocare-page .dg-menu-card div { padding: 13px 16px; border-radius: 12px; margin-bottom: 8px; background: var(--nv-2); font-weight: 500; transition: opacity .3s, transform .3s; }
+.diagnocare-page .dg-menu-card div.off { opacity: .22; text-decoration: line-through; transform: translateX(8px); }
+.diagnocare-page .dg-menu-card p { margin-top: 14px; color: var(--nv-text); }
+
+/* Analyzer pipe */
+.diagnocare-page .dg-split { display: grid; grid-template-columns: 1.1fr .9fr; gap: 48px; align-items: center; }
+@media (max-width: 900px) { .diagnocare-page .dg-split { grid-template-columns: 1fr; } }
+.diagnocare-page .dg-pipe { display: flex; align-items: center; justify-content: center; }
+.diagnocare-page .dg-node { flex: none; padding: 18px 18px; border-radius: 16px; background: var(--sf); border: 1px solid var(--ln); font-weight: 700; box-shadow: var(--sh); }
+.diagnocare-page .dg-node.hot { background: var(--br); color: #fff; border-color: transparent; }
+.diagnocare-page .dg-wire { position: relative; flex: 1; min-width: 40px; height: 3px; background: var(--ln); overflow: hidden; }
+.diagnocare-page .dg-wire span { position: absolute; top: -2px; left: -10px; width: 8px; height: 7px; border-radius: 4px; background: var(--mint); animation: dg-packet 2.4s linear infinite; }
+.diagnocare-page .dg-wire span:nth-child(2) { animation-delay: .8s; } .diagnocare-page .dg-wire span:nth-child(3) { animation-delay: 1.6s; }
+@keyframes dg-packet { to { left: 100%; } }
+
+/* Owner */
+.diagnocare-page .dg-owner { display: grid; grid-template-columns: 1fr auto; gap: 48px; align-items: center; background: var(--nv); color: #fff; border-radius: 16px; padding: 60px 64px 0; overflow: hidden; }
+.diagnocare-page .dg-owner > div { padding-bottom: 60px; }
+.diagnocare-page .dg-owner h2 { max-width: 16ch; }
+.diagnocare-page .dg-owner .dg-lead { color: var(--nv-text); margin-bottom: 26px; }
+.diagnocare-page .dg-owner-phone { width: 270px; border: 9px solid var(--nv-2); border-bottom: 0; border-radius: 38px 38px 0 0; align-self: end; transform: translateY(30px); transition: transform 1s cubic-bezier(.2,.7,.2,1) .2s; }
+.diagnocare-page .dg-owner.seen .dg-owner-phone, .diagnocare-page .dg-owner-phone { transform: none; }
+@media (max-width: 820px) { .diagnocare-page .dg-owner { grid-template-columns: 1fr; padding: 38px 26px 0; border-radius: 14px; } .diagnocare-page .dg-owner > div { padding-bottom: 0; } .diagnocare-page .dg-owner-phone { margin: 0 auto; width: 230px; } }
+
+/* Safety */
+.diagnocare-page .dg-two { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; }
+@media (max-width: 820px) { .diagnocare-page .dg-two { grid-template-columns: 1fr; } }
+.diagnocare-page .dg-two h2 { font-size: clamp(1.7rem, 3.2vw, 2.4rem); }
+.diagnocare-page .dg-checks { list-style: none; padding: 0; margin: 26px 0 0; }
+.diagnocare-page .dg-checks li { position: relative; padding: 14px 0 14px 34px; border-top: 1px solid var(--ln); color: var(--ink); }
+.diagnocare-page .dg-checks li::before { content: ""; position: absolute; left: 0; top: 19px; width: 18px; height: 18px; border-radius: 50%; background: var(--mint); }
+.diagnocare-page .dg-checks.alt li::before { background: transparent; border: 2px solid var(--br); }
+
+/* Plans */
+.diagnocare-page .dg-plans { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-top: 44px; align-items: stretch; }
+@media (max-width: 900px) { .diagnocare-page .dg-plans { grid-template-columns: 1fr; max-width: 480px; } }
+.diagnocare-page .dg-plan { position: relative; display: flex; flex-direction: column; background: var(--sf); border: 1px solid var(--ln); border-radius: 12px; padding: 30px 26px; }
+.diagnocare-page .dg-plan .dg-ticks { flex: 1; margin-bottom: 22px; }
+.diagnocare-page .dg-plan h3 { font-size: 1.5rem; }
+.diagnocare-page .dg-price { font: 700 1.5rem var(--display); color: var(--ink); margin-top: 10px; }
+.diagnocare-page .dg-for { margin-top: 2px; }
+.diagnocare-page .dg-pop { border: 2px solid var(--br); box-shadow: var(--sh-lg); }
+.diagnocare-page .dg-tag { position: absolute; top: -12px; left: 24px; background: var(--br-soft); color: var(--nv); border: 1px solid var(--border); font-weight: 600; font-size: .8rem; padding: 2px 10px; border-radius: 6px; }
+
+/* FAQ */
+.diagnocare-page .dg-faq { margin-top: 30px; }
+.diagnocare-page details { border-top: 1px solid var(--ln); padding: 20px 0; }
+.diagnocare-page details:last-child { border-bottom: 1px solid var(--ln); }
+.diagnocare-page summary { cursor: pointer; list-style: none; display: flex; justify-content: space-between; gap: 16px; font: 700 1.15rem var(--display); }
+.diagnocare-page summary::-webkit-details-marker { display: none; }
+.diagnocare-page summary::after { content: "+"; font-size: 1.5rem; line-height: 1; color: var(--br); transition: transform .2s; }
+.diagnocare-page details[open] summary::after { transform: rotate(45deg); }
+.diagnocare-page details p { margin-top: 10px; max-width: 64ch; }
+.diagnocare-page details[open] p { animation: dg-pop .35s ease; }
+
+/* CTA */
+.diagnocare-page .dg-cta-box { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; background: linear-gradient(135deg, #151622, #2A2630); border-radius: 16px; padding: 60px; color: #fff; }
+.diagnocare-page .dg-cta-box p, .diagnocare-page .dg-cta-box .dg-lead { color: #D8DDE5; }
+.diagnocare-page .dg-cta-box h2 { max-width: 13ch; }
+.diagnocare-page .dg-contact { margin-top: 22px; line-height: 1.9; }
+.diagnocare-page .dg-contact a { color: #fff; font-weight: 600; }
+@media (max-width: 820px) { .diagnocare-page .dg-cta-box { grid-template-columns: 1fr; padding: 36px 22px; border-radius: 14px; } }
+.diagnocare-page form { display: grid; gap: 12px; }
+.diagnocare-page form label { display: grid; gap: 6px; font-weight: 600; font-size: .95rem; color: #fff; }
+.diagnocare-page form input, .diagnocare-page form select { width: 100%; padding: 12px 14px; border: 0; border-radius: 8px; background: #fff; color: #111827; font: inherit; font-weight: 400; }
+.diagnocare-page form input.bad { box-shadow: 0 0 0 3px #FCA5A5; }
+.diagnocare-page .dg-err { color: #FECACA; font-weight: 600; }
+.diagnocare-page .dg-form-btns { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 4px; }
+
+@keyframes dg-pop { from { opacity: 0; transform: translateY(14px) scale(.98); } }
+
+/* Software views slider */
+.diagnocare-page .dg-slider { position: relative; margin-top: 44px; background: var(--sf); border: 1px solid var(--ln); border-radius: 12px; padding: 14px; box-shadow: var(--sh); }
+.diagnocare-page .dg-slides { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; scroll-behavior: smooth; border-radius: 12px; scrollbar-width: none; }
+.diagnocare-page .dg-slides::-webkit-scrollbar { display: none; }
+.diagnocare-page .dg-slide { flex: 0 0 100%; margin: 0; scroll-snap-align: center; }
+.diagnocare-page .dg-slide img { width: 100%; border-radius: 8px; border: 1px solid var(--ln); aspect-ratio: 16 / 10; object-fit: contain; background: var(--sf); }
+.diagnocare-page .dg-slide figcaption { padding: 16px 8px 6px; color: var(--mu); }
+.diagnocare-page .dg-slide figcaption b { display: block; color: var(--ink); font: 700 1.25rem var(--display); margin-bottom: 2px; }
+.diagnocare-page .dg-nav-btn { position: absolute; top: calc(50% - 60px); width: 48px; height: 48px; border-radius: 50%; border: 1px solid var(--ln); background: var(--sf); color: var(--ink); font-size: 1.8rem; line-height: 1; cursor: pointer; box-shadow: var(--sh); display: grid; place-items: center; transition: transform .2s; }
+.diagnocare-page .dg-nav-btn:hover { transform: scale(1.08); }
+.diagnocare-page .dg-prev { left: -10px; } .diagnocare-page .dg-next { right: -10px; }
+.diagnocare-page .dg-dots { display: flex; justify-content: center; gap: 8px; padding: 6px 0 4px; }
+.diagnocare-page .dg-dots button { width: 10px; height: 10px; padding: 0; border-radius: 99px; border: 0; background: var(--ln); cursor: pointer; transition: width .3s, background .3s; }
+.diagnocare-page .dg-dots button[aria-selected="true"] { width: 30px; background: var(--br); }
+@media (max-width: 640px) { .diagnocare-page .dg-nav-btn { display: none; } .diagnocare-page .dg-slider { padding: 8px; border-radius: 12px; } }
+
+/* All features */
+.diagnocare-page .dg-filters { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 30px; }
+.diagnocare-page .dg-chip { border: 1px solid var(--ln); background: var(--sf); color: var(--mu); padding: 8px 14px; border-radius: 8px; font: 600 .95rem var(--body); cursor: pointer; transition: background .2s, color .2s; }
+.diagnocare-page .dg-chip.on { background: var(--br); color: #fff; border-color: var(--br); }
+.diagnocare-page .dg-fgroups { display: grid; gap: 18px; margin-top: 26px; }
+.diagnocare-page .dg-fg { background: var(--sf); border: 1px solid var(--ln); border-radius: 12px; padding: 30px; }
+.diagnocare-page .dg-fg[hidden] { display: none; }
+.diagnocare-page .dg-fg-head { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 16px; margin-bottom: 6px; }
+.diagnocare-page .dg-fg-tag { font-weight: 600; color: var(--br); font-size: .92rem; }
+.diagnocare-page .dg-fg h3 { font-size: 1.55rem; width: 100%; }
+.diagnocare-page .dg-cols { columns: 2 320px; column-gap: 36px; }
+.diagnocare-page .dg-cols li { break-inside: avoid; }
+.diagnocare-page .dg-shots { display: grid; grid-template-columns: repeat(auto-fill, minmax(170px, 1fr)); gap: 12px; margin-top: 22px; }
+.diagnocare-page .dg-shot { position: relative; padding: 0; border: 1px solid var(--ln); border-radius: 14px; overflow: hidden; background: var(--sf); cursor: zoom-in; text-align: left; }
+.diagnocare-page .dg-shot img { width: 100%; aspect-ratio: 3 / 2; object-fit: cover; object-position: top left; transition: transform .4s ease; }
+.diagnocare-page .dg-shot:hover img { transform: scale(1.05); }
+.diagnocare-page .dg-shot span { position: absolute; left: 8px; bottom: 8px; background: rgba(21,22,34,.92); color: #fff; font-size: .78rem; font-weight: 600; padding: 2px 8px; border-radius: 6px; }
+.diagnocare-page .dg-fg.rv.seen .dg-shot { animation: dg-pop .5s ease both; }
+.diagnocare-page .dg-fg.rv.seen .dg-shot:nth-child(2) { animation-delay: .06s; } .diagnocare-page .dg-fg.rv.seen .dg-shot:nth-child(3) { animation-delay: .12s; }
+.diagnocare-page .dg-fg.rv.seen .dg-shot:nth-child(4) { animation-delay: .18s; } .diagnocare-page .dg-fg.rv.seen .dg-shot:nth-child(5) { animation-delay: .24s; } .diagnocare-page .dg-fg.rv.seen .dg-shot:nth-child(6) { animation-delay: .3s; }
+
+.diagnocare-page .dg-lightbox { width: min(1200px, 94vw); max-height: 92vh; padding: 14px; border: 0; border-radius: 12px; background: var(--sf); color: var(--ink); }
+.diagnocare-page .dg-lightbox::backdrop { background: rgba(5,10,25,.75); backdrop-filter: blur(3px); }
+.diagnocare-page .dg-lightbox[open] { animation: dg-pop .3s ease; }
+.diagnocare-page .dg-lightbox img { width: 100%; max-height: 80vh; object-fit: contain; border-radius: 10px; }
+.diagnocare-page .dg-lightbox p { margin-top: 10px; text-align: center; }
+.diagnocare-page .dg-lb-close { position: absolute; top: 10px; right: 12px; width: 38px; height: 38px; border-radius: 8px; border: 0; background: var(--nv); color: #fff; font-size: 1.5rem; cursor: pointer; }
+
+@media (prefers-reduced-motion: reduce) {
+  .diagnocare-page *, .diagnocare-page *::before, .diagnocare-page *::after { animation: none !important; transition: none !important; }
+  .diagnocare-page .dg-in, .diagnocare-page .dg-rv { opacity: 1 !important; transform: none !important; }
+  .diagnocare-page .dg-toasts li { opacity: 1; transform: none; }
+  .diagnocare-page .dg-toasts li:nth-child(n+2) { display: none; }
+  .diagnocare-page .dg-range i { left: var(--x); }
+  .diagnocare-page .dg-flow::before { transform: scaleX(1); }
+  .diagnocare-page .dg-owner-phone { transform: none; }
+  .diagnocare-page .dg-marquee { width: auto; flex-wrap: wrap; }
+  .diagnocare-page .dg-marquee ul[aria-hidden] { display: none; }
+  .diagnocare-page .dg-slides { scroll-behavior: auto; }
+}
+
+/* Shared-site integration and narrow-screen refinements. */
+.diagnocare-page .dg-hero { padding-top: 142px; }
+.diagnocare-page .dg-hero-in > *, .diagnocare-page .dg-mods > *, .diagnocare-page .dg-split > *, .diagnocare-page .dg-cta-box > * { min-width: 0; }
+.diagnocare-page .dg-hero h1 { font-size: clamp(2.5rem, 4.4vw, 4rem); max-width: 14ch; }
+.diagnocare-page .dg-range i { left: var(--x); }
+.diagnocare-page .dg-flow::before { transform: scaleX(1); }
+.diagnocare-page .dg-owner-phone { transform: none; }
+.diagnocare-page .dg-hero-shot { padding-top: 16px; }
+.diagnocare-page .dg-frame { box-shadow: var(--shadow-card); }
+.diagnocare-page .dg-slider, .diagnocare-page .dg-fg, .diagnocare-page .dg-bx, .diagnocare-page .dg-plan { border-radius: var(--radius-lg); }
+.diagnocare-page .dg-cta-box { background: radial-gradient(ellipse at top left, var(--primary-glow), transparent 65%), var(--dark-2); color: var(--text-primary); border: 1px solid var(--ln); border-radius: var(--radius-xl); padding: 44px; }
+.diagnocare-page .dg-cta-box h2 { max-width: 16ch; }
+.diagnocare-page .dg-cta-box p, .diagnocare-page .dg-cta-box .dg-lead { color: var(--text-secondary); }
+.diagnocare-page .dg-contact a { color: var(--primary); }
+.diagnocare-page form label { color: var(--ink); font-size: .8rem; }
+.diagnocare-page form input, .diagnocare-page form select, .diagnocare-page form textarea { width: 100%; min-width: 0; padding: 12px 14px; border: 1px solid var(--ln); border-radius: 10px; background: var(--dark-3); color: var(--ink); font: 400 1rem/1.5 var(--font); }
+.diagnocare-page form textarea { resize: vertical; }
+.diagnocare-page form input[aria-invalid=true], .diagnocare-page form textarea[aria-invalid=true] { border-color: var(--rose); }
+.diagnocare-page .dg-form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.diagnocare-page .dg-honeypot { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); }
+.diagnocare-page .dg-form-note { font-size: .73rem; line-height: 1.7; }
+.diagnocare-page .dg-form-note a { text-decoration: underline; }
+.diagnocare-page .dg-rollout { padding: 0 0 60px; font-size: .85rem; }
+.diagnocare-page .dg-rollout a { color: var(--primary); }
+.diagnocare-page .dg-dots button { width: 44px; height: 44px; border-radius: 0; position: relative; background: transparent; }
+.diagnocare-page .dg-dots button::after { content: ''; position: absolute; inset: 18px 16px; border-radius: 8px; background: var(--ln); }
+.diagnocare-page .dg-dots button[aria-current=true]::after { background: var(--primary); inset-inline: 8px; }
+.diagnocare-page .dg-nav-btn { top: 40%; }
+.diagnocare-page .dg-sw { flex-wrap: wrap; font-size: .86rem; }
+.diagnocare-page .dg-sw small { flex-basis: 100%; margin-left: 58px; font-size: .72rem; }
+.diagnocare-page .dg-module-note { font-size: .78rem; margin-top: 16px; }
+.diagnocare-page .dg-lightbox { margin: auto; }
+.diagnocare-page .dg-lb-close { width: 44px; height: 44px; z-index: 1; }
+.diagnocare-page .dg-pipe { min-width: 0; }
+.diagnocare-page .dg-node { flex: 1; text-align: center; padding: 16px 10px; font-size: .82rem; }
+.diagnocare-page .dg-wire { min-width: 16px; }
+.diagnocare-page .dg-shots { grid-template-columns: repeat(auto-fill, minmax(min(170px, 100%), 1fr)); }
+.diagnocare-page .dg-bill-lines div { flex-wrap: wrap; }
+@media (max-width: 900px) {
+  .diagnocare-page .dg-hero h1 { max-width: 22ch; }
+  .diagnocare-page .dg-plans { max-width: none; gap: 28px; }
+  .diagnocare-page .dg-hero-shot { max-width: 760px; width: 100%; margin-inline: auto; }
+}
+@media (max-width: 600px) {
+  .diagnocare-page .dg-w { padding-inline: 20px; }
+  .diagnocare-page section { padding-block: 64px; }
+  .diagnocare-page .dg-hero { padding-top: 120px; }
+  .diagnocare-page .dg-hero h1 { font-size: 2.5rem; }
+  .diagnocare-page .dg-hero .dg-lead { font-size: 1rem; }
+  .diagnocare-page .dg-cta { flex-direction: column; }
+  .diagnocare-page .dg-cta .dg-btn { width: 100%; }
+  .diagnocare-page .dg-frame { border-radius: 12px; }
+  .diagnocare-page .dg-phone { right: 0; min-width: 80px; border-width: 4px; }
+  .diagnocare-page .dg-toasts { left: 0; bottom: 0; max-width: 100%; }
+  .diagnocare-page .dg-toasts li { white-space: normal; font-size: .66rem; }
+  .diagnocare-page .dg-fg, .diagnocare-page .dg-bx { padding: 22px; }
+  .diagnocare-page .dg-cta-box { padding: 28px 18px; gap: 28px; }
+  .diagnocare-page .dg-form-row { grid-template-columns: 1fr; }
+  .diagnocare-page .dg-hero-in, .diagnocare-page .dg-mods { gap: 30px; }
+  .diagnocare-page .dg-dots { gap: 0; }
+  .diagnocare-page .dg-owner { padding: 30px 22px 0; gap: 28px; }
+}
+
+html.dg-lightbox-open, html.dg-lightbox-open body { overflow: hidden; }
+
+.diagnocare-page { --dg-button-text: #151622; }
+html[data-theme="light"] .diagnocare-page { --dg-button-text: #fff; }
+.diagnocare-page .dg-btn:not(.dg-btn-alt), .diagnocare-page .dg-chip.dg-on, .diagnocare-page .dg-node.dg-hot { color: var(--dg-button-text); }
+@media (max-width: 980px) { .diagnocare-page .dg-rack { display: none; } }
+
+@media (max-width: 600px) {
+  .diagnocare-page .dg-shots { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .diagnocare-page .dg-shot span { font-size: .65rem; max-width: calc(100% - 12px); left: 6px; bottom: 6px; padding: 2px 5px; line-height: 1.4; }
+}

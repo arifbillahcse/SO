@@ -11,6 +11,7 @@ use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Toggle;
 use Filament\Resources\Resource;
 use Filament\Schemas\Components\Section;
+use Filament\Schemas\Components\Utilities\Get;
 use Filament\Schemas\Schema;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
@@ -30,6 +31,29 @@ class OrganizationSettingsResource extends Resource
         return $schema->components([
             TextInput::make('name')->required()->maxLength(255),
             FileUpload::make('logo')->image()->directory('seo')->visibility('public'),
+            Section::make('Website footer')->schema([
+                Textarea::make('copyright_text')->label('Copyright text')->rows(2)->maxLength(500)
+                    ->placeholder("\u{00A9} {year} Softorio. All Rights Reserved.")
+                    ->helperText('Plain text shown in the footer on all public pages. Use {year} for the current year. Leave blank to restore the default copyright line.'),
+            ])->columnSpanFull(),
+            Section::make('Website appearance')->schema([
+                Select::make('default_theme')->label('Default website mode')
+                    ->options(['light' => 'Light', 'dark' => 'Dark', 'auto' => 'Auto (browser / system preference)'])
+                    ->default('light')->required()->in(['light', 'dark', 'auto'])
+                    ->helperText('Applies to visitors who have not chosen a mode themselves. Auto follows their browser or device appearance. Save changes to apply.'),
+            ])->columnSpanFull(),
+            Section::make('Spam protection (Google reCAPTCHA)')
+                ->description('Protects contact enquiries and affiliate referrals. Use reCAPTCHA v2 "I am not a robot" checkbox keys registered for your website domain.')
+                ->schema([
+                    Toggle::make('recaptcha_enabled')->label('Enable reCAPTCHA')->default(false)->live(),
+                    TextInput::make('recaptcha_site_key')->label('Site key')->maxLength(255)
+                        ->regex('/\A[A-Za-z0-9_-]+\z/')->required(fn (Get $get): bool => (bool) $get('recaptcha_enabled')),
+                    TextInput::make('recaptcha_secret_key')->label('Secret key')->password()->revealable()->maxLength(255)
+                        ->regex('/\A[A-Za-z0-9_-]+\z/')->formatStateUsing(fn (): ?string => null)
+                        ->dehydrated(fn (?string $state): bool => filled($state))
+                        ->required(fn (Get $get, ?OrganizationSettings $record): bool => $get('recaptcha_enabled') && blank($record?->recaptcha_secret_key))
+                        ->helperText('Stored encrypted. Leave blank to keep the saved secret, or enter a new one to replace it. Turn off reCAPTCHA to disable protection.'),
+                ])->columnSpanFull(),
             Section::make('Website favicon')->description('The small icon in browser tabs, bookmarks and the admin panel.')->schema([
                 FileUpload::make('favicon_path')->label('Favicon')
                     ->disk('public')->directory('seo/favicons')->visibility('public')

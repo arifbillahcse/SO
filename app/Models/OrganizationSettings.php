@@ -14,6 +14,11 @@ use Illuminate\Support\Facades\Storage;
     'terms_of_service_url',
     'logo',
     'favicon_path',
+    'default_theme',
+    'copyright_text',
+    'recaptcha_enabled',
+    'recaptcha_site_key',
+    'recaptcha_secret_key',
     'client_countries',
     'client_map_enabled',
     'description',
@@ -35,18 +40,36 @@ use Illuminate\Support\Facades\Storage;
 class OrganizationSettings extends Model
 {
     protected $attributes = [
+        'recaptcha_enabled' => false,
+        'default_theme' => 'light',
         'tracking_mode' => 'ga4',
         'client_map_enabled' => true,
         'custom_code_enabled' => false,
     ];
 
     protected $casts = [
+        'recaptcha_enabled' => 'boolean',
+        'recaptcha_secret_key' => 'encrypted',
         'custom_code_enabled' => 'boolean',
         'client_countries' => 'array',
         'client_map_enabled' => 'boolean',
         'tos_effective_date' => 'date',
         'privacy_effective_date' => 'date',
     ];
+
+    protected $hidden = ['recaptcha_secret_key'];
+
+    public function copyrightText(): string
+    {
+        $text = trim((string) $this->copyright_text);
+
+        return str_replace('{year}', now()->format('Y'), $text !== '' ? $text : "\u{00A9} {year} Softorio. All Rights Reserved.");
+    }
+
+    public function defaultTheme(): string
+    {
+        return in_array($this->default_theme, ['light', 'dark', 'auto'], true) ? $this->default_theme : 'light';
+    }
 
     /** @return array<string, string> */
     public function clientCountries(): array

@@ -4,6 +4,9 @@ namespace App\Filament\Resources;
 
 use App\Filament\Resources\ContactSubmissionResource\Pages;
 use App\Models\ContactSubmission;
+use Filament\Actions\DeleteAction;
+use Filament\Actions\DeleteBulkAction;
+use Filament\Actions\EditAction;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
@@ -17,9 +20,9 @@ class ContactSubmissionResource extends Resource
 {
     protected static ?string $model = ContactSubmission::class;
 
-    protected static string | \BackedEnum | null $navigationIcon = 'heroicon-o-inbox';
+    protected static string|\BackedEnum|null $navigationIcon = 'heroicon-o-inbox';
 
-    protected static string | \UnitEnum | null $navigationGroup = 'Leads';
+    protected static string|\UnitEnum|null $navigationGroup = 'Leads';
 
     protected static ?string $navigationLabel = 'Contact Submissions';
 
@@ -61,6 +64,19 @@ class ContactSubmissionResource extends Resource
                     'contacted' => 'Contacted',
                     'closed' => 'Closed',
                 ]),
+            ])
+            ->recordActions([
+                EditAction::make()->label('View / update'),
+                DeleteAction::make()
+                    ->requiresConfirmation()
+                    ->modalHeading('Delete enquiry?')
+                    ->modalDescription('This enquiry will be permanently deleted. This cannot be undone.'),
+            ])
+            ->toolbarActions([
+                DeleteBulkAction::make()->label('Delete selected')
+                    ->requiresConfirmation()
+                    ->modalHeading('Delete selected enquiries?')
+                    ->modalDescription('Only the selected enquiries will be permanently deleted. This cannot be undone.'),
             ]);
     }
 

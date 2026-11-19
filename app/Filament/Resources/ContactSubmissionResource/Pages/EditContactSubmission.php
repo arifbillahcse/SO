@@ -13,7 +13,10 @@ class EditContactSubmission extends EditRecord
     protected function getHeaderActions(): array
     {
         return [
-            DeleteAction::make(),
+            DeleteAction::make()
+                ->requiresConfirmation()
+                ->modalHeading('Delete enquiry?')
+                ->modalDescription('This enquiry will be permanently deleted. This cannot be undone.'),
         ];
     }
 }

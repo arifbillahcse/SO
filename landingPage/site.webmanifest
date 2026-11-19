@@ -1,0 +1,14 @@
+{
+  "name": "DiagnoCare",
+  "short_name": "DiagnoCare",
+  "description": "Diagnostic center software for Bangladesh",
+  "start_url": "/",
+  "display": "browser",
+  "background_color": "#ffffff",
+  "theme_color": "#14403A",
+  "icons": [
+    { "src": "img/favicon.svg", "sizes": "any", "type": "image/svg+xml" },
+    { "src": "img/apple-touch-icon.png", "sizes": "180x180", "type": "image/png" },
+    { "src": "img/icon-512.png", "sizes": "512x512", "type": "image/png" }
+  ]
+}

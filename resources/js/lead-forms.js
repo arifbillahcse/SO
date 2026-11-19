@@ -1,3 +1,5 @@
+import { initializeRecaptcha } from './recaptcha.js';
+
 export function initializeLeadForms(selector) {
     document.querySelectorAll(selector).forEach((root, index) => {
         const button = root.querySelector('.cta-submit, .sp-submit');
@@ -12,6 +14,7 @@ export function initializeLeadForms(selector) {
         });
         const original = button.innerHTML;
         const fields = [...root.querySelectorAll('[name]')];
+        const captcha = initializeRecaptcha(root, button);
         const feedback = document.createElement('p');
         feedback.className = 'form-feedback';
         feedback.id = 'lead-form-feedback-' + index;
@@ -43,20 +46,24 @@ export function initializeLeadForms(selector) {
             button.disabled = true;
             button.textContent = 'Sending?';
             try {
+                const token = await captcha.token();
+                const payload = Object.fromEntries(fields.map(field => [field.name, field.value]));
+                if (token) payload['g-recaptcha-response'] = token;
                 const response = await fetch(root.dataset.endpoint, {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json', 'Accept': 'application/json',
                         'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]')?.content || '',
                     },
-                    body: JSON.stringify(Object.fromEntries(fields.map(field => [field.name, field.value]))),
+                    body: JSON.stringify(payload),
                 });
                 const data = await response.json().catch(() => ({}));
                 if (response.ok) {
                     show(data.message || 'Thank you. Your message has been received.');
                     fields.forEach(field => {
+                        if (field instanceof HTMLInputElement && field.type === 'hidden') return;
                         if (field instanceof HTMLSelectElement) field.selectedIndex = 0;
-                        else field.value = '';
+                        else field.value = field.defaultValue || '';
                     });
                     feedback.focus();
                 } else if (response.status === 422) {
@@ -70,10 +77,11 @@ export function initializeLeadForms(selector) {
                         : 'Your message could not be sent. Please try again or use our Contact Us page.', true);
                     feedback.focus();
                 }
-            } catch {
-                show('The connection was interrupted. Please try again.', true);
+            } catch (error) {
+                show(error instanceof TypeError ? 'The connection was interrupted. Please try again.' : error.message, true);
                 feedback.focus();
             } finally {
+                captcha.reset();
                 button.innerHTML = original;
                 button.disabled = false;
             }

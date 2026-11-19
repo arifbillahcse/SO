@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('title', 'Diagnostic Center Software Solution & Rollout Plan | Softorio')
+@section('title', 'Custom Diagnostic Center Software Rollout | Softorio')
 @section('description', 'Plan a modular diagnostic center solution for billing, laboratory reports and owner operations, with phased development, clinic review and a real-world pilot.')
 @section('breadcrumbs', json_encode([
     ['name' => 'Home', 'url' => route('home')],
@@ -17,10 +17,11 @@
     <nav class="breadcrumb" aria-label="Breadcrumb"><a href="{{ route('home') }}">Home</a><span>/</span><a href="{{ route('solutions') }}">Solutions</a><span>/</span><span class="bc-current">Diagnostic Centers</span></nav>
     <div class="dc-hero-grid">
       <div>
-        <span class="dc-status">Planned solution &middot; Phased development</span>
+        <span class="dc-status">Custom implementation &middot; Phased development</span>
         <h1>One connected workflow<br>for your <em>diagnostic center.</em></h1>
         <p class="dc-lead">Bring patient registration, billing, laboratory work and owner oversight into a modular system shaped around your clinic.</p>
-        <p class="dc-hero-note">This is a development roadmap, not a ready-to-use product. We begin with design documents and your approval, then build and validate one phase at a time.</p>
+        <p class="dc-hero-note">This roadmap describes custom development and extensions for your center. For the DiagnoCare product, explore the software screens and request a demonstration.</p>
+        <p class="dc-hero-note"><a href="{{ route('diagnostic-management-system') }}">Explore DiagnoCare software &nearr;</a></p>
         <div class="dc-actions"><a href="{{ route('contact') }}" class="btn btn-primary btn-lg">Discuss your center <span aria-hidden="true">&nearr;</span></a><a href="#diagnostic-roadmap" class="ab-text-link">Explore the rollout <span aria-hidden="true">&darr;</span></a></div>
       </div>
       <div class="dc-workflow" aria-label="Planned diagnostic center workflow">

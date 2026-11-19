@@ -1,0 +1,653 @@
+<!doctype html>
+<html lang="en-BD">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>DiagnoCare | Diagnostic Center Software in Bangladesh</title>
+  <meta name="description" content="Billing, lab results, verified reports and analyzer connection for diagnostic centers in Bangladesh. Prints on your letterhead, takes bKash and Nagad.">
+  <link rel="canonical" href="https://www.example.com.bd/">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+  <meta name="theme-color" content="#14403A">
+  <meta name="author" content="Softorio">
+  <meta name="geo.region" content="BD">
+  <meta name="geo.placename" content="Dhaka">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="DiagnoCare">
+  <meta property="og:locale" content="en_BD">
+  <meta property="og:title" content="DiagnoCare | Diagnostic Center Software in Bangladesh">
+  <meta property="og:description" content="From the reception counter to the signed report, in one system built for diagnostic centers in Bangladesh.">
+  <meta property="og:url" content="https://www.example.com.bd/">
+  <meta property="og:image" content="https://www.example.com.bd/img/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="DiagnoCare billing screen with a bKash payment">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="DiagnoCare | Diagnostic Center Software in Bangladesh">
+  <meta name="twitter:description" content="From the reception counter to the signed report, in one system.">
+  <meta name="twitter:image" content="https://www.example.com.bd/img/og-image.png">
+
+  <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+  <link rel="preload" as="image" href="img/screen-billing.webp" fetchpriority="high">
+  <link rel="stylesheet" href="css/style.css">
+  <script>document.documentElement.classList.add('js')</script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://www.example.com.bd/#org",
+        "name": "Softorio",
+        "url": "https://softorio.com/",
+        "logo": "https://www.example.com.bd/img/apple-touch-icon.png",
+        "email": "hello@example.com.bd",
+        "telephone": "+8801XXXXXXXXX",
+        "address": { "@type": "PostalAddress", "streetAddress": "Your street address", "addressLocality": "Dhaka", "addressCountry": "BD" },
+        "areaServed": { "@type": "Country", "name": "Bangladesh" }
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://www.example.com.bd/#website",
+        "url": "https://www.example.com.bd/",
+        "name": "DiagnoCare",
+        "inLanguage": "en-BD",
+        "publisher": { "@id": "https://www.example.com.bd/#org" }
+      },
+      {
+        "@type": "SoftwareApplication",
+        "@id": "https://www.example.com.bd/#software",
+        "name": "DiagnoCare",
+        "applicationCategory": "BusinessApplication",
+        "applicationSubCategory": "Diagnostic center and laboratory management software",
+        "operatingSystem": "Web browser (Windows, macOS, Android, iOS)",
+        "description": "Online software for diagnostic centers and pathology labs in Bangladesh. It covers patient registration, billing with bKash and Nagad, dues, lab results with verification, imaging reports, report printing on the clinic's letterhead, referral doctors, lab analyzer connection by ASTM and HL7, a patient report portal, inventory and multiple branches.",
+        "screenshot": [
+          "https://www.example.com.bd/img/screen-billing.webp",
+          "https://www.example.com.bd/img/screen-results.webp",
+          "https://www.example.com.bd/img/screen-report.webp",
+          "https://www.example.com.bd/img/slides/dashboard.webp",
+          "https://www.example.com.bd/img/slides/samples.webp",
+          "https://www.example.com.bd/img/slides/imaging.webp",
+          "https://www.example.com.bd/img/slides/profit.webp"
+        ],
+        "featureList": [
+          "Billing with cash, card, bKash and Nagad, discounts with a reason, dues and refunds",
+          "Tube and needle charges added automatically for the tests on a bill",
+          "Lab work list with result entry, flags outside the reference range and verification before release",
+          "Verified results change only through a recorded correction",
+          "Lab analyzer connection by ASTM and HL7",
+          "Imaging report templates for X-ray, ultrasound, CT and MRI",
+          "Reports printed on the clinic's letterhead with barcodes and signatures",
+          "Referral doctors on every bill",
+          "Owner dashboard on a phone",
+          "Patient report portal",
+          "Inventory of reagents and consumables",
+          "Branches and collection centres",
+          "Separate database for each clinic, encrypted backups, two-step sign-in and audit log",
+          "Cash sessions per cashier, refunds with approval, invoices and money receipts",
+          "Reference ranges by age and sex, barcode sample labels and sample rejection",
+          "Sales reports by day, test, doctor, cashier and branch, accounts, expenses and profit report",
+          "Referral commission per doctor with payouts",
+          "Staff attendance, advances, salary runs and payslips",
+          "SMS and email for bill confirmation, report ready and due reminders",
+          "Roles and permissions, modules switched on and off, and data export"
+        ],
+        "inLanguage": "en",
+        "countriesSupported": "BD",
+        "provider": { "@id": "https://www.example.com.bd/#org" },
+        "publisher": { "@id": "https://www.example.com.bd/#org" },
+        "url": "https://www.example.com.bd/"
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://www.example.com.bd/#faq",
+        "mainEntity": [
+          { "@type": "Question", "name": "What is DiagnoCare?", "acceptedAnswer": { "@type": "Answer", "text": "DiagnoCare is software for diagnostic centers and pathology labs in Bangladesh. Reception bills the patient, the lab enters and verifies results, and the report prints on your own letterhead. The owner sees the day's collection and dues on a phone." } },
+          { "@type": "Question", "name": "How much does it cost?", "acceptedAnswer": { "@type": "Answer", "text": "It is a monthly or yearly subscription in three plans: Basic, Standard and Premium. The price depends on which parts you use and how many branches you have. Ask us for the current price list. Paying for a year costs less than paying month by month." } },
+          { "@type": "Question", "name": "Do we need to install anything?", "acceptedAnswer": { "@type": "Answer", "text": "No. It opens in a web browser on any computer, tablet or phone. You need internet and a printer. Only analyzer connection needs a small program on one lab computer." } },
+          { "@type": "Question", "name": "What happens if the internet goes down?", "acceptedAnswer": { "@type": "Answer", "text": "Billing and result entry need internet, so we suggest a mobile data backup at the counter. Analyzer results are kept on the lab computer and sent as soon as the connection is back, so none are lost." } },
+          { "@type": "Question", "name": "Can it take results from our analyzers?", "acceptedAnswer": { "@type": "Answer", "text": "Yes, if the analyzer sends results by ASTM or HL7, over a serial cable or the network. Tell us your models and we will confirm before you sign up." } },
+          { "@type": "Question", "name": "Can we move our current test list and prices?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Send us your test list, prices and referral doctors in Excel. We check the file first and import it in one go, so nothing is half loaded." } },
+          { "@type": "Question", "name": "Will the reports look like ours?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Reports and receipts use your name, logo, letterhead margins and doctors' signatures. We match them to the papers you use today before you go live." } },
+          { "@type": "Question", "name": "Can someone change a result after it is verified?", "acceptedAnswer": { "@type": "Answer", "text": "Not quietly. A verified result can only be changed through a correction, which keeps the old value, the new value, the reason and who made it. Bills work the same way, with refunds and adjustments instead of edits." } },
+          { "@type": "Question", "name": "Who owns our data?", "acceptedAnswer": { "@type": "Answer", "text": "You do. Every clinic has its own database, and you can export your data at any time." } },
+          { "@type": "Question", "name": "How long does setup take?", "acceptedAnswer": { "@type": "Answer", "text": "About a week for most centers. We set up your account, import your tests and doctors, match your report layout, train your staff and run next to your old system until the daily totals match." } }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header class="top" id="top">
+    <div class="w top-in">
+      <a class="logo" href="#top" aria-label="DiagnoCare home"><i aria-hidden="true"></i>DiagnoCare</a>
+      <nav class="nav" id="nav" aria-label="Main">
+        <a href="#views">Screens</a>
+        <a href="#all-features">Features</a>
+        <a href="#modules">Modules</a>
+        <a href="#plans">Plans</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+      <a class="btn btn-sm top-cta" href="#demo">Book a demo</a>
+      <button class="burger" type="button" aria-expanded="false" aria-controls="nav"><span class="sr">Menu</span><b></b><b></b></button>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- Hero -->
+    <section class="hero">
+      <div class="w hero-in">
+        <div class="hero-copy">
+          <p class="kicker in">Diagnostic center software, made in Bangladesh</p>
+          <h1 class="in d1">From the reception counter to the signed report.</h1>
+          <p class="lead in d2">Bill the patient, collect the sample, verify the result and print it on your own letterhead. At night the cash in the drawer matches the screen, and you can check it from home.</p>
+          <div class="cta in d3">
+            <a class="btn" href="#demo">Book a demo</a>
+            <a class="btn btn-alt" href="https://wa.me/8801XXXXXXXXX" rel="noopener">Message us on WhatsApp</a>
+          </div>
+          <div class="rack in d4" aria-hidden="true">
+            <span class="drop"></span>
+            <span class="tube" style="--c:#ff5470;--h:62%;--d:0s"><b></b></span>
+            <span class="tube" style="--c:#7c4dff;--h:44%;--d:-1.2s"><b></b></span>
+            <span class="tube" style="--c:#12b886;--h:70%;--d:-2.4s"><b></b></span>
+            <span class="tube" style="--c:#ffb020;--h:52%;--d:-3.1s"><b></b></span>
+            <span class="tube" style="--c:#3B82F6;--h:58%;--d:-0.6s"><b></b></span>
+          </div>
+        </div>
+
+        <div class="hero-shot in d2">
+          <figure class="frame">
+            <div class="frame-bar" aria-hidden="true"><span></span><span></span><span></span><em>New bill</em></div>
+            <img src="img/screen-billing.webp" width="1600" height="956" alt="DiagnoCare new bill screen with four tests, a 100 taka discount and a bKash payment of 2,285 taka" fetchpriority="high">
+          </figure>
+          <figure class="phone" aria-hidden="true">
+            <img src="img/screen-phone.webp" width="560" height="953" alt="" loading="lazy">
+          </figure>
+          <ul class="toasts" aria-hidden="true">
+            <li><i class="g"></i>bKash payment received <b>৳ 2,285</b></li>
+            <li><i class="b"></i>Sample 2611160004 collected</li>
+            <li><i class="a"></i>Lipid profile verified</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Facts strip -->
+    <div class="strip" aria-label="Highlights">
+      <div class="marquee">
+        <ul>
+          <li>Prints on your letterhead</li><li>bKash, Nagad, card and cash</li><li>ASTM and HL7 analyzers</li><li>Separate database for every clinic</li><li>Works on any browser</li><li>Owner reports on your phone</li>
+        </ul>
+        <ul aria-hidden="true">
+          <li>Prints on your letterhead</li><li>bKash, Nagad, card and cash</li><li>ASTM and HL7 analyzers</li><li>Separate database for every clinic</li><li>Works on any browser</li><li>Owner reports on your phone</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Software views slider (real screens) -->
+    <section id="views">
+      <div class="w">
+        <h2 class="rv">Software views</h2>
+        <p class="lead rv">Real DiagnoCare screens with sample patients. Swipe, use the arrows, or let it play.</p>
+
+        <div class="slider rv" data-slider aria-roledescription="carousel" aria-label="DiagnoCare screens">
+          <div class="slides">
+            <figure class="slide" aria-roledescription="slide" aria-label="1 of 6">
+              <img src="img/slides/dashboard.webp" width="1600" height="1000" alt="Dashboard with this month's patient visits, billed and collected amounts, lab work waiting, and collections for the last 14 days">
+              <figcaption><b>Dashboard</b> This month's visits, billing and collection, lab work waiting, and a 14-day collection chart.</figcaption>
+            </figure>
+            <figure class="slide" aria-roledescription="slide" aria-label="2 of 6">
+              <img src="img/slides/billing.webp" width="1600" height="956" loading="lazy" alt="New bill with four tests, tubes and needle added automatically, a discount with a reason and a bKash payment">
+              <figcaption><b>New bill</b> Patient, tests, discount and payment on one screen. Tubes and needles are added for you.</figcaption>
+            </figure>
+            <figure class="slide" aria-roledescription="slide" aria-label="3 of 6">
+              <img src="img/slides/samples.webp" width="1600" height="1000" loading="lazy" alt="Samples list with tube colours, collect, receive in lab, print label and reject actions">
+              <figcaption><b>Samples</b> Tube colour for each sample, barcode labels, and collect, receive or reject with one click.</figcaption>
+            </figure>
+            <figure class="slide" aria-roledescription="slide" aria-label="4 of 6">
+              <img src="img/slides/results.webp" width="1600" height="956" loading="lazy" alt="Lipid profile results waiting for verification with Verify and release and Send back">
+              <figcaption><b>Result verification</b> A second person checks the values against the ranges, then releases or sends back.</figcaption>
+            </figure>
+            <figure class="slide" aria-roledescription="slide" aria-label="5 of 6">
+              <img src="img/slides/imaging.webp" width="1600" height="1000" loading="lazy" alt="Ultrasound report for whole abdomen written from a fatty liver template, ready to sign">
+              <figcaption><b>Imaging report</b> Start from a template, add phrases, save a draft, and sign when it is ready.</figcaption>
+            </figure>
+            <figure class="slide" aria-roledescription="slide" aria-label="6 of 6">
+              <img src="img/slides/profit.webp" width="1600" height="1000" loading="lazy" alt="Profit report with money in and out, commission, expenses by category and collections by payment method">
+              <figcaption><b>Profit report</b> Money in and out, commission, expenses by category, and collection by bKash, Nagad, card and cash.</figcaption>
+            </figure>
+          </div>
+          <button class="nav-btn prev" type="button" aria-label="Previous screen">‹</button>
+          <button class="nav-btn next" type="button" aria-label="Next screen">›</button>
+          <div class="dots" role="tablist" aria-label="Choose a screen"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Bento features -->
+    <section id="features" class="pt0">
+      <div class="w">
+        <h2 class="rv">Built around how a diagnostic center actually works</h2>
+        <div class="bento">
+          <article class="bx b1 rv">
+            <h3>Every taka accounted for</h3>
+            <p>Part payments, discounts, refunds and dues, with a receipt for each one.</p>
+            <div class="bill-lines" aria-hidden="true">
+              <div><span>CBC, Lipid profile, FBS, TSH</span><b>৳ 2,350</b></div>
+              <div><span>Tubes and needle (auto)</span><b>৳ 35</b></div>
+              <div><span>Discount, regular patient</span><b>− ৳ 100</b></div>
+              <div><span>Paid by bKash</span><b>৳ 2,285</b></div>
+              <div class="tot"><span>Due</span><b class="ok">৳ 0</b></div>
+            </div>
+          </article>
+          <article class="bx b2 rv">
+            <h3>Flags while you type</h3>
+            <p>Total cholesterol 260 mg/dL against a limit of 200.</p>
+            <div class="range" aria-hidden="true"><span class="zone"></span><i style="--x:86%"></i></div>
+            <small>Printed in bold with an H</small>
+          </article>
+          <article class="bx b3 dark rv">
+            <h3>Nothing is overwritten</h3>
+            <p>A verified result or a saved bill changes only through a correction. The old value stays, with the reason and the name of the person who changed it.</p>
+            <div class="amend" aria-hidden="true"><s>HDL 48 mg/dL</s><span>HDL 35 mg/dL · re-run, sample haemolysed · Dr. Rahman</span></div>
+          </article>
+          <article class="bx b4 rv">
+            <h3>Referral doctors</h3>
+            <p>Picked on every bill, so you can see who sends you patients each month.</p>
+          </article>
+          <article class="bx b5 rv">
+            <h3>Collection centres</h3>
+            <p>Samples travel to the main lab in a tracked box, with a courier list.</p>
+          </article>
+          <article class="bx b6 rv">
+            <h3>Imaging reports</h3>
+            <p>Templates for X-ray, ultrasound, CT and MRI that the doctor edits and signs.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Every feature, module by module -->
+    <section id="all-features" class="pt0">
+      <div class="w">
+        <h2 class="rv">Everything DiagnoCare does</h2>
+        <p class="lead rv">The full list, module by module. Click a screenshot to see it larger.</p>
+
+        <div class="filters rv" role="toolbar" aria-label="Show features for">
+          <button type="button" class="chip on" data-filter="all">All</button>
+          <button type="button" class="chip" data-filter="front">Front desk</button>
+          <button type="button" class="chip" data-filter="lab">Laboratory</button>
+          <button type="button" class="chip" data-filter="imaging">Imaging</button>
+          <button type="button" class="chip" data-filter="money">Owner and finance</button>
+          <button type="button" class="chip" data-filter="ops">Stock and staff</button>
+          <button type="button" class="chip" data-filter="admin">Admin and security</button>
+        </div>
+
+        <div class="fgroups">
+          <article class="fg rv" data-group="front">
+            <div class="fg-head"><span class="fg-tag">Front desk and billing</span><h3>Patients, bills and cash</h3></div>
+            <ul class="ticks cols">
+              <li>Patient records with a code, searched by name, code or mobile number</li>
+              <li>Age in years, or in months and days for babies</li>
+              <li>One-screen billing with keyboard shortcuts (Enter adds a test, Ctrl+S saves, F2 starts a new bill)</li>
+              <li>Test and service list with categories, prices and packages</li>
+              <li>Tubes, needles and film added to the bill automatically for each test</li>
+              <li>Discount by percent or taka, with a reason, and a limit for each role</li>
+              <li>Cash, card, bKash and Nagad, with the transaction ID kept</li>
+              <li>Part payment, dues list, and later payments against the same bill</li>
+              <li>Refunds that wait for approval</li>
+              <li>Cash sessions per cashier: opening cash, expected, counted and difference</li>
+              <li>Invoice with patient and office copies, amount in words and barcode</li>
+              <li>Money receipt for every payment, and sample labels</li>
+              <li>Referral doctor and report delivery time on every bill</li>
+              <li>Bill, receipt and order numbers in your own format</li>
+            </ul>
+            <div class="shots">
+              <button class="shot" type="button"><img src="img/features/order.webp" width="900" height="563" loading="lazy" alt="Order page with patient, invoice and tests"><span>Order page</span></button>
+              <button class="shot" type="button"><img src="img/features/invoice.webp" width="900" height="1171" loading="lazy" alt="Printed invoice with patient copy, tests, discount, bKash payment and amount in words"><span>Invoice</span></button>
+              <button class="shot" type="button"><img src="img/features/receipt.webp" width="645" height="900" loading="lazy" alt="Money receipt for a bKash payment"><span>Money receipt</span></button>
+              <button class="shot" type="button"><img src="img/features/dues.webp" width="900" height="600" loading="lazy" alt="Dues list with total, paid and due for each invoice"><span>Dues</span></button>
+              <button class="shot" type="button"><img src="img/features/cash.webp" width="900" height="600" loading="lazy" alt="Cash sessions with opening, expected and counted cash"><span>Cash sessions</span></button>
+              <button class="shot" type="button"><img src="img/features/patients.webp" width="900" height="600" loading="lazy" alt="Patient list with codes, age, sex and phone"><span>Patients</span></button>
+            </div>
+          </article>
+
+          <article class="fg rv" data-group="lab">
+            <div class="fg-head"><span class="fg-tag">Laboratory and lab reports</span><h3>From sample to signed report</h3></div>
+            <ul class="ticks cols">
+              <li>Test set-up with departments, sample types and values</li>
+              <li>Values as numbers, short text or a choice from a list</li>
+              <li>Reference ranges by age and sex</li>
+              <li>Sample types with tube colour (lavender, red, grey top and more)</li>
+              <li>Barcode labels for each sample</li>
+              <li>Collect, receive in lab, or reject with a reason</li>
+              <li>Work list: to enter, to verify, waiting for sample, released</li>
+              <li>Flags for high, low, critical and abnormal values</li>
+              <li>Verify and release, or send back with a note</li>
+              <li>Corrections saved as new versions, never overwritten</li>
+              <li>PDF report grouped by department, with barcodes and signatures</li>
+              <li>Plain paper with your header, or space left for a pre-printed pad</li>
+              <li>Header and footer banners, and a faint logo behind the results</li>
+              <li>Report signatures for each doctor, with qualifications</li>
+              <li>Reports held back while a due is unpaid, unless allowed</li>
+            </ul>
+            <div class="shots">
+              <button class="shot" type="button"><img src="img/screen-report.webp" width="1000" height="877" loading="lazy" alt="Printed lab report with flagged high and low values"><span>Lab report</span></button>
+              <button class="shot" type="button"><img src="img/features/tests.webp" width="900" height="600" loading="lazy" alt="Lab tests list with department and sample type"><span>Lab tests</span></button>
+              <button class="shot" type="button"><img src="img/features/analytes.webp" width="900" height="600" loading="lazy" alt="Analytes with kind, unit and number of ranges"><span>Analytes and ranges</span></button>
+              <button class="shot" type="button"><img src="img/features/layout.webp" width="900" height="600" loading="lazy" alt="Report layout settings for paper, footer and banner images"><span>Report layout</span></button>
+            </div>
+          </article>
+
+          <article class="fg rv" data-group="lab">
+            <div class="fg-head"><span class="fg-tag">Analyzers, branches and collection centres</span><h3>Machines and more than one site</h3></div>
+            <ul class="ticks cols">
+              <li>Analyzer connection by ASTM and HL7, serial cable or network</li>
+              <li>Test codes mapped for each machine</li>
+              <li>Machine inbox that shows results it could not match</li>
+              <li>Results wait on the lab PC when the internet is down</li>
+              <li>Branch switcher at the top of every screen</li>
+              <li>Lists and reports by branch, and branch details on printed papers</li>
+              <li>Collection centres that send samples to another branch's lab</li>
+              <li>Sample transfers in a box, with a courier list and "receive all"</li>
+            </ul>
+            <div class="shots">
+              <button class="shot" type="button"><img src="img/features/machines.webp" width="900" height="600" loading="lazy" alt="Lab machines list with protocol ASTM and codes mapped"><span>Lab machines</span></button>
+              <button class="shot" type="button"><img src="img/features/machines-inbox.webp" width="900" height="600" loading="lazy" alt="Machine inbox with messages that need attention"><span>Machine inbox</span></button>
+              <button class="shot" type="button"><img src="img/features/transfers.webp" width="900" height="600" loading="lazy" alt="Sample transfer from North branch to Main branch on the way"><span>Sample transfers</span></button>
+              <button class="shot" type="button"><img src="img/features/centres.webp" width="900" height="600" loading="lazy" alt="Collection centre settings choosing where each branch's samples are tested"><span>Collection centres</span></button>
+            </div>
+          </article>
+
+          <article class="fg rv" data-group="imaging">
+            <div class="fg-head"><span class="fg-tag">Imaging reports and patient portal</span><h3>Ultrasound, X-ray, CT and MRI reports</h3></div>
+            <ul class="ticks cols">
+              <li>Templates for each imaging test, for male, female or both</li>
+              <li>Ready example templates, and copying a template to another test</li>
+              <li>Saved phrases added with one click</li>
+              <li>Draft, sign, and new versions when a signed report changes</li>
+              <li>Printed on your letterhead, alone or with the lab reports</li>
+              <li>Reports past their delivery time shown on the dashboard</li>
+              <li>Patient portal: patients open their reports with the bill number and mobile number</li>
+              <li>"Report ready" message with a link to the patient's page</li>
+            </ul>
+            <div class="shots">
+              <button class="shot" type="button"><img src="img/features/imaging-templates.webp" width="900" height="600" loading="lazy" alt="Imaging report templates for whole abdomen ultrasound"><span>Report templates</span></button>
+              <button class="shot" type="button"><img src="img/features/portal.webp" width="560" height="718" loading="lazy" alt="Patient portal on a phone asking for bill number and mobile number"><span>Patient portal</span></button>
+            </div>
+          </article>
+
+          <article class="fg rv" data-group="money">
+            <div class="fg-head"><span class="fg-tag">Owner reports and finance</span><h3>Know where the money went</h3></div>
+            <ul class="ticks cols">
+              <li>Dashboard for today and this month, with a 14-day collection chart</li>
+              <li>Sales reports by day, test, doctor, cashier and branch</li>
+              <li>Accounts for cash, bank, bKash, Nagad and card, with transfers between them</li>
+              <li>Money held in each account</li>
+              <li>Expenses with categories</li>
+              <li>Referral commission rates per doctor, earned only on paid tests</li>
+              <li>Commission payouts, taken back if a test is cancelled</li>
+              <li>Profit report: collected, refunded, expenses, commission and what is left</li>
+            </ul>
+            <div class="shots">
+              <button class="shot" type="button"><img src="img/features/sales.webp" width="900" height="600" loading="lazy" alt="Sales report day by day with orders, patients, billed, collected and refunded"><span>Sales reports</span></button>
+              <button class="shot" type="button"><img src="img/features/accounts.webp" width="900" height="600" loading="lazy" alt="Accounts for bKash, card, Nagad and cash with balances"><span>Accounts</span></button>
+              <button class="shot" type="button"><img src="img/features/commission.webp" width="900" height="600" loading="lazy" alt="Referral commission by doctor with earned, paid and owed"><span>Referral commission</span></button>
+            </div>
+          </article>
+
+          <article class="fg rv" data-group="ops">
+            <div class="fg-head"><span class="fg-tag">Inventory, staff and messages</span><h3>Reagents, people and SMS</h3></div>
+            <ul class="ticks cols">
+              <li>Stock items for reagents and consumables, with suppliers</li>
+              <li>Purchases with batches and expiry dates, printable</li>
+              <li>Stock taken off automatically for each test done</li>
+              <li>Manual issue, wastage and stock count</li>
+              <li>Low stock, expiring batches, and tests done without stock</li>
+              <li>Staff records with designation, branch and salary</li>
+              <li>Daily attendance, with "mark the rest present, weekly off or holiday"</li>
+              <li>Monthly attendance, advances, salary runs, payslips and salary sheet</li>
+              <li>SMS and email: bill confirmation, report ready and due reminders</li>
+              <li>Message wording you can edit, with the SMS part count</li>
+              <li>Message log with retries</li>
+            </ul>
+            <div class="shots">
+              <button class="shot" type="button"><img src="img/features/stock.webp" width="900" height="600" loading="lazy" alt="Stock items with stock level, value and expiry tracking"><span>Stock</span></button>
+              <button class="shot" type="button"><img src="img/features/attendance.webp" width="900" height="600" loading="lazy" alt="Daily attendance sheet for staff"><span>Daily attendance</span></button>
+              <button class="shot" type="button"><img src="img/features/salary.webp" width="900" height="600" loading="lazy" alt="Salary runs by month with net pay and status"><span>Salary runs</span></button>
+              <button class="shot" type="button"><img src="img/features/wording.webp" width="900" height="600" loading="lazy" alt="Message wording for SMS and email due reminders, bill confirmation and report ready"><span>Message wording</span></button>
+            </div>
+          </article>
+
+          <article class="fg rv" data-group="admin">
+            <div class="fg-head"><span class="fg-tag">Admin and security</span><h3>Control who does what</h3></div>
+            <ul class="ticks cols">
+              <li>Staff accounts, one per person</li>
+              <li>Roles with detailed permissions, plus ready roles for reception, lab, verifier and accountant</li>
+              <li>Two-step sign-in with an authenticator app</li>
+              <li>Audit log of every change to money, results and permissions</li>
+              <li>Modules switched on and off, with their data kept</li>
+              <li>Data export of everything as CSV files, in one zip</li>
+              <li>Clinic profile, logo and report header text</li>
+              <li>Separate database for each clinic, with encrypted nightly backups</li>
+              <li>Subscription page with your plan and invoices</li>
+            </ul>
+            <div class="shots">
+              <button class="shot" type="button"><img src="img/features/roles.webp" width="900" height="600" loading="lazy" alt="Roles with number of permissions and users"><span>Roles</span></button>
+              <button class="shot" type="button"><img src="img/features/audit.webp" width="900" height="600" loading="lazy" alt="Audit log of actions by user"><span>Audit log</span></button>
+              <button class="shot" type="button"><img src="img/features/modules.webp" width="900" height="600" loading="lazy" alt="Modules page with each module switched on or off"><span>Modules</span></button>
+              <button class="shot" type="button"><img src="img/features/export.webp" width="900" height="600" loading="lazy" alt="Data export with download everything as a zip"><span>Data export</span></button>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <dialog class="lightbox" id="lightbox" aria-label="Screenshot">
+      <button type="button" class="lb-close" aria-label="Close">×</button>
+      <img alt="">
+      <p></p>
+    </dialog>
+
+    <!-- How a day flows -->
+    <section class="pt0">
+      <div class="w">
+        <h2 class="rv">One patient, start to finish</h2>
+        <ol class="flow rv">
+          <li><em>1</em><h3>Register and bill</h3><p>Mobile number, tests, payment. Receipt and sample labels print.</p></li>
+          <li><em>2</em><h3>Collect</h3><p>Scan the label when the sample is taken and again when it reaches the lab.</p></li>
+          <li><em>3</em><h3>Enter and verify</h3><p>Typed or from the analyzer, then checked by a second person.</p></li>
+          <li><em>4</em><h3>Deliver</h3><p>Printed at the counter or downloaded by the patient. Any due is collected first.</p></li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- Modules -->
+    <section id="modules" class="pt0">
+      <div class="w mods">
+        <div>
+          <h2 class="rv">Pay for the parts you use</h2>
+          <p class="lead rv">DiagnoCare is built from modules. Switch one off and anything that depends on it goes off too. Your data stays, ready for when you switch it back on. Try it.</p>
+          <div class="switches rv" data-modules>
+            <button class="sw" type="button" data-m="frontdesk" aria-pressed="true"><span class="t"></span>Front desk and billing</button>
+            <button class="sw" type="button" data-m="laboratory" data-needs="frontdesk" aria-pressed="true"><span class="t"></span>Laboratory<small>needs Front desk</small></button>
+            <button class="sw" type="button" data-m="reports" data-needs="laboratory" aria-pressed="true"><span class="t"></span>Lab reports<small>needs Laboratory</small></button>
+            <button class="sw" type="button" data-m="analyzers" data-needs="laboratory" aria-pressed="true"><span class="t"></span>Analyzer connection<small>needs Laboratory</small></button>
+            <button class="sw" type="button" data-m="portal" data-needs="reports" aria-pressed="true"><span class="t"></span>Patient portal<small>needs Lab reports</small></button>
+            <button class="sw" type="button" data-m="imaging" data-needs="frontdesk" aria-pressed="true"><span class="t"></span>Imaging reports<small>needs Front desk</small></button>
+          </div>
+        </div>
+        <div class="menu-card rv" aria-live="polite">
+          <h3>Your staff see</h3>
+          <div data-s="frontdesk">New bill, orders, dues, refunds</div>
+          <div data-s="laboratory">Samples and work list</div>
+          <div data-s="reports">Report printing</div>
+          <div data-s="analyzers">Lab machines inbox</div>
+          <div data-s="portal">Patient report downloads</div>
+          <div data-s="imaging">Imaging work list</div>
+          <p id="mod-count">6 of 6 modules on</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Analyzer -->
+    <section id="analyzers" class="pt0">
+      <div class="w split">
+        <div>
+          <h2 class="rv">Analyzer results without retyping</h2>
+          <p class="lead rv">Connect your biochemistry, haematology and hormone analyzers once. After that, results land on the work list by themselves, matched to the right sample by its barcode.</p>
+          <ul class="ticks rv">
+            <li>ASTM and HL7, over a serial cable or the network</li>
+            <li>If the internet drops, results wait on the lab computer and go when it is back</li>
+            <li>Staff still check every result before it is released</li>
+          </ul>
+        </div>
+        <div class="pipe rv" aria-hidden="true">
+          <div class="node">Analyzer</div>
+          <div class="wire"><span></span><span></span><span></span></div>
+          <div class="node">Lab PC</div>
+          <div class="wire"><span></span><span></span><span></span></div>
+          <div class="node hot">DiagnoCare</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Owner -->
+    <section id="owner" class="pt0">
+      <div class="w">
+        <div class="owner rv">
+          <div>
+            <h2>Know how the day went before you get home</h2>
+            <p class="lead">Collection, dues and pending reports on your phone. Money taken by each staff member, and income by test, doctor and branch. No need to phone the counter.</p>
+            <a class="btn" href="#demo">See it on your phone</a>
+          </div>
+          <img class="owner-phone" src="img/screen-phone.webp" width="560" height="953" loading="lazy" alt="Owner dashboard on a phone showing billed 6,785 taka and collected 2,285 taka">
+        </div>
+      </div>
+    </section>
+
+    <!-- Safety -->
+    <section id="security" class="pt0">
+      <div class="w two">
+        <div class="rv">
+          <h2>Patient data, handled carefully</h2>
+          <ul class="checks">
+            <li>Each clinic has its own database. Nothing is shared with other clinics.</li>
+            <li>Encrypted backups every night, kept off the main server and test-restored.</li>
+            <li>Personal accounts for every staff member, with two-step sign-in.</li>
+            <li>An audit log of every change to money, results and permissions.</li>
+          </ul>
+        </div>
+        <div class="rv">
+          <h2>Access by role</h2>
+          <ul class="checks alt">
+            <li>Reception bills, but cannot change prices.</li>
+            <li>Technicians enter results. Only those allowed can verify them.</li>
+            <li>Large discounts and refunds can be kept for the owner.</li>
+            <li>A staff member who leaves is switched off the same day. Their records stay.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Plans -->
+    <section id="plans" class="pt0">
+      <div class="w">
+        <h2 class="rv">Plans</h2>
+        <p class="lead rv">Monthly or yearly. A year costs less than twelve months. Pay by bKash, Nagad or bank transfer, and you get an invoice for each payment.</p>
+        <div class="plans">
+          <article class="plan rv">
+            <h3>Basic</h3>
+            <p class="price">Ask for price</p>
+            <p class="for">A single lab</p>
+            <ul class="ticks"><li>Front desk and billing</li><li>Laboratory and verification</li><li>Lab reports on your letterhead</li><li>1 branch</li></ul>
+            <a class="btn btn-alt" href="#demo" data-plan="Basic">Ask about Basic</a>
+          </article>
+          <article class="plan pop rv">
+            <p class="tag">Most centers pick this</p>
+            <h3>Standard</h3>
+            <p class="price">Ask for price</p>
+            <p class="for">Lab and imaging under one roof</p>
+            <ul class="ticks"><li>Everything in Basic</li><li>Imaging reports</li><li>Owner reports and finance</li><li>Patient portal</li><li>Inventory and SMS</li><li>1 branch</li></ul>
+            <a class="btn" href="#demo" data-plan="Standard">Ask about Standard</a>
+          </article>
+          <article class="plan rv">
+            <h3>Premium</h3>
+            <p class="price">Ask for price</p>
+            <p class="for">Busy labs and groups</p>
+            <ul class="ticks"><li>Everything in Standard</li><li>Analyzer connection</li><li>Branches and collection centres</li><li>Staff attendance and payroll</li><li>Up to 3 branches</li></ul>
+            <a class="btn btn-alt" href="#demo" data-plan="Premium">Ask about Premium</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ: keep in step with the FAQPage data in the head -->
+    <section id="faq" class="pt0">
+      <div class="w narrow">
+        <h2 class="rv">Questions we get asked</h2>
+        <div class="faq rv">
+          <details><summary>What is DiagnoCare?</summary><p>DiagnoCare is software for diagnostic centers and pathology labs in Bangladesh. Reception bills the patient, the lab enters and verifies results, and the report prints on your own letterhead. The owner sees the day's collection and dues on a phone.</p></details>
+          <details><summary>How much does it cost?</summary><p>It is a monthly or yearly subscription in three plans: Basic, Standard and Premium. The price depends on which parts you use and how many branches you have. Ask us for the current price list. Paying for a year costs less than paying month by month.</p></details>
+          <details><summary>Do we need to install anything?</summary><p>No. It opens in a web browser on any computer, tablet or phone. You need internet and a printer. Only analyzer connection needs a small program on one lab computer.</p></details>
+          <details><summary>What happens if the internet goes down?</summary><p>Billing and result entry need internet, so we suggest a mobile data backup at the counter. Analyzer results are kept on the lab computer and sent as soon as the connection is back, so none are lost.</p></details>
+          <details><summary>Can it take results from our analyzers?</summary><p>Yes, if the analyzer sends results by ASTM or HL7, over a serial cable or the network. Tell us your models and we will confirm before you sign up.</p></details>
+          <details><summary>Can we move our current test list and prices?</summary><p>Yes. Send us your test list, prices and referral doctors in Excel. We check the file first and import it in one go, so nothing is half loaded.</p></details>
+          <details><summary>Will the reports look like ours?</summary><p>Yes. Reports and receipts use your name, logo, letterhead margins and doctors' signatures. We match them to the papers you use today before you go live.</p></details>
+          <details><summary>Can someone change a result after it is verified?</summary><p>Not quietly. A verified result can only be changed through a correction, which keeps the old value, the new value, the reason and who made it. Bills work the same way, with refunds and adjustments instead of edits.</p></details>
+          <details><summary>Who owns our data?</summary><p>You do. Every clinic has its own database, and you can export your data at any time.</p></details>
+          <details><summary>How long does setup take?</summary><p>About a week for most centers. We set up your account, import your tests and doctors, match your report layout, train your staff and run next to your old system until the daily totals match.</p></details>
+        </div>
+      </div>
+    </section>
+
+    <!-- Demo -->
+    <section id="demo" class="pt0">
+      <div class="w">
+        <div class="cta-box rv">
+          <div>
+            <h2>See it with your own tests</h2>
+            <p class="lead">Tell us a little about your center. We will set up a demo with your test list and call you back within one working day.</p>
+            <p class="contact">WhatsApp <a href="https://wa.me/8801XXXXXXXXX" rel="noopener">+880 1XXX-XXXXXX</a><br>Email <a href="mailto:hello@example.com.bd">hello@example.com.bd</a></p>
+          </div>
+          <form id="demo-form" novalidate>
+            <label>Your name<input name="name" autocomplete="name" required></label>
+            <label>Clinic or lab<input name="clinic" autocomplete="organization" required></label>
+            <label>Mobile number<input name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="01XXXXXXXXX" required pattern="(\+?880)?0?1[3-9][0-9]{8}"></label>
+            <label>Plan<select name="plan" id="f-plan"><option>Not sure yet</option><option>Basic</option><option>Standard</option><option>Premium</option></select></label>
+            <p class="err" id="form-err" role="alert" hidden></p>
+            <div class="form-btns">
+              <button class="btn btn-dark" type="submit" data-via="whatsapp">Send on WhatsApp</button>
+              <button class="btn btn-line" type="submit" data-via="email">Send by email</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <div class="w foot-in">
+      <div>
+        <a class="logo" href="#top"><i aria-hidden="true"></i>DiagnoCare</a>
+        <p>Diagnostic center software for Bangladesh. A product by <a href="https://softorio.com/">Softorio</a>.</p>
+      </div>
+      <nav aria-label="Footer"><a href="#views">Screens</a><a href="#all-features">Features</a><a href="#plans">Plans</a><a href="#faq">FAQ</a><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a></nav>
+      <address>Your street address, Dhaka<br><a href="tel:+8801XXXXXXXXX">+880 1XXX-XXXXXX</a><br><a href="mailto:hello@example.com.bd">hello@example.com.bd</a></address>
+    </div>
+    <p class="w copy">© <span id="year">2026</span> Softorio. Screens show sample data.</p>
+  </footer>
+
+  <script src="js/main.js" defer></script>
+</body>
+</html>

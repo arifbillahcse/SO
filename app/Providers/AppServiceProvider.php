@@ -46,6 +46,10 @@ class AppServiceProvider extends ServiceProvider
                 ->orderBy('sort_order')->orderBy('id')->limit(4)->get());
         });
 
+        View::composer('pages.services.diagnostic-management-system', function ($view): void {
+            $view->with('diagnosticWhatsappUrl', ContactPageSettings::current()->whatsappUrl());
+        });
+
         View::composer('pages.about-us', function ($view): void {
             $founder = TeamMember::orderBy('sort_order')->orderBy('id')->first();
             $photo = $founder?->photo_path;

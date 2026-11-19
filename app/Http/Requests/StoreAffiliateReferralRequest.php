@@ -2,6 +2,8 @@
 
 namespace App\Http\Requests;
 
+use App\Models\OrganizationSettings;
+use App\Rules\ValidRecaptcha;
 use Illuminate\Foundation\Http\FormRequest;
 
 class StoreAffiliateReferralRequest extends FormRequest
@@ -14,6 +16,9 @@ class StoreAffiliateReferralRequest extends FormRequest
     public function rules(): array
     {
         return [
+            'g-recaptcha-response' => OrganizationSettings::current()->recaptcha_enabled
+                ? ['bail', 'required', 'string', 'max:4096', new ValidRecaptcha]
+                : ['exclude'],
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'email', 'max:255'],
             'phone' => ['nullable', 'string', 'max:50'],
@@ -26,6 +31,7 @@ class StoreAffiliateReferralRequest extends FormRequest
     public function messages(): array
     {
         return [
+            'g-recaptcha-response.required' => 'Please complete the security check and try again.',
             'company_website.prohibited' => 'Submission rejected.',
         ];
     }

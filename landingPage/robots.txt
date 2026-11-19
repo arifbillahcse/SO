@@ -1,0 +1,21 @@
+# Search engines and AI assistants may read the whole site.
+User-agent: *
+Allow: /
+
+# AI crawlers, listed so you can switch any of them off by changing Allow to Disallow.
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+Sitemap: https://www.example.com.bd/sitemap.xml

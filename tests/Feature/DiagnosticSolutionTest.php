@@ -14,7 +14,7 @@ class DiagnosticSolutionTest extends TestCase
     public function test_diagnostic_solution_describes_all_phases_and_the_design_approval_gate(): void
     {
         $response = $this->get(route('diagnostic-centers-solution'))->assertOk()
-            ->assertSee('This is a development roadmap, not a ready-to-use product.')
+            ->assertSee('This roadmap describes custom development and extensions for your center.')
             ->assertSee('Phase 0 produces design documents only')
             ->assertSee('500 patients and 1,000 tests per day')
             ->assertSee('test targets, not verified production capacity')
@@ -36,14 +36,14 @@ class DiagnosticSolutionTest extends TestCase
     public function test_solutions_page_and_shared_navigation_link_to_the_diagnostic_solution(): void
     {
         $this->get(route('solutions'))->assertOk()->assertSee('Diagnostic centers')
-            ->assertSee('Planned development')
-            ->assertSee('href="'.route('diagnostic-centers-solution').'"', false)
+            ->assertSee('DiagnoCare by Softorio')
+            ->assertSee('href="'.route('diagnostic-management-system').'"', false)
             ->assertSee('href="'.route('ecommerce-solution').'"', false)
             ->assertSee('href="'.route('cloud-solution').'"', false)
             ->assertSee('href="'.route('automation-solution').'"', false);
         $this->get('/')->assertOk()->assertSee('href="'.route('solutions').'"', false)
-            ->assertSee('href="'.route('diagnostic-centers-solution').'"', false);
-        $this->get(route('diagnostic-management-system'))->assertOk()->assertSee('View the solution roadmap');
+            ->assertSee('href="'.route('diagnostic-management-system').'"', false);
+        $this->get(route('diagnostic-management-system'))->assertOk()->assertSee('Explore our custom rollout approach');
     }
 
     public function test_both_pages_are_discoverable_in_the_sitemap(): void

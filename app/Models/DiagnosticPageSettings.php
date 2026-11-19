@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class DiagnosticPageSettings extends Model
 {
-    protected $fillable = ['plans_enabled', 'plans_title', 'plans_introduction', 'pricing_faq_question', 'pricing_faq_answer', 'demo_plan_label', 'undecided_plan_label', 'plans', 'faq_title', 'faqs'];
+    protected $fillable = ['plans_enabled', 'plans_title', 'plans_introduction', 'pricing_faq_question', 'pricing_faq_answer', 'demo_plan_label', 'undecided_plan_label', 'plans', 'faq_title', 'faqs', 'hero_primary_text', 'hero_primary_url', 'hero_secondary_text', 'hero_secondary_url'];
 
     protected $casts = ['plans_enabled' => 'boolean', 'plans' => 'array', 'faqs' => 'array'];
 
@@ -37,7 +37,14 @@ class DiagnosticPageSettings extends Model
             return [];
         }
 
-        return array_values(array_filter($this->plans ?? [], fn (mixed $plan): bool => is_array($plan) && ($plan['is_enabled'] ?? false) && filled($plan['name'] ?? null)));
+        $plans = array_values(array_filter($this->plans ?? [], fn (mixed $plan): bool => is_array($plan) && ($plan['is_enabled'] ?? false) && filled($plan['name'] ?? null)));
+
+        return array_map(function (array $plan): array {
+            $url = trim((string) ($plan['button_url'] ?? ''));
+            $plan['button_url'] = filter_var($url, FILTER_VALIDATE_URL) && in_array(strtolower((string) parse_url($url, PHP_URL_SCHEME)), ['http', 'https'], true) ? $url : '#demo';
+
+            return $plan;
+        }, $plans);
     }
 
     /** @return array<int, string> */
@@ -65,5 +72,35 @@ class DiagnosticPageSettings extends Model
             ['question' => 'Who owns our data?', 'answer' => 'You do. Every clinic has its own database, and you can export your data at any time.'],
             ['question' => 'How long does setup take?', 'answer' => 'Setup depends on your test catalog, report formats, data migration and analyzer requirements. We agree on the scope and schedule with you before rollout.'],
         ];
+    }
+
+    public static function isAllowedButtonUrl(string $url): bool
+    {
+        if (preg_match('/[\\x00-\\x20]/', $url) || str_contains($url, chr(92))) {
+            return false;
+        }
+        if (preg_match('/^#[A-Za-z][A-Za-z0-9_-]*$/', $url)) {
+            return true;
+        }
+        if (str_starts_with($url, '/') && ! str_starts_with($url, '//')) {
+            return true;
+        }
+
+        return filter_var($url, FILTER_VALIDATE_URL) && in_array(strtolower((string) parse_url($url, PHP_URL_SCHEME)), ['http', 'https'], true);
+    }
+
+    /** @return array<int, array{text: string, url: string}> */
+    public function heroButtons(?string $whatsappUrl): array
+    {
+        $buttons = [
+            ['text' => $this->hero_primary_text ?: 'Book a demo', 'url' => $this->hero_primary_url, 'fallback' => '#demo'],
+            ['text' => $this->hero_secondary_text ?: ($whatsappUrl ? 'Message us on WhatsApp' : 'Explore the software'), 'url' => $this->hero_secondary_url, 'fallback' => $whatsappUrl ?: '#views'],
+        ];
+
+        return array_map(function (array $button): array {
+            $url = trim((string) $button['url']);
+
+            return ['text' => $button['text'], 'url' => static::isAllowedButtonUrl($url) ? $url : $button['fallback']];
+        }, $buttons);
     }
 }

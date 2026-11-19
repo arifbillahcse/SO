@@ -4,6 +4,20 @@ const page = document.querySelector('.diagnocare-page');
 if (page) {
     const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
     initializeLeadForms('.diagnocare-page [data-endpoint]');
+    const demoForm = page.querySelector('#demo-form');
+    demoForm?.addEventListener('lead-form:success', event => {
+        if (!demoForm.dataset.whatsappUrl) return;
+        const details = event.detail.payload;
+        const message = [
+            'DiagnoSolution demo request',
+            `Name: ${details.name}`, `Clinic / lab: ${details.clinic_name}`,
+            `Email: ${details.email}`, `Mobile: ${details.phone}`,
+            `Plan: ${details.demo_plan}`, '', details.message,
+        ].join('\n');
+        const destination = new URL(demoForm.dataset.whatsappUrl);
+        destination.searchParams.set('text', message);
+        window.location.assign(destination.href);
+    });
 
     const slider = page.querySelector('[data-slider]');
     const track = slider.querySelector('.dg-slides');

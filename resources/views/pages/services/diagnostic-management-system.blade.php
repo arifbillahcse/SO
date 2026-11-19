@@ -42,12 +42,9 @@
           <h1 class="dg-in dg-d1">From the reception counter to the signed report.</h1>
           <p class="dg-lead dg-in dg-d2">Bill the patient, collect the sample, verify the result and print it on your own letterhead. At night the cash in the drawer matches the screen, and you can check it from home.</p>
           <div class="dg-cta dg-in dg-d3">
-            <a class="dg-btn" href="#demo">Book a demo</a>
-            @if($diagnosticWhatsappUrl)
-            <a class="dg-btn dg-btn-alt" href="{{ $diagnosticWhatsappUrl }}" target="_blank" rel="noopener noreferrer">Message us on WhatsApp</a>
-            @else
-            <a class="dg-btn dg-btn-alt" href="#views">Explore the software</a>
-            @endif
+            @foreach($diagnosticSettings->heroButtons($diagnosticWhatsappUrl) as $button)
+            <a class="dg-btn{{ $loop->last ? ' dg-btn-alt' : '' }}" href="{{ $button['url'] }}">{{ $button['text'] }}</a>
+            @endforeach
           </div>
           <div class="dg-rack dg-in dg-d4" aria-hidden="true">
             <span class="dg-tube" style="--c:#ff5470;--h:62%;--d:0s"><b></b></span>
@@ -467,7 +464,7 @@
             <p class="dg-price">{{ $plan['price'] }}</p>
             @if(filled($plan['audience'] ?? null))<p class="dg-for">{{ $plan['audience'] }}</p>@endif
             <ul class="dg-ticks">@foreach($plan['features'] ?? [] as $feature)<li>{{ $feature }}</li>@endforeach</ul>
-            <a class="dg-btn{{ ($plan['is_highlighted'] ?? false) ? '' : ' dg-btn-alt' }}" href="#demo" data-plan="{{ $plan['name'] }}">{{ $plan['button_label'] }}</a>
+            <a class="dg-btn{{ ($plan['is_highlighted'] ?? false) ? '' : ' dg-btn-alt' }}" href="{{ $plan['button_url'] }}" @if($plan['button_url'] === '#demo') data-plan="{{ $plan['name'] }}" @endif>{{ $plan['button_label'] }}</a>
           </article>
           @endforeach
         </div>
@@ -497,7 +494,7 @@
             <p class="dg-lead">Tell us a little about your center. We will discuss your workflow, arrange a demonstration and confirm the modules and setup your center needs.</p>
             <p class="dg-contact">@if($diagnosticWhatsappUrl)<a href="{{ $diagnosticWhatsappUrl }}" target="_blank" rel="noopener noreferrer">Message us on WhatsApp &nearr;</a><br>@endif @if($siteContact['email'])<a href="mailto:{{ $siteContact['email'] }}">{{ $siteContact['email'] }}</a>@endif</p>
           </div>
-          <form id="demo-form" method="POST" action="{{ route('contact.store') }}" data-endpoint="{{ route('contact.store') }}">
+          <form id="demo-form" method="POST" action="{{ route('contact.store') }}" data-endpoint="{{ route('contact.store') }}" @if($diagnosticWhatsappUrl) data-whatsapp-url="{{ $diagnosticWhatsappUrl }}" @endif>
             @csrf
             <input type="hidden" name="service_interested" value="Diagnostic Management System - DiagnoSolution demo">
             <div class="dg-form-row">
@@ -511,8 +508,8 @@
             </div>
             <label for="dg-message">What would you like to see?<textarea id="dg-message" name="message" rows="3" maxlength="5000" required>I would like a DiagnoSolution demonstration for my center.</textarea></label>
             <div class="dg-honeypot" aria-hidden="true"><label>Leave this empty<input name="company_website" tabindex="-1" autocomplete="off"></label></div>
-            <button class="dg-btn cta-submit" type="submit">Request a demo <span aria-hidden="true">&nearr;</span></button>
-            <p class="dg-form-note">Your request goes directly to the Softorio team. <a href="{{ route('privacy') }}">Privacy policy</a></p>
+            <button class="dg-btn cta-submit" type="submit">{{ $diagnosticWhatsappUrl ? 'Continue to WhatsApp' : 'Request a demo' }} <span aria-hidden="true">&nearr;</span></button>
+            <p class="dg-form-note">{{ $diagnosticWhatsappUrl ? 'We save your request, then open WhatsApp with your details. Press Send in WhatsApp to finish.' : 'Your request goes directly to the Softorio team.' }} <a href="{{ route('privacy') }}">Privacy policy</a></p>
           </form>
         </div>
       </div>

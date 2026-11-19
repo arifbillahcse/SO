@@ -167,7 +167,7 @@
 .diagnocare-page .dg-plan { position: relative; display: flex; flex-direction: column; background: var(--sf); border: 1px solid var(--ln); border-radius: 12px; padding: 30px 26px; }
 .diagnocare-page .dg-plan .dg-ticks { flex: 1; margin-bottom: 22px; }
 .diagnocare-page .dg-plan h3 { font-size: 1.5rem; }
-.diagnocare-page .dg-price { font: 700 1.5rem var(--display); color: var(--ink); margin-top: 10px; }
+.diagnocare-page .dg-plan .dg-price { font: 800 clamp(1.85rem, 2.6vw, 2.25rem)/1.25 var(--display); color: var(--primary); letter-spacing: -.035em; font-variant-numeric: tabular-nums; margin-top: 14px; margin-bottom: 8px; }
 .diagnocare-page .dg-for { margin-top: 2px; }
 .diagnocare-page .dg-pop { border: 2px solid var(--br); box-shadow: var(--sh-lg); }
 .diagnocare-page .dg-tag { position: absolute; top: -12px; left: 24px; background: var(--br-soft); color: var(--nv); border: 1px solid var(--border); font-weight: 600; font-size: .8rem; padding: 2px 10px; border-radius: 6px; }

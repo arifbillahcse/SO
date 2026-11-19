@@ -12,10 +12,10 @@ class ContactPageSettings extends Model
     protected $fillable = [
         'hero_tag', 'hero_title', 'hero_description', 'contact_email', 'contact_phone',
         'whatsapp_number', 'whatsapp_chat_enabled', 'address', 'map_url', 'business_hours', 'form_title', 'form_description',
-        'submit_label', 'success_message', 'notification_email', 'next_steps', 'faqs',
+        'submit_label', 'success_message', 'notification_email', 'additional_notification_emails', 'next_steps', 'faqs',
     ];
 
-    protected $casts = ['next_steps' => 'array', 'faqs' => 'array', 'whatsapp_chat_enabled' => 'boolean'];
+    protected $casts = ['next_steps' => 'array', 'faqs' => 'array', 'whatsapp_chat_enabled' => 'boolean', 'additional_notification_emails' => 'array'];
 
     /** @return array<string, mixed> */
     public static function defaults(): array
@@ -73,5 +73,18 @@ class ContactPageSettings extends Model
     {
         return filter_var($this->map_url, FILTER_VALIDATE_URL) && parse_url($this->map_url, PHP_URL_SCHEME) === 'https'
             ? $this->map_url : null;
+    }
+
+    /** @return array<int, string> */
+    public function notificationRecipients(): array
+    {
+        $addresses = [$this->notification_email, ...($this->additional_notification_emails ?? [])];
+        $addresses = array_filter(array_map(fn (mixed $email): string => is_string($email) ? strtolower(trim($email)) : '', $addresses), fn (string $email): bool => (bool) filter_var($email, FILTER_VALIDATE_EMAIL));
+        if ($addresses === []) {
+            $addresses = preg_split('/[,;\\s]+/', (string) config('services.softorio.admin_notification_email'), flags: PREG_SPLIT_NO_EMPTY);
+            $addresses = array_filter($addresses, fn (string $email): bool => (bool) filter_var($email, FILTER_VALIDATE_EMAIL));
+        }
+
+        return array_values(array_unique($addresses));
     }
 }

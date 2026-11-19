@@ -128,4 +128,41 @@ class DiagnosticPlanSettingsTest extends TestCase
         $this->assertDatabaseCount('diagnostic_page_settings', 1);
         $this->assertSame(['Basic', 'Standard', 'Premium'], DiagnosticPageSettings::current()->planChoices());
     }
+
+    public function test_admin_can_set_and_clear_a_plan_button_destination(): void
+    {
+        $settings = DiagnosticPageSettings::current();
+        $this->actingAs(User::factory()->create());
+        $plan = $this->formPlan('Starter');
+        $plan['button_url'] = 'https://software.example.test/signup?plan=starter';
+        Livewire::test(EditDiagnosticPageSettings::class, ['record' => $settings->id])
+            ->fillForm(['plans' => [$plan]])->call('save')->assertHasNoFormErrors();
+        $this->assertSame($plan['button_url'], $settings->fresh()->plans[0]['button_url']);
+        $this->get(route('diagnostic-management-system'))->assertOk()
+            ->assertSee('href="https://software.example.test/signup?plan=starter"', false)
+            ->assertDontSee('data-plan="Starter"', false);
+
+        $plan['button_url'] = '';
+        Livewire::test(EditDiagnosticPageSettings::class, ['record' => $settings->id])
+            ->fillForm(['plans' => [$plan]])->call('save')->assertHasNoFormErrors();
+        $this->get(route('diagnostic-management-system'))->assertOk()->assertSee('href="#demo"', false)
+            ->assertSee('data-plan="Starter"', false);
+    }
+
+    public function test_unsafe_button_links_are_rejected_and_stored_unsafe_links_fall_back_to_the_demo(): void
+    {
+        $settings = DiagnosticPageSettings::current();
+        $this->actingAs(User::factory()->create());
+        $plan = $this->formPlan('Starter');
+        $plan['button_url'] = 'javascript:alert(1)';
+        Livewire::test(EditDiagnosticPageSettings::class, ['record' => $settings->id])
+            ->fillForm(['plans' => [$plan]])->call('save')->assertHasFormErrors(['plans.0.button_url']);
+        $this->assertSame(['Basic', 'Standard', 'Premium'], $settings->fresh()->planChoices());
+
+        $plan = $this->plan('Starter');
+        $plan['button_url'] = 'javascript:alert(1)';
+        $settings->update(['plans' => [$plan]]);
+        $this->get(route('diagnostic-management-system'))->assertOk()->assertDontSee('javascript:alert(1)', false)
+            ->assertSee('data-plan="Starter"', false);
+    }
 }

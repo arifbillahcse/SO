@@ -33,7 +33,7 @@ class ContactSubmissionController extends Controller
 
         $settings = ContactPageSettings::current();
 
-        Mail::to($settings->notification_email ?: config('services.softorio.admin_notification_email'))
+        Mail::to($settings->notificationRecipients())
             ->send(new ContactSubmissionReceived($submission));
 
         Mail::to($submission->email)

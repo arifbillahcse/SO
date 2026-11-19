@@ -60,6 +60,7 @@ export function initializeLeadForms(selector) {
                 const data = await response.json().catch(() => ({}));
                 if (response.ok) {
                     show(data.message || 'Thank you. Your message has been received.');
+                    root.dispatchEvent(new CustomEvent('lead-form:success', { detail: { payload } }));
                     fields.forEach(field => {
                         if (field instanceof HTMLInputElement && field.type === 'hidden') return;
                         if (field instanceof HTMLSelectElement) field.selectedIndex = 0;

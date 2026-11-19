@@ -6,6 +6,7 @@ use App\Http\Requests\StoreAffiliateReferralRequest;
 use App\Mail\AffiliateReferralAutoReply;
 use App\Mail\AffiliateReferralReceived;
 use App\Models\AffiliateReferral;
+use App\Models\ContactPageSettings;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Support\Facades\Mail;
 
@@ -20,7 +21,7 @@ class AffiliateReferralController extends Controller
             'message' => $request->input('message'),
         ]);
 
-        Mail::to(config('services.softorio.admin_notification_email'))
+        Mail::to(ContactPageSettings::current()->notificationRecipients())
             ->send(new AffiliateReferralReceived($referral));
 
         Mail::to($referral->referrer_email)

@@ -60,8 +60,12 @@ class ContactPageSettingsResource extends Resource
                 TextInput::make('submit_label')->label('Send button text')->required()->maxLength(100),
                 Textarea::make('form_description')->label('Form introduction')->required()->maxLength(2000)->columnSpanFull(),
                 Textarea::make('success_message')->label('Confirmation message')->required()->maxLength(1000)->columnSpanFull(),
-                TextInput::make('notification_email')->label('Notification recipient')->email()->maxLength(255)
-                    ->helperText('Optional private inbox for contact-form notifications. Blank uses the configured ADMIN_NOTIFICATION_EMAIL.'),
+                TextInput::make('notification_email')->label('Primary notification email')->email()->maxLength(255)
+                    ->helperText('Private inbox for new enquiries and affiliate referrals. This does not change the public contact email.'),
+                Repeater::make('additional_notification_emails')->label('Additional notification emails')
+                    ->simple(TextInput::make('email')->email()->required()->maxLength(255))
+                    ->maxItems(20)->defaultItems(0)->addActionLabel('Add recipient')
+                    ->helperText('Each address receives the full message. Duplicates are removed. If all recipient fields are empty, the configured default inbox is used.'),
             ])->columns(2)->columnSpanFull(),
             Section::make('Next steps and questions')->schema([
                 Repeater::make('next_steps')->label('What happens next')->schema([

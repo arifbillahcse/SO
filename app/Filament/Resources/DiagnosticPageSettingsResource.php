@@ -4,6 +4,7 @@ namespace App\Filament\Resources;
 
 use App\Filament\Resources\DiagnosticPageSettingsResource\Pages;
 use App\Models\DiagnosticPageSettings;
+use Closure;
 use Filament\Actions\EditAction;
 use Filament\Forms\Components\Repeater;
 use Filament\Forms\Components\Textarea;
@@ -33,6 +34,22 @@ class DiagnosticPageSettingsResource extends Resource
     public static function form(Schema $schema): Schema
     {
         return $schema->components([
+            Section::make('Header buttons')->description('The two buttons below the introduction on the diagnostic page. Blank values keep the default action.')->schema([
+                TextInput::make('hero_primary_text')->label('Primary button text')->maxLength(100),
+                TextInput::make('hero_primary_url')->label('Primary button link')->maxLength(2048)
+                    ->rules([fn (): Closure => function (string $attribute, mixed $value, Closure $fail): void {
+                        if (! DiagnosticPageSettings::isAllowedButtonUrl((string) $value)) {
+                            $fail('Use a full HTTP/HTTPS URL, a page path such as /contact, or a section such as #demo.');
+                        }
+                    }])->helperText('Examples: https://your-software.com/signup, /contact, #demo. Leave blank to use the default.'),
+                TextInput::make('hero_secondary_text')->label('Secondary button text')->maxLength(100),
+                TextInput::make('hero_secondary_url')->label('Secondary button link')->maxLength(2048)
+                    ->rules([fn (): Closure => function (string $attribute, mixed $value, Closure $fail): void {
+                        if (! DiagnosticPageSettings::isAllowedButtonUrl((string) $value)) {
+                            $fail('Use a full HTTP/HTTPS URL, a page path such as /contact, or a section such as #demo.');
+                        }
+                    }])->helperText('Examples: https://your-software.com/signup, /contact, #demo. Leave blank to use the default.'),
+            ])->columns(2)->columnSpanFull(),
             Section::make('Plans section')->schema([
                 Toggle::make('plans_enabled')->label('Show plans section')->default(true)
                     ->helperText('Turning this off also removes named plans from the demo form. Saved plans are kept.'),
@@ -53,7 +70,10 @@ class DiagnosticPageSettingsResource extends Resource
                         ->simple(TextInput::make('feature')->required()->maxLength(255))
                         ->maxItems(30)->defaultItems(0)->addActionLabel('Add feature')->columnSpanFull(),
                     TextInput::make('button_label')->label('Button text')->required()->maxLength(100)
-                        ->helperText('Buttons select this plan in the demo request form.'),
+                        ->helperText('The text shown on this plan button.'),
+                    TextInput::make('button_url')->label('Button link')->url()->maxLength(2048)
+                        ->rules(['url:http,https'])->placeholder('https://your-software.com/signup')
+                        ->helperText('Optional full HTTP or HTTPS address. Leave blank to select this plan in the demo form.'),
                 ])->columns(2)->maxItems(12)->defaultItems(0)->collapsible()
                     ->itemLabel(fn (array $state): ?string => $state['name'] ?? null)
                     ->addActionLabel('Add plan')->columnSpanFull(),

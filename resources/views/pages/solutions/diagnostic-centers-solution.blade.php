@@ -20,8 +20,8 @@
         <span class="dc-status">Custom implementation &middot; Phased development</span>
         <h1>One connected workflow<br>for your <em>diagnostic center.</em></h1>
         <p class="dc-lead">Bring patient registration, billing, laboratory work and owner oversight into a modular system shaped around your clinic.</p>
-        <p class="dc-hero-note">This roadmap describes custom development and extensions for your center. For the DiagnoCare product, explore the software screens and request a demonstration.</p>
-        <p class="dc-hero-note"><a href="{{ route('diagnostic-management-system') }}">Explore DiagnoCare software &nearr;</a></p>
+        <p class="dc-hero-note">This roadmap describes custom development and extensions for your center. For the DiagnoSolution product, explore the software screens and request a demonstration.</p>
+        <p class="dc-hero-note"><a href="{{ route('diagnostic-management-system') }}">Explore DiagnoSolution software &nearr;</a></p>
         <div class="dc-actions"><a href="{{ route('contact') }}" class="btn btn-primary btn-lg">Discuss your center <span aria-hidden="true">&nearr;</span></a><a href="#diagnostic-roadmap" class="ab-text-link">Explore the rollout <span aria-hidden="true">&darr;</span></a></div>
       </div>
       <div class="dc-workflow" aria-label="Planned diagnostic center workflow">

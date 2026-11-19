@@ -126,7 +126,7 @@ class SitemapTest extends TestCase
         $this->get('/diagnostic-management-system')
             ->assertOk()
             ->assertSee('Diagnostic Management')
-            ->assertSee('DiagnoCare');
+            ->assertSee('DiagnoSolution');
 
         $this->get('/sitemap.xml')
             ->assertOk()

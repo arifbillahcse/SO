@@ -1,4 +1,4 @@
-/* DiagnoCare product page; colors follow the shared Softorio theme. */
+/* DiagnoSolution product page; colors follow the shared Softorio theme. */
 .diagnocare-page {
   --bg: var(--dark); --sf: var(--dark-2); --ink: var(--text-primary); --mu: var(--text-secondary); --ln: var(--border);
   --br: var(--primary); --br-dark: var(--primary-dark); --br-soft: var(--primary-glow); --mint: var(--primary);
@@ -50,8 +50,6 @@
 .diagnocare-page .dg-tube b { position: absolute; left: -2px; right: -2px; bottom: 0; height: var(--h); background: var(--c); animation: dg-level 4.5s ease-in-out infinite alternate; animation-delay: var(--d); }
 .diagnocare-page .dg-tube b::before { content: ""; position: absolute; top: -5px; left: 0; right: 0; height: 10px; background: var(--c); border-radius: 50%; }
 @keyframes dg-level { from { transform: translateY(14%); } to { transform: translateY(-6%); } }
-.diagnocare-page .dg-drop { position: absolute; left: 50px; top: -6px; width: 14px; height: 20px; background: var(--rose); border-radius: 50% 50% 50% 50% / 62% 62% 38% 38%; animation: dg-drip 2.6s ease-in infinite; }
-@keyframes dg-drip { 0% { transform: translateY(0) scale(.6); opacity: 0; } 15% { opacity: 1; transform: scale(1); } 85% { opacity: 1; } 100% { transform: translateY(80px); opacity: 0; } }
 
 .diagnocare-page .dg-hero-shot { position: relative; padding: 0 0 60px 0; }
 .diagnocare-page .dg-frame { margin: 0; background: var(--sf); border: 1px solid var(--ln); border-radius: 12px; overflow: hidden; box-shadow: 0 40px 80px -30px rgba(16,24,40,.45); transform: perspective(1600px) rotateY(-6deg) rotateX(2deg); transition: transform .6s ease; }

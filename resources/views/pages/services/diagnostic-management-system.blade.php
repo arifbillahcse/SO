@@ -1,17 +1,17 @@
 @extends('layouts.app')
-@section('title', 'DiagnoCare Diagnostic Center Software in Bangladesh | Softorio')
-@section('description', 'Explore DiagnoCare by Softorio: diagnostic center billing, samples, lab results, reports, owner finance and modules. Request a demonstration for your center.')
+@section('title', 'DiagnoSolution Diagnostic Center Software in Bangladesh | Softorio')
+@section('description', 'Explore DiagnoSolution by Softorio: diagnostic center billing, samples, lab results, reports, owner finance and modules. Request a demonstration for your center.')
 @section('image', asset('images/diagnocare/screen-billing.webp'))
 @section('breadcrumbs', json_encode([
     ['name' => 'Home', 'url' => route('home')],
     ['name' => 'Services', 'url' => route('services')],
-    ['name' => 'DiagnoCare', 'url' => route('diagnostic-management-system')],
+    ['name' => 'DiagnoSolution', 'url' => route('diagnostic-management-system')],
 ]))
 @section('page_schema', json_encode([
     '@context' => 'https://schema.org', '@type' => 'WebPage',
-    'name' => 'DiagnoCare diagnostic center software', 'url' => route('diagnostic-management-system'),
+    'name' => 'DiagnoSolution diagnostic center software', 'url' => route('diagnostic-management-system'),
     'mainEntity' => [
-        '@type' => 'SoftwareApplication', 'name' => 'DiagnoCare',
+        '@type' => 'SoftwareApplication', 'name' => 'DiagnoSolution',
         'applicationCategory' => 'BusinessApplication', 'operatingSystem' => 'Web browser',
         'url' => route('diagnostic-management-system'),
         'description' => 'Diagnostic center billing, laboratory workflows, reports and owner operations by Softorio.',
@@ -19,18 +19,13 @@
         'screenshot' => asset('images/diagnocare/screen-billing.webp'),
         'provider' => ['@type' => 'Organization', 'name' => 'Softorio', 'url' => route('home')],
     ],
-    'hasPart' => ['@type' => 'FAQPage', 'mainEntity' => [
-        ['@type' => 'Question', 'name' => "What is DiagnoCare?", 'acceptedAnswer' => ['@type' => 'Answer', 'text' => "DiagnoCare is software for diagnostic centers and pathology labs in Bangladesh. Reception bills the patient, the lab enters and verifies results, and the report prints on your own letterhead. The owner sees the day's collection and dues on a phone."]],
-        ['@type' => 'Question', 'name' => $diagnosticSettings->pricing_faq_question, 'acceptedAnswer' => ['@type' => 'Answer', 'text' => $diagnosticSettings->pricing_faq_answer]],
-        ['@type' => 'Question', 'name' => "Do we need to install anything?", 'acceptedAnswer' => ['@type' => 'Answer', 'text' => "No. It opens in a web browser on any computer, tablet or phone. You need internet and a printer. Only analyzer connection needs a small program on one lab computer."]],
-        ['@type' => 'Question', 'name' => "What happens if the internet goes down?", 'acceptedAnswer' => ['@type' => 'Answer', 'text' => "Billing and result entry need internet, so we suggest a mobile data backup at the counter. Analyzer results are kept on the lab computer and sent as soon as the connection is back, so none are lost."]],
-        ['@type' => 'Question', 'name' => "Can it take results from our analyzers?", 'acceptedAnswer' => ['@type' => 'Answer', 'text' => "Yes, if the analyzer sends results by ASTM or HL7, over a serial cable or the network. Tell us your models and we will confirm before you sign up."]],
-        ['@type' => 'Question', 'name' => "Can we move our current test list and prices?", 'acceptedAnswer' => ['@type' => 'Answer', 'text' => "Yes. Send us your test list, prices and referral doctors in Excel. We check the file first and import it in one go, so nothing is half loaded."]],
-        ['@type' => 'Question', 'name' => "Will the reports look like ours?", 'acceptedAnswer' => ['@type' => 'Answer', 'text' => "Yes. Reports and receipts use your name, logo, letterhead margins and doctors' signatures. We match them to the papers you use today before you go live."]],
-        ['@type' => 'Question', 'name' => "Can someone change a result after it is verified?", 'acceptedAnswer' => ['@type' => 'Answer', 'text' => "Not quietly. A verified result can only be changed through a correction, which keeps the old value, the new value, the reason and who made it. Bills work the same way, with refunds and adjustments instead of edits."]],
-        ['@type' => 'Question', 'name' => "Who owns our data?", 'acceptedAnswer' => ['@type' => 'Answer', 'text' => "You do. Every clinic has its own database, and you can export your data at any time."]],
-        ['@type' => 'Question', 'name' => "How long does setup take?", 'acceptedAnswer' => ['@type' => 'Answer', 'text' => "Setup depends on your test catalog, report formats, data migration and analyzer requirements. We agree on the scope and schedule with you before rollout."]],
-    ]],
+    'hasPart' => count($diagnosticSettings->publicFaqs()) ? [
+        '@type' => 'FAQPage',
+        'mainEntity' => array_map(fn (array $faq): array => [
+            '@type' => 'Question', 'name' => $faq['question'],
+            'acceptedAnswer' => ['@type' => 'Answer', 'text' => $faq['answer']],
+        ], $diagnosticSettings->publicFaqs()),
+    ] : null,
 ]))
 @push('head')
 @vite(['resources/css/diagnocare.css', 'resources/js/diagnocare.js'])
@@ -42,8 +37,8 @@
     <section class="dg-hero">
       <div class="dg-w dg-hero-in">
         <div class="dg-hero-copy">
-          <nav class="dg-breadcrumb" aria-label="Breadcrumb"><a href="{{ route('home') }}">Home</a><span>/</span><a href="{{ route('services') }}">Services</a><span>/</span><span>DiagnoCare</span></nav>
-          <p class="dg-kicker dg-in">DiagnoCare by Softorio &middot; Built for Bangladesh</p>
+          <nav class="dg-breadcrumb" aria-label="Breadcrumb"><a href="{{ route('home') }}">Home</a><span>/</span><a href="{{ route('services') }}">Services</a><span>/</span><span>DiagnoSolution</span></nav>
+          <p class="dg-kicker dg-in">DiagnoSolution by Softorio &middot; Built for Bangladesh</p>
           <h1 class="dg-in dg-d1">From the reception counter to the signed report.</h1>
           <p class="dg-lead dg-in dg-d2">Bill the patient, collect the sample, verify the result and print it on your own letterhead. At night the cash in the drawer matches the screen, and you can check it from home.</p>
           <div class="dg-cta dg-in dg-d3">
@@ -55,7 +50,6 @@
             @endif
           </div>
           <div class="dg-rack dg-in dg-d4" aria-hidden="true">
-            <span class="dg-drop"></span>
             <span class="dg-tube" style="--c:#ff5470;--h:62%;--d:0s"><b></b></span>
             <span class="dg-tube" style="--c:#7c4dff;--h:44%;--d:-1.2s"><b></b></span>
             <span class="dg-tube" style="--c:#12b886;--h:70%;--d:-2.4s"><b></b></span>
@@ -66,8 +60,8 @@
 
         <div class="dg-hero-shot dg-in dg-d2">
           <figure class="dg-frame">
-            <div class="dg-frame-bar" aria-hidden="true"><span></span><span></span><span></span><em>DiagnoCare &middot; New bill &middot; Sample data</em></div>
-            <img src="{{ asset('images/diagnocare/screen-billing.webp') }}" width="1600" height="956" alt="DiagnoCare new bill screen with four tests, a 100 taka discount and a bKash payment of 2,285 taka" fetchpriority="high">
+            <div class="dg-frame-bar" aria-hidden="true"><span></span><span></span><span></span><em>DiagnoSolution &middot; New bill &middot; Sample data</em></div>
+            <img src="{{ asset('images/diagnocare/screen-billing.webp') }}" width="1600" height="956" alt="DiagnoSolution new bill screen with four tests, a 100 taka discount and a bKash payment of 2,285 taka" fetchpriority="high">
           </figure>
           <figure class="dg-phone" aria-hidden="true">
             <img src="{{ asset('images/diagnocare/screen-phone.webp') }}" width="560" height="953" alt="" loading="lazy">
@@ -97,9 +91,9 @@
     <section id="views">
       <div class="dg-w">
         <h2 class="dg-rv">Software views</h2>
-        <p class="dg-lead dg-rv">Explore DiagnoCare with sample data. Swipe, use the arrows, or choose a screen below.</p>
+        <p class="dg-lead dg-rv">Explore DiagnoSolution with sample data. Swipe, use the arrows, or choose a screen below.</p>
 
-        <div class="dg-slider dg-rv" data-slider aria-roledescription="carousel" aria-label="DiagnoCare screens">
+        <div class="dg-slider dg-rv" data-slider aria-roledescription="carousel" aria-label="DiagnoSolution screens">
           <div class="dg-slides">
             <figure class="dg-slide" aria-roledescription="slide" aria-label="1 of 6">
               <img loading="lazy" src="{{ asset('images/diagnocare/slides/dashboard.webp') }}" width="1600" height="1000" alt="Dashboard with this month's patient visits, billed and collected amounts, lab work waiting, and collections for the last 14 days">
@@ -179,7 +173,7 @@
     <!-- Every feature, module by module -->
     <section id="all-features" class="dg-pt0">
       <div class="dg-w">
-        <h2 class="dg-rv">Everything DiagnoCare does</h2>
+        <h2 class="dg-rv">Everything DiagnoSolution does</h2>
         <p class="dg-lead dg-rv">Explore the software module by module. Click a screenshot to see it larger. Confirm your required modules, device compatibility and rollout scope with our team.</p>
 
         <div class="dg-filters dg-rv" role="toolbar" aria-label="Show features for">
@@ -376,7 +370,7 @@
       <div class="dg-w dg-mods">
         <div>
           <h2 class="dg-rv">Pay for the parts you use</h2>
-          <p class="dg-lead dg-rv">DiagnoCare is built from modules. Switch one off and anything that depends on it goes off too. Your data stays, ready for when you switch it back on. Try it.</p>
+          <p class="dg-lead dg-rv">DiagnoSolution is built from modules. Switch one off and anything that depends on it goes off too. Your data stays, ready for when you switch it back on. Try it.</p>
           <div class="dg-switches dg-rv" data-modules>
             <button class="dg-sw" type="button" data-m="frontdesk" aria-pressed="true"><span class="dg-t"></span>Front desk and billing</button>
             <button class="dg-sw" type="button" data-m="laboratory" data-needs="frontdesk" aria-pressed="true"><span class="dg-t"></span>Laboratory<small>needs Front desk</small></button>
@@ -416,7 +410,7 @@
           <div class="dg-wire"><span></span><span></span><span></span></div>
           <div class="dg-node">Lab PC</div>
           <div class="dg-wire"><span></span><span></span><span></span></div>
-          <div class="dg-node dg-hot">DiagnoCare</div>
+          <div class="dg-node dg-hot">DiagnoSolution</div>
         </div>
       </div>
     </section>
@@ -481,24 +475,18 @@
     </section>
     @endif
 
-    <!-- FAQ: keep in step with the FAQPage data in the head -->
+    @if(count($diagnosticSettings->publicFaqs()))
     <section id="faq" class="dg-pt0">
       <div class="dg-w dg-narrow">
-        <h2 class="dg-rv">Questions we get asked</h2>
+        <h2 class="dg-rv">{{ $diagnosticSettings->faq_title ?: 'Questions we get asked' }}</h2>
         <div class="dg-faq dg-rv">
-          <details><summary>What is DiagnoCare?</summary><p>DiagnoCare is software for diagnostic centers and pathology labs in Bangladesh. Reception bills the patient, the lab enters and verifies results, and the report prints on your own letterhead. The owner sees the day's collection and dues on a phone.</p></details>
-          <details><summary>{{ $diagnosticSettings->pricing_faq_question }}</summary><p>{{ $diagnosticSettings->pricing_faq_answer }}</p></details>
-          <details><summary>Do we need to install anything?</summary><p>No. It opens in a web browser on any computer, tablet or phone. You need internet and a printer. Only analyzer connection needs a small program on one lab computer.</p></details>
-          <details><summary>What happens if the internet goes down?</summary><p>Billing and result entry need internet, so we suggest a mobile data backup at the counter. Analyzer results are kept on the lab computer and sent as soon as the connection is back, so none are lost.</p></details>
-          <details><summary>Can it take results from our analyzers?</summary><p>Yes, if the analyzer sends results by ASTM or HL7, over a serial cable or the network. Tell us your models and we will confirm before you sign up.</p></details>
-          <details><summary>Can we move our current test list and prices?</summary><p>Yes. Send us your test list, prices and referral doctors in Excel. We check the file first and import it in one go, so nothing is half loaded.</p></details>
-          <details><summary>Will the reports look like ours?</summary><p>Yes. Reports and receipts use your name, logo, letterhead margins and doctors' signatures. We match them to the papers you use today before you go live.</p></details>
-          <details><summary>Can someone change a result after it is verified?</summary><p>Not quietly. A verified result can only be changed through a correction, which keeps the old value, the new value, the reason and who made it. Bills work the same way, with refunds and adjustments instead of edits.</p></details>
-          <details><summary>Who owns our data?</summary><p>You do. Every clinic has its own database, and you can export your data at any time.</p></details>
-          <details><summary>How long does setup take?</summary><p>Setup depends on your test catalog, report formats, data migration and analyzer requirements. We agree on the scope and schedule with you before rollout.</p></details>
+          @foreach($diagnosticSettings->publicFaqs() as $faq)
+          <details><summary>{{ $faq['question'] }}</summary><p>{{ $faq['answer'] }}</p></details>
+          @endforeach
         </div>
       </div>
     </section>
+    @endif
 
     <!-- Demo -->
     <section id="demo" class="dg-pt0">
@@ -511,7 +499,7 @@
           </div>
           <form id="demo-form" method="POST" action="{{ route('contact.store') }}" data-endpoint="{{ route('contact.store') }}">
             @csrf
-            <input type="hidden" name="service_interested" value="Diagnostic Management System - DiagnoCare demo">
+            <input type="hidden" name="service_interested" value="Diagnostic Management System - DiagnoSolution demo">
             <div class="dg-form-row">
               <label for="dg-name">Your name<input id="dg-name" name="name" autocomplete="name" required maxlength="255"></label>
               <label for="dg-clinic">Clinic or lab<input id="dg-clinic" name="clinic_name" autocomplete="organization" required maxlength="255"></label>
@@ -521,7 +509,7 @@
               <label for="dg-phone">Mobile number<input id="dg-phone" name="phone" type="tel" autocomplete="tel" required maxlength="50" placeholder="Include your country code"></label>
               <label for="f-plan">{{ $diagnosticSettings->demo_plan_label }}<select name="demo_plan" id="f-plan"><option value="Not sure yet">{{ $diagnosticSettings->undecided_plan_label }}</option>@foreach($diagnosticPlans as $plan)<option value="{{ $plan['name'] }}">{{ $plan['name'] }}</option>@endforeach</select></label>
             </div>
-            <label for="dg-message">What would you like to see?<textarea id="dg-message" name="message" rows="3" maxlength="5000" required>I would like a DiagnoCare demonstration for my center.</textarea></label>
+            <label for="dg-message">What would you like to see?<textarea id="dg-message" name="message" rows="3" maxlength="5000" required>I would like a DiagnoSolution demonstration for my center.</textarea></label>
             <div class="dg-honeypot" aria-hidden="true"><label>Leave this empty<input name="company_website" tabindex="-1" autocomplete="off"></label></div>
             <button class="dg-btn cta-submit" type="submit">Request a demo <span aria-hidden="true">&nearr;</span></button>
             <p class="dg-form-note">Your request goes directly to the Softorio team. <a href="{{ route('privacy') }}">Privacy policy</a></p>

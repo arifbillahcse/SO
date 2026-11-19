@@ -13,4 +13,15 @@ class EditDiagnosticPageSettings extends EditRecord
     {
         return [];
     }
+
+    /** @param array<string, mixed> $data
+     * @return array<string, mixed>
+     */
+    protected function mutateFormDataBeforeFill(array $data): array
+    {
+        $data['faqs'] ??= $this->record->publicFaqs();
+        $data['faq_title'] ??= 'Questions we get asked';
+
+        return $data;
+    }
 }

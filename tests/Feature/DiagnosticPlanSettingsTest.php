@@ -40,7 +40,7 @@ class DiagnosticPlanSettingsTest extends TestCase
         Livewire::test(EditDiagnosticPageSettings::class, ['record' => $settings->id])->fillForm([
             'plans_title' => 'Choose your package', 'plans_introduction' => 'Annual billing available on request.',
             'plans' => [$this->formPlan('Clinic Plus'), $this->formPlan('Starter'), $this->formPlan('Hidden package', false)],
-            'pricing_faq_question' => 'How is pricing calculated?', 'pricing_faq_answer' => 'Your branches determine the final quote.',
+            'faqs' => [['question' => 'How is pricing calculated?', 'answer' => 'Your branches determine the final quote.']],
             'demo_plan_label' => 'Preferred package', 'undecided_plan_label' => 'Help me choose',
         ])->call('save')->assertHasNoFormErrors();
 

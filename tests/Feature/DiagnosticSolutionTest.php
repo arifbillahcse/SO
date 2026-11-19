@@ -36,7 +36,7 @@ class DiagnosticSolutionTest extends TestCase
     public function test_solutions_page_and_shared_navigation_link_to_the_diagnostic_solution(): void
     {
         $this->get(route('solutions'))->assertOk()->assertSee('Diagnostic centers')
-            ->assertSee('DiagnoCare by Softorio')
+            ->assertSee('DiagnoSolution by Softorio')
             ->assertSee('href="'.route('diagnostic-management-system').'"', false)
             ->assertSee('href="'.route('ecommerce-solution').'"', false)
             ->assertSee('href="'.route('cloud-solution').'"', false)

@@ -5,6 +5,7 @@ namespace Tests\Feature;
 use App\Mail\ContactSubmissionReceived;
 use App\Models\ContactPageSettings;
 use App\Models\ContactSubmission;
+use App\Models\DiagnosticPageSettings;
 use App\Models\OrganizationSettings;
 use App\Models\PageSeo;
 use DOMDocument;
@@ -13,7 +14,7 @@ use Illuminate\Foundation\Testing\LazilyRefreshDatabase;
 use Illuminate\Support\Facades\Mail;
 use Tests\TestCase;
 
-class DiagnoCareLandingTest extends TestCase
+class DiagnoSolutionLandingTest extends TestCase
 {
     use LazilyRefreshDatabase;
 
@@ -21,7 +22,7 @@ class DiagnoCareLandingTest extends TestCase
     {
         $response = $this->get(route('diagnostic-management-system'))->assertOk()
             ->assertSee('From the reception counter to the signed report.')
-            ->assertSee('Everything DiagnoCare does')->assertSee('Sample data')
+            ->assertSee('Everything DiagnoSolution does')->assertSee('Sample data')
             ->assertSee('name="clinic_name"', false)->assertSee('name="demo_plan"', false)
             ->assertSee('action="'.route('contact.store').'"', false)
             ->assertDontSee('landingPage/')->assertDontSee('example.com.bd')
@@ -65,7 +66,7 @@ class DiagnoCareLandingTest extends TestCase
         Mail::fake();
         $this->postJson(route('contact.store'), [
             'name' => 'Jane Doe', 'email' => 'jane@example.test', 'phone' => '+8801700000000',
-            'service_interested' => 'Diagnostic Management System - DiagnoCare demo',
+            'service_interested' => 'Diagnostic Management System - DiagnoSolution demo',
             'clinic_name' => 'Example Diagnostics', 'demo_plan' => 'Standard',
             'message' => 'Please show us the report workflow.',
         ])->assertOk();
@@ -104,5 +105,28 @@ class DiagnoCareLandingTest extends TestCase
         $this->assertSame('My custom DiagnoCare title', $seo->title);
         $this->assertSame('images/custom-share.png', $seo->og_image);
         $this->assertSame('Explore DiagnoCare by Softorio for diagnostic center billing, samples, lab reports and owner operations. Request a software demonstration for your center.', $seo->meta_description);
+    }
+
+    public function test_brand_rename_updates_saved_seo_and_plan_text_without_changing_other_content(): void
+    {
+        $seo = PageSeo::forRoute('diagnostic-management-system');
+        $seo->update(['title' => 'Custom DiagnoCare package', 'meta_description' => 'Explore DIAGNOCARE with our team.']);
+        $settings = DiagnosticPageSettings::current();
+        $plans = $settings->plans;
+        $plans[0]['name'] = 'DiagnoCare Starter';
+        $plans[0]['price'] = 'BDT 2,500 / month';
+        $settings->update(['plans' => $plans, 'pricing_faq_answer' => 'Ask about DiagnoCare packages.']);
+        $migration = require database_path('migrations/2026_11_19_035827_rename_diagnostic_product_to_diagnosolution.php');
+
+        $migration->up();
+        $migration->up();
+
+        $this->assertSame('Custom DiagnoSolution package', $seo->fresh()->title);
+        $this->assertSame('Explore DiagnoSolution with our team.', $seo->fresh()->meta_description);
+        $this->assertSame('DiagnoSolution Starter', $settings->fresh()->plans[0]['name']);
+        $this->assertSame('BDT 2,500 / month', $settings->fresh()->plans[0]['price']);
+        $this->get(route('diagnostic-management-system'))->assertOk()
+            ->assertSee('DiagnoSolution')->assertDontSee('DiagnoCare')
+            ->assertSee('Ask about DiagnoSolution packages.');
     }
 }

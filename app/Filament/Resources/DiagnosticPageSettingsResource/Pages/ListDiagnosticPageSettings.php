@@ -19,6 +19,6 @@ class ListDiagnosticPageSettings extends ListRecords
 
     protected function getHeaderActions(): array
     {
-        return [Action::make('view')->label('View DiagnoCare plans')->url(fn (): string => route('diagnostic-management-system').'#plans')->openUrlInNewTab()];
+        return [Action::make('view')->label('View DiagnoSolution plans')->url(fn (): string => route('diagnostic-management-system').'#plans')->openUrlInNewTab()];
     }
 }

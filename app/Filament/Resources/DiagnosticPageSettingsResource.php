@@ -24,11 +24,11 @@ class DiagnosticPageSettingsResource extends Resource
 
     protected static string|\UnitEnum|null $navigationGroup = 'Content';
 
-    protected static ?string $navigationLabel = 'DiagnoCare Plans';
+    protected static ?string $navigationLabel = 'DiagnoSolution Plans';
 
-    protected static ?string $modelLabel = 'DiagnoCare plans';
+    protected static ?string $modelLabel = 'DiagnoSolution plans';
 
-    protected static ?string $pluralModelLabel = 'DiagnoCare Plans';
+    protected static ?string $pluralModelLabel = 'DiagnoSolution Plans';
 
     public static function form(Schema $schema): Schema
     {
@@ -58,10 +58,15 @@ class DiagnosticPageSettingsResource extends Resource
                     ->itemLabel(fn (array $state): ?string => $state['name'] ?? null)
                     ->addActionLabel('Add plan')->columnSpanFull(),
             ])->columnSpanFull(),
-            Section::make('Related FAQ and demo form')->schema([
-                TextInput::make('pricing_faq_question')->label('Pricing FAQ question')->required()->maxLength(255),
-                Textarea::make('pricing_faq_answer')->label('Pricing FAQ answer')->required()->maxLength(3000)
-                    ->helperText('Used in the visible FAQ and search structured data. Review this answer when changing prices or billing terms.'),
+            Section::make('Frequently asked questions')->description('Drag questions to reorder them. Removing all questions hides the FAQ section.')->schema([
+                TextInput::make('faq_title')->label('Section heading')->required()->maxLength(255),
+                Repeater::make('faqs')->label('Questions')->schema([
+                    TextInput::make('question')->required()->maxLength(255),
+                    Textarea::make('answer')->required()->rows(4)->maxLength(3000),
+                ])->maxItems(30)->defaultItems(0)->collapsible()->addActionLabel('Add question')
+                    ->itemLabel(fn (array $state): ?string => $state['question'] ?? null),
+            ])->columnSpanFull(),
+            Section::make('Demo form')->schema([
                 TextInput::make('demo_plan_label')->label('Demo form plan label')->required()->maxLength(100),
                 TextInput::make('undecided_plan_label')->label('No plan selected label')->required()->maxLength(100),
             ])->columnSpanFull(),

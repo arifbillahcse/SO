@@ -6,9 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class DiagnosticPageSettings extends Model
 {
-    protected $fillable = ['plans_enabled', 'plans_title', 'plans_introduction', 'pricing_faq_question', 'pricing_faq_answer', 'demo_plan_label', 'undecided_plan_label', 'plans'];
+    protected $fillable = ['plans_enabled', 'plans_title', 'plans_introduction', 'pricing_faq_question', 'pricing_faq_answer', 'demo_plan_label', 'undecided_plan_label', 'plans', 'faq_title', 'faqs'];
 
-    protected $casts = ['plans_enabled' => 'boolean', 'plans' => 'array'];
+    protected $casts = ['plans_enabled' => 'boolean', 'plans' => 'array', 'faqs' => 'array'];
 
     public static function current(): self
     {
@@ -44,5 +44,26 @@ class DiagnosticPageSettings extends Model
     public function planChoices(): array
     {
         return array_column($this->publicPlans(), 'name');
+    }
+
+    /** @return array<int, array{question: string, answer: string}> */
+    public function publicFaqs(): array
+    {
+        if ($this->faqs !== null) {
+            return $this->faqs;
+        }
+
+        return [
+            ['question' => 'What is DiagnoSolution?', 'answer' => 'DiagnoSolution is software for diagnostic centers and pathology labs in Bangladesh. Reception bills the patient, the lab enters and verifies results, and the report prints on your own letterhead. The owner sees the day\'s collection and dues on a phone.'],
+            ['question' => $this->pricing_faq_question, 'answer' => $this->pricing_faq_answer],
+            ['question' => 'Do we need to install anything?', 'answer' => 'No. It opens in a web browser on any computer, tablet or phone. You need internet and a printer. Only analyzer connection needs a small program on one lab computer.'],
+            ['question' => 'What happens if the internet goes down?', 'answer' => 'Billing and result entry need internet, so we suggest a mobile data backup at the counter. Analyzer results are kept on the lab computer and sent as soon as the connection is back, so none are lost.'],
+            ['question' => 'Can it take results from our analyzers?', 'answer' => 'Yes, if the analyzer sends results by ASTM or HL7, over a serial cable or the network. Tell us your models and we will confirm before you sign up.'],
+            ['question' => 'Can we move our current test list and prices?', 'answer' => 'Yes. Send us your test list, prices and referral doctors in Excel. We check the file first and import it in one go, so nothing is half loaded.'],
+            ['question' => 'Will the reports look like ours?', 'answer' => 'Yes. Reports and receipts use your name, logo, letterhead margins and doctors\' signatures. We match them to the papers you use today before you go live.'],
+            ['question' => 'Can someone change a result after it is verified?', 'answer' => 'Not quietly. A verified result can only be changed through a correction, which keeps the old value, the new value, the reason and who made it. Bills work the same way, with refunds and adjustments instead of edits.'],
+            ['question' => 'Who owns our data?', 'answer' => 'You do. Every clinic has its own database, and you can export your data at any time.'],
+            ['question' => 'How long does setup take?', 'answer' => 'Setup depends on your test catalog, report formats, data migration and analyzer requirements. We agree on the scope and schedule with you before rollout.'],
+        ];
     }
 }

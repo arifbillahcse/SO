@@ -46,13 +46,6 @@
             <a class="dg-btn{{ $loop->last ? ' dg-btn-alt' : '' }}" href="{{ $button['url'] }}">{{ $button['text'] }}</a>
             @endforeach
           </div>
-          <div class="dg-rack dg-in dg-d4" aria-hidden="true">
-            <span class="dg-tube" style="--c:#ff5470;--h:62%;--d:0s"><b></b></span>
-            <span class="dg-tube" style="--c:#7c4dff;--h:44%;--d:-1.2s"><b></b></span>
-            <span class="dg-tube" style="--c:#12b886;--h:70%;--d:-2.4s"><b></b></span>
-            <span class="dg-tube" style="--c:#ffb020;--h:52%;--d:-3.1s"><b></b></span>
-            <span class="dg-tube" style="--c:#3B82F6;--h:58%;--d:-0.6s"><b></b></span>
-          </div>
         </div>
 
         <div class="dg-hero-shot dg-in dg-d2">
@@ -402,12 +395,21 @@
             <li>Staff still check every result before it is released</li>
           </ul>
         </div>
+        <div class="dg-analyzer-visual">
+          <div class="dg-rack" aria-hidden="true">
+            <span class="dg-tube" style="--c:#ff5470;--h:62%;--d:0s"><b></b></span>
+            <span class="dg-tube" style="--c:#7c4dff;--h:44%;--d:-1.2s"><b></b></span>
+            <span class="dg-tube" style="--c:#12b886;--h:70%;--d:-2.4s"><b></b></span>
+            <span class="dg-tube" style="--c:#ffb020;--h:52%;--d:-3.1s"><b></b></span>
+            <span class="dg-tube" style="--c:#3B82F6;--h:58%;--d:-0.6s"><b></b></span>
+          </div>
         <div class="dg-pipe dg-rv" aria-hidden="true">
           <div class="dg-node">Analyzer</div>
           <div class="dg-wire"><span></span><span></span><span></span></div>
           <div class="dg-node">Lab PC</div>
           <div class="dg-wire"><span></span><span></span><span></span></div>
           <div class="dg-node dg-hot">DiagnoSolution</div>
+        </div>
         </div>
       </div>
     </section>

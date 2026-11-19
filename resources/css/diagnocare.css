@@ -137,7 +137,7 @@
 @media (max-width: 900px) { .diagnocare-page .dg-split { grid-template-columns: 1fr; } }
 .diagnocare-page .dg-pipe { display: flex; align-items: center; justify-content: center; }
 .diagnocare-page .dg-node { flex: none; padding: 18px 18px; border-radius: 16px; background: var(--sf); border: 1px solid var(--ln); font-weight: 700; box-shadow: var(--sh); }
-.diagnocare-page .dg-node.hot { background: var(--br); color: #fff; border-color: transparent; }
+.diagnocare-page .dg-node.dg-hot { background: var(--br); color: var(--dg-button-text); border-color: transparent; }
 .diagnocare-page .dg-wire { position: relative; flex: 1; min-width: 40px; height: 3px; background: var(--ln); overflow: hidden; }
 .diagnocare-page .dg-wire span { position: absolute; top: -2px; left: -10px; width: 8px; height: 7px; border-radius: 4px; background: var(--mint); animation: dg-packet 2.4s linear infinite; }
 .diagnocare-page .dg-wire span:nth-child(2) { animation-delay: .8s; } .diagnocare-page .dg-wire span:nth-child(3) { animation-delay: 1.6s; }
@@ -218,7 +218,7 @@
 /* All features */
 .diagnocare-page .dg-filters { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 30px; }
 .diagnocare-page .dg-chip { border: 1px solid var(--ln); background: var(--sf); color: var(--mu); padding: 8px 14px; border-radius: 8px; font: 600 .95rem var(--body); cursor: pointer; transition: background .2s, color .2s; }
-.diagnocare-page .dg-chip.on { background: var(--br); color: #fff; border-color: var(--br); }
+.diagnocare-page .dg-chip.dg-on { background: var(--br); color: var(--dg-button-text); border-color: var(--br); }
 .diagnocare-page .dg-fgroups { display: grid; gap: 18px; margin-top: 26px; }
 .diagnocare-page .dg-fg { background: var(--sf); border: 1px solid var(--ln); border-radius: 12px; padding: 30px; }
 .diagnocare-page .dg-fg[hidden] { display: none; }
@@ -335,5 +335,9 @@ html[data-theme="light"] .diagnocare-page { --dg-button-text: #fff; }
 .diagnocare-page .dg-plan h3, .diagnocare-page .dg-price, .diagnocare-page .dg-for, .diagnocare-page .dg-plan .dg-btn { overflow-wrap: anywhere; }
 .diagnocare-page .dg-tag { max-width: calc(100% - 48px); overflow-wrap: anywhere; }
 
-.diagnocare-page .dg-analyzer-visual { display: grid; gap: 36px; min-width: 0; }
-.diagnocare-page .dg-analyzer-visual .dg-rack { display: flex; width: min(100%, 300px); margin: 0 auto; justify-content: center; height: 125px; }
+.diagnocare-page .dg-analyzer-visual { display: grid; gap: 40px; min-width: 0; padding: 30px 22px; border: 1px solid var(--ln); border-radius: 22px; background: var(--sf); }
+.diagnocare-page .dg-analyzer-visual .dg-rack { display: flex; width: min(100%, 240px); margin: 0 auto; justify-content: center; gap: 12px; height: 104px; padding: 0 12px; }
+.diagnocare-page .dg-analyzer-visual .dg-tube { width: 26px; height: 92px; flex-shrink: 0; }
+.diagnocare-page .dg-analyzer-visual .dg-node { min-width: 0; padding: 14px 6px; font-size: .72rem; border-radius: 12px; box-shadow: none; }
+.diagnocare-page .dg-analyzer-visual .dg-wire { min-width: 12px; }
+@media (max-width: 480px) { .diagnocare-page .dg-analyzer-visual { padding: 26px 10px; } .diagnocare-page .dg-analyzer-visual .dg-node { font-size: .65rem; } }

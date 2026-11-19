@@ -332,3 +332,7 @@ html[data-theme="light"] .diagnocare-page { --dg-button-text: #fff; }
   .diagnocare-page .dg-shots { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .diagnocare-page .dg-shot span { font-size: .65rem; max-width: calc(100% - 12px); left: 6px; bottom: 6px; padding: 2px 5px; line-height: 1.4; }
 }
+
+.diagnocare-page .dg-plan { min-width: 0; }
+.diagnocare-page .dg-plan h3, .diagnocare-page .dg-price, .diagnocare-page .dg-for, .diagnocare-page .dg-plan .dg-btn { overflow-wrap: anywhere; }
+.diagnocare-page .dg-tag { max-width: calc(100% - 48px); overflow-wrap: anywhere; }

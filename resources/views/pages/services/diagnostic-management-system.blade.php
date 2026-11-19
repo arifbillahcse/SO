@@ -21,7 +21,7 @@
     ],
     'hasPart' => ['@type' => 'FAQPage', 'mainEntity' => [
         ['@type' => 'Question', 'name' => "What is DiagnoCare?", 'acceptedAnswer' => ['@type' => 'Answer', 'text' => "DiagnoCare is software for diagnostic centers and pathology labs in Bangladesh. Reception bills the patient, the lab enters and verifies results, and the report prints on your own letterhead. The owner sees the day's collection and dues on a phone."]],
-        ['@type' => 'Question', 'name' => "How much does it cost?", 'acceptedAnswer' => ['@type' => 'Answer', 'text' => "It is a monthly or yearly subscription in three plans: Basic, Standard and Premium. The price depends on which parts you use and how many branches you have. Ask us for the current price list. Contact us to confirm current plans, pricing and included services."]],
+        ['@type' => 'Question', 'name' => $diagnosticSettings->pricing_faq_question, 'acceptedAnswer' => ['@type' => 'Answer', 'text' => $diagnosticSettings->pricing_faq_answer]],
         ['@type' => 'Question', 'name' => "Do we need to install anything?", 'acceptedAnswer' => ['@type' => 'Answer', 'text' => "No. It opens in a web browser on any computer, tablet or phone. You need internet and a printer. Only analyzer connection needs a small program on one lab computer."]],
         ['@type' => 'Question', 'name' => "What happens if the internet goes down?", 'acceptedAnswer' => ['@type' => 'Answer', 'text' => "Billing and result entry need internet, so we suggest a mobile data backup at the counter. Analyzer results are kept on the lab computer and sent as soon as the connection is back, so none are lost."]],
         ['@type' => 'Question', 'name' => "Can it take results from our analyzers?", 'acceptedAnswer' => ['@type' => 'Answer', 'text' => "Yes, if the analyzer sends results by ASTM or HL7, over a serial cable or the network. Tell us your models and we will confirm before you sign up."]],
@@ -460,36 +460,26 @@
     </section>
 
     <!-- Plans -->
+    @if(count($diagnosticPlans))
     <section id="plans" class="dg-pt0">
       <div class="dg-w">
-        <h2 class="dg-rv">Plans</h2>
-        <p class="dg-lead dg-rv">Discuss monthly or yearly subscription options with our team. Pay by bKash, Nagad or bank transfer, and you get an invoice for each payment.</p>
+        <h2 class="dg-rv">{{ $diagnosticSettings->plans_title }}</h2>
+        @if($diagnosticSettings->plans_introduction)<p class="dg-lead dg-rv">{{ $diagnosticSettings->plans_introduction }}</p>@endif
         <div class="dg-plans">
-          <article class="dg-plan dg-rv">
-            <h3>Basic</h3>
-            <p class="dg-price">Ask for price</p>
-            <p class="dg-for">A single lab</p>
-            <ul class="dg-ticks"><li>Front desk and billing</li><li>Laboratory and verification</li><li>Lab reports on your letterhead</li><li>1 branch</li></ul>
-            <a class="dg-btn dg-btn-alt" href="#demo" data-plan="Basic">Ask about Basic</a>
+          @foreach($diagnosticPlans as $plan)
+          <article class="dg-plan dg-rv{{ ($plan['is_highlighted'] ?? false) ? ' dg-pop' : '' }}">
+            @if(filled($plan['badge'] ?? null))<p class="dg-tag">{{ $plan['badge'] }}</p>@endif
+            <h3>{{ $plan['name'] }}</h3>
+            <p class="dg-price">{{ $plan['price'] }}</p>
+            @if(filled($plan['audience'] ?? null))<p class="dg-for">{{ $plan['audience'] }}</p>@endif
+            <ul class="dg-ticks">@foreach($plan['features'] ?? [] as $feature)<li>{{ $feature }}</li>@endforeach</ul>
+            <a class="dg-btn{{ ($plan['is_highlighted'] ?? false) ? '' : ' dg-btn-alt' }}" href="#demo" data-plan="{{ $plan['name'] }}">{{ $plan['button_label'] }}</a>
           </article>
-          <article class="dg-plan dg-pop dg-rv">
-            <p class="dg-tag">Lab + imaging</p>
-            <h3>Standard</h3>
-            <p class="dg-price">Ask for price</p>
-            <p class="dg-for">Lab and imaging under one roof</p>
-            <ul class="dg-ticks"><li>Everything in Basic</li><li>Imaging reports</li><li>Owner reports and finance</li><li>Patient portal</li><li>Inventory and SMS</li><li>1 branch</li></ul>
-            <a class="dg-btn" href="#demo" data-plan="Standard">Ask about Standard</a>
-          </article>
-          <article class="dg-plan dg-rv">
-            <h3>Premium</h3>
-            <p class="dg-price">Ask for price</p>
-            <p class="dg-for">Busy labs and groups</p>
-            <ul class="dg-ticks"><li>Everything in Standard</li><li>Analyzer connection</li><li>Branches and collection centres</li><li>Staff attendance and payroll</li><li>Up to 3 branches</li></ul>
-            <a class="dg-btn dg-btn-alt" href="#demo" data-plan="Premium">Ask about Premium</a>
-          </article>
+          @endforeach
         </div>
       </div>
     </section>
+    @endif
 
     <!-- FAQ: keep in step with the FAQPage data in the head -->
     <section id="faq" class="dg-pt0">
@@ -497,7 +487,7 @@
         <h2 class="dg-rv">Questions we get asked</h2>
         <div class="dg-faq dg-rv">
           <details><summary>What is DiagnoCare?</summary><p>DiagnoCare is software for diagnostic centers and pathology labs in Bangladesh. Reception bills the patient, the lab enters and verifies results, and the report prints on your own letterhead. The owner sees the day's collection and dues on a phone.</p></details>
-          <details><summary>How much does it cost?</summary><p>It is a monthly or yearly subscription in three plans: Basic, Standard and Premium. The price depends on which parts you use and how many branches you have. Ask us for the current price list. Contact us to confirm current plans, pricing and included services.</p></details>
+          <details><summary>{{ $diagnosticSettings->pricing_faq_question }}</summary><p>{{ $diagnosticSettings->pricing_faq_answer }}</p></details>
           <details><summary>Do we need to install anything?</summary><p>No. It opens in a web browser on any computer, tablet or phone. You need internet and a printer. Only analyzer connection needs a small program on one lab computer.</p></details>
           <details><summary>What happens if the internet goes down?</summary><p>Billing and result entry need internet, so we suggest a mobile data backup at the counter. Analyzer results are kept on the lab computer and sent as soon as the connection is back, so none are lost.</p></details>
           <details><summary>Can it take results from our analyzers?</summary><p>Yes, if the analyzer sends results by ASTM or HL7, over a serial cable or the network. Tell us your models and we will confirm before you sign up.</p></details>
@@ -529,7 +519,7 @@
             <label for="dg-email">Email address<input id="dg-email" name="email" type="email" autocomplete="email" required maxlength="255"></label>
             <div class="dg-form-row">
               <label for="dg-phone">Mobile number<input id="dg-phone" name="phone" type="tel" autocomplete="tel" required maxlength="50" placeholder="Include your country code"></label>
-              <label for="f-plan">Plan<select name="demo_plan" id="f-plan"><option>Not sure yet</option><option>Basic</option><option>Standard</option><option>Premium</option></select></label>
+              <label for="f-plan">{{ $diagnosticSettings->demo_plan_label }}<select name="demo_plan" id="f-plan"><option value="Not sure yet">{{ $diagnosticSettings->undecided_plan_label }}</option>@foreach($diagnosticPlans as $plan)<option value="{{ $plan['name'] }}">{{ $plan['name'] }}</option>@endforeach</select></label>
             </div>
             <label for="dg-message">What would you like to see?<textarea id="dg-message" name="message" rows="3" maxlength="5000" required>I would like a DiagnoCare demonstration for my center.</textarea></label>
             <div class="dg-honeypot" aria-hidden="true"><label>Leave this empty<input name="company_website" tabindex="-1" autocomplete="off"></label></div>

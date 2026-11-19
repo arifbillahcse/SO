@@ -2,6 +2,7 @@
 
 namespace App\Http\Requests;
 
+use App\Models\DiagnosticPageSettings;
 use App\Models\OrganizationSettings;
 use App\Rules\ValidRecaptcha;
 use Illuminate\Foundation\Http\FormRequest;
@@ -26,7 +27,7 @@ class StoreContactSubmissionRequest extends FormRequest
             'service_interested' => ['nullable', 'string', 'max:255'],
             'message' => ['required', 'string', 'max:5000'],
             'clinic_name' => ['nullable', 'required_with:demo_plan', 'string', 'max:255'],
-            'demo_plan' => ['nullable', Rule::in(['Not sure yet', 'Basic', 'Standard', 'Premium'])],
+            'demo_plan' => ['nullable', Rule::in(['Not sure yet', ...DiagnosticPageSettings::current()->planChoices()])],
             // Honeypot — must stay empty. Bots that fill every field will trip this.
             'company_website' => ['prohibited'],
         ];

@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use App\Models\ContactPageSettings;
+use App\Models\DiagnosticPageSettings;
 use App\Models\OrganizationSettings;
 use App\Models\PageSeo;
 use App\Models\PortfolioItem;
@@ -47,6 +48,9 @@ class AppServiceProvider extends ServiceProvider
         });
 
         View::composer('pages.services.diagnostic-management-system', function ($view): void {
+            $settings = DiagnosticPageSettings::current();
+            $view->with('diagnosticSettings', $settings);
+            $view->with('diagnosticPlans', $settings->publicPlans());
             $view->with('diagnosticWhatsappUrl', ContactPageSettings::current()->whatsappUrl());
         });
 
